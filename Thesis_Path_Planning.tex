@@ -1,0 +1,157 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                      %
+%     File: Thesis_Implementation.tex                                  %
+%     Tex Master: Thesis.tex                                           %
+%                                                                      %
+%     Author: Andre C. Marta                                           %
+%     Last modified : 13 May 2019                                      %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%	Daqui para a frente, apresenta-se a implementação de cada um dos módulos, com os respectivos resultados.
+
+\chapter{Global path planner}
+\label{chapter:implementation}
+
+In order to feed the control system with a reference path, an offline survey of the target environment is conducted in order to generate a \tb{traversability cost map}, which performs an analysis of the terrain uneveness.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Traversability map computation}
+\label{section:costMap}
+
+As mentioned in subsection \ref{subsection:worldModelling}, there is no explicit guideline on how to generate a traversability map. In this thesis, several approaches are compared. First, the state-of-the art algorithm from \cite{Amorim2014} is reviewed and evaluated. Then, a traversability cost made of the linear combination from three different costs is presented, based on \cite{Ishigami2007PathPlanning}. Finally, a reformulation of algorithm \ref{alg:slopeMinHeight} is described.
+
+\subsection{Height minimization}
+\label{subsection:heightMinimization}
+
+A constrained optimization problem which minimizes the height of the robot at each cell is described. It is very similar to the solution provided in \cite{Amorim2014}, so further implementation details are described there. In this case, the yaw angle is set as a free variable and the initial guess $\boldsymbol{\upsilon}_0$ of the problem at every cell is its solution at an adjacent cell. The elevation map $\FunctionElevation(\cdot)$ introduced in the optimization problem \textsc{heightmin} (equation \ref{eq:minHeight}) is a continuous one, so it is assumed terrain slopes are close among adjacent cells.
+
+, where $\boldsymbol{\Orientation}_{max}$ stands as the limits for each euler angle. $\mathbf{p}_k$ stand as the $k$ hull point position, which is defined with respect to $\boldsymbol{\Position}$ and $\boldsymbol{\Orientation}$, by taking into account the robot geometry. $[x, y]^T$ are fixed variables whereas $\left[ {\z},\, {\roll},\, {\pitch},\, {\yaw} \right]^T$ are optimization variables. Each point included in \ref{eq:minHeight} adds an additional constraint by stating each hull point must be above or at contact with the terrain. In case less than three hull points are at contact with the terrain, the terrain inclination returned by algoritm \ref{alg:slopeMinHeight} is $\frac{\pi}{2}$. This expresses the fact that the robot will stand at an unstable position, so this position is regarded as an undesirable traversable position.  On the other hand, the terrain inclination is given by equation \ref{eq:slopeHeightMin}, which returns the angle between a normalized vector with direction $\hat{\BodyFrame}_x$ and the normalized vector $\WorldFrame_z$ \cite{Amorim2014}. Although algorithm \ref{alg:slopeMinHeight} can be extended to any kind of mobile robot configuration, only four wheel mobile robots are considered in this thesis, as mentioned in section \ref{section:problemFormulation}.
+
+\raisebox{2ex}
+{
+	\begin{minipage}[c]{0.45\linewidth}
+    \centering
+    \begin{eqnarray}
+  		{\rm Minimize}   && z \nonumber \\
+  		{\rm w.r.t.}     && \boldsymbol{\upsilon} = \left( {\z},\, {\roll},\, {\pitch},\, {\yaw} \right) \nonumber \\
+  		{\rm subject~to} && \forall_k: z_k - \FunctionElevation(x_k, y_k) \geq 0 \hspace{10mm} \label{eq:minHeight} \\
+                   	 	&& \boldsymbol{\Orientation}_{max} - \left| \boldsymbol{\Orientation} \right| \geq 0 \, \nonumber
+	\end{eqnarray}
+	\begin{equation}
+		\TraversabilityCost = \arccos\left(\cos(\Pitch) \cos(\Roll)\right)
+		\label{eq:slopeHeightMin}
+	\end{equation}
+  	\end{minipage}
+}
+\hfill
+\raisebox{2ex}
+{
+	\begin{minipage}[c]{0.45\linewidth}
+    \begin{algorithm}[H]
+	\caption{\footnotesize Terrain inclination with \textsc{heightmin}}\label{alg:slopeMinHeight}
+	\centering
+	\footnotesize
+	\begin{algorithmic}[1]
+	\Function{terrainslope}{$\boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot),\, \boldsymbol{\upsilon}_0,\, x,\, y$}
+	\State $\boldsymbol{\upsilon}_* \gets \textsc{heightmin}(\boldsymbol{\upsilon}_0, \, \boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot),\,x,\,y)$ \Comment{solve \ref{eq:minHeight}}
+	\If{$\textmd{Contacts} \geq 3$}
+	\State $\TraversabilityCost \gets \textsc{inclination}(\roll_*,\, \pitch_*)$ \Comment{\ref{eq:slopeHeightMin}}
+	\Else
+	\State $\TraversabilityCost \gets \frac{\pi}{2}$
+	\EndIf
+	\State \Return $\TraversabilityCost, \, \boldsymbol{\upsilon}_*$
+	\EndFunction
+	\end{algorithmic}
+	\end{algorithm}
+	\end{minipage}
+}
+
+\begin{wrapfigure}{r}{0.6\textwidth}
+\begin{minipage}{0.6\textwidth}
+\begin{algorithm}[H]
+	\caption{\footnotesize Terrain inclination map with \textsc{terrainslope}}\label{alg:slopeMinHeightMap}
+	\centering
+	\footnotesize
+	\begin{algorithmic}[1]
+	\Require $\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \,N_0,\, N_1$
+	\ForEach{$\{i,\,j\} \in \{0,\, \cdots, \, N_0 - 1\} \times \{0,\, \cdots, \, N_1 - 1\}$}
+	\State $\boldsymbol{\upsilon}_0 \gets \textsc{contiguouscellsol}(i,\,j)$ \Comment{feasible initialization}
+	\If{$\ConvexHullArea \subset \Map_2$}
+	\State $\TraversabilityCost,\,\boldsymbol{\upsilon}_* \gets \textsc{terrainslope}(\boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot),\,\boldsymbol{\upsilon}_0, x_i,\, y_j)$ \Comment{algorithm \ref{alg:slopeMinHeight}}
+	\Else
+	\State $c \gets \frac{\pi}{2}$
+	\EndIf
+	\State $\FunctionTraversability_d(i,\, j) \gets c$
+	\EndFor
+	\end{algorithmic}
+\end{algorithm}
+\end{minipage}
+\end{wrapfigure}
+
+Then, algorithm \ref{alg:slopeMinHeightMap} extends the application of algorithm \ref{alg:slopeMinHeight} to each cell of the elevation grid. It should be noted that the discrete elevation grid $\FunctionElevation_d(\cdot)$ shall have such dimensions that the cell divison length is similar to the wheel diameter in meters. Moreover, a convex area $\RobotHullArea_2$ (equation \ref{eq:robotHullArea}) centered at $[x,\,y]^T$ which captures the robot hull projection in $\Map_2$ must lie inside the map domain. If this condition is not met, the terrain inclination angle assigned to $\FunctionTraversability_d(\cdot)$ is $\frac{\pi}{2}$. Therefore, positions at which the assigned terrain inclination is $\frac{\pi}{2}$ are considered to be untraversable. To sum up, the higher the inclination, the less desirable it is to pass through the respective position.
+
+\begin{equation}
+	\RobotCircleHullArea_2 = \{ min \underline{h}: \| \mathbf{\Position}_2 - \mathbf{a} \| \leq \underline{h} \, | \, \mathbf{\Position}_2,\, \mathbf{a} \in \Map_2 , \, \mathbf{p}_{2, k} \in \RobotCircleHullArea_2 \}
+	\label{eq:robotHullArea}
+\end{equation}
+
+\subsection{Terrain roughness}
+\label{subsection:terrainRoughness}
+
+Terrain traversability may also be evaluated by inspecting terrain roughness around each position of the map. In this thesis, terrain roughness at each position of $\FunctionElevation_d(\cdot)$ is defined as the standard deviation of elevations inside $\RobotHullArea_2$.
+
+\begin{equation}
+	\bar{\FunctionElevation}_d(i, j) = \frac{\sum_{\x_i,\,\y_j \in \RobotHullArea_2}{} \FunctionElevation(i,\,j)}{n(\underline{\RobotHullArea}_2)},\, \underline{\RobotHullArea}_2 = \{ \left( \x_i,\, \y_j \right) \in \RobotHullArea_2 \}  
+	\label{eq:averageHeight}
+\end{equation}
+
+, where $\underline{\RobotHullArea}_2$ denotes a finite set of points from $\FunctionElevation_d(\cdot)$ inside $\RobotHullArea_2$ and $\bar{\FunctionElevation}_d(i, j)$ the average of elevations for points inside $\RobotHullArea_2$. Then, terrain roughness is defined as,
+
+\begin{equation}
+	\FunctionTraversability_d(i,\,j) = \sqrt{\frac{\sum_{\x_i,\,\y_j \in \RobotHullArea_2}{} \left( \FunctionElevation(i,\,j) - \bar{\FunctionElevation}(i,\,j) \right)^2 }{n(\underline{\RobotHullArea}_2)}}
+	\label{eq:terrainRoughness}
+\end{equation}
+
+\subsection{Close to ground}
+\label{subsection:close2Ground}
+
+\begin{eqnarray}
+  		{\rm Minimize}   && \costFunction(\boldsymbol{\Position},\,\boldsymbol{\Orientation}) = (z - \FunctionElevation(\x,\,\y))^2 \nonumber \\
+  		{\rm w.r.t.}     && \boldsymbol{\upsilon} = \left( {\z},\, {\roll},\, {\pitch},\, {\yaw} \right) \nonumber \\
+  		{\rm subject~to} && \forall_k: z_k - \FunctionElevation(x_k, y_k) \geq 0 \hspace{10mm} \label{eq:minHeight} \\
+                   	 	&& \boldsymbol{\Orientation}_{max} - \left| \boldsymbol{\Orientation} \right| \geq 0 \, \nonumber
+	\end{eqnarray}
+	
+\subsection{Maximum inclination}
+\label{subsection:maximumInclination}
+
+\begin{eqnarray}
+  		{\rm Minimize}   && \costFunction(\boldsymbol{\Position},\,\boldsymbol{\Orientation}) = c^2 + (z - \FunctionElevation(\x,\,\y))^2 \nonumber \\
+  		{\rm w.r.t.}     && \boldsymbol{\upsilon} = \left( {\z},\, {\roll},\, {\pitch},\, {\yaw} \right) \nonumber \\
+  		{\rm subject~to} && \forall_k: z_k - \FunctionElevation(x_k, y_k) \geq 0 \hspace{10mm} \label{eq:minHeight} \\
+                   	 	&& \boldsymbol{\Orientation}_{max} - \left| \boldsymbol{\Orientation} \right| \geq 0 \, \nonumber
+	\end{eqnarray}
+
+A last option to evaluate the terrain traversability is to find the maximum inclination at each position of $\FunctionElevation_d(\cdot)$. The solution to this problem comes from a reformulation of algorithm \ref{alg:slopeMinHeight}.
+
+
+
+\section{Fast Marching}
+\label{section:fastMarching}
+
+Up to now, it is possible to compute a potential flow based on the cost introduced in equation \ref{eq:fullCostMap}. This cost replaces function $F(\cdot)$ in equation \ref{eq:eikonalEquation} and the solution of Eikonal problem outputs a gradient which enable the computation of an optimal path towards the selected goal. 
+
+After the discretization of gradient $\nabla u$, the optimal path comes as,
+
+\begin{equation}
+	\alpha = \arctan \frac{\frac{\partial}{\partial y} u(p_i)}{\frac{\partial}{\partial x} u(p_i)}
+\end{equation}
+
+\begin{equation}
+	p_{i+1, \; x} = p_{i, \;x} - cos(\alpha)
+\end{equation}
+
+\begin{equation}
+	p_{i+1, \; y} = p_{i, \;y} - sin(\alpha)
+\end{equation}

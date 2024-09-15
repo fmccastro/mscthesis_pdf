@@ -1,0 +1,28 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                      %
+%     File: Thesis_Contact_Models                                      %
+%     Tex Master: Thesis.tex                                           %
+%                                                                      %
+%     Author: Francisco Castro                                         %
+%     Last modified :  2 Jul 2015                                      %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Implementation}
+\label{chapter:implementation}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Fast marching}
+\label{section:fastMarching}
+
+In order to feed the controller, with a reference path on every problem before its solution is computed, an offline survey of the terrain is conducted in order to build a cost map which takes into account the terrain roughness, the difficulty  mobile robot faces if it attempts at some position and the map inclination. These variables are described below,
+
+Regarding the terrain roughness computation, it is considered that a set of positions around the position of interest play a role on determining the final terrain roughness. If a map $\Map$ is divided into $M$ discretized sets, and if the location where the roughness is computed is said to be $p = (i, j)$, a squared set of size $m$ around $p$ is considered
+
+\begin{equation}
+	\bar{\Map}(i, j) = \frac{\sum_{k = i-m, l = j-m}^{i+m, j+m} \Map(k, l)}{m \times m}
+\end{equation}
+
+
+

@@ -1,0 +1,128 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Yoshida et~al.(2016)Yoshida, Wilcox, et~al.]{Yoshida2016}
+K.~Yoshida, B.~Wilcox, et~al.
+\newblock \emph{Handbook of Robotics}.
+\newblock Springer Nature, second edition, 2016.
+
+\bibitem[Burgard et~al.(2016)Burgard, Hebert, and Bennewitz]{Burgard2016}
+W.~Burgard, M.~Hebert, and M.~Bennewitz.
+\newblock \emph{World Modeling}.
+\newblock 2016.
+
+\bibitem[Fankhauser et~al.(2014)Fankhauser, Bloesch, Gehring, Hutter, and
+  Siegwart]{fankhauser2014robot}
+P.~Fankhauser, M.~Bloesch, C.~Gehring, M.~Hutter, and R.~Siegwart.
+\newblock Robot-centric elevation mapping with uncertainty estimates.
+\newblock In \emph{Mobile Service Robotics}, pages 433--440. World Scientific,
+  2014.
+
+\bibitem[Correal and Pajares()]{Correal2011}
+R.~Correal and G.~Pajares.
+\newblock Onboard autonomous navigation architecture for a planetary surface
+  exploration rover and functional validation using open-source tools.
+\newblock In \emph{ESA Intl. Conf. on Advanced Space Technologies in Robotics
+  and Automation}.
+
+\bibitem[Smith et~al.(2001)Smith, Zuber, Frey, Garvin, Head, Muhleman,
+  Pettengill, Phillips, Solomon, Zwally, et~al.]{Smith2001}
+D.~E. Smith, M.~T. Zuber, H.~V. Frey, J.~B. Garvin, J.~W. Head, D.~O. Muhleman,
+  G.~H. Pettengill, R.~J. Phillips, S.~C. Solomon, H.~J. Zwally, et~al.
+\newblock Mars orbiter laser altimeter: Experiment summary after the first year
+  of global mapping of mars.
+\newblock \emph{Journal of Geophysical Research: Planets}, 2001.
+
+\bibitem[Jayasekara et~al.()Jayasekara, Ishigami, and Kubota]{Jayasekara2012}
+P.~G. Jayasekara, G.~Ishigami, and T.~Kubota.
+\newblock Testing and validation of autonomous navigation for a planetary
+  exploration rover using opensource simulation tools.
+\newblock In \emph{International Symposium on Artificial Intelligence, Robotics
+  and Automation in Space}.
+
+\bibitem[Amorim and Ventura()]{Amorim2014}
+D.~Amorim and R.~Ventura.
+\newblock Towards efficient path planning of a mobile robot on rough terrain.
+\newblock In \emph{2014 ieee international conference on autonomous robot
+  systems and competitions (icarsc)}.
+
+\bibitem[Yokokohji et~al.(2007)Yokokohji, Chaen, and Yoshikawa]{Yokokohji2007}
+Y.~Yokokohji, S.~Chaen, and T.~Yoshikawa.
+\newblock Evaluation of traversability of wheeled mobile robots on uneven
+  terrains by a fractal terrain model.
+\newblock \emph{Advanced Robotics}, 2007.
+
+\bibitem[Ishigami et~al.()Ishigami, Nagatani, and
+  Yoshida]{Ishigami2007PathPlanning}
+G.~Ishigami, K.~Nagatani, and K.~Yoshida.
+\newblock Path planning for planetary exploration rovers and its evaluation
+  based on wheel slip dynamics.
+\newblock In \emph{Proceedings 2007 IEEE International Conference on Robotics
+  and Automation}.
+
+\bibitem[Ventura and Ahmad(2015)]{Ventura2015}
+R.~Ventura and A.~Ahmad.
+\newblock Towards optimal robot navigation in domestic spaces.
+\newblock \emph{Lecture Notes in Artificial Intelligence (Subseries of Lecture
+  Notes in Computer Science)}, 8992:\penalty0 318--331, 1 2015.
+
+\bibitem[Brooks and Iagnemma(2012)]{Brooks2012self}
+C.~A. Brooks and K.~Iagnemma.
+\newblock Self-supervised terrain classification for planetary surface
+  exploration rovers.
+\newblock \emph{Journal of Field Robotics}, 2012.
+
+\bibitem[Fankhauser and Hutter(2016)]{Fankhauser2016GridMapLibrary}
+P.~Fankhauser and M.~Hutter.
+\newblock {A Universal Grid Map Library: Implementation and Use Case for Rough
+  Terrain Navigation}.
+\newblock In A.~Koubaa, editor, \emph{Robot Operating System (ROS) – The
+  Complete Reference (Volume 1)}, chapter~5. Springer, 2016.
+\newblock ISBN 978-3-319-26052-5.
+\newblock \doi{10.1007/978-3-319-26054-9{\_}5}.
+\newblock URL \url{http://www.springer.com/de/book/9783319260525}.
+
+\bibitem[Foote and Purvis(2010)]{Foote2010}
+T.~Foote and M.~Purvis.
+\newblock Standard units of measure and coordinate conventions, 10 2010.
+\newblock URL
+  \url{https://ros.org/reps/rep-0103.html#coordinate-frame-conventions}.
+
+\bibitem[Kozlowski and Pazderski(2004)]{Kozlowski2004}
+K.~Kozlowski and D.~Pazderski.
+\newblock Modeling and control of a 4-wheel skid-steering mobile robot.
+\newblock \emph{International Journal of Applied Mathematics and Computer
+  Science}, 14:\penalty0 477--496, 2004.
+
+\bibitem[Iagnemma et~al.(2004)Iagnemma, Brooks, and Dubowsky]{Iagnemma2004}
+K.~Iagnemma, C.~Brooks, and S.~Dubowsky.
+\newblock Visual, tactile, and vibration-based terrain analysis for planetary
+  rovers.
+\newblock volume~2, pages 841--848, 2004.
+
+\bibitem[Genta(2012)]{Genta2012}
+G.~Genta.
+\newblock \emph{Introduction to the Mechanics of Space Robots}.
+\newblock Springer, 2012.
+
+\bibitem[Peiret et~al.(2021)Peiret, Karpman, et~al.]{Peiret2021}
+A.~Peiret, E.~Karpman, et~al.
+\newblock Modelling of off-road wheeled vehicles for real-time dynamic
+  simulation.
+\newblock \emph{Journal of terramechanics}, pages 45--58, 4 2021.
+
+\bibitem[Sethian(1999)]{Sethian1999}
+J.~A. Sethian.
+\newblock Fast marching methods.
+\newblock \emph{SIAM Review}, 41:\penalty0 199--235, 1999.
+
+\bibitem[Roithmayr and Hodges(2015)]{Roithmayr2015}
+C.~M. Roithmayr and D.~H. Hodges.
+\newblock \emph{Dynamics: Theory and Application of Kane's Method}.
+\newblock Cambridge University Press, 2015.
+
+\end{thebibliography}

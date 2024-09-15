@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                      %
+%     File: Thesis_Kinematics_Dynamics                                 %
+%     Tex Master: Thesis.tex                                           %
+%                                                                      %
+%     Author: Francisco Castro                                         %
+%     Last modified :  16 Jan 2024                                      %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%	Depois da abordagem à implemenação de cada um dos módulos ter sido apresentada anteriormene, aqui apresenta-se a apresentação teórica de cada uma dessas abordagens, por módulo.
+
+\chapter{Background}
+\label{chapter:background}
+
+\section{Two-layer map generation}
+\label{section:mapsGeneration}
+
+Elevation data is stored as a \tb{\acrlong{dem}}, which is defined by a compact, discrete function $\FunctionElevation_d:\ElevationMap'_x \times \ElevationMap'_y \to \ElevationMap'_z$. Similarly, a \tb{discrete traversability map} $\TraversabilityMap'$ is defined by a function $\FunctionTraversability_d: \TraversabilityMap'_x \times \TraversabilityMap'_y \to \TraversabilityMap'_z$, where $\ElevationMap'_k$ and $\TraversabilityMap'_k$ define each discrete map domain on the respective \acrlong{dof}. As mentioned in section \ref{subsection:costMapGen},
+
+\begin{equation}\ElevationMap'_x \times \ElevationMap'_y = \TraversabilityMap'_x \times \TraversabilityMap'_y \label{eq:mapsDomainEq} 
+\end{equation}
+
+, so $\FunctionTraversability_d$ and $\FunctionElevation_d$ can be encapsulated into a \tb{two-layer discrete map function} $\FunctionTwoLayerMap': \DiscTwoLayerMapArg{x} \times \DiscTwoLayerMapArg{y} \to \ElevationMap'_z \times \TraversabilityMap'_z$ (equation \ref{eq:disc2layerMapFunc}), where $\DiscTwoLayerMapArg{x} \times \DiscTwoLayerMapArg{y}$ swaps the equality introduced in \ref{eq:mapsDomainEq} by an unique formulation.
+
+\begin{equation}
+	(\FunctionElevation_d(x_i, y_j), \FunctionTraversability_d(x_i, y_j)) = \FunctionTwoLayerMap(x_i, y_j) = (\Elevation_d, \TraversabilityCost_d), \hspace{2mm} i = 0,..., \GridDimX - 1 \hspace{2mm} j = 0, ..., \GridDimY - 1
+\label{eq:disc2layerMapFunc}
+\end{equation}
+
+, where $\GridDimX$ and $\GridDimY$ stand as the number of divisions in the longitudinal and lateral directions of maps $\ElevationMap'$ and $\TraversabilityMap'$ along frame $\WorldFrame$, respectively. $x_i \in \DiscTwoLayerMapArg{x}$ and $y_i \in \DiscTwoLayerMapArg{y}$, denote the longitudinal and lateral positions of the discrete two-layer map $\DiscTwoLayerMap$ with respect to frame $\WorldFrame$. $\ElevationMap_k$, $\TraversabilityMap_k$ denote continuous subsets of $\mathbb{R}$, which encapsulate each map limit on the respective \acrlong{dof}. Then, if functions $\FunctionElevation_d$ and $\FunctionTraversability_d$ are interpolated, a \tb{continuous elevation map function} $\FunctionElevation: \ElevationMap_x \times \ElevationMap_y \to \Map_z$ and a \tb{continuous traversability map function} $\FunctionTraversability: \TraversabilityMap_x \times \TraversabilityMap_y \to \TraversabilityMap_z$ can be encapsulated into a \tb{two-layer} \tb{ continuous map function} $\FunctionTwoLayerMap: \TwoLayerMapArg{x} \times \TwoLayerMapArg{y} \to \ElevationMap_z \times \TraversabilityMap_z$,
+
+\begin{equation}
+	(\FunctionElevation(x, y), \FunctionTraversability(x, y)) = \FunctionTwoLayerMap(x, y) = (\Elevation, \TraversabilityCost), \hspace{2mm} x \in \TwoLayerMapArg{x} ,\hspace{2mm} y \in \TwoLayerMapArg{y}
+\label{eq:cont2layerMapFunc}
+\end{equation}
+
+A discrete or continuous \tb{traversability map} can be obtained from  $\FunctionElevation_d$ or $\FunctionElevation$ through an algorithm $\mathbb{T}$, which is presented in section \textcolor{red}{insert section; draw picture of 2-layer map}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\acrlong{fmm}}
+\label{section:fastMarching}
+
+In this thesis, a fast marching method is employed in order to serve as the framework to extract optimal reference paths. This method relies on solving a boundary-value problem \cite{Sethian1999}, which yields a potential field with a wave that starts at a pre-defined source and expands throughout a map $\Map_{1}: \mathbb{R}^2 \longmapsto \mathbb{R}$, which is a reduction of a layered map $\Map_n: \mathbb{R}^2 \longmapsto \mathbb{R}^n$.
+
+Mathematically, this comes to solving the Eikonal equation,
+
+\begin{equation}
+	\begin{aligned}
+		\left\vert \nabla \timeFunction{\x, \y} \right\vert \speedFunction{x, y} &= 1 \\
+		\speedFunction{\NullTimePosition} &= 0
+ 	\end{aligned}\hspace{5mm} , \hspace{5mm} (\x, \y),\hspace{1mm} \NullTimePosition \in \domain{\Map_n}
+	\label{eq:eikonalEquation}
+\end{equation}
+
+, where $\timeFunction{.}$ is the solution to the Eikonal equation, $(\x, \y)$ is a position in the map, $\speedFunction{.}$ is a speed (or cost) function \cite{Ventura2015} which contains information regarding the set of points where the wave delays or  rushes its progression throughout $\Map_{2}$. $\Gamma \subset \Map_{2}$ is the wave front at the source. Due to the fact that $u(\bm{x})$ delivers the time a wave needs to reach $\bm{x}$ from the source $\bm{x}_s \in \Map_{2}$, it is trivial that $u(\Gamma)$ equals zero because $\Gamma$ is small ball around $\bm{x}_s$. On the other hand, $u(\bm{x}) = T$ provides the set of points from where it takes a time $T$ to reach $\bm{x}_s$.
+
+Then, it is possible to find an optimal time path from $\bm{x}$ to $\bm{x}_s$ which deviates from the points where $F$ has the lowest values. The direction of a path at some point is perpendicular to the wave front at that point, which is provided by the gradient $-\Delta u(\bm{x})$. The function $F$ is computed offline according to the application, and then it is inserted into \ref{eq:eikonalEquation}. After that, the eikonal problem is solved (also offline) and delivers a potential field with a source $\bm{x}_s$. From there, it is possible to compute online the fastest and safest path to $\bm{x}_s$ at the position the mobile robot is in. More information on this issue is provided at %Insert reference
+
+\begin{comment}
+\section{Optimal Control Problem}
+\label{section:optimalControlProblem}
+
+An optimal control problem (\acrshort{ocp}) 
+
+% MPC, Non-linear programming see Casadi and Mayer book, write section later
+
+\begin{equation}
+	\begin{aligned}
+		\underset{t_f, \bm{x}(\cdot), \bm{u}(\cdot)}{\text{minimize}} J_C &= \int_{t_0}^{t_f} l(\bm{x}(t), \bm{u}(t), \bm{r}(t), \bm{p}, t) dt + l_{T}(\bm{x}(t_f), \bm{p}, t_f)\\
+		\text{subject to} &
+		\begin{cases}
+			\bm{x}(t_0) =\bm{x}_0\\
+			\DerBold{x} = f(\bm{x}(t), \bm{u}(t), \bm{p}, t), \quad & t \in [t_0, t_f]\\
+			h(\bm{x}(t), \bm{u}(t)) \leq 0, \quad & t \in [t_0, t_f]\\
+			g(t_0, t_f, \bm{x}(t_0), \bm{x}(t_f)) \leq 0
+		\end{cases}
+	\end{aligned}
+	\label{eq:continuousTimeOCP}
+\end{equation}
+
+, where $\bm{x} \in \StateSpace$ stands for a general state, $\bm{u} \in \ControlSpace$ stands for a control array, whereas $\bm{r}$ is the reference to follow and $\bm{p}$ the parameters of the problem. Function $l(\cdot)$ is the Lagrange function and $l_T(\cdot)$ is the Mayer function of the \acrshort{ocp}. Finally, $h(\cdot)$ stands as the path constraint function and $g(\cdot)$ contains initial and terminal constraints.
+
+%\\
+%			d_{\ObstacleSpace} \geqslant 0
+
+\subsection{Nonlinear Model Predictive Control}
+\label{subsection:nmpc}
+
+A \acrshort{nmpc} problem lies on optimizing a cost function, which may or not be subject to constraints. The cost function is optimized along an established horizon (it may be infinite theoretically), and the constraints may range from model-based dynamics, control constraints or space-state constraints. This problem is also subject to initial values.
+
+\section{Obstacle avoidance}
+\label{section:obstacleAvoidance}
+
+\end{comment}

@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                      %
+%     File: Thesis_Appendix_A.tex                                      %
+%     Tex Master: Thesis.tex                                           %
+%                                                                      %
+%     Author: Francisco Castro                                         %
+%     Last modified :  29 Jan 2024                                     %
+%                                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Annex A}
+\label{chapter:annexA}
+
+\section{Rotation matrix}
+\label{section:rotationMatrix}
+
+Euler rotation angles defining an intrinsic $z-y-x$ (yaw-pitch-roll) rotation, with a rotation sequence of $z-y'-x''$ around the moving frame $\BodyFrame$ is denoted as,
+
+\begin{equation}
+	\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame} = \bm{\RotMatrix}_z (\yaw) \bm{\RotMatrix}_y (\pitch) \bm{\RotMatrix}_x (\roll)
+\end{equation}
+
+, with the previous multiplication to yield a mapping from frame $\BodyFrame$ to $\WorldFrame$, which stands as,
+
+\begin{equation}
+	\begin{aligned}
+	\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame} (\roll, \pitch, \yaw) &=
+	\begin{bmatrix}
+		\cos(\yaw) & -\sin(\yaw) & 0 \\
+		\sin(\yaw) & \cos(\yaw) & 0 \\
+		0 & 0 & 1
+	\end{bmatrix}
+	\begin{bmatrix}
+		\cos(\pitch) & 0 & \sin(\pitch) \\
+		0 & 1 & 0 \\
+		-\sin(\pitch) & 0 & \cos(\pitch)
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 & 0 & 0 \\
+		0 & \cos(\roll) & -\sin(\roll) \\
+		0 & \sin(\roll) & \cos(\roll)
+	\end{bmatrix} \\
+	& =
+	\begin{bmatrix} 
+		\cos(\yaw) \cos(\pitch) & \cos(\yaw) \sin(\pitch) \sin(\phi) - \sin(\yaw) \cos(\phi) & \cos(\yaw) \sin(\pitch) \cos(\roll) + \sin(\yaw) \sin(\roll) \\
+		\sin(\yaw) \cos(\pitch) & \sin(\yaw) \sin(\pitch) \sin(\roll) + \cos(\yaw) \cos(\roll) & \sin(\yaw) \sin(\pitch) \cos(\roll) - \cos(\yaw) \sin(\roll) \\
+		-\sin(\pitch) & \cos(\pitch) \sin(\roll) & \cos(\pitch) \cos(\roll)
+	\end{bmatrix}
+	\end{aligned}
+	\label{eq:rotationMatrixW2B}
+\end{equation}
+
+Rotation matrices are singular ($\det(\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame}) = 1$) and symmetric, $(\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame})^T = (\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame})^{-1} = \bm{\RotMatrix}_{\WorldFrame}^{\BodyFrame}$. Euler rotation matrices can be derived from 24 different conventions ranging from extrinsic or intrinsic rotation with different rotation orders. More information on this can be found in \cite{Roithmayr2015}.
+
+\section{Skew-symmetric matrix}
+\label{section:skewSymmetricMatrix}
+
+A skew-symmetric matrix $\bm{S}$ is a square matrix whose transpose equals its negative, $\bm{S}^T = -\bm{S}$. In this thesis, three by three matrices are employed which take the following form,
+
+\begin{equation}
+	\bm{S(r} = (x, \; y, \; z)\bm{)} = \begin{bmatrix}
+								0 & -z & y\\
+								z & 0 & -x\\
+								-y & x & 0	
+	\end{bmatrix}
+	\label{eq:skewSymmetricMatrix} 
+\end{equation}
+
+In case this matrix is multiplied by a column vector $\mathbf{a}$, it is the same as applying the cross product between $\mathbf{r}$ and $\mathbf{a}$. Then, it is stated that,
+
+\begin{equation}
+	\mathbf{S(r)} \mathbf{a} = \mathbf{r} \times \mathbf{a}
+	\label{eq:skewSymmetricMatrixProperties} 
+\end{equation}
+
+\section{Inertia tensor}
+\label{section:inertiaTensor}
+
+The inertia tensor of a rigid body is given by,
+
+\begin{equation}
+	\mathbf{\InertiaTensor} = \begin{bmatrix}
+		\InertiaTensor_{xx} & \InertiaTensor_{xy} & \InertiaTensor_{xz}\\
+		\InertiaTensor_{yx} & \InertiaTensor_{yy} & \InertiaTensor_{yz}\\
+		\InertiaTensor_{zx} & \InertiaTensor_{zy} & \InertiaTensor_{zz}
+	\end{bmatrix}
+	\label{eq:annexInertiaTensor}
+\end{equation}
+
+, where the products of inertia are equal between each other ($I_{xy} = I_{yx}$, $I_{xz} = I_{zx}$, $I_{yz} = I_{zy}$).
+
+\section{Differentiation of a vector}
+\label{section:vectorDiff}
+
+If a vector is expressed with respect to a non-inertial frame $\mathcal{P}$, it is still possible to differentiate that same vector with respect to an inertial frame $\mathcal{Q}$ \cite{Ferdinand2015}.
+
+Let $\mathbf{p} = p_1 \; \mathbf{i} + p_2 \; \mathbf{j} + p_3 \; \mathbf{k}$, with $\mathbf{i}, \; \mathbf{j}, \; \mathbf{k}$ to be the canonical vectors of a non-inertial frame $\mathcal{P}$. Then, the differentiation of $\mathbf{p}$ with respect to $\mathcal{Q}$ is given by,
+
+\begin{equation}
+	\derivative{\mathbf{p}}\Bigr|_{\mathcal{Q}} = \dot{p}_1 \; \mathbf{i} + \dot{p}_2 \; \mathbf{j} + \dot{p}_3 \; \mathbf{k} + p_1 \derivative{\mathbf{i}} + p_2 \derivative{\mathbf{j}} + p_3 \derivative{\mathbf{k}}
+	\label{eq:vectorDiff}
+\end{equation}
+ 
+, where $\derivative{\mathbf{p}}\Bigr|_{\mathcal{P}} = \dot{p}_1 \; \mathbf{i} + \dot{p}_2 \; \mathbf{j} + \dot{p}_3 \; \mathbf{k}$ because the canonical vectors $\mathbf{i}, \; \mathbf{j}, \; \mathbf{k}$ do not change with respect to time if the observer is located at the origin of $\mathcal{P}$. According to the general expression $\derivative{\mathbf{r}} = \bm{\Omega} \times \mathbf{r}$, it comes that $\derivative{\mathbf{i}} = \bm{\Omega} \times \mathbf{i}, \; \derivative{\mathbf{j}} = \bm{\Omega} \times \mathbf{j}, \; \derivative{\mathbf{k}} = \bm{\Omega} \times \mathbf{k}$. Then, equation \ref{eq:vectorDiff} may be rewritten as,
+
+\begin{equation}
+	\derivative{\mathbf{p}}\Bigr|_{\mathcal{Q}} = \derivative{\mathbf{p}}\Bigr|_{\mathcal{P}} + \mathbf{\Omega} \times \mathbf{p} 
+	\label{eq:vectorDiff2}
+\end{equation} 
+
+, where $\bm{\Omega}$ denotes the angular velocity of frame $\mathcal{P}$ with respect to frame $\mathcal{Q}$.
+
+\section{Parallel-axis theorem}
+\label{section:parallelAxisTheorem}
+
+\section{Quaternions}
+\label{section:quaternions}
+
+A quaternion is defined by $\Quaternion = \qw + \qx \mathbf{i} + \qy \mathbf{j} + \qz \mathbf{k}$. The right-hand rule convention is adopted.
+
+\begin{equation}
+	\delta \Quaternion = \Quaternion \otimes \Quaternion_{ref}^{-1} \begin{bmatrix}
+		 \qw \qw^{ref} + \qx \qx^{ref} + \qy \qy^{ref} + \qz \qz^{ref} \\
+		 -\qw \qx^{ref} + \qx \qw^{ref} - \qy \qz^{ref} + \qz \qy^{ref} \\
+		 -\qw \qy^{ref} + \qx \qz^{ref} + \qy \qw^{ref} - \qz \qx^{ref} \\
+		 -\qw \qz^{ref} - \qx \qy^{ref} + \qy \qx^{ref} + \qz \qw^{ref} 
+	\end{bmatrix}
+	\label{^eq:errorQuaternion}
+\end{equation}
+
+\section{Gauss quadrature}
+\label{section:doubleIntegralSimpsonRule}
+
+Simpson's $\frac{1}{3}$ reads as follows:
+
+\begin{equation}
+  \int_a^b f(x)\, dx \approx \frac{b - a}{6} \left[f(a) + 4f\left(\frac{a + b}{2}\right) + f(b)\right] = \frac{1}{3} h\left[f(a) + 4f\left(a + h\right) + f(b)\right]
+\label{eq:simpsonRule}
+\end{equation}
+
+Then, for a double integral, it comes that,
+	
+\begin{equation}
+	\int_c^d \int_{a(x)}^{b(x)} f(x, y)\, dx \, dy \approx
+\end{equation}
+
+\section{Boltzman operator}
+\label{section:boltzmanOperator}

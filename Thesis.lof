@@ -1,0 +1,34 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces World models and map types}}{5}{figure.caption.13}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Car-like robot kinematics \cite {Kozlowski2004}}}{8}{figure.caption.14}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Robot moving frame}}}{8}{figure.caption.14}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Robot geometry}}}{8}{figure.caption.14}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {ICR}}}{8}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Wheel kinematics}}{11}{figure.caption.15}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Longitudinal wheel kinematics.}}}{11}{figure.caption.15}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Lateral wheel kinematics.}}}{11}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Mobile robot systems. Adapted from \cite {Yoshida2016}}}{12}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Forces and moments distribution.}}{13}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Wheel subject to forces and moments.}}}{13}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Weight distribution during pitch.}}}{13}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Weight distribution during roll.}}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Wheel-terrain contact models \cite {Yoshida2016}}}{15}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rigid wheel contacting with rigid terrain}}}{15}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rigid wheel contacting with deformable terrain}}}{15}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Deformable wheel contacting with rigid terrain}}}{15}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Deformable wheel contacting with deformable terrain}}}{15}{figure.caption.18}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Caption for figure in TOC.}}{25}{figure.caption.19}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Some aircrafts.}}{26}{figure.caption.20}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Airbus A320}}}{26}{figure.caption.20}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bombardier CRJ200}}}{26}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Schematic of some algorithm.}}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Figure and table side-by-side.}}{29}{figure.caption.27}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

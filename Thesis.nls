@@ -1,0 +1,13 @@
+
+\begin{thenomenclature} 
+\nomgroup{G}
+  \item [{$\phi, \; \theta, \; \psi$}]\begingroup Roll, pitch, and yaw angles, respectively.\nomeqref {0}\nompageref{xix}
+\nomgroup{R}
+  \item [{$\mathbf{\chi}$}]\begingroup Mobile robot orientation.\nomeqref {0}\nompageref{xix}
+  \item [{$\mathbf{p}$}]\begingroup Mobile robot position.\nomeqref {0}\nompageref{xix}
+  \item [{$\mathbf{q}$}]\begingroup Mobile robot pose.\nomeqref {0}\nompageref{xix}
+  \item [{$\mathbf{R}$}]\begingroup Rotation matrix.\nomeqref {0}\nompageref{xix}
+  \item [{$\mathbf{v}$}]\begingroup Mobile robot velocity.\nomeqref {0}\nompageref{xix}
+  \item [{$\mathcal{B}, \mathcal{W}$}]\begingroup Body and world frames, respectively.\nomeqref {0}\nompageref{xix}
+
+\end{thenomenclature}

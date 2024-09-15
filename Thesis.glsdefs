@@ -1,0 +1,560 @@
+\glsdefs@newdocentry{mer}%
+{%
+name={\acronymfont {\glsentryshort {mer}}},%
+sort={MER},%
+type={acronym},%
+first={MER},%
+firstplural={MERs},%
+text={MER},%
+plural={MERs},%
+description={Mars Exploration Rover},%
+descriptionplural={Mars Exploration Rover},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mars Exploration Rover},%
+longplural={Mars Exploration Rovers},%
+short={MER},%
+shortplural={MERs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{msl}%
+{%
+name={\acronymfont {\glsentryshort {msl}}},%
+sort={MSL},%
+type={acronym},%
+first={MSL},%
+firstplural={MSLs},%
+text={MSL},%
+plural={MSLs},%
+description={Mars Science Laboratory},%
+descriptionplural={Mars Science Laboratory},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Mars Science Laboratory},%
+longplural={Mars Science Laboratorys},%
+short={MSL},%
+shortplural={MSLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{iss}%
+{%
+name={\acronymfont {\glsentryshort {iss}}},%
+sort={ISS},%
+type={acronym},%
+first={ISS},%
+firstplural={ISSs},%
+text={ISS},%
+plural={ISSs},%
+description={International Space Station},%
+descriptionplural={International Space Station},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={International Space Station},%
+longplural={International Space Stations},%
+short={ISS},%
+shortplural={ISSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{eva}%
+{%
+name={\acronymfont {\glsentryshort {eva}}},%
+sort={EVA},%
+type={acronym},%
+first={EVA},%
+firstplural={EVAs},%
+text={EVA},%
+plural={EVAs},%
+description={Extra-vehicular activity},%
+descriptionplural={Extra-vehicular activity},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Extra-vehicular activity},%
+longplural={Extra-vehicular activitys},%
+short={EVA},%
+shortplural={EVAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{gnc}%
+{%
+name={\acronymfont {\glsentryshort {gnc}}},%
+sort={GNC},%
+type={acronym},%
+first={GNC},%
+firstplural={GNCs},%
+text={GNC},%
+plural={GNCs},%
+description={Guidance, Navigation and Control},%
+descriptionplural={Guidance, Navigation and Control},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Guidance, Navigation and Control},%
+longplural={Guidance, Navigation and Controls},%
+short={GNC},%
+shortplural={GNCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dof}%
+{%
+name={\acronymfont {\glsentryshort {dof}}},%
+sort={DOF},%
+type={acronym},%
+first={DOF},%
+firstplural={DOFs},%
+text={DOF},%
+plural={DOFs},%
+description={Degree of freedom},%
+descriptionplural={Degree of freedom},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Degree of freedom},%
+longplural={Degree of freedoms},%
+short={DOF},%
+shortplural={DOFs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{eom}%
+{%
+name={\acronymfont {\glsentryshort {eom}}},%
+sort={EOM},%
+type={acronym},%
+first={EOM},%
+firstplural={EOMs},%
+text={EOM},%
+plural={EOMs},%
+description={End of mission},%
+descriptionplural={End of mission},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={End of mission},%
+longplural={End of missions},%
+short={EOM},%
+shortplural={EOMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{nmpc}%
+{%
+name={\acronymfont {\glsentryshort {nmpc}}},%
+sort={NMPC},%
+type={acronym},%
+first={NMPC},%
+firstplural={NMPCs},%
+text={NMPC},%
+plural={NMPCs},%
+description={Nonlinear Model Predictive Control},%
+descriptionplural={Nonlinear Model Predictive Control},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Nonlinear Model Predictive Control},%
+longplural={Nonlinear Model Predictive Controls},%
+short={NMPC},%
+shortplural={NMPCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{com}%
+{%
+name={\acronymfont {\glsentryshort {com}}},%
+sort={COM},%
+type={acronym},%
+first={COM},%
+firstplural={COMs},%
+text={COM},%
+plural={COMs},%
+description={Center of mass},%
+descriptionplural={Center of mass},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Center of mass},%
+longplural={Center of masss},%
+short={COM},%
+shortplural={COMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{icr}%
+{%
+name={\acronymfont {\glsentryshort {icr}}},%
+sort={ICR},%
+type={acronym},%
+first={ICR},%
+firstplural={ICRs},%
+text={ICR},%
+plural={ICRs},%
+description={Instantaneous center of rotation},%
+descriptionplural={Instantaneous center of rotation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Instantaneous center of rotation},%
+longplural={Instantaneous center of rotations},%
+short={ICR},%
+shortplural={ICRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rrmse}%
+{%
+name={\acronymfont {\glsentryshort {rrmse}}},%
+sort={RRMSE},%
+type={acronym},%
+first={RRMSE},%
+firstplural={RRMSEs},%
+text={RRMSE},%
+plural={RRMSEs},%
+description={Relative root mean-squared error},%
+descriptionplural={Relative root mean-squared error},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Relative root mean-squared error},%
+longplural={Relative root mean-squared errors},%
+short={RRMSE},%
+shortplural={RRMSEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ode}%
+{%
+name={\acronymfont {\glsentryshort {ode}}},%
+sort={ODE},%
+type={acronym},%
+first={ODE},%
+firstplural={ODEs},%
+text={ODE},%
+plural={ODEs},%
+description={Open Dynamics Engine},%
+descriptionplural={Open Dynamics Engine},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Open Dynamics Engine},%
+longplural={Open Dynamics Engines},%
+short={ODE},%
+shortplural={ODEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ocp}%
+{%
+name={\acronymfont {\glsentryshort {ocp}}},%
+sort={OCP},%
+type={acronym},%
+first={OCP},%
+firstplural={OCPs},%
+text={OCP},%
+plural={OCPs},%
+description={Optimal Control Problem},%
+descriptionplural={Optimal Control Problem},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Optimal Control Problem},%
+longplural={Optimal Control Problems},%
+short={OCP},%
+shortplural={OCPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sa}%
+{%
+name={\acronymfont {\glsentryshort {sa}}},%
+sort={SA},%
+type={acronym},%
+first={SA},%
+firstplural={SAs},%
+text={SA},%
+plural={SAs},%
+description={Semantic Attributes},%
+descriptionplural={Semantic Attributes},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Semantic Attributes},%
+longplural={Semantic Attributess},%
+short={SA},%
+shortplural={SAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{hhm}%
+{%
+name={\acronymfont {\glsentryshort {hhm}}},%
+sort={HHM},%
+type={acronym},%
+first={HHM},%
+firstplural={HHMs},%
+text={HHM},%
+plural={HHMs},%
+description={Heterogeneous and Hierarchical Models},%
+descriptionplural={Heterogeneous and Hierarchical Models},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Heterogeneous and Hierarchical Models},%
+longplural={Heterogeneous and Hierarchical Modelss},%
+short={HHM},%
+shortplural={HHMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dem}%
+{%
+name={\acronymfont {\glsentryshort {dem}}},%
+sort={DEM},%
+type={acronym},%
+first={DEM},%
+firstplural={DEMs},%
+text={DEM},%
+plural={DEMs},%
+description={Digital Elevation Models},%
+descriptionplural={Digital Elevation Models},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Digital Elevation Models},%
+longplural={Digital Elevation Modelss},%
+short={DEM},%
+shortplural={DEMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{3d}%
+{%
+name={\acronymfont {\glsentryshort {3d}}},%
+sort={3-D},%
+type={acronym},%
+first={3-D},%
+firstplural={3-Ds},%
+text={3-D},%
+plural={3-Ds},%
+description={Three Dimensional},%
+descriptionplural={Three Dimensional},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Three Dimensional},%
+longplural={Three Dimensionals},%
+short={3-D},%
+shortplural={3-Ds},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{2d}%
+{%
+name={\acronymfont {\glsentryshort {2d}}},%
+sort={2-D},%
+type={acronym},%
+first={2-D},%
+firstplural={2-Ds},%
+text={2-D},%
+plural={2-Ds},%
+description={Two Dimensional},%
+descriptionplural={Two Dimensional},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Two Dimensional},%
+longplural={Two Dimensionals},%
+short={2-D},%
+shortplural={2-Ds},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ros}%
+{%
+name={\acronymfont {\glsentryshort {ros}}},%
+sort={ROS},%
+type={acronym},%
+first={ROS},%
+firstplural={ROSs},%
+text={ROS},%
+plural={ROSs},%
+description={Robot Operating System},%
+descriptionplural={Robot Operating System},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Robot Operating System},%
+longplural={Robot Operating Systems},%
+short={ROS},%
+shortplural={ROSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{fmm}%
+{%
+name={\acronymfont {\glsentryshort {fmm}}},%
+sort={FMM},%
+type={acronym},%
+first={FMM},%
+firstplural={FMMs},%
+text={FMM},%
+plural={FMMs},%
+description={Fast Marching Method},%
+descriptionplural={Fast Marching Method},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Fast Marching Method},%
+longplural={Fast Marching Methods},%
+short={FMM},%
+shortplural={FMMs},%
+counter={page},%
+parent={},%
+%
+}%
+

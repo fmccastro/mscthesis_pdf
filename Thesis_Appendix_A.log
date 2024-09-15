@@ -1,0 +1,399 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.15)  29 JAN 2024 23:41
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./Thesis_Appendix_A.tex
+(Thesis_Appendix_A.tex
+LaTeX2e <2023-11-01>
+L3 programming layer <2024-01-04>
+! Undefined control sequence.
+l.11 \chapter
+             {Annex A}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \chapter{A
+               nnex A}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no A in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no A in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 11--13
+[]
+ []
+
+! Undefined control sequence.
+l.14 \section
+             {Rotation matrix}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.14 \section{R
+               otation matrix}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no R in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no x in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 14--16
+[]
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 A
+       rotation matrix from any frame $\mathcal{A}$ to some frame $\mathcal{...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no A in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 17.
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no b in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no , in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 17--18
+[]
+ []
+
+
+Overfull \hbox (7.98471pt too wide) in paragraph at lines 17--18
+\OMS/cmsy/m/n/10 A$
+ []
+
+
+Overfull \hbox (6.87221pt too wide) in paragraph at lines 17--18
+\OMS/cmsy/m/n/10 B$
+ []
+
+
+Overfull \hbox (32.24751pt too wide) in paragraph at lines 17--18
+\OML/cmm/m/it/10 ^^^;  ^^R;   $
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 \begin{equation}
+                     
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 19--19
+[] 
+ []
+
+! Undefined control sequence.
+l.20 \bm
+        {\RotMatrix}_{\mathcal{A}}^{\mathcal{B}} =
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.20 \bm{\RotMatrix
+                   }_{\mathcal{A}}^{\mathcal{B}} =
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Environment bmatrix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \begin{bmatrix}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+l.22  		\cos(\psi) \cos(\theta) &
+                                  \cos(\psi) \sin(\theta) \sin(\phi) - \sin(...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.22 ...heta) \sin(\phi) - \sin(\psi) \cos(\phi) &
+                                                   \cos(\psi) \sin(\theta) \...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.23  		\sin(\psi) \cos(\theta) &
+                                  \sin(\psi) \sin(\theta) \sin(\phi) + \cos(...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.23 ...heta) \sin(\phi) + \cos(\psi) \cos(\phi) &
+                                                   \sin(\psi) \sin(\theta) \...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.24  		-\sin(\theta) &
+                        \cos(\theta) \sin(\phi) & \cos(\theta) \cos(\phi) \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.24  		-\sin(\theta) & \cos(\theta) \sin(\phi) &
+                                                  \cos(\theta) \cos(\phi) \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{equation} on input line 19 ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 	\end{bmatrix}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (867.70618pt too wide) detected at line 27
+[][] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/
+10 ^^R\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) [](\OML/cmm/m/it
+/10 ^^R\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n
+/10 ^^@ []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) [](\OML/cmm/m/it
+/10 ^^^\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) [](\OML/cmm/m/i
+t/10 ^^R\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 ) + [](\OML/cm
+m/m/it/10  \OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 )[]  [](\OM
+L/cmm/m/it/10  \OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 ) [](\O
+ML/cmm/m/it/10  \OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 ) [](\
+OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 ) + [](\OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) [
+](\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) 
+[](\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10
+ ) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10  \OT1/cmr/m/n/10 ) 
+[](\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 )[]  \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n
+/10 (\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 ^^R\OT1/cmr/m/n/
+10 ) [](\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 ) [](\OML/cmm/m/it/10 ^^R\OT1/cmr/m
+/n/10 ) [](\OML/cmm/m/it/10 ^^^\OT1/cmr/m/n/10 )[] []
+ []
+
+! Undefined control sequence.
+l.29 \section
+             {Slip dynamics}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.29 \section{S
+               lip dynamics}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no S in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+)
+! Emergency stop.
+<*> ./Thesis_Appendix_A.tex
+                           
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 26 strings out of 476421
+ 868 string characters out of 5795833
+ 1925525 words of memory out of 5000000
+ 22170 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 18i,3n,20p,224b,84s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
