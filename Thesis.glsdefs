@@ -558,3 +558,31 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{nlp}%
+{%
+name={\acronymfont {\glsentryshort {nlp}}},%
+sort={NLP},%
+type={acronym},%
+first={NLP},%
+firstplural={NLPs},%
+text={NLP},%
+plural={NLPs},%
+description={Non-linear programming},%
+descriptionplural={Non-linear programming},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Non-linear programming},%
+longplural={Non-linear programmings},%
+short={NLP},%
+shortplural={NLPs},%
+counter={page},%
+parent={},%
+%
+}%
+

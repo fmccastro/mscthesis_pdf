@@ -128,21 +128,48 @@ A quaternion is defined by $\Quaternion = \qw + \qx \mathbf{i} + \qy \mathbf{j} 
 	\label{^eq:errorQuaternion}
 \end{equation}
 
-\section{Gauss quadrature}
-\label{section:doubleIntegralSimpsonRule}
+\section{Gauss-Legrendre quadrature}
+\label{section:gaussQuadrature}
 
-Simpson's $\frac{1}{3}$ reads as follows:
+A Gauss-Legrendre quadrature is an integral approximation method, which yields an exact result for polynomials of degree $2n -1$ or less.
 
 \begin{equation}
-  \int_a^b f(x)\, dx \approx \frac{b - a}{6} \left[f(a) + 4f\left(\frac{a + b}{2}\right) + f(b)\right] = \frac{1}{3} h\left[f(a) + 4f\left(a + h\right) + f(b)\right]
-\label{eq:simpsonRule}
+  \int_a^b f(x)\, dx \approx \int_{-1}^{1} f\left(\frac{b-a}{2} \xi + \frac{a+b}{2} \right) \frac{dx}{d\xi} d\xi
+\label{eq:gaussLegrendreQuadrature}
 \end{equation}
 
-Then, for a double integral, it comes that,
+, where $\frac{dx}{d\xi} = \frac{b-a}{2}$ expresses a change of variable in order to yield an integration in $[-1,\,1]$
+
+Then, equation \ref{eq:gaussLegrendreQuadrature} may be approximated by,
 	
 \begin{equation}
-	\int_c^d \int_{a(x)}^{b(x)} f(x, y)\, dx \, dy \approx
+	\int_a^b f(x) dx \approx \frac{a-b}{2} \sum_{i=1}^{n} w_i f\left(\frac{b-a}{2} \xi_i + \frac{a+b}{2}\right)
+	\label{eq:gaussLegendreQuadratureApprox}
 \end{equation}
+
+In the case of a double integral, it comes that,
+
+\begin{equation}
+	\int_{c}^{d} \int_{a}^{b} f\left(x,\,y\right) dx \, dy \approx \frac{(a-b)(d-c)}{4} \sum_{j=1}^{m} \sum_{i=1}^{n} f\left(\frac{b-a}{2} \xi_i + \frac{a+b}{2},\, \frac{d-c}{2} \xi_j + \frac{c+d}{2}\right)
+	\label{eq:gaussLegendreDouble}
+\end{equation}
+
+In this thesis, a 5-point Gauss Legrendre quadrature was used, where $\xi_i = \{ -0.90618,\, -0.538469,\\ \,0.0,\,0.538469,\,0.90618 \}$ and $w_i = \{ 0.236927,\,0.478629,\,0.568889,\, 0.478629,\,0.236927 \}$.
 
 \section{Boltzman operator}
 \label{section:boltzmanOperator}
+
+The boltzmann operator is a smooth, differentiable function that approximates the non-smooth maximum or minimum functions.
+
+\begin{equation}
+\mathcal{S}_{\alpha} (x_1,\, \ldots, \,x_n) = \frac{\sum_{i=1}^{n} x_i \exp(\alpha \, x_i)}{\sum_{i=1}^{n} \exp(\alpha \, x_i)}
+\label{eq:boltzmannOperator}
+\end{equation}
+
+The boltzmann operator has the following properties:
+
+\begin{enumerate}
+\item $\lim_{\alpha \to \infty} \mathcal{S}_{\alpha} = \text{max}( x_1,\,\ldots,\,x_n )$
+\item $\mathcal{S}_0$ is the arithmetic mean of $( x_1,\,\ldots,\,x_n )$.
+\item $\lim_{\alpha \to -\infty} \mathcal{S}_{\alpha} = \text{min}( x_1,\,\ldots,\,x_n )$
+\end{enumerate}

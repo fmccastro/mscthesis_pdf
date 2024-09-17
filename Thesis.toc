@@ -38,29 +38,32 @@
 \contentsline {chapter}{\numberline {5}Global path planner}{21}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Traversability map computation}{21}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Height minimization}{21}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Terrain roughness}{22}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Close to ground}{23}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Maximum inclination}{23}{subsection.5.1.4}%
-\contentsline {section}{\numberline {5.2}Fast Marching}{23}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Results}{25}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Problem Description}{25}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Baseline Solution}{25}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Enhanced Solution}{25}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Figures}{25}{subsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.1.1}Images}{25}{subsubsection.6.3.1.1}%
-\contentsline {subsubsection}{\numberline {6.3.1.2}Drawings}{26}{subsubsection.6.3.1.2}%
-\contentsline {subsection}{\numberline {6.3.2}Equations}{26}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Tables}{27}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Mixing}{28}{subsection.6.3.4}%
-\contentsline {chapter}{\numberline {7}Conclusions}{31}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Achievements}{31}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Future Work}{31}{section.7.2}%
-\contentsline {chapter}{Bibliography}{33}{section*.28}%
-\contentsline {chapter}{\numberline {A}Annex A}{35}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Rotation matrix}{35}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Skew-symmetric matrix}{35}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Inertia tensor}{36}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Differentiation of a vector}{36}{section.A.4}%
-\contentsline {section}{\numberline {A.5}Parallel-axis theorem}{36}{section.A.5}%
-\contentsline {section}{\numberline {A.6}Quaternions}{36}{section.A.6}%
-\contentsline {chapter}{\numberline {B}Technical Datasheets}{37}{appendix.B}%
+\contentsline {subsection}{\numberline {5.1.2}Close to ground}{23}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Maximum terrain roughness}{23}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Maximum inclination}{24}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Results}{25}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}Fast Marching}{25}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Results}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Problem Description}{27}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Baseline Solution}{27}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Enhanced Solution}{27}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Figures}{27}{subsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.1}Images}{27}{subsubsection.6.3.1.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.2}Drawings}{28}{subsubsection.6.3.1.2}%
+\contentsline {subsection}{\numberline {6.3.2}Equations}{28}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Tables}{29}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Mixing}{30}{subsection.6.3.4}%
+\contentsline {chapter}{\numberline {7}Conclusions}{33}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Achievements}{33}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Future Work}{33}{section.7.2}%
+\contentsline {chapter}{Bibliography}{35}{section*.28}%
+\contentsline {chapter}{\numberline {A}Annex A}{37}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Rotation matrix}{37}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Skew-symmetric matrix}{37}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Inertia tensor}{38}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Differentiation of a vector}{38}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Parallel-axis theorem}{38}{section.A.5}%
+\contentsline {section}{\numberline {A.6}Quaternions}{38}{section.A.6}%
+\contentsline {section}{\numberline {A.7}Gauss-Legrendre quadrature}{39}{section.A.7}%
+\contentsline {section}{\numberline {A.8}Boltzman operator}{39}{section.A.8}%
+\contentsline {chapter}{\numberline {B}Technical Datasheets}{41}{appendix.B}%
