@@ -47,7 +47,7 @@ The minimization of the vehicle \acrlong{com} is expressed as a non-linear optim
 	\begin{minipage}[c]{0.35\linewidth}
     \centering
     \begin{eqnarray}
-  		{\rm Minimize}   && \z \nonumber \\
+  		{\rm Minimize}   && J = \z \nonumber \\
   		{\rm w.r.t.}     && \boldsymbol{\upsilon} = \left( {\z},\, {\roll},\, {\pitch},\, {\yaw} \right) \nonumber \\
   		{\rm subject~to} && \forall_k: \z_k - \FunctionElevation(\x_k, \y_k) \geq 0 \hspace{10mm} \label{eq:minHeight} \\
                    	 	 && \boldsymbol{\Orientation}_{max} - \left| \boldsymbol{\Orientation} \right| \geq 0 \, \nonumber
@@ -70,7 +70,7 @@ The minimization of the vehicle \acrlong{com} is expressed as a non-linear optim
 	\Function{terrainslope}{$\boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot),\, \boldsymbol{\upsilon}_0,\, x,\, y$}
 	\State $\boldsymbol{\upsilon}_* \gets \textsc{heightmin}(\boldsymbol{\upsilon}_0, \, \boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot),\,x,\,y)$ \Comment{solve \ref{eq:minHeight}}
 	\If{$\textmd{Contacts} \geq 3$}
-	\State $\TraversabilityCost \gets \textsc{inclination}(\roll_*,\, \pitch_*)$ \Comment{\ref{eq:slopeHeightMin}}
+	\State $\TraversabilityCost \gets \textsc{inclination}(\roll_*,\, \pitch_*)$ \Comment{\ref{eq:inclination}}
 	\Else
 	\State $\TraversabilityCost \gets \frac{\pi}{2}$
 	\EndIf
@@ -141,22 +141,22 @@ Terrain traversability may also be evaluated by inspecting terrain roughness aro
 
 However, a \acrshort{nlp} only accepts continuous functions, so the above equations turn into,
 
-\begin{minipage}{0.4\linewidth}
+\begin{minipage}{0.3\linewidth}
 	\begin{equation}
 		\bar{\FunctionElevation}(\x,\, \y) = \frac{\int \int_{\RobotHullArea_2} \FunctionElevation(x_i, \, y_j) \, dx \, dy}{\Area(\RobotHullArea_2)}
 		\label{eq:contAverageHeight}
 	\end{equation}
 \end{minipage}
-\begin{minipage}{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
 	\begin{equation}
-		\FunctionTraversability(\x,\, \y) = \frac{\int \int_{\RobotHullArea_2} \left( \FunctionElevation(x_i, \, y_j) - \bar{\FunctionElevation}(\x,\, \y) \right)^2 \, dx \, dy}{\Area(\RobotHullArea_2)}
+		\FunctionTraversability(\x,\, \y) = \sqrt{\frac{\int \int_{\RobotHullArea_2} \left( \FunctionElevation(x_i, \, y_j) - \bar{\FunctionElevation}(\x,\, \y) \right)^2 \, dx \, dy}{\Area(\RobotHullArea_2)}}
 		\label{eq:contHeightStd}
 	\end{equation}
 \end{minipage}
 
 \vspace{4mm}
 
-, where $\Area(\RobotHullArea_2) = \int \int_{\RobotHullArea_2} 1 dx \, dy$.
+, where $\Area(\RobotHullArea_2) = \int \int_{\RobotHullArea_2} 1 \, dx \, dy$.
 
 \subsubsection*{Initial guess}
 
@@ -179,7 +179,7 @@ Due to that the fact this optimization problem implies a maximization, the objec
                    	 	&& \boldsymbol{\Orientation}_{max} - \left| \boldsymbol{\Orientation} \right| \geq 0 \, \nonumber
 \end{eqnarray}
 
-In case $\RobotCircleHullArea_2 \subset \Map_2$, the roughness is saved as \verb!None!. Later on, a decimal value will be attributed to the respective cell. The computation of the area integrals from equations \ref{eq:contAverageHeight} and \ref{eq:contHeightStd} are obtained by application of a gauss quadrature to each integral separately. The integrals limits are selected by finding the wheel points with the minimum and maximum $x$ and $y$ coordinates, by using the boltzmann operator, which is a smooth function that can be inserted into a \acrshort{nlp}, that computes the maximum and minimum among an array of values.
+In case $\RobotCircleHullArea_2 \subset \Map_2$, the roughness is saved as \verb!None!. Later on, a decimal value will be attributed to the respective cell. The computation of the area integrals from equations \ref{eq:contAverageHeight} and \ref{eq:contHeightStd} are obtained by application of a Gauss-Legendre quadrature (\ref{section:gaussQuadrature}) to each integral separately. The integrals limits are selected by finding the wheel points with the minimum and maximum $x$ and $y$ coordinates, by using the Boltzmann operator (\ref{section:boltzmanOperator}), which is a smooth function that can be inserted into a \acrshort{nlp}, that computes the maximum and minimum among an array of values.
 
 \subsection{Maximum inclination}
 \label{subsection:maximumInclination}
@@ -195,7 +195,7 @@ The initial guess determination method is reformulated (once again), so that the
 The vehicle inclination angle is given by equation \ref{eq:inclination}, so the maximum by inclination angle may be found by stating the cost function $\costFunction(\cdot)$ as $\cos(\roll) \cos(\pitch)$. Once again, it needs to be set as hard constraint the fact that the vehicle wheels must be at contact with the ground, so that a maximum inclination solution at each cell is one where the wheels touch the ground.
 
 \begin{eqnarray}
-  		{\rm Minimize}   && \costFunction(\boldsymbol{\Position},\,\boldsymbol{\Orientation}) = \cos(\roll) \cos(\pitch) \nonumber \\
+  		{\rm Minimize}   && \costFunction = \cos(\roll) \cos(\pitch) \nonumber \\
   		{\rm w.r.t.}     && \boldsymbol{\upsilon} = \left( {\z},\, {\roll},\, {\pitch},\, {\yaw} \right) \nonumber \\
   		{\rm subject~to} && \z - \FunctionElevation(\x, \y) \geq 0 \label{eq:maxInclination} \\   
   						&& \forall_k: \z_k - \FunctionElevation(\x_k, \y_k) \leq \WheelRadius \times 10^{-2} \hspace{10mm} \nonumber \\
@@ -207,12 +207,29 @@ Apart from the \acrshort{nlp} (equation \ref{eq:maxInclination}), algorithm \ref
 \subsection{Implementation}
 \label{subsection:costMapImplementation}
 
+In this subsection, the implentation of the \acrshort{nlp}'s presented above is described, alongside the presentation of results and its discussion. The elevation map used in this implementation is the target environment, which will serve as a simulation test-bed for the control system, later on. The wheeled mobile robot Pioneer 3AT was chosen as the test vehicle. The elevation map and mobile robot dimensions are presented in table \ref{tab:robotDimensions} and \ref{tab:demDimensions}.
+
+\begin{table}[!htb]
+  \caption[Table caption shown in TOC.]{Pioneer 3-AT dimensions.}
+  \label{tab:robotDimensions}
+  \renewcommand{\arraystretch}{1.2} % more space between rows
+  \centering
+  \begin{tabular}{ccc}
+    \toprule
+    $\WheelRadius$ [m] & $\WheelLonSeparation$ [m] & $\WheelLatSeparation$ [m] \\
+    \midrule
+    0.111 & 0.268 & 0.394 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The selected elevation map is presented below,
 
 
 \section{Fast Marching}
 \label{section:fastMarching}
 
-Up to now, it is possible to compute a potential flow based on the cost introduced in equation \ref{eq:fullCostMap}. This cost replaces function $F(\cdot)$ in equation \ref{eq:eikonalEquation} and the solution of Eikonal problem outputs a gradient which enable the computation of an optimal path towards the selected goal. 
+Up to now, it is possible to compute a potential flow based on the cost introduced in equation \ref{eq:fullCostMap}. This cost replaces function $F(\cdot)$ in equation \ref{eq:eikonalEquation} and the solution of Eikonal problem outputs a gradient which enable the computation of an optimal path towards the selected goal.
 
 After the discretization of gradient $\nabla u$, the optimal path comes as,
 

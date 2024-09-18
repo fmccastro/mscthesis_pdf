@@ -1,7 +1,7 @@
-\nomenclatureentry{R$\mathbf{q}$@[{$\mathbf{q}$}]\begingroup Mobile robot pose.\nomeqref {0}|nompageref}{xix}
-\nomenclatureentry{R$\mathbf{p}$@[{$\mathbf{p}$}]\begingroup Mobile robot position.\nomeqref {0}|nompageref}{xix}
-\nomenclatureentry{R$\mathbf{\chi}$@[{$\mathbf{\chi}$}]\begingroup Mobile robot orientation.\nomeqref {0}|nompageref}{xix}
-\nomenclatureentry{R$\mathbf{v}$@[{$\mathbf{v}$}]\begingroup Mobile robot velocity.\nomeqref {0}|nompageref}{xix}
-\nomenclatureentry{R$\mathcal{B}, \mathcal{W}$@[{$\mathcal{B}, \mathcal{W}$}]\begingroup Body and world frames, respectively.\nomeqref {0}|nompageref}{xix}
-\nomenclatureentry{R$\mathbf{R}$@[{$\mathbf{R}$}]\begingroup Rotation matrix.\nomeqref {0}|nompageref}{xix}
-\nomenclatureentry{G$\phi, \; \theta, \; \psi$@[{$\phi, \; \theta, \; \psi$}]\begingroup Roll, pitch, and yaw angles, respectively.\nomeqref {0}|nompageref}{xix}
+\nomenclatureentry{R$\mathbf{q}$@[{$\mathbf{q}$}]\begingroup Mobile robot pose.\nomeqref {0}|nompageref}{xxi}
+\nomenclatureentry{R$\mathbf{p}$@[{$\mathbf{p}$}]\begingroup Mobile robot position.\nomeqref {0}|nompageref}{xxi}
+\nomenclatureentry{R$\mathbf{\chi}$@[{$\mathbf{\chi}$}]\begingroup Mobile robot orientation.\nomeqref {0}|nompageref}{xxi}
+\nomenclatureentry{R$\mathbf{v}$@[{$\mathbf{v}$}]\begingroup Mobile robot velocity.\nomeqref {0}|nompageref}{xxi}
+\nomenclatureentry{R$\mathcal{B}, \mathcal{W}$@[{$\mathcal{B}, \mathcal{W}$}]\begingroup Body and world frames, respectively.\nomeqref {0}|nompageref}{xxi}
+\nomenclatureentry{R$\mathbf{R}$@[{$\mathbf{R}$}]\begingroup Rotation matrix.\nomeqref {0}|nompageref}{xxi}
+\nomenclatureentry{G$\phi, \; \theta, \; \psi$@[{$\phi, \; \theta, \; \psi$}]\begingroup Roll, pitch, and yaw angles, respectively.\nomeqref {0}|nompageref}{xxi}

@@ -60,65 +60,36 @@ A wheeled mobile robot $\Robot$ is moving on a map $\Map$, which is centered at 
 	\label{fig:mobileRobotKinematics}
 \end{figure}
 
-The mobile robot position and orientation with respect to frame $\WorldFrame$ is described as $\mathbf{\Position} = [x\;  y\; z]^T$ and $\bm{\Orientation} = [\roll\; \pitch\; \yaw]^T$, respectively. On the other hand, the mobile robot linear and angular velocities with respect to frame $\BodyFrame$ stands as $\mathbf{\LinVelocity} = [ \vx \; \vy \; \vz ]^T$ and $\bm{\AngVelocity} = [\wx \; \wy \; \wz]^T$, respectively. Then, it is possible to map the mobile robot $\Robot$ velocity between frames $\BodyFrame$ and $\WorldFrame$ by taking a Yaw-Pitch-Roll intrinsic rotation convention of euler angles, with each elemental rotation matrix denoted in \ref{section:rotationMatrix}.
+The mobile robot position and orientation with respect to frame $\WorldFrame$ is described as $\mathbf{\Position} = [x\;  y\; z]^T$ and $\Quaternion = [\qx \; \qy \; \qz \; \qw]^T$, respectively. On the other hand, the mobile robot linear and angular velocities with respect to frame $\BodyFrame$ stands as $\mathbf{\LinVelocity} = [ \vx \; \vy \; \vz ]^T$ and $\bm{\AngVelocity} = [\wx \; \wy \; \wz]^T$, respectively. It is decided to use quaternions instead of euler angles to describe the orientation, in order to circumvent ambiguities  present on the sum of angles. Moreover, due to the fact that the yaw angle is constrained in $[-\pi,\,\pi]$, there is a chance that the yaw angle may overcome these limits when the mobile robot is close to them. \textcolor{red}{add section where more information will be given on the issues of euler angles ambiguities}.  Then, it is possible to map the mobile robot $\Robot$ linear velocity between frames $\BodyFrame$ and $\WorldFrame$ by taking advantage of rotation matrix \ref{eq:quatRotationMatrix}, but also to map quaternion rates in $\WorldFrame$ to angular velocities in $\BodyFrame$ with rotation matrix \ref{eq:orientationQuatRotationMatrix}.
 
-\begin{equation}
-	\DerMathBold{\Position} = \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} (\yaw, \pitch, \roll) \mathbf{\LinVelocity}	
+\begin{minipage}{0.4\linewidth}
+	\centering	
+	\begin{equation}
+	\DerMathBold{\Position} = \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \mathbf{\LinVelocity}	
 	\label{eq:translationFreeBody}
-\end{equation}
+	\end{equation}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+	\centering	
+	\begin{equation}
+	\DerMathBold{\Quaternion} = \mathbf{\bar{\RotMatrix}}_{\BodyFrame}^{\WorldFrame} \bm{\AngVelocity}	
+	\label{eq:rotationFreeBody}
+	\end{equation}
+\end{minipage}
 
-Secondly, a mapping between Euler angle rates $\DerBold{\Orientation}$ and $\bm{\AngVelocity}$ is derived by tranforming each Euler rotation rate from its intermediate frame to body frame $\BodyFrame$.
-
-\begin{equation}
-	\begin{aligned}
-	\bm{\AngVelocity} &= \begin{bmatrix}
-		\dot{\roll} \\
-		0\\
-		0
-	\end{bmatrix} + \mathbf{\RotMatrix}_x(\roll)
-	\begin{bmatrix}
-		0\\
-		\dot{\pitch}\\
-		0
-	\end{bmatrix} + \mathbf{\RotMatrix}_x(\roll) \mathbf{\RotMatrix}_y(\pitch)
-	\begin{bmatrix}
-		0\\
-		0\\
-		\dot{\yaw}
-	\end{bmatrix}\\
-	&= 
-	\begin{bmatrix}
-		1 & 0 & \sin(\theta) \\
-		0 & \cos(\roll) & -\sin(\roll) \cos(\theta) \\
-		0 & \sin(\roll) & \cos(\roll) \cos(\pitch)
-	\end{bmatrix} \DerBold{\Orientation}
-	\end{aligned}
-	\label{eq:rotationalFreeBody}
-\end{equation}
-
-The inverse of the rotation matrix presented in \ref{eq:rotationalFreeBody} provides a mapping between angular velocities from frame $\BodyFrame$ to $\WorldFrame$.
-
-\begin{equation}
-	\DerBold{\Orientation} = 
-	\begin{bmatrix}
-		1 & \tan(\pitch) \sin(\roll) & -\tan(\pitch) \cos(\roll)\\
-		0 & \cos(\roll) & \sin(\roll)\\
-		0 & -\frac{\sin(\roll)}{\cos(\pitch)} & \frac{\cos(\roll)}{\cos(\pitch)}
-	\end{bmatrix} \bm{\AngVelocity} = \mathbf{\bar{\RotMatrix}}_{\BodyFrame}^{\WorldFrame} (\yaw, \pitch, \roll) \bm{\AngVelocity}
-	\label{eq:rotationalFreeBodyInv}
-\end{equation}
+\vspace{3mm}
 
 \subsection{Wheel kinematics}
 \label{subsection:wheelKinematics}
 
-A kinematics model is not only described by its free-body motion equations \ref{eq:translationFreeBody} and \ref{eq:rotationalFreeBodyInv} but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\Torque_i$ which induces on it a spin rate, $\mathbf{\dot{\wheelAngPosition}}_i,\, i = 1,...,\,N_\WheelFrame$, where $N_\WheelFrame = 4$ for the cases presented in this thesis. 
+A kinematics model is not only described by its free-body motion equations \ref{eq:translationFreeBody} and \ref{eq:rotationFreeBody}, but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\Torque_i$, which induces on it a spin rate, $\bm{\dot{\AngVelocity}}_i,\, i = 1,...,\,N_w$, where $N_w = 4$ for the cases presented in this thesis. 
 
 \begin{assumption}
 	The thickness and deformation of each wheel are neglected so that the wheel is assumed to be rigid and to contact the terrain at a single contact point $\contactPoint_i$, in case rigid terrain is the working environment \cite{Iagnemma2004}.
 	\label{assumption:singlePointContact}
 \end{assumption}
 
-Due to the fact that wheels are fixed, the mobile robot holds two controllable \acrshort{dof}: translation along its longitudinal direction $\BodyFrame_x$, and rotation around its vertical axis $\BodyFrame_z$. Therefore, lateral skidding from the vehicle is expected to remain close to zero on flat terrain, although its wheels are prone to skidding when the mobile robot finds itself on uneven or inclined surfaces (figure \ref{fig:wheelForcesMoments}). If the mobile robot follows a straight line path, its wheels velocities are tangent to the current path. Moreover, the velocity vector of each wheel is tangent to the terrain that wheel is touching on. Under the smooth terrain assumption (assumption \ref{assumption:smoothTerrain}), it is considered that the mobile robot stands at a planar surface and the terrain profile local variation is smooth.
+Due to the fact that wheels are fixed, the mobile robot holds two controllable \acrshort{dof}: translation along its longitudinal direction $\BodyFrame_x$, and rotation around its vertical axis $\BodyFrame_z$. Therefore, lateral skidding from the vehicle is expected to remain close to zero on flat terrain, although its wheels are prone to skidding when the mobile robot finds itself on uneven or inclined surfaces (figure \ref{fig:wheelForcesMoments}). If the mobile robot follows a straight line path, its wheel velocities are tangent to the current path. Moreover, the velocity vector of each wheel is tangent to the terrain that wheel is touching on. Under the smooth terrain assumption (assumption \ref{assumption:smoothTerrain}), it is considered that the mobile robot stands at a planar surface and the terrain profile local variation is smooth.
 
 \begin{assumption}
 	Smooth terrain assumption: the local terrain profile variation is smooth, which makes $\{\vz, \wx, \wy \} \approx 0$. At every iteration, it is considered that a robot stands at a planar surface and the wheel velocities equal the mobile robot velocity.

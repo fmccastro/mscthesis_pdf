@@ -11,20 +11,20 @@
 \chapter{Annex A}
 \label{chapter:annexA}
 
-\section{Rotation matrix}
-\label{section:rotationMatrix}
+\section{Euler angles}
+\label{section:eulerAngles}
 
 Euler rotation angles defining an intrinsic $z-y-x$ (yaw-pitch-roll) rotation, with a rotation sequence of $z-y'-x''$ around the moving frame $\BodyFrame$ is denoted as,
 
 \begin{equation}
-	\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame} = \bm{\RotMatrix}_z (\yaw) \bm{\RotMatrix}_y (\pitch) \bm{\RotMatrix}_x (\roll)
+	\mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} = \bm{\RotMatrix}_z (\yaw) \bm{\RotMatrix}_y (\pitch) \bm{\RotMatrix}_x (\roll)
 \end{equation}
 
 , with the previous multiplication to yield a mapping from frame $\BodyFrame$ to $\WorldFrame$, which stands as,
 
 \begin{equation}
 	\begin{aligned}
-	\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame} (\roll, \pitch, \yaw) &=
+	\mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} (\roll, \pitch, \yaw) &=
 	\begin{bmatrix}
 		\cos(\yaw) & -\sin(\yaw) & 0 \\
 		\sin(\yaw) & \cos(\yaw) & 0 \\
@@ -116,7 +116,38 @@ Let $\mathbf{p} = p_1 \; \mathbf{i} + p_2 \; \mathbf{j} + p_3 \; \mathbf{k}$, wi
 \section{Quaternions}
 \label{section:quaternions}
 
+\subsection{Rotation matrix}
+\label{subsection:rotationMatrix}
+	
 A quaternion is defined by $\Quaternion = \qw + \qx \mathbf{i} + \qy \mathbf{j} + \qz \mathbf{k}$. The right-hand rule convention is adopted.
+
+The rotation matrix \cite{attitudeRepresentations2001} which maps linear velocities from a non-inertial frame $\mathcal{P}$ to an inertial frame $\mathcal{Q}$ is the following,
+
+\begin{equation}
+	\mathbf{\bar{\RotMatrix}}_{\mathcal{P}}^{\mathcal{Q}} = \begin{bmatrix}
+		1 - 2 (\qy^2 + \qz^2) & 2 (\qx \qy - \qz \qw) & 2 (\qx \qz + \qy \qw) \\
+		2 (\qx \qy + \qz \qw) & 1 - 2(\qx^2 + \qz^2) & 2 (\qy \qz - \qx \qw) \\
+		2 (\qx \qz - \qy \qw) & 2 (\qy \qz + \qx \qw) & 1 - 2(\qx^2 + \qy^2)  
+	\end{bmatrix}
+	\label{eq:quatRotationMatrix}
+\end{equation}
+
+The rotation matrix which maps angular velocities to quaternion rates is the following,
+
+\begin{equation}
+	\mathbf{\bar{\RotMatrix}}_{\mathcal{P}}^{\mathcal{Q}} = \frac{1}{2} \times \begin{bmatrix}
+		-\qx & -\qy & -\qz \\
+		\qw & -\qz  & \qy \\
+		\qz & \qw & -\qx\\
+		-\qy & \qx & \qw  
+	\end{bmatrix}
+	\label{eq:orientationQuatRotationMatrix}
+\end{equation}
+
+\subsection{Error matrix}
+\label{subsection:errorMatrix}
+
+The difference between two quaternions is expressed in \ref{eq:errorQuaternion}. More information on the derivation of this result can be found in \cite{attitudeError}.
 
 \begin{equation}
 	\delta \Quaternion = \Quaternion \otimes \Quaternion_{ref}^{-1} \begin{bmatrix}
@@ -125,7 +156,7 @@ A quaternion is defined by $\Quaternion = \qw + \qx \mathbf{i} + \qy \mathbf{j} 
 		 -\qw \qy^{ref} + \qx \qz^{ref} + \qy \qw^{ref} - \qz \qx^{ref} \\
 		 -\qw \qz^{ref} - \qx \qy^{ref} + \qy \qx^{ref} + \qz \qw^{ref} 
 	\end{bmatrix}
-	\label{^eq:errorQuaternion}
+	\label{eq:errorQuaternion}
 \end{equation}
 
 \section{Gauss-Legrendre quadrature}
