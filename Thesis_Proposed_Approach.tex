@@ -77,26 +77,19 @@ The mobile robot position and orientation with respect to frame $\WorldFrame$ is
 	\end{equation}
 \end{minipage}
 
-\vspace{3mm}
-
 \subsection{Wheel kinematics}
 \label{subsection:wheelKinematics}
 
-A kinematics model is not only described by its free-body motion equations \ref{eq:translationFreeBody} and \ref{eq:rotationFreeBody}, but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\Torque_i$, which induces on it a spin rate, $\bm{\dot{\AngVelocity}}_i,\, i = 1,...,\,N_w$, where $N_w = 4$ for the cases presented in this thesis. 
+A kinematics model is not only described by its free-body motion equations \ref{eq:translationFreeBody} and \ref{eq:rotationFreeBody}, but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\Torque_i$, which induces on it a spin rate, $\bm{\AngVelocity}_i,\, i = 1,\,...,\,N_w$, where $N_w = 4$ for the cases presented in this thesis. 
 
 \begin{assumption}
 	The thickness and deformation of each wheel are neglected so that the wheel is assumed to be rigid and to contact the terrain at a single contact point $\contactPoint_i$, in case rigid terrain is the working environment \cite{Iagnemma2004}.
 	\label{assumption:singlePointContact}
 \end{assumption}
 
-Due to the fact that wheels are fixed, the mobile robot holds two controllable \acrshort{dof}: translation along its longitudinal direction $\BodyFrame_x$, and rotation around its vertical axis $\BodyFrame_z$. Therefore, lateral skidding from the vehicle is expected to remain close to zero on flat terrain, although its wheels are prone to skidding when the mobile robot finds itself on uneven or inclined surfaces (figure \ref{fig:wheelForcesMoments}). If the mobile robot follows a straight line path, its wheel velocities are tangent to the current path. Moreover, the velocity vector of each wheel is tangent to the terrain that wheel is touching on. Under the smooth terrain assumption (assumption \ref{assumption:smoothTerrain}), it is considered that the mobile robot stands at a planar surface and the terrain profile local variation is smooth.
+Due to the fact that wheels are fixed, the mobile robot holds two controllable \acrshort{dof}: translation along its longitudinal direction $\BodyFrame_x$, and rotation around its vertical axis $\BodyFrame_z$. Therefore, lateral skidding from the vehicle is expected to remain close to zero on flat terrain, although its wheels are prone to skidding when the mobile robot finds itself on uneven or inclined surfaces (figure \ref{fig:wheelForcesMoments}). If the mobile robot follows a straight line path, its wheel velocities are tangent to the current path. Moreover, the velocity vector of each wheel is tangent to the terrain that wheel is touching on.
 
-\begin{assumption}
-	Smooth terrain assumption: the local terrain profile variation is smooth, which makes $\{\vz, \wx, \wy \} \approx 0$. At every iteration, it is considered that a robot stands at a planar surface and the wheel velocities equal the mobile robot velocity.
-	\label{assumption:smoothTerrain}
-\end{assumption}
-
-In case assumption \ref{assumption:smoothTerrain} is discarded, these variables behave in such a way that the traversed terrain profile impose $\wx$ and $\wy$. On the other hand, the existence of holes or bumps force $\vz$ to be different from zero. $\LinVelocity_y$ rises above zero in case of lateral skidding.
+The terrain profile imposes $\wx$ and $\wy$. On the other hand, the existence of holes or bumps force $\vz$ to be different from zero. $\vy$ rises above zero in case of lateral skidding.
 
 If a mobile robot is not following a straight line path, this robot will rotate around an \acrshort{icr} point. Each wheel angular velocity is equal to the mobile robot angular velocity, $\bm{\AngVelocity}$. The vector $\mathbf{\positionVector}_i$, which connects the ICR point to each wheel position, is orthogonal to each wheel velocity $\mathbf{\LinVelocity}_i = [ \vx \; \vy \; \vz ]^T_i$, as well as $\mathbf{\positionVector}_C \perp \mathbf{\LinVelocity}$, so the following relations may be derived by taking into account the general expression $\mathbf{\LinVelocity} = \bm{\AngVelocity} \times \mathbf{r}$. Vectors $\mathbf{\LinVelocity}_i$, $\mathbf{\positionVector}_i$, $\mathbf{\positionVector}_C$ and $\mathbf{\wheelPosition}_i$ are all expressed with respect to frame $\BodyFrame$.
 
@@ -112,19 +105,7 @@ If a mobile robot is not following a straight line path, this robot will rotate 
 Then, it is possible to relate $\mathbf{\positionVector}_C$ to $\mathbf{\positionVector}_i$, with $\mathbf{\positionVector}_C = \mathbf{\positionVector}_i + \mathbf{\wheelPosition}_i$, where $\mathbf{\wheelPosition}_i$ is a vector which connects each wheel center's position to the moving frame origin. If this relationship is introduced into equation \ref{eq:3dICR}, it comes that,
 
 \begin{equation}
-	\mathbf{\LinVelocity}_i =
-	\left[ \begin{array}{c;{2pt/2pt}c}
-		\mathbf{\IdentityMatrix}_{3 \times 3} & 
-		\begin{matrix}
-			0 & -\wheelPosition_{i, z} & \wheelPosition_{i, y} \\
-			\wheelPosition_{i, z} & 0 & -\wheelPosition_{i, x} \\
-			-\wheelPosition_{i, y} & \wheelPosition_{i, x} & 0
-		\end{matrix}
-	\end{array} \right]
-	\begin{bmatrix}
-		\mathbf{\LinVelocity} \\
-		\bm{\AngVelocity}
-	\end{bmatrix} = \mathbf{\LinVelocity} + \bm{\omega} \times \mathbf{\wheelPosition}_i
+	\mathbf{\LinVelocity}_i = \mathbf{\LinVelocity} + \bm{\omega} \times \mathbf{\wheelPosition}_i
 	\label{eq:wheelVel}
 \end{equation}
 
@@ -154,21 +135,10 @@ From the analysis of the previous equation, it is possible to state that,
 	\label{eq:wheelKinematicConstraints}
 \end{equation}
 
-In case assumption \ref{assumption:smoothTerrain} is taken into account, equation \ref{eq:wheelVel} turns into,
-
-\begin{equation}
-	\begin{cases}
-		\vx_i = \vx + \wheelPosition_{i, y} \wz \\
-		\vy_i = \vy - \wheelPosition_{i, x} \wz \\
-		\vz_i = 0
-	\end{cases}
-	\label{eq:wheelVelocitySmoothTerrain}
-\end{equation}
-
 \subsection{Wheel-terrain contact angles}
 \label{subsection:contactAngles}
 
-In this thesis, it is important to retrieve each wheel's contact angle with the terrain it is touching on, in order to enable the transfer of forces applied at $P_i$ to frame $\BodyFrame$ and to describe the velocity of each wheel with respect to a frame $\WheelFrame^i$ with axes $\WheelFrame^i_x$ and $\WheelFrame^i_y$ tangent to the terrain at $\contactPoint_i$. Apart from assumption \ref{assumption:frames} and \ref{assumption:singlePointContact}, this analysis takes two more assumptions into account:
+In this thesis, it is important to retrieve each wheel's contact angle with the terrain it is touching on, in order to enable the transfer of forces applied at $\contactPoint_i$ to frame $\BodyFrame$ and to describe the velocity of each wheel with respect to a frame $\WheelFrame^i$ with axes $\WheelFrame^i_x$ and $\WheelFrame^i_y$ tangent to the terrain at $\contactPoint_i$. Apart from assumption \ref{assumption:frames} and \ref{assumption:singlePointContact}, this analysis takes two more assumptions into account:
 
 \begin{assumption}
 	Every wheel is touching the terrain at a point $\contactPoint_i$.
@@ -200,6 +170,17 @@ At every wheel $i$, a frame $\WheelFrame^i$ is attached to the wheel center and 
 	\mathbf{\LinVelocity}_i = \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \mathbf{\LinVelocity}_i^{\WheelFrame^i}
 	\label{eq:wheelVelT}
 \end{equation}
+
+However, due to the fact the estimation of wheel contact angles involves the solution determination of a cumbersome system of equations \cite{IagnemmaDubowsy2004}. Moreover, if roll and pitch effect are both taken into account, this estimation becomes even more cumbersome. 
+
+In this thesis, the state estimation problem is left aside, so the direction of $\WheelFrame^i$ is obtained by computing a vector $\mathbf{t}$, which is tangent to the surface of the elevation map $\FunctionElevation(\cdot)$ at $\contactPoint_i$, with coordinates $\left(\x_i,\,\y_i,\,\FunctionElevation\left( \x_i,\,\y_i \right) \right)$, which are ommited for the sake of brevity, from now on.
+
+\begin{definition}
+The directional derivative of a scalar function $f(x_1,\,\ldots, x_n)$ in the normalized direction $\mathbf{u} = \left(u_1,\,\ldots, u_n \right)$, denoted by $\nabla_{\mathbf{u}}f$, is defined to be $\nabla_{\mathbf{u}} f = \nabla f \cdot \mathbf{u}$.
+\label{def:directionalDerivative}
+\end{definition}
+
+If the mobile robot longitudinal, forward bi-dimensional direction vector is $\mathbf{u} = \cos(\yaw) \mathbf{i} + \sin(\yaw) \mathbf{j}$, from the directional derivative definition (\ref{def:directionalDerivative}) it comes that $\nabla_{\mathbf{u}} \FunctionElevation = \nabla \FunctionElevation \cdot \mathbf{u} = \frac{\partial \FunctionElevation}{\partial \x} \cos(\yaw) + \frac{\partial \FunctionElevation}{\partial \y} \sin(\yaw)$. This result expresses the slope of the elevation map $\FunctionElevation\left(\cdot\right)$ at some point $\contactPoint_i \in \Map_2$ on the direction of $\mathbf{u}$, so $\mathbf{t_u} = [\cos(\yaw),\,\sin(\yaw),\,\nabla_{\mathbf{u}} \FunctionElevation]$. 
 
 \begin{figure}[!h]
 	\centering
@@ -292,50 +273,82 @@ At every wheel $i$, a frame $\WheelFrame^i$ is attached to the wheel center and 
 	\label{fig:wheelKinematics}
 \end{figure}
 
-Due to the fact that a skid-steering mobile robot is a rigid body, all its frames follow up the motion of the center of mass. So, it is possible to establish a set of equations which take into account some kinematic constraints that wheels are subject to, in order to find out what the contact angles are, by combining equations \ref{eq:wheelVelT} and \ref{eq:wheelKinematicConstraints}. It is considered that wheels do not jump and the effects of a suspension model are neglected. Due to that, wheels do not move in a perpendicular direction to the ground ($\left( \vz \right)_i^{\WheelFrame^i} = 0$).
+On the other hand, if a leftwards, normalized vector $\mathbf{v} = -\sin(\yaw) \mathbf{i} + \cos(\yaw) \mathbf{j}$, with $\mathbf{u} \perp \mathbf{v}$, it comes that $\nabla_{\mathbf{v}} \FunctionElevation = \nabla \FunctionElevation \cdot \mathbf{v} = -\frac{\partial \FunctionElevation}{\partial \x} \sin(\yaw) + \frac{\partial \FunctionElevation}{\partial \y} \cos(\yaw)$. This result expresses the slope of the elevation map $\FunctionElevation\left(\cdot\right)$ at some point $\contactPoint_i \in \Map_2$ on the direction of $\mathbf{v}$, so $\mathbf{t_v} = [-\sin(\yaw),\,\cos(\yaw),\,\nabla_{\mathbf{v}} \FunctionElevation]$.
 
-\begin{assumption}
-	The perpendicular velocity of each wheel with respect to the ground is neglected.
-	\label{assumption:velTzNeglected}
-\end{assumption}
+\begin{lemma}
+At some point $\left(x_i,\,\y_i,\, f(\x_i,\,\y_i\right)$ of the surface $\mathcal{F}$, the vector, $\mathbf{t_u}$, tangent to $\mathcal{F}$ at the direction of a normalized 2-D vector $\mathbf{u}$, is given $\mathbf{t} = [\mathbf{u}^T, \nabla_{\mathbf{u}} f]^T$.
+\end{lemma}
 
-The first kinematic constraint (equation \ref{eq:kinematicConstraint_vBx}) states that right wheels have the same longidutinal velocity and left wheels also have the same longitudinal velocity, in frame $\BodyFrame$. The second kinematic constraint (equation \ref{eq:kinematicConstraint_vBy}) states that front wheels have the same lateral velocity and back wheels also have the same lateral velocity, in frame $\BodyFrame$.
+\begin{proof}
+As $\nabla_{\mathbf{u}} f(\mathbf{x}) = \lim_{h \to 0} \frac{f(\mathbf{x} + h \mathbf{u}) - f(\mathbf{x})}{h}$, it is intuitive to state that $\nabla_{\mathbf{u}} f(\mathbf{x})$ provides the slope of $\mathcal{F}$ at some point $\mathbf{x}$ on the direction of $\mathbf{u}$.
+\end{proof}
 
-\begin{equation}
-	\begin{cases}
-		\left( \vx_1 \right)_\WheelFrame \cos(\theta_1) + \left( \vy_1 \right)_\WheelFrame \sin(\theta_1) \sin(\phi_1) = \left( \vx_2 \right)_\WheelFrame \cos(\theta_2) + \left( \vy_2 \right)_\WheelFrame \sin(\theta_2) \sin(\phi_2) \\
-		\left( \vx_3 \right)_\WheelFrame \cos(\theta_3) + \left( \vy_3 \right)_\WheelFrame \sin(\theta_3) \sin(\phi_3) = \left( \vx_4 \right)_\WheelFrame \cos(\theta_4) + \left(\vy_4 \right)_\WheelFrame \sin(\theta_4) \sin(\phi_4)
-	\end{cases}
-	\label{eq:kinematicConstraint_vBx}
-\end{equation}
+Then, the normalized vectors $\frac{\mathbf{t_u}}{\| \mathbf{t_u} \|}$, $\frac{\mathbf{t_v}}{\| \mathbf{t_v} \|}$ and $\frac{\mathbf{t_u} \times \mathbf{t_v}}{\| \mathbf{t_u} \times \mathbf{t_v} \|}$ may denote the canonical vectors of a frame $\WheelFrame_i$ with respect to $\WorldFrame$, which is centered at $\contactPoint_i$. From this observation, it comes that,
 
 \begin{equation}
-	\begin{cases}
-		\left( \vy_1 \right)^\WheelFrame \cos(\phi_1) = \left( \vy_4 \right)^\WheelFrame \cos(\phi_4)\\
-		\left( \vy_2 \right)^\WheelFrame \cos(\phi_2) = \left( \vy_3 \right)^\WheelFrame \cos(\phi_3)
-	\end{cases}
-	\label{eq:kinematicConstraint_vBy}
+\mathbf{\RotMatrix}_{\WheelFrame_i}^{\WorldFrame} = \begin{bmatrix}
+\left( \frac{\mathbf{t_u}}{\| \mathbf{t_u} \|} \right)^T & \left( \frac{\mathbf{t_v}}{\| \mathbf{t_v} \|} \right)^T & \left( \frac{\mathbf{t_u} \times \mathbf{t_v}}{\| \mathbf{t_u} \times \mathbf{t_v} \|} \right)^T
+\end{bmatrix}
+\label{eq:rotMatrixWheelFrame2World}
 \end{equation}
 
-The third constraint states that the difference between vertical velocities of left wheels (or right wheels) in frame $\BodyFrame$ is equal the vehicle pitch rate times the longitudinal distance between these wheels. Lastly, the fourth constraint states that the difference between vertical velocities of back wheels (or front wheels) in frame $\BodyFrame$ is equal the vehicle roll rate times the lateral distance between these wheels.
+\subsubsection*{Contact points}
+
+ After obtaining the contact angles, it is possible to deliver each wheel-terrain contact point, $\contactPoint_i$, coordinates with respect to $\WorldFrame$ or $\BodyFrame$.
+
+At frame $\WheelFrame_i$, $\mathbf{\contactPoint}_i = [0,\, \WheelRadius \sin(\phi_i),\, -\WheelRadius \cos(\phi_i)]^T$. Therefore, it comes that,
 
 \begin{equation}
-	\begin{cases}
-		-\left( \vx_1 \right)^{\WheelFrame^1} \sin(\theta_1) + \left( \vy_1 \right) ^{\WheelFrame^1} \cos(\theta_1) \sin(\phi_1) + \left( \vx_2 \right)^{\WheelFrame^2} \sin(\theta_2) - \left( \vy_2 \right)^{\WheelFrame^2} \cos(\theta_2) \sin(\phi_2) = (a + b) \wy \\
-		-\left( \vx_4 \right)^{\WheelFrame^4} \sin(\theta_4) + \left( \vy_4 \right)^{\WheelFrame^4} \cos(\theta_4) \sin(\phi_4) + \left( \vx_3 \right)^{\WheelFrame^3} \sin(\theta_3) - \left( \vy_3 \right)^{\WheelFrame^3} \cos(\theta_3) \sin(\phi_3) = (a + b) \wy 
-	\end{cases}
-	\label{eq:kinematicConstraint_pitch}
+	\left(\mathbf{\contactPoint}_i\right)_{\WorldFrame} = \mathbf{\Position} + \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \left( \mathbf{\wheelPosition}_i + \mathbf{\RotMatrix}_{\WheelFrame_i}^{\BodyFrame} \mathbf{\contactPoint}_i \right)
+\label{eq:contactPointWorld}
 \end{equation}
 
-\begin{equation}
-	\begin{cases}
-		-\left( \vx_1 \right)_\WheelFrame \sin(\theta_1) + \left( \vy_1 \right)_\WheelFrame \cos(\theta_1) \sin(\phi_1) + \left( \vx_4 \right)_\WheelFrame \sin(\theta_4) - \left( \vy_4 \right)_\WheelFrame \cos(\theta_4) \sin(\phi_4) = 2c \wx \\
-		-\left( \vx_2 \right)_\WheelFrame \sin(\theta_2) + \left( \vy_2 \right)_\WheelFrame \cos(\theta_2) \sin(\phi_2) + \left( \vx_3 \right)_\WheelFrame \sin(\theta_3) - \left( \vy_3 \right)_\WheelFrame \cos(\theta_3) \sin(\phi_3) = 2c \wx
-	\end{cases}
-	\label{eq:kinematicConstraint_roll}
-\end{equation}
+, where $\mathbf{\RotMatrix}_{\WheelFrame_i}^{\BodyFrame} = \left( \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \right)^T \mathbf{\RotMatrix}_{\WheelFrame_i}^{\WorldFrame}$.
 
-Provided that $\wx$, $\wy$, $\left( \vx_i \right)_{\WheelFrame^i}$ and $\left( \vy_i \right)_{\WheelFrame^i}$ are known, the contact angles $\phi_i$ and $\theta_i$ can be computed through non-linear rootfinding methods.
+%Due to the fact that a skid-steering mobile robot is a rigid body, all its frames follow up the motion of the center of mass. So, it is possible to establish a set of equations which take into account some kinematic constraints that wheels are subject to, in order to find out what the contact angles are, by combining equations \ref{eq:wheelVelT} and \ref{eq:wheelKinematicConstraints}. It is considered that wheels do not jump and the effects of a suspension model are neglected. Due to that, wheels do not move in a perpendicular direction to the ground ($\left( \vz \right)_i^{\WheelFrame^i} = 0$).
+
+%\begin{assumption}
+%	The perpendicular velocity of each wheel with respect to the ground is neglected.
+%	\label{assumption:velTzNeglected}
+%\end{assumption}
+%
+%The first kinematic constraint (equation \ref{eq:kinematicConstraint_vBx}) states that right wheels have the same longidutinal velocity and left wheels also have the same longitudinal velocity, in frame $\BodyFrame$. The second kinematic constraint (equation \ref{eq:kinematicConstraint_vBy}) states that front wheels have the same lateral velocity and back wheels also have the same lateral velocity, in frame $\BodyFrame$.
+
+%\begin{equation}
+%	\begin{cases}
+%		\left( \vx_1 \right)_\WheelFrame \cos(\theta_1) + \left( \vy_1 \right)_\WheelFrame \sin(\theta_1) \sin(\phi_1) = \left( \vx_2 \right)_\WheelFrame \cos(\theta_2) + \left( \vy_2 \right)_\WheelFrame \sin(\theta_2) \sin(\phi_2) \\
+%		\left( \vx_3 \right)_\WheelFrame \cos(\theta_3) + \left( \vy_3 \right)_\WheelFrame \sin(\theta_3) \sin(\phi_3) = \left( \vx_4 \right)_\WheelFrame \cos(\theta_4) + \left(\vy_4 \right)_\WheelFrame \sin(\theta_4) \sin(\phi_4)
+%	\end{cases}
+%	\label{eq:kinematicConstraint_vBx}
+%\end{equation}
+
+%\begin{equation}
+%	\begin{cases}
+%		\left( \vy_1 \right)^\WheelFrame \cos(\phi_1) = \left( \vy_4 \right)^\WheelFrame \cos(\phi_4)\\
+%		\left( \vy_2 \right)^\WheelFrame \cos(\phi_2) = \left( \vy_3 \right)^\WheelFrame \cos(\phi_3)
+%	\end{cases}
+%	\label{eq:kinematicConstraint_vBy}
+%\end{equation}
+
+%The third constraint states that the difference between vertical velocities of left wheels (or right wheels) in frame $\BodyFrame$ is equal the vehicle pitch rate times the longitudinal distance between these wheels. Lastly, the fourth constraint states that the difference between vertical velocities of back wheels (or front wheels) in frame $\BodyFrame$ is equal the vehicle roll rate times the lateral distance between these wheels.
+
+%\begin{equation}
+%	\begin{cases}
+%		-\left( \vx_1 \right)^{\WheelFrame^1} \sin(\theta_1) + \left( \vy_1 \right) ^{\WheelFrame^1} \cos(\theta_1) \sin(\phi_1) + \left( \vx_2 \right)^{\WheelFrame^2} \sin(\theta_2) - \left( \vy_2 \right)^{\WheelFrame^2} \cos(\theta_2) \sin(\phi_2) = (a + b) \wy \\
+%		-\left( \vx_4 \right)^{\WheelFrame^4} \sin(\theta_4) + \left( \vy_4 \right)^{\WheelFrame^4} \cos(\theta_4) \sin(\phi_4) + \left( \vx_3 \right)^{\WheelFrame^3} \sin(\theta_3) - \left( \vy_3 \right)^{\WheelFrame^3} \cos(\theta_3) \sin(\phi_3) = (a + b) \wy 
+%	\end{cases}
+%	\label{eq:kinematicConstraint_pitch}
+%\end{equation}
+
+%\begin{equation}
+%	\begin{cases}
+%		-\left( \vx_1 \right)_\WheelFrame \sin(\theta_1) + \left( \vy_1 \right)_\WheelFrame \cos(\theta_1) \sin(\phi_1) + \left( \vx_4 \right)_\WheelFrame \sin(\theta_4) - \left( \vy_4 \right)_\WheelFrame \cos(\theta_4) \sin(\phi_4) = 2c \wx \\
+%		-\left( \vx_2 \right)_\WheelFrame \sin(\theta_2) + \left( \vy_2 \right)_\WheelFrame \cos(\theta_2) \sin(\phi_2) + \left( \vx_3 \right)_\WheelFrame \sin(\theta_3) - \left( \vy_3 \right)_\WheelFrame \cos(\theta_3) \sin(\phi_3) = 2c \wx
+%	\end{cases}
+%	\label{eq:kinematicConstraint_roll}
+%\end{equation}
+
+%Provided that $\wx$, $\wy$, $\left( \vx_i \right)_{\WheelFrame^i}$ and $\left( \vy_i \right)_{\WheelFrame^i}$ are known, the contact angles $\phi_i$ %and $\theta_i$ can be computed through non-linear rootfinding %methods.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Mobile robot dynamics}
@@ -362,7 +375,7 @@ On a mobile robot real-life application, a dynamics model is mainly triggered by
   		\draw [-latex,thick, align = center] (1) --  node [above] {Electrical\\current} (2);
   		\draw [-latex,thick] (2) --  node [above] {$\bm{\Torque}$} (3);
   		\draw [-latex,thick] (3) --  node [above] {$\mathbf{\LinVelocity}, \; \bm{\AngVelocity}$} (4);
-  		\draw [-latex,thick] (4) --  node [above] {$\mathbf{\Position}, \; \bm{\Orientation}$} (5);
+  		\draw [-latex,thick] (4) --  node [above] {$\mathbf{\Position}, \; \bm{\Quaternion}$} (5);
   		\draw [-latex,thick] (6) --  node [left] {gravity} (3);
   		\draw [-latex,thick] (7) --  node [left] {wind} (3);
   		\draw [-latex,thick] (8) --  node [right] {terrain} (3);
@@ -373,7 +386,7 @@ On a mobile robot real-life application, a dynamics model is mainly triggered by
     \label{fig:mobRobotSystems}
 \end{figure}
 
-The presented wheeled mobile robot model contains four controllable joints at each wheel \acrshort{com}, which are typically located at each wheel's center. The mobile robot may roll, pitch or fall vertically with respect to frame $\BodyFrame$, because it will be moving through irregular terrain, which changes the balance of forces the mobile robot is subject to. Accordingly, dynamics is only controllable in the longitudinal, lateral or yaw directions of frame $\BodyFrame$. Moreover, external forces (e.g. wheel-terrain traction or wind) and gravity are also taken into account in this general model.
+The presented wheeled mobile robot model contains four controllable joints at each wheel \acrshort{com}, which are located at each wheel's center. The mobile robot may roll, pitch or fall vertically with respect to frame $\BodyFrame$, because it will be moving through irregular terrain, which changes the balance of forces the mobile robot is subject to. Accordingly, dynamics is only controllable in the longitudinal, lateral or yaw directions of frame $\BodyFrame$. Moreover, external forces (e.g. wheel-terrain traction) and gravity are also taken into account in this general model. Typically, wind force is also an external force which acts on the mobile robot body at outdoor environments, but its effect was not introduced in this model.
 
 \begin{figure}[!h]
 	\centering
