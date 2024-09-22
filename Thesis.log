@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.30)  19 SEP 2024 07:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.30)  22 SEP 2024 19:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1579,12 +1579,12 @@ your preamble.
 (Thesis_FrontCover.tex
 Package pdftex.def Info: Option `bb' equivalent to `viewport' with the pdftex d
 river on input line 15.
-<IST_A_CMYK_POS.pdf, id=268, 845.0471pt x 597.51233pt>
+<IST_A_CMYK_POS.pdf, id=272, 845.0471pt x 597.51233pt>
 File: IST_A_CMYK_POS.pdf Graphic file (type pdf)
 <use IST_A_CMYK_POS.pdf>
 Package pdftex.def Info: IST_A_CMYK_POS.pdf  used on input line 15.
 (pdftex.def)             Requested size: -78.38533pt x -90.76195pt.
-<Figures/Airbus_A350.jpg, id=269, 1027.84pt x 770.88pt>
+<Figures/Airbus_A350.jpg, id=273, 1027.84pt x 770.88pt>
 File: Figures/Airbus_A350.jpg Graphic file (type jpg)
 <use Figures/Airbus_A350.jpg>
 Package pdftex.def Info: Figures/Airbus_A350.jpg  used on input line 22.
@@ -1893,99 +1893,100 @@ Package natbib Warning: Citation `grune:NMPC' on page 7 undefined on input line
 
 
 ]
-<Figures/robotMovingFrame.png, id=579, 565.11125pt x 549.05125pt>
+<Figures/robotMovingFrame.png, id=584, 565.11125pt x 549.05125pt>
 File: Figures/robotMovingFrame.png Graphic file (type png)
 <use Figures/robotMovingFrame.png>
 Package pdftex.def Info: Figures/robotMovingFrame.png  used on input line 52.
 (pdftex.def)             Requested size: 113.81102pt x 110.57068pt.
-<Figures/robotGeometry.png, id=581, 798.985pt x 793.96625pt>
+<Figures/robotGeometry.png, id=586, 798.985pt x 793.96625pt>
 File: Figures/robotGeometry.png Graphic file (type png)
 <use Figures/robotGeometry.png>
 Package pdftex.def Info: Figures/robotGeometry.png  used on input line 55.
 (pdftex.def)             Requested size: 145.68144pt x 144.76134pt.
-<Figures/ICR.png, id=582, 570.13pt x 583.17876pt>
+<Figures/ICR.png, id=587, 570.13pt x 583.17876pt>
 File: Figures/ICR.png Graphic file (type png)
 <use Figures/ICR.png>
 Package pdftex.def Info: Figures/ICR.png  used on input line 58.
 (pdftex.def)             Requested size: 145.68144pt x 149.01561pt.
  [8 <./Figures/robotMovingFrame.png> <./Figures/robotGeometry.png> <./Figures/I
 CR.png>]
-Underfull \vbox (badness 5548) has occurred while \output is active []
+Underfull \vbox (badness 2376) has occurred while \output is active []
 
  [9]
-[10] [11] [12] [13]
-<Figures/rigid_rigid.png, id=692, 342.27875pt x 363.3575pt>
+[10] [11] [12]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13] [14]
+<Figures/rigid_rigid.png, id=707, 342.27875pt x 363.3575pt>
 File: Figures/rigid_rigid.png Graphic file (type png)
 <use Figures/rigid_rigid.png>
-Package pdftex.def Info: Figures/rigid_rigid.png  used on input line 602.
+Package pdftex.def Info: Figures/rigid_rigid.png  used on input line 648.
 (pdftex.def)             Requested size: 68.28383pt x 72.48724pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--602
+Underfull \hbox (badness 10000) in paragraph at lines 648--648
 []\OT1/phv/m/n/8 (a) Rigid wheel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 602--602
+Underfull \hbox (badness 10000) in paragraph at lines 648--648
 \OT1/phv/m/n/8 con-tact-ing with
  []
 
-<Figures/rigid_deformable.png, id=693, 342.27875pt x 359.3425pt>
+<Figures/rigid_deformable.png, id=708, 342.27875pt x 359.3425pt>
 File: Figures/rigid_deformable.png Graphic file (type png)
 <use Figures/rigid_deformable.png>
-Package pdftex.def Info: Figures/rigid_deformable.png  used on input line 603.
+Package pdftex.def Info: Figures/rigid_deformable.png  used on input line 649.
 (pdftex.def)             Requested size: 68.28383pt x 71.68628pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--603
+Underfull \hbox (badness 10000) in paragraph at lines 649--649
 []\OT1/phv/m/n/8 (b) Rigid wheel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--603
+Underfull \hbox (badness 10000) in paragraph at lines 649--649
 \OT1/phv/m/n/8 con-tact-ing with
  []
 
-<Figures/deformable_rigid.png, id=694, 345.29pt x 322.20375pt>
+<Figures/deformable_rigid.png, id=709, 345.29pt x 322.20375pt>
 File: Figures/deformable_rigid.png Graphic file (type png)
 <use Figures/deformable_rigid.png>
-Package pdftex.def Info: Figures/deformable_rigid.png  used on input line 604.
+Package pdftex.def Info: Figures/deformable_rigid.png  used on input line 650.
 (pdftex.def)             Requested size: 68.28383pt x 63.71689pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--604
+Underfull \hbox (badness 10000) in paragraph at lines 650--650
 []\OT1/phv/m/n/8 (c) De-formable
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--604
+Underfull \hbox (badness 10000) in paragraph at lines 650--650
 \OT1/phv/m/n/8 wheel con-tact-ing
  []
 
-<Figures/deformable_deformable.png, id=695, 345.29pt x 321.2pt>
+<Figures/deformable_deformable.png, id=710, 345.29pt x 321.2pt>
 File: Figures/deformable_deformable.png Graphic file (type png)
 <use Figures/deformable_deformable.png>
 Package pdftex.def Info: Figures/deformable_deformable.png  used on input line 
-605.
+651.
 (pdftex.def)             Requested size: 68.28383pt x 63.51839pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
+Underfull \hbox (badness 10000) in paragraph at lines 651--651
 []\OT1/phv/m/n/8 (d) De-formable
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
+Underfull \hbox (badness 10000) in paragraph at lines 651--651
 \OT1/phv/m/n/8 wheel con-tact-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
+Underfull \hbox (badness 10000) in paragraph at lines 651--651
 \OT1/phv/m/n/8 with de-formable
  []
 
-[14 <./Figures/rigid_rigid.png> <./Figures/rigid_deformable.png> <./Figures/def
-ormable_rigid.png> <./Figures/deformable_deformable.png>] [15]
-Underfull \vbox (badness 5431) has occurred while \output is active []
-
- [16]
-[17]) [18] (Thesis_Background.tex
+[15] [16 <./Figures/rigid_rigid.png> <./Figures/rigid_deformable.png> <./Figure
+s/deformable_rigid.png> <./Figures/deformable_deformable.png>] [17]) [18]
+(Thesis_Background.tex
 Chapter 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2029,13 +2030,13 @@ File: Figures/Airbus_A350.jpg Graphic file (type jpg)
 <use Figures/Airbus_A350.jpg>
 Package pdftex.def Info: Figures/Airbus_A350.jpg  used on input line 55.
 (pdftex.def)             Requested size: 113.81102pt x 85.3499pt.
-<Figures/Airbus_A320_sharklets.png, id=860, 401.5pt x 262.9825pt>
+<Figures/Airbus_A320_sharklets.png, id=862, 401.5pt x 262.9825pt>
 File: Figures/Airbus_A320_sharklets.png Graphic file (type png)
 <use Figures/Airbus_A320_sharklets.png>
 Package pdftex.def Info: Figures/Airbus_A320_sharklets.png  used on input line 
 62.
 (pdftex.def)             Requested size: 223.07211pt x 146.11751pt.
-<Figures/Bombardier_CRJ200.png, id=861, 803.0pt x 602.25pt>
+<Figures/Bombardier_CRJ200.png, id=863, 803.0pt x 602.25pt>
 File: Figures/Bombardier_CRJ200.png Graphic file (type png)
 <use Figures/Bombardier_CRJ200.png>
 Package pdftex.def Info: Figures/Bombardier_CRJ200.png  used on input line 63.
@@ -2104,13 +2105,13 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: ABC376D19E56B1B6BACA91BCED6C45EC;10289.
+(rerunfilecheck)             Checksum: CD490E497D21D7F31B9A0B3F15410D20;10439.
  ) 
 Here is how much of TeX's memory you used:
- 50697 strings out of 474543
- 1157056 string characters out of 5747318
- 1953975 words of memory out of 5000000
- 71728 multiletter control sequences out of 15000+600000
+ 50711 strings out of 474543
+ 1157402 string characters out of 5747318
+ 1951975 words of memory out of 5000000
+ 71740 multiletter control sequences out of 15000+600000
  615649 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  115i,17n,120p,2395b,1299s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2147,9 +2148,9 @@ sbm10.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvb
 8a.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvr8a.
 pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/urw/helvetic/uhvro8a.pf
 b>
-Output written on Thesis.pdf (66 pages, 1247115 bytes).
+Output written on Thesis.pdf (66 pages, 1246035 bytes).
 PDF statistics:
- 1170 PDF objects out of 1200 (max. 8388607)
- 276 named destinations out of 1000 (max. 500000)
- 596 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1173 PDF objects out of 1200 (max. 8388607)
+ 278 named destinations out of 1000 (max. 500000)
+ 604 words of extra memory for PDF output out of 10000 (max. 10000000)
 

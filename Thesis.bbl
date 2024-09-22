@@ -1,4 +1,4 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{21}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -104,23 +104,16 @@ K.~Iagnemma, C.~Brooks, and S.~Dubowsky.
   rovers.
 \newblock volume~2, pages 841--848, 2004.
 
-\bibitem[Iagnemma and Dubowsky(2004)]{IagnemmaDubowsy2004}
-K.~Iagnemma and S.~Dubowsky.
-\newblock Traction control of wheeled robotic vehicles in rough terrain with
-  application to planetary rovers.
-\newblock \emph{The International Journal of Robotics Research}, 23:\penalty0
-  1029--1040, 11 2004.
-
-\bibitem[Genta(2012)]{Genta2012}
-G.~Genta.
-\newblock \emph{Introduction to the Mechanics of Space Robots}.
-\newblock Springer, 2012.
-
 \bibitem[Peiret et~al.(2021)Peiret, Karpman, et~al.]{Peiret2021}
 A.~Peiret, E.~Karpman, et~al.
 \newblock Modelling of off-road wheeled vehicles for real-time dynamic
   simulation.
 \newblock \emph{Journal of terramechanics}, pages 45--58, 4 2021.
+
+\bibitem[Genta(2012)]{Genta2012}
+G.~Genta.
+\newblock \emph{Introduction to the Mechanics of Space Robots}.
+\newblock Springer, 2012.
 
 \bibitem[Sethian(1999)]{Sethian1999}
 J.~A. Sethian.

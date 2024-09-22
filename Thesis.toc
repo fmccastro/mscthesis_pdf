@@ -23,15 +23,14 @@
 \contentsline {subsection}{\numberline {3.2.1}Cost map generation}{7}{subsection.3.2.1}%
 \contentsline {section}{\numberline {3.3}Mobile robot kinematics}{8}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Wheel kinematics}{9}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Wheel-terrain contact angles}{10}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Mobile robot dynamics}{12}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Wheel actuation}{13}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Wheel spin rate}{14}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Wheel-terrain contact model}{14}{subsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.3.1}Coulomb friction model}{15}{subsubsection.3.4.3.1}%
-\contentsline {subsubsection}{\numberline {3.4.3.2}Effects of gravity}{16}{subsubsection.3.4.3.2}%
-\contentsline {section}{\numberline {3.5}Slippage}{17}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Full state-space model}{17}{section.3.6}%
+\contentsline {subsection}{\numberline {3.3.2}Wheel-terrain contact}{10}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Slippage}{12}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Mobile robot dynamics}{13}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Wheel actuation}{14}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Wheel spin rate}{15}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Wheel-terrain contact model}{15}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Full state-space model}{17}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Model verification}{18}{section.3.6}%
 \contentsline {chapter}{\numberline {4}Background}{19}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Two-layer map generation}{19}{section.4.1}%
 \contentsline {section}{\numberline {4.2}\acrlong {fmm}}{20}{section.4.2}%

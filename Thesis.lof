@@ -10,16 +10,16 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Wheel kinematics}}{11}{figure.caption.15}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Longitudinal wheel kinematics.}}}{11}{figure.caption.15}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Lateral wheel kinematics.}}}{11}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Mobile robot systems. Adapted from \cite {Yoshida2016}}}{12}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Forces and moments distribution.}}{12}{figure.caption.17}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Wheel subject to forces and moments.}}}{12}{figure.caption.17}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Weight distribution during pitch.}}}{12}{figure.caption.17}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Weight distribution during roll.}}}{12}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Wheel-terrain contact models \cite {Yoshida2016}}}{14}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rigid wheel contacting with rigid terrain}}}{14}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rigid wheel contacting with deformable terrain}}}{14}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Deformable wheel contacting with rigid terrain}}}{14}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Deformable wheel contacting with deformable terrain}}}{14}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Mobile robot systems. Adapted from \cite {Yoshida2016}}}{13}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Forces and moments distribution.}}{14}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Wheel subject to forces and moments.}}}{14}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Weight distribution during pitch.}}}{14}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Weight distribution during roll.}}}{14}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Wheel-terrain contact models \cite {Yoshida2016}}}{16}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rigid wheel contacting with rigid terrain}}}{16}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rigid wheel contacting with deformable terrain}}}{16}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Deformable wheel contacting with rigid terrain}}}{16}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Deformable wheel contacting with deformable terrain}}}{16}{figure.caption.18}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
