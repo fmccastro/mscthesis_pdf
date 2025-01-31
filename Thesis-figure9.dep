@@ -1,0 +1,5 @@
+Thesis-figure9.pdf: Data/elevationMap1_0.dat
+Thesis-figure9.pdf: Data/elevationMap1_2500.dat
+Thesis-figure9.pdf: Data/elevationMap1_5000.dat
+Thesis-figure9.pdf: Data/elevationMap1_7500.dat
+Thesis-figure9.pdf: Data/elevationMap1_10000.dat

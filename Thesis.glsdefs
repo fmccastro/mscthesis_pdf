@@ -586,3 +586,59 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{ipopt}%
+{%
+name={\acronymfont {\glsentryshort {ipopt}}},%
+sort={IPOPT},%
+type={acronym},%
+first={IPOPT},%
+firstplural={IPOPTs},%
+text={IPOPT},%
+plural={IPOPTs},%
+description={Interior-point optimizer},%
+descriptionplural={Interior-point optimizer},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Interior-point optimizer},%
+longplural={Interior-point optimizers},%
+short={IPOPT},%
+shortplural={IPOPTs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{casadi}%
+{%
+name={\acronymfont {\glsentryshort {casadi}}},%
+sort={casADi},%
+type={acronym},%
+first={casADi},%
+firstplural={casADis},%
+text={casADi},%
+plural={casADis},%
+description={casADi (open-source software tool)},%
+descriptionplural={casADi (open-source software tool)},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={casADi (open-source software tool)},%
+longplural={casADi (open-source software tool)s},%
+short={casADi},%
+shortplural={casADis},%
+counter={page},%
+parent={},%
+%
+}%
+

@@ -60,7 +60,7 @@ A wheeled mobile robot $\Robot$ is moving on a map $\Map$, which is centered at 
 	\label{fig:mobileRobotKinematics}
 \end{figure}
 
-The mobile robot position and orientation with respect to frame $\WorldFrame$ is described as $\mathbf{\Position} = [x\;  y\; z]^T$ and $\Quaternion = [\qx \; \qy \; \qz \; \qw]^T$, respectively. On the other hand, the mobile robot linear and angular velocities with respect to frame $\BodyFrame$ stands as $\mathbf{\LinVelocity} = [ \vx \; \vy \; \vz ]^T$ and $\bm{\AngVelocity} = [\wx \; \wy \; \wz]^T$, respectively. It is decided to use quaternions instead of euler angles to describe the orientation, in order to circumvent ambiguities  present on the sum of angles. Moreover, due to the fact that the yaw angle is constrained in $[-\pi,\,\pi]$, there is a chance that the yaw angle may overcome these limits when the mobile robot is close to them. \textcolor{red}{add section where more information will be given on the issues of euler angles ambiguities}.  Then, it is possible to map the mobile robot $\Robot$ linear velocity between frames $\BodyFrame$ and $\WorldFrame$ by taking advantage of rotation matrix \ref{eq:quatRotationMatrix}, but also to map quaternion rates in $\WorldFrame$ to angular velocities in $\BodyFrame$ with rotation matrix \ref{eq:orientationQuatRotationMatrix}.
+The mobile robot position and orientation with respect to frame $\WorldFrame$ is described as $\mathbf{\Position} = [x\;  y\; z]^T$ and $\bm{\Orientation} = [\roll \; \pitch \; \yaw]^T$, respectively. On the other hand, the mobile robot linear and angular velocities with respect to frame $\BodyFrame$ stands as $\mathbf{\LinVelocity} = [ \vx \; \vy \; \vz ]^T$ and $\bm{\AngVelocity} = [\wx \; \wy \; \wz]^T$, respectively. Then, it is possible to map the mobile robot $\Robot$ linear velocity between frames $\BodyFrame$ and $\WorldFrame$ by taking advantage of rotation matrix \ref{eq:rotationMatrixW2B}, but also to map euler angle rates in $\WorldFrame$ to angular velocities in $\BodyFrame$ with rotation matrix \ref{eq:orientationQuatRotationMatrix}.
 
 \begin{minipage}{0.4\linewidth}
 	\centering	
@@ -72,7 +72,7 @@ The mobile robot position and orientation with respect to frame $\WorldFrame$ is
 \begin{minipage}{0.4\linewidth}
 	\centering	
 	\begin{equation}
-	\DerMathBold{\Quaternion} = \mathbf{\bar{\RotMatrix}}_{\BodyFrame}^{\WorldFrame} \bm{\AngVelocity}	
+	\DerMathBold{\Orientation} = \mathbf{\bar{\RotMatrix}}_{\BodyFrame}^{\WorldFrame} \bm{\AngVelocity}	
 	\label{eq:rotationFreeBody}
 	\end{equation}
 \end{minipage}
@@ -80,7 +80,7 @@ The mobile robot position and orientation with respect to frame $\WorldFrame$ is
 \subsection{Wheel kinematics}
 \label{subsection:wheelKinematics}
 
-A kinematics model is not only described by its free-body motion equations \ref{eq:translationFreeBody} and \ref{eq:rotationFreeBody}, but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\Torque_i$, which induces on it a spin rate, $\bm{\AngVelocity}_i,\, i = 1,\,...,\,N_w$, where $N_w = 4$ for the cases presented in this thesis. 
+A kinematics model is not only described by its free-body motion equations \ref{eq:translationFreeBody} and \ref{eq:rotationFreeBody}, but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\bm{\Torque}_i$, which induces on it a spin rate, $\bm{\AngVelocity}_i,\, i = 1,\,...,\,N_w$, where $N_w = 4$ for the cases presented in this thesis.
 
 \begin{assumption}
 	The thickness and deformation of each wheel are neglected so that the wheel is assumed to be rigid and to contact the terrain at a single contact point $\contactPoint_i$, in case rigid terrain is the working environment \cite{Iagnemma2004}.
@@ -138,7 +138,7 @@ From the analysis of the previous equation, it is possible to state that,
 \subsection{Wheel-terrain contact}
 \label{subsection:contactAngles}
 
-In this thesis, it is important to retrieve each wheel's contact point with the terrain it is touching on, in order to enable the transfer of forces applied at $\contactPoint_i$ to frame $\BodyFrame$ and to describe the velocity of each wheel with respect to a frame $\WheelFrame_i$ with axes $\WheelFrame^i_x$ and $\WheelFrame^i_y$ tangent to the terrain at $\contactPoint_i$.
+In this thesis, it is important to retrieve each wheel's contact point with the terrain it is touching on, in order to enable the transfer of forces applied at $\contactPoint_i$ to frame $\BodyFrame$ and to describe the velocity of each wheel with respect to a frame $\WheelFrame_i$.
 
 \begin{assumption}
 	Every wheel is touching the terrain at a point $\contactPoint_i$.
@@ -169,18 +169,7 @@ At every wheel $i$, a frame $\WheelFrame_i$ is attached to the wheel center and 
 \begin{equation}
 	\mathbf{\LinVelocity}_i = \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \mathbf{\LinVelocity}_i^{\WheelFrame^i}
 	\label{eq:wheelVelT}
-\end{equation}
-
-\subsubsection*{Robot at rest}
-
-In this thesis, the state estimation problem is left aside, so the direction of $\WheelFrame^i$ is obtained by computing a vector $\mathbf{t}$, which is tangent to the surface of the elevation map $\FunctionElevation(\cdot)$ at $\contactPoint_i$, with coordinates $\left(\x_i,\,\y_i,\,\FunctionElevation\left( \x_i,\,\y_i \right) \right)$, which are ommited for the sake of brevity, from now on.
-
-\begin{definition}
-The directional derivative of a scalar function $f(x_1,\,\ldots, x_n)$ in the normalized direction $\mathbf{u} = \left(u_1,\,\ldots, u_n \right)$, denoted by $\nabla_{\mathbf{u}}f$, is defined to be $\nabla_{\mathbf{u}} f = \nabla f \cdot \mathbf{u}$.
-\label{def:directionalDerivative}
-\end{definition}
-
-If the mobile robot longitudinal, forward bi-dimensional direction vector is $\mathbf{u} = \cos(\yaw) \mathbf{i} + \sin(\yaw) \mathbf{j}$, from the directional derivative definition (\ref{def:directionalDerivative}) it comes that $\nabla_{\mathbf{u}} \FunctionElevation = \nabla \FunctionElevation \cdot \mathbf{u} = \frac{\partial \FunctionElevation}{\partial \x} \cos(\yaw) + \frac{\partial \FunctionElevation}{\partial \y} \sin(\yaw)$, where $\mathbf{i}$ and $\mathbf{j}$ denote the canonical vectors of $\WorldFrame_x$ and $\WorldFrame_y$, respectively. This result expresses the slope of the elevation map $\FunctionElevation\left(\cdot\right)$ at some point $\contactPoint_i \in \Map_2$ on the direction of $\mathbf{u}$, so $\mathbf{t_u} = [\cos(\yaw),\,\sin(\yaw),\,\nabla_{\mathbf{u}} \FunctionElevation]$. 
+\end{equation} 
 
 \begin{figure}[!h]
 	\centering
@@ -266,31 +255,15 @@ If the mobile robot longitudinal, forward bi-dimensional direction vector is $\m
 			
 			%	Velocity
         		\draw[->, line width = 0.2mm, red] (4.1, 1.5) -- (3.720, 1.175) node[red, right, pos = -0.2] {\footnotesize $\LinVelocity_{y, 1}$};
-			
 		\end{tikzpicture}
 	}
 	\caption{Wheel kinematics}
 	\label{fig:wheelKinematics}
 \end{figure}
 
-On the other hand, if a leftwards, normalized vector $\mathbf{v} = -\sin(\yaw) \mathbf{i} + \cos(\yaw) \mathbf{j}$, with $\mathbf{u} \perp \mathbf{v}$, it comes that $\nabla_{\mathbf{v}} \FunctionElevation = \nabla \FunctionElevation \cdot \mathbf{v} = -\frac{\partial \FunctionElevation}{\partial \x} \sin(\yaw) + \frac{\partial \FunctionElevation}{\partial \y} \cos(\yaw)$. This result expresses the slope of the elevation map $\FunctionElevation\left(\cdot\right)$ at some point $\contactPoint_i \in \Map_2$ on the direction of $\mathbf{v}$, so $\mathbf{t_v} = [-\sin(\yaw),\,\cos(\yaw),\,\nabla_{\mathbf{v}} \FunctionElevation]$.
+\subsubsection*{Contact angle determination}
 
-\begin{lemma}
-At some point $\left(x_i,\,\y_i,\, f(\x_i,\,\y_i\right)$ of the surface $\mathcal{F}$, the vector, $\mathbf{t_u}$, tangent to $\mathcal{F}$ at the direction of a normalized 2-D vector $\mathbf{u}$, is given $\mathbf{t} = [\mathbf{u}^T, \nabla_{\mathbf{u}} f]^T$.
-\end{lemma}
-
-\begin{proof}
-As $\nabla_{\mathbf{u}} f(\mathbf{x}) = \lim_{h \to 0} \frac{f(\mathbf{x} + h \mathbf{u}) - f(\mathbf{x})}{h}$, it is intuitive to state that $\nabla_{\mathbf{u}} f(\mathbf{x})$ provides the slope of $\mathcal{F}$ at some point $\mathbf{x}$ on the direction of $\mathbf{u}$.
-\end{proof}
-
-Then, the normalized vectors $\frac{\mathbf{t_u}}{\| \mathbf{t_u} \|}$, $\frac{\mathbf{t_v}}{\| \mathbf{t_v} \|}$ and $\frac{\mathbf{t_u} \times \mathbf{t_v}}{\| \mathbf{t_u} \times \mathbf{t_v} \|}$ may denote the canonical vectors of a frame $\WheelFrame_i$ with respect to $\WorldFrame$, which is centered at $\contactPoint_i$. From this observation, it comes that,
-
-\begin{equation}
-\mathbf{\RotMatrix}_{\WheelFrame_i}^{\WorldFrame} = \begin{bmatrix}
-\left( \frac{\mathbf{t_u}}{\| \mathbf{t_u} \|} \right)^T & \left( \frac{\mathbf{t_v}}{\| \mathbf{t_v} \|} \right)^T & \left( \frac{\mathbf{t_u} \times \mathbf{t_v}}{\| \mathbf{t_u} \times \mathbf{t_v} \|} \right)^T
-\end{bmatrix}
-\label{eq:rotMatrixWheelFrame2World}
-\end{equation}
+Contact angle determination is of the utmost importance in case the mobile robot is crossing irregular terrains, because the traction forces are not aligned with $\BodyFrame_x$. A method to compute $\pitch_i$ is extracted from \cite{IagnemmaDubowsy2004}. In this thesis, only the equations to determine $\pitch_i$ are presented. Further explanations can be found in \cite{IagnemmaDubowsy2004}, although it is worth mentioning that special cases are not included here.
 
 \subsubsection*{Contact points}
 
@@ -416,7 +389,7 @@ On a mobile robot real-life application, a dynamics model is mainly triggered by
   		\draw [-latex,thick, align = center] (1) --  node [above] {Electrical\\current} (2);
   		\draw [-latex,thick] (2) --  node [above] {$\bm{\Torque}$} (3);
   		\draw [-latex,thick] (3) --  node [above] {$\mathbf{\LinVelocity}, \; \bm{\AngVelocity}$} (4);
-  		\draw [-latex,thick] (4) --  node [above] {$\mathbf{\Position}, \; \bm{\Quaternion}$} (5);
+  		\draw [-latex,thick] (4) --  node [above] {$\mathbf{\Position}, \; \bm{\Orientation}$} (5);
   		\draw [-latex,thick] (6) --  node [left] {gravity} (3);
   		\draw [-latex,thick] (7) --  node [left] {wind} (3);
   		\draw [-latex,thick] (8) --  node [right] {terrain} (3);
@@ -580,7 +553,10 @@ Equation \ref{eq:dynamics} may be obtained by applying the second newton law for
 Every wheel is commanded by a torque, $\bm{\Torque}_i$, which  is expressed with respect to $\BodyFrame$ and it only holds a component in $\BodyFrame_y$. That torque yields a traction force $\mathbf{\Traction}_i$ which is expressed with respect to the wheel frame $\WheelFrame_i$ (figure \ref{fig:wheelForcesMoments}). The traction force $\mathbf{\Traction}_i$ only holds a single longitudinal component within $\WheelFrame^i$. $\mathbf{\Traction}_i$ is the result of the action of the soil on the wheel at $\contactPoint_i$. Therefore, the force produced by $\bm{\Torque}_i$ on the soil opposes $\mathbf{\Traction}_i$. The wheel frame $\WheelFrame_i$ is centered at the wheel center and follows up the wheel velocity vector, which may not match frame $\BodyFrame_i$. Finally, it comes that,
 
 \begin{equation}
-	\bm{\Torque}_i = -\mathbf{\wheelToContact}_i \times \Bigl( \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \mathbf{\Traction}_i \Bigr), \; i = 1, ..., 4
+	\mathbf{\Traction}_i = \begin{cases}
+		\frac{ \bm{\Torque}_i }{\WheelRadius}, \; \left| \frac{ \bm{\Torque}_i }{\WheelRadius} \right| - \FrictionCoefficient \left( \Force_{\NormalForceSubscript} \right)_i < 0 \\
+		\FrictionCoefficient \left( \Force_{\NormalForceSubscript} \right)_i \text{sign} \left( \bm{\Torque}_i \right), \, \left| \frac{ \bm{\Torque}_i }{\WheelRadius} \right| - \FrictionCoefficient \left( \Force_{\NormalForceSubscript} \right)_i \geq 0  
+	\end{cases}	
 	\label{eq:actuatedForce}
 \end{equation}
 
@@ -678,34 +654,50 @@ This model provides a friction force, $\mathbf{\ForceSubscript{\FrictionSubscrip
 Equation \ref{eq:coulombFrictionModel} states that $\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i$ lies within an ellipse with diagonals $\FrictionCoefficient_x \left( \ForceSubscript{\NormalForceSubscript} \right)_i$ and $\FrictionCoefficient_y \left( \ForceSubscript{\NormalForceSubscript} \right)_i$. In case $\FrictionCoefficient_x = \FrictionCoefficient_y$, the ellipse turns into a circle. $\FrictionCoefficient_x$ and $\FrictionCoefficient_y$ denote friction coefficients along the longitudinal and lateral components of $\WheelFrame^i$, respectively.
 
 \begin{assumption}
-It is assumed $\FrictionCoefficient_x = \FrictionCoefficient_y$.
+$\FrictionCoefficient_x = \FrictionCoefficient_y$.
 \label{eq:sameFrictionCoefficients}
 \end{assumption}
 
-If a wheel $i$ sticks to the contact point $\contactPoint_i$, it means equation \ref{eq:coulombFrictionModel} is smaller than one. On the other hand, if a wheel is sliding, equation \ref{eq:coulombFrictionModel} equals one and $\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i$ has an opposite direction to $\left( \mathbf{\LinVelocity}_i \right)_{\WheelFrame^i}$.
+From assumption \ref{eq:sameFrictionCoefficients}, and if one states $\left( \ForceSubscript{\FrictionSubscript} \right)_i^2 = \left( \ForceSubscriptTwo{\FrictionSubscript}{x} \right)_i^2 + \left( \ForceSubscriptTwo{\FrictionSubscript}{y}\right)_i^2$, it comes that,
+
+\begin{equation}
+\left( \ForceSubscript{\FrictionSubscript} \right)_i \leq \FrictionCoefficient \left( \ForceSubscript{\NormalForceSubscript} \right)_i
+\label{eq:simpleFriction}
+\end{equation}
+
+If a wheel $i$ sticks to the contact point $\contactPoint_i$, it means equation \ref{eq:simpleFriction} is inactive. On the other hand, if a wheel is sliding, equation \ref{eq:simpleFriction} is active and $\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i$ has an opposite direction to $\left( \mathbf{\LinVelocity}_i \right)_{\WheelFrame^i}$.
 
 \begin{equation}
 	\begin{cases}
 		\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i = -( \mathbf{\Traction}_i + \mathbf{\gravity}_i), \; \mathbf{\LinVelocity}_i = \mathbf{0} \wedge \mathbf{\LinAccel}_i = \mathbf{0} \\ \vspace{2mm}
-		\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i = -\left\Vert \left( \sqrt{ \left( \FrictionCoefficient \ForceSubscript{\NormalForceSubscript} \right)^2 - \left( \ForceSubscriptTwo{\FrictionSubscript}{y} \right)^2 }; \ForceSubscriptTwo{\FrictionSubscript}{y}; 0 \right) \right\Vert \cdot \left( \frac{\mathbf{\LinVelocity}_i}{ \| \mathbf{\LinVelocity}_i \| } \right)_{\WheelFrame^i}, \; \mathbf{\LinVelocity}_i \neq \mathbf{0} \\ \vspace{2mm}
-		\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i = \left\Vert \left( \sqrt{ \left( \FrictionCoefficient \ForceSubscript{\NormalForceSubscript} \right)^2 - \left( \ForceSubscriptTwo{\FrictionSubscript}{y} \right)^2 }; \ForceSubscriptTwo{\FrictionSubscript}{y}; 0 \right) \right\Vert \cdot \left( \frac{\mathbf{\LinAccel}_i}{ \| \mathbf{\LinAccel}_i \| } \right)_{\WheelFrame^i}, \; \mathbf{\LinVelocity}_i = \mathbf{0} \wedge \mathbf{\LinAccel}_i \neq \mathbf{0}
+		\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i = -\FrictionCoefficient \left( \ForceSubscript{\NormalForceSubscript} \right)_i \cdot \left( \frac{\mathbf{\LinVelocity}_i}{ \| \mathbf{\LinVelocity}_i \| } \right)_{\WheelFrame^i}, \; \mathbf{\LinVelocity}_i \neq \mathbf{0} \\ \vspace{2mm}
+		\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i = -\FrictionCoefficient \left( \ForceSubscript{\NormalForceSubscript} \right)_i \cdot \left( \frac{\mathbf{\LinAccel}_i}{ \| \mathbf{\LinAccel}_i \| } \right)_{\WheelFrame^i}, \; \mathbf{\LinVelocity}_i = \mathbf{0} \wedge \mathbf{\LinAccel}_i \neq \mathbf{0}
 	\end{cases}
 	\label{eq:friction}
 \end{equation}
 
-The sum of friction forces $\mathbf{\ForceSubscript{\FrictionSubscript}}$ acting on the mobile robot and the yielded sum of moments are given by,
+In order to introduce equation \ref{eq:friction} into an \acrshort{ode}, its discontinuities need to be smoothed. From this observation, $\mathbf{\LinVelocity}_i$ is kept as a \ti{breaker}, and the role of $\mathbf{\LinAccel}_i$ in the Coulomb friction model is discarded for the sake of simplicity, thus eliminating the last line of equation \ref{eq:friction}. Motivated from this statement, equation \ref{eq:friction} is transformed into,
 
 \begin{equation}
-	\mathbf{\ForceSubscript{\FrictionSubscript}} = \sum_{i=1}^{4} \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i \quad \mathbf{\Moment}_{\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)} = 0
+\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i = - \left( \mathbf{\ForceSubscript{\Traction}} + \mathbf{\ForceSubscript{\gravity}} + \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i \cdot \left(1 - \sigma \left( \Vert \mathbf{\LinVelocity}_i \Vert \right) \right) - \FrictionCoefficient \left( \ForceSubscript{\NormalForceSubscript} \right)_i \cdot \frac{\mathbf{\LinVelocity}_i}{ \| \mathbf{\LinVelocity}_i \| + \epsilon } \cdot \sigma \left( \Vert \mathbf{\LinVelocity}_i \Vert \right)
+\label{eq:smoothFriction}
+\end{equation}
+
+, where $\sigma \left( \cdot \right)$ denotes the sigmoid function, with $k = 100$, and $\epsilon = 1\mathrm{e}^{-6}$, denotes a very small value that keeps $\frac{\mathbf{\LinVelocity}_i}{ \| \mathbf{\LinVelocity}_i \|}$ differentiable at $\| \mathbf{\LinVelocity}_i \| = 0$.
+
+Then, the sum of friction forces $\mathbf{\ForceSubscript{\FrictionSubscript}}$ acting on the mobile robot is given by,
+
+\begin{equation}
+	\mathbf{\ForceSubscript{\FrictionSubscript}} = \sum_{i=1}^{4} \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i
 	\label{eq:frictionMomentForce}
 \end{equation}
 
-Finally, the determination of $\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i$ is made by computing the portion of the mobile robot weight every wheel $i$ supports, which is presented in \ref{subsubsection:effectsGravity}.
+Finally, the determination of $\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i$ is made by computing the portion of the mobile robot weight every wheel $i$ supports, which is presented below.
 
 \subsubsection*{Effects of gravity}
 \label{subsubsection:effectsGravity}
 
-Gravity pushes the mobile robot into the terrain. As a response, ground reaction forces $\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i$ sustain the mobile robot. At each wheel $i$, the effect of gravity acting at $\contactPoint_i$ is denoted by $\left( \mathbf{\ForceSubscript{\gravity}} \right)_i$, which is expressed with respect to $\WheelFrame_i$. The vertical component of $\left( \mathbf{\ForceSubscript{\gravity}} \right)_i$ equals $\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i$ and are orthogonal to $\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i$  and $\mathbf{\Traction}_i$. The sum of $\left( \mathbf{\ForceSubscript{\gravity}} \right)_i$ for every wheel equals the mobile robot weight.
+Gravity pushes the mobile robot into the terrain. As a response, ground reaction forces $\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i$ sustain the mobile robot. At each wheel $i$, the effect of gravity acting at $\contactPoint_i$ is denoted by $\left( \mathbf{\ForceSubscript{\gravity}} \right)_i$, which is expressed with respect to $\WheelFrame_i$. The vertical component of $\left( \mathbf{\ForceSubscript{\gravity}} \right)_i$ equals $\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i$ and are orthogonal to $\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i$  and $\mathbf{\Traction}_i$. The sum of $\left( \mathbf{\ForceSubscript{\gravity}} \right)_i$ for every wheel equals the mobile robot weight \freefootnote{$\mathbf{\Moment}_{\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)} = \mathbf{\Moment}_{\left( \mathbf{\ForceSubscript{\gravity}} \right)} = \mathbf{\Moment}_{\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)} = \mathbf{0}$}.
 
 \begin{equation}
 	\Mass \mathbf{\gravity} = \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \sum_{i=1}^{4} \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \left( \mathbf{\ForceSubscript{\gravity}} \right)_i \quad , \quad \left( \ForceSubscriptTwo{\gravity}{z} \right)_i = - \left( \ForceSubscriptTwo{\NormalForceSubscript}{z} \right)_i
@@ -719,25 +711,19 @@ Gravity pushes the mobile robot into the terrain. As a response, ground reaction
 	\label{eq:sumGravityReaction}
 \end{equation}
 
-\begin{equation}
-	\mathbf{\Moment}_{\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)} = \mathbf{\Moment}_{\left( \mathbf{\ForceSubscript{\gravity}} \right)} = \mathbf{0}
-	\label{eq:groundReactionForcesMoment}
-\end{equation}
-
 \section{Full state-space model}
 \label{section:fullStateSpace}
 
 In order to sum up the previous sections, it is possible to deliver a full state-space model with respect to the state vector $\mathbf{x} = \begin{bmatrix}
-\mathbf{\Position}^T & \bm{\Orientation}^T & \mathbf{\LinVelocity}^T & \bm{\AngVelocity}^T & \bm{\AngVelocity}_i^T
+\mathbf{\Position}^T & \bm{\Orientation}^T & \mathbf{\LinVelocity}^T & \bm{\AngVelocity}^T
 \end{bmatrix}^T$.
 
 \begin{equation}
-	\mathbf{f}\left( \mathbf{x} \right) = \begin{cases}
+	\mathbf{f}\left( t, \,\mathbf{x}(t),\, \mathbf{u}(t) \right) = \begin{cases}
 		\DerMathBold{\Position} = \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \mathbf{\LinVelocity}\\
 		\DerBold{\Orientation} = \mathbf{\bar{\RotMatrix}}_{\BodyFrame}^{\WorldFrame} \bm{\AngVelocity}\\
 		\mathbf{\dot{\LinVelocity}} = -\bm{\AngVelocity} \times \mathbf{\LinVelocity} + \frac{1}{\Mass} \mathbf{\Force}\\
-		\bm{ \dot{\AngVelocity} } = \mathbf{\InertiaTensor}^{-1} \left( -\bm{\AngVelocity} \times \left( \mathbf{\InertiaTensor} \bm{\AngVelocity} \right) + \mathbf{\Moment} \right)\\
-		\bm{\dot{\AngVelocity}}_i = \mathbf{\InertiaTensor}_{\text{wheel}}^{-1} \bm{\Torque}_i 
+		\bm{ \dot{\AngVelocity} } = \mathbf{\InertiaTensor}^{-1} \left( -\bm{\AngVelocity} \times \left( \mathbf{\InertiaTensor} \bm{\AngVelocity} \right) + \mathbf{\Moment} \right)
 	\end{cases}
 	\label{eq:fullStateSpace}
 \end{equation}
@@ -750,17 +736,17 @@ Motivated from equations \ref{eq:sumtractions}, \ref{eq:sumMomentsTraction},
 \mathbf{\Force} \\
 \mathbf{\Moment}
 \end{bmatrix} = \begin{bmatrix}
-\mathbf{A}_1 & \mathbf{A}_2 & \mathbf{A}_3 & \mathbf{A}_4 & \mathbf{\Force_{\FrictionSubscript}} & \mathbf{\Force_{\gravity}} & \mathbf{\Force_{\NormalForceSubscript}} \\
-\mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_1 \right)  \mathbf{A}_1 & \mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_2 \right)  \mathbf{A}_2 & \mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_3 \right) \mathbf{A}_3 & \mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_4 \right) \mathbf{A}_4 & \mathbf{0} & \mathbf{0} & \mathbf{0} 
+\mathbf{A}_1 & \mathbf{A}_2 & \mathbf{A}_3 & \mathbf{A}_4 \\
+\mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_1 \right)  \mathbf{A}_1 & \mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_2 \right)  \mathbf{A}_2 & \mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_3 \right) \mathbf{A}_3 & \mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_4 \right) \mathbf{A}_4
 \end{bmatrix} \begin{bmatrix}
 \bm{\Torque}_1 \\
 \bm{\Torque}_2 \\
 \bm{\Torque}_3 \\
-\bm{\Torque}_4 \\
-\mathbf{1} \\
-\mathbf{1} \\
-\mathbf{1}
-\end{bmatrix}
+\bm{\Torque}_4 
+\end{bmatrix} + \mathbf{1}_{6 \times 6} \begin{bmatrix}
+\mathbf{\Force_{\FrictionSubscript}} & \mathbf{\Force_{\gravity}} & \mathbf{\Force_{\NormalForceSubscript}} \\
+\mathbf{0} & \mathbf{0} & \mathbf{0}
+\end{bmatrix} \mathbf{1}_{3 \times 3}
 \label{eq:forcesMomentsMatrix}
 \end{equation}
 
@@ -769,7 +755,7 @@ Motivated from equations \ref{eq:sumtractions}, \ref{eq:sumMomentsTraction},
 \section{Model verification}
 \label{section:modelVerification}
 
-
+ni
 
 \subsection{Maximum inclination}
 

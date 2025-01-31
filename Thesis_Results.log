@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.27)  27 FEB 2023 16:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.12) (preloaded format=pdflatex 2024.1.30)  5 JAN 2025 22:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./Thesis_Results.tex
 (Thesis_Results.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-01-09> xparse <2020-03-03>
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
 ! Undefined control sequence.
 l.11 \chapter
              {Results}
@@ -1100,7 +1100,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
 <write> ...ference `fig:airbus1' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.69 Make reference to Figures~\ref{fig:airbus1}
                                                  and \ref{fig:aircrafts}.
 The control sequence at the end of the top line
@@ -1117,7 +1117,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
 <write> ...rence `fig:aircrafts' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.69 ...~\ref{fig:airbus1} and \ref{fig:aircrafts}
                                                   .
 The control sequence at the end of the top line
@@ -1515,7 +1515,7 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <write> ...rence `fig:algorithm' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.82 ...tic illustrated in Fig.\ref{fig:algorithm}
                                                    can represent some sort o...
 The control sequence at the end of the top line
@@ -2450,7 +2450,7 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
 <write> ...rence `eq:continuity' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.152 ...equations. Equations~(\ref{eq:continuity}
                                                   ), (\ref{eq:momentum}) and...
 The control sequence at the end of the top line
@@ -2467,7 +2467,7 @@ Missing character: There is no , in font nullfont!
 Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
 <write> ...ference `eq:momentum' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.152 ...(\ref{eq:continuity}), (\ref{eq:momentum}
                                                   ) and (\ref{eq:energy}) fo...
 The control sequence at the end of the top line
@@ -2486,7 +2486,7 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
 <write> ...Reference `eq:energy' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.152 ... (\ref{eq:momentum}) and (\ref{eq:energy}
                                                   ) form the Naver--Stokes e...
 The control sequence at the end of the top line
@@ -2531,7 +2531,7 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no ( in font nullfont!
 ! Undefined control sequence.
 <write> ...nce `eq:NavierStokes' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.152 ...--Stokes equations~(\ref{eq:NavierStokes}
                                                   ).
 The control sequence at the end of the top line
@@ -3283,7 +3283,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <write> ...rence `tab:aeroCoeff' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.205 Make reference to Tab.\ref{tab:aeroCoeff}
                                                .
 The control sequence at the end of the top line
@@ -3314,7 +3314,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 ! Undefined control sequence.
 <write> ...eference `tab:memory' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.207 Tables \ref{tab:memory}
                               and \ref{tab:multipleColumns} are examples of ...
 The control sequence at the end of the top line
@@ -3331,7 +3331,7 @@ Missing character: There is no n in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
 <write> ...`tab:multipleColumns' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.207 ...tab:memory} and \ref{tab:multipleColumns}
                                                    are examples of tables wi...
 The control sequence at the end of the top line
@@ -3944,7 +3944,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <write> ...ce `tab:multipleRows' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.252 ...can be seen in Tab.\ref{tab:multipleRows}
                                                   .
 The control sequence at the end of the top line
@@ -4244,7 +4244,7 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <write> ...Reference `tab:scale' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.270 ...the text widht, as in Tab.\ref{tab:scale}
                                                   .
 The control sequence at the end of the top line
@@ -4621,7 +4621,7 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
 <write> ...ce `fig:side_by_side' on page \thepage 
-                                                  \space undefined\on@line .^^J
+                                                  \space undefined\on@line .
 l.293 ...-by-side as in Fig.\ref{fig:side_by_side}
                                                   
 The control sequence at the end of the top line
@@ -4877,11 +4877,11 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 295--318
 
  
 Here is how much of TeX's memory you used:
- 52 strings out of 479585
- 1087 string characters out of 2867101
- 287626 words of memory out of 3000000
- 17330 multiletter control sequences out of 15000+200000
- 403738 words of font info for 28 fonts, out of 3000000 for 9000
+ 72 strings out of 474543
+ 1463 string characters out of 5747318
+ 1939975 words of memory out of 5000000
+ 22401 multiletter control sequences out of 15000+600000
+ 558377 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 18i,9n,15p,235b,204s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 19i,9n,23p,238b,245s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!

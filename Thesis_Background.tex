@@ -31,7 +31,7 @@ Elevation data is stored as a \tb{\acrlong{dem}}, which is defined by a compact,
 , where $\GridDimX$ and $\GridDimY$ stand as the number of divisions in the longitudinal and lateral directions of maps $\ElevationMap'$ and $\TraversabilityMap'$ along frame $\WorldFrame$, respectively. $x_i \in \DiscTwoLayerMapArg{x}$ and $y_i \in \DiscTwoLayerMapArg{y}$, denote the longitudinal and lateral positions of the discrete two-layer map $\DiscTwoLayerMap$ with respect to frame $\WorldFrame$. $\ElevationMap_k$, $\TraversabilityMap_k$ denote continuous subsets of $\mathbb{R}$, which encapsulate each map limit on the respective \acrlong{dof}. Then, if functions $\FunctionElevation_d$ and $\FunctionTraversability_d$ are interpolated, a \tb{continuous elevation map function} $\FunctionElevation: \ElevationMap_x \times \ElevationMap_y \to \Map_z$ and a \tb{continuous traversability map function} $\FunctionTraversability: \TraversabilityMap_x \times \TraversabilityMap_y \to \TraversabilityMap_z$ can be encapsulated into a \tb{two-layer} \tb{ continuous map function} $\FunctionTwoLayerMap: \TwoLayerMapArg{x} \times \TwoLayerMapArg{y} \to \ElevationMap_z \times \TraversabilityMap_z$,
 
 \begin{equation}
-	(\FunctionElevation(x, y), \FunctionTraversability(x, y)) = \FunctionTwoLayerMap(x, y) = (\Elevation, \TraversabilityCost), \hspace{2mm} x \in \TwoLayerMapArg{x} ,\hspace{2mm} y \in \TwoLayerMapArg{y}
+	(\FunctionElevation(\x, \y), \FunctionTraversability(\x, \y)) = \FunctionTwoLayerMap(\x, \y) = (\Elevation, \TraversabilityCost), \hspace{2mm} x \in \TwoLayerMapArg{x} ,\hspace{2mm} y \in \TwoLayerMapArg{y}
 \label{eq:cont2layerMapFunc}
 \end{equation}
 
@@ -50,7 +50,7 @@ Mathematically, this comes to solving the Eikonal equation,
 	\begin{aligned}
 		\left\vert \nabla \timeFunction{\x, \y} \right\vert \speedFunction{x, y} &= 1 \\
 		\speedFunction{\NullTimePosition} &= 0
- 	\end{aligned}\hspace{5mm} , \hspace{5mm} (\x, \y),\hspace{1mm} \NullTimePosition \in \domain{\Map_n}
+ 	\end{aligned}\hspace{5mm} , \hspace{5mm} (\x, \y),\hspace{1mm} \NullTimePosition \in \domain{\Map_1}
 	\label{eq:eikonalEquation}
 \end{equation}
 

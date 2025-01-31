@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{22}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -104,6 +104,13 @@ K.~Iagnemma, C.~Brooks, and S.~Dubowsky.
   rovers.
 \newblock volume~2, pages 841--848, 2004.
 
+\bibitem[Iagnemma and Dubowsky(2004)]{IagnemmaDubowsy2004}
+K.~Iagnemma and S.~Dubowsky.
+\newblock Traction control of wheeled robotic vehicles in rough terrain with
+  application to planetary rovers.
+\newblock \emph{The International Journal of Robotics Research}, 23:\penalty0
+  1029--1040, 11 2004.
+
 \bibitem[Peiret et~al.(2021)Peiret, Karpman, et~al.]{Peiret2021}
 A.~Peiret, E.~Karpman, et~al.
 \newblock Modelling of off-road wheeled vehicles for real-time dynamic
@@ -120,20 +127,22 @@ J.~A. Sethian.
 \newblock Fast marching methods.
 \newblock \emph{SIAM Review}, 41:\penalty0 199--235, 1999.
 
+\bibitem[Andersson et~al.(2018)Andersson, Gillis, Horn, Rawlings, and
+  Diehl]{Andersson2018}
+J.~A.~E. Andersson, J.~Gillis, G.~Horn, J.~B. Rawlings, and M.~Diehl.
+\newblock {CasADi} -- {A} software framework for nonlinear optimization and
+  optimal control.
+\newblock \emph{Mathematical Programming Computation}, 2018.
+
+\bibitem[W{\"a}chter and Biegler(2006)]{wachter2006implementation}
+A.~W{\"a}chter and L.~T. Biegler.
+\newblock On the implementation of an interior-point filter line-search
+  algorithm for large-scale nonlinear programming.
+\newblock \emph{Mathematical programming}, 106:\penalty0 25--57, 2006.
+
 \bibitem[Roithmayr and Hodges(2015)]{Roithmayr2015}
 C.~M. Roithmayr and D.~H. Hodges.
 \newblock \emph{Dynamics: Theory and Application of Kane's Method}.
 \newblock Cambridge University Press, 2015.
-
-\bibitem[Phillips et~al.(2001)Phillips, Hailey, and
-  Gebert]{attitudeRepresentations2001}
-W.~F. Phillips, C.~E. Hailey, and G.~A. Gebert.
-\newblock Review of attitude representations used for aircraft kinematics.
-\newblock \emph{Journal of aircraft}, 2001.
-
-\bibitem[Younes et~al.(2014)Younes, Mortari, et~al.]{attitudeError}
-A.~B. Younes, D.~Mortari, et~al.
-\newblock Attitude error kinematics.
-\newblock \emph{Journal of guidance, control, and dynamics}, 2014.
 
 \end{thebibliography}

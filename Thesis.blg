@@ -52,45 +52,45 @@ Warning--empty year in Ishigami2007PathPlanning
 Warning--empty year in Ishigami2007PathPlanning
 Warning--empty booktitle in Iagnemma2004
 Warning--empty chapter and pages in Genta2012
-You've used 21 entries,
+You've used 22 entries,
             2481 wiz_defined-function locations,
-            739 strings with 9341 characters,
-and the built_in function-call counts, 7815 in all, are:
-= -- 605
-> -- 429
-< -- 15
-+ -- 165
-- -- 123
-* -- 557
-:= -- 1240
-add.period$ -- 68
-call.type$ -- 21
-change.case$ -- 39
-chr.to.int$ -- 21
-cite$ -- 34
-duplicate$ -- 440
-empty$ -- 743
-format.name$ -- 160
-if$ -- 1685
+            750 strings with 9686 characters,
+and the built_in function-call counts, 8316 in all, are:
+= -- 652
+> -- 450
+< -- 17
++ -- 173
+- -- 129
+* -- 601
+:= -- 1314
+add.period$ -- 71
+call.type$ -- 22
+change.case$ -- 41
+chr.to.int$ -- 22
+cite$ -- 35
+duplicate$ -- 460
+empty$ -- 789
+format.name$ -- 171
+if$ -- 1793
 int.to.chr$ -- 1
-int.to.str$ -- 22
-missing$ -- 24
-newline$ -- 116
-num.names$ -- 65
-pop$ -- 241
+int.to.str$ -- 23
+missing$ -- 25
+newline$ -- 121
+num.names$ -- 68
+pop$ -- 246
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 22
 quote$ -- 0
-skip$ -- 242
+skip$ -- 255
 stack$ -- 0
-substring$ -- 185
-swap$ -- 76
+substring$ -- 233
+swap$ -- 79
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 135
+type$ -- 142
 warning$ -- 13
-while$ -- 53
+while$ -- 58
 width$ -- 0
-write$ -- 270
+write$ -- 284
 (There were 47 warnings)

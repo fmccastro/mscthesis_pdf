@@ -7,28 +7,47 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Robot moving frame}}}{8}{figure.caption.14}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Robot geometry}}}{8}{figure.caption.14}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {ICR}}}{8}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Wheel kinematics}}{11}{figure.caption.15}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Longitudinal wheel kinematics.}}}{11}{figure.caption.15}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Lateral wheel kinematics.}}}{11}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Mobile robot systems. Adapted from \cite {Yoshida2016}}}{13}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Forces and moments distribution.}}{14}{figure.caption.17}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Wheel subject to forces and moments.}}}{14}{figure.caption.17}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Weight distribution during pitch.}}}{14}{figure.caption.17}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Weight distribution during roll.}}}{14}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Wheel-terrain contact models \cite {Yoshida2016}}}{16}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rigid wheel contacting with rigid terrain}}}{16}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rigid wheel contacting with deformable terrain}}}{16}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Deformable wheel contacting with rigid terrain}}}{16}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Deformable wheel contacting with deformable terrain}}}{16}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Wheel kinematics}}{10}{figure.caption.15}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Longitudinal wheel kinematics.}}}{10}{figure.caption.15}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Lateral wheel kinematics.}}}{10}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Mobile robot systems. Adapted from \cite {Yoshida2016}}}{12}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Forces and moments distribution.}}{13}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Wheel subject to forces and moments.}}}{13}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Weight distribution during pitch.}}}{13}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Weight distribution during roll.}}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Wheel-terrain contact models \cite {Yoshida2016}}}{15}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rigid wheel contacting with rigid terrain}}}{15}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rigid wheel contacting with deformable terrain}}}{15}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Deformable wheel contacting with rigid terrain}}}{15}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Deformable wheel contacting with deformable terrain}}}{15}{figure.caption.18}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Hull points on each wheel}}{26}{figure.caption.21}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Several hull points \textit {per} wheel (case 2)}}}{26}{figure.caption.21}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Single hull point \textit {per} wheel (case 1)}}}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Traversability maps (case 1; map 1)}}{27}{figure.caption.22}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{27}{figure.caption.22}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{27}{figure.caption.22}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{27}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Traversability maps (case 1; map 1)}}{27}{figure.caption.23}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{27}{figure.caption.23}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.5}}}{27}{figure.caption.23}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Caption for figure in TOC.}}{31}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Some aircrafts.}}{32}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Airbus A320}}}{32}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bombardier CRJ200}}}{32}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Schematic of some algorithm.}}{32}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Figure and table side-by-side.}}{35}{figure.caption.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Caption for figure in TOC.}}{27}{figure.caption.20}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Some aircrafts.}}{28}{figure.caption.21}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Airbus A320}}}{28}{figure.caption.21}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bombardier CRJ200}}}{28}{figure.caption.21}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Schematic of some algorithm.}}{28}{figure.caption.22}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Figure and table side-by-side.}}{31}{figure.caption.28}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Elevation maps}}{43}{figure.caption.39}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Map 1}}}{43}{figure.caption.39}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Map 2}}}{43}{figure.caption.39}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Traversability maps (case 2; map 1)}}{44}{figure.caption.40}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{44}{figure.caption.40}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{44}{figure.caption.40}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Traversability maps (case 2; map 1)}}{44}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{44}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}}}}{44}{figure.caption.41}%

@@ -269,7 +269,6 @@
 %
 \usepackage{graphicx}
 
-
 % 'color' package
 %
 % Colour control for LaTeX documents.
@@ -534,6 +533,11 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 
+%	'ifthen package
+%	>provides a way to build tikz picture with conditional statements
+\usepackage{ifthen}
+
+\usepackage[inkscapelatex=false]{svg}
 
 % ----------------------------------------------------------------------
 % Define new commands to assure consistent treatment throughout document
@@ -602,7 +606,11 @@
 
 \usepackage{paracol}
 
-\usepackage{pgf, pgfplots, pgfplotstable, pgffor}
+\usepackage{pgf, pgfplots, pgfplotstable, pgffor, pgfmath}
+\pgfplotsset{width=7cm,compat=1.18}
+
+\usepgfplotslibrary{external}
+\tikzexternalize 
 
 \usepackage{titlesec}
 \setcounter{secnumdepth}{4}
@@ -652,16 +660,6 @@
 \newcommand{\yaw}{\psi}
 \newcommand{\pitch}{\theta}
 \newcommand{\roll}{\phi}
-
-\newcommand{\Pose}{q}
-
-%	Quaternion
-\newcommand{\Quaternion}{\mathbf{q}}
-
-\newcommand{\qw}{q_w}
-\newcommand{\qx}{q_x}
-\newcommand{\qy}{q_y}
-\newcommand{\qz}{q_z}
 
 %	Linear velocity
 \newcommand{\LinVelocity}{v}
@@ -747,8 +745,10 @@
 \newcommand{\FunctionTwoLayerMap}{m_2}
 
 %	Map grid dimensions
-\newcommand{\GridDimX}{N_x}
-\newcommand{\GridDimY}{N_y}
+\newcommand{\MapDimx}{l_x}
+\newcommand{\MapDimy}{l_y}
+\newcommand{\GridDimX}{n_x}
+\newcommand{\GridDimY}{n_y}
 
 %%%	Functions	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\speedFunction}[1]{f(#1)}
@@ -769,6 +769,12 @@
 \newtheorem{definition}{Definition}
 
 \newtheorem{lemma}{Lemma}
+
+\newcommand\freefootnote[1]{%
+  \let\thefootnote\relax%
+  \footnotetext{#1}%
+  \let\thefootnote\svthefootnote%
+}
 
 \DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
 
