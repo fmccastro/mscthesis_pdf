@@ -9,16 +9,15 @@
 \contentsline {table}{\numberline {5.1}{\ignorespaces Table caption shown in TOC.}}{25}{table.caption.19}%
 \contentsline {table}{\numberline {5.2}{\ignorespaces Elevation maps dimensions.}}{26}{table.caption.20}%
 \contentsline {table}{\numberline {5.3}{\ignorespaces Table caption shown in TOC.}}{26}{table.5.3}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Comparison between algorithms \ref {alg:slopeMinHeightMap} and \ref {alg:slopeMinHeightMapVarYaw} (case 1).}}{27}{table.caption.24}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Comparison between algorithms \ref {alg:slopeMinHeightMap} and \ref {alg:slopeMinHeightMapVarYaw} (case 2).}}{28}{table.caption.25}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Comparison between algorithms \ref {alg:maxRoughnessMap} and \ref {alg:refinedMap} (case 1).}}{28}{table.caption.26}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Comparison between algorithms \ref {alg:maxRoughnessMap} and \ref {alg:refinedMap} (case 2).}}{28}{table.caption.27}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Comparison between algorithms \ref {alg:slopeMinHeightMap} and \ref {alg:slopeMinHeightMapVarYaw} (Map 1)}}{28}{table.caption.24}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Comparison between algorithms \ref {alg:maxRoughnessMap} and \ref {alg:refinedMap} (Map 1)}}{28}{table.caption.25}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Algorithm \ref {alg:optimalPathGeneration} parameters.}}{30}{table.caption.27}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Table caption shown in TOC.}}{33}{table.caption.31}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Memory usage comparison (in MB).}}{34}{table.caption.32}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Another table caption.}}{34}{table.caption.33}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Yet another table caption.}}{34}{table.caption.34}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Very wide table.}}{34}{table.caption.35}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Table caption shown in TOC.}}{35}{table.caption.35}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Memory usage comparison (in MB).}}{36}{table.caption.36}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Another table caption.}}{36}{table.caption.37}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Yet another table caption.}}{36}{table.caption.38}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Very wide table.}}{36}{table.caption.39}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

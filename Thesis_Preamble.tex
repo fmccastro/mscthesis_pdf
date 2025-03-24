@@ -328,7 +328,7 @@
 %
 % > URLs in BibTex
 %
-% \usepackage{url}
+\usepackage{url}
 
 
 % 'varioref' package
@@ -361,7 +361,7 @@
 % > provides the verbatim environment (\begin{verbatim},\end{verbatim})
 %   and a comment environment (\begin{comment},  \end{comment})
 %
-% \usepackage{verbatim}
+\usepackage{verbatim}
 
 
 % 'moreverb' package
@@ -371,7 +371,7 @@
 %
 % > supports tab expansion and line numbering
 %
-% \usepackage{moreverb}
+\usepackage{moreverb}
 
 % 'nomencl' package
 %
@@ -435,58 +435,6 @@
 %
 \usepackage{rotating}
 
-% 'hyperref' package
-%
-% Extensive support for hypertext in LaTeX.
-% http://www.ctan.org/tex-archive/macros/latex/contrib/hyperref/
-%
-% > Extends the functionality of all the LATEX cross-referencing
-%   commands (including the table of contents, bibliographies etc) to
-%   produce \special commands which a driver can turn into hypertext
-%   links; Also provides new commands to allow the user to write adhoc
-%   hypertext links, including those to external documents and URLs.
-%
-\usepackage[pdftex]{hyperref} % enhance documents that are to be
-                              % output as HTML and PDF
-\hypersetup{colorlinks,       % color text of links and anchors,
-                              % eliminates borders around links
-%            linkcolor=red,    % color for normal internal links
-            linkcolor=black,  % color for normal internal links
-            anchorcolor=black,% color for anchor text
-%            citecolor=green,  % color for bibliographical citations
-            citecolor=black,  % color for bibliographical citations
-%            filecolor=magenta,% color for URLs which open local files
-            filecolor=black,  % color for URLs which open local files
-%            menucolor=red,    % color for Acrobat menu items
-            menucolor=black,  % color for Acrobat menu items
-%            pagecolor=red,    % color for links to other pages
-            pagecolor=black,  % color for links to other pages
-%            urlcolor=cyan,    % color for linked URLs
-            urlcolor=black,   % color for linked URLs
-	          bookmarks=true,         % create PDF bookmarks
-	          bookmarksopen=false,    % don't expand bookmarks
-	          bookmarksnumbered=true, % number bookmarks
-	          pdftitle={Thesis},
-            pdfauthor={Francisco M. Castro},
-            pdfsubject={Thesis Title},
-            pdfkeywords={Thesis Keywords},
-            pdfstartview=FitV,
-            pdfdisplaydoctitle=true}
-
-
-% 'hypcap' package
-%
-% Adjusting the anchors of captions.
-% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
-%
-% > fixes the problem with hyperref, that links to floats points
-%   below the caption and not at the beginning of the float.
-%
-\usepackage[figure,table]{hypcap}
-
-\usepackage{cleveref}
-
-
 % 'multirow' package
 %
 % Create tabular cells spanning multiple rows
@@ -538,6 +486,13 @@
 \usepackage{ifthen}
 
 \usepackage[inkscapelatex=false]{svg}
+
+
+%	'mathtools' package
+%	It was added to support text above arrows
+\usepackage{mathtools}
+
+%\usepackage[bottom]{footmisc}
 
 % ----------------------------------------------------------------------
 % Define new commands to assure consistent treatment throughout document
@@ -606,11 +561,61 @@
 
 \usepackage{paracol}
 
+% 'hyperref' package
+%
+% Extensive support for hypertext in LaTeX.
+% http://www.ctan.org/tex-archive/macros/latex/contrib/hyperref/
+%
+% > Extends the functionality of all the LATEX cross-referencing
+%   commands (including the table of contents, bibliographies etc) to
+%   produce \special commands which a driver can turn into hypertext
+%   links; Also provides new commands to allow the user to write adhoc
+%   hypertext links, including those to external documents and URLs.
+%
+\usepackage[pdftex]{hyperref} % enhance documents that are to be
+                              % output as HTML and PDF
+\hypersetup{colorlinks,       % color text of links and anchors,
+                              % eliminates borders around links
+%            linkcolor=red,    % color for normal internal links
+            linkcolor=black,  % color for normal internal links
+            anchorcolor=black,% color for anchor text
+%            citecolor=green,  % color for bibliographical citations
+            citecolor=black,  % color for bibliographical citations
+%            filecolor=magenta,% color for URLs which open local files
+            filecolor=black,  % color for URLs which open local files
+%            menucolor=red,    % color for Acrobat menu items
+            menucolor=black,  % color for Acrobat menu items
+%            pagecolor=red,    % color for links to other pages
+            pagecolor=black,  % color for links to other pages
+%            urlcolor=cyan,    % color for linked URLs
+            urlcolor=black,   % color for linked URLs
+	          bookmarks=true,         % create PDF bookmarks
+	          bookmarksopen=false,    % don't expand bookmarks
+	          bookmarksnumbered=true, % number bookmarks
+	          pdftitle={Thesis},
+            pdfauthor={Francisco M. Castro},
+            pdfsubject={Thesis Title},
+            pdfkeywords={Thesis Keywords},
+            pdfstartview=FitV,
+            pdfdisplaydoctitle=true}
+            
+% 'hypcap' package
+%
+% Adjusting the anchors of captions.
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+%
+% > fixes the problem with hyperref, that links to floats points
+%   below the caption and not at the beginning of the float.
+%
+\usepackage[figure,table]{hypcap}
+
+\usepackage{cleveref}
+
 \usepackage{pgf, pgfplots, pgfplotstable, pgffor, pgfmath}
 \pgfplotsset{width=7cm,compat=1.18}
 
-\usepgfplotslibrary{external}
-\tikzexternalize 
+%\usepgfplotslibrary{external}
+%\tikzexternalize 
 
 \usepackage{titlesec}
 \setcounter{secnumdepth}{4}
@@ -660,6 +665,9 @@
 \newcommand{\yaw}{\psi}
 \newcommand{\pitch}{\theta}
 \newcommand{\roll}{\phi}
+
+%	General reference
+\newcommand{\reference}{\mathbf{r}}
 
 %	Linear velocity
 \newcommand{\LinVelocity}{v}
@@ -744,7 +752,7 @@
 \newcommand{\DiscTwoLayerMapArg}[1]{\mathcal{M}'_{2,#1}}
 \newcommand{\FunctionTwoLayerMap}{m_2}
 
-%	Map grid dimensions
+%%%	Map grid dimensions	%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\MapDimx}{l_x}
 \newcommand{\MapDimy}{l_y}
 \newcommand{\GridDimX}{n_x}
@@ -755,7 +763,7 @@
 \newcommand{\timeFunction}[1]{u(#1)}
 \newcommand{\costFunction}{J}
 
-%%%	Domain	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%	Domain	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\domain}[1]{D_{#1}}
 
 %%%	Derivatives	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -775,6 +783,13 @@
   \footnotetext{#1}%
   \let\thefootnote\svthefootnote%
 }
+
+%\newcommand\numberfootnote[1]{%
+%  \footnotetext{#1}%
+%  \let\thefootnote\svthefootnote%
+%}
+
+%{\let\thefootnote\relax\footnotetext{something unnumbered}}
 
 \DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
 

@@ -20,10 +20,10 @@ Below, the depiction of the elevation maps, which are used as test-beds for the 
     \centering
 	\begin{subfigmatrix}{2}
 	\subfigure[Map 1] {
-    	\includegraphics[width=0.48\linewidth]{Figures/elevationMap1.pdf}  
+    	\includegraphics[width=0.48\linewidth]{Figures/elevationMap1.png}  
 	}
 	\subfigure[Map 2] {
-    	\includegraphics[width=0.48\linewidth]{Figures/elevationMap1.pdf}  
+    	\includegraphics[width=0.48\linewidth]{Figures/elevationMap1.png}  
 	}
 	\end{subfigmatrix}
     \caption{Elevation maps}
@@ -35,12 +35,15 @@ Below, the depiction of the elevation maps, which are used as test-beds for the 
 
 \begin{figure}[!ht]
     \centering
-	\begin{subfigmatrix}{2}
+	\begin{subfigmatrix}{3}
 	\subfigure[Algorithm \ref{alg:slopeMinHeightMap}, where $\yaw = 0$] {
-    	\includegraphics[width=0.48\linewidth]{Figures/HeightMinSurface1.pdf}  
+    	\includegraphics[width=0.31\linewidth]{Figures/HeightMin+Surface+1.png}  
 	}
 	\subfigure[Algorithm \ref{alg:slopeMinHeightMapVarYaw}] {
-    	\includegraphics[width=0.48\linewidth]{Figures/HeightMin_maxInclinationSurface1.pdf}  
+    	\includegraphics[width=0.31\linewidth]{Figures/HeightMin_maxInclination+Surface+1.png}  
+	}
+	\subfigure[Algorithm \ref{alg:maxRoughnessMap}] {
+    	\includegraphics[width=0.31\linewidth]{Figures/maxTerrainRoughness+1.png}  
 	}
 	\end{subfigmatrix}
     \caption{Traversability maps (case 2; map 1)}
@@ -51,10 +54,10 @@ Below, the depiction of the elevation maps, which are used as test-beds for the 
     \centering
 	\begin{subfigmatrix}{2}
 	\subfigure[Worst-case map] {
-    	\includegraphics[width=0.48\linewidth]{Figures/worstCaseSurface1.pdf}  
+    	\includegraphics[width=0.48\linewidth]{Figures/worstCase+Surface+1.png}  
 	}
-	\subfigure[Algorithm \ref{alg:refinedMap}] {
-    	\includegraphics[width=0.48\linewidth]{Figures/mapRefinementSurface1.pdf}  
+	\subfigure[Algorithm \ref{alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9] {
+    	\includegraphics[width=0.48\linewidth]{Figures/mapRefinement+Surface+0.9+0.2+1.png}  
 	}
 	\end{subfigmatrix}
     \caption{Traversability maps (case 2; map 1)}

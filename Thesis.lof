@@ -10,7 +10,7 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Wheel kinematics}}{10}{figure.caption.15}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Longitudinal wheel kinematics.}}}{10}{figure.caption.15}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Lateral wheel kinematics.}}}{10}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Mobile robot systems. Adapted from \cite {Yoshida2016}}}{12}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Mobile robot systems. Adapted from \cite {Yoshida2016}}}{13}{figure.caption.16}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Forces and moments distribution.}}{13}{figure.caption.17}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Wheel subject to forces and moments.}}}{13}{figure.caption.17}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Weight distribution during pitch.}}}{13}{figure.caption.17}%
@@ -31,23 +31,33 @@
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{27}{figure.caption.22}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Traversability maps (case 1; map 1)}}{27}{figure.caption.23}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{27}{figure.caption.23}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.5}}}{27}{figure.caption.23}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.9}}}{27}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Cost to speed conversion (equation \ref {eq:cost2SpeedConversion})}}{29}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Potential flow and speed map for worst-case traversability map (case 1; map 1)}}{31}{figure.caption.28}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Speed map $f(\cdot )$}}}{31}{figure.caption.28}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Potential flow $u(\cdot )$ and $\nabla u(\cdot )$ (blue arrows)}}}{31}{figure.caption.28}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Optimal paths (case 1; map 1)}}{31}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{31}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Refined map ($r_s = 1.0$ m, $\, C = 0.9$)}}}{31}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Paths comparison and \textsc {getoptimalpath($\cdot $)} method runtimes.}}{32}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Optimal path generation module.}}{32}{figure.caption.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Caption for figure in TOC.}}{31}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Some aircrafts.}}{32}{figure.caption.29}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Airbus A320}}}{32}{figure.caption.29}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bombardier CRJ200}}}{32}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Schematic of some algorithm.}}{32}{figure.caption.30}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Figure and table side-by-side.}}{35}{figure.caption.36}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Caption for figure in TOC.}}{33}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Some aircrafts.}}{34}{figure.caption.33}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Airbus A320}}}{34}{figure.caption.33}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bombardier CRJ200}}}{34}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Schematic of some algorithm.}}{34}{figure.caption.34}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Figure and table side-by-side.}}{37}{figure.caption.40}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Elevation maps}}{43}{figure.caption.39}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Map 1}}}{43}{figure.caption.39}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Map 2}}}{43}{figure.caption.39}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Traversability maps (case 2; map 1)}}{44}{figure.caption.40}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{44}{figure.caption.40}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{44}{figure.caption.40}%
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Traversability maps (case 2; map 1)}}{44}{figure.caption.41}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{44}{figure.caption.41}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}}}}{44}{figure.caption.41}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Elevation maps}}{45}{figure.caption.43}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Map 1}}}{45}{figure.caption.43}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Map 2}}}{45}{figure.caption.43}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Traversability maps (case 2; map 1)}}{46}{figure.caption.44}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{46}{figure.caption.44}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{46}{figure.caption.44}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{46}{figure.caption.44}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Traversability maps (case 2; map 1)}}{46}{figure.caption.45}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{46}{figure.caption.45}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9}}}{46}{figure.caption.45}%
