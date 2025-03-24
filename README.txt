@@ -1,26 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                      %
-%  ---------- Master of Science Dissertation template ----------       %
+%  ---------- Master of Science Dissertation README file ----------    %
 %                                                                      %
-%  Template for the Master Thesis according to the regulations         %
+%  Master Thesis document according to the regulations                 %
 %  published by the Academic Board (Direcção Académica) at IST.        %
 %                                                                      %
 %  For up-to-date guide, please refer to the offical website           %
 %  http://da.tecnico.ulisboa.pt/dissertacao-de-mestrado/               %
 %                                                                      %
-%       Andre C. Marta                                                 %
-%       Area Cientifica de Mecanica Aplicada e Aeroespacial            %
-%       Departamento de Engenharia Mecanica                            %
-%       Instituto Superior Tecnico                                     %
-%       Av. Rovisco Pais                                               %
-%       1049-001 Lisboa                                                %
-%       Portugal                                                       %
-%       Tel: +351 21 841 9469                                          %
-%                        3469 (extension)                              %
-%       Email: andre.marta@ist.utl.pt                                  %
+%  This README file contains compilation instructions for the .tex     %
+%  files included in this directory                                    %
 %                                                                      %
-%  Created:       Jan 20, 2011                                         %
-%  Last Modified: Mar 30, 2016                                         %
+%  Created:       Sep 2024                                             %
+%  Last Modified: Mar 23, 2025                                         %
 %                                                                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Contents                                                            %
