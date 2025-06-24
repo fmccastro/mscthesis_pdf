@@ -7,6 +7,7 @@
    volume = {2},
    year = {2017},
 }
+
 @inbook{Yoshida2016,
    author = {Kazuya Yoshida and Brian Wilcox and others},
    edition = {second},
@@ -24,6 +25,17 @@
 	OPTpublisher = {Springer International Publishing},
 	OPTpages = {1135--1152},
 	OPTurl = {https://doi.org/10.1007/978-3-319-32552-1_45},
+}
+
+@inbook{roboticsHandbook_chap55,
+	author = {Yoshida, Kazuya and Wilcox, Brian and Lampariello, Roberto},
+	title = {Space Robotics},
+	booktitle = {Springer Handbook of Robotics},
+	year = {2016},
+	OPTeditor = {Siciliano, Bruno and Khatib, Oussama},
+	OPTpublisher = {Springer International Publishing},
+	OPTpages = {1423-1463},
+	OPTurl = {https://doi.org/10.1007/978-3-319-32552-1_45}
 }
 
 @article{Wall2021,
@@ -93,22 +105,23 @@ bogie rover for ocean worlds applications.},
    title = {Axel mobility platform for steep terrain excursions and sampling on planetary surfaces},
    year = {2008},
 }
-@misc{,
-   note = {Accessed: 2022-01-22},
-   title = {Mars Exploration Rover},
+
+@online{nasa:perseverance,
+title = {Mars 2020: Perseverance Rover},
+year = {2025},
+url = {https://en.wikipedia.org/wiki/Zhurong_(rover)},
+OPTorganization = {NASA},
+OPTurldate = {2025-5-9}
 }
-@misc{,
-   note = {Accessed: 2024-01-16},
-   title = {Mars Curiosity Rover},
+
+@online{cnsa:zhurong,
+title = {Zhurong (rover)},
+year = {2025},
+url = {https://en.wikipedia.org/wiki/Zhurong_(rover)},
+OPTorganization = {Wikipedia},
+OPTurldate = {2025-5-9}
 }
-@misc{,
-   note = {Accessed: 2024-01-16},
-   title = {2020 Mission Perseverance Rover},
-}
-@misc{,
-   note = {Accessed: 2022-01-22},
-   title = {Chinese Zhurong Rover},
-}
+
 @article{Gonzalez2017,
    author = {Ramon Gonzalez and Karl Iagnemma},
    issue = {4},
@@ -133,7 +146,7 @@ bogie rover for ocean worlds applications.},
    title = {Theory of Ground Vehicles},
    year = {2001},
 }
-@article{Wong1967,
+@article{wong:performance,
    author = {Jo Yung Wong and A R Reece},
    issue = {1},
    journal = {Journal of Terramecanics},
@@ -151,7 +164,7 @@ bogie rover for ocean worlds applications.},
    volume = {4},
    year = {1967},
 }
-@book{Wong2010,
+@book{wong:terramechanics,
    author = {J Y Wong},
    edition = {Second},
    editor = {ButterWorth-Heinemann},
@@ -165,7 +178,7 @@ bogie rover for ocean worlds applications.},
    title = {Performance of Boeing LRV Wheels in a Lunar Soil Simulator, Report I, Effect of Wheel Design and Soil},
    year = {1971},
 }
-@article{,
+@article{rodriguezHighSpeedRoversReview,
    author = {David Rodríguez-Martínez and others},
    issue = {8},
    journal = {Journal of Field Robotics},
@@ -252,7 +265,7 @@ bogie rover for ocean worlds applications.},
    title = {Model Predictive Control: Theory and Design},
    year = {2013},
 }
-@book{,
+@book{grunenmpc,
    author = {Lars Grüne and Jürgen Pannek},
    publisher = {Springer},
    title = {Nonlinear Model Predictive Control: Theory and Algorithms},
@@ -623,4 +636,250 @@ OPTmonth = {January}
 	OPTvolume = {51},
 	OPTnumber = {20},
 	OPTpages = {331--336}
+}
+
+@InProceedings{Spero2002Path,
+  title={Path planning for a mobile robot in a rough terrain environment},
+  author={Spero, Dorian J and Jarvis, Ray A},
+  booktitle={Proceedings of the Third International Workshop on Robot Motion and Control, 2002. RoMoCo'02.},
+  OPTpages={417--422},
+  OPTyear={2002},
+  OPTorganization={IEEE}
+}
+
+@article{sakayori2021energy,
+  title={Energy-aware trajectory planning for planetary rovers},
+  author={Sakayori, Go and Ishigami, Genya},
+  journal={Advanced Robotics},
+  volume={35},
+  number={21-22},
+  pages={1302--1316},
+  year={2021},
+  publisher={Taylor \& Francis}
+}
+
+@article{howard2007optimal,
+  title={Optimal rough terrain trajectory generation for wheeled mobile robots},
+  author={Howard, Thomas M and Kelly, Alonzo},
+  journal={The International Journal of Robotics Research},
+  volume={26},
+  number={2},
+  pages={141--166},
+  year={2007},
+  publisher={Sage Publications Sage CA: Thousand Oaks, CA}
+}
+
+@InProceedings{garridoFMrovers2016,
+author="Garrido, Santiago
+and {\'A}lvarez, David
+and Moreno, Luis",
+editor="Reis, Lu{\'i}s Paulo
+and Moreira, Ant{\'o}nio Paulo
+and Lima, Pedro U.
+and Montano, Luis
+and Mu{\~{n}}oz-Martinez, Victor",
+title="Path Planning for Mars Rovers Using the Fast Marching Method",
+booktitle="Robot 2015: Second Iberian Robotics Conference",
+year="2016",
+publisher="Springer International Publishing",
+address="Cham",
+pages="93--105"
+}
+
+@inproceedings{garrido2009smooth,
+  title={Smooth path planning for non-holonomic robots using fast marching},
+  author={Garrido, Santiago and Moreno, Luis and Blanco, Dolores and Martin, Fernando},
+  booktitle={2009 IEEE International Conference on Mechatronics},
+  pages={1--6},
+  year={2009},
+  organization={IEEE}
+}
+
+@article{Gonzalez-2019-120666,
+author = {R. Gonzalez and D. Apostolopoulos and K. Iagnemma},
+title = {Improving Rover Mobility Through Traction Control: Simulating Rovers on the Moon},
+journal = {Autonomous Robots},
+year = {2019},
+month = {March},
+volume = {43},
+number = {2},
+pages = {1977 - 1988}
+}
+
+
+@INPROCEEDINGS{bussmannPlanetaryRoverImpedanceControl,
+  author={Bussmann, Kristin and Dietrich, Alexander and Ott, Christian},
+  booktitle={2018 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Whole-Body Impedance Control for a Planetary Rover with Robotic Arm: Theory, Control Design, and Experimental Validation}, 
+  year={2018},
+  volume={},
+  number={},
+  pages={910-917},
+  keywords={Wheels;Manipulators;Impedance;Mobile robots;Robot kinematics;Null space},
+  doi={10.1109/ICRA.2018.8460533}}
+  
+@INPROCEEDINGS{lbnmpcOstafew,
+  author={Ostafew, Chris J. and Schoellig, Angela P. and Barfoot, Timothy D.},
+  booktitle={2014 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Learning-based nonlinear model predictive control to improve vision-based mobile robot path-tracking in challenging outdoor environments}, 
+  year={2014},
+  volume={},
+  number={},
+  pages={4029-4036},
+  keywords={Mobile robots;Vehicle dynamics;Heuristic algorithms;Prediction algorithms;Gaussian processes;Wheels},
+  doi={10.1109/ICRA.2014.6907444}}
+
+@inproceedings{binet2012model,
+  title={Model predictive control applications for planetary rovers},
+  author={Binet, Giovanni and Krenn, Rainer and Bemporad, Alberto and others},
+  booktitle={Proc. 11th International Symposium on Artificial Intelligence and Robotics in Space (iSAIRAS), Sept},
+  pages={4--6},
+  year={2012}
+}
+
+@article{yu2022nmpc,
+title = {Nonlinear Model Predictive Planning and Control for High-Speed Autonomous Vehicles on 3D Terrains},
+journal = {IFAC-PapersOnLine},
+volume = {54},
+number = {20},
+pages = {412-417},
+year = {2021},
+note = {Modeling, Estimation and Control Conference MECC 2021},
+issn = {2405-8963},
+doi = {https://doi.org/10.1016/j.ifacol.2021.11.208},
+url = {https://www.sciencedirect.com/science/article/pii/S2405896321022527},
+author = {Siyuan Yu and Congkai Shen and Tulga Ersal},
+keywords = {Autonomous vehicles, off-road navigation, vehicle dynamics, nonlinear model predictive control}
+}
+
+@article{rathod2021model,
+  title={Model predictive control with environment adaptation for legged locomotion},
+  author={Rathod, Niraj and Bratta, Angelo and Focchi, Michele and Zanon, Mario and Villarreal, Octavio and Semini, Claudio and Bemporad, Alberto},
+  journal={IEEE Access},
+  volume={9},
+  pages={145710--145727},
+  year={2021},
+  publisher={IEEE}
+}
+
+@article{verschueren2022acados,
+  title={acados—a modular open-source framework for fast embedded optimal control},
+  author={Verschueren, Robin and Frison, Gianluca and Kouzoupis, Dimitris and Frey, Jonathan and Duijkeren, Niels van and Zanelli, Andrea and Novoselnik, Branimir and Albin, Thivaharan and Quirynen, Rien and Diehl, Moritz},
+  journal={Mathematical Programming Computation},
+  volume={14},
+  number={1},
+  pages={147--183},
+  year={2022},
+  publisher={Springer}
+}
+
+@article{fmAdvancedGomez,
+author = {Valero-Gomez, Alberto and Gómez, Javier and Garrido, Santiago and Moreno, Luis},
+year = {2013},
+month = {12},
+pages = {111 - 120},
+title = {Fast Marching Methods in Path Planning},
+volume = {20},
+journal = {IEEE Robotics and Automation Magazine}
+}
+
+@article{diehlnumericalocp,
+author = {Diehl, Moritz},
+year = {2011},
+month = {July},
+pages = {},
+title = {Numerical Optimal Control}
+}
+
+@inproceedings{Koenig-2004-394,
+  author = "Nathan Koenig and Andrew Howard",
+  title = "Design and Use Paradigms for Gazebo, An Open-Source Multi-Robot Simulator",
+  booktitle = "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+  pages = "2149-2154",
+  address = "Sendai, Japan",
+  month = "Sep",
+  year = "2004"
+}
+
+@online{ode,
+author = {Russell L. Smith},
+title = {Open Dynamics Engine},
+year = {2004},
+url = {https://www.ode.org/},
+OPTurldate = {10-5-2025}
+}
+
+@mastersthesis{Silva-Decentralized-trajectory-optimization-for-a-fleet-of-industrial-mobile-robots,
+title = {Decentralized trajectory optimization for a fleet of industrial mobile robots},
+author = {Silva, Inês Sofia Baptista},
+month = November,
+year = {2022},
+language = {eng}
+}
+
+@incollection{bock2007numerical,
+  title={Numerical methods for efficient and fast nonlinear model predictive control},
+  author={Bock, Hans Georg and Diehl, Moritz and K{\"u}hl, Peter and Kostina, Ekaterina and Schi{\"o}der, Johannes P and Wirsching, Leonard},
+  booktitle={Assessment and future directions of nonlinear model predictive control},
+  pages={163--179},
+  year={2007},
+  publisher={Springer}
+}
+
+@article{diehl2009efficient,
+  title={Efficient numerical methods for nonlinear MPC and moving horizon estimation},
+  author={Diehl, Moritz and Ferreau, Hans Joachim and Haverbeke, Niels},
+  journal={Nonlinear model predictive control: towards new challenging applications},
+  pages={391--417},
+  year={2009},
+  publisher={Springer}
+}
+
+@article{gros2020linear,
+  title={From linear to nonlinear MPC: bridging the gap via the real-time iteration},
+  author={Gros, Sébastien and Zanon, Mario and Quirynen, Rien and Bemporad, Alberto and Diehl, Moritz},
+  journal={International Journal of Control},
+  volume={93},
+  number={1},
+  pages={62--80},
+  year={2020},
+  publisher={Taylor \& Francis}
+}
+
+@article{quirynen2015autogenerating,
+  title={Autogenerating microsecond solvers for nonlinear MPC: a tutorial using ACADO integrators},
+  author={Quirynen, Rien and Vukov, Milan and Zanon, Mario and Diehl, Moritz},
+  journal={Optimal Control Applications and Methods},
+  volume={36},
+  number={5},
+  pages={685--704},
+  year={2015},
+  publisher={Wiley Online Library}
+}
+
+@article{ferreau2014qpoases,
+  title={qpOASES: A parametric active-set algorithm for quadratic programming},
+  author={Ferreau, Hans Joachim and Kirches, Christian and Potschka, Andreas and Bock, Hans Georg and Diehl, Moritz},
+  journal={Mathematical Programming Computation},
+  volume={6},
+  pages={327--363},
+  year={2014},
+  publisher={Springer}
+}
+
+@article{frison2020hpipm,
+  title={HPIPM: a high-performance quadratic programming framework for model predictive control},
+  author={Frison, Gianluca and Diehl, Moritz},
+  journal={IFAC-PapersOnLine},
+  volume={53},
+  number={2},
+  pages={6563--6569},
+  year={2020},
+  publisher={Elsevier}
+}
+
+@phdthesis{diehl2001real,
+  title={Real-time optimization for large scale nonlinear processes},
+  author={Diehl, Moritz},
+  year={2001}
 }

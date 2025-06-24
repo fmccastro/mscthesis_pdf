@@ -26,16 +26,23 @@
 
 % ----------------------------------------------------------------------
 % Roman symbols [r]
-\nomenclature[R]{$\mathbf{q}$}{Mobile robot pose.}
 \nomenclature[R]{$\mathbf{p}$}{Mobile robot position.}
-\nomenclature[R]{$\mathbf{\chi}$}{Mobile robot orientation.}
-\nomenclature[R]{$\mathbf{v}$}{Mobile robot velocity.}
-\nomenclature[R]{$\mathcal{B}, \mathcal{W}$}{Body and world frames, respectively.}
+\nomenclature[R]{$\mathbf{v}$}{Mobile robot linear velocity.}
+\nomenclature[R]{$\mathcal{C},\, \mathcal{B},\, \mathcal{W}$}{Contact, body and world frames, respectively.}
 \nomenclature[R]{$\mathbf{R}$}{Rotation matrix.}
+\nomenclature[R]{x, y, z}{Position components.}
+\nomenclature[R]{u, v, w}{Body frame linear velocity components.}
+\nomenclature[R]{p, q, r}{Body frame angular velocity components.}
+\nomenclature[R]{$n_i$}{Number of divisions of map on \textit{i} direction.}
+\nomenclature[R]{$g(\cdot)$}{Equality constraints function.}
+\nomenclature[R]{$g(\cdot)$}{Inequality constraints function.}
 
 % ----------------------------------------------------------------------
 % Greek symbols [g]
 \nomenclature[G]{$\phi, \; \theta, \; \psi$}{Roll, pitch, and yaw angles, respectively.}
+\nomenclature[G]{$\lambda, \; \niu$}{Lagrange multipliers.}
+%\nomenclature[G]{$\mathbf{\Psi}$}{Inertial mobile robot orientation.}
+%\nomenclature[G]{$\mathbf{\omega}$}{Body frame mobile robot angular velocity.}
 
 % ----------------------------------------------------------------------
 % Subscripts [s]
@@ -43,5 +50,5 @@
 
 % ----------------------------------------------------------------------
 % Supercripts [t]
-%\nomenclature[T]{T}{Transpose}
+\nomenclature[T]{*}{Optimized variable.}
 

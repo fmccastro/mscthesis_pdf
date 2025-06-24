@@ -1,11 +1,11 @@
 \babel@toc {english}{}\relax 
-\contentsline {section}{Acknowledgments}{vii}{Doc-Start}%
-\contentsline {section}{Resumo}{ix}{Doc-Start}%
-\contentsline {section}{Abstract}{xi}{Doc-Start}%
-\contentsline {section}{List of Tables}{xvii}{section*.2}%
-\contentsline {section}{List of Figures}{xix}{section*.4}%
-\contentsline {section}{Nomenclature}{xxi}{section*.6}%
-\contentsline {section}{Acronyms}{xxiii}{section*.8}%
+\contentsline {section}{Acknowledgments}{iv}{Doc-Start}%
+\contentsline {section}{Resumo}{v}{Doc-Start}%
+\contentsline {section}{Abstract}{vi}{Doc-Start}%
+\contentsline {section}{List of Tables}{x}{section*.2}%
+\contentsline {section}{List of Figures}{xi}{section*.4}%
+\contentsline {section}{Nomenclature}{xii}{section*.6}%
+\contentsline {section}{Acronyms}{xiii}{section*.8}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Problem Statement}{4}{section.1.2}%
@@ -16,55 +16,69 @@
 \contentsline {chapter}{\numberline {2}State of the art}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Path planning algorithms}{5}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}World modelling}{5}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Path planning}{6}{subsection.2.1.2}%
-\contentsline {chapter}{\numberline {3}Proposed Approach}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Problem formulation}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Optimal path planning}{7}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Cost map generation}{7}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Mobile robot kinematics}{8}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Wheel kinematics}{9}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Wheel-terrain contact}{10}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Slippage}{12}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Mobile robot dynamics}{12}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Wheel actuation}{14}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Wheel spin rate}{15}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Wheel-terrain contact model}{15}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Full state-space model}{17}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Model verification}{18}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Maximum inclination}{18}{subsection.3.6.1}%
-\contentsline {chapter}{\numberline {4}Background}{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Two-layer map generation}{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2}\acrlong {fmm}}{20}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Global path planner}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Traversability map computation}{21}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Height minimization}{21}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Maximum terrain roughness}{23}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Worst-case scenario}{24}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Implementation}{25}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}Discussion}{27}{subsection.5.1.5}%
-\contentsline {section}{\numberline {5.2}Optimal path planning}{28}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Implementation}{29}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Discussion}{30}{subsection.5.2.2}%
-\contentsline {chapter}{\numberline {6}Control system}{33}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Problem Description}{33}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Baseline Solution}{33}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Enhanced Solution}{33}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Figures}{33}{subsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.1.1}Images}{33}{subsubsection.6.3.1.1}%
-\contentsline {subsubsection}{\numberline {6.3.1.2}Drawings}{34}{subsubsection.6.3.1.2}%
-\contentsline {subsection}{\numberline {6.3.2}Equations}{34}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Tables}{35}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Mixing}{36}{subsection.6.3.4}%
-\contentsline {chapter}{\numberline {7}Conclusions}{39}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Achievements}{39}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Future Work}{39}{section.7.2}%
-\contentsline {chapter}{Bibliography}{41}{section*.41}%
-\contentsline {chapter}{\numberline {A}Mathematical snippet}{43}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Euler angles}{43}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Skew-symmetric matrix}{43}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Inertia tensor}{44}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Differentiation of a vector}{44}{section.A.4}%
-\contentsline {section}{\numberline {A.5}Parallel-axis theorem}{44}{section.A.5}%
-\contentsline {chapter}{\numberline {B}Miscellaneous}{45}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Elevation maps}{45}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Traversability maps}{45}{section.B.2}%
+\contentsline {subsection}{\numberline {2.1.2}Path planning}{7}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}\acrlong {ocp} applications to rough terrain}{7}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Proposed Approach}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problem formulation}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Optimal path planning}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Cost map generation}{9}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Mobile robot kinematics}{10}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Wheel kinematics}{11}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Wheel-terrain contact}{12}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Slippage}{14}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Mobile robot dynamics}{14}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Wheel actuation}{16}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Wheel spin rate}{17}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Wheel-terrain contact model}{17}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Full state-space model}{19}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Model verification}{19}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Maximum inclination}{20}{subsection.3.6.1}%
+\contentsline {chapter}{\numberline {4}Background}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Maps nomemclature}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}\acrlong {fmm}}{21}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Eikonal equation discretization}{22}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}\acrlong {nlp}}{22}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Inequality Constrained Optimization}{23}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}\acrlong {ocp}}{25}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Discretization methods of an \acrlong {ocp}}{26}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Linearisation after discretization}{27}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Nonlinear Model Predictive Control}{29}{subsection.4.4.3}%
+\contentsline {chapter}{\numberline {5}Global path planner}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Traversability map computation}{32}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Height minimization}{32}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Maximum terrain roughness}{34}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Worst-case scenario}{35}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Implementation}{36}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Discussion}{38}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}Optimal path planning}{39}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Implementation}{40}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Discussion}{41}{subsection.5.2.2}%
+\contentsline {chapter}{\numberline {6}Control system}{44}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Problem Description}{44}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Baseline Solution}{44}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Enhanced Solution}{44}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Figures}{44}{subsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.1}Images}{44}{subsubsection.6.3.1.1}%
+\contentsline {subsubsection}{\numberline {6.3.1.2}Drawings}{45}{subsubsection.6.3.1.2}%
+\contentsline {subsection}{\numberline {6.3.2}Equations}{45}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Tables}{46}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Mixing}{47}{subsection.6.3.4}%
+\contentsline {chapter}{\numberline {7}Conclusions}{49}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Achievements}{49}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Future Work}{49}{section.7.2}%
+\contentsline {chapter}{Bibliography}{50}{section*.46}%
+\contentsline {chapter}{\numberline {A}Mathematical snippet}{55}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Euler angles}{55}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Skew-symmetric matrix}{55}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Inertia tensor}{56}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Differentiation of a vector}{56}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Runge-Kutta 4 numerical integrator}{56}{section.A.5}%
+\contentsline {subsection}{\numberline {A.5.1}Sensitivities propagation}{57}{subsection.A.5.1}%
+\contentsline {section}{\numberline {A.6}Parallel-axis theorem}{57}{section.A.6}%
+\contentsline {section}{\numberline {A.7}Linear algebra}{57}{section.A.7}%
+\contentsline {chapter}{\numberline {B}Nonlinear optimization snippet}{59}{appendix.B}%
+\contentsline {section}{\numberline {B.1}General definitions}{59}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Convex optimization}{60}{section.B.2}%
+\contentsline {chapter}{\numberline {C}Miscellaneous}{62}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Elevation maps}{62}{section.C.1}%
+\contentsline {section}{\numberline {C.2}Traversability maps}{62}{section.C.2}%

@@ -15,7 +15,6 @@
 
 In order to feed the control system with a reference path, an offline survey of the target environment is conducted in order to generate a \tb{traversability cost map}, which performs an analysis of the terrain uneveness with respect to the robot kinematics and geometric features. Then, the same \tb{cost map} is fed to the Eikonal equation in order to yield a gradient potential map, where an optimal path to some goal position is retrieved.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Traversability map computation}
 \label{section:costMap}
 
@@ -28,7 +27,7 @@ A constrained optimization problem which minimizes the height of the robot at ea
 
 \subsubsection*{Initial guess}
 
-Provided that the yaw angle $\yaw$ and the $\x$ and $\y$ position coordinates are known, each wheel point is projected to $\Map_2$. Then, from the group of retrieved contact points, the lowest height one is discarded, and an unit, normal vector to a plane which contains txthese points, is computed. Finally, the roll and pitch of this plane are given by equation \ref{eq:rollPitchInitialGuess}, where $\left( a, \, b, \, c \right)$ are the coordinates of a normal vector to the above mentioned plane. In case any of these angles are higher than $\roll_{max}$ or $\pitch_{max}$, the respective angle is set to the highest admissable value, so that the initial guess is feasible. The height initial guess $\z_0$ is set as the sum of the projection of the robot center of mass point to $\Map_2$ plus the robot geometric height, to avoid any possible intrusion of the vehicle hull into the ground.
+Provided that the yaw angle $\yaw$ and the $\x$ and $\y$ position coordinates are known, each wheel point is projected to $\Map_2$. Then, from the group of retrieved contact points, the lowest height one is discarded, and an unit, normal vector to a plane which contains these points, is computed. Finally, the roll and pitch of this plane are given by equation \ref{eq:rollPitchInitialGuess}, where $\left( a, \, b, \, c \right)$ are the coordinates of a normal vector to the above mentioned plane. In case any of these angles are higher than $\roll_{max}$ or $\pitch_{max}$, the respective angle is set to the highest admissable value, so that the initial guess is feasible. The height initial guess $\z_0$ is set as the sum of the projection of the robot center of mass point to $\Map_2$ plus the robot geometric height, to avoid any possible intrusion of the vehicle hull into the ground.
 
 \begin{equation}
 	\begin{aligned}

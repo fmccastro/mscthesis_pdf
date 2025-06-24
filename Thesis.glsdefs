@@ -567,8 +567,8 @@ first={NLP},%
 firstplural={NLPs},%
 text={NLP},%
 plural={NLPs},%
-description={Non-linear programming},%
-descriptionplural={Non-linear programming},%
+description={Nonlinear programming},%
+descriptionplural={Nonlinear programming},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -577,10 +577,38 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Non-linear programming},%
-longplural={Non-linear programmings},%
+long={Nonlinear programming},%
+longplural={Nonlinear programmings},%
 short={NLP},%
 shortplural={NLPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ode2}%
+{%
+name={\acronymfont {\glsentryshort {ode2}}},%
+sort={ODE},%
+type={acronym},%
+first={ODE},%
+firstplural={ODEs},%
+text={ODE},%
+plural={ODEs},%
+description={Ordinary differential equations},%
+descriptionplural={Ordinary differential equations},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Ordinary differential equations},%
+longplural={Ordinary differential equationss},%
+short={ODE},%
+shortplural={ODEs},%
 counter={page},%
 parent={},%
 %
@@ -637,6 +665,258 @@ long={casADi (open-source software tool)},%
 longplural={casADi (open-source software tool)s},%
 short={casADi},%
 shortplural={casADis},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{zmp}%
+{%
+name={\acronymfont {\glsentryshort {zmp}}},%
+sort={ZMP},%
+type={acronym},%
+first={ZMP},%
+firstplural={ZMPs},%
+text={ZMP},%
+plural={ZMPs},%
+description={Zero moment point},%
+descriptionplural={Zero moment point},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Zero moment point},%
+longplural={Zero moment points},%
+short={ZMP},%
+shortplural={ZMPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{hjb}%
+{%
+name={\acronymfont {\glsentryshort {hjb}}},%
+sort={HJB},%
+type={acronym},%
+first={HJB},%
+firstplural={HJBs},%
+text={HJB},%
+plural={HJBs},%
+description={Hamilton-Jacobi-Bellman equation},%
+descriptionplural={Hamilton-Jacobi-Bellman equation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Hamilton-Jacobi-Bellman equation},%
+longplural={Hamilton-Jacobi-Bellman equations},%
+short={HJB},%
+shortplural={HJBs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{kkt}%
+{%
+name={\acronymfont {\glsentryshort {kkt}}},%
+sort={KKT},%
+type={acronym},%
+first={KKT},%
+firstplural={KKTs},%
+text={KKT},%
+plural={KKTs},%
+description={Karush-Kuhn-Tucker},%
+descriptionplural={Karush-Kuhn-Tucker},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Karush-Kuhn-Tucker},%
+longplural={Karush-Kuhn-Tuckers},%
+short={KKT},%
+shortplural={KKTs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{licq}%
+{%
+name={\acronymfont {\glsentryshort {licq}}},%
+sort={LICQ},%
+type={acronym},%
+first={LICQ},%
+firstplural={LICQs},%
+text={LICQ},%
+plural={LICQs},%
+description={Linear Independence Constraint Qualification},%
+descriptionplural={Linear Independence Constraint Qualification},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Linear Independence Constraint Qualification},%
+longplural={Linear Independence Constraint Qualifications},%
+short={LICQ},%
+shortplural={LICQs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sqp}%
+{%
+name={\acronymfont {\glsentryshort {sqp}}},%
+sort={SQP},%
+type={acronym},%
+first={SQP},%
+firstplural={SQPs},%
+text={SQP},%
+plural={SQPs},%
+description={Sequential Quadratic Programming},%
+descriptionplural={Sequential Quadratic Programming},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Sequential Quadratic Programming},%
+longplural={Sequential Quadratic Programmings},%
+short={SQP},%
+shortplural={SQPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{qp}%
+{%
+name={\acronymfont {\glsentryshort {qp}}},%
+sort={QP},%
+type={acronym},%
+first={QP},%
+firstplural={QPs},%
+text={QP},%
+plural={QPs},%
+description={Quadratic Programming},%
+descriptionplural={Quadratic Programming},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Quadratic Programming},%
+longplural={Quadratic Programmings},%
+short={QP},%
+shortplural={QPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rk4}%
+{%
+name={\acronymfont {\glsentryshort {rk4}}},%
+sort={RK-4},%
+type={acronym},%
+first={RK-4},%
+firstplural={RK-4s},%
+text={RK-4},%
+plural={RK-4s},%
+description={Runge Kutta 4-step},%
+descriptionplural={Runge Kutta 4-step},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Runge Kutta 4-step},%
+longplural={Runge Kutta 4-steps},%
+short={RK-4},%
+shortplural={RK-4s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ad}%
+{%
+name={\acronymfont {\glsentryshort {ad}}},%
+sort={AD},%
+type={acronym},%
+first={AD},%
+firstplural={ADs},%
+text={AD},%
+plural={ADs},%
+description={Algorithmic differentiation},%
+descriptionplural={Algorithmic differentiation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Algorithmic differentiation},%
+longplural={Algorithmic differentiations},%
+short={AD},%
+shortplural={ADs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rti}%
+{%
+name={\acronymfont {\glsentryshort {rti}}},%
+sort={RTI},%
+type={acronym},%
+first={RTI},%
+firstplural={RTIs},%
+text={RTI},%
+plural={RTIs},%
+description={Real-time iteration},%
+descriptionplural={Real-time iteration},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Real-time iteration},%
+longplural={Real-time iterations},%
+short={RTI},%
+shortplural={RTIs},%
 counter={page},%
 parent={},%
 %

@@ -1,14 +1,123 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{66}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Yoshida et~al.(2016)Yoshida, Wilcox, et~al.]{Yoshida2016}
+\bibitem[Gao and Chien(2017)]{Gao2017}
+Y.~Gao and S.~Chien.
+\newblock Review on space robotics: Toward top-level science through space
+  exploration.
+\newblock \emph{Science Robotics}, 2, 6 2017.
+
+\bibitem[Yoshida et~al.(2016{\natexlab{a}})Yoshida, Wilcox,
+  et~al.]{Yoshida2016}
 K.~Yoshida, B.~Wilcox, et~al.
 \newblock \emph{Handbook of Robotics}.
-\newblock Springer Nature, second edition, 2016.
+\newblock Springer Nature, second edition, 2016{\natexlab{a}}.
+
+\bibitem[Wall(2021)]{Wall2021}
+M.~Wall.
+\newblock Nasa's mars helicopter ingenuity takes off on historic 1st powered
+  flight on another world.
+\newblock \emph{Space.com}, 2021.
+\newblock URL
+  \url{https://www.space.com/mars-helicopter-ingenuity-first-flight-success}.
+
+\bibitem[Yoshida et~al.(2016{\natexlab{b}})Yoshida, Wilcox, and
+  Lampariello]{roboticsHandbook_chap55}
+K.~Yoshida, B.~Wilcox, and R.~Lampariello.
+\newblock \emph{Space Robotics}.
+\newblock 2016{\natexlab{b}}.
+
+\bibitem[Bekker(1964)]{Bekker1964}
+M.~G. Bekker.
+\newblock Mechanics of locomotion and lunar surface vehicle concepts.
+\newblock \emph{SAE Transactions}, 72:\penalty0 549--569, 1964.
+\newblock ISSN 0096736X, 25771531.
+\newblock URL \url{http://www.jstor.org/stable/44562978}.
+
+\bibitem[Thoesen and Marvi(2021)]{Thoesen2021}
+A.~Thoesen and A.~Marvi.
+\newblock Planetary surface mobility and exploration: A review.
+\newblock \emph{Current Robotics Reports}, 2, 5 2021.
+
+\bibitem[Heverly et~al.(2013)Heverly, Matthews, et~al.]{Heverly2013}
+M.~Heverly, J.~Matthews, et~al.
+\newblock Traverse performance characterization for the mars science laboratory
+  rover.
+\newblock \emph{Journal of Field Robotics}, 30, 9 2013.
+
+\bibitem[nas(2025)]{nasa:Perseverance}
+Mars 2020: Perseverance rover, 2025.
+\newblock URL \url{https://en.wikipedia.org/wiki/Zhurong_(rover)}.
+
+\bibitem[cns(2025)]{cnsa:zhurong}
+Zhurong (rover), 2025.
+\newblock URL \url{https://en.wikipedia.org/wiki/Zhurong_(rover)}.
+
+\bibitem[Gonzalez and Iagnemma(2017)]{Gonzalez2017}
+R.~Gonzalez and K.~Iagnemma.
+\newblock Slippage estimation and compensation for planetary exploration
+  rovers. state of the art and future challenges.
+\newblock \emph{Journal of Field Robotics}, 35:\penalty0 564--577, 10 2017.
+
+\bibitem[Wong(2001)]{Wong2001}
+J.~Y. Wong.
+\newblock \emph{Theory of Ground Vehicles}.
+\newblock John Wiley and Sons, Inc., 3 edition, 2001.
+
+\bibitem[Genta(2012)]{Genta2012}
+G.~Genta.
+\newblock \emph{Introduction to the Mechanics of Space Robots}.
+\newblock Springer, 2012.
+
+\bibitem[Wong(2010)]{wong:terramechanics}
+J.~Y. Wong.
+\newblock \emph{Terramechanics and off-road vehicle engineering; Terrain
+  Behaviour, Off-Road Vehicle Performance and Design}.
+\newblock Elsevier, second edition, 2010.
+
+\bibitem[Wong and Reece(1967)]{wong:performance}
+J.~Y. Wong and A.~R. Reece.
+\newblock Prediction of rigid wheel performance based on the analysis of
+  soil-wheel stresses; part 1: Performance of driven rigid wheels.
+\newblock \emph{Journal of Terramecanics}, 4:\penalty0 81--98, 1967.
+
+\bibitem[Green and Melzer(1971)]{Green1971}
+A.~J. Green and K.~J. Melzer.
+\newblock Performance of boeing lrv wheels in a lunar soil simulator, report i,
+  effect of wheel design and soil, 1971.
+
+\bibitem[Rodríguez-Martínez et~al.(2019)]{rodriguezHighSpeedRoversReview}
+D.~Rodríguez-Martínez et~al.
+\newblock High-speed mobility on planetary surfaces: A technical review.
+\newblock \emph{Journal of Field Robotics}, 36:\penalty0 1436--1455, 10 2019.
+
+\bibitem[Gonzalez et~al.(2019)Gonzalez, Apostolopoulos, and
+  Iagnemma]{Gonzalez-2019-120666}
+R.~Gonzalez, D.~Apostolopoulos, and K.~Iagnemma.
+\newblock Improving rover mobility through traction control: Simulating rovers
+  on the moon.
+\newblock \emph{Autonomous Robots}, 43\penalty0 (2):\penalty0 1977 -- 1988,
+  March 2019.
+
+\bibitem[Coombs et~al.(2000)Coombs, Murphy, et~al.]{Coombs2000}
+D.~Coombs, K.~Murphy, et~al.
+\newblock Driving autonomously offroad up to 35 km/h.
+\newblock 2000.
+
+\bibitem[Urmson et~al.(2004)Urmson, Anhalt, et~al.]{Urmson2004}
+C.~P. Urmson, J.~Anhalt, et~al.
+\newblock High speed navigation of unrehearsed terrain: Red team technology for
+  grand challenging 2004, 2004.
+
+\bibitem[Spero and Jarvis()]{Spero2002Path}
+D.~J. Spero and R.~A. Jarvis.
+\newblock Path planning for a mobile robot in a rough terrain environment.
+\newblock In \emph{Proceedings of the Third International Workshop on Robot
+  Motion and Control, 2002. RoMoCo'02.}
 
 \bibitem[Burgard et~al.(2016)Burgard, Hebert, and Bennewitz]{Burgard2016}
 W.~Burgard, M.~Hebert, and M.~Bennewitz.
@@ -86,6 +195,115 @@ P.~Fankhauser and M.~Hutter.
 \newblock \doi{10.1007/978-3-319-26054-9{\_}5}.
 \newblock URL \url{http://www.springer.com/de/book/9783319260525}.
 
+\bibitem[Sakayori and Ishigami(2021)]{sakayori2021energy}
+G.~Sakayori and G.~Ishigami.
+\newblock Energy-aware trajectory planning for planetary rovers.
+\newblock \emph{Advanced Robotics}, 35\penalty0 (21-22):\penalty0 1302--1316,
+  2021.
+
+\bibitem[Howard and Kelly(2007)]{howard2007optimal}
+T.~M. Howard and A.~Kelly.
+\newblock Optimal rough terrain trajectory generation for wheeled mobile
+  robots.
+\newblock \emph{The International Journal of Robotics Research}, 26\penalty0
+  (2):\penalty0 141--166, 2007.
+
+\bibitem[Garrido et~al.(2016)Garrido, {\'A}lvarez, and
+  Moreno]{garridoFMrovers2016}
+S.~Garrido, D.~{\'A}lvarez, and L.~Moreno.
+\newblock Path planning for mars rovers using the fast marching method.
+\newblock In L.~P. Reis, A.~P. Moreira, P.~U. Lima, L.~Montano, and
+  V.~Mu{\~{n}}oz-Martinez, editors, \emph{Robot 2015: Second Iberian Robotics
+  Conference}, pages 93--105, Cham, 2016. Springer International Publishing.
+
+\bibitem[Garrido et~al.(2009)Garrido, Moreno, Blanco, and
+  Martin]{garrido2009smooth}
+S.~Garrido, L.~Moreno, D.~Blanco, and F.~Martin.
+\newblock Smooth path planning for non-holonomic robots using fast marching.
+\newblock In \emph{2009 IEEE International Conference on Mechatronics}, pages
+  1--6. IEEE, 2009.
+
+\bibitem[Iagnemma and Dubowsky(2004)]{IagnemmaDubowsy2004}
+K.~Iagnemma and S.~Dubowsky.
+\newblock Traction control of wheeled robotic vehicles in rough terrain with
+  application to planetary rovers.
+\newblock \emph{The International Journal of Robotics Research}, 23:\penalty0
+  1029--1040, 11 2004.
+
+\bibitem[Bussmann et~al.(2018)Bussmann, Dietrich, and
+  Ott]{bussmannPlanetaryRoverImpedanceControl}
+K.~Bussmann, A.~Dietrich, and C.~Ott.
+\newblock Whole-body impedance control for a planetary rover with robotic arm:
+  Theory, control design, and experimental validation.
+\newblock In \emph{2018 IEEE International Conference on Robotics and
+  Automation (ICRA)}, pages 910--917, 2018.
+\newblock \doi{10.1109/ICRA.2018.8460533}.
+
+\bibitem[Ostafew et~al.(2014)Ostafew, Schoellig, and Barfoot]{lbnmpcOstafew}
+C.~J. Ostafew, A.~P. Schoellig, and T.~D. Barfoot.
+\newblock Learning-based nonlinear model predictive control to improve
+  vision-based mobile robot path-tracking in challenging outdoor environments.
+\newblock In \emph{2014 IEEE International Conference on Robotics and
+  Automation (ICRA)}, pages 4029--4036, 2014.
+\newblock \doi{10.1109/ICRA.2014.6907444}.
+
+\bibitem[Binet et~al.(2012)Binet, Krenn, Bemporad, et~al.]{binet2012model}
+G.~Binet, R.~Krenn, A.~Bemporad, et~al.
+\newblock Model predictive control applications for planetary rovers.
+\newblock In \emph{Proc. 11th International Symposium on Artificial
+  Intelligence and Robotics in Space (iSAIRAS), Sept}, pages 4--6, 2012.
+
+\bibitem[Yu et~al.(2021)Yu, Shen, and Ersal]{yu2022nmpc}
+S.~Yu, C.~Shen, and T.~Ersal.
+\newblock Nonlinear model predictive planning and control for high-speed
+  autonomous vehicles on 3d terrains.
+\newblock \emph{IFAC-PapersOnLine}, 54\penalty0 (20):\penalty0 412--417, 2021.
+\newblock ISSN 2405-8963.
+\newblock \doi{https://doi.org/10.1016/j.ifacol.2021.11.208}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S2405896321022527}.
+\newblock Modeling, Estimation and Control Conference MECC 2021.
+
+\bibitem[Smith(2004)]{ode}
+R.~L. Smith.
+\newblock Open dynamics engine, 2004.
+\newblock URL \url{https://www.ode.org/}.
+
+\bibitem[Koenig and Howard(2004)]{Koenig-2004-394}
+N.~Koenig and A.~Howard.
+\newblock Design and use paradigms for gazebo, an open-source multi-robot
+  simulator.
+\newblock In \emph{IEEE/RSJ International Conference on Intelligent Robots and
+  Systems}, pages 2149--2154, Sendai, Japan, Sep 2004.
+
+\bibitem[Rathod et~al.(2021)Rathod, Bratta, Focchi, Zanon, Villarreal, Semini,
+  and Bemporad]{rathod2021model}
+N.~Rathod, A.~Bratta, M.~Focchi, M.~Zanon, O.~Villarreal, C.~Semini, and
+  A.~Bemporad.
+\newblock Model predictive control with environment adaptation for legged
+  locomotion.
+\newblock \emph{IEEE Access}, 9:\penalty0 145710--145727, 2021.
+
+\bibitem[Verschueren et~al.(2022)Verschueren, Frison, Kouzoupis, Frey,
+  Duijkeren, Zanelli, Novoselnik, Albin, Quirynen, and
+  Diehl]{verschueren2022acados}
+R.~Verschueren, G.~Frison, D.~Kouzoupis, J.~Frey, N.~v. Duijkeren, A.~Zanelli,
+  B.~Novoselnik, T.~Albin, R.~Quirynen, and M.~Diehl.
+\newblock acados—a modular open-source framework for fast embedded optimal
+  control.
+\newblock \emph{Mathematical Programming Computation}, 14\penalty0
+  (1):\penalty0 147--183, 2022.
+
+\bibitem[Rawlings and Mayne(2013)]{Rawlings2013}
+J.~B. Rawlings and D.~Q. Mayne.
+\newblock \emph{Model Predictive Control: Theory and Design}.
+\newblock Nob Hill Publishing, second edition, 11 2013.
+
+\bibitem[Grüne and Pannek(2011)]{grunenmpc}
+L.~Grüne and J.~Pannek.
+\newblock \emph{Nonlinear Model Predictive Control: Theory and Algorithms}.
+\newblock Springer, 2011.
+
 \bibitem[Foote and Purvis(2010)]{Foote2010}
 T.~Foote and M.~Purvis.
 \newblock Standard units of measure and coordinate conventions, 10 2010.
@@ -104,28 +322,82 @@ K.~Iagnemma, C.~Brooks, and S.~Dubowsky.
   rovers.
 \newblock volume~2, pages 841--848, 2004.
 
-\bibitem[Iagnemma and Dubowsky(2004)]{IagnemmaDubowsy2004}
-K.~Iagnemma and S.~Dubowsky.
-\newblock Traction control of wheeled robotic vehicles in rough terrain with
-  application to planetary rovers.
-\newblock \emph{The International Journal of Robotics Research}, 23:\penalty0
-  1029--1040, 11 2004.
-
 \bibitem[Peiret et~al.(2021)Peiret, Karpman, et~al.]{Peiret2021}
 A.~Peiret, E.~Karpman, et~al.
 \newblock Modelling of off-road wheeled vehicles for real-time dynamic
   simulation.
 \newblock \emph{Journal of terramechanics}, pages 45--58, 4 2021.
 
-\bibitem[Genta(2012)]{Genta2012}
-G.~Genta.
-\newblock \emph{Introduction to the Mechanics of Space Robots}.
-\newblock Springer, 2012.
-
 \bibitem[Sethian(1999)]{Sethian1999}
 J.~A. Sethian.
 \newblock Fast marching methods.
 \newblock \emph{SIAM Review}, 41:\penalty0 199--235, 1999.
+
+\bibitem[Valero-Gomez et~al.(2013)Valero-Gomez, Gómez, Garrido, and
+  Moreno]{fmAdvancedGomez}
+A.~Valero-Gomez, J.~Gómez, S.~Garrido, and L.~Moreno.
+\newblock Fast marching methods in path planning.
+\newblock \emph{IEEE Robotics and Automation Magazine}, 20:\penalty0 111 --
+  120, 12 2013.
+
+\bibitem[Diehl(2011)]{diehlnumericalocp}
+M.~Diehl.
+\newblock Numerical optimal control.
+\newblock July 2011.
+
+\bibitem[Diehl et~al.(2009)Diehl, Ferreau, and Haverbeke]{diehl2009efficient}
+M.~Diehl, H.~J. Ferreau, and N.~Haverbeke.
+\newblock Efficient numerical methods for nonlinear mpc and moving horizon
+  estimation.
+\newblock \emph{Nonlinear model predictive control: towards new challenging
+  applications}, pages 391--417, 2009.
+
+\bibitem[Gros et~al.(2020)Gros, Zanon, Quirynen, Bemporad, and
+  Diehl]{gros2020linear}
+S.~Gros, M.~Zanon, R.~Quirynen, A.~Bemporad, and M.~Diehl.
+\newblock From linear to nonlinear mpc: bridging the gap via the real-time
+  iteration.
+\newblock \emph{International Journal of Control}, 93\penalty0 (1):\penalty0
+  62--80, 2020.
+
+\bibitem[Silva(2022)]{Silva-Decentralized-trajectory-optimization-for-a-fleet-of-industrial-mobile-robots}
+I.~S.~B. Silva.
+\newblock Decentralized trajectory optimization for a fleet of industrial
+  mobile robots.
+\newblock Master's thesis, 2022.
+
+\bibitem[W{\"a}chter and Biegler(2006)]{wachter2006implementation}
+A.~W{\"a}chter and L.~T. Biegler.
+\newblock On the implementation of an interior-point filter line-search
+  algorithm for large-scale nonlinear programming.
+\newblock \emph{Mathematical programming}, 106:\penalty0 25--57, 2006.
+
+\bibitem[Bock et~al.(2007)Bock, Diehl, K{\"u}hl, Kostina, Schi{\"o}der, and
+  Wirsching]{bock2007numerical}
+H.~G. Bock, M.~Diehl, P.~K{\"u}hl, E.~Kostina, J.~P. Schi{\"o}der, and
+  L.~Wirsching.
+\newblock Numerical methods for efficient and fast nonlinear model predictive
+  control.
+\newblock In \emph{Assessment and future directions of nonlinear model
+  predictive control}, pages 163--179. Springer, 2007.
+
+\bibitem[Ferreau et~al.(2014)Ferreau, Kirches, Potschka, Bock, and
+  Diehl]{ferreau2014qpoases}
+H.~J. Ferreau, C.~Kirches, A.~Potschka, H.~G. Bock, and M.~Diehl.
+\newblock qpoases: A parametric active-set algorithm for quadratic programming.
+\newblock \emph{Mathematical Programming Computation}, 6:\penalty0 327--363,
+  2014.
+
+\bibitem[Frison and Diehl(2020)]{frison2020hpipm}
+G.~Frison and M.~Diehl.
+\newblock Hpipm: a high-performance quadratic programming framework for model
+  predictive control.
+\newblock \emph{IFAC-PapersOnLine}, 53\penalty0 (2):\penalty0 6563--6569, 2020.
+
+\bibitem[Diehl(2001)]{diehl2001real}
+M.~Diehl.
+\newblock \emph{Real-time optimization for large scale nonlinear processes}.
+\newblock PhD thesis, 2001.
 
 \bibitem[Andersson et~al.(2018)Andersson, Gillis, Horn, Rawlings, and
   Diehl]{Andersson2018}
@@ -134,15 +406,30 @@ J.~A.~E. Andersson, J.~Gillis, G.~Horn, J.~B. Rawlings, and M.~Diehl.
   optimal control.
 \newblock \emph{Mathematical Programming Computation}, 2018.
 
-\bibitem[W{\"a}chter and Biegler(2006)]{wachter2006implementation}
-A.~W{\"a}chter and L.~T. Biegler.
-\newblock On the implementation of an interior-point filter line-search
-  algorithm for large-scale nonlinear programming.
-\newblock \emph{Mathematical programming}, 106:\penalty0 25--57, 2006.
+\bibitem[Andersson and Rawlings(2018)]{andersson2018sensitivity}
+J.~A. Andersson and J.~B. Rawlings.
+\newblock Sensitivity analysis for nonlinear programming in casadi.
+\newblock 2018.
 
 \bibitem[Roithmayr and Hodges(2015)]{Roithmayr2015}
 C.~M. Roithmayr and D.~H. Hodges.
 \newblock \emph{Dynamics: Theory and Application of Kane's Method}.
 \newblock Cambridge University Press, 2015.
+
+\bibitem[Beer et~al.(2015)Beer, Johnston, Mazurek, Cornwell, and
+  Self]{Beer2015}
+F.~P. F.~P. Beer, E.~R. E.~R. Johnston, D.~F. D.~F. Mazurek, P.~J. Cornwell,
+  and B.~P. Self.
+\newblock \emph{Vector mechanics for engineers: Statics and dynamics}.
+\newblock 2015.
+\newblock ISBN 9780073398242.
+
+\bibitem[Quirynen et~al.(2015)Quirynen, Vukov, Zanon, and
+  Diehl]{quirynen2015autogenerating}
+R.~Quirynen, M.~Vukov, M.~Zanon, and M.~Diehl.
+\newblock Autogenerating microsecond solvers for nonlinear mpc: a tutorial
+  using acado integrators.
+\newblock \emph{Optimal Control Applications and Methods}, 36\penalty0
+  (5):\penalty0 685--704, 2015.
 
 \end{thebibliography}

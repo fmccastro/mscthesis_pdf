@@ -1,65 +1,127 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                      %
-%     File: Thesis_Appendix_B.tex                                      %
-%     Tex Master: Thesis.tex                                           %
-%                                                                      %
-%     Author: Andre C. Marta                                           %
-%     Last modified :  2 Jul 2015                                      %
-%                                                                      %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Nonlinear optimization snippet}
+\label{chapter:nlpsnippet}
 
-\chapter{Miscellaneous}
-\label{chapter:annexData}
+\section{General definitions}
+\label{section:gendefinitions}
 
-\section{Elevation maps}
-\label{section:elevationMaps}
+This snippet on nonlinear optimization is an add-on to the respective background sections on nonlinear optimization. The nomenclature used below is aligned to the one used in sections \ref{section:nonlinearopt} and \ref{section:optimalControlProblems}.
 
-Below, the depiction of the elevation maps, which are used as test-beds for the control systems, are rendered.
+\begin{definition}[Feasible set]
+The feasible set $\feasibleSet$ is the set of admissable solutions to problem \ref{eq:gennlp}.
+\begin{equation}
+\feasibleSet := \{ \mathbf{w} \in \mathbb{R}^{n + n_g + n_h} \mid \mathbf{g}(\mathbf{w}) = 0,\, \mathbf{h}(\mathbf{w}) \leq 0 \}
+\end{equation}
+\end{definition}
 
-\begin{figure}[!ht]
-    \centering
-	\begin{subfigmatrix}{2}
-	\subfigure[Map 1] {
-    	\includegraphics[width=0.48\linewidth]{Figures/elevationMap1.png}  
-	}
-	\subfigure[Map 2] {
-    	\includegraphics[width=0.48\linewidth]{Figures/elevationMap1.png}  
-	}
-	\end{subfigmatrix}
-    \caption{Elevation maps}
-    \label{fig:elevationMaps}
-\end{figure}
+\begin{definition}[Global minimum]
+The point $\mathbf{w}^* \in \mathbb{R}^n$ is a \textit{global minimizer} if and only if $\mathbf{w}^* \in \feasibleSet$ and $\forall \, \mathbf{w} \in \feasibleSet:f\left(\mathbf{w}\right) \geq f\left(\mathbf{w}^*\right)$. The value $f\left(\mathbf{w}^*\right)$ is the global minimum.
+\label{def:globalmin}
+\end{definition}
 
-\section{Traversability maps}
-\label{section:traversabilityMaps}
+\begin{definition}[Neigborhood of $\mathbf{p}$]
+The neighborhood of $\mathbf{p}$ is defined as an open ball around $\mathbf{p}$,
+\begin{equation}
+\neighborhood\left( \mathbf{p} \right) := \{\mathbf{x} \in \StateSpace \mid d(\mathbf{x},\, \mathbf{p}) < \epsilon \}
+\label{eq:neighborhood}
+\end{equation}
+, where $d:\StateSpace \times \StateSpace \to \mathbb{R}$ is a distance function, $\epsilon$ is a small positive value and $\mathcal{X}$ is the metric space of $d(\cdot)$.
+\end{definition}
 
-\begin{figure}[!ht]
-    \centering
-	\begin{subfigmatrix}{3}
-	\subfigure[Algorithm \ref{alg:slopeMinHeightMap}, where $\yaw = 0$] {
-    	\includegraphics[width=0.31\linewidth]{Figures/HeightMin+Surface+1.png}  
-	}
-	\subfigure[Algorithm \ref{alg:slopeMinHeightMapVarYaw}] {
-    	\includegraphics[width=0.31\linewidth]{Figures/HeightMin_maxInclination+Surface+1.png}  
-	}
-	\subfigure[Algorithm \ref{alg:maxRoughnessMap}] {
-    	\includegraphics[width=0.31\linewidth]{Figures/maxTerrainRoughness+1.png}  
-	}
-	\end{subfigmatrix}
-    \caption{Traversability maps (case 2; map 1)}
-    \label{fig:costMapsCase2Alg2_4}
-\end{figure}
+\begin{definition}[Local minimum]
+The point $\mathbf{w}^* \in \mathbb{R}^n$ is a local minimizere if and only if $\mathbf{w}^* \in \feasibleSet$ and there exists a neighborhood $\neighborhood\left(\mathbf{w}^*\right)$, such that $\forall \, \mathbf{w} \in \feasibleSet \, \cap \, \neighborhood:f\left(\mathbf{w}\right) \geq f\left(\mathbf{w}^*\right)$. The value $f\left(\mathbf{w}^*\right)$ is a local minimum.
+ \label{def:localmin}
+\end{definition}
 
-\begin{figure}[!ht]
-    \centering
-	\begin{subfigmatrix}{2}
-	\subfigure[Worst-case map] {
-    	\includegraphics[width=0.48\linewidth]{Figures/worstCase+Surface+1.png}  
-	}
-	\subfigure[Algorithm \ref{alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9] {
-    	\includegraphics[width=0.48\linewidth]{Figures/mapRefinement+Surface+0.9+0.2+1.png}  
-	}
-	\end{subfigmatrix}
-    \caption{Traversability maps (case 2; map 1)}
-    \label{fig:costMapsCase2Alg5}
-\end{figure} 
+\begin{definition}[Active constraints and active set]
+An inequality constraint $\ineqCon{\mathbf{w}}_i \leq 0$ is called active at $\mathbf{w}^* \in \Omega$ if and only if $\ineqCon{\mathbf{w}^*}_i = 0$ and otherwise inactive. The index set $\activeSet(\mathbf{w}^*) \subset \{1,\,\ldots,n_h\}$ of active inequality constraint indices is called the active set.
+\end{definition}
+
+\section{Convex optimization}
+\label{section:convexopt}
+
+\begin{definition}[Convex set]
+A set $\feasibleSet$ is convex if 
+\begin{equation}
+\forall \, \mathbf{x},\,\mathbf{y} \in \feasibleSet,\, t \in \left[0,\,1\right]: \mathbf{x} + t(\mathbf{y} - \mathbf{x}) \in \feasibleSet
+\label{eq:convexSet}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Convex function]
+A function $f:\feasibleSet \to \mathbb{R}$ is convex, if $\feasibleSet$ is convex and if 
+\begin{equation}
+\forall \, \mathbf{x},\, \mathbf{y} \in \feasibleSet,\, t \in \left[0,\,1\right]: f\left( \mathbf{x} + t(\mathbf{y} - \mathbf{x}) \right) \leq f(\mathbf{x}) + t \left( f(\mathbf{y}) - f(\mathbf{x}) \right)
+\end{equation}
+\end{definition}
+
+Note that the feasible set $\feasibleSet$ of problem \ref{eq:gennlp} is convex if function $\eqCon{\cdot}$ is affine and functions $\ineqCon{\cdot}_i$ are convex, as supported by the following theorem.
+
+\begin{theorem}[Convexity of sublevel sets]
+The sublevel set $\{\mathbf{x} \in \feasibleSet \mid \ineqCon{\mathbf{x}} \leq \mathbf{0}\}$ of a convex function $\mathbf{h}:\feasibleSet \to \mathbb{R}$ is convex.
+\end{theorem}
+
+\begin{definition}[Convex optimization problem]
+An optimization problem with convex feasible set $\feasibleSet$ and convex objective function $f:\feasibleSet \to \mathbb{R}$ is called a convex optimization problem.
+\label{def:convexoptproble}
+\end{definition}
+
+\begin{theorem}[Local implies global optimality for convex problems]
+For a convex optimization problem, every local minimum is also a global one.
+\label{theorem:localimplesglobalconvex}
+\end{theorem}
+
+\begin{definition}[\acrshort{licq}]
+The linear independence constraint qualification (LICQ) holds at $\mathbf{w}^* \in \feasibleSet$ if and only if all vectors $\nabla g_i(\mathbf{w}^*)$ for $i \in \{1,\,\ldots,n_g\}$ and $\nabla h_i(\mathbf{w}^*)$ for $i \in \activeSet(\mathbf{w}^*)$ are linearly independent.
+\label{def:licq}
+\end{definition}
+
+From a different perspective, \acrshort{licq} is equivalent to full row rank of the Jacobian matrix of equation \ref{eq:licqmatrix}.
+\begin{equation}
+\tilde{\mathbf{g}}(\mathbf{w}) = \begin{bmatrix}
+\mathbf{g}(\mathbf{w})\\
+\mathbf{h}_i(\mathbf{w}) \, (i \in \activeSet(\mathbf{w}^*))
+\end{bmatrix}
+\label{eq:licqmatrix}
+\end{equation}
+
+\begin{definition}[Complementary conditions]
+The last three \acrshort{kkt} conditions (\ref{subeq:compcond1}, \ref{subeq:compcond2}, \ref{subeq:compcond3}) are called the complementarity conditions.
+\end{definition}
+
+For each index $i$, they define an L-shaped set in the $(h_i, \hmultiplier_i)$ space. This set is not a smooth manifold but has a non-differentiability at the origin, i.e., if $h_i(\mathbf{w}^*)=0$ and also $\hmultiplier_i^*=0$. This case is called a weakly active constraint. Often we want to exclude this case. On the other hand, an active constraint with $\hmultiplier_i^*>0$ is called strictly active.
+
+\begin{definition}[Strict complementarity]
+Regard a \acrshort{kkt} point $\left(\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*\right)$. We say that strict complementarity holds at this \acrshort{kkt} point if all active constraints are strictly active.
+\label{def:strictcomplementarity}
+\end{definition}
+
+\begin{definition}[\acrlong{qp}]
+In case constraints of problem \ref{eq:gennlp} are affine and the objetive is a linear-quadratic function, we call the resulting problem a \acrlong{qp} problem. A general \acrshort{qp} can be formulated as follows,
+
+\begin{equation}
+\begin{aligned}
+	\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} & \mathbf{c}^T \mathbf{w} + \frac{1}{2} \mathbf{w}^T \, \mathbf{B} \, \mathbf{w}\\
+	\text{subject to} &
+	\begin{cases}
+		\mathbf{A} \mathbf{w} - \mathbf{b} = \mathbf{0}\\
+		\mathbf{C} \mathbf{w} - \mathbf{d} \leq \mathbf{0}
+	\end{cases}
+\end{aligned}
+\label{eq:genqp}
+\end{equation}
+
+, where the problem data are $\mathbf{c} \in \mathbb{R}^n$, $\mathbf{A} \in \mathbb{R}^{n_g \times n}$, $\mathbf{b} \in \mathbb{R}^{n_g}$, $\mathbf{C} \in \mathbb{R}^{n_h \times n}$, $\mathbf{C} \in \mathbb{R}^{n_h}$, $\mathbf{d} \in \mathbb{R}^{n_h}$ and $\mathbf{B} \in \mathbb{R}^{n \times n}$. $\mathbf{B}$ is the Hessian of the objective function of \ref{eq:genqp}. The eigenvalues of $\mathbf{B}$ decide the convexity of problem \ref{eq:genqp}. In case $\mathbf{B} \succeq 0$, problem \ref{eq:genqp} is convex and strictly convex if $\mathbf{B} \succ 0$.
+\end{definition}
+
+\begin{theorem}[Second Order Optimality Conditions]
+Let us regard a point $\mathbf{w}^*$ at which LICQ holds together with multipliers $\bm{\gmultiplier}^*$, $\bm{\hmultiplier}^*$, so that the KKT conditions are satisfied and let strict complementarity hold. Regard a basis matrix $\mathbf{Z} \in \mathbb{R}^{n\,\times\,(n-n_{\mathbf{\tilde{g}}})}$ of the null space of $\pdv{\mathbf{\tilde{g}}(\mathbf{w}^*)}{\mathbf{w}} \in \mathbb{R}^{n_{\mathbf{\tilde{g}}}\,\times\,n}$, i.e., $\mathbf{Z}$ as full column rank and $\pdv{\mathbf{\tilde{g}}(\mathbf{w}^*)}{\mathbf{w}} \mathbf{Z} = \mathbf{0}$. Then, the following two statements hold:
+
+\begin{enumerate}
+\item (Second Order Necessary Condition) If $\mathbf{w}^*$ is a local minimzer, then $\mathbf{Z}^T \, \nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*} \, \mathbf{Z} \succeq 0$.\\
+\item (Second Order Sufficient Condition) If $\mathbf{Z}^T \, \nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*} \, \mathbf{Z} \succ 0$, then $\mathbf{w}^*$ is a local minimizer. This minimizer is unique in its neighborhood, i.e., a strict local minimizer and stable against small differentiable perturbations of the problem data.
+\end{enumerate}
+\end{theorem}
+
+\begin{definition}[Reduced hessian]
+The projection of $\nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*}$ on the null space of the Jacobian, $\mathbf{Z}^T \, \nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*} \, \mathbf{Z}$, is called the reduced hessian.
+\end{definition}

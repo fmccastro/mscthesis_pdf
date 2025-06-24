@@ -288,7 +288,12 @@
 %
 \usepackage{amsmath}  % AMS mathematical facilities for LaTeX.
 \usepackage{amsthm}   % Typesetting theorems (AMS style).
-\usepackage{amsfonts} % 
+\usepackage{amsfonts} %
+\usepackage{derivative}
+
+% 'makeroom' package
+% Add option to strikethrough equation on math mode
+\usepackage[makeroom]{cancel}
 
 
 % 'wrapfig' package
@@ -561,6 +566,20 @@
 
 \usepackage{paracol}
 
+% 'enumitem' package
+%
+% Type customized bullets within itemize or
+% enumerate lists.
+% https://ctan.org/pkg/enumitem
+%
+% > This package provides user control over the layout of the three basic list environments: 
+% enumerate, itemize and description. It supersedes both enumerate and mdwlist 
+% (providing well-structured replacements for all their funtionality), and in addition
+% provides functions to compute the layout of labels, and to ‘clone’ the standard environments,
+% to create new environments with counters of their own. 
+\usepackage{enumitem}
+\usepackage{amssymb}
+
 % 'hyperref' package
 %
 % Extensive support for hypertext in LaTeX.
@@ -636,6 +655,9 @@
 \newcommand{\ObstacleSpace}{\mathcal{O}}
 \newcommand{\StateSpace}{\mathcal{X}}
 \newcommand{\ControlSpace}{\mathcal{U}}
+\newcommand{\feasibleSet}{\bm{\Omega}}
+\newcommand{\neighborhood}{\mathcal{N}}
+\newcommand{\activeSet}{\mathcal{A}}
 
 %	Matrices
 \newcommand{\RotMatrix}{R}
@@ -734,6 +756,8 @@
 \newcommand{\FrictionCoefficient}{\mu}
 \newcommand{\surfaceRelVel}{\delta}
 \newcommand{\NullTimePosition}{\Gamma}
+\newcommand{\hmultiplier}{\mu}
+\newcommand{\gmultiplier}{\lambda}
 
 %	Elevation
 \newcommand{\Elevation}{h}
@@ -759,9 +783,14 @@
 \newcommand{\GridDimY}{n_y}
 
 %%%	Functions	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\speedFunction}[1]{f(#1)}
+\newcommand{\speedFunction}[1]{F(#1)}
 \newcommand{\timeFunction}[1]{u(#1)}
-\newcommand{\costFunction}{J}
+\newcommand{\lagrangeTerm}[1]{l(#1)}
+\newcommand{\mayerTerm}[1]{m(#1)}
+\newcommand{\processModel}[1]{\mathbf{f}(#1)}
+\newcommand{\eqCon}[1]{\mathbf{g}(#1)}
+\newcommand{\ineqCon}[1]{\mathbf{h}(#1)}
+\newcommand{\lagrangian}[1]{\mathcal{L}(#1)}
 
 %%%	Domain	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\domain}[1]{D_{#1}}
@@ -772,11 +801,13 @@
 
 \newcommand{\derivative}[1]{\frac{d #1}{dt}}
 
-\newtheorem{assumption}{Assumption}
+\newtheorem{assumption}{Assumption}[chapter]
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
 
-\newtheorem{definition}{Definition}
-
-\newtheorem{lemma}{Lemma}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 
 \newcommand\freefootnote[1]{%
   \let\thefootnote\relax%

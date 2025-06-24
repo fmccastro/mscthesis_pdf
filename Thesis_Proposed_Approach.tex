@@ -16,7 +16,7 @@
 \section{Problem formulation}
 \label{section:problemFormulation}
 
-The problem laid out in this thesis is to yield a Nonlinear Model Predictive Control (\acrshort{nmpc}) \cite{rawlings:MPC, grune:NMPC} algorithm $\mathbb{P}$, which models the kinematics and dynamics of a rigid wheeled, autonomous robot $\mathcal{R}$ as well as its interactions with the terrain during the traversal of a semi-unknown, off-the-road, uneven terrain map $\mathcal{M} \subset \mathbb{R}^3$, resembling a planetary environment. It is required that the robot avoids untraversable areas or obstacles $\mathcal{\ObstacleSpace} \subset \mathcal{\Map}$, and follows a time optimal traversable pathway to reach a goal point $\mathnormal{G} \in \mathcal{M}$, starting from a given initial admissable pose $\mathcal{R}_p \in \Map \setminus \mathcal{\ObstacleSpace}$. Moreover, the robot $\mathcal{R}$ shall make a fast, safe and slippage-free traverse, as well as minimizing the energy consumed by the robot battery.  The algorithm $\mathbb{P}$ must be computationally optimal and update the system actuation in a timely fashion.
+The problem laid out in this thesis is to yield a Nonlinear Model Predictive Control (\acrshort{nmpc}) \cite{Rawlings2013, grunenmpc} algorithm $\mathbb{P}$, which models the kinematics and dynamics of a rigid wheeled, autonomous robot $\mathcal{R}$ as well as its interactions with the terrain during the traversal of a semi-unknown, off-the-road, uneven terrain map $\mathcal{M} \subset \mathbb{R}^3$, resembling a planetary environment. It is required that the robot avoids untraversable areas or obstacles $\mathcal{\ObstacleSpace} \subset \mathcal{\Map}$, and follows a time optimal traversable pathway to reach a goal point $\mathnormal{G} \in \mathcal{M}$, starting from a given initial admissable pose $\mathcal{R}_p \in \Map \setminus \mathcal{\ObstacleSpace}$. Moreover, the robot $\mathcal{R}$ shall make a fast, safe and slippage-free traverse, as well as minimizing the energy consumed by the robot battery.  The algorithm $\mathbb{P}$ must be computationally optimal and update the system actuation in a timely fashion.
 
 \section{Optimal path planning}
 \label{section:optimalPathPlanning}
@@ -730,27 +730,6 @@ In order to sum up the previous sections, it is possible to deliver a full state
 
 Motivated from equations \ref{eq:sumtractions}, \ref{eq:sumMomentsTraction}, 
 \ref{eq:frictionMomentForce} and \ref{eq:sumGravityReaction}, $\mathbf{f}$ and $\mathbf{\Moment}$ are represented with respect to the actuation wheel torques, $\bm{\Torque}_i$.
-
-\begin{equation}
-\begin{bmatrix}
-\mathbf{\Force} \\
-\mathbf{\Moment}
-\end{bmatrix} = \begin{bmatrix}
-\mathbf{A}_1 & \mathbf{A}_2 & \mathbf{A}_3 & \mathbf{A}_4 \\
-\mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_1 \right)  \mathbf{A}_1 & \mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_2 \right)  \mathbf{A}_2 & \mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_3 \right) \mathbf{A}_3 & \mathbf{\SkewSymmetricMatrix} \left( \mathbf{\contactPoint}_4 \right) \mathbf{A}_4
-\end{bmatrix} \begin{bmatrix}
-\bm{\Torque}_1 \\
-\bm{\Torque}_2 \\
-\bm{\Torque}_3 \\
-\bm{\Torque}_4 
-\end{bmatrix} + \mathbf{1}_{6 \times 6} \begin{bmatrix}
-\mathbf{\Force_{\FrictionSubscript}} & \mathbf{\Force_{\gravity}} & \mathbf{\Force_{\NormalForceSubscript}} \\
-\mathbf{0} & \mathbf{0} & \mathbf{0}
-\end{bmatrix} \mathbf{1}_{3 \times 3}
-\label{eq:forcesMomentsMatrix}
-\end{equation}
-
-, where $\mathbf{A}_i = \mathbf{\RotMatrix}_{\WheelFrame_i}^{\BodyFrame} \left( \mathbf{\SkewSymmetricMatrix}^T \left( \mathbf{\wheelToContact}_i \right) \mathbf{\RotMatrix}_{\WheelFrame_i}^{\BodyFrame} \right)^{\dagger}$.
 
 \section{Model verification}
 \label{section:modelVerification}

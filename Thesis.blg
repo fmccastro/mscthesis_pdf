@@ -5,41 +5,22 @@ Reallocating 'name_of_file' (item size: 1) to 14 items.
 The style file: abbrvunsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: Thesis_Bibliography.bib
-Warning--I didn't find a database entry for "gao:review"
-Warning--I didn't find a database entry for "wall:ingenuityHeli"
-Warning--I didn't find a database entry for "_khatib:handbook_55"
-Warning--I didn't find a database entry for "bekker:vehicleConcepts"
-Warning--I didn't find a database entry for "Thoesen:planetaryRoboticsReview"
-Warning--I didn't find a database entry for "heverty:rockerBogie"
-Warning--I didn't find a database entry for "nayar:rockieBogieDesign"
-Warning--I didn't find a database entry for "thoesen:spv"
-Warning--I didn't find a database entry for "shiquan:microspine"
-Warning--I didn't find a database entry for "manterola:axelRover"
-Warning--I didn't find a database entry for "ellery:roverSurvey"
-Warning--I didn't find a database entry for "nasa:MER"
-Warning--I didn't find a database entry for "nasa:MSL"
-Warning--I didn't find a database entry for "nasa:Perseverance"
-Warning--I didn't find a database entry for "cnsa:Zhurong"
-Warning--I didn't find a database entry for "gonzalez:slippage"
-Warning--I didn't find a database entry for "wong:theory"
-Warning--I didn't find a database entry for "genta:spaceRobots"
-Warning--I didn't find a database entry for "wong:terra"
-Warning--I didn't find a database entry for "wong:terraBookPerformance"
-Warning--I didn't find a database entry for "green:slipGround"
-Warning--I didn't find a database entry for "rodriguez:highSpeed"
-Warning--I didn't find a database entry for "bekker:terra1956"
-Warning--I didn't find a database entry for "bekker:terra1960"
-Warning--I didn't find a database entry for "bekker:terra1969"
-Warning--I didn't find a database entry for "pope:dynamicTerra"
-Warning--I didn't find a database entry for "pope:velocity"
-Warning--I didn't find a database entry for "grahn:dynamicTerra"
-Warning--I didn't find a database entry for "baumgartner:kinematicIncompatibility"
-Warning--I didn't find a database entry for "coombs:priorScout"
-Warning--I didn't find a database entry for "urmson:priorScout"
-Warning--I didn't find a database entry for "rawlings:MPC"
-Warning--I didn't find a database entry for "grune:NMPC"
-Warning--I didn't find a database entry for "Ferdinand2015"
+Warning--entry type for "nasa:perseverance" isn't style-file defined
+--line 109 of file Thesis_Bibliography.bib
+Warning--entry type for "cnsa:zhurong" isn't style-file defined
+--line 117 of file Thesis_Bibliography.bib
+Warning--entry type for "ode" isn't style-file defined
+--line 804 of file Thesis_Bibliography.bib
+Warning--string name "november" is undefined
+--line 815 of file Thesis_Bibliography.bib
 Warning--empty chapter and pages in Yoshida2016
+Warning--empty chapter and pages in roboticsHandbook_chap55
+Warning--empty publisher in roboticsHandbook_chap55
+Warning--empty chapter and pages in Genta2012
+Warning--can't use both author and editor fields in wong:terramechanics
+Warning--empty booktitle in Coombs2000
+Warning--empty year in Spero2002Path
+Warning--empty year in Spero2002Path
 Warning--empty chapter and pages in Burgard2016
 Warning--empty publisher in Burgard2016
 Warning--empty year in Correal2011
@@ -51,46 +32,50 @@ Warning--empty year in Amorim2014
 Warning--empty year in Ishigami2007PathPlanning
 Warning--empty year in Ishigami2007PathPlanning
 Warning--empty booktitle in Iagnemma2004
-Warning--empty chapter and pages in Genta2012
-You've used 22 entries,
+Warning--empty journal in diehlnumericalocp
+Warning--empty school in Silva-Decentralized-trajectory-optimization-for-a-fleet-of-industrial-mobile-robots
+Warning--empty school in diehl2001real
+Warning--empty journal in andersson2018sensitivity
+Warning--empty publisher in Beer2015
+You've used 66 entries,
             2481 wiz_defined-function locations,
-            750 strings with 9686 characters,
-and the built_in function-call counts, 8316 in all, are:
-= -- 652
-> -- 450
-< -- 17
-+ -- 173
-- -- 129
-* -- 601
-:= -- 1314
-add.period$ -- 71
-call.type$ -- 22
-change.case$ -- 41
-chr.to.int$ -- 22
-cite$ -- 35
-duplicate$ -- 460
-empty$ -- 789
-format.name$ -- 171
-if$ -- 1793
-int.to.chr$ -- 1
-int.to.str$ -- 23
-missing$ -- 25
-newline$ -- 121
-num.names$ -- 68
-pop$ -- 246
+            945 strings with 17033 characters,
+and the built_in function-call counts, 25235 in all, are:
+= -- 2074
+> -- 1297
+< -- 47
++ -- 507
+- -- 374
+* -- 1858
+:= -- 3942
+add.period$ -- 212
+call.type$ -- 66
+change.case$ -- 125
+chr.to.int$ -- 65
+cite$ -- 92
+duplicate$ -- 1350
+empty$ -- 2374
+format.name$ -- 485
+if$ -- 5461
+int.to.chr$ -- 2
+int.to.str$ -- 67
+missing$ -- 68
+newline$ -- 347
+num.names$ -- 196
+pop$ -- 666
 preamble$ -- 1
-purify$ -- 22
+purify$ -- 66
 quote$ -- 0
-skip$ -- 255
+skip$ -- 802
 stack$ -- 0
-substring$ -- 233
-swap$ -- 79
-text.length$ -- 5
+substring$ -- 935
+swap$ -- 248
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 142
-warning$ -- 13
-while$ -- 58
+type$ -- 432
+warning$ -- 24
+while$ -- 187
 width$ -- 0
-write$ -- 284
-(There were 47 warnings)
+write$ -- 852
+(There were 28 warnings)
