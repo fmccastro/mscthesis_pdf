@@ -14,7 +14,7 @@
 \section{Euler angles}
 \label{section:eulerAngles}
 
-Euler rotation angles defining an intrinsic $z-y-x$ (yaw-pitch-roll) rotation, with a rotation sequence of $z-y'-x''$ around the moving frame $\BodyFrame$ is denoted as,
+Euler rotation angles defining an extrinsic $x-y-z$ (roll-pitch-yaw) rotation, with a rotation sequence of $x-y-z$ around the inertial frame $\WorldFrame$ is denoted as,
 
 \begin{equation}
 	\mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} = \bm{\RotMatrix}_z (\yaw) \bm{\RotMatrix}_y (\pitch) \bm{\RotMatrix}_x (\roll)
@@ -49,7 +49,39 @@ Euler rotation angles defining an intrinsic $z-y-x$ (yaw-pitch-roll) rotation, w
 	\label{eq:rotationMatrixW2B}
 \end{equation}
 
-Rotation matrices are singular ($\det(\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame}) = 1$) and symmetric, $(\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame})^T = (\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame})^{-1} = \bm{\RotMatrix}_{\WorldFrame}^{\BodyFrame}$. Euler rotation matrices can be derived from 24 different conventions ranging from extrinsic or intrinsic rotation with different rotation orders. More information on this can be found in \cite{Roithmayr2015}.
+Rotation matrices are singular ($\det(\bm{\RotMatrix}_{\BodyFrame}^{\WorldFrame}) = 1$) and symmetric, $(\mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame})^T = (\mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame})^{-1} = \mathbf{\RotMatrix}_{\WorldFrame}^{\BodyFrame}$. Euler rotation matrices can be derived from 24 different conventions ranging from extrinsic or intrinsic rotation with different rotation orders. More information on this can be found in \cite{Roithmayr2015}.
+
+The mapping between the euler angle rates and the body-frame angular velocities can be found by transforming the euler rates from the intermediate frames to body frame $\BodyFrame$.
+
+\begin{equation}
+	\bm{\AngVelocity} = \begin{bmatrix}
+	0 \\ 0 \\ \dot{\yaw}
+	\end{bmatrix} + \mathbf{R}_z(\yaw) \begin{bmatrix}
+	0 \\ \dot{\pitch} \\ 0
+	\end{bmatrix} + \mathbf{R}_z(\yaw) \mathbf{R}_y(\pitch) \begin{bmatrix}
+	\dot{\roll} \\ 0 \\ 0
+	\end{bmatrix} =	\begin{bmatrix}
+		cos(\yaw) \cdot cos(\pitch) & -sin(\yaw) & 0\\
+		sin(\yaw) \cdot cos(\pitch) & cos(\yaw) & 0\\
+		-sin(\pitch) & 0 & 1
+	\end{bmatrix} \begin{bmatrix}
+	\dot{\roll} \\ \dot{\pitch} \\ \dot{\yaw}
+	\end{bmatrix} 
+	\label{eq:rotationMatrixW2BRotational}
+\end{equation}
+
+Then, the inverse of the matrix presented in \ref{eq:rotationMatrixW2BRotational} denotes the mapping from the angular velocities with respect to $\BodyFrame$, to the euler rates with respect to $\WorldFrame$. That matrix is denoted in equation \ref{eq:rotationMatrixW2BRotationalInverse} and it is denoted in this document by $\mathbf{\bar{R}}_{\BodyFrame}^{\WorldFrame}$.
+
+\begin{equation}
+	\begin{bmatrix}
+		\dot{\roll} \\ \dot{\pitch} \\ \dot{\yaw}
+	\end{bmatrix} = \begin{bmatrix}
+		\frac{cos(\yaw)}{cos(\pitch)} & \frac{sin(\yaw)}{cos(\pitch)} & 0 \\
+		-sin(\yaw) & cos(\yaw) & 0 \\
+		cos(\yaw) \cdot \tan(\pitch) & tan(\pitch) \cdot sin(\yaw) & 1
+	\end{bmatrix} \bm{\AngVelocity}
+	\label{eq:rotationMatrixW2BRotationalInverse}
+\end{equation}
 
 \section{Skew-symmetric matrix}
 \label{section:skewSymmetricMatrix}
@@ -149,6 +181,22 @@ Then, let's define $S_{\mathbf{x}}(t) = \pdv{\mathbf{x}(t)}{\mathbf{x}_0}$ and $
 
 \section{Parallel-axis theorem}
 \label{section:parallelAxisTheorem}
+
+The parallel-axis theorem \cite{Beer2015} denotes a way to describe the inertia tensor $\mathbf{\InertiaTensor}$ with respect to a different position. 
+
+In case $\mathbf{\InertiaTensor}$ is described with respect to some frame $\mathcal{Q}$ with an origin at $\mathbf{p}_q$, it is possible to describe $\mathbf{\InertiaTensor}$ with respect to a different frame $\mathcal{P}$ with an origin at $\mathbf{p}_p$, provided that the axis of $\mathcal{Q}$ and $\mathcal{P}$ are parallel.
+
+Let's define $\mathbf{r} = \mathbf{p}_p - \mathbf{p}_q$. Then, 
+
+\begin{equation}
+	\begin{matrix}
+    	I_{xx}^{\mathcal{P}} = I_{xx}^{\mathcal{Q}} + m \times (r_y^2 + r_z^2)  & I_{yy}^{\mathcal{P}} = I_{yy}^{\mathcal{Q}} + m \times (r_x^2 + r_z^2) & I_{zz}^{\mathcal{P}} = I_{zz}^{\mathcal{Q}} + m \times (r_x^2 + r_y^2) \\
+    I_{xy}^{\mathcal{P}} = I_{xy}^{\mathcal{Q}} - m \times r_x \times r_y & I_{xz}^{\mathcal{P}} = I_{xz}^{\mathcal{Q}} - m \times r_x \times r_z & I_{yz}^{\mathcal{P}} = I_{yz}^{\mathcal{Q}} - m \times r_y \times r_z
+	\end{matrix}
+	\label{eq:parallelaxis}
+\end{equation}
+
+The set of equations in \ref{eq:parallelaxis} sum up the parallel-axis theorem analytically, where $m$ stands for the body mass.
 
 \section{Linear algebra}
 \label{section:linalgebra}

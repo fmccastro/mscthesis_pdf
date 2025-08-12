@@ -1,152 +1,177 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.12) (preloaded format=pdflatex 2025.5.8)  12 JUN 2025 18:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.11)  12 AUG 2025 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **./Thesis.tex
 (Thesis.tex
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-04-14>
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/base/report.cls
-Document Class: report 2024/06/29 v1.4n Standard LaTeX document class
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/base/size10.clo
-File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-20>
+(/home/francisco/.miktex/texmfs/install/tex/latex/base/report.cls
+Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
+(/home/francisco/.miktex/texmfs/install/tex/latex/base/size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count272
-\c@chapter=\count273
-\c@section=\count274
-\c@subsection=\count275
-\c@subsubsection=\count276
-\c@paragraph=\count277
-\c@subparagraph=\count278
-\c@figure=\count279
-\c@table=\count280
+\c@part=\count275
+\c@chapter=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen146
+\bibindent=\dimen148
 )
 (Thesis_Preamble.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/natbib/natbib.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip51
 \bibsep=\skip52
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count281
+\c@NAT@ctr=\count284
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/notoccite/notoccite.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/notoccite/notoccite.sty
 Package: notoccite 2000/07/20
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/base/inputenc.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/babel/babel.sty
-Package: babel 2025/04/29 v25.8 The multilingual framework for pdfLaTeX, LuaLaT
-eX and XeLaTeX
-\babel@savecnt=\count282
-\U@D=\dimen147
-\l@unhyphenated=\language1
+(/home/francisco/.miktex/texmfs/install/tex/generic/babel/babel.sty
+Package: babel 2025/08/03 v25.12 The multilingual framework for LuaLaTeX, pdfLa
+TeX and XeLaTeX
+\babel@savecnt=\count285
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2045.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2047.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2049.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2050.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2051.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2053.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2078.
+\U@D=\dimen149
+\l@unhyphenated=\language2
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/babel/txtbabel.def)
+(/home/francisco/.miktex/texmfs/install/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count283
+\bbl@dirlevel=\count286
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/arabi/bblopts.cfg
+(/home/francisco/.miktex/texmfs/install/tex/latex/arabi/bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/babel-english/english.ldf
+(/home/francisco/.miktex/texmfs/install/tex/latex/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/babel/locale/en/babel-engli
+(/home/francisco/.miktex/texmfs/install/tex/generic/babel/locale/en/babel-engli
 sh.tex
 Package babel Info: Importing font and identification data for english
-(babel)             from babel-en.ini. Reported on input line 11.
-)))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
+(babel)             from babel-en.ini. Reported on input line 12.
+)
+Package babel Info: Hyphen rules for 'british' set to \l@english
+(babel)             (\language0). Reported on input line 82.
+Package babel Info: Hyphen rules for 'UKenglish' set to \l@english
+(babel)             (\language0). Reported on input line 83.
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@english
+(babel)             (\language0). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@english
+(babel)             (\language0). Reported on input line 108.
+))
+(/home/francisco/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/iftex/ifvtex.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/iftex/iftex.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count284
-\Gm@cntv=\count285
-\c@Gm@tempcnt=\count286
-\Gm@bindingoffset=\dimen148
-\Gm@wd@mp=\dimen149
-\Gm@odd@mp=\dimen150
-\Gm@even@mp=\dimen151
-\Gm@layoutwidth=\dimen152
-\Gm@layoutheight=\dimen153
-\Gm@layouthoffset=\dimen154
-\Gm@layoutvoffset=\dimen155
+\Gm@cnth=\count287
+\Gm@cntv=\count288
+\c@Gm@tempcnt=\count289
+\Gm@bindingoffset=\dimen150
+\Gm@wd@mp=\dimen151
+\Gm@odd@mp=\dimen152
+\Gm@even@mp=\dimen153
+\Gm@layoutwidth=\dimen154
+\Gm@layoutheight=\dimen155
+\Gm@layouthoffset=\dimen156
+\Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks20
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/setspace/setspace.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg))
+(/home/francisco/.miktex/texmfs/install/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/tools/indentfirst.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/tools/indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(/home/francisco/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+(/home/francisco/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+(/home/francisco/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen156
-\Gin@req@width=\dimen157
+\Gin@req@height=\dimen158
+\Gin@req@width=\dimen159
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2024/11/05 v2.17t AMS math features
+(/home/francisco/.miktex/texmfs/install/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/06/16 v2.17y AMS math features
 \@mathmargin=\skip53
 
 For additional information on amsmath, use the `?' option.
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amsmath/amstext.sty
-Package: amstext 2021/08/26 v2.01 AMS text
+(/home/francisco/.miktex/texmfs/install/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amsmath/amsgen.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks21
-\ex@=\dimen158
+\ex@=\dimen160
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amsmath/amsbsy.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen159
+\pmbraise@=\dimen161
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amsmath/amsopn.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count287
+\inf@bad=\count290
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count288
-\leftroot@=\count289
+\uproot@=\count291
+\leftroot@=\count292
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count290
-\DOTSCASE@=\count291
+\classnum@=\count293
+\DOTSCASE@=\count294
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -156,38 +181,38 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen160
+\big@size=\dimen162
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count292
+\macc@depth=\count295
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count293
+\c@MaxMatrixCols=\count296
 \dotsspace@=\muskip17
-\c@parentequation=\count294
-\dspbrk@lvl=\count295
+\c@parentequation=\count297
+\dspbrk@lvl=\count298
 \tag@help=\toks22
-\row@=\count296
-\column@=\count297
-\maxfields@=\count298
+\row@=\count299
+\column@=\count300
+\maxfields@=\count301
 \andhelp@=\toks23
-\eqnshift@=\dimen161
-\alignsep@=\dimen162
-\tagshift@=\dimen163
-\tagwidth@=\dimen164
-\totwidth@=\dimen165
-\lineht@=\dimen166
+\eqnshift@=\dimen163
+\alignsep@=\dimen164
+\tagshift@=\dimen165
+\tagwidth@=\dimen166
+\totwidth@=\dimen167
+\lineht@=\dimen168
 \@envbody=\toks24
 \multlinegap=\skip54
 \multlinetaggap=\skip55
 \mathdisplay@stack=\toks25
-LaTeX Info: Redefining \[ on input line 2953.
-LaTeX Info: Redefining \] on input line 2954.
+LaTeX Info: Redefining \[ on input line 2949.
+LaTeX Info: Redefining \] on input line 2950.
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amscls/amsthm.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks26
 \thm@bodyfont=\toks27
@@ -199,7 +224,7 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip58
 \dth@everypar=\toks31
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amsfonts/amsfonts.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -207,126 +232,126 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/derivative/derivative.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-04-14 L3 programming layer (loader) 
+(/home/francisco/.miktex/texmfs/install/tex/latex/derivative/derivative.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-07-20 L3 programming layer (loader) 
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdftex.de
+(/home/francisco/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdftex.de
 f
-File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count299
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count302
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/l3packages/l3keys2e/l3keys2e.
+(/home/francisco/.miktex/texmfs/install/tex/latex/l3packages/l3keys2e/l3keys2e.
 sty
 Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
 )
 Package: derivative 2024/02/08 v1.4 Nice and easy derivatives and differentials
  for LaTeX
-\l__deriv_gcd_counter_int=\count300
-\l__deriv_vmo_int=\count301
-\l__deriv_var_count_int=\count302
-\l__deriv_tmpa_int=\count303
-\l__deriv_tmpb_int=\count304
-\l__deriv_seq_pos_int=\count305
-\l__deriv_sort_max_int=\count306
-) (/home/fmccastro/.miktex/texmfs/install/tex/latex/cancel/cancel.sty
+\l__deriv_gcd_counter_int=\count303
+\l__deriv_vmo_int=\count304
+\l__deriv_var_count_int=\count305
+\l__deriv_tmpa_int=\count306
+\l__deriv_tmpb_int=\count307
+\l__deriv_seq_pos_int=\count308
+\l__deriv_sort_max_int=\count309
+) (/home/francisco/.miktex/texmfs/install/tex/latex/cancel/cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen167
-\WF@size=\dimen168
-\c@WF@wrappedlines=\count307
+(/home/francisco/.miktex/texmfs/install/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen169
+\WF@size=\dimen170
+\c@WF@wrappedlines=\count310
 \WF@box=\box55
 \WF@everypar=\toks32
 Package: wrapfig 2003/01/31  v 3.6
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/subfigure/subfigure.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip59
 \subfigcapskip=\skip60
-\subfigcaptopadj=\dimen169
+\subfigcaptopadj=\dimen171
 \subfigbottomskip=\skip61
-\subfigcapmargin=\dimen170
+\subfigcapmargin=\dimen172
 \subfiglabelskip=\skip62
-\c@subfigure=\count308
-\c@lofdepth=\count309
-\c@subtable=\count310
-\c@lotdepth=\count311
+\c@subfigure=\count311
+\c@lofdepth=\count312
+\c@subtable=\count313
+\c@lotdepth=\count314
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/subfigure/subfigure.cfg)
+(/home/francisco/.miktex/texmfs/install/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip63
 \subfig@bottom=\skip64
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/subfigmat/subfigmat.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/subfigmat/subfigmat.sty
 Package: subfigmat 1999/02/27 v1.0 Subfigure Matrix Package
 \sfm@width=\skip65
 \sfmcolsep=\skip66
-\c@sfm@count=\count312
+\c@sfm@count=\count315
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/url/url.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/tools/dcolumn.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/tools/dcolumn.sty
 Package: dcolumn 2023/07/08 v1.06 decimal alignment package (DPC)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/tools/array.sty
-Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
-\col@sep=\dimen171
+(/home/francisco/.miktex/texmfs/install/tex/latex/tools/array.sty
+Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+\col@sep=\dimen173
 \ar@mcellbox=\box56
-\extrarowheight=\dimen172
+\extrarowheight=\dimen174
 \NC@list=\toks33
 \extratabsurround=\skip67
 \backup@length=\skip68
 \ar@cellbox=\box57
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/tools/verbatim.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks34
 \verbatim@line=\toks35
 \verbatim@in@stream=\read3
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/moreverb/moreverb.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/moreverb/moreverb.sty
 Package: moreverb 2008/06/03 v2.3a `more' verbatim facilities
-\tab@position=\count313
-\tab@size=\count314
-\listing@line=\count315
+\tab@position=\count316
+\tab@size=\count317
+\listing@line=\count318
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/nomencl/nomencl.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/nomencl/nomencl.sty
 Package: nomencl 2021/11/10 v5.6 Nomenclature package
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/xkeyval/xkeyval.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/xkeyval/xkeyval.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/xkeyval/xkvutils.tex
+(/home/francisco/.miktex/texmfs/install/tex/generic/xkeyval/xkeyval.tex
+(/home/francisco/.miktex/texmfs/install/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks36
 \XKV@tempa@toks=\toks37
 )
-\XKV@depth=\count316
+\XKV@depth=\count319
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/base/ifthen.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2024/10/24 v3.43 KOMA-Script package (handling toc-files)
+(/home/francisco/.miktex/texmfs/install/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2025/06/04 v3.45 KOMA-Script package (handling toc-files)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-independent 
+(/home/francisco/.miktex/texmfs/install/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2025/06/04 v3.45 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2024/10/24 v3.43 KOMA-Script package (file load hooks)
+(/home/francisco/.miktex/texmfs/install/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2025/06/04 v3.45 KOMA-Script package (file load hooks)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2024/10/24 v3.43 KOMA-Script package (using LaTeX hooks)
+(/home/francisco/.miktex/texmfs/install/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2025/06/04 v3.45 KOMA-Script package (using LaTeX hooks)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/koma-script/scrlogo.sty
-Package: scrlogo 2024/10/24 v3.43 KOMA-Script package (logo)
+(/home/francisco/.miktex/texmfs/install/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2025/06/04 v3.45 KOMA-Script package (logo)
 )))
 Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line
@@ -337,171 +362,171 @@ Already applied: [0000/00/00] Usage of raw or classic option list on input line
 )
 Package tocbasic Info: setting babel extension for `nlo' on input line 187.
 Package tocbasic Info: setting babel extension for `nls' on input line 188.
-\nomlabelwidth=\dimen173
-\nom@tempdim=\dimen174
+\nomlabelwidth=\dimen175
+\nom@tempdim=\dimen176
 \nomitemsep=\skip70
 )
 \@nomenclaturefile=\write3
 \openout3 = `Thesis.nlo'.
 
 Package nomencl Info: Writing nomenclature file Thesis.nlo on input line 405.
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/etoolbox/etoolbox.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count317
+\etb@tempcnta=\count320
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/glossaries/base/glossaries.st
+(/home/francisco/.miktex/texmfs/install/tex/latex/glossaries/base/glossaries.st
 y
-Package: glossaries 2025/04/14 v4.6 (NLCT)
- (/home/fmccastro/.miktex/texmfs/install/tex/latex/mfirstuc/mfirstuc.sty
+Package: glossaries 2025/05/14 v4.7 (NLCT)
+ (/home/francisco/.miktex/texmfs/install/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2025/04/03 v2.09 (NLCT)
 \@glsmfirst=\toks38
 \@glsmrest=\toks39
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/xfor/xfor.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/xfor/xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
 ) ()
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/tracklang/tracklang.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/tracklang/tracklang.sty
 Package: tracklang 2025/03/11 v1.6.6 (NLCT) Track Languages
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/tracklang/tracklang.tex)
+(/home/francisco/.miktex/texmfs/install/tex/generic/tracklang/tracklang.tex)
 Package tracklang Info: Tracking dialect `english' (language `english') on inpu
 t line 264.
 Package tracklang Info: Tracking dialect `english' (language `english') on inpu
 t line 264.
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/translator/translator.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/translator/translator.sty
 Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/glossaries-english/glossaries
+(/home/francisco/.miktex/texmfs/install/tex/latex/glossaries-english/glossaries
 -english.ldf
 File: glossaries-english.ldf 2014/11/23 v1.0
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/datatool/datatool-base.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/datatool/datatool-base.sty
 Package: datatool-base 2025/04/25 v3.4.1 (NLCT)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/datatool/datatool-l3fp.def
+(/home/francisco/.miktex/texmfs/install/tex/latex/datatool/datatool-l3fp.def
 File: datatool-l3fp.def 2025/04/25 v3.4.1 (NLCT)
 )
 \@dtl@toks=\toks40
-\@dtl@tmpcount=\count318
+\@dtl@tmpcount=\count321
 \dtl@tmplength=\skip71
 \l__datatool_measure_box=\box59
-\dtl@sortresult=\count319
+\dtl@sortresult=\count322
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/datatool/datatool-utf8.ldf
+(/home/francisco/.miktex/texmfs/install/tex/latex/datatool/datatool-utf8.ldf
 File: datatool-utf8.ldf 2025/04/25 v3.4.1 (NLCT)
 )
-\@dtl@datatype=\count320
-\l__datatool_tmpa_int=\count321
-\l__datatool_tmpb_int=\count322
-\l__datatool_tmpc_int=\count323
-\l__datatool_tmpd_int=\count324
-\l__datatool_count_int=\count325
-\l__datatool_tmp_datatype_int=\count326
-\l__datatool_tmpa_dim=\dimen175
-\l__datatool_tmpb_dim=\dimen176
-\c_datatool_unknown_int=\count327
-\l__datatool_year_int=\count328
-\l__datatool_month_int=\count329
-\l__datatool_day_int=\count330
-\l__datatool_hour_int=\count331
-\l__datatool_minute_int=\count332
-\l__datatool_second_int=\count333
-\l__datatool_tzhour_int=\count334
-\l__datatool_tzminute_int=\count335
-\l__datatool_julian_int=\count336
-\l__datatool_local_julian_int=\count337
-\l__datatool_prefix_int=\count338
-\l__datatool_suffix_int=\count339
-\@dtl@foreach@level=\count340
+\@dtl@datatype=\count323
+\l__datatool_tmpa_int=\count324
+\l__datatool_tmpb_int=\count325
+\l__datatool_tmpc_int=\count326
+\l__datatool_tmpd_int=\count327
+\l__datatool_count_int=\count328
+\l__datatool_tmp_datatype_int=\count329
+\l__datatool_tmpa_dim=\dimen177
+\l__datatool_tmpb_dim=\dimen178
+\c_datatool_unknown_int=\count330
+\l__datatool_year_int=\count331
+\l__datatool_month_int=\count332
+\l__datatool_day_int=\count333
+\l__datatool_hour_int=\count334
+\l__datatool_minute_int=\count335
+\l__datatool_second_int=\count336
+\l__datatool_tzhour_int=\count337
+\l__datatool_tzminute_int=\count338
+\l__datatool_julian_int=\count339
+\l__datatool_local_julian_int=\count340
+\l__datatool_prefix_int=\count341
+\l__datatool_suffix_int=\count342
+\@dtl@foreach@level=\count343
 
 
 Package tracklang Warning: No `datatool' support for dialect `english'  on inpu
 t line 9908.
 
-\dtl@codeA=\count341
-\dtl@codeB=\count342
+\dtl@codeA=\count344
+\dtl@codeB=\count345
 )
-\gls@level=\count343
+\gls@level=\count346
 \@gls@tmpb=\toks41
 \gls@tmplen=\skip72
-\l__glossaries_tmpa_dim=\dimen177
-\l__glossaries_tmpb_dim=\dimen178
+\l__glossaries_tmpa_dim=\dimen179
+\l__glossaries_tmpb_dim=\dimen180
 \glskeylisttok=\toks42
 \glslabeltok=\toks43
 \glsshorttok=\toks44
 \glslongtok=\toks45
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-hy
+(/home/francisco/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-hy
 pernav.sty
-Package: glossary-hypernav 2025/04/14 v4.6 (NLCT)
+Package: glossary-hypernav 2025/05/14 v4.7 (NLCT)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-li
+(/home/francisco/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-li
 st.sty
-Package: glossary-list 2025/04/14 v4.6 (NLCT)
+Package: glossary-list 2025/05/14 v4.7 (NLCT)
 \glslistdottedwidth=\skip73
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-lo
+(/home/francisco/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-lo
 ng.sty
-Package: glossary-long 2025/04/14 v4.6 (NLCT)
- (/home/fmccastro/.miktex/texmfs/install/tex/latex/tools/longtable.sty
-Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
+Package: glossary-long 2025/05/14 v4.7 (NLCT)
+ (/home/francisco/.miktex/texmfs/install/tex/latex/tools/longtable.sty
+Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
 \LTleft=\skip74
 \LTright=\skip75
 \LTpre=\skip76
 \LTpost=\skip77
-\LTchunksize=\count344
-\LTcapwidth=\dimen179
+\LTchunksize=\count347
+\LTcapwidth=\dimen181
 \LT@head=\box60
 \LT@firsthead=\box61
 \LT@foot=\box62
 \LT@lastfoot=\box63
 \LT@gbox=\box64
-\LT@cols=\count345
-\LT@rows=\count346
-\c@LT@tables=\count347
-\c@LT@chunks=\count348
+\LT@cols=\count348
+\LT@rows=\count349
+\c@LT@tables=\count350
+\c@LT@chunks=\count351
 \LT@p@ftn=\toks46
 )
 \glsdescwidth=\skip78
 \glspagelistwidth=\skip79
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-su
+(/home/francisco/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-su
 per.sty
-Package: glossary-super 2025/04/14 v4.6 (NLCT)
+Package: glossary-super 2025/05/14 v4.7 (NLCT)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/supertabular/supertabular.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2024/07/20 v4.2c the supertabular environment
-\c@tracingst=\count349
-\ST@wd=\dimen180
+\c@tracingst=\count352
+\ST@wd=\dimen182
 \ST@rightskip=\skip80
 \ST@leftskip=\skip81
 \ST@parfillskip=\skip82
-\ST@pageleft=\dimen181
-\ST@headht=\dimen182
-\ST@tailht=\dimen183
-\ST@pagesofar=\dimen184
-\ST@pboxht=\dimen185
-\ST@rowht=\dimen186
-\ST@prevht=\dimen187
-\ST@toadd=\dimen188
-\ST@dimen=\dimen189
+\ST@pageleft=\dimen183
+\ST@headht=\dimen184
+\ST@tailht=\dimen185
+\ST@pagesofar=\dimen186
+\ST@pboxht=\dimen187
+\ST@rowht=\dimen188
+\ST@prevht=\dimen189
+\ST@toadd=\dimen190
+\ST@dimen=\dimen191
 \ST@pbox=\box65
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-tr
+(/home/francisco/.miktex/texmfs/install/tex/latex/glossaries/styles/glossary-tr
 ee.sty
-Package: glossary-tree 2025/04/14 v4.6 (NLCT)
-\l__glossaries_tree_max_known_level_int=\count350
-\l__glossaries_tree_offset_dim=\dimen190
-\l__glossaries_tree_namewidth_dim=\dimen191
-\l__glossaries_tree_symbolwidth_dim=\dimen192
-\l__glossaries_tree_prenamesym_width_dim=\dimen193
-\l__glossaries_tree_presubnamesym_width_dim=\dimen194
-\l__glossaries_tree_namewidth_padding_dim=\dimen195
-\l__glossaries_tree_symbolwidth_padding_dim=\dimen196
-\l__glossaries_tree_namesymbolwidth_dim=\dimen197
-\l__glossaries_tree_namesymbolwidth_padding_dim=\dimen198
-\l__glossaries_tree_level_int=\count351
+Package: glossary-tree 2025/05/14 v4.7 (NLCT)
+\l__glossaries_tree_max_known_level_int=\count353
+\l__glossaries_tree_offset_dim=\dimen192
+\l__glossaries_tree_namewidth_dim=\dimen193
+\l__glossaries_tree_symbolwidth_dim=\dimen194
+\l__glossaries_tree_prenamesym_width_dim=\dimen195
+\l__glossaries_tree_presubnamesym_width_dim=\dimen196
+\l__glossaries_tree_namewidth_padding_dim=\dimen197
+\l__glossaries_tree_symbolwidth_padding_dim=\dimen198
+\l__glossaries_tree_namesymbolwidth_dim=\dimen199
+\l__glossaries_tree_namesymbolwidth_padding_dim=\dimen256
+\l__glossaries_tree_level_int=\count354
 \glstreeindent=\skip83
 ))
 runsystem(makeindex -s Thesis.ist -t Thesis.glg -o Thesis.gls Thesis.glo)...exe
@@ -520,71 +545,71 @@ Package glossaries Info: Writing glossary file Thesis.glo on input line 430.
 
 Package glossaries Info: Writing glossary file Thesis.acn on input line 430.
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics/rotating.sty
-Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
-\c@r@tfl@t=\count352
+(/home/francisco/.miktex/texmfs/install/tex/latex/graphics/rotating.sty
+Package: rotating 2025/01/14 v2.16e rotated objects in LaTeX
+\c@r@tfl@t=\count355
 \rotFPtop=\skip84
 \rotFPbot=\skip85
 \rot@float@box=\box66
 \rot@mess@toks=\toks47
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/multirow/multirow.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip86
-\multirow@cntb=\count353
+\multirow@cntb=\count356
 \multirow@dima=\skip87
-\bigstrutjot=\dimen199
+\bigstrutjot=\dimen257
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/booktabs/booktabs.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen256
-\lightrulewidth=\dimen257
-\cmidrulewidth=\dimen258
-\belowrulesep=\dimen259
-\belowbottomsep=\dimen260
-\aboverulesep=\dimen261
-\abovetopsep=\dimen262
-\cmidrulesep=\dimen263
-\cmidrulekern=\dimen264
-\defaultaddspace=\dimen265
-\@cmidla=\count354
-\@cmidlb=\count355
-\@aboverulesep=\dimen266
-\@belowrulesep=\dimen267
-\@thisruleclass=\count356
-\@lastruleclass=\count357
-\@thisrulewidth=\dimen268
+\heavyrulewidth=\dimen258
+\lightrulewidth=\dimen259
+\cmidrulewidth=\dimen260
+\belowrulesep=\dimen261
+\belowbottomsep=\dimen262
+\aboverulesep=\dimen263
+\abovetopsep=\dimen264
+\cmidrulesep=\dimen265
+\cmidrulekern=\dimen266
+\defaultaddspace=\dimen267
+\@cmidla=\count357
+\@cmidlb=\count358
+\@aboverulesep=\dimen268
+\@belowrulesep=\dimen269
+\@thisruleclass=\count359
+\@lastruleclass=\count360
+\@thisrulewidth=\dimen270
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pdfpages/pdfpages.sty
-Package: pdfpages 2025/03/12 v0.6f Insert pages of external PDF documents (AM)
+(/home/francisco/.miktex/texmfs/install/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/tools/calc.sty
-Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count358
-\calc@Bcount=\count359
-\calc@Adimen=\dimen269
-\calc@Bdimen=\dimen270
+(/home/francisco/.miktex/texmfs/install/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count361
+\calc@Bcount=\count362
+\calc@Adimen=\dimen271
+\calc@Bdimen=\dimen272
 \calc@Askip=\skip88
 \calc@Bskip=\skip89
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count360
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count363
 \calc@Cskip=\skip90
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/eso-pic/eso-pic.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
-\ESO@tempdima=\dimen271
-\ESO@tempdimb=\dimen272
+\ESO@tempdima=\dimen273
+\ESO@tempdimb=\dimen274
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+(/home/francisco/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics/mathcolor.ltx)
+(/home/francisco/.miktex/texmfs/install/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -595,481 +620,482 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ))
-\AM@pagewidth=\dimen273
-\AM@pageheight=\dimen274
-\AM@fboxrule=\dimen275
+\AM@pagewidth=\dimen275
+\AM@pageheight=\dimen276
+\AM@fboxrule=\dimen277
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pdfpages/pppdftex.def
-File: pppdftex.def 2025/03/12 v0.6f Pdfpages driver for pdfTeX (AM)
+(/home/francisco/.miktex/texmfs/install/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
 )
-\pdfpages@includegraphics@status=\count361
+\pdfpages@includegraphics@status=\count364
 \AM@pagebox=\box67
 \AM@global@opts=\toks48
-\AM@pagecnt=\count362
+\AM@pagecnt=\count365
 \AM@toc@title=\toks49
 \AM@lof@heading=\toks50
-\c@AM@survey=\count363
+\c@AM@survey=\count366
 \AM@templatesizebox=\box68
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/algorithms/algorithm.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/float/float.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count364
+\c@float@type=\count367
 \float@exts=\toks51
 \float@box=\box69
 \@float@everytoks=\toks52
 \@floatcapt=\box70
 )
 \@float@every@algorithm=\toks53
-\c@algorithm=\count365
+\c@algorithm=\count368
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/algorithmicx/algpseudocode.st
+(/home/francisco/.miktex/texmfs/install/tex/latex/algorithmicx/algpseudocode.st
 y
 Package: algpseudocode 
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/algorithmicx/algorithmicx.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count366
-\c@ALG@rem=\count367
-\c@ALG@nested=\count368
+\c@ALG@line=\count369
+\c@ALG@rem=\count370
+\c@ALG@nested=\count371
 \ALG@tlm=\skip91
 \ALG@thistlm=\skip92
-\c@ALG@Lnr=\count369
-\c@ALG@blocknr=\count370
-\c@ALG@storecount=\count371
-\c@ALG@tmpcounter=\count372
+\c@ALG@Lnr=\count372
+\c@ALG@blocknr=\count373
+\c@ALG@storecount=\count374
+\c@ALG@tmpcounter=\count375
 \ALG@tmplength=\skip93
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/home/fmccastro/.miktex/texmfs/install/tex/latex/svg/svg.sty
+) (/home/francisco/.miktex/texmfs/install/tex/latex/svg/svg.sty
 Package: svg 2020/11/26 v2.02k (include SVG pictures)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pdftexcmds/pdftexcmds.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/trimspaces/trimspaces.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/tools/shellesc.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/tools/shellesc.sty
 Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 )
-\c@svg@param@lastpage=\count373
+\c@svg@param@lastpage=\count376
 \svg@box=\box71
-\c@svg@param@currpage=\count374
+\c@svg@param@currpage=\count377
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/transparent/transparent.sty
-Package: transparent 2022-10-27 v1.5 Transparency with color stacks
+(/home/francisco/.miktex/texmfs/install/tex/latex/transparent/transparent.sty
+Package: transparent 2025-06-23 v1.6 Transparency with color stacks
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/transparent/transparent-nomet
+(/home/francisco/.miktex/texmfs/install/tex/latex/transparent/transparent-nomet
 adata.sty
-Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color
+Package: transparent-nometadata 2025-06-23 v1.6 Transparency via pdfTeX's color
  stack (HO)
- (/home/fmccastro/.miktex/texmfs/install/tex/latex/auxhook/auxhook.sty
+ (/home/francisco/.miktex/texmfs/install/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/systemlayer/pgfsys.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-commo
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgf/systemlayer/pgfsys.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-commo
 n.tex
 \pgfutil@everybye=\toks54
-\pgfutil@tempdima=\dimen276
-\pgfutil@tempdimb=\dimen277
+\pgfutil@tempdima=\dimen278
+\pgfutil@tempdimb=\dimen279
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-latex
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-latex
 .def
 \pgfutil@abb=\box72
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfrcs.code.t
-ex (/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/pgf.revision.tex)
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfrcs.code.t
+ex (/home/francisco/.miktex/texmfs/install/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys.code
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys.code
 .tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.
 tex
 \pgfkeys@pathtoks=\toks55
 \pgfkeys@temptoks=\toks56
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeyslibrar
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeyslibrar
 yfiltered.code.tex
 \pgfkeys@tmptoks=\toks57
 ))
-\pgf@x=\dimen278
-\pgf@y=\dimen279
-\pgf@xa=\dimen280
-\pgf@ya=\dimen281
-\pgf@xb=\dimen282
-\pgf@yb=\dimen283
-\pgf@xc=\dimen284
-\pgf@yc=\dimen285
-\pgf@xd=\dimen286
-\pgf@yd=\dimen287
+\pgf@x=\dimen280
+\pgf@y=\dimen281
+\pgf@xa=\dimen282
+\pgf@ya=\dimen283
+\pgf@xb=\dimen284
+\pgf@yb=\dimen285
+\pgf@xc=\dimen286
+\pgf@yc=\dimen287
+\pgf@xd=\dimen288
+\pgf@yd=\dimen289
 \w@pgf@writea=\write7
 \r@pgf@reada=\read4
-\c@pgf@counta=\count375
-\c@pgf@countb=\count376
-\c@pgf@countc=\count377
-\c@pgf@countd=\count378
+\c@pgf@counta=\count378
+\c@pgf@countb=\count379
+\c@pgf@countc=\count380
+\c@pgf@countd=\count381
 \t@pgf@toka=\toks58
 \t@pgf@tokb=\toks59
 \t@pgf@tokc=\toks60
-\pgf@sys@id@count=\count379
+\pgf@sys@id@count=\count382
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-pdft
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-pdft
 ex.def
 File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-comm
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-comm
 on-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsyssoftp
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsyssoftp
 ath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count380
-\pgfsyssoftpath@bigbuffer@items=\count381
+\pgfsyssoftpath@smallbuffer@items=\count383
+\pgfsyssoftpath@bigbuffer@items=\count384
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsysproto
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsysproto
 col.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/mathtools/mathtools.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/mathtools/mhsetup.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count382
-\l_MT_multwidth_dim=\dimen288
+\g_MT_multlinerow_int=\count385
+\l_MT_multwidth_dim=\dimen290
 \origjot=\skip94
-\l_MT_shortvdotswithinadjustabove_dim=\dimen289
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen290
-\l_MT_above_intertext_sep=\dimen291
-\l_MT_below_intertext_sep=\dimen292
-\l_MT_above_shortintertext_sep=\dimen293
-\l_MT_below_shortintertext_sep=\dimen294
+\l_MT_shortvdotswithinadjustabove_dim=\dimen291
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen292
+\l_MT_above_intertext_sep=\dimen293
+\l_MT_below_intertext_sep=\dimen294
+\l_MT_above_shortintertext_sep=\dimen295
+\l_MT_below_shortintertext_sep=\dimen296
 \xmathstrut@box=\box73
-\xmathstrut@dim=\dimen295
+\xmathstrut@dim=\dimen297
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/arydshln/arydshln.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/arydshln/arydshln.sty
 Package: arydshln 2019/02/21 v1.76 
-\dashlinedash=\dimen296
-\dashlinegap=\dimen297
+\dashlinedash=\dimen298
+\dashlinegap=\dimen299
 \adl@box=\box74
-\adl@height=\dimen298
-\adl@heightsave=\dimen299
-\adl@depth=\dimen300
-\adl@depthsave=\dimen301
-\adl@finaldepth=\dimen302
-\adl@columns=\count383
-\adl@ncol=\count384
-\adl@currentcolumn=\count385
-\adl@currentcolumnsave=\count386
-\adl@totalheight=\count387
-\adl@totalheightsave=\count388
-\adl@dash=\count389
-\adl@gap=\count390
-\adl@cla=\count391
-\adl@clb=\count392
+\adl@height=\dimen300
+\adl@heightsave=\dimen301
+\adl@depth=\dimen302
+\adl@depthsave=\dimen303
+\adl@finaldepth=\dimen304
+\adl@columns=\count386
+\adl@ncol=\count387
+\adl@currentcolumn=\count388
+\adl@currentcolumnsave=\count389
+\adl@totalheight=\count390
+\adl@totalheightsave=\count391
+\adl@dash=\count392
+\adl@gap=\count393
+\adl@cla=\count394
+\adl@clb=\count395
 \adl@everyvbox=\toks61
-\adl@LTpagetotal=\dimen303
+\adl@LTpagetotal=\dimen305
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgf.sty
+==> First Aid for arydshln.sty applied!
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgf.sty
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgfcore.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcore.code
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgfcore.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcore.code
 .tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathutil.code.t
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathutil.code.t
 ex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathparser.code
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathparser.code
 .tex
-\pgfmath@dimen=\dimen304
-\pgfmath@count=\count393
+\pgfmath@dimen=\dimen306
+\pgfmath@count=\count396
 \pgfmath@box=\box75
 \pgfmath@toks=\toks62
 \pgfmath@stack@operand=\toks63
 \pgfmath@stack@operation=\toks64
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.c
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.c
 ode.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.b
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.b
 asic.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.t
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.t
 rigonometric.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.r
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.r
 andom.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.c
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.c
 omparison.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.b
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.b
 ase.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.r
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.r
 ound.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.m
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.m
 isc.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.i
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.i
 ntegerarithmetics.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code.t
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code.t
 ex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfloat.code.
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfloat.code.
 tex
-\c@pgfmathroundto@lastzeros=\count394
+\c@pgfmathroundto@lastzeros=\count397
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfint.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoint
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfint.code.tex)
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoint
 s.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@picminx=\dimen305
-\pgf@picmaxx=\dimen306
-\pgf@picminy=\dimen307
-\pgf@picmaxy=\dimen308
-\pgf@pathminx=\dimen309
-\pgf@pathmaxx=\dimen310
-\pgf@pathminy=\dimen311
-\pgf@pathmaxy=\dimen312
-\pgf@xx=\dimen313
-\pgf@xy=\dimen314
-\pgf@yx=\dimen315
-\pgf@yy=\dimen316
-\pgf@zx=\dimen317
-\pgf@zy=\dimen318
+\pgf@picminx=\dimen307
+\pgf@picmaxx=\dimen308
+\pgf@picminy=\dimen309
+\pgf@picmaxy=\dimen310
+\pgf@pathminx=\dimen311
+\pgf@pathmaxx=\dimen312
+\pgf@pathminy=\dimen313
+\pgf@pathmaxy=\dimen314
+\pgf@xx=\dimen315
+\pgf@xy=\dimen316
+\pgf@yx=\dimen317
+\pgf@yy=\dimen318
+\pgf@zx=\dimen319
+\pgf@zy=\dimen320
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathc
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathc
 onstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@path@lastx=\dimen319
-\pgf@path@lasty=\dimen320
+\pgf@path@lastx=\dimen321
+\pgf@path@lasty=\dimen322
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathu
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathu
 sage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@shorten@end@additional=\dimen321
-\pgf@shorten@start@additional=\dimen322
+\pgf@shorten@end@additional=\dimen323
+\pgf@shorten@start@additional=\dimen324
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorescope
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorescope
 s.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box76
 \pgf@hbox=\box77
 \pgf@layerbox@main=\box78
-\pgf@picture@serial@count=\count395
+\pgf@picture@serial@count=\count398
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoregraph
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoregraph
 icstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgflinewidth=\dimen323
+\pgflinewidth=\dimen325
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretrans
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretrans
 formations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@pt@x=\dimen324
-\pgf@pt@y=\dimen325
-\pgf@pt@temp=\dimen326
+\pgf@pt@x=\dimen326
+\pgf@pt@y=\dimen327
+\pgf@pt@temp=\dimen328
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorequick
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorequick
 .code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreobjec
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreobjec
 ts.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathp
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathp
 rocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorearrow
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorearrow
 s.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowsep=\dimen327
+\pgfarrowsep=\dimen329
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreshade
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreshade
 .code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@max=\dimen328
-\pgf@sys@shading@range@num=\count396
-\pgf@shadingcount=\count397
+\pgf@max=\dimen330
+\pgf@sys@shading@range@num=\count399
+\pgf@shadingcount=\count400
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreimage
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreimage
 .code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreexter
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreexter
 nal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfexternal@startupbox=\box79
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorelayer
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorelayer
 s.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretrans
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretrans
 parency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepatte
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepatte
 rns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorerdf.c
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorerdf.c
 ode.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleshapes
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleshapes
 .code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfnodeparttextbox=\box80
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleplot.c
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleplot.c
 ode.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-ver
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-ver
 sion-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
-\pgf@nodesepstart=\dimen329
-\pgf@nodesepend=\dimen330
+\pgf@nodesepstart=\dimen331
+\pgf@nodesepend=\dimen332
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-ver
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-ver
 sion-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/utilities/pgffor.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfkeys.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.
-tex)) (/home/fmccastro/.miktex/texmfs/install/tex/latex/pgf/math/pgfmath.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex))
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgf/utilities/pgffor.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfkeys.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.
+tex)) (/home/francisco/.miktex/texmfs/install/tex/latex/pgf/math/pgfmath.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex))
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/utilities/pgffor.code.t
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/utilities/pgffor.code.t
 ex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
-\pgffor@iter=\dimen331
-\pgffor@skip=\dimen332
+\pgffor@iter=\dimen333
+\pgffor@skip=\dimen334
 \pgffor@stack=\toks65
 \pgffor@toks=\toks66
 ))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/tikz
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/tikz
 .code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryplo
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryplo
 thandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count398
-\pgfplotmarksize=\dimen333
+\pgf@plot@mark@count=\count401
+\pgfplotmarksize=\dimen335
 )
-\tikz@lastx=\dimen334
-\tikz@lasty=\dimen335
-\tikz@lastxsaved=\dimen336
-\tikz@lastysaved=\dimen337
-\tikz@lastmovetox=\dimen338
-\tikz@lastmovetoy=\dimen339
-\tikzleveldistance=\dimen340
-\tikzsiblingdistance=\dimen341
+\tikz@lastx=\dimen336
+\tikz@lasty=\dimen337
+\tikz@lastxsaved=\dimen338
+\tikz@lastysaved=\dimen339
+\tikz@lastmovetox=\dimen340
+\tikz@lastmovetoy=\dimen341
+\tikzleveldistance=\dimen342
+\tikzsiblingdistance=\dimen343
 \tikz@figbox=\box81
 \tikz@figbox@bg=\box82
 \tikz@tempbox=\box83
 \tikz@tempbox@bg=\box84
-\tikztreelevel=\count399
-\tikznumberofchildren=\count400
-\tikznumberofcurrentchild=\count401
-\tikz@fig@count=\count402
+\tikztreelevel=\count402
+\tikznumberofchildren=\count403
+\tikznumberofcurrentchild=\count404
+\tikz@fig@count=\count405
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmodulematrix
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmodulematrix
 .code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count403
-\pgfmatrixcurrentcolumn=\count404
-\pgf@matrix@numberofcolumns=\count405
+\pgfmatrixcurrentrow=\count406
+\pgfmatrixcurrentcolumn=\count407
+\pgf@matrix@numberofcolumns=\count408
 )
-\tikz@expandcount=\count406
+\tikz@expandcount=\count409
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
 aries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
 aries/tikzlibrary3d.code.tex
 File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
 aries/tikzlibraryperspective.code.tex
 File: tikzlibraryperspective.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
 aries/datavisualization/tikzlibrarydatavisualization.code.tex
 File: tikzlibrarydatavisualization.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduledatavi
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduledatavi
 sualization.code.tex
 File: pgfmoduledatavisualization.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleoo.cod
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleoo.cod
 e.tex
-\pgfoo@objectcount=\count407
-\pgfoothis@count=\count408
+\pgfoo@objectcount=\count410
+\pgfoothis@count=\count411
 \pgfoo@toks=\toks67
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryfpu
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryfpu
 .code.tex)
-\pgf@lib@dv@cache@count=\count409
-\pgf@lib@dv@cache@count=\count410
+\pgf@lib@dv@cache@count=\count412
+\pgf@lib@dv@cache@count=\count413
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
 aries/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@layerbox@background=\box85
 \pgf@layerboxsaved@background=\box86
 )
-\tikzdvvisualizercounter=\count411
+\tikzdvvisualizercounter=\count414
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/tools/multicol.sty
-Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
-\c@tracingmulticols=\count412
+(/home/francisco/.miktex/texmfs/install/tex/latex/tools/multicol.sty
+Package: multicol 2025/05/25 v2.0a multicolumn formatting (FMi)
+\c@tracingmulticols=\count415
 \mult@box=\box87
-\multicol@leftmargin=\dimen342
-\c@unbalance=\count413
-\c@collectmore=\count414
-\doublecol@number=\count415
-\multicoltolerance=\count416
-\multicolpretolerance=\count417
-\full@width=\dimen343
-\page@free=\dimen344
-\premulticols=\dimen345
-\postmulticols=\dimen346
+\multicol@leftmargin=\dimen344
+\c@unbalance=\count416
+\c@collectmore=\count417
+\doublecol@number=\count418
+\multicoltolerance=\count419
+\multicolpretolerance=\count420
+\full@width=\dimen345
+\page@free=\dimen346
+\premulticols=\dimen347
+\postmulticols=\dimen348
 \multicolsep=\skip95
 \multicolbaselineskip=\skip96
 \partial@page=\box88
 \last@line=\box89
 \mc@boxedresult=\box90
-\maxbalancingoverflow=\dimen347
+\maxbalancingoverflow=\dimen349
 \mult@rightbox=\box91
 \mult@grightbox=\box92
 \mult@firstbox=\box93
@@ -1110,45 +1136,46 @@ Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
 \@tempa=\box128
 \@tempa=\box129
 \@tempa=\box130
-\c@minrows=\count418
-\c@columnbadness=\count419
-\c@finalcolumnbadness=\count420
-\last@try=\dimen348
-\multicolovershoot=\dimen349
-\multicolundershoot=\dimen350
+\c@minrows=\count421
+\c@columnbadness=\count422
+\c@finalcolumnbadness=\count423
+\last@try=\dimen350
+\multicolovershoot=\dimen351
+\multicolundershoot=\dimen352
 \mult@nat@firstbox=\box131
 \colbreak@box=\box132
-\mc@col@check@num=\count421
+\mc@col@check@num=\count424
+\g__mc_curr_col_int=\count425
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/changepage/changepage.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count422
-\cp@tempcnt=\count423
+\c@cp@cntr=\count426
+\cp@tempcnt=\count427
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/caption/caption.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/caption/caption3.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen351
-\captionmargin=\dimen352
-\caption@leftmargin=\dimen353
-\caption@rightmargin=\dimen354
-\caption@width=\dimen355
-\caption@indent=\dimen356
-\caption@parindent=\dimen357
-\caption@hangindent=\dimen358
+\caption@tempdima=\dimen353
+\captionmargin=\dimen354
+\caption@leftmargin=\dimen355
+\caption@rightmargin=\dimen356
+\caption@width=\dimen357
+\caption@indent=\dimen358
+\caption@parindent=\dimen359
+\caption@hangindent=\dimen360
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count424
-\c@continuedfloat=\count425
+\c@caption@flags=\count428
+\c@continuedfloat=\count429
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen359
-\caption@adjustwidth@linewidth=\dimen360
+\caption@adjustwidth@hsize=\dimen361
+\caption@adjustwidth@linewidth=\dimen362
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/caption/ltcaption.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
@@ -1156,48 +1183,48 @@ Package caption Info: subfigure package is loaded.
 Package caption Info: supertabular package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/blindtext/blindtext.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/tools/xspace.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count426
-\c@Blindtext=\count427
-\c@blind@countparstart=\count428
-\blind@countxx=\count429
-\blindtext@numBlindtext=\count430
-\blind@countyy=\count431
-\c@blindlist=\count432
-\c@blindlistlevel=\count433
-\c@blindlist@level=\count434
-\blind@listitem=\count435
-\c@blind@listcount=\count436
-\c@blind@levelcount=\count437
-\blind@mathformula=\count438
-\blind@Mathformula=\count439
-\c@blind@randomcount=\count440
-\c@blind@randommax=\count441
-\c@blind@pangramcount=\count442
-\c@blind@pangrammax=\count443
+\c@blindtext=\count430
+\c@Blindtext=\count431
+\c@blind@countparstart=\count432
+\blind@countxx=\count433
+\blindtext@numBlindtext=\count434
+\blind@countyy=\count435
+\c@blindlist=\count436
+\c@blindlistlevel=\count437
+\c@blindlist@level=\count438
+\blind@listitem=\count439
+\c@blind@listcount=\count440
+\c@blind@levelcount=\count441
+\blind@mathformula=\count442
+\blind@Mathformula=\count443
+\c@blind@randomcount=\count444
+\c@blind@randommax=\count445
+\c@blind@pangramcount=\count446
+\c@blind@pangrammax=\count447
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/paracol/paracol.sty
-Package: paracol 2024/10/22 1.36 typeset columns in parallel
-\pcol@currcol=\count444
-\pcol@nextcol=\count445
-\pcol@ncol=\count446
-\pcol@ncolleft=\count447
-\pcol@page=\count448
-\pcol@basepage=\count449
-\pcol@toppage=\count450
-\pcol@footnotebase=\count451
-\pcol@nfootnotes=\count452
-\pcol@mcid=\count453
-\pcol@prevdepth=\dimen361
-\pcol@colht=\dimen362
-\pcol@textfloatsep=\dimen363
-\pcol@lrmargin=\dimen364
-\pagerim=\dimen365
+(/home/francisco/.miktex/texmfs/install/tex/latex/paracol/paracol.sty
+Package: paracol 2025/07/14 1.37 typeset columns in parallel
+\pcol@currcol=\count448
+\pcol@nextcol=\count449
+\pcol@ncol=\count450
+\pcol@ncolleft=\count451
+\pcol@page=\count452
+\pcol@basepage=\count453
+\pcol@toppage=\count454
+\pcol@footnotebase=\count455
+\pcol@nfootnotes=\count456
+\pcol@mcid=\count457
+\pcol@prevdepth=\dimen363
+\pcol@colht=\dimen364
+\pcol@textfloatsep=\dimen365
+\pcol@lrmargin=\dimen366
+\pagerim=\dimen367
 \pcol@topskip=\skip97
 \belowfootnoteskip=\skip98
 \pcol@topfnotes=\box133
@@ -1209,129 +1236,118 @@ Package: paracol 2024/10/22 1.36 typeset columns in parallel
 \pcol@colorins=\insert252
 \pcol@everyvbox=\toks68
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/enumitem/enumitem.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip99
-\enit@outerparindent=\dimen366
+\enit@outerparindent=\dimen368
 \enit@toks=\toks69
 \enit@inbox=\box139
-\enit@count@id=\count454
-\enitdp@description=\count455
+\enit@count@id=\count458
+\enitdp@description=\count459
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amsfonts/amssymb.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+(/home/francisco/.miktex/texmfs/install/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.s
+(/home/francisco/.miktex/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.s
 ty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/home/fmccastro/.miktex/texmfs/install/tex/generic/pdfescape/pdfescape.sty
+) (/home/francisco/.miktex/texmfs/install/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/home/fmccastro/.miktex/texmfs/install/tex/latex/hycolor/hycolor.sty
+) (/home/francisco/.miktex/texmfs/install/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/hyperref/nameref.sty
-Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+(/home/francisco/.miktex/texmfs/install/tex/latex/hyperref/nameref.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/refcount/refcount.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/gettitlestring/gettitlestri
+(/home/francisco/.miktex/texmfs/install/tex/generic/gettitlestring/gettitlestri
 ng.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count456
+\c@section@level=\count460
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/stringenc/stringenc.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen367
-\Hy@linkcounter=\count457
-\Hy@pagecounter=\count458
+\@linkdim=\dimen369
+\Hy@linkcounter=\count461
+\Hy@pagecounter=\count462
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
+(/home/francisco/.miktex/texmfs/install/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/intcalc/intcalc.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count459
+\Hy@SavedSpaceFactor=\count463
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/hyperref/puenc.def
-File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
+(/home/francisco/.miktex/texmfs/install/tex/latex/hyperref/puenc.def
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4157.
-Package hyperref Info: Link nesting OFF on input line 4162.
-Package hyperref Info: Hyper index ON on input line 4165.
-Package hyperref Info: Plain pages OFF on input line 4172.
-Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4424.
-\c@Hy@tempcnt=\count460
-LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen368
+Package hyperref Info: Bookmarks ON on input line 4462.
+\c@Hy@tempcnt=\count464
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen370
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/bitset/bitset.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/bigintcalc/bigintcalc.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count461
-\Field@Width=\dimen369
-\Fld@charsize=\dimen370
-Package hyperref Info: Hyper figures OFF on input line 6042.
-Package hyperref Info: Link nesting OFF on input line 6047.
-Package hyperref Info: Hyper index ON on input line 6050.
-Package hyperref Info: backreferencing OFF on input line 6057.
-Package hyperref Info: Link coloring OFF on input line 6062.
-Package hyperref Info: Link coloring with OCG OFF on input line 6067.
-Package hyperref Info: PDF/A mode OFF on input line 6072.
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/base/atbegshi-ltx.sty
-Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
-package with kernel methods
-)
-\Hy@abspage=\count462
-\c@Item=\count463
-\c@Hfootnote=\count464
+\Fld@menulength=\count465
+\Field@Width=\dimen371
+\Fld@charsize=\dimen372
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count466
+\c@Item=\count467
+\c@Hfootnote=\count468
 )
 Package hyperref Info: Driver: hpdftex.
+ (/home/francisco/.miktex/texmfs/install/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count469
+\c@bookmark@seq@number=\count470
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2024-11-05 v7.01l Hyperref driver for pdfTeX
-
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
-kage
-with kernel methods
-)
-\Fld@listcount=\count465
-\c@bookmark@seq@number=\count466
-
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck
+(/home/francisco/.miktex/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck
 .sty
-Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/uniquecounter/uniquecounter
+(/home/francisco/.miktex/texmfs/install/tex/generic/uniquecounter/uniquecounter
 .sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-85.
+84.
 )
 \Hy@SectionHShift=\skip100
 )
@@ -1349,12 +1365,12 @@ Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 619.
 
 Package hyperref Info: Option `pdfdisplaydoctitle' set `true' on input line 619
 .
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/hypcap/hypcap.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/hypcap/hypcap.sty
 Package: hypcap 2024-07-26 v1.13 Adjusting the anchors of captions (HO)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/letltxmacro/letltxmacro.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)) (/home/fmccastro/.miktex/texmfs/install/tex/latex/cleveref/cleveref.sty
+)) (/home/francisco/.miktex/texmfs/install/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
 LaTeX Info: Redefining \cref on input line 2370.
@@ -1370,161 +1386,162 @@ LaTeX Info: Redefining \labelcpageref on input line 2370.
 Package cleveref Info: `amsthm' support loaded on input line 3026.
 Package cleveref Info: `algorithmicx' support loaded on input line 3120.
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgfplots/pgfplots.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.revision.
+==> First Aid for cleveref.sty applied!
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgfplots/pgfplots.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.revision.
 tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotscore.code.
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.code.tex
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotscore.code.
 tex
 \t@pgfplots@toka=\toks70
 \t@pgfplots@tokb=\toks71
 \t@pgfplots@tokc=\toks72
-\pgfplots@tmpa=\dimen371
-\c@pgfplots@coordindex=\count467
-\c@pgfplots@scanlineindex=\count468
+\pgfplots@tmpa=\dimen373
+\c@pgfplots@coordindex=\count471
+\c@pgfplots@scanlineindex=\count472
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/sys/pgfplotssysgen
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/sys/pgfplotssysgen
 eric.code.tex))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/libs/pgfplotslibra
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/libs/pgfplotslibra
 ry.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/oldpgfcompatib/pgf
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/oldpgfcompatib/pgf
 plotsoldpgfsupp_loader.code.tex
 Package pgfplots: loading complementary utilities for your pgf version...
 \t@pgf@toka=\toks73
 \t@pgf@tokb=\toks74
 \t@pgf@tokc=\toks75
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/oldpgfcompatib/pgf
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/oldpgfcompatib/pgf
 plotsoldpgfsupp_pgfutil-common-lists.tex))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil.
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil.
 code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
 lotsliststructure.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
 lotsliststructureext.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
 lotsarray.code.tex
-\c@pgfplotsarray@tmp=\count469
+\c@pgfplotsarray@tmp=\count473
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
 lotsmatrix.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplotst
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplotst
 ableshared.code.tex
-\c@pgfplotstable@counta=\count470
+\c@pgfplotstable@counta=\count474
 \t@pgfplotstable@a=\toks76
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfp
 lotsdeque.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsbinar
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsbinar
 y.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsbinar
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsbinar
 y.data.code.tex))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil.
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil.
 verb.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/libs/pgflibrarypgf
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/libs/pgflibrarypgf
 plots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count471
+\c@pgfplotslibrarysurf@no=\count475
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/sys/pgflibrarypgfp
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/sys/pgflibrarypgfp
 lots.surfshading.pgfsys-pdftex.def)))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotscolor
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotscolor
 map.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotscolor
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotscolor
 .code.tex))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsstackedplo
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsstackedplo
 ts.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsplothandle
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsplothandle
 rs.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsmeshplotha
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsmeshplotha
 ndler.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsmeshplotim
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsmeshplotim
 age.code.tex)))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.scaling.c
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.scaling.c
 ode.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotscoordproce
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotscoordproce
 ssing.code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.errorbars
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.errorbars
 .code.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.markers.c
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.markers.c
 ode.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsticks.code
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsticks.code
 .tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.paths.cod
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.paths.cod
 e.tex)
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
 aries/tikzlibrarydecorations.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduledecora
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduledecora
 tions.code.tex
-\pgfdecoratedcompleteddistance=\dimen372
-\pgfdecoratedremainingdistance=\dimen373
-\pgfdecoratedinputsegmentcompleteddistance=\dimen374
-\pgfdecoratedinputsegmentremainingdistance=\dimen375
-\pgf@decorate@distancetomove=\dimen376
-\pgf@decorate@repeatstate=\count472
-\pgfdecorationsegmentamplitude=\dimen377
-\pgfdecorationsegmentlength=\dimen378
+\pgfdecoratedcompleteddistance=\dimen374
+\pgfdecoratedremainingdistance=\dimen375
+\pgfdecoratedinputsegmentcompleteddistance=\dimen376
+\pgfdecoratedinputsegmentremainingdistance=\dimen377
+\pgf@decorate@distancetomove=\dimen378
+\pgf@decorate@repeatstate=\count476
+\pgfdecorationsegmentamplitude=\dimen379
+\pgfdecorationsegmentlength=\dimen380
 )
 \tikz@lib@dec@box=\box140
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
 aries/tikzlibrarydecorations.pathmorphing.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/libraries/decorations/p
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/libraries/decorations/p
 gflibrarydecorations.pathmorphing.code.tex))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
 aries/tikzlibrarydecorations.pathreplacing.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/libraries/decorations/p
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/libraries/decorations/p
 gflibrarydecorations.pathreplacing.code.tex))
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/libs/tikzlibrarypg
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/libs/tikzlibrarypg
 fplots.contourlua.code.tex)
-\pgfplots@numplots=\count473
-\pgfplots@xmin@reg=\dimen379
-\pgfplots@xmax@reg=\dimen380
-\pgfplots@ymin@reg=\dimen381
-\pgfplots@ymax@reg=\dimen382
-\pgfplots@zmin@reg=\dimen383
-\pgfplots@zmax@reg=\dimen384
+\pgfplots@numplots=\count477
+\pgfplots@xmin@reg=\dimen381
+\pgfplots@xmax@reg=\dimen382
+\pgfplots@ymin@reg=\dimen383
+\pgfplots@ymax@reg=\dimen384
+\pgfplots@zmin@reg=\dimen385
+\pgfplots@zmax@reg=\dimen386
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/libr
 aries/tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryplo
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryplo
 tmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pgfplots/pgfplotstable.sty
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.revision.
+(/home/francisco/.miktex/texmfs/install/tex/latex/pgfplots/pgfplotstable.sty
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.revision.
 tex)
 Package: pgfplotstable 2021/05/15 v1.18.1 Table typesetting and Pretty-printing
  (1.18.1)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplotst
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplotst
 able.code.tex
-(/home/fmccastro/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplotst
+(/home/francisco/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplotst
 able.coltype.code.tex)))
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/titlesec/titlesec.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box141
 \beforetitleunit=\skip101
 \aftertitleunit=\skip102
-\ttl@plus=\dimen385
-\ttl@minus=\dimen386
+\ttl@plus=\dimen387
+\ttl@minus=\dimen388
 \ttl@toksa=\toks77
-\titlewidth=\dimen387
-\titlewidthlast=\dimen388
-\titlewidthfirst=\dimen389
+\titlewidth=\dimen389
+\titlewidthlast=\dimen390
+\titlewidthfirst=\dimen391
 )
-\c@assumption=\count474
-\c@definition=\count475
-\c@lemma=\count476
-\c@theorem=\count477
+\c@assumption=\count478
+\c@definition=\count479
+\c@lemma=\count480
+\c@theorem=\count481
 )
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 8
 1.
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/psnfss/ot1phv.fd
+(/home/francisco/.miktex/texmfs/install/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2020/03/25 scalable font definitions for OT1/phv.
 ) (Thesis.aux
 
@@ -1532,6 +1549,21 @@ LaTeX Warning: Label `assumption:frames' multiply defined.
 
 
 LaTeX Warning: Label `assumption:frames@cref' multiply defined.
+
+
+LaTeX Warning: Label `subsubsection:coulombFrictionModel' multiply defined.
+
+
+LaTeX Warning: Label `subsubsection:coulombFrictionModel@cref' multiply defined
+.
+
+
+LaTeX Warning: Label `fig:states_comparison_validation_contacts' multiply defin
+ed.
+
+
+LaTeX Warning: Label `fig:states_comparison_validation_contacts@cref' multiply 
+defined.
 
 
 LaTeX Warning: Label `section:optimalPathPlanning' multiply defined.
@@ -1595,36 +1627,36 @@ LaTeX Font Info:    ... okay on input line 81.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/home/fmccastro/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+(/home/francisco/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count478
-\scratchdimen=\dimen390
+\scratchcounter=\count482
+\scratchdimen=\dimen392
 \scratchbox=\box142
-\nofMPsegments=\count479
-\nofMParguments=\count480
+\nofMPsegments=\count483
+\nofMParguments=\count484
 \everyMPshowfont=\toks78
-\MPscratchCnt=\count481
-\MPscratchDim=\dimen391
-\MPnumerator=\count482
-\makeMPintoPDFobject=\count483
+\MPscratchCnt=\count485
+\MPscratchDim=\dimen393
+\MPnumerator=\count486
+\makeMPintoPDFobject=\count487
 \everyMPtoPDFconversion=\toks79
 )
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.st
+(/home/francisco/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.st
 y
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
- (/home/fmccastro/.miktex/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
+ (/home/francisco/.miktex/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 )) (Thesis.glsdefs)
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pdflscape/pdflscape.sty
+(/home/francisco/.miktex/texmfs/install/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/pdflscape/pdflscape-nometadat
+(/home/francisco/.miktex/texmfs/install/tex/latex/pdflscape/pdflscape-nometadat
 a.sty
 Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
 F (HO)
- (/home/fmccastro/.miktex/texmfs/install/tex/latex/graphics/lscape.sty
+ (/home/francisco/.miktex/texmfs/install/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
@@ -1646,12 +1678,12 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 (Thesis_FrontCover.tex
 Package pdftex.def Info: Option `bb' equivalent to `viewport' with the pdftex d
 river on input line 15.
-<IST_A_CMYK_POS.pdf, id=328, 845.0471pt x 597.51233pt>
+<IST_A_CMYK_POS.pdf, id=324, 845.0471pt x 597.51233pt>
 File: IST_A_CMYK_POS.pdf Graphic file (type pdf)
 <use IST_A_CMYK_POS.pdf>
 Package pdftex.def Info: IST_A_CMYK_POS.pdf  used on input line 15.
 (pdftex.def)             Requested size: -78.38533pt x -90.76195pt.
-<Figures/leo_rover_need_for_terrain_correction_example.png, id=329, 763.85374pt
+<Figures/leo_rover_need_for_terrain_correction_example.png, id=325, 763.85374pt
  x 666.49pt>
 File: Figures/leo_rover_need_for_terrain_correction_example.png Graphic file (t
 ype png)
@@ -1662,19 +1694,19 @@ png  used on input line 22.
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 26
 .
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/psnfss/t1phv.fd
+(/home/francisco/.miktex/texmfs/install/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
 
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
+(/home/francisco/.miktex/texmfs/install/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
 
 
-(/home/fmccastro/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
+(/home/francisco/.miktex/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 
@@ -1682,8 +1714,8 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 \openout4 = `Thesis.ist'.
 
-{/home/fmccastro/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}{/home/fmccast
-ro/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} <./IST_A_CMYK_POS.pdf> <
+{/home/francisco/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}{/home/francis
+co/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} <./IST_A_CMYK_POS.pdf> <
 ./Figures/leo_rover_need_for_terrain_correction_example.png>]
 (Thesis_Dedication.tex
 
@@ -1736,9 +1768,11 @@ ro/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} <./IST_A_CMYK_POS.pdf> <
 [11
 
 
-] (Thesis_Nomenclature.tex) (Thesis.nls)
+]
 
-[12
+[12] (Thesis_Nomenclature.tex) (Thesis.nls)
+
+[13
 
 
 ] (Thesis_Acronym.tex
@@ -1747,13 +1781,13 @@ ro/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} <./IST_A_CMYK_POS.pdf> <
 
 ) (Thesis.acr
 
-[13
+[14
 
 
 
 ])
 
-[14] (Thesis_Introduction.tex
+[15] (Thesis_Introduction.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 21.
@@ -1767,25 +1801,13 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 56.
 
 Overfull \hbox (6.12389pt too wide) in paragraph at lines 61--62
-[]\OT1/phv/m/n/10 Although deployed rovers have achieved greater coverages, the
-se have also faced slippage-hazardous
- []
-
-
-Overfull \hbox (15.91476pt too wide) in paragraph at lines 94--95
-\OT1/phv/m/n/10 teleoperated/driving vehicles, wheeled, autonomous robots have 
-not experienced a dynamic terramechanics
+[]\OT1/phv/m/n/10 Although de-ployed rovers have achieved greater cov-er-ages, 
+these have also faced slippage-hazardous
  []
 
 
 
-[2]
-Overfull \hbox (7.78487pt too wide) in paragraph at lines 100--101
-[]\OT1/phv/m/n/10 As a result of tackling these issues, it is expected to \OT1/
-phv/b/n/10 maximize the operational timeline\OT1/phv/m/n/10 , by decreasing
- []
-
-)
+[2])
 
 [3]
 
@@ -1797,18 +1819,6 @@ Chapter 2.
 
 
 ]
-Overfull \hbox (6.09181pt too wide) in paragraph at lines 47--48
-\OT1/phv/m/n/10 memory representation, multiresolution queries and probabilisti
-c occupancy estimates. A great advantage
- []
-
-
-Overfull \hbox (14.6901pt too wide) in paragraph at lines 49--50
-[]$[]$ \OT1/phv/m/n/10 present an improvement to []Digital Elevation Models and
- 3-D grids. It's a compact representation
- []
-
-
 
 [6]
 
@@ -1827,26 +1837,21 @@ Chapter 3.
 
 
 ]
-<Figures/robotMovingFrame.png, id=766, 565.11125pt x 549.05125pt>
+<Figures/robotMovingFrame.png, id=771, 565.11125pt x 549.05125pt>
 File: Figures/robotMovingFrame.png Graphic file (type png)
 <use Figures/robotMovingFrame.png>
 Package pdftex.def Info: Figures/robotMovingFrame.png  used on input line 52.
 (pdftex.def)             Requested size: 113.81102pt x 110.57068pt.
-<Figures/robotGeometry.png, id=767, 798.985pt x 793.96625pt>
+<Figures/robotGeometry.png, id=772, 798.985pt x 793.96625pt>
 File: Figures/robotGeometry.png Graphic file (type png)
 <use Figures/robotGeometry.png>
 Package pdftex.def Info: Figures/robotGeometry.png  used on input line 55.
 (pdftex.def)             Requested size: 145.68144pt x 144.76134pt.
-<Figures/ICR.png, id=768, 570.13pt x 583.17876pt>
+<Figures/ICR.png, id=773, 570.13pt x 583.17876pt>
 File: Figures/ICR.png Graphic file (type png)
 <use Figures/ICR.png>
 Package pdftex.def Info: Figures/ICR.png  used on input line 58.
 (pdftex.def)             Requested size: 145.68144pt x 149.01561pt.
-
-
-LaTeX Warning: Reference `eq:orientationQuatRotationMatrix' on page 10 undefine
-d on input line 63.
-
 
 
 [10 <./Figures/robotMovingFrame.png> <./Figures/robotGeometry.png> <./Figures/I
@@ -1856,107 +1861,108 @@ CR.png>]
 
 [12]
 
-[13]
-
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
+[13]
+
 [14]
-
-[15]
-
-[16]
-<Figures/rigid_rigid.png, id=888, 342.27875pt x 363.3575pt>
+<Figures/rigid_rigid.png, id=871, 342.27875pt x 363.3575pt>
 File: Figures/rigid_rigid.png Graphic file (type png)
 <use Figures/rigid_rigid.png>
-Package pdftex.def Info: Figures/rigid_rigid.png  used on input line 624.
+Package pdftex.def Info: Figures/rigid_rigid.png  used on input line 637.
 (pdftex.def)             Requested size: 68.28383pt x 72.48724pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--624
+Underfull \hbox (badness 10000) in paragraph at lines 637--637
 []\OT1/phv/m/n/8 (a) Rigid wheel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 624--624
-\OT1/phv/m/n/8 contacting with
+Underfull \hbox (badness 10000) in paragraph at lines 637--637
+\OT1/phv/m/n/8 con-tact-ing with
  []
 
-<Figures/rigid_deformable.png, id=889, 342.27875pt x 359.3425pt>
+<Figures/rigid_deformable.png, id=872, 342.27875pt x 359.3425pt>
 File: Figures/rigid_deformable.png Graphic file (type png)
 <use Figures/rigid_deformable.png>
-Package pdftex.def Info: Figures/rigid_deformable.png  used on input line 625.
+Package pdftex.def Info: Figures/rigid_deformable.png  used on input line 638.
 (pdftex.def)             Requested size: 68.28383pt x 71.68628pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--625
+Underfull \hbox (badness 10000) in paragraph at lines 638--638
 []\OT1/phv/m/n/8 (b) Rigid wheel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 625--625
-\OT1/phv/m/n/8 contacting with
+Underfull \hbox (badness 10000) in paragraph at lines 638--638
+\OT1/phv/m/n/8 con-tact-ing with
  []
 
-<Figures/deformable_rigid.png, id=890, 345.29pt x 322.20375pt>
+<Figures/deformable_rigid.png, id=873, 345.29pt x 322.20375pt>
 File: Figures/deformable_rigid.png Graphic file (type png)
 <use Figures/deformable_rigid.png>
-Package pdftex.def Info: Figures/deformable_rigid.png  used on input line 626.
+Package pdftex.def Info: Figures/deformable_rigid.png  used on input line 639.
 (pdftex.def)             Requested size: 68.28383pt x 63.71689pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 626--626
-[]\OT1/phv/m/n/8 (c) Deformable
+Underfull \hbox (badness 10000) in paragraph at lines 639--639
+[]\OT1/phv/m/n/8 (c) De-formable
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 626--626
-\OT1/phv/m/n/8 wheel contacting
+Underfull \hbox (badness 10000) in paragraph at lines 639--639
+\OT1/phv/m/n/8 wheel con-tact-ing
  []
 
-<Figures/deformable_deformable.png, id=891, 345.29pt x 321.2pt>
+<Figures/deformable_deformable.png, id=874, 345.29pt x 321.2pt>
 File: Figures/deformable_deformable.png Graphic file (type png)
 <use Figures/deformable_deformable.png>
 Package pdftex.def Info: Figures/deformable_deformable.png  used on input line 
-627.
+640.
 (pdftex.def)             Requested size: 68.28383pt x 63.51839pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--627
-[]\OT1/phv/m/n/8 (d) Deformable
+Underfull \hbox (badness 10000) in paragraph at lines 640--640
+[]\OT1/phv/m/n/8 (d) De-formable
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--627
-\OT1/phv/m/n/8 wheel contacting
+Underfull \hbox (badness 10000) in paragraph at lines 640--640
+\OT1/phv/m/n/8 wheel con-tact-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 627--627
-\OT1/phv/m/n/8 with deformable
- []
-
-
-Overfull \hbox (0.21286pt too wide) in paragraph at lines 633--634
-[]\OT1/phv/m/n/10 In this thesis, only rigid wheels are considered. Even if a w
-heel presents some degree of deformability
- []
-
-
-Overfull \hbox (19.79051pt too wide) in paragraph at lines 639--640
-\OT1/phv/m/n/10 cumbersome to online estimate the parameters of deformable terr
-ain. There are open-source terramechanics
+Underfull \hbox (badness 10000) in paragraph at lines 640--640
+\OT1/phv/m/n/8 with de-formable
  []
 
 
 
-[17 <./Figures/rigid_rigid.png> <./Figures/rigid_deformable.png> <./Figures/def
+[15]
+
+[16 <./Figures/rigid_rigid.png> <./Figures/rigid_deformable.png> <./Figures/def
 ormable_rigid.png> <./Figures/deformable_deformable.png>]
 
-[18]
+[17]
+<Figures/states_comparison_3d_sim.pdf, id=934, 462.52798pt x 346.89601pt>
+File: Figures/states_comparison_3d_sim.pdf Graphic file (type pdf)
+<use Figures/states_comparison_3d_sim.pdf>
+Package pdftex.def Info: Figures/states_comparison_3d_sim.pdf  used on input li
+ne 802.
+(pdftex.def)             Requested size: 455.24411pt x 341.44844pt.
 
-Package hyperref Warning: Ignoring empty anchor on input line 700.
 
+[18 <./Figures/states_comparison_3d_sim.pdf>]
+<Figures/states_comparison_3d_sim_contacts.pdf, id=982, 462.52798pt x 346.89601
+pt>
+File: Figures/states_comparison_3d_sim_contacts.pdf Graphic file (type pdf)
+<use Figures/states_comparison_3d_sim_contacts.pdf>
+Package pdftex.def Info: Figures/states_comparison_3d_sim_contacts.pdf  used on
+ input line 813.
+(pdftex.def)             Requested size: 455.24411pt x 341.44844pt.
+
+
+[19 <./Figures/states_comparison_3d_sim_contacts.pdf>]
+PGFPlots: reading {Data/maxInclination.dat}
 )
-
-[19]
 
 [20] (Thesis_Background.tex
 Chapter 4.
@@ -1977,16 +1983,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 [22]
-Overfull \hbox (3.25494pt too wide) in paragraph at lines 132--133
-[]\OT1/phv/m/n/10 Then, problem [][]4.5[][] may resort to an \OT1/phv/b/n/10 un
-constrained\OT1/phv/m/n/10 , \OT1/phv/b/n/10 equality constrained \OT1/phv/m/n/
-10 or \OT1/phv/b/n/10 inequality constrained
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 
 [23]
 
@@ -2002,18 +1998,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 [25]
-Overfull \hbox (2.89272pt too wide) in paragraph at lines 276--277
-\OT1/phv/m/n/10 transcription, continuity between states of consecutive time in
-tervals is also required. This approach
- []
-
-
-Overfull \hbox (0.45253pt too wide) in paragraph at lines 279--280
-\OT1/phv/m/n/10 preserve the problem's structure on the linear subproblems. On 
-the other hand, a simultaneous approach
- []
-
-
 
 [26]
 
@@ -2515,35 +2499,35 @@ l.219 	\State
 [36]
 LaTeX Font Info:    Trying to load font information for TS1+phv on input line 3
 54.
- (/home/fmccastro/.miktex/texmfs/install/tex/latex/psnfss/ts1phv.fd
+ (/home/francisco/.miktex/texmfs/install/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2020/03/25 scalable font definitions for TS1/phv.
 )
-<Figures/HeightMin+Points+1.png, id=1269, 469.755pt x 354.8457pt>
+<Figures/HeightMin+Points+1.png, id=1365, 469.755pt x 354.8457pt>
 File: Figures/HeightMin+Points+1.png Graphic file (type png)
 <use Figures/HeightMin+Points+1.png>
 Package pdftex.def Info: Figures/HeightMin+Points+1.png  used on input line 361
 .
 (pdftex.def)             Requested size: 136.57462pt x 103.1625pt.
-<Figures/HeightMin_maxInclination+Points+1.png, id=1271, 469.755pt x 354.8457pt
+<Figures/HeightMin_maxInclination+Points+1.png, id=1367, 469.755pt x 354.8457pt
 >
 File: Figures/HeightMin_maxInclination+Points+1.png Graphic file (type png)
 <use Figures/HeightMin_maxInclination+Points+1.png>
 Package pdftex.def Info: Figures/HeightMin_maxInclination+Points+1.png  used on
  input line 364.
 (pdftex.def)             Requested size: 136.57462pt x 103.1625pt.
-<Figures/maxTerrainRoughness+1.png, id=1273, 469.755pt x 354.8457pt>
+<Figures/maxTerrainRoughness+1.png, id=1369, 469.755pt x 354.8457pt>
 File: Figures/maxTerrainRoughness+1.png Graphic file (type png)
 <use Figures/maxTerrainRoughness+1.png>
 Package pdftex.def Info: Figures/maxTerrainRoughness+1.png  used on input line 
 367.
 (pdftex.def)             Requested size: 136.57462pt x 103.1625pt.
-<Figures/worstCase+Points+1.png, id=1275, 469.755pt x 354.8457pt>
+<Figures/worstCase+Points+1.png, id=1371, 469.755pt x 354.8457pt>
 File: Figures/worstCase+Points+1.png Graphic file (type png)
 <use Figures/worstCase+Points+1.png>
 Package pdftex.def Info: Figures/worstCase+Points+1.png  used on input line 378
 .
 (pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
-<Figures/mapRefinement+Points+0.9+1.0+1.png, id=1276, 469.755pt x 354.8457pt>
+<Figures/mapRefinement+Points+0.9+1.0+1.png, id=1372, 469.755pt x 354.8457pt>
 File: Figures/mapRefinement+Points+0.9+1.0+1.png Graphic file (type png)
 <use Figures/mapRefinement+Points+0.9+1.0+1.png>
 Package pdftex.def Info: Figures/mapRefinement+Points+0.9+1.0+1.png  used on in
@@ -2740,27 +2724,27 @@ l.545 	\EndFunction
                    
 
 [41]
-<Figures/speedMap+worstCase+Points.png, id=1386, 469.755pt x 354.8457pt>
+<Figures/speedMap+worstCase+Points.png, id=1483, 469.755pt x 354.8457pt>
 File: Figures/speedMap+worstCase+Points.png Graphic file (type png)
 <use Figures/speedMap+worstCase+Points.png>
 Package pdftex.def Info: Figures/speedMap+worstCase+Points.png  used on input l
 ine 563.
 (pdftex.def)             Requested size: 204.85846pt x 154.74646pt.
-<Figures/potentialFlow+worstCase+Points.pdf, id=1389, 469.97736pt x 355.32701pt
+<Figures/potentialFlow+worstCase+Points.pdf, id=1486, 469.97736pt x 355.32701pt
 >
 File: Figures/potentialFlow+worstCase+Points.pdf Graphic file (type pdf)
 <use Figures/potentialFlow+worstCase+Points.pdf>
 Package pdftex.def Info: Figures/potentialFlow+worstCase+Points.pdf  used on in
 put line 567.
 (pdftex.def)             Requested size: 204.85846pt x 154.88588pt.
-<Figures/potentialFlow+paths+worstCase+Points.pdf, id=1390, 469.97736pt x 355.3
+<Figures/potentialFlow+paths+worstCase+Points.pdf, id=1487, 469.97736pt x 355.3
 2701pt>
 File: Figures/potentialFlow+paths+worstCase+Points.pdf Graphic file (type pdf)
 <use Figures/potentialFlow+paths+worstCase+Points.pdf>
 Package pdftex.def Info: Figures/potentialFlow+paths+worstCase+Points.pdf  used
  on input line 578.
 (pdftex.def)             Requested size: 218.51521pt x 165.20908pt.
-<Figures/potentialFlow+paths+mapRefinement+Points.pdf, id=1391, 469.97736pt x 3
+<Figures/potentialFlow+paths+mapRefinement+Points.pdf, id=1488, 469.97736pt x 3
 55.32701pt>
 File: Figures/potentialFlow+paths+mapRefinement+Points.pdf Graphic file (type p
 df)
@@ -2773,7 +2757,7 @@ used on input line 581.
 [42 <./Figures/speedMap+worstCase+Points.png> <./Figures/potentialFlow+worstCas
 e+Points.pdf> <./Figures/potentialFlow+paths+worstCase+Points.pdf> <./Figures/p
 otentialFlow+paths+mapRefinement+Points.pdf>]
-<Figures/comparisonOfPaths.pdf, id=1499, 469.94543pt x 355.32701pt>
+<Figures/comparisonOfPaths.pdf, id=1596, 469.94543pt x 355.32701pt>
 File: Figures/comparisonOfPaths.pdf Graphic file (type pdf)
 <use Figures/comparisonOfPaths.pdf>
 Package pdftex.def Info: Figures/comparisonOfPaths.pdf  used on input line 595.
@@ -2783,18 +2767,18 @@ Package pdftex.def Info: Figures/comparisonOfPaths.pdf  used on input line 595.
 
 [43 <./Figures/comparisonOfPaths.pdf>] (Thesis_Results.tex
 Chapter 6.
-<Figures/Airbus_A350.jpg, id=1549, 1027.84pt x 770.88pt>
+<Figures/Airbus_A350.jpg, id=1646, 1027.84pt x 770.88pt>
 File: Figures/Airbus_A350.jpg Graphic file (type jpg)
 <use Figures/Airbus_A350.jpg>
 Package pdftex.def Info: Figures/Airbus_A350.jpg  used on input line 52.
 (pdftex.def)             Requested size: 113.81102pt x 85.3499pt.
-<Figures/Airbus_A320_sharklets.png, id=1550, 401.5pt x 262.9825pt>
+<Figures/Airbus_A320_sharklets.png, id=1647, 401.5pt x 262.9825pt>
 File: Figures/Airbus_A320_sharklets.png Graphic file (type png)
 <use Figures/Airbus_A320_sharklets.png>
 Package pdftex.def Info: Figures/Airbus_A320_sharklets.png  used on input line 
 59.
 (pdftex.def)             Requested size: 223.07211pt x 146.11751pt.
-<Figures/Bombardier_CRJ200.png, id=1551, 803.0pt x 602.25pt>
+<Figures/Bombardier_CRJ200.png, id=1648, 803.0pt x 602.25pt>
 File: Figures/Bombardier_CRJ200.png Graphic file (type png)
 <use Figures/Bombardier_CRJ200.png>
 Package pdftex.def Info: Figures/Bombardier_CRJ200.png  used on input line 60.
@@ -2827,14 +2811,14 @@ Chapter 7.
 
 ] (Thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 21--27
-[]\OT1/phv/m/n/10 M. Wall.  Nasa's mars helicopter ingenuity takes off on histo
-ric 1st powered
+[]\OT1/phv/m/n/10 M. Wall.  Nasa's mars he-li-copter in-ge-nu-ity takes off on 
+his-toric 1st pow-ered
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 21--27
-\OT1/phv/m/n/10 flight on another world.  \OT1/phv/m/sl/10 Space.com\OT1/phv/m/
-n/10 , 2021.  URL [][]$\OT1/cmtt/m/n/10 https : / / www . space . com /
+\OT1/phv/m/n/10 flight on an-other world.  \OT1/phv/m/sl/10 Space.com\OT1/phv/m
+/n/10 , 2021.  URL [][]$\OT1/cmtt/m/n/10 https : / / www . space . com /
  []
 
 
@@ -2865,31 +2849,25 @@ Overfull \hbox (0.10709pt too wide) detected at line 50
 ]
 
 [56]
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--166
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
-
- []
-
-
 
 [57]
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
 
-Overfull \hbox (18.12172pt too wide) in paragraph at lines 171--173
-[]\OT1/phv/m/sl/10 , where $[] []$ and $[] []$ denote the minimum and maximum e
-igenvalues of $\OT1/cmr/bx/n/10 B$\OT1/phv/m/sl/10 , respectively.
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
  []
 
 )
@@ -2897,43 +2875,22 @@ igenvalues of $\OT1/cmr/bx/n/10 B$\OT1/phv/m/sl/10 , respectively.
 [58] (Thesis_Appendix_B.tex
 Appendix B.
 
-Overfull \hbox (4.0711pt too wide) in paragraph at lines 7--8
-[]\OT1/phv/m/n/10 This snippet on nonlinear optimization is an add-on to the re
-spective background sections on nonlinear
- []
-
-
 
 [59
 
 
 ]
-Overfull \hbox (28.09366pt too wide) in paragraph at lines 94--96
-[]\OT1/phv/b/n/10 Definition B.11 \OT1/phv/m/n/10 (Strict complementarity)\OT1/
-phv/b/n/10 . []\OT1/phv/m/sl/10 Regard a []KKT point $[]$. We say that strict c
-omplementarity
- []
-
-
 
 [60]
 Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-
-Overfull \hbox (6.79988pt too wide) in paragraph at lines 126--127
-[]\OT1/phv/b/n/10 Definition B.13 \OT1/phv/m/n/10 (Reduced hessian)\OT1/phv/b/n
-/10 . []\OT1/phv/m/sl/10 The projection of $\OMS/cmsy/m/n/10 r[]L\OT1/cmr/m/n/1
-0 (\OT1/cmr/bx/n/10 w[]\OML/cmm/m/it/10 ;  [][];  [][]\OT1/cmr/m/n/10 )$ \OT1/p
-hv/m/sl/10 on the null space of the Jacobian,
- []
-
 )
 
 [61] (Thesis_Appendix_C.tex
 Appendix C.
-<Figures/elevationMap1.png, id=1726, 469.755pt x 354.8457pt>
+<Figures/elevationMap1.png, id=1830, 469.755pt x 354.8457pt>
 File: Figures/elevationMap1.png Graphic file (type png)
 <use Figures/elevationMap1.png>
 Package pdftex.def Info: Figures/elevationMap1.png  used on input line 24.
@@ -2942,13 +2899,13 @@ File: Figures/elevationMap1.png Graphic file (type png)
 <use Figures/elevationMap1.png>
 Package pdftex.def Info: Figures/elevationMap1.png  used on input line 27.
 (pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
-<Figures/HeightMin+Surface+1.png, id=1727, 469.755pt x 354.8457pt>
+<Figures/HeightMin+Surface+1.png, id=1831, 469.755pt x 354.8457pt>
 File: Figures/HeightMin+Surface+1.png Graphic file (type png)
 <use Figures/HeightMin+Surface+1.png>
 Package pdftex.def Info: Figures/HeightMin+Surface+1.png  used on input line 41
 .
 (pdftex.def)             Requested size: 141.12456pt x 106.60071pt.
-<Figures/HeightMin_maxInclination+Surface+1.png, id=1729, 469.755pt x 354.8457p
+<Figures/HeightMin_maxInclination+Surface+1.png, id=1833, 469.755pt x 354.8457p
 t>
 File: Figures/HeightMin_maxInclination+Surface+1.png Graphic file (type png)
 <use Figures/HeightMin_maxInclination+Surface+1.png>
@@ -2960,13 +2917,13 @@ File: Figures/maxTerrainRoughness+1.png Graphic file (type png)
 Package pdftex.def Info: Figures/maxTerrainRoughness+1.png  used on input line 
 47.
 (pdftex.def)             Requested size: 141.12456pt x 106.60071pt.
-<Figures/worstCase+Surface+1.png, id=1732, 469.755pt x 354.8457pt>
+<Figures/worstCase+Surface+1.png, id=1836, 469.755pt x 354.8457pt>
 File: Figures/worstCase+Surface+1.png Graphic file (type png)
 <use Figures/worstCase+Surface+1.png>
 Package pdftex.def Info: Figures/worstCase+Surface+1.png  used on input line 58
 .
 (pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
-<Figures/mapRefinement+Surface+0.9+0.2+1.png, id=1733, 469.755pt x 354.8457pt>
+<Figures/mapRefinement+Surface+0.9+0.2+1.png, id=1837, 469.755pt x 354.8457pt>
 File: Figures/mapRefinement+Surface+0.9+0.2+1.png Graphic file (type png)
 <use Figures/mapRefinement+Surface+0.9+0.2+1.png>
 Package pdftex.def Info: Figures/mapRefinement+Surface+0.9+0.2+1.png  used on i
@@ -2983,67 +2940,63 @@ nput line 61.
 face+1.png> <./Figures/worstCase+Surface+1.png> <./Figures/mapRefinement+Surfac
 e+0.9+0.2+1.png>] (Thesis.aux)
  ***********
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-04-14>
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 27DD9ED116305751679AF3A4851EE87F;13452.
+(rerunfilecheck)             Checksum: DCDE729160A60CA3EADDE764B2A0D0D6;13276.
  ) 
 Here is how much of TeX's memory you used:
- 56666 strings out of 471883
- 1336938 string characters out of 5521235
- 1919024 words of memory out of 5000000
- 81827 multiletter control sequences out of 15000+600000
+ 57044 strings out of 470046
+ 1348525 string characters out of 5481956
+ 1943490 words of memory out of 5000000
+ 84025 multiletter control sequences out of 15000+600000
  684104 words of font info for 142 fonts, out of 8000000 for 9000
- 0 hyphenation exceptions out of 8191
- 115i,18n,120p,2544b,1103s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10
-.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmb
-x5.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
-mbx6.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm
-/cmbx7.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/
-cm/cmbx8.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfont
-s/cm/cmex10.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsf
-onts/cmextra/cmex8.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/p
-ublic/amsfonts/cm/cmmi5.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></home/fmccastro/.miktex/texmfs/install/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb></home/fmccastro/.miktex/texmfs/install/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb></home/fmccastro/.miktex/texmfs/install/fonts
-/type1/public/amsfonts/cm/cmmi9.pfb></home/fmccastro/.miktex/texmfs/install/fon
-ts/type1/public/amsfonts/cm/cmmib10.pfb></home/fmccastro/.miktex/texmfs/install
-/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></home/fmccastro/.miktex/texmfs
-/install/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></home/fmccastro/.mikte
-x/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/fmccastro/.mik
-tex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/fmccastro/.mi
-ktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/fmccastro/.m
-iktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/fmccastro/.
-miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/fmccastro/
-.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/fmccast
-ro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy5.pfb></home/fmcca
-stro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/fmc
-castro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/f
-mccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home
-/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb></h
-ome/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb><
-/home/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/latxfont/lci
-rcle1.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/public/amsfonts/l
-atxfont/line10.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/public/a
-msfonts/symbols/msam10.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type1/
-public/amsfonts/symbols/msbm10.pfb></home/fmccastro/.miktex/texmfs/install/font
-s/type1/urw/helvetic/uhvb8a.pfb></home/fmccastro/.miktex/texmfs/install/fonts/t
-ype1/urw/helvetic/uhvr8a.pfb></home/fmccastro/.miktex/texmfs/install/fonts/type
-1/urw/helvetic/uhvro8a.pfb>
-Output written on Thesis.pdf (77 pages, 5069962 bytes).
+ 14 hyphenation exceptions out of 8191
+ 115i,21n,120p,2544b,2357s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</home/francisco/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10
+.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmb
+x5.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/c
+mbx6.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm
+/cmbx7.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/public/amsfonts/
+cm/cmbx8.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/public/amsfont
+s/cm/cmex10.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/public/amsf
+onts/cmextra/cmex8.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/p
+ublic/amsfonts/cm/cmmi5.pfb></home/francisco/.miktex/texmfs/install/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb></home/francisco/.miktex/texmfs/install/fonts/typ
+e1/public/amsfonts/cm/cmmi7.pfb></home/francisco/.miktex/texmfs/install/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb></home/francisco/.miktex/texmfs/install/fonts
+/type1/public/amsfonts/cm/cmmi9.pfb></home/francisco/.miktex/texmfs/install/fon
+ts/type1/public/amsfonts/cm/cmmib10.pfb></home/francisco/.miktex/texmfs/install
+/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></home/francisco/.miktex/texmfs
+/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/francisco/.miktex/texm
+fs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></home/francisco/.miktex/tex
+mfs/install/fonts/type1/public/amsfonts/cm/cmr6.pfb></home/francisco/.miktex/te
+xmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></home/francisco/.miktex/t
+exmfs/install/fonts/type1/public/amsfonts/cm/cmr8.pfb></home/francisco/.miktex/
+texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></home/francisco/.mikt
+ex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy5.pfb></home/francisco/.mi
+ktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy6.pfb></home/francisco/.
+miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb></home/francisco
+/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.pfb></home/francis
+co/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb></home/fran
+cisco/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb></home/fr
+ancisco/.miktex/texmfs/install/fonts/type1/public/amsfonts/latxfont/lcircle1.pf
+b></home/francisco/.miktex/texmfs/install/fonts/type1/public/amsfonts/latxfont/
+line10.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/public/amsfonts/
+symbols/msam10.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/public/a
+msfonts/symbols/msbm10.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/
+urw/helvetic/uhvb8a.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/urw
+/helvetic/uhvr8a.pfb></home/francisco/.miktex/texmfs/install/fonts/type1/urw/he
+lvetic/uhvro8a.pfb>
+Output written on Thesis.pdf (78 pages, 5216743 bytes).
 PDF statistics:
- 2000 PDF objects out of 2073 (max. 8388607)
- 473 named destinations out of 1000 (max. 500000)
- 796 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2100 PDF objects out of 2487 (max. 8388607)
+ 471 named destinations out of 1000 (max. 500000)
+ 798 words of extra memory for PDF output out of 10000 (max. 10000000)
 

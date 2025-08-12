@@ -10,60 +10,63 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Wheel kinematics}}{12}{figure.caption.15}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Longitudinal wheel kinematics.}}}{12}{figure.caption.15}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Lateral wheel kinematics.}}}{12}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Mobile robot systems. Adapted from \cite {Yoshida2016}}}{15}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Forces and moments distribution.}}{15}{figure.caption.17}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Wheel subject to forces and moments.}}}{15}{figure.caption.17}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Weight distribution during pitch.}}}{15}{figure.caption.17}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Weight distribution during roll.}}}{15}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Wheel-terrain contact models \cite {Yoshida2016}}}{17}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rigid wheel contacting with rigid terrain}}}{17}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rigid wheel contacting with deformable terrain}}}{17}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Deformable wheel contacting with rigid terrain}}}{17}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Deformable wheel contacting with deformable terrain}}}{17}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Mobile robot systems. Adapted from \cite {Yoshida2016}.}}{14}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Forces and moments distribution.}}{14}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Wheel subject to forces and moments.}}}{14}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Weight distribution during pitch.}}}{14}{figure.caption.17}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Weight distribution during roll.}}}{14}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Wheel-terrain contact models \cite {Yoshida2016}}}{16}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rigid wheel contacting with rigid terrain}}}{16}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rigid wheel contacting with deformable terrain}}}{16}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Deformable wheel contacting with rigid terrain}}}{16}{figure.caption.18}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Deformable wheel contacting with deformable terrain}}}{16}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Comparison between simulated and propagated states on a free floating environment.}}{18}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Comparison between simulated and propagated states on an all-terrain environment.}}{19}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Comparison between simulated and propagated states on an all-terrain environment.}}{20}{figure.caption.21}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Summary of \acrshort {nlp} type of problems.}}{23}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Summary of numerical approaches to an \acrshort {ocp}.}}{24}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Numerical approaches to \ref {eq:continuousTimeOCP}.}}{25}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Newton type methods to solve inequality constrained \acrshort {nlp}s.}}{26}{figure.caption.22}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Families of integrator schemes.}}{28}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Summary of \acrshort {nlp} type of problems.}}{23}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Summary of numerical approaches to an \acrshort {ocp}.}}{24}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Numerical approaches to \ref {eq:continuousTimeOCP}.}}{25}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Newton type methods to solve inequality constrained \acrshort {nlp}s.}}{26}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Families of integrator schemes.}}{28}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Hull points on each wheel}}{37}{figure.caption.26}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Several hull points \textit {per} wheel (case 2)}}}{37}{figure.caption.26}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Single hull point \textit {per} wheel (case 1)}}}{37}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Traversability maps (case 1; map 1)}}{38}{figure.caption.27}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{38}{figure.caption.27}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{38}{figure.caption.27}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{38}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Traversability maps (case 1; map 1)}}{38}{figure.caption.28}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{38}{figure.caption.28}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.9}}}{38}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Cost to speed conversion (equation \ref {eq:cost2SpeedConversion})}}{40}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Potential flow and speed map for worst-case traversability map (case 1; map 1)}}{42}{figure.caption.33}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Speed map $F(\cdot )$}}}{42}{figure.caption.33}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Potential flow $u(\cdot )$ and $\nabla u(\cdot )$ (blue arrows)}}}{42}{figure.caption.33}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Optimal paths (case 1; map 1)}}{42}{figure.caption.34}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{42}{figure.caption.34}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Refined map ($r_s = 1.0$ m, $\, C = 0.9$)}}}{42}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Paths comparison and \textsc {getoptimalpath($\cdot $)} method runtimes.}}{43}{figure.caption.35}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Optimal path generation module.}}{43}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Hull points on each wheel}}{37}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Several hull points \textit {per} wheel (case 2)}}}{37}{figure.caption.29}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Single hull point \textit {per} wheel (case 1)}}}{37}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Traversability maps (case 1; map 1)}}{38}{figure.caption.30}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{38}{figure.caption.30}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{38}{figure.caption.30}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{38}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Traversability maps (case 1; map 1)}}{38}{figure.caption.31}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{38}{figure.caption.31}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.9}}}{38}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Cost to speed conversion (equation \ref {eq:cost2SpeedConversion})}}{40}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Potential flow and speed map for worst-case traversability map (case 1; map 1)}}{42}{figure.caption.36}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Speed map $F(\cdot )$}}}{42}{figure.caption.36}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Potential flow $u(\cdot )$ and $\nabla u(\cdot )$ (blue arrows)}}}{42}{figure.caption.36}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Optimal paths (case 1; map 1)}}{42}{figure.caption.37}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{42}{figure.caption.37}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Refined map ($r_s = 1.0$ m, $\, C = 0.9$)}}}{42}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Paths comparison and \textsc {getoptimalpath($\cdot $)} method runtimes.}}{43}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Optimal path generation module.}}{43}{figure.caption.39}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Caption for figure in TOC.}}{44}{figure.caption.37}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Some aircrafts.}}{45}{figure.caption.38}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Airbus A320}}}{45}{figure.caption.38}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bombardier CRJ200}}}{45}{figure.caption.38}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Schematic of some algorithm.}}{45}{figure.caption.39}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Figure and table side-by-side.}}{48}{figure.caption.45}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Caption for figure in TOC.}}{44}{figure.caption.40}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Some aircrafts.}}{45}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Airbus A320}}}{45}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Bombardier CRJ200}}}{45}{figure.caption.41}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Schematic of some algorithm.}}{45}{figure.caption.42}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Figure and table side-by-side.}}{48}{figure.caption.48}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Elevation maps}}{62}{figure.caption.48}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Map 1}}}{62}{figure.caption.48}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Map 2}}}{62}{figure.caption.48}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Traversability maps (case 2; map 1)}}{63}{figure.caption.49}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{63}{figure.caption.49}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{63}{figure.caption.49}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{63}{figure.caption.49}%
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Traversability maps (case 2; map 1)}}{63}{figure.caption.50}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{63}{figure.caption.50}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9}}}{63}{figure.caption.50}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Elevation maps}}{62}{figure.caption.51}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Map 1}}}{62}{figure.caption.51}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Map 2}}}{62}{figure.caption.51}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Traversability maps (case 2; map 1)}}{63}{figure.caption.52}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{63}{figure.caption.52}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{63}{figure.caption.52}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{63}{figure.caption.52}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Traversability maps (case 2; map 1)}}{63}{figure.caption.53}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{63}{figure.caption.53}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9}}}{63}{figure.caption.53}%

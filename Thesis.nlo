@@ -1,13 +1,13 @@
-\nomenclatureentry{R$\mathbf{p}$@[{$\mathbf{p}$}]\begingroup Mobile robot position.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{R$\mathbf{v}$@[{$\mathbf{v}$}]\begingroup Mobile robot linear velocity.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{R$\mathcal{C},\, \mathcal{B},\, \mathcal{W}$@[{$\mathcal{C},\, \mathcal{B},\, \mathcal{W}$}]\begingroup Contact, body and world frames, respectively.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{R$\mathbf{R}$@[{$\mathbf{R}$}]\begingroup Rotation matrix.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{Rx, y, z@[{x, y, z}]\begingroup Position components.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{Ru, v, w@[{u, v, w}]\begingroup Body frame linear velocity components.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{Rp, q, r@[{p, q, r}]\begingroup Body frame angular velocity components.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{R$n_i$@[{$n_i$}]\begingroup Number of divisions of map on \textit{i} direction.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{R$g(\cdot)$@[{$g(\cdot)$}]\begingroup Equality constraints function.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{R$g(\cdot)$@[{$g(\cdot)$}]\begingroup Inequality constraints function.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{G$\phi, \; \theta, \; \psi$@[{$\phi, \; \theta, \; \psi$}]\begingroup Roll, pitch, and yaw angles, respectively.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{G$\lambda, \; \niu$@[{$\lambda, \; \niu$}]\begingroup Lagrange multipliers.\nomeqref {0}|nompageref}{xii}
-\nomenclatureentry{T*@[{*}]\begingroup Optimized variable.\nomeqref {0}|nompageref}{xii}
+\nomenclatureentry{R$\mathbf{p}$@[{$\mathbf{p}$}]\begingroup Mobile robot position.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{R$\mathbf{v}$@[{$\mathbf{v}$}]\begingroup Mobile robot linear velocity.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{R$\mathcal{C},\, \mathcal{B},\, \mathcal{W}$@[{$\mathcal{C},\, \mathcal{B},\, \mathcal{W}$}]\begingroup Contact, body and world frames, respectively.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{R$\mathbf{R}$@[{$\mathbf{R}$}]\begingroup Rotation matrix.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{Rx, y, z@[{x, y, z}]\begingroup Position components.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{Ru, v, w@[{u, v, w}]\begingroup Body frame linear velocity components.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{Rp, q, r@[{p, q, r}]\begingroup Body frame angular velocity components.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{R$n_i$@[{$n_i$}]\begingroup Number of divisions of map on \textit{i} direction.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{R$g(\cdot)$@[{$g(\cdot)$}]\begingroup Equality constraints function.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{R$g(\cdot)$@[{$g(\cdot)$}]\begingroup Inequality constraints function.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{G$\phi, \; \theta, \; \psi$@[{$\phi, \; \theta, \; \psi$}]\begingroup Roll, pitch, and yaw angles, respectively.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{G$\lambda, \; \niu$@[{$\lambda, \; \niu$}]\begingroup Lagrange multipliers.\nomeqref {0}|nompageref}{xiii}
+\nomenclatureentry{T*@[{*}]\begingroup Optimized variable.\nomeqref {0}|nompageref}{xiii}
