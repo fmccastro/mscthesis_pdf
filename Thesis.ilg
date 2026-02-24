@@ -1,14 +1,14 @@
-This is makeindex, version 2.16 [MiKTeX 23.12].
-Scanning style file /home/fmccastro/.miktex/texmfs/install/makeindex/nomencl/nomencl.ist........
-** Input style error (file = /home/fmccastro/.miktex/texmfs/install/makeindex/nomencl/nomencl.ist, line = 36):
+This is makeindex, version 2.16 [MiKTeX 25.4].
+Scanning style file /home/francisco/.miktex/texmfs/install/makeindex/nomencl/nomencl.ist........
+** Input style error (file = /home/francisco/.miktex/texmfs/install/makeindex/nomencl/nomencl.ist, line = 36):
    -- Unknown specifier lethead_prefix.
-** Input style error (file = /home/fmccastro/.miktex/texmfs/install/makeindex/nomencl/nomencl.ist, line = 37):
+** Input style error (file = /home/francisco/.miktex/texmfs/install/makeindex/nomencl/nomencl.ist, line = 37):
    -- Unknown specifier lethead_suffix.
-** Input style error (file = /home/fmccastro/.miktex/texmfs/install/makeindex/nomencl/nomencl.ist, line = 38):
+** Input style error (file = /home/francisco/.miktex/texmfs/install/makeindex/nomencl/nomencl.ist, line = 38):
    -- Unknown specifier lethead_flag.
 ....done (12 attributes redefined, 3 ignored).
-Scanning input file Thesis.nlo....done (7 entries accepted, 0 rejected).
-Sorting entries....done (21 comparisons).
-Generating output file Thesis.nls....done (13 lines written, 0 warnings).
+Scanning input file Thesis.nlo....done (78 entries accepted, 0 rejected).
+Sorting entries....done (497 comparisons).
+Generating output file Thesis.nls....done (85 lines written, 0 warnings).
 Output written in Thesis.nls.
 Transcript written in Thesis.ilg.

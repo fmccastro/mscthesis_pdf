@@ -8,9 +8,9 @@
 %  For up-to-date guide, please refer to the official website          %
 %
 % https://tecnico.ulisboa.pt/pt/ensino/estudar-no-tecnico/informacoes-academicas/dissertacao-de-mestrado/
-%                                                                      %
-%       Andre C. Marta                                                 %
-%       Area Cientifica de Mecanica Aplicada e Aeroespacial            %
+%                                                                      %		
+%       Andre C. Marta                                                 %		
+%       Area Científica de Mecanica Aplicada e Aeroespacial            %		
 %       Departamento de Engenharia Mecanica                            %
 %       Instituto Superior Tecnico                                     %
 %       Av. Rovisco Pais                                               %
@@ -192,7 +192,10 @@
 \input{Thesis_Path_Planning} % file "Thesis_Path_Planning.tex"
 \cleardoublepage
 
-\input{Thesis_Results} % file "Thesis_Results.tex"
+\input{Thesis_NMPC} % file "Thesis_NMPC.tex"
+\cleardoublepage
+
+\input{Thesis_Obstacle_Avoidance} % file "Thesis_Obstacle_Avoidance.tex"
 \cleardoublepage
 
 \input{Thesis_Conclusions} % file "Thesis_Conclusions.tex"
@@ -239,10 +242,13 @@
 %   http://tug.ctan.org/macros/latex/contrib/natbib/abbrvnat.bst
 %   http://tug.ctan.org/macros/latex/contrib/natbib/unsrtnat.bst
 % > unsorted with entries appearing in the order in which the citations appear, with first names and names of journals and months abbreviated.
+
 \bibliographystyle{abbrvunsrtnat} % <<<<< SELECT IF USING REFERENCES BY NUMBER (CITATION ORDER)
 
 % External bibliography database file in the BibTeX format
 \bibliography{Thesis_Bibliography} % file "Thesis_Bibliography.bib"
+
+\vspace{1.5em}The most relevant references for the development of this thesis are typed in \textbf{boldened} style.
 
 \cleardoublepage
 

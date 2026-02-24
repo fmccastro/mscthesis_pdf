@@ -1,0 +1,397 @@
+% From chapter 3
+
+If a mobile robot is not following a straight line path, this robot will rotate around an \acrshort{icr} point. Each wheel angular velocity is equal to the mobile robot angular velocity, $\bm{\AngVelocity}$. The vector $\mathbf{\positionVector}_i$, which connects the ICR point to each wheel position, is orthogonal to each wheel velocity $\mathbf{\LinVelocity}_i = [ \vx \; \vy \; \vz ]^T_i$, as well as $\mathbf{\positionVector}_C \perp \mathbf{\LinVelocity}$, so the following relations may be derived by taking into account the general expression $\mathbf{\LinVelocity} = \bm{\AngVelocity} \times \mathbf{r}$. Vectors $\mathbf{\LinVelocity}_i$, $\mathbf{\positionVector}_i$, $\mathbf{\positionVector}_C$ and $\mathbf{\wheelPosition}_i$ are all expressed with respect to frame $\BodyFrame$.
+
+\begin{equation}
+	\begin{cases}
+		\vx = \wy d_{C, z} - \wz d_{C, y} \quad \vx_i = \wy d_{i, z} - \wz d_{i, y}\\
+		\vy = \wz d_{C, x} - \wx d_{C, z} \quad \vy_i = \wz d_{i, x} - \wx d_{i, z}\\
+		\vz = \wx d_{C, y} - \wy d_{C, x} \quad \vz_i = \wx d_{i, y} - \wy d_{i, x}
+	\end{cases}
+	\label{eq:3dICR}
+\end{equation}
+
+Then, it is possible to relate $\mathbf{\positionVector}_C$ to $\mathbf{\positionVector}_i$, with $\mathbf{\positionVector}_C = \mathbf{\positionVector}_i + \mathbf{\wheelPosition}_i$, where $\mathbf{\wheelPosition}_i$ is a vector which connects each wheel center's position to the moving frame origin. If this relationship is introduced into equation \ref{eq:3dICR}, it comes that,
+
+\begin{equation}
+	\mathbf{\LinVelocity}_i = \mathbf{\LinVelocity} + \bm{\omega} \times \mathbf{\wheelPosition}_i
+	\label{eq:wheelVel}
+\end{equation}
+
+From the analysis of the previous equation, it is possible to state that,
+
+\begin{equation}
+	\begin{aligned} 
+	\begin{cases}
+		\vx_1 = \vx_2 \\
+		\vx_3 = \vx_4 
+	\end{cases}
+	\end{aligned}, \qquad
+	\begin{aligned}
+		\begin{cases}
+			\vy_1 = \vy_4 \\
+			\vy_2 = \vy_3 
+		\end{cases}
+	\end{aligned}, \qquad
+	\begin{aligned}
+		\begin{cases}
+			\vz_3 - \vz_2 = ( \wheelPosition_{3, y} + \wheelPosition_{2, y} ) \wx \\
+			\vz_4 - \vz_1 = ( \wheelPosition_{4, y} + \wheelPosition_{1, y} ) \wx \\
+			\vz_2 - \vz_1 = ( \wheelPosition_{2, x} + \wheelPosition_{1, x} ) \wy \\
+			\vz_3 - \vz_4 = ( \wheelPosition_{3, x} + \wheelPosition_{4, x} ) \wy \\
+		\end{cases}
+	\end{aligned}
+	\label{eq:wheelKinematicConstraints}
+\end{equation}
+
+\subsection{Wheel-terrain contact}
+\label{subsection:contactAngles}
+
+In this thesis, it is important to retrieve each wheel's contact point with the terrain it is touching on, in order to enable the transfer of forces applied at $\contactPoint_i$ to frame $\BodyFrame$ and to describe the velocity of each wheel with respect to a frame $\WheelFrame^i$.
+
+\begin{assumption}
+	Every wheel $i$ is touching the terrain at a point $\contactPoint_i$.
+	\label{assumption:fullContact}
+\end{assumption}
+
+\begin{lemma}
+	The velocity of each wheel is tangent to the terrain profile at $\contactPoint_i$.
+	\label{assumption:velTangent}
+\end{lemma}
+
+Assumptions \ref{assumption:fullContact} and \ref{assumption:velTangent} ensure this analysis remains consistent with the fact that, without a contact point $\contactPoint_i$ between a wheel and the terrain, there would be no reason to obtain a contact angle or a wheel velocity tangent to the terrain.
+
+At every wheel $i$, a frame $\WheelFrame_i$ is attached to the wheel center and follows up the terrain profile slope longitudinally. In accordance with assumption \ref{assumption:singlePointContact}, roll effect on the determination of $\contactPoint_i$ is neglected. The transformation from $\WheelFrame^i$ to $\BodyFrame$ is based on a rotation matrix expressed in equation \ref{eq:rotationMatrixB2T}.
+
+\begin{equation}
+\mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} =
+\begin{bmatrix}
+ 		\cos(\yaw_i)\cdot \cos(\pitch_i) & -\sin(\yaw_i) & \cos(\yaw_i)\cdot \sin(\pitch_i) \\
+ 		\sin(\yaw_i) \cos(\pitch_i) & \cos(\yaw_i) & \sin(\yaw_i) \sin(\pitch_i) \\
+ 		-\sin(\pitch_i) & 0 & \cos(\pitch_i) \\
+	\end{bmatrix}
+	\label{eq:rotationMatrixB2T}
+\end{equation}
+
+, where $\pitch_i$ denotes the pitch component of the contact angle and $\yaw_i$ stands for the steering component. Finally, it is possible to express $\mathbf{\LinVelocity}_i$ with respect to frame $\WheelFrame^i$ (equation \ref{eq:wheelVelT}). This reasoning is depicted in figure \ref{fig:wheelKinematics}, where the neglection of $\roll_i$ is retracted for the sake of completeness.
+
+\begin{equation}
+	\mathbf{\LinVelocity}_i = \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \mathbf{\LinVelocity}_i^{\WheelFrame^i}
+	\label{eq:wheelVelT}
+\end{equation} 
+
+\begin{figure}[!h]
+	\centering
+	\subfigure[Longitudinal wheel kinematics.] {
+		\begin{tikzpicture}
+			%	Frames
+			\draw[->] (0.5, 1) -- (1.5, 1) node[right] {\footnotesize $\WorldFrame_x$};
+			\draw[->] (0.5, 1) -- (0.5, 2) node[left] {\footnotesize $\WorldFrame_z$};
+			
+			%	Circles			
+			\draw (2.0, 2.0) circle (0.6cm);
+			\draw (6.0, 3.0) circle (0.6cm);
+			
+			%	Circles center points			
+			\fill (2.0, 2.0) circle (0.01cm);
+			\fill (6.0, 3.0) circle (0.01cm);
+			
+			%	Linee between circles
+			\draw[line width = 0.1mm] (2.582, 2.146) -- (5.418, 2.854);
+			
+			%	Body frame
+			\draw[->] (3.806, 3.276) -- (4.388, 3.422) node[right] {\footnotesize $\BodyFrame_x$};
+        		\draw[->] (3.806, 3.276) -- (3.660, 3.858) node[above] {\footnotesize $\BodyFrame_z$};
+        		
+        		%	Wheel frame 1
+        		\draw[->] (2.0, 2.0) -- (2.8, 2.0) node[below] {\footnotesize $\WheelFrame_x^1$};
+        		\draw[->] (2.0, 2.0) -- (2.0, 2.8) node[left] {\footnotesize $\WheelFrame_z^1$};
+        		
+        		%	Wheel frame 2
+        		\draw[->] (6.0, 3.0) -- (6.3208, 3.7328) node[above] {\footnotesize $\WheelFrame_x^2$};
+        		\draw[->] (6.0, 3.0) -- (5.2672, 3.3208) node[below left] {\footnotesize $\WheelFrame_z^2$};
+        		\draw[line width = 0.5mm] (1.0, 1.4) -- (6.0, 1.4);
+        		\draw[line width = 0.5mm] (6.0, 1.4) -- (6.7, 3.0);
+        		\draw[line width = 0.1mm, dashed] (5.418, 2.854) -- (7.418, 3.354);
+        		\draw[line width = 0.1mm, dashed] (2.582, 2.146) -- (0.8, 1.7);
+        		\draw[line width = 0.05mm] (4.0, 2.5) -- (5.3, 2.5);
+        		
+			%	Arcs        		
+        		\draw[->] (4.7, 2.5) arc [start angle=0, end angle=14.03624347, x radius = 0.7, y radius = 0.7] node[black, above right, pos=-0.5] {\footnotesize $\pitch$};
+        		\draw[->] (2.388, 2.097) arc [start angle=14.03624347, end angle=0, x radius = 0.4, y radius = 0.4];
+        		\draw[->, line width=0.1pt] (2.5, 2.05) -- (3.0, 2.05) node[right] {\footnotesize $\pitch_1$};
+        		\draw[->] (6.388, 3.097) arc [start angle=14.03624347, end angle=66.357, x radius = 0.4, y radius = 0.4] node[black, above right, pos=-0.05] {\footnotesize $\pitch_2$};
+        		
+        		%	Velocity
+        		\draw[->, line width = 0.2mm, red] (2.0, 2.0) -- (2.55, 2.0) node[red, below left] {\footnotesize $\LinVelocity_{x, 1}$};
+        		\draw[->, line width = 0.2mm, red] (6.0, 3.0) -- (6.219, 3.505) node[red, left] {\footnotesize $\LinVelocity_{x, 2}$};
+        		
+		\end{tikzpicture}
+	}
+	\hfill
+	\subfigure[Lateral wheel kinematics.] {
+		\begin{tikzpicture}
+			%	World frame
+			\draw[->] (0.0, 0.0) -- (-0.866, -0.5) node[left] {$\WorldFrame_y$};
+			\draw[->] (0.0, 0.0) -- (-0.5, 0.866) node[above] {$\WorldFrame_z$};
+			
+			%	Body frame
+			\draw[->] (2.5, 3.0) -- (2.0, 3.0) node[left] {$\BodyFrame_y$};
+			\draw[->] (2.5, 3.0) -- (2.5, 3.5) node[left] {$\BodyFrame_z$};
+			
+			%	Wheel frame
+			\draw[->] (4.1, 1.5) -- (3.341, 0.849) node[below] {$\WheelFrame_y^1$};
+			\draw[->] (4.1, 1.5) -- (3.65, 2.025) node[left] {$\WheelFrame_z^1$};
+			
+			\draw[draw=black] (1.0, 0.5) rectangle ++(0.2, 2.0);
+			\draw[draw=black] (4.0, 0.5) rectangle ++(0.2, 2.0);
+			\draw[line width = 0.05mm] (2.5, 1.5) -- (1.634, 1.0);
+			
+			%	Arc
+			\draw[->] (2.067, 1.25) arc [start angle=210, end angle=180, x radius = 0.5, y radius = 0.5] node[black, left, pos=0.2] {\footnotesize $\roll$};
+			\draw[->] (3.5, 1.5) arc [start angle=180, end angle=220.601, x radius = 0.6, y radius = 0.6] node[black, above left] {\footnotesize $\roll_1$};
+ 			
+			%	Line between wheels
+			\draw[line width = 0.1mm] (1.2, 1.5) -- (4.0, 1.5);
+			
+			\draw[dashed] (4.1, 1.5) -- (2.801, 0.75);
+			
+			%	Terrain
+			\draw[line width = 0.5mm] (0.5, 0.5) -- (1.5, 0.5);
+			\draw[line width = 0.5mm] (1.5, 0.5) -- (2.0, -0.1);
+			\draw[line width = 0.5mm] (2.0, -0.1) -- (3.5, -0.1);
+			\draw[line width = 0.5mm] (3.5, -0.1) -- (4.55, 0.8);
+			
+			%	Velocity
+        		\draw[->, line width = 0.2mm, red] (4.1, 1.5) -- (3.720, 1.175) node[red, right, pos = -0.2] {\footnotesize $\LinVelocity_{y, 1}$};
+		\end{tikzpicture}
+	}
+	\caption{Wheel kinematics}
+	\label{fig:wheelKinematics}
+\end{figure}
+
+\begin{assumption}
+	The roll component of $\WheelFrame^i$ with respect to $\BodyFrame$ is neglected because the traction force and wheel velocity components on $\WheelFrame_y^i$ are very small, apart from high lateral skid situations.
+\end{assumption}
+
+\subsubsection*{Contact angle and contact points determination}
+
+Contact angle determination is of the utmost importance in case the mobile robot is crossing irregular terrains, because the traction forces are not aligned with $\BodyFrame_x$. A method to compute $\pitch_i$ can be found in \cite{IagnemmaDubowsy2004}. Further explanations can be found in \cite{IagnemmaDubowsy2004}, although it is worth mentioning that special cases are not included here.
+
+In this thesis, the contact angle is determined by extracting the contact normal at contact point $c_i$ directly from the \textsc{Gazebo} simulation, as well as every $c_i$. In \textsc{Gazebo}, the contact points are expressed with respect to $\WorldFrame$, so equation may be employed to get $c_i$ with respect to $\BodyFrame$.
+
+\begin{equation}
+	\left(\mathbf{\contactPoint}_i\right)_{\WorldFrame} = \mathbf{\Position} + \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \mathbf{\contactPoint}_i
+\label{eq:contactPointWorld}
+\end{equation}
+
+%In the end, I have to decide if I place the below commented block on annex
+
+%\subsubsection*{Contact points}
+%
+% After obtaining the contact angles, it is possible to deliver each wheel-terrain contact point, $\contactPoint_i$, coordinates with respect to $\WorldFrame$ or $\BodyFrame$.
+%
+%At frame $\WheelFrame_i$, $\mathbf{\contactPoint}_i = [0,\, \WheelRadius \sin(\phi_i),\, -\WheelRadius \cos(\phi_i)]^T$. Therefore, it comes that,
+%
+%\begin{equation}
+%	\left(\mathbf{\contactPoint}_i\right)_{\WorldFrame} = \mathbf{\Position} + \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \left( \mathbf{\wheelPosition}_i + \mathbf{\RotMatrix}_{\WheelFrame_i}^{\BodyFrame} \mathbf{\contactPoint}_i \right)
+%\label{eq:contactPointWorld}
+%\end{equation}
+%
+%, where $\mathbf{\RotMatrix}_{\WheelFrame_i}^{\BodyFrame} = \left( \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \right)^T \mathbf{\RotMatrix}_{\WheelFrame_i}^{\WorldFrame}$.
+
+%Due to the fact that a skid-steering mobile robot is a rigid body, all its frames follow up the motion of the center of mass. So, it is possible to establish a set of equations which take into account some kinematic constraints that wheels are subject to, in order to find out what the contact angles are, by combining equations \ref{eq:wheelVelT} and \ref{eq:wheelKinematicConstraints}. It is considered that wheels do not jump and the effects of a suspension model are neglected. Due to that, wheels do not move in a perpendicular direction to the ground ($\left( \vz \right)_i^{\WheelFrame^i} = 0$).
+
+%\begin{assumption}
+%	The perpendicular velocity of each wheel with respect to the ground is neglected.
+%	\label{assumption:velTzNeglected}
+%\end{assumption}
+
+%The first kinematic constraint (equation \ref{eq:kinematicConstraint_vBx}) states that right wheels have the same longidutinal velocity and left wheels also have the same longitudinal velocity, in frame $\BodyFrame$. The second kinematic constraint (equation \ref{eq:kinematicConstraint_vBy}) states that front wheels have the same lateral velocity and back wheels also have the same lateral velocity, in frame $\BodyFrame$.
+
+%\begin{equation}
+%	\begin{cases}
+%		\left( \vx_1 \right)_\WheelFrame \cos(\theta_1) + \left( \vy_1 \right)_\WheelFrame \sin(\theta_1) \sin(\phi_1) = \left( \vx_2 \right)_\WheelFrame \cos(\theta_2) + \left( \vy_2 \right)_\WheelFrame \sin(\theta_2) \sin(\phi_2) \\
+%		\left( \vx_3 \right)_\WheelFrame \cos(\theta_3) + \left( \vy_3 \right)_\WheelFrame \sin(\theta_3) \sin(\phi_3) = \left( \vx_4 \right)_\WheelFrame \cos(\theta_4) + \left(\vy_4 \right)_\WheelFrame \sin(\theta_4) \sin(\phi_4)
+%	\end{cases}
+%	\label{eq:kinematicConstraint_vBx}
+%\end{equation}
+%
+%\begin{equation}
+%	\begin{cases}
+%		\left( \vy_1 \right)^\WheelFrame \cos(\phi_1) = \left( \vy_4 \right)^\WheelFrame \cos(\phi_4)\\
+%		\left( \vy_2 \right)^\WheelFrame \cos(\phi_2) = \left( \vy_3 \right)^\WheelFrame \cos(\phi_3)
+%	\end{cases}
+%	\label{eq:kinematicConstraint_vBy}
+%\end{equation}
+%
+%The third constraint states that the difference between vertical velocities of left wheels (or right wheels) in frame $\BodyFrame$ is equal the vehicle pitch rate times the longitudinal distance between these wheels. Lastly, the fourth constraint states that the difference between vertical velocities of back wheels (or front wheels) in frame $\BodyFrame$ is equal the vehicle roll rate times the lateral distance between these wheels.
+%
+%\begin{equation}
+%	\begin{cases}
+%		-\left( \vx_1 \right)^{\WheelFrame^1} \sin(\theta_1) + \left( \vy_1 \right) ^{\WheelFrame^1} \cos(\theta_1) \sin(\phi_1) + \left( \vx_2 \right)^{\WheelFrame^2} \sin(\theta_2) - \left( \vy_2 \right)^{\WheelFrame^2} \cos(\theta_2) \sin(\phi_2) = (a + b) \wy \\
+%		-\left( \vx_4 \right)^{\WheelFrame^4} \sin(\theta_4) + \left( \vy_4 \right)^{\WheelFrame^4} \cos(\theta_4) \sin(\phi_4) + \left( \vx_3 \right)^{\WheelFrame^3} \sin(\theta_3) - \left( \vy_3 \right)^{\WheelFrame^3} \cos(\theta_3) \sin(\phi_3) = (a + b) \wy 
+%	\end{cases}
+%	\label{eq:kinematicConstraint_pitch}
+%\end{equation}
+%
+%\begin{equation}
+%	\begin{cases}
+%		-\left( \vx_1 \right)_\WheelFrame \sin(\theta_1) + \left( \vy_1 \right)_\WheelFrame \cos(\theta_1) \sin(\phi_1) + \left( \vx_4 \right)_\WheelFrame \sin(\theta_4) - \left( \vy_4 \right)_\WheelFrame \cos(\theta_4) \sin(\phi_4) = 2c \wx \\
+%		-\left( \vx_2 \right)_\WheelFrame \sin(\theta_2) + \left( \vy_2 \right)_\WheelFrame \cos(\theta_2) \sin(\phi_2) + \left( \vx_3 \right)_\WheelFrame \sin(\theta_3) - \left( \vy_3 \right)_\WheelFrame \cos(\theta_3) \sin(\phi_3) = 2c \wx
+%	\end{cases}
+%	\label{eq:kinematicConstraint_roll}
+%\end{equation}
+%
+%Provided that $\wx$, $\wy$, $\left( \vx_i \right)_{\WheelFrame^i}$ and $\left( \vy_i \right)_{\WheelFrame^i}$ are known, the contact angles $\phi_i$ %and $\theta_i$ can be computed through non-linear rootfinding %methods.
+%
+%\textcolor{red}{Simulate robot first without contact angle (assume plane of contacts is parallel to the same plane of the robot; then, include this estimation into the simulation; at rest (for maps generation), use gradients}
+%
+%\textcolor{red}{Don't forget to include the pure rolling condition; it is violated when there is slip}
+
+\subsection{Slippage}
+\label{subsection:slippage}
+
+During the traversal of a planetary environment, a wheeled mobile robot may experience slip at each wheel $i$, both on the longitudinal ($\SlipRatio_i$) and lateral ($\SlipAngle_i$) directions of the wheel frame $\WheelFrame_i$, where $\SlipRatio_i$ stands for the slip ratio at wheel $i$ and $\SlipAngle_i$ denotes the slip angle.
+
+\begin{equation}
+  	\begin{aligned}
+      		\SlipRatio_i = \begin{cases}
+						1 - \frac{\vx_i}{\WheelRadius \; \AngVelocity_i}, \quad \text{if} \quad |\WheelRadius \; \AngVelocity_i| \geq | \vx_i| \; \text{(slip)}\\
+						\frac{\WheelRadius \; \AngVelocity_i}{\vx_i} - 1, \quad \text{if} \quad |\WheelRadius \; \AngVelocity_i| < | \vx_i| \; \text{(skid)}
+							\end{cases}
+    	\end{aligned} \qquad
+    	\begin{aligned}
+      		\SlipAngle = \begin{cases}
+							\arctan{\left( \frac{\vy}{\vx} \right)}, \quad (\vx \neq 0)\\
+							\text{sgn}(\vy) \cdot \frac{\pi}{2} \quad (\vx = 0)
+						\end{cases}
+    	\end{aligned}
+    	\label{eq:slip}
+\end{equation}
+
+, where $\WheelRadius$ denotes the wheel radius. Beware that every linear velocity is expressed with respect to $\WheelFrame^i$ in \ref{eq:slip} and \ref{eq:relativeVelocity}. Physical parameters related to every wheel are equal. If $0 \leq \SlipRatio_i \leq 1$, it is said wheel $i$ is slipping. If $-1 \leq \SlipRatio_i < 0$, it is said that wheel $i$ is skidding or braking. However, if the signs of $\vx_i$ and $\AngVelocity_i$ are opposite to each other, it means $1 < |\SlipRatio_i| \leq 2$. Although these impractical slips are possible \cite{Peiret2021}, no terramechanics analytical models are presented, because no literature was found with research on the topic. Regarding the slip angle $\SlipAngle$, this quantity is as high as the lateral skid, $\vy$, is with respect to the longitudinal velocity, $\vx$.
+
+In accordance to the definitions presented above, it is possible to define a new quantity, $\surfaceRelVel_i$, which expresses the relative velocity between wheel $i$ at $\contactPoint_i$ and the surface.
+
+\begin{equation}
+	\delta_i = \WheelRadius \AngVelocity_i - \vx_i			   
+	\label{eq:relativeVelocity}
+\end{equation}
+
+In case $\delta_i = 0$, wheel $i$ presents a pure rolling motion. Apart from that, wheel $i$ exhibits a slipping or skidding behaviour.
+
+\begin{lemma}
+Pure rolling condition is respected in case equation \ref{eq:relativeVelocity} equals zero.
+\label{lemma:pureRollingCondition}
+\end{lemma}
+
+%	Continuous Coulomb friction model formulation
+
+%In order to introduce equation \ref{eq:friction} into an \acrshort{ode}, its discontinuities need to be smoothed. From this observation, $\mathbf{\LinVelocity}_i$ is kept as a \ti{breaker}, and the role of $\mathbf{\LinAccel}_i$ in the Coulomb friction model is discarded for the sake of simplicity, thus eliminating the last line of equation \ref{eq:friction}. Motivated from this statement, equation \ref{eq:friction} is transformed into,
+%
+%\begin{equation}
+%\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i = - \left( \mathbf{\ForceSubscript{\Traction}} + \mathbf{\ForceSubscript{\gravity}} + \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i \cdot \left(1 - \sigma \left( \Vert \mathbf{\LinVelocity}_i \Vert \right) \right) - \FrictionCoefficient \left( \ForceSubscript{\NormalForceSubscript} \right)_i \cdot \frac{\mathbf{\LinVelocity}_i}{ \| \mathbf{\LinVelocity}_i \| + \epsilon } \cdot \sigma \left( \Vert \mathbf{\LinVelocity}_i \Vert \right)
+%\label{eq:smoothFriction}
+%\end{equation}
+
+%, where $\sigma \left( \cdot \right)$ denotes the sigmoid function, with $k = 100$, and $\epsilon = 1\mathrm{e}^{-6}$, denotes a very small value that keeps $\frac{\mathbf{\LinVelocity}_i}{ \| \mathbf{\LinVelocity}_i \|}$ differentiable at $\| \mathbf{\LinVelocity}_i \| = 0$.
+
+%Then, the sum of friction forces $\mathbf{\ForceSubscript{\FrictionSubscript}}$ acting on the mobile robot is given by,
+%
+%\begin{equation}
+%	\mathbf{\ForceSubscript{\FrictionSubscript}} = \sum_{i=1}^{4} \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i
+%	\label{eq:frictionMomentForce}
+%\end{equation}
+%
+%Finally, the determination of $\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i$ is made by computing the portion of the mobile robot weight every wheel $i$ supports, which is presented below.
+%
+%\subsubsection*{Effects of gravity}
+%\label{subsubsection:effectsGravity}
+%
+%Gravity pushes the mobile robot into the terrain. As a response, ground reaction forces $\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i$ sustain the mobile robot. At each wheel $i$, the effect of gravity acting at $\contactPoint_i$ is denoted by $\left( \mathbf{\ForceSubscript{\gravity}} \right)_i$, which is expressed with respect to $\WheelFrame_i$. The vertical component of $\left( \mathbf{\ForceSubscript{\gravity}} \right)_i$ equals $\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i$ and are orthogonal to $\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)_i$  and $\mathbf{\Traction}_i$. The sum of $\left( \mathbf{\ForceSubscript{\gravity}} \right)_i$ for every wheel equals the mobile robot weight \freefootnote{$\mathbf{\Moment}_{\left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)} = \mathbf{\Moment}_{\left( \mathbf{\ForceSubscript{\gravity}} \right)} = \mathbf{\Moment}_{\left( \mathbf{\ForceSubscript{\FrictionSubscript}} \right)} = \mathbf{0}$}.
+%
+%\begin{equation}
+%	\Mass \mathbf{\gravity} = \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \sum_{i=1}^{4} \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \left( \mathbf{\ForceSubscript{\gravity}} \right)_i \quad , \quad \left( \ForceSubscriptTwo{\gravity}{z} \right)_i = - \left( \ForceSubscriptTwo{\NormalForceSubscript}{z} \right)_i
+%	\label{eq:gravitySum}
+%\end{equation}
+%
+%, where $\mathbf{\gravity}$ denotes the gravity vector with respect to $\WorldFrame$. The sum of the effects of gravity and ground reaction forces with respect to $\BodyFrame$ are stated by,
+%
+%\begin{equation}
+%	\mathbf{\ForceSubscript{\gravity}} = \sum_{i=1}^{4} \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \left( \mathbf{\ForceSubscript{\gravity}} \right)_i \quad \mathbf{\ForceSubscript{\NormalForceSubscript}} = \sum_{i=1}^{4} \mathbf{\RotMatrix}_{\WheelFrame^i}^{\BodyFrame} \left( \mathbf{\ForceSubscript{\NormalForceSubscript}} \right)_i
+%	\label{eq:sumGravityReaction}
+%\end{equation}
+
+%\subsection{Maximum inclination}
+%
+%There is also a need to check to what extent \acrshort{ode} models the Coulomb friction model. In order to carry this validation, a wheeled vehicle model is placed on ramps of increasing slope. On each of these ramps, the wheels are torque-actuated to the highest possible traction force. Then, if the vehicle is unable to traverse some ramp, it means the traction force has reached the border of the Coulomb friction cone and is not able to counter the weight component on $\BodyFrame_x$. The respective ramp slope is the highest admissable slope the vehicle can go through, with respect to the selected friction coefficient $\FrictionCoefficient$.
+%
+%Then, these tests are carried out for several friction coefficients and the results are presented in figure \ref{fig:states_comparison_validation_contacts}.
+%
+%
+%\begin{figure}[!htb]
+%	\centering
+%\begin{minipage}{0.45\linewidth}
+%  	\begin{tikzpicture}
+%  	\begin{axis}[
+%    	domain=0:1.2,
+%    	xlabel={$\mu$},
+%    	ylabel={$f(\mu)$},
+%    	xmin=-0.2, xmax=1.5,
+%    	ymin=-0.2, ymax=1.3,
+%    	axis lines=middle,
+%    	legend style={at={(1.3, 1.1)},anchor=north east},
+%	]
+%		% Plot theoretical maximum admissable slope
+%    	\addplot[red, thick] {atan(x) * pi / 180};
+%	    \addlegendentry{$f(\mu) = \arctan(\mu)$}
+%	    
+%	    % Plot maximum admissable slope best fit
+%    	\addplot[blue, thick] {atan(0.699742 * x) * pi / 180};
+%	    \addlegendentry{$f(\mu) = \arctan(k^*\,\times\,\mu)$}
+%	    
+%	    \addplot[only marks, mark=*] table[x=x, y=y] {Data/maxInclination.dat};
+%    	\addlegendentry{Maximum achievable slope}
+% 	\end{axis}
+%\end{tikzpicture}
+%\end{minipage}
+%\begin{minipage}{0.45\linewidth}
+%	\centering
+%  	\begin{tabular}{cc}
+%    	\toprule
+%    	$\FrictionCoefficient_i$ & $\theta_i\,\text{[rad]}$\\
+%    	\midrule
+%    	0.0 & 0.0 \\
+%    	0.1 & 0.056403 \\
+%    	0.2 & 0.127811\\
+%    	0.3 & 0.193803\\
+%    	0.4 & 0.265642\\
+%    	0.5 & 0.33325\\
+%    	0.6 & 0.398657\\
+%    	0.7 & 0.474762\\
+%	    \bottomrule
+%    \end{tabular}
+%\end{minipage}
+%\caption[Maximum admissable slope with respect to $\FrictionCoefficient$.]{Maximum admissable slope with respect to $\FrictionCoefficient$.}			\label{fig:states_comparison_validation_contacts}
+%\end{figure}
+%
+%After $\FrictionCoefficient = 0.7$ it was not possible to collect more data, because on high friction coefficients, more traction force is available, which makes the vehicle more prone to overcome very high slopes. However, at high slopes, the vehicles easily tips-over, which makes it difficult to reasonably assess the maximum achievable slope. Even though, the collected data points already allow to estimate a relationship between $\FrictionCoefficient$ and $f(\FrictionCoefficient)$. This estimation is obtained by computing the best fit of an $\arctan(\cdot)$ like function to the data points.
+%
+%\begin{equation}
+%	\underset{k}{\text{minimize}} \hspace{1mm} \sum_{i=0}^{7} \left(\arctan(k \, \times \, \FrictionCoefficient_i) - \pitch_i\right)^2
+%	\label{eq:optimizeMaxAchievableSlope}
+%\end{equation}
+%
+%Equation \ref{eq:optimizeMaxAchievableSlope} is the optimization problem that aims to provide $k^*$. It is implemented in \acrshort{casadi} and \acrshort{ipopt} is the solver. Its solution yields $k^* = 0.699742$. 
+%
+%This result will be integrated into a future insertion of the Coulomb friction model on a \acrshort{nlp}. Moreover, one will attempt that the vehicle stays below the maximum achievable slope, with respect to the coefficient of friction in play.
+
+%\section{Lateral force identification}
+%\label{section:lateralForceIdentification}
+%
+%In this thesis, the mobile robot moves on a plane along the control horizon, which is aligned with the initial state inclination. The normal force on each wheel is equally divided among all wheels, that is $\frac{-m\,g\,\cos(\pitch)\,\cos(\roll)}{4}$. The introduction of the mobile robot orientation on each pose of the terrain surface into the \acrshort{nmpc} is not addressed in this thesis.
+%
+%Then, one is only left with the wheel lateral force identication problem. In this thesis, a similar approach to the one in \cite{liniger2012autonomous} is followed.
+%
+%\subsection{Steady-state identification}

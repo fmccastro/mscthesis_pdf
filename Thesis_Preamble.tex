@@ -276,7 +276,7 @@
 %
 % > defines color macros: \color{<color name>}
 %
-%\usepackage{color}
+\usepackage{xcolor}
 
 
 % 'amsmath' package
@@ -409,12 +409,15 @@
 %% This code creates the groups
 % -----------------------------------------
 \usepackage{etoolbox}
-\renewcommand\nomgroup[1]{%
+\renewcommand{\nomgroup}[1]{%
   \item[\bfseries
   \ifstrequal{#1}{R}{Roman symbols}{%
   \ifstrequal{#1}{G}{Greek symbols}{%
-  \ifstrequal{#1}{S}{Other symbols}{}}}%
-]}
+  \ifstrequal{#1}{S}{Subscripts}{%
+  \ifstrequal{#1}{T}{Superscripts}{%
+  Other symbols}}}}%
+  ]%
+}
 % -----------------------------------------
 
 
@@ -490,7 +493,8 @@
 %	>provides a way to build tikz picture with conditional statements
 \usepackage{ifthen}
 
-\usepackage[inkscapelatex=false]{svg}
+\usepackage{svg}
+\svgsetup{inkscapeversion=1}
 
 
 %	'mathtools' package
@@ -546,12 +550,13 @@
 \usepackage{arydshln}
 
 \usepackage{tikz}
-
-\usetikzlibrary {3d, perspective, datavisualization}
+\usetikzlibrary {3d, perspective, datavisualization, calc, patterns}
 
 \usepackage{amsmath}
 
 \usepackage{multicol}
+
+\usepackage{makecell}
 
 \usepackage{changepage}
 
@@ -634,7 +639,7 @@
 \pgfplotsset{width=7cm,compat=1.18}
 
 %\usepgfplotslibrary{external}
-%\tikzexternalize 
+%\tikzexternalize
 
 \usepackage{titlesec}
 \setcounter{secnumdepth}{4}
@@ -652,11 +657,13 @@
 \newcommand{\Area}{\mathcal{A}}
 
 % Domains
+\newcommand{\SafeSpace}{\mathcal{S}}
+\newcommand{\FreeSpace}{\mathcal{F}}
 \newcommand{\ObstacleSpace}{\mathcal{O}}
 \newcommand{\StateSpace}{\mathcal{X}}
 \newcommand{\ControlSpace}{\mathcal{U}}
 \newcommand{\feasibleSet}{\bm{\Omega}}
-\newcommand{\neighborhood}{\mathcal{N}}
+\newcommand{\neighborhood}{\mathcal{V}}
 \newcommand{\activeSet}{\mathcal{A}}
 
 %	Matrices
@@ -697,6 +704,7 @@
 \newcommand{\vx}{u}
 \newcommand{\vy}{v}
 \newcommand{\vz}{w}
+\newcommand{\vspeed}{v}
 
 %	Angular velocity
 \newcommand{\AngVelocity}{\omega}
@@ -707,6 +715,7 @@
 
 %	Traction
 \newcommand{\Traction}{t}
+\newcommand{\NormalForce}{n}
 
 %	Friction force subscript
 \newcommand{\FrictionSubscript}{f}
@@ -746,22 +755,24 @@
 
 \newcommand{\Torque}{\tau}
 
+\newcommand{\Progress}{\rho}
 \newcommand{\SlipRatio}{s}
 \newcommand{\SlipAngle}{\beta}
 \newcommand{\Mass}{m}
 \newcommand{\WheelRadius}{r}
-\newcommand{\WheelLonSeparation}{l_w}
-\newcommand{\WheelLatSeparation}{b_w}
+\newcommand{\WheelLonSeparation}{b}
+\newcommand{\WheelLatSeparation}{l}
 \newcommand{\WheelContactAngle}{\gamma}
 \newcommand{\FrictionCoefficient}{\mu}
 \newcommand{\surfaceRelVel}{\delta}
 \newcommand{\NullTimePosition}{\Gamma}
 \newcommand{\hmultiplier}{\mu}
 \newcommand{\gmultiplier}{\lambda}
+\newcommand{\SamplingTime}{T_s}
 
 %	Elevation
 \newcommand{\Elevation}{h}
-\newcommand{\FunctionElevation}{e}
+\newcommand{\FunctionElevation}{h}
 \newcommand{\ElevationMap}{\mathcal{E}}
 
 %	Traversability cost
@@ -809,11 +820,11 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 
-\newcommand\freefootnote[1]{%
-  \let\thefootnote\relax%
-  \footnotetext{#1}%
-  \let\thefootnote\svthefootnote%
-}
+%\newcommand\freefootnote[1]{%
+%  \let\thefootnote\relax%
+%  \footnotetext{#1}%
+%  \let\thefootnote\svthefootnote%
+%}
 
 %\newcommand\numberfootnote[1]{%
 %  \footnotetext{#1}%
@@ -827,3 +838,14 @@
 \algnewcommand\algorithmicforeach{\textbf{for each}}
 \algdef{S}[FOR]{ForEach}[1]{\algorithmicforeach\ #1\ \algorithmicdo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{tabblue}{RGB}{31,119,180}
+\definecolor{taborange}{RGB}{255,127,14}
+\definecolor{tabgreen}{RGB}{44,160,44}
+\definecolor{tabred}{RGB}{214,39,40}
+\definecolor{tabpurple}{RGB}{148,103,189}
+\definecolor{tabbrown}{RGB}{140,86,75}
+\definecolor{tabpink}{RGB}{227,119,194}
+\definecolor{tabgray}{RGB}{127,127,127}
+\definecolor{tabolive}{RGB}{188,189,34}
+\definecolor{tabcyan}{RGB}{23,190,207}

@@ -3,8 +3,8 @@
 %     File: Thesis_Resumo.tex                                          %
 %     Tex Master: Thesis.tex                                           %
 %                                                                      %
-%     Author: Andre C. Marta                                           %
-%     Last modified :  2 Jul 2015                                      %
+%     Author: Francisco Castro                                           %
+%     Last modified :  24 Fev 2026                                      %
 %                                                                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -13,9 +13,13 @@
 % Add entry in the table of contents as section
 \addcontentsline{toc}{section}{Resumo}
 
-Inserir o resumo em Portugu\^{e}s aqui com o máximo de 250 palavras e acompanhado de 4 a 6 palavras-chave...
+O desenvolvimento de algoritmos de controlo para veículos autónomos em ambientes extremos tem sido alvo de intenso investimento nas últimas décadas, muito por força de missões robóticas planetárias ou pela necessidade de locomoção por terrenos de irregularidade extrema.
+
+Em primeiro lugar, este trabalho apresenta um algoritmo de geração de um caminho seguro, que evita locais indesejáveis pela sua dificuldade de atravesamento. Para isso, um mapa de traversabilidade do terreno em causa é igualmente gerado através de um algoritmo de optimização, que tem em conta as características do veículo e a elevação do mapa.
+
+Por último, o controlo em tempo-real é assegurado pela biblioteca \texttt{acados}, usando conhecidos métodos de controlo preditivo, óptimo e não-linear para guiar o veículo de forma segura pelo terreno irregular que atravessa. Além de seguir uma dada referência, o controlador também assegura um afastamento mínimo do veículo em relação ao obstáculo mais próximo. A derrapagem do veículo é minorada ao máximo. Um algoritmo inovador é apresentado na parte final do trabalho.
 
 \vfill
 
-\textbf{\Large Palavras-chave:} palavra-chave1, palavra-chave2,...
+\textbf{\Large Palavras-chave:} Terreno irregular, Controlo em tempo-real, Controlo preditivo e óptimo, Controlo não-linear, Desvio de obstáculos.
 

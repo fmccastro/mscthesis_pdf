@@ -6,76 +6,78 @@ The style file: abbrvunsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: Thesis_Bibliography.bib
 Warning--entry type for "nasa:perseverance" isn't style-file defined
---line 109 of file Thesis_Bibliography.bib
+--line 124 of file Thesis_Bibliography.bib
 Warning--entry type for "cnsa:zhurong" isn't style-file defined
---line 117 of file Thesis_Bibliography.bib
-Warning--entry type for "ode" isn't style-file defined
---line 804 of file Thesis_Bibliography.bib
+--line 132 of file Thesis_Bibliography.bib
 Warning--string name "november" is undefined
---line 815 of file Thesis_Bibliography.bib
-Warning--empty chapter and pages in Yoshida2016
+--line 828 of file Thesis_Bibliography.bib
+Warning--entry type for "mpcworkingprinciple" isn't style-file defined
+--line 970 of file Thesis_Bibliography.bib
 Warning--empty chapter and pages in roboticsHandbook_chap55
 Warning--empty publisher in roboticsHandbook_chap55
 Warning--empty chapter and pages in Genta2012
 Warning--can't use both author and editor fields in wong:terramechanics
 Warning--empty booktitle in Coombs2000
+Warning--empty year in Amorim2014
+Warning--empty year in Amorim2014
 Warning--empty year in Spero2002Path
 Warning--empty year in Spero2002Path
-Warning--empty chapter and pages in Burgard2016
-Warning--empty publisher in Burgard2016
+Warning--empty publisher in chapter45handbookrobotics
 Warning--empty year in Correal2011
 Warning--empty year in Correal2011
 Warning--empty year in Jayasekara2012
 Warning--empty year in Jayasekara2012
-Warning--empty year in Amorim2014
-Warning--empty year in Amorim2014
 Warning--empty year in Ishigami2007PathPlanning
 Warning--empty year in Ishigami2007PathPlanning
+Warning--empty school in mpc_frenetserret
 Warning--empty booktitle in Iagnemma2004
+Warning--empty publisher in chapter24handbookrobotics
 Warning--empty journal in diehlnumericalocp
-Warning--empty school in Silva-Decentralized-trajectory-optimization-for-a-fleet-of-industrial-mobile-robots
+Warning--empty school in Silva2022msc
 Warning--empty school in diehl2001real
 Warning--empty journal in andersson2018sensitivity
+Warning--empty chapter and pages in chapter47handbookrobotics
+Warning--empty publisher in chapter47handbookrobotics
 Warning--empty publisher in Beer2015
-You've used 66 entries,
+You've used 73 entries,
             2481 wiz_defined-function locations,
-            945 strings with 17033 characters,
-and the built_in function-call counts, 25235 in all, are:
-= -- 2074
-> -- 1297
-< -- 47
-+ -- 507
-- -- 374
-* -- 1858
-:= -- 3942
-add.period$ -- 212
-call.type$ -- 66
-change.case$ -- 125
-chr.to.int$ -- 65
-cite$ -- 92
-duplicate$ -- 1350
-empty$ -- 2374
-format.name$ -- 485
-if$ -- 5461
+            981 strings with 19289 characters,
+and the built_in function-call counts, 28175 in all, are:
+= -- 2323
+> -- 1460
+< -- 50
++ -- 569
+- -- 422
+* -- 2090
+:= -- 4421
+add.period$ -- 243
+call.type$ -- 73
+change.case$ -- 138
+chr.to.int$ -- 72
+cite$ -- 101
+duplicate$ -- 1495
+empty$ -- 2643
+format.name$ -- 540
+if$ -- 6082
 int.to.chr$ -- 2
-int.to.str$ -- 67
-missing$ -- 68
-newline$ -- 347
-num.names$ -- 196
-pop$ -- 666
+int.to.str$ -- 74
+missing$ -- 74
+newline$ -- 388
+num.names$ -- 221
+pop$ -- 729
 preamble$ -- 1
-purify$ -- 66
+purify$ -- 73
 quote$ -- 0
-skip$ -- 802
+skip$ -- 880
 stack$ -- 0
-substring$ -- 935
-swap$ -- 248
+substring$ -- 1062
+swap$ -- 267
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 432
-warning$ -- 24
-while$ -- 187
+type$ -- 481
+warning$ -- 26
+while$ -- 210
 width$ -- 0
-write$ -- 852
-(There were 28 warnings)
+write$ -- 952
+(There were 30 warnings)

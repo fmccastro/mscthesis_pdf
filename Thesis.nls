@@ -1,13 +1,85 @@
 
 \begin{thenomenclature} 
 \nomgroup{G}
-  \item [{$\phi, \; \theta, \; \psi$}]\begingroup Roll, pitch, and yaw angles, respectively.\nomeqref {0}\nompageref{xix}
+  \item [{$\bm{\lambda},\,\bm{\mu}$}]\begingroup Lagrange multiplier vectors.\nomeqref {0}\nompageref{xv}
+  \item [{$\eta$}]\begingroup Step.\nomeqref {0}\nompageref{xv}
+  \item [{$\Gamma$}]\begingroup Wave front at the source.\nomeqref {0}\nompageref{xv}
+  \item [{$\kappa$}]\begingroup Path curvature.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{\Omega}$}]\begingroup Feasible set.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{\Psi}$}]\begingroup Set of euler angles.\nomeqref {0}\nompageref{xv}
+  \item [{$\mu$}]\begingroup Friction coefficient.\nomeqref {0}\nompageref{xv}
+  \item [{$\nabla$}]\begingroup Gradient.\nomeqref {0}\nompageref{xv}
+  \item [{$\omega_x,\;\omega_y,\;\omega_z$}]\begingroup Body frame angular velocity components.\nomeqref {0}\nompageref{xv}
+  \item [{$\phi,\;\theta,\;\psi$}]\begingroup Roll, pitch, and yaw angles, respectively.\nomeqref {0}\nompageref{xv}
+  \item [{$\rho$}]\begingroup Progress.\nomeqref {0}\nompageref{xv}
 \nomgroup{R}
-  \item [{$\mathbf{\chi}$}]\begingroup Mobile robot orientation.\nomeqref {0}\nompageref{xix}
-  \item [{$\mathbf{p}$}]\begingroup Mobile robot position.\nomeqref {0}\nompageref{xix}
-  \item [{$\mathbf{q}$}]\begingroup Mobile robot pose.\nomeqref {0}\nompageref{xix}
-  \item [{$\mathbf{R}$}]\begingroup Rotation matrix.\nomeqref {0}\nompageref{xix}
-  \item [{$\mathbf{v}$}]\begingroup Mobile robot velocity.\nomeqref {0}\nompageref{xix}
-  \item [{$\mathcal{C}, \mathcal{B}, \mathcal{W}$}]\begingroup Contact, body and world frames, respectively.\nomeqref {0}\nompageref{xix}
+  \item [{$\mathbf{\hat{n}}$}]\begingroup Unit normal vector.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{f}$}]\begingroup Force.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{f}(\cdot)$}]\begingroup Model dynamics.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{g}(\cdot)$}]\begingroup Equality constraints function.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{H}$}]\begingroup Hessian matrix.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{h}$}]\begingroup Angular moment.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{h}(\cdot)$}]\begingroup Inequality constraints function.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{I}$}]\begingroup Inertia tensor.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{l}$}]\begingroup Linear moment.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{m}$}]\begingroup Moment.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{n}$}]\begingroup Normal (reaction) force.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{o}$}]\begingroup Obstacle 2D position.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{p}$}]\begingroup Parameters.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{p}_2$, $\mathbf{p}_3$}]\begingroup 2D and 3D mobile robot position, respectively.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{R}$}]\begingroup Rotation matrix.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{r}$}]\begingroup Reference.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{s}$}]\begingroup Array of slacks.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{t}$}]\begingroup Look-ahead target 2D position.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{u}$}]\begingroup Controls.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{v}$}]\begingroup Mobile robot linear velocity.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{w}$}]\begingroup Optimization variables.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathbf{x}$}]\begingroup State.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathcal{C},\;\mathcal{B},\;\mathcal{W}$}]\begingroup Contact, body and world frames, respectively.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathcal{L}$}]\begingroup Lagrange function.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathcal{M}$}]\begingroup Map space.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathcal{N}(\cdot)$}]\begingroup Normal distribution.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathcal{R}$}]\begingroup Mobile robot space.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathcal{S},\;\mathcal{O}$}]\begingroup Safe and occupied space.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathcal{V}$}]\begingroup Neighborhood space.\nomeqref {0}\nompageref{xv}
+  \item [{$\mathcal{X}$, $\mathcal{U}$}]\begingroup State and control trajectory, respectively.\nomeqref {0}\nompageref{xv}
+  \item [{$\underline{d}$}]\begingroup Safety margin.\nomeqref {0}\nompageref{xv}
+  \item [{$b$}]\begingroup Wheel longitudinal separation.\nomeqref {0}\nompageref{xv}
+  \item [{$d_0$}]\begingroup Influence distance of repulsive object.\nomeqref {0}\nompageref{xv}
+  \item [{$d_s$}]\begingroup Projection distance to safe space.\nomeqref {0}\nompageref{xv}
+  \item [{$diag(\cdot)$}]\begingroup Entries of diagonal matrix.\nomeqref {0}\nompageref{xv}
+  \item [{$F(\cdot)$}]\begingroup Speed function.\nomeqref {0}\nompageref{xv}
+  \item [{$f(\cdot)$}]\begingroup Objective function.\nomeqref {0}\nompageref{xv}
+  \item [{$G$}]\begingroup Goal point.\nomeqref {0}\nompageref{xv}
+  \item [{$g$}]\begingroup Gravity.\nomeqref {0}\nompageref{xv}
+  \item [{$h(\cdot)$}]\begingroup Elevation map.\nomeqref {0}\nompageref{xv}
+  \item [{$l$}]\begingroup Wheel lateral separation.\nomeqref {0}\nompageref{xv}
+  \item [{$l(\cdot)$}]\begingroup Lagrange term.\nomeqref {0}\nompageref{xv}
+  \item [{$m$}]\begingroup Mobile robot mass.\nomeqref {0}\nompageref{xv}
+  \item [{$m(\cdot)$}]\begingroup Mayer term.\nomeqref {0}\nompageref{xv}
+  \item [{$N$}]\begingroup Horizon length.\nomeqref {0}\nompageref{xv}
+  \item [{$n_i$}]\begingroup Number of map divisions on direction $i$.\nomeqref {0}\nompageref{xv}
+  \item [{$r$}]\begingroup Wheel radius.\nomeqref {0}\nompageref{xv}
+  \item [{$s_k$}]\begingroup Slack variable.\nomeqref {0}\nompageref{xv}
+  \item [{$t(\cdot)$}]\begingroup Traversability map.\nomeqref {0}\nompageref{xv}
+  \item [{$t_i$}]\begingroup Traction force exerted on wheel $i$.\nomeqref {0}\nompageref{xv}
+  \item [{$T_s$, $T_c$}]\begingroup Sampling and loop times, respectively.\nomeqref {0}\nompageref{xv}
+  \item [{$u(\cdot)$}]\begingroup Time function.\nomeqref {0}\nompageref{xv}
+  \item [{$u_i$}]\begingroup Traction rate of wheel $i$.\nomeqref {0}\nompageref{xv}
+  \item [{$v$}]\begingroup Virtual speed.\nomeqref {0}\nompageref{xv}
+  \item [{$v_x,\;v_y,\;v_z$}]\begingroup Body frame linear velocity components.\nomeqref {0}\nompageref{xv}
+  \item [{$x,\;y$}]\begingroup Position components.\nomeqref {0}\nompageref{xv}
+  \item [{$z$}]\begingroup Elevation.\nomeqref {0}\nompageref{xv}
+\nomgroup{S}
+  \item [{$2$}]\begingroup Two-dimensional\nomeqref {0}\nompageref{xv}
+  \item [{$3$}]\begingroup Three-dimensional\nomeqref {0}\nompageref{xv}
+  \item [{$att$}]\begingroup Related to attractive component of potential field.\nomeqref {0}\nompageref{xv}
+  \item [{$d$}]\begingroup Discrete map.\nomeqref {0}\nompageref{xv}
+  \item [{$def$}]\begingroup Deformed vector.\nomeqref {0}\nompageref{xv}
+  \item [{$proj$}]\begingroup Projected variable.\nomeqref {0}\nompageref{xv}
+  \item [{$rep$}]\begingroup Related to repulsive component of potential field.\nomeqref {0}\nompageref{xv}
+  \item [{$xx,\,yy,\,zz$}]\begingroup Inertia tensor subscripts.\nomeqref {0}\nompageref{xv}
+\nomgroup{T}
+  \item [{*}]\begingroup Optimized variable.\nomeqref {0}\nompageref{xv}
 
 \end{thenomenclature}

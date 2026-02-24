@@ -55,15 +55,15 @@ The mapping between the euler angle rates and the body-frame angular velocities 
 
 \begin{equation}
 	\bm{\AngVelocity} = \begin{bmatrix}
-	0 \\ 0 \\ \dot{\yaw}
-	\end{bmatrix} + \mathbf{R}_z(\yaw) \begin{bmatrix}
-	0 \\ \dot{\pitch} \\ 0
-	\end{bmatrix} + \mathbf{R}_z(\yaw) \mathbf{R}_y(\pitch) \begin{bmatrix}
 	\dot{\roll} \\ 0 \\ 0
+	\end{bmatrix} + \mathbf{R}_x(\roll) \begin{bmatrix}
+	0 \\ \dot{\pitch} \\ 0
+	\end{bmatrix} + \mathbf{R}_x(\roll) \mathbf{R}_y(\pitch) \begin{bmatrix}
+	0 \\ 0 \\ \dot{\yaw}
 	\end{bmatrix} =	\begin{bmatrix}
-		cos(\yaw) \cdot cos(\pitch) & -sin(\yaw) & 0\\
-		sin(\yaw) \cdot cos(\pitch) & cos(\yaw) & 0\\
-		-sin(\pitch) & 0 & 1
+		1 & 0 & \sin\left(\pitch\right)\\
+		0 & \cos\left(\roll\right) & -\sin\left(\roll\right) cos\left(\pitch\right)\\
+		0 & \sin\left(\roll\right) & \cos\left(\roll\right)\cos\left(\pitch\right)
 	\end{bmatrix} \begin{bmatrix}
 	\dot{\roll} \\ \dot{\pitch} \\ \dot{\yaw}
 	\end{bmatrix} 
@@ -76,30 +76,11 @@ Then, the inverse of the matrix presented in \ref{eq:rotationMatrixW2BRotational
 	\begin{bmatrix}
 		\dot{\roll} \\ \dot{\pitch} \\ \dot{\yaw}
 	\end{bmatrix} = \begin{bmatrix}
-		\frac{cos(\yaw)}{cos(\pitch)} & \frac{sin(\yaw)}{cos(\pitch)} & 0 \\
-		-sin(\yaw) & cos(\yaw) & 0 \\
-		cos(\yaw) \cdot \tan(\pitch) & tan(\pitch) \cdot sin(\yaw) & 1
+		1 & \tan\left(\pitch\right)\sin\left(\roll\right) & -\tan\left(\pitch\right)\cos\left(\roll\right) \\
+		0 & \cos\left(\roll\right) & \sin\left(\roll\right) \\
+		0 & -\frac{\sin\left(\roll\right)}{\cos\left(\pitch\right)} & \frac{\cos\left(\roll\right)}{\cos\left(\pitch\right)}
 	\end{bmatrix} \bm{\AngVelocity}
 	\label{eq:rotationMatrixW2BRotationalInverse}
-\end{equation}
-
-\section{Skew-symmetric matrix}
-\label{section:skewSymmetricMatrix}
-
-A skew-symmetric matrix $\bm{S}$ is a square matrix whose transpose equals its negative, $\bm{S}^T = -\bm{S}$. In this thesis, three by three matrices are employed which take the following form,
-\begin{equation}
-	\bm{S(r} = (x, \; y, \; z)\bm{)} = \begin{bmatrix}
-								0 & -z & y\\
-								z & 0 & -x\\
-								-y & x & 0	
-	\end{bmatrix}
-	\label{eq:skewSymmetricMatrix} 
-\end{equation}
-
-In case this matrix is multiplied by a column vector $\mathbf{a}$, it is the same as applying the cross product between $\mathbf{r}$ and $\mathbf{a}$. Then, it is stated that,
-\begin{equation}
-	\mathbf{S(r)} \mathbf{a} = \mathbf{r} \times \mathbf{a}
-	\label{eq:skewSymmetricMatrixProperties} 
 \end{equation}
 
 \section{Inertia tensor}
@@ -220,50 +201,79 @@ For some symmetric matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$, we define $\
 \label{def:matrixeigenvalues}
 \end{definition}
 
+\section{Euler angles determination}
+\label{section:eulerAnglesDetermination}
 
+Given a surface (or heightmap) given by a continuously differentiable function $z = h\left(\x,\,\y\right)$, its normal is denoted by $\mathbf{n} = \left(-\pdv{h}{x},\, -\pdv{h}{y},\,1\right)$.
 
-%\section{Gauss-Legrendre quadrature}
-%\label{section:gaussQuadrature}
-%
-%A Gauss-Legrendre quadrature is an integral approximation method, which yields an exact result for polynomials of degree $2n -1$ or less.
-%
-%\begin{equation}
-%  \int_a^b f(x)\, dx \approx \int_{-1}^{1} f\left(\frac{b-a}{2} \xi + \frac{a+b}{2} \right) \frac{dx}{d\xi} d\xi
-%\label{eq:gaussLegrendreQuadrature}
-%\end{equation}
-%
-%, where $\frac{dx}{d\xi} = \frac{b-a}{2}$ expresses a change of variable in order to yield an integration in $[-1,\,1]$
-%
-%Then, equation \ref{eq:gaussLegrendreQuadrature} may be approximated by,
-%	
-%\begin{equation}
-%	\int_a^b f(x) dx \approx \frac{a-b}{2} \sum_{i=1}^{n} w_i f\left(\frac{b-a}{2} \xi_i + \frac{a+b}{2}\right)
-%	\label{eq:gaussLegendreQuadratureApprox}
-%\end{equation}
-%
-%In the case of a double integral, it comes that,
-%
-%\begin{equation}
-%	\int_{c}^{d} \int_{a}^{b} f\left(x,\,y\right) dx \, dy \approx \frac{(a-b)(d-c)}{4} \sum_{j=1}^{m} \sum_{i=1}^{n} f\left(\frac{b-a}{2} \xi_i + \frac{a+b}{2},\, \frac{d-c}{2} \xi_j + \frac{c+d}{2}\right)
-%	\label{eq:gaussLegendreDouble}
-%\end{equation}
-%
-%In this thesis, a 5-point Gauss Legrendre quadrature was used, where $\xi_i = \{ -0.90618,\, -0.538469,\\ \,0.0,\,0.538469,\,0.90618 \}$ and $w_i = \{ 0.236927,\,0.478629,\,0.568889,\, 0.478629,\,0.236927 \}$.
-%
-%\section{Boltzman operator}
-%\label{section:boltzmanOperator}
-%
-%The boltzmann operator is a smooth, differentiable function that approximates the non-smooth maximum or minimum functions.
-%
-%\begin{equation}
-%\mathcal{S}_{\alpha} (x_1,\, \ldots, \,x_n) = \frac{\sum_{i=1}^{n} x_i \exp(\alpha \, x_i)}{\sum_{i=1}^{n} \exp(\alpha \, x_i)}
-%\label{eq:boltzmannOperator}
-%\end{equation}
-%
-%The boltzmann operator has the following properties:
-%
-%\begin{enumerate}
-%\item $\lim_{\alpha \to \infty} \mathcal{S}_{\alpha} = \text{max}( x_1,\,\ldots,\,x_n )$
-%\item $\mathcal{S}_0$ is the arithmetic mean of $( x_1,\,\ldots,\,x_n )$.
-%\item $\lim_{\alpha \to -\infty} \mathcal{S}_{\alpha} = \text{min}( x_1,\,\ldots,\,x_n )$
-%\end{enumerate}
+Then, it is of interest to determine the orientation of a vehicle that is placed on the $\left(\x,\,\y\right)$ position of $h\left(\cdot\right)$ with heading $\yaw$. First, the vehicle's heading vector $\mathbf{t} = \left(\cos\left(\yaw\right),\,\sin\left(\yaw\right),\,0\right)$ is projected onto the surface $h\left(\cdot\right)$, to yield $\mathbf{f} = \mathbf{t} - \left(\mathbf{t}\cdot\mathbf{n}\right)\mathbf{n}$. As $\mathbf{f}$ and $\mathbf{n}$ express the longitudinal - $\BodyFrame_x$ - and vertical - $\BodyFrame_z$ - directions of the vehicle's body frame, respectively, it is possible to determine the direction of $\BodyFrame_y$ by computing $\mathbf{\hat{l}} = \mathbf{\hat{f}} \times \mathbf{\hat{n}} $, where $\mathbf{\hat{v}}$ denotes a normalized vector.
+
+Finally, it is possible to equate each column of the rotation matrix \ref{eq:rotationMatrixW2B} to the normalized version of the vectors that were computed previously.
+
+\begin{equation}
+\mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} = \begin{pmatrix}
+	\vert & \vert & \vert \\
+    \mathbf{\hat{f}}   & \mathbf{\hat{l}} & \mathbf{\hat{n}} \\
+    \vert & \vert & \vert
+\end{pmatrix}
+\label{eq:rotMatrixVectors}
+\end{equation}
+
+From equation \ref{eq:rotMatrixVectors}, it is possible to determine the vehicle's roll and pitch angles.
+
+\begin{align}
+\pitch &= \arcsin\left(-\mathbf{\hat{f}}_3\right)\\
+\roll &= \arcsin\left(\frac{ \mathbf{\hat{l}}_3}{\cos\left(\pitch\right)}  \right)
+\end{align}
+
+A short algorithm is presented below to sum up the previous explanation in pseusocode.
+
+\begin{algorithm}[H]
+	\caption{\footnotesize Determine Euler angles}\label{alg:determineeulerangles}
+	\centering
+	\footnotesize
+	\begin{algorithmic}[1]
+	\Function{geteulerangles}{$h(\cdot),\,\x,\,\y,\,\yaw$}
+	\State $\mathbf{n} \gets \left(-\pdv{h}{x},\, -\pdv{h}{y},\,1\right)$
+	\State $\mathbf{t} \gets \left(\cos\left(\yaw\right),\,\sin\left(\yaw\right),\,0\right)$
+	\State $\mathbf{f} \gets \mathbf{f} = \mathbf{t} - \left(\mathbf{t}\cdot\mathbf{n}\right)\mathbf{n}$
+	\State $\mathbf{\hat{l}} \gets \mathbf{\hat{f}} \times \mathbf{\hat{n}}$
+	\State $\pitch \gets \arcsin\left(-\mathbf{\hat{f}}_3\right)$
+	\State $\roll \gets \arcsin\left(\frac{\mathbf{\hat{l}}_3}{\cos\left(\pitch\right)}\right)$
+	\State \Return $\roll,\,\pitch$
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
+
+\section{Lissajous curves}
+\label{section:lissajouscurves}
+
+In this thesis, Lissajous curves \cite{lawrence1972catalog} were selected as references of the \acrlong{ocp}s that were tested. Equation \ref{eq:lissajouscurve} expresses this family of curves analytically. Table \ref{tab:LissajousCurves} lays out the Lissajous curves used in this thesis.
+
+\begin{center}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tabular}[]{lccccc}
+			\toprule
+				Curve & $A$ & $B$ & $a$ & $b$ & $\delta$ \\
+			\midrule
+				$(1)$ & $1$ & $1$ & $1$ & $2$ & $\frac{\pi}{2}$\\
+				$(2)$ & $2$ & $2$ & $1$ & $2$ & $\frac{\pi}{2}$\\
+				$(3)$ & $2$ & $2$ & $3$ & $2$ & $\frac{\pi}{2}$\\
+  			\bottomrule
+  		\end{tabular}
+        \captionof{table}{Lissajous curves used in this thesis.}
+        \label{tab:LissajousCurves}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{equation}
+        	\begin{cases}
+				\x(t) = A\sin(a\,t + \delta)\\
+				\y(t) = B \sin(b\,t)
+			\end{cases}
+			\label{eq:lissajouscurve}
+        \end{equation}
+    \end{minipage}
+\end{center}

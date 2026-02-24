@@ -922,3 +922,115 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{mpcc}%
+{%
+name={\acronymfont {\glsentryshort {mpcc}}},%
+sort={MPCC},%
+type={acronym},%
+first={MPCC},%
+firstplural={MPCCs},%
+text={MPCC},%
+plural={MPCCs},%
+description={Model predictive countoring control},%
+descriptionplural={Model predictive countoring control},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Model predictive countoring control},%
+longplural={Model predictive countoring controls},%
+short={MPCC},%
+shortplural={MPCCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sqprti}%
+{%
+name={\acronymfont {\glsentryshort {sqprti}}},%
+sort={SQP-RTI},%
+type={acronym},%
+first={SQP-RTI},%
+firstplural={SQP-RTIs},%
+text={SQP-RTI},%
+plural={SQP-RTIs},%
+description={Sequential Quadratic Programming for Real-time iteration},%
+descriptionplural={Sequential Quadratic Programming for Real-time iteration},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Sequential Quadratic Programming for Real-time iteration},%
+longplural={Sequential Quadratic Programming for Real-time iterations},%
+short={SQP-RTI},%
+shortplural={SQP-RTIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ciao}%
+{%
+name={\acronymfont {\glsentryshort {ciao}}},%
+sort={CIAO},%
+type={acronym},%
+first={CIAO},%
+firstplural={CIAOs},%
+text={CIAO},%
+plural={CIAOs},%
+description={Convex-inner approximation},%
+descriptionplural={Convex-inner approximation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Convex-inner approximation},%
+longplural={Convex-inner approximations},%
+short={CIAO},%
+shortplural={CIAOs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{hpipm}%
+{%
+name={\acronymfont {\glsentryshort {hpipm}}},%
+sort={HPIPM},%
+type={acronym},%
+first={HPIPM},%
+firstplural={HPIPMs},%
+text={HPIPM},%
+plural={HPIPMs},%
+description={High-performance interior-point method},%
+descriptionplural={High-performance interior-point method},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={High-performance interior-point method},%
+longplural={High-performance interior-point methods},%
+short={HPIPM},%
+shortplural={HPIPMs},%
+counter={page},%
+parent={},%
+%
+}%
+

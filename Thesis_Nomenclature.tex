@@ -23,32 +23,93 @@
 % where <prefix> is used for fine tuning the sort order,
 % <symbol> is the symbol to be described, and <description> is
 % the actual description.
-
 % ----------------------------------------------------------------------
 % Roman symbols [r]
-\nomenclature[R]{$\mathbf{p}$}{Mobile robot position.}
+\nomenclature[R]{$\mathbf{p}_2$, $\mathbf{p}_3$}{2D and 3D mobile robot position, respectively.}
 \nomenclature[R]{$\mathbf{v}$}{Mobile robot linear velocity.}
-\nomenclature[R]{$\mathcal{C},\, \mathcal{B},\, \mathcal{W}$}{Contact, body and world frames, respectively.}
+\nomenclature[R]{$\mathcal{C},\;\mathcal{B},\;\mathcal{W}$}{Contact, body and world frames, respectively.}
+\nomenclature[R]{$\mathcal{S},\;\mathcal{O}$}{Safe and occupied space.}
+\nomenclature[R]{$\mathcal{L}$}{Lagrange function.}
+\nomenclature[R]{$x,\;y$}{Position components.}
+\nomenclature[R]{$z$}{Elevation.}
+\nomenclature[R]{$m$}{Mobile robot mass.}
+\nomenclature[R]{$g$}{Gravity.}
+\nomenclature[R]{$v$}{Virtual speed.}
+\nomenclature[R]{$v_x,\;v_y,\;v_z$}{Body frame linear velocity components.}
+\nomenclature[R]{$n_i$}{Number of map divisions on direction $i$.}
+\nomenclature[R]{$\mathbf{g}(\cdot)$}{Equality constraints function.}
+\nomenclature[R]{$\mathbf{h}(\cdot)$}{Inequality constraints function.}
+\nomenclature[R]{$\mathbf{I}$}{Inertia tensor.}
+\nomenclature[R]{$\mathbf{l}$}{Linear moment.}
+\nomenclature[R]{$\mathbf{h}$}{Angular moment.}
+\nomenclature[R]{$\mathbf{f}$}{Force.}
+\nomenclature[R]{$\mathbf{m}$}{Moment.}
+\nomenclature[R]{$\mathbf{I}$}{Inertia tensor.}
 \nomenclature[R]{$\mathbf{R}$}{Rotation matrix.}
-\nomenclature[R]{x, y, z}{Position components.}
-\nomenclature[R]{u, v, w}{Body frame linear velocity components.}
-\nomenclature[R]{p, q, r}{Body frame angular velocity components.}
-\nomenclature[R]{$n_i$}{Number of divisions of map on \textit{i} direction.}
-\nomenclature[R]{$g(\cdot)$}{Equality constraints function.}
-\nomenclature[R]{$g(\cdot)$}{Inequality constraints function.}
+\nomenclature[R]{$T_s$, $T_c$}{Sampling and loop times, respectively.}
+\nomenclature[R]{$l$}{Wheel lateral separation.}
+\nomenclature[R]{$b$}{Wheel longitudinal separation.}
+\nomenclature[R]{$u(\cdot)$}{Time function.}
+\nomenclature[R]{$F(\cdot)$}{Speed function.}
+\nomenclature[R]{$G$}{Goal point.}
+\nomenclature[R]{$f(\cdot)$}{Objective function.}
+\nomenclature[R]{$\mathbf{w}$}{Optimization variables.}
+\nomenclature[R]{$\mathbf{x}$}{State.}
+\nomenclature[R]{$\mathbf{u}$}{Controls.}
+\nomenclature[R]{$\mathbf{p}$}{Parameters.}
+\nomenclature[R]{$\mathcal{X}$, $\mathcal{U}$}{State and control trajectory, respectively.}
+\nomenclature[R]{$l(\cdot)$}{Lagrange term.}
+\nomenclature[R]{$m(\cdot)$}{Mayer term.}
+\nomenclature[R]{$\mathbf{f}(\cdot)$}{Model dynamics.}
+\nomenclature[R]{$\mathbf{H}$}{Hessian matrix.}
+\nomenclature[R]{$\mathcal{V}$}{Neighborhood space.}
+\nomenclature[R]{$\mathcal{N}(\cdot)$}{Normal distribution.}
+\nomenclature[R]{$\mathcal{R}$}{Mobile robot space.}
+\nomenclature[R]{$\mathcal{M}$}{Map space.}
+\nomenclature[R]{$\mathbf{\hat{n}}$}{Unit normal vector.}
+\nomenclature[R]{$\mathbf{n}$}{Normal (reaction) force.}
+\nomenclature[R]{$h(\cdot)$}{Elevation map.}
+\nomenclature[R]{$t(\cdot)$}{Traversability map.}
+\nomenclature[R]{$r$}{Wheel radius.}
+\nomenclature[R]{$N$}{Horizon length.}
+\nomenclature[R]{$\mathbf{r}$}{Reference.}
+\nomenclature[R]{$\mathbf{s}$}{Array of slacks.}
+\nomenclature[R]{$s_k$}{Slack variable.}
+\nomenclature[R]{$t_i$}{Traction force exerted on wheel $i$.}
+\nomenclature[R]{$u_i$}{Traction rate of wheel $i$.}
+\nomenclature[R]{$diag(\cdot)$}{Entries of diagonal matrix.}
+\nomenclature[R]{$\mathbf{o}$}{Obstacle 2D position.}
+\nomenclature[R]{$\mathbf{t}$}{Look-ahead target 2D position.}
+\nomenclature[R]{$\underline{d}$}{Safety margin.}
+\nomenclature[R]{$d_0$}{Influence distance of repulsive object.}
+\nomenclature[R]{$d_s$}{Projection distance to safe space.}
 
 % ----------------------------------------------------------------------
 % Greek symbols [g]
-\nomenclature[G]{$\phi, \; \theta, \; \psi$}{Roll, pitch, and yaw angles, respectively.}
-\nomenclature[G]{$\lambda, \; \niu$}{Lagrange multipliers.}
-%\nomenclature[G]{$\mathbf{\Psi}$}{Inertial mobile robot orientation.}
-%\nomenclature[G]{$\mathbf{\omega}$}{Body frame mobile robot angular velocity.}
+\nomenclature[G]{$\phi,\;\theta,\;\psi$}{Roll, pitch, and yaw angles, respectively.}
+\nomenclature[G]{$\Gamma$}{Wave front at the source.}
+\nomenclature[G]{$\mathbf{\Omega}$}{Feasible set.}
+\nomenclature[G]{$\bm{\lambda},\,\bm{\mu}$}{Lagrange multiplier vectors.}
+\nomenclature[G]{$\omega_x,\;\omega_y,\;\omega_z$}{Body frame angular velocity components.}
+\nomenclature[G]{$\mu$}{Friction coefficient.}
+\nomenclature[G]{$\nabla$}{Gradient.}
+\nomenclature[G]{$\mathbf{\Psi}$}{Set of euler angles.}
+\nomenclature[G]{$\rho$}{Progress.}
+\nomenclature[G]{$\kappa$}{Path curvature.}
+\nomenclature[G]{$\eta$}{Step.}
 
 % ----------------------------------------------------------------------
 % Subscripts [s]
-%\nomenclature[S]{$x,y,z$}{Cartesian components}
+\nomenclature[S]{$2$}{Two-dimensional}
+\nomenclature[S]{$3$}{Three-dimensional}
+\nomenclature[S]{$xx,\,yy,\,zz$}{Inertia tensor subscripts.}
+\nomenclature[S]{$d$}{Discrete map.}
+\nomenclature[S]{$att$}{Related to attractive component of potential field.}
+\nomenclature[S]{$rep$}{Related to repulsive component of potential field.}
+\nomenclature[S]{$proj$}{Projected variable.}
+\nomenclature[S]{$def$}{Deformed vector.}
 
 % ----------------------------------------------------------------------
 % Supercripts [t]
-\nomenclature[T]{*}{Optimized variable.}
+\nomenclature[T]{$\ast$}{Optimized variable.}
 

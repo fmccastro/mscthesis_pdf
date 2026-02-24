@@ -1,4 +1,4 @@
-\begin{thebibliography}{66}
+\begin{thebibliography}{73}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -11,11 +11,11 @@ Y.~Gao and S.~Chien.
   exploration.
 \newblock \emph{Science Robotics}, 2, 6 2017.
 
-\bibitem[Yoshida et~al.(2016{\natexlab{a}})Yoshida, Wilcox,
-  et~al.]{Yoshida2016}
-K.~Yoshida, B.~Wilcox, et~al.
-\newblock \emph{Handbook of Robotics}.
-\newblock Springer Nature, second edition, 2016{\natexlab{a}}.
+\bibitem[Yoshida et~al.(2016)Yoshida, Wilcox, and
+  Lampariello]{roboticsHandbook_chap55}
+K.~Yoshida, B.~Wilcox, and R.~Lampariello.
+\newblock \emph{Space Robotics}.
+\newblock 2016.
 
 \bibitem[Wall(2021)]{Wall2021}
 M.~Wall.
@@ -24,12 +24,6 @@ M.~Wall.
 \newblock \emph{Space.com}, 2021.
 \newblock URL
   \url{https://www.space.com/mars-helicopter-ingenuity-first-flight-success}.
-
-\bibitem[Yoshida et~al.(2016{\natexlab{b}})Yoshida, Wilcox, and
-  Lampariello]{roboticsHandbook_chap55}
-K.~Yoshida, B.~Wilcox, and R.~Lampariello.
-\newblock \emph{Space Robotics}.
-\newblock 2016{\natexlab{b}}.
 
 \bibitem[Bekker(1964)]{Bekker1964}
 M.~G. Bekker.
@@ -95,13 +89,13 @@ D.~Rodríguez-Martínez et~al.
 \newblock High-speed mobility on planetary surfaces: A technical review.
 \newblock \emph{Journal of Field Robotics}, 36:\penalty0 1436--1455, 10 2019.
 
-\bibitem[Gonzalez et~al.(2019)Gonzalez, Apostolopoulos, and
-  Iagnemma]{Gonzalez-2019-120666}
-R.~Gonzalez, D.~Apostolopoulos, and K.~Iagnemma.
-\newblock Improving rover mobility through traction control: Simulating rovers
-  on the moon.
-\newblock \emph{Autonomous Robots}, 43\penalty0 (2):\penalty0 1977 -- 1988,
-  March 2019.
+\bibitem[\textbf{R. Gonzalez} et~al.(2019)\textbf{R. Gonzalez}, \textbf{D.
+  Apostolopoulos}, and \textbf{K. Iagnemma}]{Gonzalez2019}
+\textbf{R. Gonzalez}, \textbf{D. Apostolopoulos}, and \textbf{K. Iagnemma}.
+\newblock \textbf{Improving Rover Mobility Through Traction Control: Simulating
+  Rovers on the Moon}.
+\newblock \emph{{\textbf{Autonomous Robots}}}, 43\penalty0 (2):\penalty0 1977
+  -- 1988, March 2019.
 
 \bibitem[Coombs et~al.(2000)Coombs, Murphy, et~al.]{Coombs2000}
 D.~Coombs, K.~Murphy, et~al.
@@ -113,16 +107,57 @@ C.~P. Urmson, J.~Anhalt, et~al.
 \newblock High speed navigation of unrehearsed terrain: Red team technology for
   grand challenging 2004, 2004.
 
+\bibitem[\textbf{Amorim, Diogo} and \textbf{Ventura, Rodrigo}()]{Amorim2014}
+\textbf{Amorim, Diogo} and \textbf{Ventura, Rodrigo}.
+\newblock \textbf{Towards efficient path planning of a mobile robot on rough
+  terrain}.
+\newblock In \emph{\textbf{2014 IEEE international conference on autonomous
+  robot systems and competitions (ICARSC)}}.
+
+\bibitem[\textbf{Siyuan Yu} et~al.(2021)\textbf{Siyuan Yu}, \textbf{Congkai
+  Shen}, and \textbf{Tulga Ersal}]{yu2022nmpc}
+\textbf{Siyuan Yu}, \textbf{Congkai Shen}, and \textbf{Tulga Ersal}.
+\newblock \textbf{Nonlinear Model Predictive Planning and Control for
+  High-Speed Autonomous Vehicles on 3D Terrains}.
+\newblock \emph{\textbf{IFAC-PapersOnLine}}, 54\penalty0 (20):\penalty0
+  412--417, 2021.
+\newblock ISSN 2405-8963.
+\newblock \doi{https://doi.org/10.1016/j.ifacol.2021.11.208}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S2405896321022527}.
+\newblock \textbf{Modeling, Estimation and Control Conference MECC 2021}.
+
+\bibitem[\textbf{Karl Iagnemma} and \textbf{Steven
+  Dubowsky}(2004)]{IagnemmaDubowsy2004}
+\textbf{Karl Iagnemma} and \textbf{Steven Dubowsky}.
+\newblock \textbf{Traction Control of Wheeled Robotic Vehicles in Rough Terrain
+  with Application to Planetary Rovers}.
+\newblock \emph{\textbf{The International Journal of Robotics Research}},
+  23:\penalty0 1029--1040, 11 2004.
+
+\bibitem[\textbf{Rathod, Niraj} et~al.(2021)\textbf{Rathod, Niraj},
+  \textbf{Bratta, Angelo}, \textbf{Focchi, Michele}, \textbf{Zanon, Mario},
+  \textbf{Villarreal, Octavio}, \textbf{Semini, Claudio}, and \textbf{Bemporad,
+  Alberto}]{rathod2021model}
+\textbf{Rathod, Niraj}, \textbf{Bratta, Angelo}, \textbf{Focchi, Michele},
+  \textbf{Zanon, Mario}, \textbf{Villarreal, Octavio}, \textbf{Semini,
+  Claudio}, and \textbf{Bemporad, Alberto}.
+\newblock \textbf{Model predictive control with environment adaptation for
+  legged locomotion}.
+\newblock \emph{\textbf{IEEE Access}}, 9:\penalty0 145710--145727, 2021.
+
 \bibitem[Spero and Jarvis()]{Spero2002Path}
 D.~J. Spero and R.~A. Jarvis.
 \newblock Path planning for a mobile robot in a rough terrain environment.
 \newblock In \emph{Proceedings of the Third International Workshop on Robot
   Motion and Control, 2002. RoMoCo'02.}
 
-\bibitem[Burgard et~al.(2016)Burgard, Hebert, and Bennewitz]{Burgard2016}
+\bibitem[Burgard et~al.(2016)Burgard, Hebert, and
+  Bennewitz]{chapter45handbookrobotics}
 W.~Burgard, M.~Hebert, and M.~Bennewitz.
-\newblock \emph{World Modeling}.
-\newblock 2016.
+\newblock World modelling.
+\newblock In B.~Siciliano and O.~Khatib, editors, \emph{Handbook of Robotics}.
+  2016.
 
 \bibitem[Fankhauser et~al.(2014)Fankhauser, Bloesch, Gehring, Hutter, and
   Siegwart]{fankhauser2014robot}
@@ -153,31 +188,28 @@ P.~G. Jayasekara, G.~Ishigami, and T.~Kubota.
 \newblock In \emph{International Symposium on Artificial Intelligence, Robotics
   and Automation in Space}.
 
-\bibitem[Amorim and Ventura()]{Amorim2014}
-D.~Amorim and R.~Ventura.
-\newblock Towards efficient path planning of a mobile robot on rough terrain.
-\newblock In \emph{2014 ieee international conference on autonomous robot
-  systems and competitions (icarsc)}.
-
 \bibitem[Yokokohji et~al.(2007)Yokokohji, Chaen, and Yoshikawa]{Yokokohji2007}
 Y.~Yokokohji, S.~Chaen, and T.~Yoshikawa.
 \newblock Evaluation of traversability of wheeled mobile robots on uneven
   terrains by a fractal terrain model.
 \newblock \emph{Advanced Robotics}, 2007.
 
-\bibitem[Ishigami et~al.()Ishigami, Nagatani, and
-  Yoshida]{Ishigami2007PathPlanning}
-G.~Ishigami, K.~Nagatani, and K.~Yoshida.
-\newblock Path planning for planetary exploration rovers and its evaluation
-  based on wheel slip dynamics.
-\newblock In \emph{Proceedings 2007 IEEE International Conference on Robotics
-  and Automation}.
+\bibitem[\textbf{Ishigami, Genya} et~al.()\textbf{Ishigami, Genya},
+  \textbf{Nagatani, Keiji}, and \textbf{Yoshida,
+  Kazuya}]{Ishigami2007PathPlanning}
+\textbf{Ishigami, Genya}, \textbf{Nagatani, Keiji}, and \textbf{Yoshida,
+  Kazuya}.
+\newblock \textbf{Path Planning for Planetary Exploration Rovers and Its
+  Evaluation based on Wheel Slip Dynamics}.
+\newblock In \emph{\textbf{Proceedings 2007 IEEE International Conference on
+  Robotics and Automation}}.
 
-\bibitem[Ventura and Ahmad(2015)]{Ventura2015}
-R.~Ventura and A.~Ahmad.
-\newblock Towards optimal robot navigation in domestic spaces.
-\newblock \emph{Lecture Notes in Artificial Intelligence (Subseries of Lecture
-  Notes in Computer Science)}, 8992:\penalty0 318--331, 1 2015.
+\bibitem[\textbf{Ventura, Rodrigo} and \textbf{Aamad,
+  Ahmad}(2015)]{Ventura2015}
+\textbf{Ventura, Rodrigo} and \textbf{Aamad, Ahmad}.
+\newblock \textbf{Towards Optimal Robot Navigation in Domestic Spaces}.
+\newblock \emph{{\textbf{Lecture Notes in Artificial Intelligence (Subseries of
+  Lecture Notes in Computer Science)}}}, 8992:\penalty0 318--331, 1 2015.
 
 \bibitem[Brooks and Iagnemma(2012)]{Brooks2012self}
 C.~A. Brooks and K.~Iagnemma.
@@ -216,19 +248,15 @@ S.~Garrido, D.~{\'A}lvarez, and L.~Moreno.
   V.~Mu{\~{n}}oz-Martinez, editors, \emph{Robot 2015: Second Iberian Robotics
   Conference}, pages 93--105, Cham, 2016. Springer International Publishing.
 
-\bibitem[Garrido et~al.(2009)Garrido, Moreno, Blanco, and
-  Martin]{garrido2009smooth}
-S.~Garrido, L.~Moreno, D.~Blanco, and F.~Martin.
-\newblock Smooth path planning for non-holonomic robots using fast marching.
-\newblock In \emph{2009 IEEE International Conference on Mechatronics}, pages
-  1--6. IEEE, 2009.
-
-\bibitem[Iagnemma and Dubowsky(2004)]{IagnemmaDubowsy2004}
-K.~Iagnemma and S.~Dubowsky.
-\newblock Traction control of wheeled robotic vehicles in rough terrain with
-  application to planetary rovers.
-\newblock \emph{The International Journal of Robotics Research}, 23:\penalty0
-  1029--1040, 11 2004.
+\bibitem[\textbf{Garrido, Santiago} et~al.(2009)\textbf{Garrido, Santiago},
+  \textbf{Moreno, Luis}, \textbf{Blanco, Dolores}, and \textbf{Martin,
+  Fernando}]{garrido2009smooth}
+\textbf{Garrido, Santiago}, \textbf{Moreno, Luis}, \textbf{Blanco, Dolores},
+  and \textbf{Martin, Fernando}.
+\newblock \textbf{Smooth path planning for non-holonomic robots using fast
+  marching}.
+\newblock In \emph{\textbf{2009 IEEE International Conference on
+  Mechatronics}}, pages 1--6. IEEE, 2009.
 
 \bibitem[Bussmann et~al.(2018)Bussmann, Dietrich, and
   Ott]{bussmannPlanetaryRoverImpedanceControl}
@@ -247,52 +275,54 @@ C.~J. Ostafew, A.~P. Schoellig, and T.~D. Barfoot.
   Automation (ICRA)}, pages 4029--4036, 2014.
 \newblock \doi{10.1109/ICRA.2014.6907444}.
 
-\bibitem[Binet et~al.(2012)Binet, Krenn, Bemporad, et~al.]{binet2012model}
-G.~Binet, R.~Krenn, A.~Bemporad, et~al.
-\newblock Model predictive control applications for planetary rovers.
-\newblock In \emph{Proc. 11th International Symposium on Artificial
-  Intelligence and Robotics in Space (iSAIRAS), Sept}, pages 4--6, 2012.
+\bibitem[\textbf{Binet, Giovanni} et~al.(2012)\textbf{Binet, Giovanni},
+  \textbf{Krenn, Rainer}, \textbf{Bemporad, Alberto}, et~al.]{binet2012model}
+\textbf{Binet, Giovanni}, \textbf{Krenn, Rainer}, \textbf{Bemporad, Alberto},
+  et~al.
+\newblock \textbf{Model predictive control applications for planetary rovers}.
+\newblock In \emph{\textbf{Proc. 11th International Symposium on Artificial
+  Intelligence and Robotics in Space (iSAIRAS), Sept}}, pages 4--6, 2012.
 
-\bibitem[Yu et~al.(2021)Yu, Shen, and Ersal]{yu2022nmpc}
-S.~Yu, C.~Shen, and T.~Ersal.
-\newblock Nonlinear model predictive planning and control for high-speed
-  autonomous vehicles on 3d terrains.
-\newblock \emph{IFAC-PapersOnLine}, 54\penalty0 (20):\penalty0 412--417, 2021.
-\newblock ISSN 2405-8963.
-\newblock \doi{https://doi.org/10.1016/j.ifacol.2021.11.208}.
-\newblock URL
-  \url{https://www.sciencedirect.com/science/article/pii/S2405896321022527}.
-\newblock Modeling, Estimation and Control Conference MECC 2021.
-
-\bibitem[Smith(2004)]{ode}
-R.~L. Smith.
-\newblock Open dynamics engine, 2004.
-\newblock URL \url{https://www.ode.org/}.
-
-\bibitem[Koenig and Howard(2004)]{Koenig-2004-394}
-N.~Koenig and A.~Howard.
-\newblock Design and use paradigms for gazebo, an open-source multi-robot
-  simulator.
-\newblock In \emph{IEEE/RSJ International Conference on Intelligent Robots and
-  Systems}, pages 2149--2154, Sendai, Japan, Sep 2004.
-
-\bibitem[Rathod et~al.(2021)Rathod, Bratta, Focchi, Zanon, Villarreal, Semini,
-  and Bemporad]{rathod2021model}
-N.~Rathod, A.~Bratta, M.~Focchi, M.~Zanon, O.~Villarreal, C.~Semini, and
-  A.~Bemporad.
-\newblock Model predictive control with environment adaptation for legged
-  locomotion.
-\newblock \emph{IEEE Access}, 9:\penalty0 145710--145727, 2021.
-
-\bibitem[Verschueren et~al.(2022)Verschueren, Frison, Kouzoupis, Frey,
-  Duijkeren, Zanelli, Novoselnik, Albin, Quirynen, and
-  Diehl]{verschueren2022acados}
-R.~Verschueren, G.~Frison, D.~Kouzoupis, J.~Frey, N.~v. Duijkeren, A.~Zanelli,
-  B.~Novoselnik, T.~Albin, R.~Quirynen, and M.~Diehl.
-\newblock acados—a modular open-source framework for fast embedded optimal
-  control.
-\newblock \emph{Mathematical Programming Computation}, 14\penalty0
+\bibitem[\textbf{Verschueren, Robin} et~al.(2022)\textbf{Verschueren, Robin},
+  \textbf{Frison, Gianluca}, \textbf{Kouzoupis, Dimitris}, \textbf{Frey,
+  Jonathan}, \textbf{Duijkeren, Niels van}, \textbf{Zanelli, Andrea},
+  \textbf{Novoselnik, Branimir}, \textbf{Albin, Thivaharan}, \textbf{Quirynen,
+  Rien}, and \textbf{Diehl, Moritz}]{verschueren2022acados}
+\textbf{Verschueren, Robin}, \textbf{Frison, Gianluca}, \textbf{Kouzoupis,
+  Dimitris}, \textbf{Frey, Jonathan}, \textbf{Duijkeren, Niels van},
+  \textbf{Zanelli, Andrea}, \textbf{Novoselnik, Branimir}, \textbf{Albin,
+  Thivaharan}, \textbf{Quirynen, Rien}, and \textbf{Diehl, Moritz}.
+\newblock \textbf{acados—a modular open-source framework for fast embedded
+  optimal control}.
+\newblock \emph{\textbf{Mathematical Programming Computation}}, 14\penalty0
   (1):\penalty0 147--183, 2022.
+
+\bibitem[Liniger et~al.(2015)Liniger, Domahidi, and
+  Morari]{liniger2015optimization}
+A.~Liniger, A.~Domahidi, and M.~Morari.
+\newblock Optimization-based autonomous racing of 1: 43 scale rc cars.
+\newblock \emph{Optimal Control Applications and Methods}, 36\penalty0
+  (5):\penalty0 628--647, 2015.
+
+\bibitem[Carneiro(2021)]{mpc_frenetserret}
+T.~Carneiro.
+\newblock Mpc motion control of an autonomous car.
+\newblock Master's thesis, January 2021.
+
+\bibitem[\textbf{Daniel Kloeser} et~al.(2020)\textbf{Daniel Kloeser},
+  \textbf{Tobias Schoels}, \textbf{Tommaso Sartor}, \textbf{Andrea Zanelli},
+  \textbf{Gianluca Prison}, and \textbf{Moritz Diehl}]{kloesernmpc}
+\textbf{Daniel Kloeser}, \textbf{Tobias Schoels}, \textbf{Tommaso Sartor},
+  \textbf{Andrea Zanelli}, \textbf{Gianluca Prison}, and \textbf{Moritz Diehl}.
+\newblock \textbf{NMPC for Racing Using a Singularity-Free Path-Parametric
+  Model with Obstacle Avoidance}.
+\newblock \emph{\textbf{IFAC-PapersOnLine}}, 53\penalty0 (2):\penalty0
+  14324--14329, 2020.
+\newblock ISSN 2405-8963.
+\newblock \doi{https://doi.org/10.1016/j.ifacol.2020.12.1376}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S2405896320317845}.
+\newblock \textbf{21st IFAC World Congress}.
 
 \bibitem[Rawlings and Mayne(2013)]{Rawlings2013}
 J.~B. Rawlings and D.~Q. Mayne.
@@ -322,23 +352,46 @@ K.~Iagnemma, C.~Brooks, and S.~Dubowsky.
   rovers.
 \newblock volume~2, pages 841--848, 2004.
 
-\bibitem[Peiret et~al.(2021)Peiret, Karpman, et~al.]{Peiret2021}
-A.~Peiret, E.~Karpman, et~al.
-\newblock Modelling of off-road wheeled vehicles for real-time dynamic
-  simulation.
-\newblock \emph{Journal of terramechanics}, pages 45--58, 4 2021.
+\bibitem[Chung and Iagnemma(2016)]{chapter24handbookrobotics}
+W.~Chung and K.~Iagnemma.
+\newblock Wheeled robots.
+\newblock In B.~Siciliano and O.~Khatib, editors, \emph{Handbook of Robotics}.
+  2016.
+
+\bibitem[Liniger(2012)]{liniger2012autonomous}
+A.~Liniger.
+\newblock Autonomous drift control.
+\newblock In \emph{Master Thesis ETH Zurich}, 2012.
+
+\bibitem[Lam et~al.(2010)Lam, Manzie, and Good]{lam2010model}
+D.~Lam, C.~Manzie, and M.~Good.
+\newblock Model predictive contouring control.
+\newblock In \emph{49th IEEE Conference on Decision and Control (CDC)}, pages
+  6137--6142. IEEE, 2010.
+
+\bibitem[\textbf{Schoels, Tobias} et~al.(2020{\natexlab{a}})\textbf{Schoels,
+  Tobias}, \textbf{Palmieri, Luigi}, \textbf{Arras, Kai O}, and \textbf{Diehl,
+  Moritz}]{schoels2020nmpc}
+\textbf{Schoels, Tobias}, \textbf{Palmieri, Luigi}, \textbf{Arras, Kai O}, and
+  \textbf{Diehl, Moritz}.
+\newblock \textbf{An NMPC approach using convex inner approximations for online
+  motion planning with guaranteed collision avoidance}.
+\newblock In \emph{\textbf{2020 IEEE International Conference on Robotics and
+  Automation (ICRA)}}, pages 3574--3580. \textbf{IEEE}, 2020{\natexlab{a}}.
 
 \bibitem[Sethian(1999)]{Sethian1999}
 J.~A. Sethian.
 \newblock Fast marching methods.
 \newblock \emph{SIAM Review}, 41:\penalty0 199--235, 1999.
 
-\bibitem[Valero-Gomez et~al.(2013)Valero-Gomez, Gómez, Garrido, and
-  Moreno]{fmAdvancedGomez}
-A.~Valero-Gomez, J.~Gómez, S.~Garrido, and L.~Moreno.
-\newblock Fast marching methods in path planning.
-\newblock \emph{IEEE Robotics and Automation Magazine}, 20:\penalty0 111 --
-  120, 12 2013.
+\bibitem[\textbf{Valero-Gomez, Alberto} et~al.(2013)\textbf{Valero-Gomez,
+  Alberto}, \textbf{Gómez, Javier}, \textbf{Garrido, Santiago}, and
+  \textbf{Moreno, Luis}]{fmAdvancedGomez}
+\textbf{Valero-Gomez, Alberto}, \textbf{Gómez, Javier}, \textbf{Garrido,
+  Santiago}, and \textbf{Moreno, Luis}.
+\newblock \textbf{Fast Marching Methods in Path Planning}.
+\newblock \emph{\textbf{IEEE Robotics and Automation Magazine}}, 20:\penalty0
+  111 -- 120, 12 2013.
 
 \bibitem[Diehl(2011)]{diehlnumericalocp}
 M.~Diehl.
@@ -352,15 +405,17 @@ M.~Diehl, H.~J. Ferreau, and N.~Haverbeke.
 \newblock \emph{Nonlinear model predictive control: towards new challenging
   applications}, pages 391--417, 2009.
 
-\bibitem[Gros et~al.(2020)Gros, Zanon, Quirynen, Bemporad, and
-  Diehl]{gros2020linear}
-S.~Gros, M.~Zanon, R.~Quirynen, A.~Bemporad, and M.~Diehl.
-\newblock From linear to nonlinear mpc: bridging the gap via the real-time
-  iteration.
-\newblock \emph{International Journal of Control}, 93\penalty0 (1):\penalty0
-  62--80, 2020.
+\bibitem[\textbf{Gros, Sébastien} et~al.(2020)\textbf{Gros, Sébastien},
+  \textbf{Zanon, Mario}, \textbf{Quirynen, Rien}, \textbf{Bemporad, Alberto},
+  and \textbf{Diehl, Moritz}]{gros2020linear}
+\textbf{Gros, Sébastien}, \textbf{Zanon, Mario}, \textbf{Quirynen, Rien},
+  \textbf{Bemporad, Alberto}, and \textbf{Diehl, Moritz}.
+\newblock \textbf{From linear to nonlinear MPC: bridging the gap via the
+  real-time iteration}.
+\newblock \emph{\textbf{International Journal of Control}}, 93\penalty0
+  (1):\penalty0 62--80, 2020.
 
-\bibitem[Silva(2022)]{Silva-Decentralized-trajectory-optimization-for-a-fleet-of-industrial-mobile-robots}
+\bibitem[Silva(2022)]{Silva2022msc}
 I.~S.~B. Silva.
 \newblock Decentralized trajectory optimization for a fleet of industrial
   mobile robots.
@@ -381,6 +436,12 @@ H.~G. Bock, M.~Diehl, P.~K{\"u}hl, E.~Kostina, J.~P. Schi{\"o}der, and
 \newblock In \emph{Assessment and future directions of nonlinear model
   predictive control}, pages 163--179. Springer, 2007.
 
+\bibitem[Behrendt(2009)]{mpcworkingprinciple}
+M.~Behrendt.
+\newblock A basic working principle of model predictive control, 2009.
+\newblock URL
+  \url{https://commons.wikimedia.org/wiki/File:MPC_scheme_basic.svg}.
+
 \bibitem[Ferreau et~al.(2014)Ferreau, Kirches, Potschka, Bock, and
   Diehl]{ferreau2014qpoases}
 H.~J. Ferreau, C.~Kirches, A.~Potschka, H.~G. Bock, and M.~Diehl.
@@ -399,17 +460,35 @@ M.~Diehl.
 \newblock \emph{Real-time optimization for large scale nonlinear processes}.
 \newblock PhD thesis, 2001.
 
-\bibitem[Andersson et~al.(2018)Andersson, Gillis, Horn, Rawlings, and
-  Diehl]{Andersson2018}
-J.~A.~E. Andersson, J.~Gillis, G.~Horn, J.~B. Rawlings, and M.~Diehl.
-\newblock {CasADi} -- {A} software framework for nonlinear optimization and
-  optimal control.
-\newblock \emph{Mathematical Programming Computation}, 2018.
+\bibitem[\textbf{Joel A E Andersson} et~al.(2018)\textbf{Joel A E Andersson},
+  \textbf{Joris Gillis}, \textbf{Greg Horn}, \textbf{James B Rawlings}, and
+  \textbf{Moritz Diehl}]{Andersson2018}
+\textbf{Joel A E Andersson}, \textbf{Joris Gillis}, \textbf{Greg Horn},
+  \textbf{James B Rawlings}, and \textbf{Moritz Diehl}.
+\newblock \textbf{{CasADi} -- {A} software framework for nonlinear optimization
+  and optimal control}.
+\newblock \emph{\textbf{Mathematical Programming Computation}}, 2018.
 
 \bibitem[Andersson and Rawlings(2018)]{andersson2018sensitivity}
 J.~A. Andersson and J.~B. Rawlings.
 \newblock Sensitivity analysis for nonlinear programming in casadi.
 \newblock 2018.
+
+\bibitem[\textbf{Schoels, Tobias} et~al.(2020{\natexlab{b}})\textbf{Schoels,
+  Tobias}, \textbf{Rutquist, Per}, \textbf{Palmieri, Luigi}, \textbf{Zanelli,
+  Andrea}, \textbf{Arras, Kai O}, and \textbf{Diehl, Moritz}]{schoels2020ciao}
+\textbf{Schoels, Tobias}, \textbf{Rutquist, Per}, \textbf{Palmieri, Luigi},
+  \textbf{Zanelli, Andrea}, \textbf{Arras, Kai O}, and \textbf{Diehl, Moritz}.
+\newblock \textbf{CIAO⁎: MPC-based Safe Motion Planning in Predictable
+  Dynamic Environments}.
+\newblock \emph{\textbf{IFAC-PapersOnLine}}, 53\penalty0 (2):\penalty0
+  6555--6562, 2020{\natexlab{b}}.
+
+\bibitem[Minguez et~al.(2016)Minguez, Lamiraux, and
+  Laumond]{chapter47handbookrobotics}
+J.~Minguez, F.~Lamiraux, and J.-P. Laumond.
+\newblock \emph{Motion Planning and obstacle avoidance}.
+\newblock 2016.
 
 \bibitem[Roithmayr and Hodges(2015)]{Roithmayr2015}
 C.~M. Roithmayr and D.~H. Hodges.
@@ -431,5 +510,12 @@ R.~Quirynen, M.~Vukov, M.~Zanon, and M.~Diehl.
   using acado integrators.
 \newblock \emph{Optimal Control Applications and Methods}, 36\penalty0
   (5):\penalty0 685--704, 2015.
+
+\bibitem[Lawrence(1972)]{lawrence1972catalog}
+J.~D. Lawrence.
+\newblock \emph{A catalog of special plane curves}.
+\newblock Dover Publications, New York, 1972.
+\newblock ISBN 0486602885.
+\newblock Republished in 2013 by Dover Publications, ISBN: 978-0486602882.
 
 \end{thebibliography}
