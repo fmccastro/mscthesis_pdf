@@ -172,7 +172,7 @@ Terrain traversability may also be evaluated by inspecting terrain roughness aro
 , where $\underline{\RobotHullArea}_2$ denotes a finite set of points from $\FunctionElevation_d(\cdot)$ inside $\RobotHullArea_2$ and $\bar{\FunctionElevation}_d(i, j)$ stands as the average of elevations of points inside $\RobotHullArea_2$. Then, terrain roughness is defined as,
 
 \begin{equation}
-	\FunctionTraversability_d(i,\,j) = \sqrt{\frac{\sum_{\x_i,\,\y_j \in \RobotHullArea_2} \left( \FunctionElevation(i,\,j) - \bar{\FunctionElevation}(i,\,j) \right)^2 }{n(\underline{\RobotHullArea}_2)}}
+	\FunctionTraversability_d(i,\,j) = \sqrt{\frac{\sum_{\x_i,\,\y_j \in \RobotHullArea_2} \left( \FunctionElevation_d(i,\,j) - \bar{\FunctionElevation}_d(i,\,j) \right)^2 }{n(\underline{\RobotHullArea}_2)}}
 	\label{eq:terrainRoughness}
 \end{equation}
 

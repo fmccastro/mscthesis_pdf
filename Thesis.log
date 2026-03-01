@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.11)  24 FEB 2026 12:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.11)  1 MAR 2026 15:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4445,7 +4445,7 @@ Package rerunfilecheck Info: File `Thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  58890 strings out of 470046
  1442570 string characters out of 5481956
- 2079653 words of memory out of 5000000
+ 2080653 words of memory out of 5000000
  85589 multiletter control sequences out of 15000+600000
  687329 words of font info for 146 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -4490,7 +4490,7 @@ tall/fonts/type1/urw/helvetic/uhvb8a.pfb></home/francisco/.miktex/texmfs/instal
 l/fonts/type1/urw/helvetic/uhvbo8a.pfb></home/francisco/.miktex/texmfs/install/
 fonts/type1/urw/helvetic/uhvr8a.pfb></home/francisco/.miktex/texmfs/install/fon
 ts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Thesis.pdf (118 pages, 23033038 bytes).
+Output written on Thesis.pdf (118 pages, 23033042 bytes).
 PDF statistics:
  5460 PDF objects out of 6186 (max. 8388607)
  736 named destinations out of 1000 (max. 500000)
