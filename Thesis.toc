@@ -13,76 +13,71 @@
 \contentsline {section}{\numberline {1.4}Objectives}{4}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Contributions}{5}{section.1.5}%
 \contentsline {section}{\numberline {1.6}Thesis Outline}{5}{section.1.6}%
-\contentsline {chapter}{\numberline {2}State of the art}{7}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Background}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Path planning algorithms}{7}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}World modelling}{7}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Path planning}{9}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}\acrlong {ocp} applications to rough terrain}{9}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Proposed Approach}{11}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Problem formulation}{11}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Optimal path planning}{11}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Mobile robot kinematics}{12}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Wheel kinematics}{12}{subsection.3.3.1}%
-\contentsline {section}{\numberline {3.4}Mobile robot dynamics}{13}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Wheel actuation}{14}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Wheel-terrain contact model}{15}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}Full state-space model}{16}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Steering mechanisms}{17}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Comparison among \acrshort {nmpc} formulations}{18}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Model validation}{19}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Maximum inclination}{20}{subsection.3.6.1}%
-\contentsline {chapter}{\numberline {4}Background}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}\acrlong {fmm}}{21}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Eikonal equation discretization}{22}{subsection.4.1.1}%
-\contentsline {section}{\numberline {4.2}\acrlong {nlp}}{22}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Inequality Constrained Optimization}{23}{subsection.4.2.1}%
-\contentsline {section}{\numberline {4.3}\acrlong {ocp}}{25}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Discretization methods of an \acrlong {ocp}}{26}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Linearisation after discretization}{27}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Nonlinear Model Predictive Control}{30}{subsection.4.3.3}%
-\contentsline {chapter}{\numberline {5}Global path planner}{33}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Traversability map computation}{33}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Height minimization}{33}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Maximum terrain roughness}{36}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Worst-case scenario}{36}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Implementation}{37}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}Discussion}{39}{subsection.5.1.5}%
-\contentsline {section}{\numberline {5.2}Optimal path planning}{41}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Implementation}{41}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Discussion}{43}{subsection.5.2.2}%
-\contentsline {chapter}{\numberline {6}\acrlong {nmpc}}{45}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Control algorithm architectures}{45}{section.6.1}%
-\contentsline {section}{\numberline {6.2}One-stage planar \acrshort {ocp}}{47}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}One-stage \acrshort {ocp} architectures}{48}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Solver parameters survey}{49}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Real-time one-stage planar \acrshort {ocp}}{53}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Real-time one-stage \acrshort {ocp} on rough terrain}{58}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Moving on hill}{59}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Traversal of rough, uneven terrain}{60}{subsection.6.3.2}%
-\contentsline {chapter}{\numberline {7}Obstacle avoidance}{67}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Safe reference generation}{67}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}\acrlong {ciao} (\acrshort {ciao}) algorithm}{67}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Baseline reference deformation}{70}{subsection.7.1.2}%
-\contentsline {section}{\numberline {7.2}Real-time safe \acrshort {nmpc} on irregular terrain}{71}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Simultaneous path tracking and obstacle avoidance on rough terrain}{73}{subsection.7.2.1}%
-\contentsline {chapter}{\numberline {8}Conclusions}{78}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Future Work}{78}{section.8.1}%
-\contentsline {chapter}{Bibliography}{80}{section*.92}%
-\contentsline {chapter}{\numberline {A}Mathematical snippet}{86}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Euler angles}{86}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Inertia tensor}{87}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Differentiation of a vector}{87}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Runge-Kutta 4 numerical integrator}{87}{section.A.4}%
-\contentsline {subsection}{\numberline {A.4.1}Sensitivities propagation}{88}{subsection.A.4.1}%
-\contentsline {section}{\numberline {A.5}Parallel-axis theorem}{88}{section.A.5}%
-\contentsline {section}{\numberline {A.6}Linear algebra}{89}{section.A.6}%
-\contentsline {section}{\numberline {A.7}Euler angles determination}{89}{section.A.7}%
-\contentsline {section}{\numberline {A.8}Lissajous curves}{90}{section.A.8}%
-\contentsline {chapter}{\numberline {B}Nonlinear optimization snippet}{91}{appendix.B}%
-\contentsline {section}{\numberline {B.1}General definitions}{91}{section.B.1}%
-\contentsline {section}{\numberline {B.2}Convex optimization}{92}{section.B.2}%
-\contentsline {chapter}{\numberline {C}Miscellaneous}{94}{appendix.C}%
-\contentsline {section}{\numberline {C.1}Traversability maps}{94}{section.C.1}%
-\contentsline {section}{\numberline {C.2}Performance metrics of controllers}{95}{section.C.2}%
-\contentsline {subsection}{\numberline {C.2.1}One-stage planar \acrshort {ocp}}{95}{subsection.C.2.1}%
-\contentsline {subsection}{\numberline {C.2.2}Real-time one-stage \acrshort {ocp} on rough, uneven terrain}{96}{subsection.C.2.2}%
+\contentsline {subsection}{\numberline {2.1.2}Literature review}{9}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Fast marching method}{10}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Optimal control literature review}{11}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Nonlinear programming}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Optimal control problem}{14}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Discretization methods of an optimal control problem}{15}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Linearisation after discretization}{17}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Nonlinear Model Predictive Control}{19}{subsection.2.4.3}%
+\contentsline {chapter}{\numberline {3}Proposed Approach}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Problem formulation}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Optimal path planning}{23}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Mobile robot kinematics}{24}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Mobile robot dynamics}{25}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Wheel actuation}{26}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Wheel-terrain contact model}{27}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}State-space model}{29}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Model simplification}{29}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Comparison among \acrshort {nmpc} formulations}{30}{subsection.3.5.2}%
+\contentsline {section}{\numberline {3.6}Model validation}{31}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Maximum inclination}{32}{subsection.3.6.1}%
+\contentsline {chapter}{\numberline {4}Global path planner}{33}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Traversability map computation}{33}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Height minimization}{33}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Maximum terrain roughness}{36}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Worst-case scenario}{36}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Implementation}{37}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Discussion}{39}{subsection.4.1.5}%
+\contentsline {section}{\numberline {4.2}Optimal path planning}{41}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Implementation}{41}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Discussion}{43}{subsection.4.2.2}%
+\contentsline {chapter}{\numberline {5}\acrlong {nmpc}}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Control algorithm architectures}{45}{section.5.1}%
+\contentsline {section}{\numberline {5.2}One-stage planar \acrshort {ocp}}{47}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}One-stage \acrshort {ocp} architectures}{48}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Solver parameters survey}{49}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Real-time one-stage planar \acrshort {ocp}}{53}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Real-time one-stage \acrshort {ocp} on rough terrain}{58}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Moving on hill}{59}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Traversal of rough, uneven terrain}{60}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Obstacle avoidance}{67}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Safe reference generation}{67}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}\acrlong {ciao} (\acrshort {ciao}) algorithm}{67}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Baseline reference deformation}{70}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Real-time safe \acrshort {nmpc} on irregular terrain}{71}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Simultaneous path tracking and obstacle avoidance on rough terrain}{73}{subsection.6.2.1}%
+\contentsline {chapter}{\numberline {7}Conclusions}{78}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Future Work}{78}{section.7.1}%
+\contentsline {chapter}{Bibliography}{80}{section*.93}%
+\contentsline {chapter}{\numberline {A}Mathematical review}{85}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Euler angles}{85}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Inertia tensor}{86}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Differentiation of a vector}{86}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Runge-Kutta 4 numerical integrator}{86}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Parallel-axis theorem}{87}{section.A.5}%
+\contentsline {section}{\numberline {A.6}Linear algebra}{88}{section.A.6}%
+\contentsline {section}{\numberline {A.7}Euler angles determination}{88}{section.A.7}%
+\contentsline {section}{\numberline {A.8}Lissajous curves}{89}{section.A.8}%
+\contentsline {chapter}{\numberline {B}Nonlinear optimization review}{90}{appendix.B}%
+\contentsline {section}{\numberline {B.1}General definitions}{90}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Convex optimization}{91}{section.B.2}%
+\contentsline {chapter}{\numberline {C}Miscellaneous}{93}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Traversability maps}{93}{section.C.1}%
+\contentsline {section}{\numberline {C.2}Performance metrics of controllers}{94}{section.C.2}%
+\contentsline {subsection}{\numberline {C.2.1}One-stage planar \acrshort {ocp}}{94}{subsection.C.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}Real-time one-stage \acrshort {ocp} on rough, uneven terrain}{95}{subsection.C.2.2}%

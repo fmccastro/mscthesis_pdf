@@ -1,4 +1,4 @@
-\chapter{Nonlinear optimization snippet}
+\chapter{Nonlinear optimization review}
 \label{chapter:nlpsnippet}
 
 \section{General definitions}
@@ -84,7 +84,7 @@ From a different perspective, \acrshort{licq} is equivalent to full row rank of 
 \label{eq:licqmatrix}
 \end{equation}
 
-\begin{definition}[Complementary conditions]
+\begin{definition}[Complementarity conditions]
 The last three \acrshort{kkt} conditions (\ref{subeq:compcond1}, \ref{subeq:compcond2}, \ref{subeq:compcond3}) are called the complementarity conditions.
 \end{definition}
 
@@ -120,6 +120,8 @@ Let us regard a point $\mathbf{w}^*$ at which LICQ holds together with multiplie
 \item (Second Order Necessary Condition) If $\mathbf{w}^*$ is a local minimzer, then $\mathbf{Z}^T \, \nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*} \, \mathbf{Z} \succeq 0$.\\
 \item (Second Order Sufficient Condition) If $\mathbf{Z}^T \, \nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*} \, \mathbf{Z} \succ 0$, then $\mathbf{w}^*$ is a local minimizer. This minimizer is unique in its neighborhood, i.e., a strict local minimizer and stable against small differentiable perturbations of the problem data.
 \end{enumerate}
+
+\label{theorem:sooc}
 \end{theorem}
 
 \begin{definition}[Reduced hessian]

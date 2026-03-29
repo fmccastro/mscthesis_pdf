@@ -59,7 +59,6 @@
 %
 \usepackage{notoccite}
 
-
 % ----------------------------------------------------------------------
 % Define document language.
 % ----------------------------------------------------------------------
@@ -571,6 +570,13 @@
 
 \usepackage{paracol}
 
+\usepackage{threeparttable}
+
+%	tablefootnote package
+%
+%	It allows for footnotes on figure captions.
+\usepackage{tablefootnote}
+
 % 'enumitem' package
 %
 % Type customized bullets within itemize or
@@ -811,6 +817,9 @@
 \newcommand{\DerBold}[1]{\bm{\dot{#1}}}
 
 \newcommand{\derivative}[1]{\frac{d #1}{dt}}
+
+%%%	Call equation	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\refeq}[1]{equation \eqref{#1}}
 
 \newtheorem{assumption}{Assumption}[chapter]
 \newtheorem{definition}{Definition}[chapter]

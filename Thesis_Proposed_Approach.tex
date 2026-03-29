@@ -17,33 +17,33 @@ This chapter presents some guidelines to approach the solution of the problem fo
 \section{Problem formulation}
 \label{section:problemFormulation}
 
-The problem laid out in this thesis is to yield a Nonlinear Model Predictive Control (\acrshort{nmpc}) \cite{Rawlings2013, grunenmpc} algorithm $\mathbb{P}$, which models the kinematics and dynamics of a rigid wheeled, autonomous robot $\mathcal{R}$ as well as its interactions with the terrain during the traversal of a known, off-the-road, uneven terrain map $\mathcal{M} \subset \mathbb{R}^3$. It is required that the robot avoids untraversable areas or obstacles $\mathcal{\ObstacleSpace} \subset \mathcal{\Map}$ and tracks a traversable pathway, starting from a given initial admissable pose $\mathcal{R}_\mathbf{p} \subset \SafeSpace$, where $\mathcal{R}_\mathbf{p}$ denotes the robot circled hull around $\mathbf{p}$ and $\SafeSpace$ a safe space far away from $\ObstacleSpace$. Moreover, the robot $\mathcal{R}$ shall make a fast, safe and slippage-free traverse, as well as minimizing the energy consumed by the robot battery.  The algorithm $\mathbb{P}$ must deliver optimal solutions and meet stringent real-time requirements.
+This thesis addresses the problem of developing a nonlinear model predictive control (NMPC) \cite{Rawlings2013, grunenmpc} algorithm, which models the kinematics and dynamics of a rigid wheeled, autonomous robot $\mathcal{R}$ as well as its interactions with the terrain during the traversal of a known, off-the-road, uneven terrain map $\mathcal{M} \subset \mathbb{R}^3$. It is required that the vehicle avoids untraversable areas or obstacles $\mathcal{\ObstacleSpace} \subset \mathcal{\Map}$ and tracks a traversable pathway, starting from a given initial admissable pose $\mathcal{R}_{\mathbf{p}_2} \subset \SafeSpace$, where $\mathcal{R}_{\mathbf{p}_2}$ denotes the robot circled hull around $\mathbf{p}_2$ and $\SafeSpace$ is a safe space, such that $\SafeSpace \cap \ObstacleSpace = \emptyset$. A minimum safety distance to the nearest obstacle shall be ensured so that $\underset{\mathbf{p}_2 \in \SafeSpace,\, \mathbf{o} \in \ObstacleSpace}{\text{min}}\; d(\mathbf{p}_2, \mathbf{o}) > \underline{d}$. Moreover, the robot $\mathcal{R}$ shall make a fast, safe and slippage-free traverse.  The NMPC algorithm must deliver optimal solutions and meet stringent real-time requirements.
 
 \section{Optimal path planning}
 \label{section:approachOptimalPathPlanning}
 
-Although this thesis is mainly focused on \acrlong{nmpc} applications to rough terrain, optimal path planning methods for this kind of terrain are also surveyed.
+Although this thesis is mainly focused on nonlinear model predictive control applications to rough terrain, optimal path planning methods for this kind of terrain are also surveyed.
 
 \begin{assumption}
-	The elevation map is assumed to be known \ti{a-priori} without uncertainties, resembling the fact that planetary terrains are scanned \ti{prior} to the placement of a rover on the ground.
+	The elevation map is assumed to be known \ti{a-priori} without uncertainties.
 	\label{assumption:elevationmap}
 \end{assumption}
 
-Due to its compactness and simplicity, \acrlong{dem}(\acrshort{dem}) are chosen to describe the elevation $\z_{ij}$ at each location $(\x_i, \y_j)$. Then, from the compacted data, a cost map is generated in order to yield a traversability map  of the environment, by assigining a traversability cost $\TraversabilityCost_{ij}$ to each grid point $(\x_i, \y_j)$. This choice stems from the fact that this is a popular trend in the planetary robotics literature, but also because it is easily combined with a minimum-cost planner algorithm, in order to output a global planner. These maps are considered to share the same frame, because both maps match at the origin.
+Due to its compactness and simplicity, digital elevation maps (DEM) are chosen to describe the elevation $\z_{ij}$ at each location $(\x_i, \y_j)$. Then, from the compacted data, a cost map is generated in order to yield a traversability map  of the environment, by assigining a traversability cost $\TraversabilityCost_{ij}$ to each grid point $(\x_i, \y_j)$. This choice stems from the literature review presented in subsection \ref{subsection:pathPlanning}, but also because it is easily combined with a minimum-cost planner algorithm, in order to output a global planner. These maps are considered to share the same frame.
 
-Then, some method shall be found to process the \acrshort{dem} information against the mobile robot kinematic features (the dynamics features were neglected in this analysis). The map's roughness and inclination shall be evaluated. From the traversability map that comes from this algorithm, an optimal path shall be delivered.
+Then, some method shall be found to process the DEM information against the mobile robot kinematic features (the dynamics features were neglected in this analysis). At the end, the terrain roughness and inclination shall be evaluated. From the traversability map that comes from this algorithm, an optimal path shall be dgenerated.
 
-To meet that end, the fast marching method has come up as a reliable solution to this problem, as it delivers a potential field with an unique minimum point at the goal. The work of \citet{Amorim2014} has shed some light on this, whereas \citet{Ishigami2007PathPlanning} provides some guidance regarding the roughness map computation.
+To meet that end, an optimal path planner based on the fast marching method is developed to solve this problem, as it delivers a potential field with an unique minimum point at the goal. The work of \citet{Amorim2014} sheds some light on this, whereas \citet{Ishigami2007PathPlanning} provides some guidance regarding the roughness map computation.
 
 \section{Mobile robot kinematics}
 \label{section:robotkinematics}
 
-Kinematics describe the motion geometry of a point or body according to the provided actuations. A four-wheeled rover-like kinematics model is to be derived in this chapter, which can be applied both to skid-steering or differentially driven mobile robots.
+Kinematics describe the motion geometry of a point or body according to the provided actuations. A four-wheeled rigid vehicle kinematics model is derived in this chapter, which can be applied both to skid-steering or differentially driven mobile robots.
 
-A wheeled mobile robot $\Robot$ is moving on a map $\Map$, which is centered at the origin of an inertial frame $\WorldFrame$. A moving frame $\BodyFrame$ is centered on the robot's center of mass \acrshort{com} and it is fixed to $\Robot$. Although the mobile robot operates on unstructured, uneven, off-the-road terrains, not all \acrshort{dof} are controllable. This issue is addressed in the following sections.
+A wheeled mobile robot $\Robot$ is moving on a map $\Map$, which is centered at the origin of an inertial frame $\WorldFrame$. A moving frame $\BodyFrame$ is centered on the robot's center of mass \acrshort{com} and it is fixed to $\Robot$. Although the mobile robot operates on unstructured, uneven, off-the-road terrains, not all degrees of freedom are controllable. This issue is addressed in the following sections.
 
 \begin{assumption}
-	In moving frame $\BodyFrame$, $\BodyFrame_x$ points forward, $\BodyFrame_y$ points to the left and $\BodyFrame_z$ points upwards. Regarding world frame $\WorldFrame$, its axis directions are dictated by ROS' standard axis directions \cite{Foote2010}.
+	In moving frame $\BodyFrame$, $\BodyFrame_x$ points forward, $\BodyFrame_y$ points to the left and $\BodyFrame_z$ points upwards.
 	\label{assumption:frames}
 \end{assumption}
 
@@ -64,17 +64,17 @@ The mobile robot position and orientation with respect to frame $\WorldFrame$ is
 	\end{equation}
 \end{minipage}
 
-\subsection{Wheel kinematics}
+\subsection*{Wheel kinematics}
 \label{subsection:wheelKinematics}
 
-A kinematics model is not only described by its free-body motion equations \ref{eq:translationFreeBody} and \ref{eq:rotationFreeBody}, but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\Torque_i$, which induces on it a spin rate, $\AngVelocity_i,\, i = 1,\,...,\,N_w$, where $N_w = 4$ for the cases presented in this thesis.
+A kinematics model is not only described by its free-body motion equations \eqref{eq:translationFreeBody} and \eqref{eq:rotationFreeBody}, but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\Torque_i$, which induces on it a spin rate, $\AngVelocity_i,\, i = 1,\,...,\,N_w$, where $N_w = 4$ for the cases presented in this thesis.
 
 \begin{assumption}
 	The thickness and deformation of each wheel are neglected so that the wheel is assumed to be rigid and to contact the terrain at a single contact point $\contactPoint_i$, in case rigid terrain is the working environment \cite{Iagnemma2004}.
 	\label{assumption:singlePointContact}
 \end{assumption}
 
-Due to the fact that wheels are fixed, the mobile robot holds two controllable \acrshort{dof}: translation along its longitudinal direction $\BodyFrame_x$, and rotation around its vertical axis $\BodyFrame_z$. Therefore, lateral skidding from the vehicle is expected to remain close to zero on flat terrain, although its wheels are prone to skidding when the mobile robot finds itself on uneven or inclined surfaces (figure \ref{fig:wheelForcesMoments}). Moreover, the velocity vector of each wheel is tangent to the terrain that wheel is touching on.
+Due to the fact that wheels are fixed, the mobile robot holds two controllable degrees of freedom: translation along its longitudinal direction $\BodyFrame_x$, and rotation around its vertical axis $\BodyFrame_z$. Therefore, lateral skidding from the vehicle is expected to remain close to zero on flat terrain, although its wheels are prone to skidding when the mobile robot finds itself on uneven or inclined surfaces (figure \ref{fig:wheelForcesMoments}). Moreover, the velocity vector of each wheel is tangent to the terrain that each wheel is touching on.
 
 The terrain profile imposes $\wx$ and $\wy$. On the other hand, the existence of holes or bumps force $\vz$ to be different from zero. $\vy$ rises above zero in case of lateral skidding.
 
@@ -84,7 +84,7 @@ The terrain profile imposes $\wx$ and $\wy$. On the other hand, the existence of
 
 A dynamics model describes the motion of a point or body subject to external forces. These forces may include gravity, wind blows, wheel-terrain traction or external agents disturbances. 
 
-On a mobile robot real-life application, a dynamics model is mainly triggered by gravity and wheel torques, which are actuated by electrical currents. A velocity change is to be expected, which will in turn yield an updated pose (figure \ref{fig:mobRobotSystems}).
+On a mobile robot real-life application, a dynamics model is mainly triggered by gravity and wheel torques, which are actuated by electrical currents. A velocity change is expected, which will in turn yield an updated pose (figure \ref{fig:mobRobotSystems}).
 
 \begin{figure}[!h]
 	\centering
@@ -114,7 +114,7 @@ On a mobile robot real-life application, a dynamics model is mainly triggered by
     \label{fig:mobRobotSystems}
 \end{figure}
 
-The presented wheeled mobile robot model contains four controllable joints at each wheel \acrshort{com}, which are located at each wheel's center, plus four steering joints in case this feature is enabled. The mobile robot may roll, pitch or fall vertically with respect to frame $\BodyFrame$, because it will be moving through irregular terrain, which changes the balance of forces the mobile robot is subject to. Moreover, external forces (e.g. friction contact, wheel-terrain traction) and gravity are also taken into account in this general model. Typically, wind force is also an external force which acts on the mobile robot body at outdoor environments, but its effect was not introduced in this thesis.
+The presented wheeled mobile robot model contains four controllable joints at each wheel center of mass, which are located at each wheel's center, plus four steering joints in case this feature is enabled. The mobile robot may roll, pitch or fall vertically with respect to frame $\BodyFrame$, because it will be moving through irregular terrain, which changes the balance of forces the mobile robot is subject to. Moreover, external forces (e.g. wheel traction) and gravity are also taken into account in this general model. Typically, wind force is also an external force which acts on the mobile robot body at outdoor environments, but its effect was not introduced in this thesis.
 
 \begin{figure}[!h]
 	\centering
@@ -244,9 +244,9 @@ The presented wheeled mobile robot model contains four controllable joints at ea
     \label{fig:wheelForcesMoments}
 \end{figure}
 
-Each wheel joint can only be actuated around the wheel horizontal axis, which is parallel to $\WheelFrame_y^i$. Then, it also holds a contact frame $\WheelFrame^i$ which follows up the terrain slope. Apart from it, each wheel is subject to forces and moments coming from its interaction with the terrain or due to gravity (figure \ref{fig:wheelForcesMoments}). Finally, these forces and moments shall be expressed with respect to frame $\BodyFrame$ and summed up in order to feed the dynamics relationship of the mobile robot (equation \ref{eq:dynamics}).
+Each wheel joint can only be actuated around the wheel horizontal axis, which is parallel to $\WheelFrame_y^i$. Then, it also holds a contact frame $\WheelFrame^i$ which follows up the terrain slope. Apart from it, each wheel is subject to forces and moments coming from its interaction with the terrain or due to gravity (figure \ref{fig:wheelForcesMoments}). Finally, these forces and moments shall be expressed with respect to frame $\BodyFrame$ and summed up in order to feed the dynamics relationship of the mobile robot, which yields \refeq{eq:dynamics}.
 
-The weight distribution on the mobile robot wheels is influenced by its roll and pitch. A dynamics model is derived based on Newton's second law. The angular momentum rate of change of the whole mobile robot around its \acrshort{com} is also considered.
+The weight distribution on the mobile robot wheels is influenced by its roll and pitch. A dynamics model is derived based on Newton's second law. The angular momentum rate of change of the whole mobile robot around its COM is also considered.
 
 \begin{equation}
 	\begin{aligned}
@@ -256,42 +256,50 @@ The weight distribution on the mobile robot wheels is influenced by its roll and
 	\label{eq:dynamics}
 \end{equation}
 
-, where $\Mass$ stands for the mobile robot mass. Moreover, $\mathbf{\InertiaTensor}$ denotes the inertia tensor of the mobile robot with respect to frame $\BodyFrame$. Furthermore, $\mathbf{\Force} = [\Force_x \; \Force_y \; \Force_z]^T$ stands for the sum of forces acting on the system and $\mathbf{\Moment} = [\Moment_x \; \Moment_y \; \Moment_z]^T$ denotes the sum of moments. $\mathbf{\Force}$ and $\mathbf{\Moment}$ are expressed with respect to frame $\BodyFrame$. 
+\noindent , where $\Mass$ stands for the mobile robot mass. Moreover, $\mathbf{\InertiaTensor}$ denotes the inertia tensor of the mobile robot with respect to frame $\BodyFrame$. Furthermore, $\mathbf{\Force} = [\Force_x\;\Force_y\;\Force_z]^T$ stands for the sum of forces acting on the system and $\mathbf{\Moment} = [\Moment_x \; \Moment_y \; \Moment_z]^T$ denotes the sum of moments. $\mathbf{\Force}$ and $\mathbf{\Moment}$ are expressed with respect to frame $\BodyFrame$. 
 
-Equation \ref{eq:dynamics} may be obtained by applying the second newton law for translational and rotational dynamics. It is of interest to find out a dynamics formulation which is expressed with respect to $\BodyFrame$, because $\mathbf{\InertiaTensor}$ is constant there, but also because it is more intuitive to think of velocities, forces and moments with respect to $\BodyFrame$. In case the linear and angular moments are defined by $\mathbf{\linearMoment} = \Mass \mathbf{\LinVelocity}$ and $\mathbf{\angularMoment} = \mathbf{\InertiaTensor} \bm{\AngVelocity}$ respectively, it is possible to derive a dynamics formulation with the help of equation \ref{eq:vectorDiff2}.
+Equation \eqref{eq:dynamics} may be obtained by applying the second newton law for translational and rotational dynamics. It is of interest to find out a dynamics formulation which is expressed with respect to $\BodyFrame$, because $\mathbf{\InertiaTensor}$ is time invariant there, but also because it is more intuitive to think of velocities, forces and moments with respect to $\BodyFrame$. In case the linear and angular moments are defined by $\mathbf{\linearMoment} = \Mass \mathbf{\LinVelocity}$ and $\mathbf{\angularMoment} = \mathbf{\InertiaTensor} \bm{\AngVelocity}$ respectively, it is possible to derive a dynamics formulation by applying \refeq{eq:vectorDiff2} with respect to inertial frame $\WorldFrame$ and non-inertial frame $\BodyFrame$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Wheel actuation}
 \label{subsection:wheelActuation}
 
-Every wheel is commanded by a torque, $\bm{\Torque}_i$. That torque yields a traction force $\mathbf{\Traction}_i$ which is expressed with respect to the wheel frame $\WheelFrame^i$ (figure \ref{fig:wheelForcesMoments}). The traction force $\mathbf{\Traction}_i$ only holds a single longitudinal component within $\WheelFrame^i$. $\mathbf{\Traction}_i$ is the result of the action of the soil on the wheel at $\contactPoint_i$. Therefore, the force produced by $\bm{\Torque}_i$ on the soil opposes $\mathbf{\Traction}_i$.
+Every wheel is commanded by a torque, $\bm{\Torque}_i$. That torque yields a traction force $\mathbf{\Traction}_i$ which is expressed with respect to wheel frame $\WheelFrame^i$ (figure \ref{fig:wheelForcesMoments}). The traction force $\mathbf{\Traction}_i$ only holds a single longitudinal component within $\WheelFrame^i$. $\mathbf{\Traction}_i$ is the result of the action of the soil on the wheel at $\contactPoint_i$. Therefore, the force produced by $\bm{\Torque}_i$ on the soil opposes $\mathbf{\Traction}_i$.
 
 \begin{assumption}
-In this thesis, it is considered that every wheel lies on the same plane at a given time. Then, every wheel contact frame $\WheelFrame^i$ matches $\BodyFrame$.
+In this thesis, it is considered that every wheel lies on the same plane at a given time. Then, every wheel contact frame $\WheelFrame^i$ is parallel to $\BodyFrame$.
 \label{assumption:contactbodyframes}
 \end{assumption}
 
-Therefore, in order to determine the total force and moment produced by wheel actuation, one needs to express every traction force $\mathbf{\Traction}_i$ with respect to $\BodyFrame$, by taking into account equation \ref{eq:rotationMatrixW2BRotationalInverse}. Then, the sum of traction forces, $\mathbf{\Traction}$, with respect to $\BodyFrame$ is expressed by,
+The consequence of assumption \ref{assumption:contactbodyframes} is that every traction force $\mathbf{\Traction}_i$ is already expressed with respect to $\BodyFrame$. Then, the sum of traction forces, $\mathbf{\Traction}$, with respect to $\BodyFrame$ is simply expressed by,
 
-\begin{equation}
-	\mathbf{\Traction} = \sum_{i = 1}^{4} \mathbf{\Traction}_i
-	\label{eq:totalActuatedForce}
-\end{equation}
+\hfill
+\begin{minipage}{0.45\linewidth}
+	\centering
+	\begin{equation}
+		\mathbf{\Traction} = \sum_{i = 1}^{4} \mathbf{\Traction}_i
+		\label{eq:totalActuatedForce}
+	\end{equation}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+	\centering
+	\begin{equation}
+		\mathbf{\Moment}_{\mathbf{\Traction}} = \sum_{i = 1}^{4} \mathbf{\contactPoint}_i \times \mathbf{\Traction}_i
+		\label{eq:totalActuatedMoment}	
+	\end{equation}
+\end{minipage}
+
+\hfill
+
+\noindent, where $\mathbf{\contactPoint}_i$ is a vector connecting the mobile robot \acrshort{com} to the contact point $\contactPoint_i$, with respect to $\BodyFrame$.
 
 The traction forces produced by wheel torque actuation may also output a moment around \acrshort{com} with respect to $\BodyFrame$.
-
-\begin{equation}
-	\mathbf{\Moment}_{\mathbf{\Traction}} = \sum_{i = 1}^{4} \mathbf{\contactPoint}_i \times \mathbf{\Traction}_i
-	\label{eq:totalActuatedMoment}
-\end{equation}
-
-, where $\mathbf{\contactPoint}_i$ is a vector connecting the mobile robot \acrshort{com} to the contact point $\contactPoint_i$, with respect to $\BodyFrame$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Wheel-terrain contact model}
 \label{subsection:wheelTerrainContactModel}
 
-The ability to accurately model the interaction forces and moments between a wheel and the contact terrain is of the utmost importance, in order to simulate a theoretical model of a robot or to control a real-life application at a given environment.
+The ability to accurately model the interaction forces and moments between a wheel and the terrain is of utmost importance, in order to simulate a theoretical model of a robot or to control a real-life application at a given environment.
 
 There are four possible cases of wheel-terrain interaction (figure \ref{fig:contactModels}): rigid wheel on rigid terrain, rigid wheel on deformable terrain, deformable wheel on rigid terrain and a deformable wheel on deformable terrain. In \cite{Genta2012, chapter24handbookrobotics}, one can find analytical models for all these possibilities.
 
@@ -309,9 +317,9 @@ There are four possible cases of wheel-terrain interaction (figure \ref{fig:cont
 
 In this thesis, only rigid wheels are considered. Even if a wheel presents some degree of deformability (i.e. pneumatic tire), it can be modeled as a rigid wheel if the average tire ground pressure is higher than the critical ground pressure, $p_{gcr}$ \cite{chapter24handbookrobotics}.
 
-When it comes to the type of soil, a rover may traverse deformable (sand) or rigid terrain (rock) when it is deployed at a realistic planetary environment, so it is difficult to predict \textit{a priori} what kind of soil it will be traversing as well as its properties.
+When it comes to the type of soil, a rover may traverse deformable or rigid terrain when it is deployed at an outdoor, natural environment, so it is difficult to predict \textit{a priori} what kind of soil it will be traversing as well as its properties.
 
-The theory of terramechanics focuses on studying the mechanical properties of soils and to assess its behaviour, when it is subject to the influence of a robot with a locomotion set. Apart from it, terramechanics models also deliver performance quantification by describing the stress fields that the contact modules are exposed to. In case of deformable soils, the standard model descriptor is the Bekker-Wong model. On the other hand, the Coulomb friction model fits well to describe the contact between rigid wheels and rigid terrain.
+The theory of terramechanics focuses on studying the mechanical properties of soils and to assess its behaviour, when it is subject to deformation caused on it by an external agent with a locomotion set. Apart from it, terramechanics models also deliver performance quantification by describing the stress fields that the contact modules are exposed to. In case of deformable soils, the standard model descriptor is the Bekker-Wong model. On the other hand, the Coulomb friction cone is a simple model that describes the contact dynamics between rigid wheels and rigid terrain.
 
 For the sake of simplicity, deformable terrain contact physics are discarded as a simulation option, although this more realistic terrain may be included in more advanced research works.
 
@@ -324,35 +332,39 @@ This model provides a traction force, $\mathbf{\Traction}$, acting at each wheel
 	\begin{cases}
 		\left(\frac{\Traction_x}{\FrictionCoefficient_x \NormalForce_z} \right)_i^2 + \left( \frac{\Traction_y}{\FrictionCoefficient_y \NormalForce_z} \right)_i^2 \leq 1\\
 		\left( \NormalForce_z \right)_i > 0
-	\end{cases}, \; i = 1, ..., 4
+	\end{cases}, \; i = \{lf,\,rf,\,lb,\,rb\}
 	\label{eq:coulombFrictionModel}
 \end{equation}
 
-Equation \ref{eq:coulombFrictionModel} states that $\mathbf{\Traction}_i$ lies within an ellipse with diagonals $\FrictionCoefficient_x\,\left( \NormalForce_z \right)_i$ and $\FrictionCoefficient_y\,\left( \NormalForce_z \right)_i$. In case $\FrictionCoefficient_x = \FrictionCoefficient_y$, the ellipse turns into a circle. $\FrictionCoefficient_x$ and $\FrictionCoefficient_y$ denote friction coefficients along the longitudinal and lateral components of $\WheelFrame^i$, respectively.
+Equation \eqref{eq:coulombFrictionModel} states that $\mathbf{\Traction}_i$ lies within an ellipse with diagonals $\FrictionCoefficient_x\,\left( \NormalForce_z \right)_i$ and $\FrictionCoefficient_y\,\left( \NormalForce_z \right)_i$. In case $\FrictionCoefficient_x = \FrictionCoefficient_y$, the ellipse turns into a circle. $\FrictionCoefficient_x$ and $\FrictionCoefficient_y$ denote friction coefficients along the longitudinal and lateral components of $\WheelFrame^i$, respectively.
 
 \begin{assumption}
 $\FrictionCoefficient_x = \FrictionCoefficient_y$.
 \label{eq:sameFrictionCoefficients}
 \end{assumption}
 
-From assumption \ref{eq:sameFrictionCoefficients}, and if one states $\Traction_i^2 = \left( \Traction_x \right)_i^2 + \left( \Traction_y \right)_i^2$, it comes that,
+From assumption \ref{eq:sameFrictionCoefficients} and if one states that $\Traction_i^2 = \left( \Traction_x \right)_i^2 + \left( \Traction_y \right)_i^2$, it comes that,
 
 \begin{equation}
 \Traction_i^2 \leq \left( \FrictionCoefficient \left( \NormalForce _z\right)_i \right)^2
 \label{eq:simpleFriction}
 \end{equation}
 
-If a wheel $i$ sticks to the terrain, it means equation \ref{eq:simpleFriction} is inactive. On the other hand, if a wheel is sliding, equation \ref{eq:simpleFriction} is active.
+If a wheel $i$ sticks to the terrain, it means \refeq{eq:simpleFriction} is generally inactive, unless the contact force touches the cone lateral surface. On the other hand, if a wheel is sliding, inequality \eqref{eq:simpleFriction} is not respected. Figure \ref{fig:coulombfrictionconeillustration} depicts this principle.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Figures/coulomb_friction_cone.pdf}
+  \caption[Coulomb friction cone depiction example.]{Coulomb friction cone depiction. If the wheel contact force ($\mathbf{n} + \mathbf{t}$) is \textcolor{tabred}{outside} the cone, the wheel is slipping. On the other hand, if the wheel contact force is \textcolor{tabgreen}{inside} the cone (including its surface), the wheel sticks to the terrain.}
+  \label{fig:coulombfrictionconeillustration}
+\end{figure}
 
 \subsubsection*{Terrain reaction forces}
 \label{subsubsection:coulombFrictionModel}
 
-Every time a contact between a wheel and terrain takes place, a reaction force $\NormalForce_z$ shows up. The magnitude of this reaction force determines the amount of admissable traction force, before soil failure occurs.
+Every time a contact between a wheel and terrain takes place, a reaction force $\NormalForce_z$ shows up. The magnitude of this reaction force determines the amount of admissable traction force, before soil failure occurs. These reaction forces and respective moments shall be summed up and described with respect to $\BodyFrame$.
 
-These reaction forces and its moments shall be summed up and described with respect to $\BodyFrame$.
-
-\vspace{2mm}
-
+\hfill
 \begin{minipage}{0.45\linewidth}
 	\begin{equation}
 	\mathbf{\NormalForce} = \sum_{i=1}^{4} \left( \mathbf{\NormalForce} \right)_i
@@ -366,15 +378,22 @@ These reaction forces and its moments shall be summed up and described with resp
 \end{equation}
 \end{minipage}
 
-\section{Full state-space model}
+\hfill
+\begin{assumption}
+Assumption \ref{assumption:contactbodyframes} determines that the direction of each wheel reaction force is parallel to $\BodyFrame_z$. For the sake of simplicity, it is also considered that the magnitude of each wheel reaction force is equal to $\frac{\Mass\,\gravity\,\cos(\pitch) \cos(\roll)}{4}$, therefore $\mathbf{\Moment}_{\mathbf{\NormalForce}} = 0$.
+\label{eq:reactionforcessimplification}
+\end{assumption}
+
+\section{State-space model}
 \label{section:fullStateSpace}
 
 In order to sum up the previous sections, it is possible to deliver a full state-space model with respect to the state vector $\mathbf{x} = \begin{bmatrix}
 \mathbf{\Position}^T & \bm{\Orientation}^T & \mathbf{\LinVelocity}^T & \bm{\AngVelocity}^T
-\end{bmatrix}^T$ and the control vector $\mathbf{u} = \begin{bmatrix}
+\end{bmatrix}$ and the control vector $\mathbf{u} = \begin{bmatrix}
 \mathbf{\Force}^T & \mathbf{\Moment}^T
-\end{bmatrix}^T$. Nonlinear constraints to the model are also included.
+\end{bmatrix}$. Nonlinear constraints to the model are also included.
 
+\hfill
 \begin{minipage}{0.55\linewidth}
 \centering
 \begin{equation}
@@ -400,10 +419,10 @@ In order to sum up the previous sections, it is possible to deliver a full state
 \end{equation}
 \end{minipage}
 
-\vspace{2mm}
+\hfill
 
-Equation \ref{eq:fullStateSpace} combines equations \ref{eq:translationFreeBody}, \ref{eq:rotationFreeBody} and \ref{eq:dynamics}. Equation \ref{eq:sumMomentsForces} is based on equations \ref{eq:totalActuatedForce}, \ref{eq:totalActuatedMoment},
-\ref{eq:totalReactionForce} and \ref{eq:totalReactionMoments}. $m$ stands for the vehicle mass and $g=-9.81 m/s^2$.
+Equation \eqref{eq:fullStateSpace} combines equations \eqref{eq:translationFreeBody}, \eqref{eq:rotationFreeBody} and \eqref{eq:dynamics}. Equation \eqref{eq:sumMomentsForces} is based on equations \eqref{eq:totalActuatedForce}, \eqref{eq:totalActuatedMoment},
+\eqref{eq:totalReactionForce} and \eqref{eq:totalReactionMoments}. $m$ stands for the vehicle mass and $g=-9.81 m/s^2$.
 
 \begin{equation}
 	\ineqCon{t, \,\mathbf{x}(t),\, \mathbf{u}(t)} = \begin{cases}
@@ -413,29 +432,11 @@ Equation \ref{eq:fullStateSpace} combines equations \ref{eq:translationFreeBody}
 	\label{eq:inequalityConstraintsModel}
 \end{equation}
 
-Equation \ref{eq:inequalityConstraintsModel} denotes the inequality constraints that take in the Coulomb friction model.
+Equation \eqref{eq:inequalityConstraintsModel} denotes the inequality constraints imposed by the Coulomb friction model.
 
-\subsection{Steering mechanisms}
+\subsection{Model simplification}
 
-Several steering mechanisms were considered for this work, which are summarized in figure \ref{fig:steeringMechanisms}.
-
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[level 1/.style={sibling distance=35mm},
-         			level 2/.style={sibling distance=26mm}]
-  \node {Steering mechanisms}
-    child {node {\textbf{Skid-steering}}}
-    child {node {Ackermann steering}}
-    child {node {Cornering steering}}
-    child {node {All-wheel steering}};
-\end{tikzpicture}
-\caption{Steering mechanisms.}
-\label{fig:steeringMechanisms}
-\end{figure}
-
-The inclusion of the Ackermann and cornering steering systems into the \acrshort{nmpc} model demand the identification of each wheel lateral force \cite{liniger2012autonomous}. An all-wheel steering mechanism allows translation in any direction, although the higher number of controls introduces complexity into the model \cite{howard2007optimal}. For the sake of simplicity, the skid-steering mechanism is selected, although a more complex steering mechanism shall be considered for advanced research. 
-
-Likewise, equation \ref{eq:sumForces} expresses the sum of forces and moments due to traction in case the skid steering mechanism is selected.
+In this thesis, skid-steering is selected as steering mechanism. Likewise, \refeq{eq:sumForces} expresses the sum of forces and moments due to traction,
 
 \begin{equation}
 \begin{cases}
@@ -445,9 +446,7 @@ Likewise, equation \ref{eq:sumForces} expresses the sum of forces and moments du
 \label{eq:sumForces}
 \end{equation}
 
-, where $l$ stands for the distance between the left and right wheels, respectively. Finally, the wheel normal force is assumed to be equally distributed along the vehicle, that is $\left(n_z\right)_l = \left(n_z\right)_r = \frac{m \, g \, \cos\left(\roll\right) \cos\left(\pitch\right)}{4}$.
-
-In this mechanism, lateral skidding only takes place in case the non-controllable lateral traction forces cannot balance the lateral weight, so $\LinVelocity_y \approx 0$. 
+\noindent, where $l$ stands for the distance between the left and right wheels, respectively. In this mechanism, lateral skidding only takes place in case the non-controllable lateral traction forces cannot balance the lateral weight, so $\LinVelocity_y \approx 0$. 
 
 \begin{assumption}
 $\LinVelocity_y \approx 0$
@@ -461,12 +460,12 @@ As the wheeled mobile robot is constrained to move on a plane along the \acrshor
 \label{eq:planarmotion}
 \end{assumption}
 
-According to assumptions \ref{eq:lateralskid} and \ref{eq:planarmotion}, the state space equation \ref{eq:fullStateSpace} is reduced to the one in \ref{eq:skidsteeringStateSpace}. Likewise, the constraint function \ref{eq:inequalityConstraintsModel} is simplified to the one of \ref{eq:skidsteeringcoulomb}, where the Coulomb friction model is included, alongside linear and angular velocity constraints.
+According to assumptions \ref{eq:lateralskid} and \ref{eq:planarmotion}, the state space \refeq{eq:fullStateSpace} is reduced to the one in \eqref{eq:skidsteeringStateSpace}. Likewise, the constraint function \eqref{eq:inequalityConstraintsModel} is simplified to the one of \eqref{eq:skidsteeringcoulomb}, where the Coulomb friction model is included, alongside linear and angular velocity constraints.
 
-The lateral wheel traction is considered to equal the respective weight component. The model fails once the mobile robot finds itself in a scenario where the lateral wheel traction achieves its maximum and cannot equal the weight lateral component (assumption \ref{eq:lateralskid} is not valid anymore in that case). In order to stay away from that scenario, the mobile robot shall not be subject to very high slopes.
+The lateral wheel traction force is considered to equal the respective weight component. The model fails once the mobile robot finds itself in a scenario where the lateral wheel traction achieves its maximum and cannot equal the weight lateral component (assumption \ref{eq:lateralskid} is not valid anymore in that case). In order to stay away from that scenario, the mobile robot shall avoid very high slopes.
 
 \begin{equation}
-	\mathbf{f}_{skid}\left(\cdot\right) = \left\{\begin{matrix}
+	\mathbf{f}_{skid}\left( t, \,\mathbf{x}(t),\, \mathbf{u}(t) \right) = \left\{\begin{matrix}
 		\dot{x} = \cos\left(\pitch\right) \cos\left(\yaw\right) \LinVelocity_x & \dot{y} = \cos\left(\pitch\right) \sin\left(\yaw\right)\LinVelocity_x & \dot{\roll} = -\tan\left(\pitch\right)\cos\left(\roll\right)\,\AngVelocity_z\\
 		\dot{\pitch} = \sin\left(\roll\right)\,\AngVelocity_z &
 		\dot{\yaw} = \frac{\cos\left(\roll\right)}{\cos\left(\pitch\right)}\,\AngVelocity_z &
@@ -478,7 +477,7 @@ The lateral wheel traction is considered to equal the respective weight componen
 	\label{eq:skidsteeringStateSpace}
 \end{equation}
 \begin{equation}
-\ineqCon{\cdot} = \begin{cases}
+\ineqCon{ t,\,\mathbf{x}(t),\,\mathbf{u}(t) } = \begin{cases}
 \Traction_{l,\,r}^2 + \left(-\frac{ \Mass \, \gravity \, \cos\left(\pitch\right) \, \sin\left(\roll\right)}{4}\right)^2 \leq \left(\FrictionCoefficient\,\frac{ \Mass \, \gravity \, \cos\left(\roll\right) \, \cos\left(\pitch\right)}{4}\right)^2\\
 \left(\LinVelocity_x\right)_{min} \leq \LinVelocity_x \leq \left(\LinVelocity_x\right)_{max}\\
 \left(\AngVelocity_z\right)_{min} \leq \AngVelocity_z \leq \left(\AngVelocity_z\right)_{max}\\
@@ -486,7 +485,7 @@ The lateral wheel traction is considered to equal the respective weight componen
 \label{eq:skidsteeringcoulomb}
 \end{equation}
 
-In equation \ref{eq:skidsteeringStateSpace}, $\Force_x$ and $\Moment_z$ are derived from \ref{eq:sumForces}. The control and state spaces are $\mathbf{u} = \begin{bmatrix}\dot{\Traction}_l,\,\dot{\Traction}_r\end{bmatrix}^T$ and $\mathbf{x} = \begin{bmatrix}\x,\,\y,\,\roll,\,\pitch,\,\yaw,\,\LinVelocity_x,\,\AngVelocity_z,\,\Traction_l,\,\Traction_r\end{bmatrix}^T$, respectively. Finally, $\mathbf{p} = \begin{bmatrix}
+In \refeq{eq:skidsteeringStateSpace}, $\Force_x$ and $\Moment_z$ are derived from \refeq{eq:sumForces}. The control and state vectors are $\mathbf{u} = \begin{bmatrix}u_l,\,u_r\end{bmatrix}^T$ and $\mathbf{x} = \begin{bmatrix}\x,\,\y,\,\roll,\,\pitch,\,\yaw,\,\LinVelocity_x,\,\AngVelocity_z,\,\Traction_l,\,\Traction_r\end{bmatrix}^T$, respectively. Finally, $\mathbf{p} = \begin{bmatrix}
 \Mass,\,\gravity,\,\InertiaTensor_{zz},\,\FrictionCoefficient\end{bmatrix}^T$ denote the parameters of the model.
 
 \subsection{Comparison among \texorpdfstring{\acrshort{nmpc}}{NMPC} formulations}
@@ -510,7 +509,7 @@ Then, the previous state-space model must be included into a \acrshort{nmpc} for
 
 The body-centered formulation follows the same reasoning of the Frenet-Serret one, but the model is designed around the vehicle body frame. This approach makes it more cumbersome to track positional references. Although the Frenet-Serret formulation allows tracking of the heading without falling into unnecessary rotations of the vehicle \cite{schoels2020nmpc}, this approach includes the path curvature, which likely increases the computational cost on the solver.
 
-The standard formulation is similar to the \acrshort{mpcc} one, but its cost function replaces non-convex lag and countoring error contributions for $\Vert\left(\x - \x_{ref},\,\y - \y_{ref}\right)\Vert_Q^2$. On both approaches, the path curvature is not known to the solver, which makes the problem less nonlinear.
+The standard formulation is similar to the \acrshort{mpcc} one, but its cost function replaces non-convex lag and countoring error contributions by the quadratic term $\Vert\left(\x - \x_{ref},\,\y - \y_{ref}\right)\Vert_Q^2$. On both approaches, the path curvature is not known to the solver, which makes the problem less nonlinear.
 
 Finally, the standard, Frenet-Serret and \acrshort{mpcc} formulations are compared. On every approach, the reference virtual speed is controlled against a reference of $0.5\,\text{m/s}$, so the state-space is augmented to include progress on the path as a state, such that $\dot{\kappa}=v$. The reference is a Lissajous curve and the initial poses are the same on all problems. The prediction horizon is $0.3$ s and the one step horizon is $0.01$ s. Heading tracking and motion on slopes are neglected at this point ($\roll = \pitch = 0\,\text{rad}$). \acrshort{ipopt} was chosen as solver and its implementation was made with the Opti stack from \acrshort{casadi}. The results were obtained on a Intel® Core™ i7-10750H CPU @ 2.60GHz × 12 processor.
 
@@ -545,7 +544,7 @@ From the analysis of figure \ref{fig:initialComparisonNMPC}, the Frenet solver p
 
 The integrator that propagates the state of \ref{eq:skidsteeringStateSpace} shall be validated against a more precise integrator. The results of the simulation presented in figure \ref{fig:initialComparisonNMPC} has already proved that \ref{eq:skidsteeringStateSpace} accurately represents the dynamics of a wheeled mobile robot.
 
-In order to meet that end, a \textsc{cvodes} integrator from the \acrshort{casadi} package is compared against a less accurante \acrshort{rk4} integrator (see \ref{section:rk4}). Both integrators propagate the state generated by \ref{eq:skidsteeringStateSpace}, with respect to the same control series and integration time. Roll and pitch are also randomly generated by means of a normal distribution in order to simulate the measurement of these euler angles, such that $\roll \sim \mathcal{N}\left(0.0,\,\sigma_{\roll}^2\right)$ and $\pitch \sim \mathcal{N}\left(0.0,\,\sigma_{\pitch}^2\right)$.
+In order to meet that end, a \textsc{cvodes} integrator from the \acrshort{casadi} package is compared against a less accurante \acrshort{rk4} integrator (see \ref{section:rk4}). Both integrators propagate the state generated by \ref{eq:skidsteeringStateSpace}, with respect to the same control series and integration time. Roll and pitch are also randomly generated by means of a normal distribution in order to simulate the measurement of these euler angles, such that $\roll \sim \mathcal{N}\left(0,\,\sigma_{\roll}^2\right)$ and $\pitch \sim \mathcal{N}\left(0,\,\sigma_{\pitch}^2\right)$.
 
 \begin{figure}[!htb]
   \centering

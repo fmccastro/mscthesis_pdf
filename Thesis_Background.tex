@@ -11,37 +11,35 @@
 \chapter{Background}
 \label{chapter:background}
 
-This thesis is divided in two main blocks: optimal path planning and real-time optimal control. Regarding optimal path planning, the Fast Marching method is presented in section \ref{section:fastMarching}, as this method is of the utmost importance to enable the computation of a global optimal potential field, that delivers gradient directions towards the goal point. From section \ref{section:nonlinearopt} to \ref{section:optimalControlProblems}, a review of general \acrshort{nlp}s to more specific, control-tailored optimal methods are visited. 
+This thesis is divided in two main blocks: optimal path planning and real-time nonlinear model predictive control. In section \ref{section:fastMarching}, the fast marching method is presented as the backbone of the optimal path planning section. This method enables the computation of a global optimum potential field (free of local minimums), that provides gradient directions towards the goal point. From section \ref{section:nonlinearopt} to \ref{section:optimalControlProblems}, a review of general NLPs to more specific, control-tailored optimal methods up to nonlinear model predictive control, are reviewed. 
 
-\section{\acrlong{fmm}}
+\section{Fast marching method}
 \label{section:fastMarching}
 
-In this thesis, a fast marching method is employed in order to serve as the framework to extract optimal reference paths. This method relies on solving a boundary-value problem \cite{Sethian1999}, which yields a potential field with a wave that starts at an \textit{a priori} defined source and expands throughout the domain $\Map_2$ of $\nabla \timeFunction{\cdot}$.
-
-Mathematically, this comes to solving the Eikonal equation,
+The fast marching method relies on solving a boundary-value problem \cite{Sethian1999}, which yields a potential field made up by a wave that starts at an \textit{a priori} defined source and expands throughout the domain of the map $\Map_2$. Mathematically, this comes to solving the Eikonal equation,
 \begin{equation}
 	\begin{cases}
-		\left\vert \nabla \timeFunction{\x, \y} \right\vert \speedFunction{x, y} &= 1 \\
+		\left\vert \nabla \timeFunction{\x,\,\y} \right\vert \, \speedFunction{x,\, y} &= 1 \\
 		\timeFunction{\NullTimePosition} &= 0
- 	\end{cases}\hspace{5mm} , \hspace{2mm} (\x, \y),\hspace{1mm} \NullTimePosition \in \Map_2
+ 	\end{cases}\hspace{5mm} , \hspace{2mm} \text{such that}\,(\x, \y) \in \Map_2\; \text{and} \; \NullTimePosition \subset \Map_2
 	\label{eq:eikonalEquation}
 \end{equation}
-, where $\timeFunction{\cdot}$ is the solution to the Eikonal equation, $\mathbf{p} = (\x, \y)$ is a position in the map, $\speedFunction{\cdot}$ is a speed (or cost) function \cite{Ventura2015} which contains information regarding the set of points where the wave delays or  rushes its progression throughout $\Map_{2}$. $\Gamma \subset \Map_{2}$ is the wave front at the source. Due to the fact that $u(\mathbf{p})$ delivers the time a wave needs to reach $\mathbf{p}$ from the source $G \in \Map_{2}$, it is trivial that $u(\Gamma)$ equals zero because $\Gamma$ is a ball with neglegible radius around $G$. On the other hand, $u(\mathbf{p}_2) = T$ provides the set of points from where it takes a time $T$ to reach $G$.
+, where $\timeFunction{\cdot}$ is the solution to the Eikonal equation, $\mathbf{p}_2 = (\x, \y)$ is a position in the map and $\speedFunction{\cdot}$ is a speed (or cost) function \cite{Ventura2015} that contains information regarding the set of points where the wave delays or  rushes its progression throughout $\Map_{2}$. $\Gamma \subset \Map_{2}$ is the wave front at the source. Due to the fact that $u(\mathbf{p}_2)$ delivers the time a wave needs to reach $\mathbf{p}_2$ from the source $G \in \Map_{2}$, it is trivial that $u(\Gamma)$ equals zero because $\Gamma$ is a ball with neglegible radius around $G$. On the other hand, $u(\mathcal{P}) = T$ provides the set of points $\mathcal{P}$ from where it takes a time $T$ to reach $G$.
 
-Then, it is possible to find an optimal time path from $\mathbf{p}$ to $G$ which deviates from the points where $\speedFunction{\cdot}$ has the lowest values. The direction of a path at some point is perpendicular to the wave front at that point, which is provided by the gradient $-\nabla u(\mathbf{p}_2)$. The function $\speedFunction{\cdot}$ is computed offline according to the application, and then it is inserted into \ref{eq:eikonalEquation}. After that, the Eikonal problem is solved (also offline) and delivers a potential field with a source at $G$. From there, it is possible to compute online the fastest and safest path until $G$ from the position the mobile robot is at. More information on this issue is provided at \cite{fmAdvancedGomez}.
+Then, it is possible to find an optimal time path from $\mathbf{p}_2$ to $G$, which deviates from the points where $\speedFunction{\cdot}$ has the lowest values. The direction $-\nabla u(\mathbf{p}_2)$ of a path at some point is perpendicular to the wave front at that point. The function $\speedFunction{\cdot}$ is computed offline, and it is inserted into equation \eqref{eq:eikonalEquation}. After that, the Eikonal equation is solved (also offline) and delivers a potential field with a source at $G$. From there, it is possible to compute online the \textbf{safest} path until $G$ from the position the mobile robot is at. More information on this issue is provided at \cite{fmAdvancedGomez}.
 
-\subsection{Eikonal equation discretization}
+\subsection*{Eikonal equation discretization}
 \label{subsection:eikonalEqDiscretization}
 
-\citet{fmAdvancedGomez} lays out an iterative algorithm for the computation of the discrete solution of \ref{eq:eikonalEquation}. Here, a brief review of this algorithm is presented.
+\citet{fmAdvancedGomez} lays out an iterative algorithm for the computation of the discrete solution of equation \eqref{eq:eikonalEquation}. Here, a brief review of this algorithm is presented.
 
-Equation \ref{eq:eikonalEquation} may be discretized as,
+Equation \eqref{eq:eikonalEquation} may be discretized as,
 \begin{equation}
 	max\left( \frac{\timeFunction{\x_i, \y_j} - T_1}{\delta \x},\, 0 \right)^2 + max\left( \frac{\timeFunction{\x_i, \y_j} - T_2}{\delta \y},\, 0 \right)^2 = \frac{1}{\speedFunction{\x_i,\, \y_j}^2}
 	\label{eq:eikonalDiscretization}
 \end{equation}
 
-where,
+\noindent , where
 \begin{equation}
 	\begin{aligned}
 		T_1 &= min\left( \timeFunction{\x_{i-1}, \y_j},\, \timeFunction{\x_{i+1}, \y_j} \right)\\
@@ -49,12 +47,13 @@ where,
 	\end{aligned}
 	\label{eq:t1t2}
 \end{equation}
-Then, equation \ref{eq:eikonalDiscretization} is solved iteratively until every cell of the grid map is assigned a time to goal value, $\timeFunction{\x_i, \y_j}$. This algorithm starts solving \ref{eq:eikonalDiscretization} at the neighbouring cells of the source cells $\NullTimePosition$, where $\timeFunction{\NullTimePosition} = 0$. As the algorithm progresses, it solves \ref{eq:eikonalDiscretization} further away from $\NullTimePosition$, resembling the fact that the wave expands from the sources to each point of the gridmap. At the end, points which are further away from the sources, are typically assigned higher times, and no local minimums are present in the solution. \textbf{Algorithm 1 from \cite{fmAdvancedGomez}} details the implementation of this brief explanation.
 
-\section{\acrlong{nlp}}
+Then, equation \eqref{eq:eikonalDiscretization} is solved iteratively until every cell of the grid map is assigned a time to goal value, $\timeFunction{\x_i, \y_j}$. This algorithm starts solving \refeq{eq:eikonalDiscretization} at the neighbouring cells of the source cells $\NullTimePosition$, where $\timeFunction{\NullTimePosition} = 0$. As the algorithm progresses, it solves \refeq{eq:eikonalDiscretization} further away from $\NullTimePosition$, resembling the fact that the wave expands from the sources to each point of the gridmap. At the end, points which are further away from the sources, are typically assigned higher times, and no local minimums are present in the solution. \textbf{Algorithm 1 from \cite{fmAdvancedGomez}} details the implementation of this brief explanation.
+
+\section{Nonlinear programming}
 \label{section:nonlinearopt}
 
-A general \acrshort{nlp} \cite{diehlnumericalocp} is stated as follows,
+A general NLP \cite{diehlnumericalocp} is stated as follows,
 \begin{equation}
 \begin{aligned}
 	\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} &f\left(\mathbf{w}\right)\\
@@ -66,9 +65,10 @@ A general \acrshort{nlp} \cite{diehlnumericalocp} is stated as follows,
 \end{aligned}
 \label{eq:gennlp}
 \end{equation}
-, where $\mathbf{w} \in \mathbb{R}^n$ are the optimization variables and $f:\mathbb{R}^n \to \mathbb{R}$ is the objetive function. $f$, $\mathbf{g}:\mathbb{R}^n \to \mathbb{R}^{n_g}$ and $\mathbf{h}:\mathbb{R}^n \to \mathbb{R}^{n_h}$ are also assumed to be twice continuously differentiable functions.
 
-The solution $\mathbf{w}^*$ of \ref{eq:gennlp} is a feasible point $\mathbf{w}^* \in \feasibleSet$ and (at least) a local minimizer of \ref{eq:gennlp}. If the \acrshort{nlp} is convex, $\mathbf{w}^*$ is global minimizer of \ref{eq:gennlp}. Some point $\mathbf{w}$ is a local minimizer, in case it satisfies \acrlong{kkt} optimality conditions.
+\noindent , where $\mathbf{w} \in \mathbb{R}^n$ are the optimization variables and $f:\mathbb{R}^n \to \mathbb{R}$ is the objetive function. $\mathbf{g}:\mathbb{R}^n \to \mathbb{R}^{n_g}$ and $\mathbf{h}:\mathbb{R}^n \to \mathbb{R}^{n_h}$ denote the equality and inequality constraint functions, respectively. These functions are assumed to be twice continuously differentiable.
+
+The solution $\mathbf{w}^*$ of \refeq{eq:gennlp} is a feasible point $\mathbf{w}^* \in \feasibleSet$ and (at least) a local minimizer of \refeq{eq:gennlp}. If the NLP is convex, $\mathbf{w}^*$ is global minimizer of \refeq{eq:gennlp}. Some point $\mathbf{w}$ is a local minimizer, in case it satisfies \acrlong{kkt} optimality conditions.
 
 \begin{theorem}[KKT conditions]
 \label{theorem:kkt}
@@ -86,7 +86,7 @@ If $\mathbf{w}^*$ is a local minimizer of \ref{eq:gennlp} and \acrshort{licq} ho
 
 \acrshort{kkt} conditions are the first-order optimality conditions for constrained \acrshort{nlp}s. These conditions are necessary for a local minimizer, but are enough in case \ref{eq:gennlp} is a convex \acrshort{nlp}.
 
-Equation \ref{subeq:lagrangegrad} is equivalent to $\nabla_\mathbf{w} \lagrangian{\mathbf{w},\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*}$ , where $\lagrangian{\cdot}$ is  the so-called \textit{Lagrangian Function}.
+Equation \eqref{subeq:lagrangegrad} is equivalent to $\nabla_\mathbf{w} \lagrangian{\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*}$ , where $\lagrangian{\cdot}$ is  the so-called \textit{Lagrangian Function}.
 
 \begin{definition}[Lagrangian function.]
 The Lagrangian function $\mathcal{L}: \mathbb{R}^{n + n_g + n_h} \to \mathbb{R}$ is assumed to be a twice continuously differentiable function, and it is defined by,
@@ -96,51 +96,51 @@ The Lagrangian function $\mathcal{L}: \mathbb{R}^{n + n_g + n_h} \to \mathbb{R}$
 \end{equation} 
 \end{definition}
 \begin{remark}
-In case \ref{eq:gennlp} turns into an unconstrained problem, $\lagrangian{\mathbf{w},\,\bm{\gmultiplier},\,\bm{\hmultiplier}} = f\left(\mathbf{w}\right)$ and \ref{subeq:lagrangegrad} reduces to $\nabla f\left(\mathbf{w}^*\right) = \mathbf{0}$. In the absence of inequalities, $\lagrangian{\mathbf{w},\,\bm{\gmultiplier},\,\bm{\hmultiplier}} = f\left(\mathbf{w}\right) \, + \, \bm{\gmultiplier}^T \eqCon{\mathbf{w}}$ and $\nabla f\left(\mathbf{w}^*\right) \, + \, \left(\bm{\gmultiplier}^*\right)^T \nabla\eqCon{\mathbf{w}^*} = 0$.
+In case \refeq{eq:gennlp} turns into an unconstrained problem, $\lagrangian{\mathbf{w},\,\bm{\gmultiplier},\,\bm{\hmultiplier}} = f\left(\mathbf{w}\right)$ and \refeq{subeq:lagrangegrad} reduces to $\nabla f\left(\mathbf{w}^*\right) = \mathbf{0}$. In the absence of inequalities, $\lagrangian{\mathbf{w},\,\bm{\gmultiplier},\,\bm{\hmultiplier}} = f\left(\mathbf{w}\right) \, + \, \bm{\gmultiplier}^T \eqCon{\mathbf{w}}$ and $\nabla f\left(\mathbf{w}^*\right) \, + \, \left(\bm{\gmultiplier}^*\right)^T \nabla\eqCon{\mathbf{w}^*} = 0$.
 \end{remark}
-Then, problem \ref{eq:gennlp} may resort to an \textbf{unconstrained}, \textbf{equality constrained} or \textbf{inequality constrained} problem, depending on the existence of constraint functions $\ineqCon{\cdot}$ and $\eqCon{\cdot}$, as it is outlined in figure \ref{fig:nlptypeprob}.
+Then, problem \eqref{eq:gennlp} may resort to an \textbf{unconstrained}, \textbf{equality constrained} or \textbf{inequality constrained} problem, depending on the existence of constraint functions $\ineqCon{\cdot}$ and $\eqCon{\cdot}$, as it is outlined in figure \ref{fig:nlptypeprob}.
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[sibling distance=50mm, level distance=12mm]
-  \node {Type of \acrshort{nlp}s}
-    child {node {Unconstrained ($\cancel{\eqCon{\cdot}},\,\cancel{\ineqCon{\cdot}}$)}}
-    child {node {Equality constrained ($\cancel{\ineqCon{\cdot}}$) }}
+  \node {Type of NLPs}
+    child {node {Unconstrained}}
+    child {node {Equality constrained}}
     child {node {\textbf{Inequality constrained}}};
 \end{tikzpicture}
-\caption{Summary of \acrshort{nlp} type of problems.}
+\caption{Summary of NLP type of problems.}
 \label{fig:nlptypeprob}
 \end{figure}
 
-So, any algorithm that aims to solve \ref{eq:gennlp} must be looking for feasible points that satisfy the \acrlong{kkt} optimality conditions. In this thesis, one is mainly concerned with inequality constrained \acrshort{nlp}s, so a short review on methods that solve this family of problems is presented below.
+Any algorithm that aims to solve problem \eqref{eq:gennlp} must be looking for feasible points that satisfy the Karush-Kuhn-Tucker optimality conditions. In this thesis, one is mainly concerned with inequality constrained NLPs, so a short review on methods that solve this family of problems is presented below.
 
-\subsection{Inequality Constrained Optimization}
+\subsection*{Inequality Constrained Optimization}
 \label{subsection:ineqconopt}
 
-Inequality constrained \acrshort{nlp}s are mainly solved by two big families of methods: interior-point methods (\acrshort{ipopt}) or Sequential Quadratic Programming (\acrshort{sqp}). Active-set methods are also a variant, but these methods are not used throughout this thesis.
+Inequality constrained NLPs are mainly solved by two big families of methods: interior-point methods (IPOPT) or Sequential Quadratic Programming (SQP). Active-set methods are also a variant, but these methods are not used throughout this thesis.
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[sibling distance=40mm, level distance=12mm]
   \node {\textbf{Newton type optimization methods} to solve inequality constrained problems}
-    child {node {\textbf{\acrshort{ipopt}}}}
-    child {node {\textbf{\acrshort{sqp}}}}
+    child {node {\textbf{IPOPT}}}
+    child {node {\textbf{SQP}}}
     child {node {Active-set methods}};
 \end{tikzpicture}
-\caption{Summary of numerical approaches to an \acrshort{ocp}.}
+\caption{Summary of newton type optimization methods to solve inequality constrained problems.}
 \label{fig:methodssolveineqcon}
 \end{figure}
 
-These methods are based on Newton's iterative method to solve a nonlinear rootfinding problem. In this case, the method is run until a solution $\left(\mathbf{w}_k,\,\bm{\gmultiplier}_k,\,\bm{\hmultiplier}_k\right)$ properly satisfies the \acrshort{kkt} conditions with some neglegible error. The methods outlined in figure \ref{fig:methodssolveineqcon} iteratively linearize problem \ref{eq:gennlp}, but present differences when it comes to handle the complementary conditions \ref{subeq:compcond1}, \ref{subeq:compcond2} and \ref{subeq:compcond3}.
+These methods are based on Newton's iterative method to solve a nonlinear rootfinding problem. In this case, the method is run until a solution $\left(\mathbf{w}_k,\,\bm{\gmultiplier}_k,\,\bm{\hmultiplier}_k\right)$ properly satisfies the KKT conditions with some neglegible error. The methods outlined in figure \ref{fig:methodssolveineqcon} iteratively linearize problem \eqref{eq:gennlp}, but present differences when it comes to handle the complementarity conditions \eqref{subeq:compcond1}, \eqref{subeq:compcond2} and \eqref{subeq:compcond3}.
 
 \begin{remark}
-A Newton method aims to solve the nonlinear equation $\mathbf{f}(\mathbf{w})=0$, by converging to an optimal solution $\mathbf{w}^*$ through multiple linearizations of $\mathbf{f}(\cdot)$. One gets closer to $\mathbf{w}^*$ by iteratively calling $\mathbf{w}_{k+1} \gets \mathbf{w}_k - \left(\nabla^{-1} f\left(\mathbf{w}_k\right)\right)^T \, f\left(\mathbf{w}_k\right)$, until $\mathbf{w}_k$ satisfies the \acrshort{kkt} conditions with neglegible error. The numerical treatment of $\nabla^{-1} f\left(\mathbf{w}_k\right)$ is mentioned below, and gives rise to different variants of this method \cite{diehl2009efficient, diehlnumericalocp}.
+A Newton method aims to solve the nonlinear equation $\mathbf{f}(\mathbf{w})=0$, by converging to an optimal solution $\mathbf{w}^*$ through multiple linearizations of $\mathbf{f}(\cdot)$. One gets closer to $\mathbf{w}^*$ by iteratively calling $\mathbf{w}_{k+1} \gets \mathbf{w}_k - \left(\nabla^{-1} f\left(\mathbf{w}_k\right)\right)^T \, f\left(\mathbf{w}_k\right)$, until $\mathbf{w}_k$ satisfies the KKT conditions with neglegible error. The numerical treatment of $\nabla^{-1} f\left(\mathbf{w}_k\right)$ is mentioned below, and gives rise to different variants of this method \cite{diehl2009efficient, diehlnumericalocp}.
 \end{remark}
 
-\subsubsection*{\acrlong{sqp}}
+\subsubsection*{Sequential quadratic programming}
 \label{subsubsection:sqp}
 
-\acrlong{sqp} is based on linearizing all nonlinear functions from \ref{eq:gennlp}. At the end, one gets a \acrlong{qp} (QP) problem as follows,
+Sequential quadratic programming is based on linearizing all nonlinear functions from problem \eqref{eq:gennlp}. At the end, one gets a quadratic programming (QP) problem as follows,
 
 \begin{equation}
 \begin{aligned}
@@ -153,53 +153,55 @@ A Newton method aims to solve the nonlinear equation $\mathbf{f}(\mathbf{w})=0$,
 \end{aligned}
 \label{eq:sqp}
 \end{equation}
-, where $\mathbf{B}_k$ may take the exact hessian $\nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}_k,\,\bm{\gmultiplier}_k,\,\bm{\hmultiplier}_k}$ or inexact hessians and jacobians. More information on variants of \acrshort{sqp} that take approximate Hessians and Jacobians, as well as respective convergence rates and code implementations can be found in \cite{diehl2009efficient, diehlnumericalocp}.
+
+\noindent , where $\mathbf{B}_k$ may take the exact hessian $\nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}_k,\,\bm{\gmultiplier}_k,\,\bm{\hmultiplier}_k}$ or inexact hessians and jacobians. More information on variants of SQP that take approximate Hessians and Jacobians, as well as respective convergence rates and code implementations can be found in \cite{diehl2009efficient, diehlnumericalocp}.
 
 \begin{remark}
-In case $\mathbf{B}_k = \nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}_k,\,\bm{\gmultiplier}_k,\,\bm{\hmultiplier}_k}$ and this hessian is positive semi-definite, the \acrshort{qp} is convex and a feasible point $\mathbf{w}^*$ is  global minimum of \ref{eq:sqp}.
+In case $\mathbf{B}_k = \nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}_k,\,\bm{\gmultiplier}_k,\,\bm{\hmultiplier}_k}$ and this hessian is positive semi-definite, the QP is convex and a feasible point $\mathbf{w}^*$ is  global minimum of problem \eqref{eq:sqp}.
 \end{remark}
 
 \subsubsection*{\acrlong{ipopt}}
 \label{subsubsection:ipopt}
 
-On the other hand, \acrlong{ipopt} methods aim to replace the complementary conditions by a smooth nonlinear approximation $\hmultiplier_i^* \, h_i\left( \mathbf{w}^*\right) = \tau$, where $\tau > 0,\, i = 1,\,\ldots,n_h$. Then, the solution obtained from the Newton method concerns to the following problem,
+On the other hand, interior-point methods aim to replace the complementarity conditions by a smooth nonlinear approximation $\hmultiplier_i^* \, h_i\left( \mathbf{w}^*\right) = \tau$, where $\tau > 0,\, i = 1,\,\ldots,n_h$. Then, the solution obtained from the Newton method concerns to the following problem,
 \begin{subequations}\label{eq:ipopt}
-\begin{align}
-	\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} &f\left(\mathbf{w}\right) - \tau \sum_{i=1}^{n_h} \log\left(-h_i\left( \mathbf{w}\right) \right) \label{subeq:ipoptobj}\\
-	\text{subject to} \hspace{5mm} \eqCon{\mathbf{w}} &= 0\label{subeq:ipoptg}\\
-		\hmultiplier_i^* \, h_i\left( \mathbf{w}^*\right) &= \tau, \text{where} \, \tau > 0,\, i = 1,\,\ldots,n_h \label{subeq:ipoptprimaldual}
-\end{align}
+	\begin{align}
+		\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} &f\left(\mathbf{w}\right) - \tau \sum_{i=1}^{n_h} \log\left(-h_i\left( \mathbf{w}\right) \right) \label{subeq:ipoptobj}\\
+		\text{subject to} \hspace{5mm} \eqCon{\mathbf{w}} &= 0\label{subeq:ipoptg}\\
+		\hmultiplier_i^* \, h_i\left( \mathbf{w}^*\right) &= \tau \, | \,\tau > 0,\;i = 1,\,\ldots,n_h \label{subeq:ipoptprimaldual}
+	\end{align}
 \end{subequations}
-Therefore, the solution to problem \ref{eq:ipopt} is in the interior of the set described by inequalities \ref{subeq:compcond1} and \ref{subeq:compcond2}. Once a solution is found for a given $\tau$, this parameter can be reduced in order to find a closer solution to problem \ref{eq:gennlp}, by iteratively using the previous solution as an initial guess to the next problem.
 
-In fact, \ref{eq:ipopt} is an equality constrained problem that is solved by iteratively applying the newton method to it. The literature reports good convergence to \acrshort{kkt} points even for non-convex problems. In case of convex problems,  there's a link between the amount of newton iterations with respect to the required solution precision \cite{diehlnumericalocp}.
+Therefore, the solution to problem \eqref{eq:ipopt} is in the interior of the set described by inequalities \eqref{subeq:compcond1} and \eqref{subeq:compcond2}. Once a solution is found for a given $\tau$, this parameter can be reduced in order to find a closer solution to problem \eqref{eq:gennlp}, by iteratively using the previous solution as an initial guess to the next problem.
+
+In fact, problem \eqref{eq:ipopt} is an equality constrained problem that is solved by iteratively applying the newton method to it. The literature reports good convergence to KKT points even for non-convex problems. In the case of convex problems, there's a link between the amount of newton iterations with respect to the required solution precision \cite{diehlnumericalocp}.
 
 \begin{remark}
-Most \acrshort{ipopt} solvers use a relaxed form of \ref{subeq:ipoptprimaldual} by replacing it with a slacked formulation $h_i\left( \mathbf{w}^*\right) = s_i,\, i = 1,\,\ldots,n_h$. This formulation allows to provide an infeasible initial guess $\mathbf{w}$. It also avoids expensive backtracking of the newton method \cite{diehlnumericalocp}.
+Most IPOPT solvers use a relaxed form of equation \eqref{subeq:ipoptprimaldual} by replacing it with a slacked formulation $h_i\left( \mathbf{w}^*\right) = s_i,\;i = 1,\,\ldots,n_h$. This formulation allows to provide an infeasible initial guess $\mathbf{w}$. It also avoids expensive backtracking of the newton method \cite{diehlnumericalocp}.
 \end{remark}
 
-\section{\acrlong{ocp}}
+\section{Optimal control problem}
 \label{section:optimalControlProblems}
 
-An \acrlong{ocp} is a particular case of a \acrshort{nlp}. A continuous \acrlong{ocp} \cite{diehlnumericalocp} is often defined as,
+An optimal control problem is a particular case of a NLP. A continuous optimal control problem \cite{diehlnumericalocp} is often defined as,
 
 \begin{subequations}
 	\begin{align}
-		\underset{\mathbf{x}(\cdot),\,\mathbf{u}(\cdot)}{\text{minimize}} &\int_{t_0}^{t_f} \lagrangeTerm{\mathbf{x}(t), \mathbf{u}(t), \mathbf{p}(t)}\ dt + \mayerTerm{\mathbf{x}(t_f), \mathbf{p}(t_f)}\\
+		\underset{\mathbf{x}(\cdot),\,\mathbf{u}(\cdot)}{\text{minimize}} &\int_{t_0}^{t_f} \lagrangeTerm{\mathbf{x}(t),\, \mathbf{u}(t),\, \mathbf{p}(t)}\ dt + \mayerTerm{\mathbf{x}(t_f),\, \mathbf{p}(t_f)}\\
 		\text{subject to}&
 		\begin{cases}
 			\mathbf{x}(t_0) =\mathbf{x}_0\\
-			\DerMathBold{x}(t) = \processModel{\mathbf{x}(t), \mathbf{u}(t), \mathbf{p}(t), t}, \quad & t \in [t_0, t_f]\\
-			\ineqCon{\mathbf{x}(t),\ \mathbf{u}(t)} \leq 0, \quad & t \in [t_0, t_f]\\
-			\eqCon{\mathbf{x}(t),\, \mathbf{u}(t)} = 0
+			\DerMathBold{x}(t) = \processModel{\mathbf{x}(t),\,\mathbf{u}(t),\, \mathbf{p}(t),\,t} \quad & t \in [t_0, t_f]\\
+			\ineqCon{\mathbf{x}(t),\,\mathbf{u}(t)} \leq 0\\
+			\eqCon{\mathbf{x}(t),\,\mathbf{u}(t)} = 0
 		\end{cases}
 	\end{align}
 	\label{eq:continuousTimeOCP}
 \end{subequations}
 
-, where $\mathbf{x} \in \StateSpace$ stands for the state trajectory, $\mathbf{u} \in \ControlSpace$ stands for the control trajectory and $\mathbf{p}(\cdot)$ the parameters of the problem. Function $\lagrangeTerm{\cdot}$ is the Lagrange function and $\mayerTerm{\cdot}$ is the Mayer term of the \acrshort{ocp} cost. Finally, $\processModel{\cdot}$ describes the model dynamics,  $\ineqCon{\cdot}$ stands for inequality constraints and $\eqCon{\cdot}$ contains equality constraints.
+\noindent , where $\mathbf{x}(t) \in \StateSpace$ stands for the state trajectory, $\mathbf{u}(t) \in \ControlSpace$ stands for the control trajectory and $\mathbf{p}(t)$ denotes the parameters of the problem. Function $\lagrangeTerm{\cdot}$ is the Lagrange function and $\mayerTerm{\cdot}$ is the Mayer term of the OCP cost. Similarly to problem \eqref{eq:gennlp}, $\processModel{\cdot}$ describes the model dynamics,  $\ineqCon{\cdot}$ stands for inequality constraints and $\eqCon{\cdot}$ contains equality constraints.
 
-In order to solve \ref{eq:continuousTimeOCP}, the problem needs to be reformulated numerically. Two numerical operations must be performed: \textbf{discretization} and \textbf{linearization}. These operations may be performed by \textbf{first linearizing and then discretizing} or by \textbf{first discretizing and then linearizing} \cite{gros2020linear}.
+In order to solve problem \eqref{eq:continuousTimeOCP}, the problem needs to be reformulated numerically. Two numerical operations must be performed: \textbf{discretization} and \textbf{linearization}. These operations may be performed by \textbf{first linearizing and then discretizing} or by \textbf{first discretizing and then linearizing} \cite{gros2020linear}.
 
 \begin{figure}[h]
 \centering
@@ -208,22 +210,22 @@ In order to solve \ref{eq:continuousTimeOCP}, the problem needs to be reformulat
     child {node {First linearise then discretize}}
     child {node {\textbf{First discretize then linearise}}};
 \end{tikzpicture}
-\caption{Numerical approaches to \ref{eq:continuousTimeOCP}.}
+\caption{Summary of numerical approaches to problem \eqref{eq:continuousTimeOCP}.}
 \label{fig:summarynumapproaches}
 \end{figure}
 
 In this thesis, the \textbf{first discretize then linearise} approach is chosen. This is due to the fact that the \textit{first linearise then discretize} approach performs the linearisation offline. This a limitation in case the reference is variable, because the linearisation becomes inexact \cite{gros2020linear}.
 
-\subsection{Discretization methods of an \acrlong{ocp}}
+\subsection{Discretization methods of an optimal control problem}
 \label{subsection:ocpdiscretization}
 
-The literature provides the \textbf{\acrlong{hjb} (HJB)} , \textbf{indirect methods} and \textbf{direct methods} as the state-of-the art approaches to this issue (figure \ref{fig:summarydiscretizationapproaches}).
+The literature provides the \textbf{Hamilton-Jacobi-Bellman equation (HJB)} , \textbf{indirect methods} and \textbf{direct methods} as state-of-the art approaches to this issue (figure \ref{fig:summarydiscretizationapproaches}).
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[sibling distance=40mm, level distance=12mm]
   \node {Discretization methods}
-    child {node {\acrshort{hjb}}}
+    child {node {HJB}}
     child {node {Indirect methods}}
     child {node {\textbf{Direct methods}}
       child {node {Direct single shooting}}
@@ -231,59 +233,52 @@ The literature provides the \textbf{\acrlong{hjb} (HJB)} , \textbf{indirect meth
       child {node {Direct collocation}}
     };
 \end{tikzpicture}
-\caption{Newton type methods to solve inequality constrained \acrshort{nlp}s.}
+\caption{Summary of newton type methods to solve inequality constrained NLPs.}
 \label{fig:summarydiscretizationapproaches}
 \end{figure}
 
-The \acrshort{hjb} equation is a state-space approach that implies that each subarc of an optimal trajectory must be optimal. The \acrlong{hjb} is a partial differential equation that tracks the evolution of the cost function over time.
+The HJB equation is a state-space approach that implies that each subarc of an optimal trajectory must be optimal. The \acrlong{hjb} is a partial differential equation that tracks the evolution of the cost function over time.
 
 Indirect methods first optimize the problem and then discretize it. These methods derive a \textbf{boundary value problem} from the necessary conditions of optimality of the infinite dimensional problem. However, these methods present unstability and strong nonlinearities, and often require a new problem setup in case the control structure changes.
 
-On the other hand, direct methods first discretize and then optimize. This approach can easily take care of all sorts of constraints. The control trajectory is parameterized along the control horizon, but the the state evolution is handled differently by each direct method variant. These methods are by far the most developed numerical approaches to an \acrshort{ocp}. Three main direct methods are presented below:
+On the other hand, direct methods first discretize and then optimize. This approach can easily take care of all sorts of constraints. The control trajectory is parameterized along the control horizon, but the the state evolution is handled differently by each direct method variant. These methods are by far the most developed numerical approaches to an OCP. Three main direct methods are presented below:
 
 \begin{itemize}[label=\raisebox{0.5ex}{\scalebox{0.4}{$\blacksquare$}}]
-\item \textbf{Direct single shooting} is a sequential approach that only parameterizes controls in the \acrshort{nlp}. Then, states are obtained by forward integration of $\processModel{\cdot}$ and constraints are also checked along the control horizon, with the parameterized controls as inputs. In this method, the controls are the only optimization variable.
-\item \textbf{Direct multiple shooting} is a simultaneous approach that parameterizes controls and states in the \acrshort{nlp}. First, it discretizes the control inputs, and then links the integration of $\processModel{\cdot}$ between each step of the control horizon. Each constraint is also checked along the control horizon. The Lagrange Hessian and the equality constraints Jacobian are much sparser than the ones obtained with direct single shooting. This makes direct multiple shooting problems easier to solve, unless the control is extremely simple or the initial guess is very close to the solution \cite{Silva2022msc}.
-\item \textbf{Direct collocation} is a simultaneous approach that discretizes both controls and states. On each interval of the control horizon, the trajectory of the state is approximated by a polynomial, and the controls are constant on that same interval. As it is stated on the direct multiple shooting transcription, continuity between states of consecutive time intervals is also required. This approach yields sparser Jacobians and Hessians as shooting methods, although collocation methods are typically used when the solution must be computed accurately \cite{Silva2022msc}.
+\item \textbf{Direct single shooting} is a sequential approach that only parameterizes controls in the NLP. Then, states are obtained by forward integration of $\processModel{\cdot}$ and constraints are also checked along the control horizon, with the parameterized controls as inputs. In this method, the controls are the only optimization variable.
+\item \textbf{Direct multiple shooting} is a simultaneous approach that parameterizes controls and states in the NLP. First, it discretizes the control inputs, and then links the integration of $\processModel{\cdot}$ between each step of the control horizon. Each constraint is also checked along the control horizon. The lagrange hessian and the equality constraints jacobian are much sparser than the ones obtained with direct single shooting. This makes direct multiple shooting problems easier to solve, unless the control is extremely simple or the initial guess is very close to the solution \cite{Silva2022msc}.
+\item \textbf{Direct collocation} is a simultaneous approach that discretizes both controls and states. On each interval of the control horizon, the trajectory of the state is approximated by a polynomial, and the controls are constant on that same interval. As it is stated on the direct multiple shooting transcription, continuity between states of consecutive time intervals is also required. This approach yields sparser jacobians and hessians as shooting methods, although collocation methods are typically used when the solution must be computed accurately \cite{Silva2022msc}.
 \end{itemize}
 
-As mentioned above, direct methods may be inserted into the sequential or simultaneous approach category. \textbf{Sequential approaches} first simulate and then optimize the system at hand. A \textbf{simultaneous approach} performs both tasks at the same time. A sequential approach has less variables, but doesn't preserve the problem's structure on the linear subproblems. On the other hand, a simultaneous approach presents faster local convergence rates, specially on highly nonlinear systems, because the nonlinearity is equally distributed along the control horizon \cite{diehl2009efficient}.
+As it is mentioned above, direct methods may be inserted into the sequential or simultaneous approach category. \textbf{Sequential approaches} first simulate and then optimize the system at hand. A \textbf{simultaneous approach} performs both tasks at the same time. A sequential approach has less variables, but doesn't preserve the problem's structure on the linear subproblems. On the other hand, a simultaneous approach presents faster local convergence rates, specially on highly nonlinear systems, because the nonlinearity is equally distributed along the control horizon \cite{diehl2009efficient}.
 
-In this thesis, \texttt{acados} was selected as the test-bed software to solve \acrshort{ocp}s. Direct multiple shooting is chosen as transcription method, because \texttt{acados} implements it to generate fast solvers. On the other hand, \acrshort{casadi} is another option to build an \acrshort{ocp} but this library if of a more general use and less focused on optimizing fastness for \acrshort{ocp}s. However, \acrshort{casadi} still remains a valid option in case one wants to transcribe an \acrshort{ocp} using collocation methods and solve it with \acrshort{ipopt} \cite{wachter2006implementation}.
+In this thesis, \texttt{acados} was selected as the test-bed software to solve OCPs. Direct multiple shooting is a built-in transcription method, because \texttt{acados} implements it to generate fast solvers. On the other hand, casADi is an alternative to implement an OCP, but this library is of a more general use and less focused on meeting real-time specs. However, casADi still remains a valid option in case one wants to transcribe an OCP using collocation methods and solve it with IPOPT \cite{wachter2006implementation}.
 
 \subsubsection*{Direct multiple shooting transcription}
 \label{subsubsection:dmstranscription}
 
-Based on the description provided above and on the work of \citet{bock2007numerical}, the following \acrshort{nlp} (equation \ref{eq:ocptranscription2dms}) outlines a transcription of \ref{eq:continuousTimeOCP} using direct multiple shooting.
+According to the description provided above and on the work of \citet{bock2007numerical}, the NLP \eqref{eq:ocptranscription2dms} outlines a transcription of problem \eqref{eq:continuousTimeOCP} using direct multiple shooting.
 \begin{subequations}\label{eq:ocptranscription2dms}
 	\begin{align}
-		\underset{\mathbf{w}}{\text{minimize}} \sum_{i=0}^{N-1} \lagrangeTerm{\mathbf{x}(t_i), \mathbf{u}(t_i), &\mathbf{p}(t_i)}_i + \mayerTerm{\mathbf{x}(t_N), \mathbf{p}(t_N)} \label{subeq:objective} \\
+		\underset{\mathbf{w}}{\text{minimize}} \sum_{i=0}^{N-1} \lagrangeTerm{\mathbf{x}(t_i),\,\mathbf{u}(t_i),\,&\mathbf{p}(t_i)}_i + \mayerTerm{\mathbf{x}(t_N),\,\mathbf{p}(t_N)} \label{subeq:objective} \\
 		\text{subject to} \hspace{5mm} \mathbf{x}(t_0) &=\mathbf{\hat{x}}_0 \label{subeq:initialstate} \\
-		\mathbf{x}(t_{i+1}) &= \processModel{\mathbf{x}(t_i), \mathbf{u}(t_i), \mathbf{p}(t_i)}_{RK4},\hspace{0.2cm} i= 0,\,...\,,N-1. \label{subeq:continuity} \\
-		\ineqCon{\mathbf{x}(t_i), \mathbf{u}(t_i)} &\leq 0, \hspace{0.2cm} i= 0,\,...\,,N.  \label{subeq:nonlinearcons} \\
-		\eqCon{\mathbf{x}(t_i), \mathbf{u}(t_i)} &= 0, \hspace{0.2cm} i= 0,\,...\,,N. \label{subeq:linearcons}
+		\mathbf{x}(t_{i+1}) &= \processModel{\mathbf{x}(t_i),\,\mathbf{u}(t_i),\,\mathbf{p}(t_i)}_{RK4},\hspace{0.2cm} i= 0,\,...\,,N-1. \label{subeq:continuity} \\
+		\ineqCon{\mathbf{x}(t_i),\,\mathbf{u}(t_i)} &\leq 0, \hspace{0.2cm} i= 0,\,...\,,N.  \label{subeq:nonlinearcons} \\
+		\eqCon{\mathbf{x}(t_i),\,\mathbf{u}(t_i)} &= 0, \hspace{0.2cm} i= 0,\,...\,,N. \label{subeq:linearcons}
 	\end{align}
 \end{subequations}
 
-, where \ref{subeq:objective} denotes the objetive function, \ref{subeq:initialstate} is the initial state constraint, \ref{subeq:continuity} denotes the continuity constraint and \ref{subeq:nonlinearcons} and \ref{subeq:linearcons} denote inequality and equality constraints, respectively. In this transcription, the optimization variables (\ref{eq:optimizationVar}) include every state and control along the control horizon of length $N$. Every constraint is enforced at each subinterval $\delta t_i = \left[t_i,\,t_{i+1}\right]$, which may not be of equal time length.
+\noindent , where equation \eqref{subeq:objective} denotes the objetive function, \eqref{subeq:initialstate} is the initial state constraint, \eqref{subeq:continuity} denotes the continuity constraint and \eqref{subeq:nonlinearcons} and \eqref{subeq:linearcons} denote the inequality and equality constraints, respectively. In this transcription, the optimization variables $\mathbf{w}$ from \refeq{eq:optimizationVar} include every state and control along the control horizon of length $N$. Every constraint is enforced at each subinterval $\delta t_i = \left[t_i,\,t_{i+1}\right]$, which may not be of equal time length.
 \begin{equation}
-\mathbf{w} = \{\mathbf{x}(t_0), \,\mathbf{u}(t_0), \, \mathbf{x}(t_1), \,\mathbf{u}(t_1),\,\ldots, \mathbf{u}(t_{N-1}),\, \mathbf{x}(t_N) \}
+\mathbf{w} = \left[\mathbf{x}^T(t_0),\,\mathbf{u}^T(t_0),\,\mathbf{x}^T(t_1),\,\mathbf{u}^T(t_1),\,\ldots,\mathbf{u}^T(t_{N-1}),\,\mathbf{x}^T(t_N) \right]
 \label{eq:optimizationVar}
 \end{equation}
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.65\textwidth]{Figures/MPC_scheme_basic.pdf}
-  \caption[Caption for figure in TOC.]{Working principle of a discrete \acrshort{ocp} \cite{mpcworkingprinciple}.}
-  \label{fig:mpcusecase}
-\end{figure}
-
-Moreover, on \ref{subeq:continuity} the process model is integrated using the very well known Runge-Kutta 4 method (see section \ref{section:rk4}).
+Moreover, the dynamics of \refeq{subeq:continuity} is integrated using the very well known Runge-Kutta 4 method (see section \ref{section:rk4}).
 
 \subsection{Linearisation after discretization}
 \label{subsection:linafterdisc} 
 
-When it comes to linearisation, subequation \ref{subeq:continuity} is linearised by propagating forward the \acrshort{rk4} integration method. For the sake of completeness, \textbf{implicit} and \textbf{explicit} integration methods are two classes of integrator methods available, where \acrshort{rk4} is an explicit one. Implicit integrators schemes define a nonlinear system of equations that implicitly defines the integration result. Then, this system is iteratively solved, similarly to a Newton type iterative method. On the other hand, explicit schemes rely on a direct combination of explicit evaluations of the right side of the system dynamics \cite{verschueren2022acados}.
+When it comes to linearisation, subequation \eqref{subeq:continuity} is linearised by forward propagating the RK-4 integration method. For the sake of completeness, \textbf{implicit} and \textbf{explicit} integration methods are two classes of integrator methods available, whereas RK-4 is an explicit one. Implicit integrator schemes define a nonlinear system of equations that implicitly define the integration result. Then, this system is iteratively solved, similarly to a Newton type iterative method. On the other hand, explicit schemes rely on a direct combination of explicit evaluations of the right side of the system dynamics \cite{verschueren2022acados}.
 
 \begin{figure}[h]
 \centering
@@ -292,14 +287,14 @@ When it comes to linearisation, subequation \ref{subeq:continuity} is linearised
     child {node {Implicit schemes}}
     child {node {\textbf{Explicit schemes}}};
 \end{tikzpicture}
-\caption{Families of integrator schemes.}
+\caption{Types of integrator schemes.}
 \label{fig:integratormethods}
 \end{figure}
 
-The respective sensitivities are also differentiated. Here, the linearisation algorithm \ref{alg:rk4ad} is presented, where $\mathbf{x}(t_k) = \mathbf{x}_k$ for the sake of simplicity. More details can be found in \cite{gros2020linear}. The propagation of $\odv{\mathbf{k}_j}{\mathbf{s}_i},\, j = \{1,\,\ldots,4\},\; \mathbf{s}=\{\mathbf{x},\,\mathbf{u}\}$ is derived by applying the chain rule to the propagation of $\mathbf{k}_j$. This algorithm is applied to every shooting node of \ref{eq:ocptranscription2dms}. On every node, $N_s = \frac{\delta t_i}{h_i}$ integration steps are applied, with step $h_i$ \cite{gros2020linear}.
+The respective sensitivities are also differentiated. Here, the linearisation algorithm \nameref{alg:rk4ad} is presented, where $\mathbf{x}(t_k) = \mathbf{x}_k$ for the sake of simplicity. More details can be found in \cite{gros2020linear}. The propagation of $\odv{\mathbf{k}_j}{\mathbf{s}_i},\; \text{where} \, j = \{1,\,\ldots,4\},\; \mathbf{s}=\left[\mathbf{x}^T,\,\mathbf{u}^T\right]$ is derived by applying the chain rule to the propagation of $\mathbf{k}_j$. This algorithm is applied to every shooting node of problem \eqref{eq:ocptranscription2dms}. On every node, $N_s = \frac{\delta t_i}{h_i}$ integration steps are applied, with step $h_i$ \cite{gros2020linear}.
 
 \begin{algorithm}[H]
-	\caption{\footnotesize $n_s$ steps \acrshort{rk4} with forward \acrshort{ad} on interval $\left[t_i,\,t_{i+1}\right]$ \cite{gros2020linear}}\label{alg:rk4ad}
+	\caption{RK4fAD}\label{alg:rk4ad}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
@@ -307,11 +302,11 @@ The respective sensitivities are also differentiated. Here, the linearisation al
 	\State $\mathbf{A}_i = \mathbf{1},\,\mathbf{B}_i = \mathbf{0}$
 	\ForEach{$j \in \{1,\, \ldots, \, N_s\}$}
 	\State $\mathbf{k}_1 \gets \processModel{\mathbf{x}_i,\, \mathbf{u}_i,\, \mathbf{p}_i}$
-	\State $\left[\odv{\mathbf{k}_1}{\mathbf{x}_i} \hspace{0.2cm} \odv{\mathbf{k}_1}{\mathbf{u}_i}\right] \gets \pdv{\processModel{\mathbf{x}_i,\, \mathbf{u}_i,\, \mathbf{p}_i}}{\mathbf{x}_i} \left[\mathbf{A}_i \hspace{0.2cm} \mathbf{B}_i\right] + \left[\mathbf{0} \hspace{0.2cm} \pdv{f}{\mathbf{u}_i}\right]$
+	\State $\left[\odv{\mathbf{k}_1}{\mathbf{x}_i} \hspace{0.2cm} \odv{\mathbf{k}_1}{\mathbf{u}_i}\right] \gets \pdv{\processModel{\mathbf{x}_i,\, \mathbf{u}_i,\, \mathbf{p}_i}}{\mathbf{x}_i} \left[\mathbf{A}_i \hspace{0.2cm} \mathbf{B}_i\right] + \left[\mathbf{0} \hspace{0.2cm} \pdv{\mathbf{f}}{\mathbf{u}_i}\right]$
 	\State $\mathbf{k}_2 \gets \processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_1,\,\mathbf{u}_i,\,\mathbf{p}_i}$
-	\State $\left[\odv{\mathbf{k}_2}{\mathbf{x}_i} \hspace{0.2cm} \odv{\mathbf{k}_2}{\mathbf{u}_i}\right] \gets \pdv{\processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_1, \mathbf{u}_i, \mathbf{p}_i}}{\mathbf{x}_i} \left[\mathbf{A}_i + \frac{h_i}{2} \odv{\mathbf{k}_1}{\mathbf{x}_i} \hspace{0.2cm} \mathbf{B}_i + \frac{h_i}{2} \odv{\mathbf{k}_1}{\mathbf{u}_i}\right] + \left[\mathbf{0} \hspace{0.2cm} \pdv{\processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_1,\, \mathbf{u}_i,\, \mathbf{p}_i}}{\mathbf{u}_i}\right]$
+	\State $\left[\odv{\mathbf{k}_2}{\mathbf{x}_i} \hspace{0.2cm} \odv{\mathbf{k}_2}{\mathbf{u}_i}\right] \gets \pdv{\processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_1,\,\mathbf{u}_i,\,\mathbf{p}_i}}{\mathbf{x}_i} \left[\mathbf{A}_i + \frac{h_i}{2} \odv{\mathbf{k}_1}{\mathbf{x}_i} \hspace{0.2cm} \mathbf{B}_i + \frac{h_i}{2} \odv{\mathbf{k}_1}{\mathbf{u}_i}\right] + \left[\mathbf{0} \hspace{0.2cm} \pdv{\processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_1,\,\mathbf{u}_i,\,\mathbf{p}_i}}{\mathbf{u}_i}\right]$
 	\State $\mathbf{k}_3 \gets \processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_2,\, \mathbf{u}_i,\, \mathbf{p}_i}$
-	\State $\left[\odv{\mathbf{k}_3}{\mathbf{x}_i} \hspace{0.2cm} \odv{\mathbf{k}_3}{\mathbf{u}_i}\right] \gets \pdv{\processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_2,\,\mathbf{u}_i,\,\mathbf{p}_i}}{\mathbf{x}_i} \left[\mathbf{A}_i + \frac{h_i}{2} \odv{\mathbf{k}_2}{\mathbf{x}_i} \hspace{0.2cm} \mathbf{B}_i + \frac{h_i}{2} \odv{\mathbf{k}_2}{\mathbf{u}_i}\right] + \left[\mathbf{0} \hspace{0.2cm} \pdv{\processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_2, \mathbf{u}_i, \mathbf{p}_i}}{\mathbf{u}_i}\right]$
+	\State $\left[\odv{\mathbf{k}_3}{\mathbf{x}_i} \hspace{0.2cm} \odv{\mathbf{k}_3}{\mathbf{u}_i}\right] \gets \pdv{\processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_2,\,\mathbf{u}_i,\,\mathbf{p}_i}}{\mathbf{x}_i} \left[\mathbf{A}_i + \frac{h_i}{2} \odv{\mathbf{k}_2}{\mathbf{x}_i} \hspace{0.2cm} \mathbf{B}_i + \frac{h_i}{2} \odv{\mathbf{k}_2}{\mathbf{u}_i}\right] + \left[\mathbf{0} \hspace{0.2cm} \pdv{\processModel{\mathbf{x}_i + \frac{h_i}{2}\mathbf{k}_2,\,\mathbf{u}_i,\,\mathbf{p}_i}}{\mathbf{u}_i}\right]$
 	\State $\mathbf{k}_4 \gets \processModel{\mathbf{x}_i + h_i\,\mathbf{k}_3,\, \mathbf{u}_i,\, \mathbf{p}_i}$
 	\State $\left[\odv{\mathbf{k}_4}{\mathbf{x}_i} \hspace{0.2cm} \odv{\mathbf{k}_4}{\mathbf{u}_i}\right] \gets \pdv{\processModel{\mathbf{x}_i + h_i \, \mathbf{k}_3,\, \mathbf{u}_i,\,\mathbf{p}_i}}{\mathbf{x}_i} \left[\mathbf{A}_i + h_i \, \odv{\mathbf{k}_3}{\mathbf{x}_i} \hspace{0.2cm} \mathbf{B}_i + h_i \, \odv{\mathbf{k}_3}{\mathbf{u}_i}\right] + \left[\mathbf{0} \hspace{0.2cm} \pdv{\processModel{\mathbf{x}_i + h_i \, \mathbf{k}_3,\,\mathbf{u}_i,\,\mathbf{p}_i}}{\mathbf{u}_i}\right]$
 	\State $\mathbf{x}_i \gets \mathbf{x}_i + \frac{h_i}{6} \left( \mathbf{k}_1 + 2 \, \mathbf{k}_2 + 2 \, \mathbf{k}_3 + \mathbf{k}_4 \right)$
@@ -322,15 +317,15 @@ The respective sensitivities are also differentiated. Here, the linearisation al
 	\end{algorithmic}
 \end{algorithm}
 
-In algorithm \ref{alg:rk4ad}, $\mathbf{A}_i = \pdv{\processModel{\cdot}_{RK4}}{\mathbf{x}_i}$ and $\mathbf{B}_i = \pdv{\processModel{\cdot}_{RK4}}{\mathbf{u}_i}$, where $\processModel{\cdot}_{RK4}$ denotes $\processModel{\mathbf{x}(t_i), \mathbf{u}(t_i), \mathbf{p}(t_i)}_{RK4}$, for the sake of simplicity. For the sake of completeness, first-order sensitivities are presented in \ref{eq:sensitivitiespropagation}. Additionally, the reader is referred to \cite{verschueren2022acados}, to collect information on second-order sensitivities.
+In algorithm \nameref{alg:rk4ad}, $\mathbf{A}_i = \pdv{\processModel{\cdot}_{RK4}}{\mathbf{x}_i}$ and $\mathbf{B}_i = \pdv{\processModel{\cdot}_{RK4}}{\mathbf{u}_i}$, where $\processModel{\cdot}_{RK4}$ denotes $\processModel{\mathbf{x}(t_i),\,\mathbf{u}(t_i),\,\mathbf{p}(t_i)}_{RK4}$, for the sake of simplicity. For the sake of completeness, first-order sensitivities are presented in \refeq{eq:sensitivitiespropagation}. Additionally, the reader is referred to \cite{verschueren2022acados}, to collect information on second-order sensitivities.
 
-\subsubsection*{\acrlong{qp}}
+\subsubsection*{Quadratic programming}
 
-As a result of the application of these numerical methods to problem \ref{eq:continuousTimeOCP}, one reachs to the \acrshort{qp} presented in \ref{eq:qpocp}. A slacked formulation was omitted, but the reader may find it in \cite{verschueren2022acados}. Slack variables relax the problem constraints and can be introduced in the objective function. Apart from that, these variables are also part of the optimization variables $\Delta \mathbf{w}$.
+As a result of the application of these numerical methods to problem \eqref{eq:ocptranscription2dms}, one gets QP \eqref{eq:qpocp}. A slacked formulation was omitted, but the reader may find it in \cite{verschueren2022acados}. Slack variables relax the problem constraints and can be introduced in the objective function. Apart from that, these variables are also part of the optimization variables $\Delta \mathbf{w}$.
 
-However, for the case of \acrshort{qp} \ref{eq:qpocp}, $\Delta \mathbf{w}$ only includes the states and control inputs. On the other hand, the hessian $\mathbf{H}_i$ and $\begin{bmatrix} \mathbf{q}_i & \mathbf{r}_i \end{bmatrix}$ are defined on \ref{subeq:qphessian} and \ref{subeq:hessian2}, respectively.
+However, for the case of QP \eqref{eq:qpocp}, $\Delta \mathbf{w}$ only includes the states and control inputs. Moreover, $\mathbf{H}_i$ denotes the hessian of the lagrangian of problem \eqref{eq:ocptranscription2dms} and $\left[\mathbf{q}^T_i \; \mathbf{r}^T_i\right]$ stands for the lagrangian gradient linear terms, which are defined on equations \eqref{subeq:qphessian} and \eqref{subeq:hessian2}, respectively.
 
-For the sake of brevity, approaches to address the approximation of the hessian $\mathbf{H}_i$ are divided in two families: \textbf{approximation of convex hessians} or \textbf{regularization} of indefinite hessians. These methods aim to improve convergence of the \acrshort{nmpc} solver scheme and the hessian convexity ($\mathbf{H}_i \succeq 0$).
+For the sake of brevity, approaches to address the approximation of the hessian $\mathbf{H}_i$ are divided in two families: \textbf{approximation of convex hessians} or \textbf{regularization} of indefinite hessians. These methods aim to improve convergence of the NMPC solver scheme and the hessian convexity ($\mathbf{H}_i \succeq 0$).
 \begin{subequations}\label{eq:qpdefinitions}
 \begin{align}
 \mathbf{H}_i &= \begin{bmatrix}
@@ -338,12 +333,13 @@ For the sake of brevity, approaches to address the approximation of the hessian 
 \mathbf{S}_i & \mathbf{R}_i
 \end{bmatrix},\; i = 0,\,\ldots,N-1 \label{subeq:qphessian} \\
 \begin{bmatrix} \mathbf{q}_i \\ \mathbf{r}_i \end{bmatrix} &= \mathbf{W}_i \, \begin{bmatrix} \mathbf{x}_i^{guess} -  \mathbf{x}_i^{ref} \\  \mathbf{u}_i^{guess} -  \mathbf{u}_i^{ref} \end{bmatrix},\; i = 0,\,\ldots,N-1 \label{subeq:hessian2} \\
-\Delta \mathbf{w} &= \left\lbrace  \Delta \mathbf{x}_0, \,\Delta \mathbf{u}_0, \, \Delta \mathbf{x}_1, \,\Delta \mathbf{u}_1,\,\ldots, \Delta \mathbf{u}_{N-1},\, \Delta \mathbf{x}_N \right\rbrace  \label{subeq:qpoptvar} \\
+\Delta \mathbf{w} &= \left[\Delta \mathbf{x}^T_0, \,\Delta \mathbf{u}^T_0, \, \Delta \mathbf{x}^T_1, \,\Delta \mathbf{u}^T_1,\,\ldots, \Delta \mathbf{u}^T_{N-1},\, \Delta \mathbf{x}^T_N \right]  \label{subeq:qpoptvar} \\
 \Delta \mathbf{x}_i &= \mathbf{x}_i - \mathbf{x}_i^{guess},\; i = 0,\,\ldots,N-1 \label{subeq:qpstates} \\
 \Delta \mathbf{u}_i &= \mathbf{u}_i - \mathbf{u}_i^{guess},\; i = 0,\,\ldots,N-1\label{subeq:qpcontrols}
 \end{align}
 \end{subequations}
-Moreover, \acrshort{qp} \ref{eq:qpocp} can be solved by further exploiting the \acrshort{qp} structure. The \textbf{condensing approach} is a very popular one that creates a smaller \acrshort{qp} by eliminating the state variables. Then, a dense \acrshort{qp} solver such as \texttt{qpOASES} \cite{ferreau2014qpoases} or an \acrshort{ipopt} method like \texttt{HPIPM} \cite{frison2020hpipm} can be applied to this smaller \acrshort{qp}. Both are available in \texttt{acados}. \textbf{Partial condensing} methods only create smaller \acrshort{qp}s on some blocks of the control horizon and it keeps some of initial \acrshort{qp} structure. The reader is referred to \cite{verschueren2022acados, diehl2009efficient} for more information on the hessian approximation and on the \acrshort{qp} structure exploitation.
+
+Moreover, QP \eqref{eq:qpocp} can be solved by further exploiting the QP structure. The \textbf{condensing approach} is a very popular one that creates a smaller QP by eliminating the state variables. Then, a dense QP solver such as \texttt{qpOASES} \cite{ferreau2014qpoases} or an IPOPT method like \texttt{HPIPM} \cite{frison2020hpipm} can be applied to this smaller QP. Both are available in \texttt{acados}. \textbf{Partial condensing} methods only create smaller QPs on some blocks of the control horizon, although it keeps some of the initial QP structure. The reader is referred to \cite{verschueren2022acados, diehl2009efficient} for more information on the hessian approximation topic and on QP structure exploitation.
 \begin{subequations}\label{eq:qpocp}
 	\begin{align}
 		\underset{\Delta \mathbf{w}}{\text{minimize}} \sum_{i=0}^{N-1} & \frac{1}{2} \, \begin{bmatrix}
@@ -363,43 +359,50 @@ Moreover, \acrshort{qp} \ref{eq:qpocp} can be solved by further exploiting the \
 		\Delta \mathbf{u}_i
 \end{bmatrix} + \Delta \mathbf{x}_N^T \, \mathbf{Q}_N \, \Delta \mathbf{x}_N + \mathbf{q}_N^T \, \Delta \mathbf{x}_N \label{subeq:qpobjective}\\
 		\text{subject to} \hspace{5mm} \Delta \mathbf{x}_0 &= \mathbf{\hat{x}}_0 - \mathbf{x}_0^{guess} \label{subeq:qpinitialstate}\\
-		\Delta \mathbf{x}_{i+1} &= \mathbf{A}_i \, \Delta \mathbf{x}_i + \mathbf{B}_i \, \Delta \mathbf{u}_i + \processModel{\mathbf{x}_i^{guess}, \mathbf{u}_i^{guess}, \mathbf{p}_i}_{RK4} - \mathbf{x}_{i+1}^{guess}, \hspace{0.1cm} i= 0,\,...\,,N-1. \label{subeq:qpcontinuity}\\
-		\mathbf{C}_i \, \Delta \mathbf{x}_i &+ \mathbf{D}_i \, \Delta \mathbf{u}_i + \ineqCon{\mathbf{x}_i^{guess},\, \mathbf{u}_i^{guess},\,\mathbf{p}_i} \leq 0, \hspace{0.2cm} i= 0,\,...\,,N-1 \label{subeq:qpnonlinearcons}\\
-		\mathbf{E}_i \, \Delta \mathbf{x}_i &+ \mathbf{F}_i \, \Delta \mathbf{u}_i + \eqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i} = 0, \hspace{0.2cm} i= 0,\,...\,,N-1 \label{subeq:qplinearcons}\\
-		\mathbf{C}_N \, \Delta \mathbf{x}_N &+ \ineqCon{\mathbf{x}_N^{guess},\,\mathbf{p}_N} \leq 0\\
-		\mathbf{E}_N \, \Delta \mathbf{x}_N &+ \eqCon{\mathbf{x}_N^{guess},\,\mathbf{p}_N} = 0
+		\Delta \mathbf{x}_{i+1} &= \mathbf{A}_i \, \Delta \mathbf{x}_i + \mathbf{B}_i \, \Delta \mathbf{u}_i + \processModel{\mathbf{x}_i^{guess},\, \mathbf{u}_i^{guess},\,\mathbf{p}_i}_{RK4} - \mathbf{x}_{i+1}^{guess},\, \hspace{0.1cm} i= 0,\,...\,,N-1. \label{subeq:qpcontinuity}\\
+		0 &\geq \mathbf{C}_i\,\Delta \mathbf{x}_i + \mathbf{D}_i \,\,\Delta \mathbf{u}_i + \ineqCon{\mathbf{x}_i^{guess},\, \mathbf{u}_i^{guess},\,\mathbf{p}_i}, \hspace{0.2cm} i= 0,\,...\,,N-1 \label{subeq:qpnonlinearcons}\\
+		0 &= \mathbf{E}_i \, \Delta \mathbf{x}_i + \mathbf{F}_i \, \Delta \mathbf{u}_i + \eqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i}, \hspace{0.2cm} i= 0,\,...\,,N-1 \label{subeq:qplinearcons}\\
+		0 &\geq \mathbf{C}_N \, \Delta \mathbf{x}_N + \ineqCon{\mathbf{x}_N^{guess},\,\mathbf{p}_N}\\
+		0 &= \mathbf{E}_N \, \Delta \mathbf{x}_N + \eqCon{\mathbf{x}_N^{guess},\,\mathbf{p}_N}
 	\end{align}
 \end{subequations}
 
-, where the Jacobian matrices of $\ineqCon{\cdot}$ and $\eqCon{\cdot}$ are denoted by $\mathbf{C}_i = \pdv{\ineqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i}}{\mathbf{x}_i}$, $\mathbf{D}_i = \pdv{\ineqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i}}{\mathbf{u}_i}$, $\mathbf{E}_i = \pdv{\eqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i}}{\mathbf{x}_i}$, $\mathbf{F}_i = \pdv{\eqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i}}{\mathbf{u}_i}$.
+\noindent , where the Jacobian matrices of $\ineqCon{\cdot}$ and $\eqCon{\cdot}$ are denoted by $\mathbf{C}_i = \pdv{\ineqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i}}{\mathbf{x}_i}$, $\mathbf{D}_i = \pdv{\ineqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i}}{\mathbf{u}_i}$, $\mathbf{E}_i = \pdv{\eqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i}}{\mathbf{x}_i}$, $\mathbf{F}_i = \pdv{\eqCon{\mathbf{x}_i^{guess},\,\mathbf{u}_i^{guess},\,\mathbf{p}_i}}{\mathbf{u}_i}$.
 
-Finally, it is worth noting that the sum $\processModel{\mathbf{x}_i^{guess}, \mathbf{u}_i^{guess}, \mathbf{p}_i}_{RK4} - \mathbf{x}_{i+1}^{guess}$ denotes an offset term that expresses whether the guess satisfies the problem dynamics. In case this term is zero, the \acrshort{qp} solver focuses on rejecting disturbances and on minimizing the objective function. 
+Finally, it is worth noting that the sum $\processModel{\mathbf{x}_i^{guess}, \mathbf{u}_i^{guess}, \mathbf{p}_i}_{RK4} - \mathbf{x}_{i+1}^{guess}$ denotes an offset term that expresses whether the guess satisfies the problem dynamics. In case this term is zero, the QP solver focuses on rejecting disturbances and on minimizing the objective function. 
 
 \subsection{Nonlinear Model Predictive Control}
 \label{subsection:nmpc}
 
-A \acrshort{nmpc} problem \cite{Rawlings2013, grunenmpc} lies in optimizing a cost function, which may or not be subject to constraints. The cost function is optimized along an established horizon (it may be infinite theoretically), and the constraints may range from model-based dynamics, control constraints or space-state constraints. This problem is also subject to initial values. A typical example of it is problem \ref{eq:continuousTimeOCP}. Figure \ref{fig:mpcusecase} presents a basic working example.
+A \acrshort{nmpc} problem \cite{Rawlings2013, grunenmpc} lies in optimizing a cost function, which may or not be subject to constraints. The cost function is optimized along an established horizon (it may be infinite theoretically), and the constraints may range from model-based dynamics to state or control constraints. This problem is also subject to initial values. A NMPC formulation example is provided by problem \eqref{eq:ocptranscription2dms}, whereas an example of it is presented in \eqref{eq:safeonestageocp}. Figure \ref{fig:mpcusecase}\footnote{\textit{A basic working principle of Model Predictive Control} (October 2009) from  Martin Behrendt: \url{https://commons.wikimedia.org/wiki/File:MPC_scheme_basic.svg} (accessed on 26 of March 2026)} presents a basic working example.
 
-Typically, this problem is formulated on closed loop form, and computes a control law $\pi(\cdot)$, that delivers an optimized control $\mathbf{u}_0^*$ to be applied to a plant, such that $\mathbf{u}_0^* = \pi\left(\mathbf{\hat{x}}_0\right)$. In this thesis, only \acrshort{sqp} methods are considered to solve a \acrshort{nmpc} problem. Typically, such problems iteratively solve \acrshort{qp}s like the one \ref{eq:qpocp} by providing Newton directions $\Delta \mathbf{w}_k$ to update the solution $\mathbf{w}_{k+1}$, apart from the Lagrange multipliers $\bm{\hmultiplier}_k$ and $\bm{\gmultiplier}_k$ (\ref{eq:updatesol}), until some convergence criteria is met (see algorithms 1 and 2 of \cite{gros2020linear}).
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.65\textwidth]{Figures/MPC_scheme_basic.pdf}
+  \caption[Working principle of a discrete OCP.]{NMPC working principle.}
+  \label{fig:mpcusecase}
+\end{figure}
+
+Typically, this problem is formulated on closed loop form, and computes a control law $\pi(\cdot)$, that delivers an optimized control $\mathbf{u}_0^*$ to be applied to a plant, such that $\mathbf{u}_0^* = \pi\left(\mathbf{\hat{x}}_0\right)$. In this thesis, only SQP methods are considered to solve a NMPC problem. Typically, such problems iteratively solve QPs like the one in \eqref{eq:qpocp} by providing Newton directions $\Delta \mathbf{w}_k$ to update the solution $\mathbf{w}_{k+1}$, apart from the Lagrange multipliers $\bm{\hmultiplier}_k$ and $\bm{\gmultiplier}_k$ (\ref{eq:updatesol}), until some convergence criteria is met (see algorithms 1 and 2 of \cite{gros2020linear}).
 
 \begin{equation}
 \mathbf{w}_k = \mathbf{w}_k^{guess} + \Delta \mathbf{w}_k ,\hspace{0.5cm} \bm{\hmultiplier}_k = \bm{\hmultiplier}_{QP}, \hspace{0.5cm} \bm{\gmultiplier}_k = \bm{\gmultiplier}_{QP}
 \label{eq:updatesol}
 \end{equation}
 
-A survey on online \acrshort{nmpc} optimization algorithms is presented in the final chapter of \cite{diehl2009efficient}. This thesis focuses on the application of the \acrlong{rti} scheme. \cite{bock2007numerical} presents variants of this scheme. Below, one describes the \acrshort{rti} algorithm as it is implemented in \texttt{acados}.
+A survey on online NMPC optimization algorithms is presented in the final chapter of \cite{diehl2009efficient}. This thesis focuses on the application of the real-time iteration scheme. \cite{bock2007numerical} presents variants of this scheme. Below, one describes the RTI algorithm as it is implemented in \texttt{acados}.
 
-\subsubsection*{\acrlong{rti} scheme}
+\subsubsection*{Real-time iteration scheme}
 
-The \acrshort{rti} aims to tackle shortcomings of the \acrshort{nmpc} \acrshort{sqp} solver. Although the latter provides more accurate solutions, it delivers outdated control policies. At the moment that the solution is provided, there is a delay between the start of the algorithm (when the initial state is gathered) and its end (\textbf{real-time dilemma}). Due to that, the \acrshort{rti} scheme compromises accuracy but scores on delivering a control policy that is based on up to date information regarding the physical system state.
+RTI aims to tackle shortcomings of the NMPC SQP solver. Although the latter provides more accurate solutions, it delivers outdated control policies. At the moment that the solution is provided, there is a delay between the start of the algorithm (when the initial state is gathered) and its end (\textbf{real-time dilemma}). Due to that, the \acrshort{rti} scheme compromises accuracy but scores on delivering a control policy that is based on up to date information regarding the physical system state.
 
-The algorithm is divided between a \textbf{preparation} - it performs all computations that do not require the knowledge of the system current state $\mathbf{\hat{x}}_0$ - and a \textbf{feedback} - it fastly obtains a new Newton direction $\Delta \mathbf{w}$ after obtaining $\mathbf{\hat{x}}_0$ - phase. Algorithm \ref{alg:rti} joins these two phases, where $i$ denotes the control horizon node and $k$ denotes the $k^{th}$ \acrshort{qp} iteration.
+The algorithm is divided between a \textbf{preparation} - it performs all computations that do not require the knowledge of the system current state $\mathbf{\hat{x}}_0$ - and a \textbf{feedback} - it fastly obtains a new Newton direction $\Delta \mathbf{w}$ after obtaining $\mathbf{\hat{x}}_0$ - phase. Algorithm \ref{alg:rti} joins these two phases, where $i$ denotes the control horizon node and $k$ denotes the $k^{th}$ QP iteration.
 
 \begin{remark}
-In case $\mathbf{H}_{i, k} = \mathbf{W}_{i, k}$, it comes that $\mathbf{H}_{i, k} \succeq 0$, and there is no need to compute second-order sensitivities. Note that a non positive definite cost does not ensure stability of the algorithm \cite{gros2020linear}.
+In case $\mathbf{H}_{i, k} = \mathbf{W}_{i, k}$, it comes that $\mathbf{H}_{i, k} \succeq 0$, and there is no need to compute second-order sensitivities. Note that a non-positive definite cost does not ensure stability of the algorithm \cite{gros2020linear}.
 \end{remark}
 
-Due to the nature of the \acrshort{rti} scheme, it only performs a full Newton step per iteration. On the other hand, the \acrshort{sqp} can perform multiple steps per iteration till convergence. Then, some measures must be put in place in order to ensure that the solution provided by this single step is close enough to a fully converged and global optimal solution. 
+Due to the nature of the RTI scheme, it only performs a full Newton step per iteration. On the other hand, the \acrshort{sqp} can perform multiple steps per iteration until convergence is achieved. Then, some measures must be put in place in order to ensure that the solution provided by this single step is close enough to a fully converged and global optimal solution. 
 
 \subsubsection*{\acrshort{rti} global optimality}
 
@@ -418,18 +421,17 @@ There are no jumps in the reference and state.
 \end{assumption}
 
 \begin{assumption}\label{assumption:rti4}
-The \acrshort{ocp} underlying the \acrshort{nmpc} problem fullfils the second order sufficient conditions for every feasible initial condition.
+The \acrshort{ocp} underlying the \acrshort{nmpc} problem fullfils the second order sufficient conditions (see theorem \ref{theorem:sooc}) for every feasible initial condition.
 \end{assumption}
 
 \begin{assumption}\label{assumption:rti5}
 The global optimum depends continuously on the initial state and reference.
 \end{assumption}
 
-
-Assumption \ref{assumption:rti1} entails the fact the initial guess must be close to the global optimum. If we assume that the previous solution verifies the latter requirement, that is $\mathbf{w}_{k-1} \in \neighborhood\left( \mathbf{w}_{NMPC}^* \right)$, then $\mathbf{w}_{k-1}$ may be shifted to the following iteration and warm-up \ref{eq:qpocp} with the previous solution. Assumptions \ref{assumption:rti2} and \ref{assumption:rti3} contribute to guarantee the previous proposition along every \acrshort{rti} iteration. Assumption \ref{assumption:rti4} guarantees that the solution manifold $\neighborhood\left( \mathbf{w}_{NMPC}^* \right)$ is smooth and has no bifurcation. Then, algorithm \ref{alg:rti} will keep track of $\neighborhood\left( \mathbf{w}_{NMPC}^* \right)$ as long as $\mathbf{w}_{k}^{guess} \in \neighborhood\left( \mathbf{w}_{NMPC}^* \right)$ and $\mathbf{\hat{x}}_{0, k} \in \neighborhood\left( \mathbf{\hat{x}}_{0, k}^{guess}\right)$. Finally, assumption \ref{assumption:rti5} guarantees that the solution manifold $\neighborhood\left( \mathbf{w}_{NMPC}^* \right)$ is continuous in time. In case these assumptions are taken into account, algorithm \ref{alg:rti} can be said to deliver the global optimum of the \acrshort{nmpc} problem, and not just a local one. See the work of \citet{diehl2001real} for a formal proof of this statement.
+Assumption \ref{assumption:rti1} entails the fact that the initial guess must be close to the global optimum. If we assume that the previous solution verifies the latter requirement, that is $\mathbf{w}_{k-1} \in \neighborhood\left( \mathbf{w}_{NMPC}^* \right)$, then $\mathbf{w}_{k-1}$ may be shifted to the following iteration and warm-up \ref{eq:qpocp} with the previous solution. Assumptions \ref{assumption:rti2} and \ref{assumption:rti3} contribute to guarantee the previous proposition along every RTI iteration. Assumption \ref{assumption:rti4} guarantees that the solution manifold $\neighborhood\left(\mathbf{w}_{NMPC}^*\right)$ is smooth and has no bifurcation. Then, algorithm \nameref{alg:rti} \cite{gros2020linear} will keep track of $\neighborhood\left( \mathbf{w}_{NMPC}^* \right)$ as long as $\mathbf{w}_{k}^{guess} \in \neighborhood\left( \mathbf{w}_{NMPC}^* \right)$ and $\mathbf{\hat{x}}_{0, k} \in \neighborhood\left( \mathbf{\hat{x}}_{0, k}^{guess}\right)$. Finally, assumption \ref{assumption:rti5} guarantees that the solution manifold $\neighborhood\left( \mathbf{w}_{NMPC}^* \right)$ is continuous in time. In case these assumptions are taken into account, the application of the \nameref{alg:rti} algorithm at iteration $k$ can be said to deliver the global optimum of the \acrshort{nmpc} problem, and not just a local one. See the work of \citet{diehl2001real} for a formal proof of this statement.
 
 \begin{algorithm}[H]
-	\caption{\footnotesize \acrshort{rti} for \acrshort{nmpc} at discrete time $k$ \cite{gros2020linear}}\label{alg:rti}
+	\caption{RTI}\label{alg:rti}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
@@ -437,11 +439,11 @@ Assumption \ref{assumption:rti1} entails the fact the initial guess must be clos
 	\Require previous solution $\mathbf{w}_{k-1}$ and references $\mathbf{x}_k^{ref},\,\mathbf{u}_k^{ref}$
 	\State Shift $\mathbf{w}_{k-1}$ to construct $\mathbf{w}_k^{guess}$
 	\State Evaluate $\processModel{\cdot},\, \eqCon{\cdot},\,\ineqCon{\cdot},\,\mathbf{A}_{i,\,k},\,\mathbf{B}_{i,\,k},\,\mathbf{C}_{i,\,k},\,\mathbf{D}_{i,\,k},\,\mathbf{E}_{i,\,k},\,\mathbf{F}_{i,\,k},\,\mathbf{H}_{i,\,k},\,\mathbf{W}_{i,\,k}$
-	\State Build \acrshort{qp} \ref{eq:qpocp} without the knowledge of $\mathbf{\hat{x}}_{0, k}$ and prepare all possible computations (hessian approximation, \acrshort{qp} condensing, etc)
-	\State \Return \ref{eq:qpocp}
+	\State Build QP \eqref{eq:qpocp} without the knowledge of $\mathbf{\hat{x}}_{0, k}$ and prepare all possible computations (hessian approximation, QP condensing, etc)
+	\State \Return \eqref{eq:qpocp}
 	\Statex \underline{Feedback phase} performed at time $t_k$ upon availability of $\mathbf{\hat{x}}_{0, k}$
-	\Require Initial state $\mathbf{\hat{x}}_{0, k}$ and prepared \acrshort{qp} \ref{eq:qpocp}
-	\State Compute Newton direction update $\Delta \mathbf{w}_k$ by introducing $\mathbf{\hat{x}}_{0, k}$ into \ref{eq:qpocp} and solving it
+	\Require Initial state $\mathbf{\hat{x}}_{0, k}$ and previously prepared QP \eqref{eq:qpocp}
+	\State Compute Newton direction update $\Delta \mathbf{w}_k$ by introducing $\mathbf{\hat{x}}_{0, k}$ into \eqref{eq:qpocp} and solving it
 	\State Apply the full Newton step
 	\Statex \centerline{$\mathbf{w}_k \gets \mathbf{w}_{k}^{guess} + \Delta \mathbf{w}_{k},\hspace{0.3cm}\bm{\gmultiplier}_k \gets \bm{\gmultiplier}_{QP},\hspace{0.3cm}\bm{\hmultiplier}_k \gets \bm{\hmultiplier}_{QP}$}
 	\State \Return $\mathbf{w}_k$
@@ -461,4 +463,3 @@ In order to meet assumption \ref{assumption:rti1}, a good shifting of $\mathbf{w
 \end{equation}
 
 Then, several approaches may be followed to generate the last control $\mathbf{u}_{N-1,\,k}^{guess}$ of the next guess \cite{gros2020linear}. Here, the simplest one is presented that copies $\mathbf{u}_{N-2,\,k}^{guess}$ from the third-to-last node to the next-to-last node, that is $\mathbf{u}_{N-1,\,k}^{guess} = \mathbf{u}_{N-2,\,k}^{guess}$.
-

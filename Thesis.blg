@@ -5,23 +5,13 @@ Reallocating 'name_of_file' (item size: 1) to 14 items.
 The style file: abbrvunsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: Thesis_Bibliography.bib
-Warning--entry type for "nasa:perseverance" isn't style-file defined
---line 124 of file Thesis_Bibliography.bib
-Warning--entry type for "cnsa:zhurong" isn't style-file defined
---line 132 of file Thesis_Bibliography.bib
 Warning--string name "november" is undefined
 --line 828 of file Thesis_Bibliography.bib
-Warning--entry type for "mpcworkingprinciple" isn't style-file defined
---line 970 of file Thesis_Bibliography.bib
 Warning--empty chapter and pages in roboticsHandbook_chap55
 Warning--empty publisher in roboticsHandbook_chap55
 Warning--empty chapter and pages in Genta2012
 Warning--can't use both author and editor fields in wong:terramechanics
 Warning--empty booktitle in Coombs2000
-Warning--empty year in Amorim2014
-Warning--empty year in Amorim2014
-Warning--empty year in Spero2002Path
-Warning--empty year in Spero2002Path
 Warning--empty publisher in chapter45handbookrobotics
 Warning--empty year in Correal2011
 Warning--empty year in Correal2011
@@ -29,55 +19,57 @@ Warning--empty year in Jayasekara2012
 Warning--empty year in Jayasekara2012
 Warning--empty year in Ishigami2007PathPlanning
 Warning--empty year in Ishigami2007PathPlanning
+Warning--empty year in Spero2002Path
+Warning--empty year in Spero2002Path
 Warning--empty school in mpc_frenetserret
-Warning--empty booktitle in Iagnemma2004
-Warning--empty publisher in chapter24handbookrobotics
 Warning--empty journal in diehlnumericalocp
 Warning--empty school in Silva2022msc
 Warning--empty school in diehl2001real
+Warning--empty booktitle in Iagnemma2004
+Warning--empty publisher in chapter24handbookrobotics
 Warning--empty journal in andersson2018sensitivity
 Warning--empty chapter and pages in chapter47handbookrobotics
 Warning--empty publisher in chapter47handbookrobotics
 Warning--empty publisher in Beer2015
-You've used 73 entries,
+You've used 68 entries,
             2481 wiz_defined-function locations,
-            981 strings with 19289 characters,
-and the built_in function-call counts, 28175 in all, are:
-= -- 2323
-> -- 1460
-< -- 50
-+ -- 569
-- -- 422
-* -- 2090
-:= -- 4421
-add.period$ -- 243
-call.type$ -- 73
-change.case$ -- 138
-chr.to.int$ -- 72
-cite$ -- 101
-duplicate$ -- 1495
-empty$ -- 2643
-format.name$ -- 540
-if$ -- 6082
+            957 strings with 17684 characters,
+and the built_in function-call counts, 27108 in all, are:
+= -- 2237
+> -- 1445
+< -- 47
++ -- 555
+- -- 418
+* -- 2046
+:= -- 4281
+add.period$ -- 231
+call.type$ -- 68
+change.case$ -- 128
+chr.to.int$ -- 67
+cite$ -- 92
+duplicate$ -- 1424
+empty$ -- 2491
+format.name$ -- 531
+if$ -- 5841
 int.to.chr$ -- 2
-int.to.str$ -- 74
-missing$ -- 74
-newline$ -- 388
-num.names$ -- 221
-pop$ -- 729
+int.to.str$ -- 69
+missing$ -- 73
+newline$ -- 366
+num.names$ -- 212
+pop$ -- 659
 preamble$ -- 1
-purify$ -- 73
+purify$ -- 68
 quote$ -- 0
-skip$ -- 880
+skip$ -- 832
 stack$ -- 0
-substring$ -- 1062
-swap$ -- 267
-text.length$ -- 13
+substring$ -- 1070
+swap$ -- 263
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 481
-warning$ -- 26
-while$ -- 210
+type$ -- 446
+warning$ -- 24
+while$ -- 206
 width$ -- 0
-write$ -- 952
-(There were 30 warnings)
+write$ -- 901
+(There were 25 warnings)

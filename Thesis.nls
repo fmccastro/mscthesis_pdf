@@ -80,6 +80,6 @@
   \item [{$rep$}]\begingroup Related to repulsive component of potential field.\nomeqref {0}\nompageref{xv}
   \item [{$xx,\,yy,\,zz$}]\begingroup Inertia tensor subscripts.\nomeqref {0}\nompageref{xv}
 \nomgroup{T}
-  \item [{*}]\begingroup Optimized variable.\nomeqref {0}\nompageref{xv}
+  \item [{$\ast$}]\begingroup Optimized variable.\nomeqref {0}\nompageref{xv}
 
 \end{thenomenclature}

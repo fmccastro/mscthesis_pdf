@@ -4,40 +4,39 @@
 \contentsline {table}{\numberline {1.2}{\ignorespaces Slippage-related hazards faced by rovers at planetary environments.}}{3}{table.caption.12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Integration simulation parameters.}}{20}{table.caption.25}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Integration simulation parameters.}}{32}{table.caption.32}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Table caption shown in TOC.}}{38}{table.caption.34}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Table caption shown in TOC.}}{38}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Comparison between algorithms \ref {alg:slopeMinHeightMap} and \ref {alg:slopeMinHeightMapVarYaw} (Map 1)}}{40}{table.caption.38}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Comparison between algorithms \ref {alg:maxRoughnessMap} and \ref {alg:refinedMap} (Map 1)}}{40}{table.caption.39}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Algorithm \ref {alg:speedMapGeneration} parameters.}}{42}{table.caption.41}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Computational cost comparison between different architectures.}}{46}{table.caption.47}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Constant solver parameters when control horizon changes.}}{50}{table.caption.50}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Constant solver parameters when sampling time changes.}}{51}{table.caption.52}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Constant solver parameters when sampling time changes.}}{52}{table.caption.54}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Regulator solver parameters}}{54}{table.caption.58}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Planar path tracking solver parameters.}}{56}{table.caption.61}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Sets of white gaussian noise.}}{57}{table.caption.64}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Solver parameters on hill.}}{59}{table.caption.68}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Solver performance on hilly terrain.}}{61}{table.caption.71}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Solver parameters on hill.}}{61}{table.caption.72}%
+\contentsline {table}{\numberline {5.11}{\ignorespaces Solver performance on hilly terrain.}}{63}{table.caption.76}%
+\contentsline {table}{\numberline {5.12}{\ignorespaces Performance of solver (3) on rough, uneven terrain.}}{63}{table.caption.78}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Safe \acrshort {ocp} cost terms and parameters.}}{74}{table.caption.87}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Table caption shown in TOC.}}{38}{table.caption.33}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Table caption shown in TOC.}}{38}{table.5.2}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Comparison between algorithms \ref {alg:slopeMinHeightMap} and \ref {alg:slopeMinHeightMapVarYaw} (Map 1)}}{40}{table.caption.37}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Comparison between algorithms \ref {alg:maxRoughnessMap} and \ref {alg:refinedMap} (Map 1)}}{40}{table.caption.38}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Algorithm \ref {alg:speedMapGeneration} parameters.}}{42}{table.caption.40}%
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Computational cost comparison between different architectures.}}{46}{table.caption.46}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Constant solver parameters when control horizon changes.}}{50}{table.caption.49}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Constant solver parameters when sampling time changes.}}{51}{table.caption.51}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Constant solver parameters when sampling time changes.}}{52}{table.caption.53}%
-\contentsline {table}{\numberline {6.5}{\ignorespaces Regulator solver parameters}}{54}{table.caption.57}%
-\contentsline {table}{\numberline {6.6}{\ignorespaces Planar path tracking solver parameters.}}{56}{table.caption.60}%
-\contentsline {table}{\numberline {6.7}{\ignorespaces Sets of white gaussian noise.}}{57}{table.caption.63}%
-\contentsline {table}{\numberline {6.8}{\ignorespaces Solver parameters on hill.}}{59}{table.caption.67}%
-\contentsline {table}{\numberline {6.9}{\ignorespaces Solver performance on hilly terrain.}}{61}{table.caption.70}%
-\contentsline {table}{\numberline {6.10}{\ignorespaces Solver parameters on hill.}}{61}{table.caption.71}%
-\contentsline {table}{\numberline {6.11}{\ignorespaces Solver performance on hilly terrain.}}{63}{table.caption.75}%
-\contentsline {table}{\numberline {6.12}{\ignorespaces Performance of solver (3) on rough, uneven terrain.}}{63}{table.caption.77}%
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Safe \acrshort {ocp} cost terms and parameters.}}{74}{table.caption.86}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Lissajous curves used in this thesis.}}{89}{table.A.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Lissajous curves used in this thesis.}}{90}{table.A.1}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {C.1}{\ignorespaces Cumulative control effort of controllers when control horizon changes.}}{95}{table.caption.96}%
-\contentsline {table}{\numberline {C.2}{\ignorespaces Cumulative positional error of controllers when control horizon changes.}}{95}{table.caption.97}%
-\contentsline {table}{\numberline {C.3}{\ignorespaces Cumulative heading error of controllers when control horizon changes.}}{95}{table.caption.98}%
-\contentsline {table}{\numberline {C.4}{\ignorespaces Cumulative control effort of controllers when sampling time changes.}}{95}{table.caption.99}%
-\contentsline {table}{\numberline {C.5}{\ignorespaces Cumulative positional error of controllers when sampling time changes.}}{96}{table.caption.100}%
-\contentsline {table}{\numberline {C.6}{\ignorespaces Cumulative heading error of controllers when sampling time changes.}}{96}{table.caption.101}%
-\contentsline {table}{\numberline {C.7}{\ignorespaces Cumulative control effort of controllers when cost function weights changes.}}{96}{table.caption.102}%
-\contentsline {table}{\numberline {C.8}{\ignorespaces Cumulative positional error of controllers when cost function weights changes.}}{96}{table.caption.103}%
-\contentsline {table}{\numberline {C.9}{\ignorespaces Cumulative heading error of controllers when cost function weights changes.}}{96}{table.caption.104}%
+\contentsline {table}{\numberline {C.1}{\ignorespaces Cumulative control effort of controllers when control horizon changes.}}{94}{table.caption.97}%
+\contentsline {table}{\numberline {C.2}{\ignorespaces Cumulative positional error of controllers when control horizon changes.}}{94}{table.caption.98}%
+\contentsline {table}{\numberline {C.3}{\ignorespaces Cumulative heading error of controllers when control horizon changes.}}{94}{table.caption.99}%
+\contentsline {table}{\numberline {C.4}{\ignorespaces Cumulative control effort of controllers when sampling time changes.}}{94}{table.caption.100}%
+\contentsline {table}{\numberline {C.5}{\ignorespaces Cumulative positional error of controllers when sampling time changes.}}{95}{table.caption.101}%
+\contentsline {table}{\numberline {C.6}{\ignorespaces Cumulative heading error of controllers when sampling time changes.}}{95}{table.caption.102}%
+\contentsline {table}{\numberline {C.7}{\ignorespaces Cumulative control effort of controllers when cost function weights changes.}}{95}{table.caption.103}%
+\contentsline {table}{\numberline {C.8}{\ignorespaces Cumulative positional error of controllers when cost function weights changes.}}{95}{table.caption.104}%
+\contentsline {table}{\numberline {C.9}{\ignorespaces Cumulative heading error of controllers when cost function weights changes.}}{95}{table.caption.105}%

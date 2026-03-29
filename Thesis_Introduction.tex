@@ -18,7 +18,7 @@ Space robotics covers all robotic systems which operate off the Earth. Firstly, 
 
 Space robot locomotion may be of several types like manipulation, gripping, roving, drilling, sampling, flying, floating, diving or even climbing. On the other hand, a space robot's autonomy ranges from teleoperation to fully-autonomous operations, while other robots execute tasks on a semi-autonomous operation mode.
 
-In 1981, the first orbital robot, Canadarm, was placed on orbital environment with the goal to move payloads from the Space Shuttle to a given deployment position \cite{roboticsHandbook_chap55}. Later in 2001, Canadarm 2 was launched in order to assist astronauts during \acrshort{eva}, but also to maintain and build the ISS. The humanoid robot Robonaut 2 was launched to the \acrshort{iss} in 2011 to gain experience while performing assisting or teleoperation tasks, for the sake of upgrading it to a future version in order to assist astronauts during \acrshort{eva}. The Moon sampler Surveyor 3 was the first planetary robot to be launched (1967). From the 90s onwards, Mars has become the main exploratory target for surface robots. The \textit{Sojourner} rover, the twin Spirit and Opportunity \acrshort{mer} and the \acrshort{msl} have provided valuable scientific information and have enabled ground teams to design rovers which reach higher velocities and larger lifetimes. Recently, in 2021, the Perseverance rover landed on Mars taking on its belly a small robotic helicopter which accomplished the first powered, controlled flight on the thin atmosphere of Mars \cite{Wall2021}.
+In 1981, the first orbital robot, Canadarm, was placed on orbital environment with the goal to move payloads from the Space Shuttle to a given deployment position \cite{roboticsHandbook_chap55}. Later in 2001, Canadarm 2 was launched in order to assist astronauts during \acrshort{eva}, but also to maintain and build the ISS. The humanoid robot Robonaut 2 was launched to the \acrshort{iss} in 2011 to gain experience while performing assisting or teleoperation tasks, for the sake of upgrading it to a future version in order to assist astronauts during \acrshort{eva}. The Moon sampler Surveyor 3 was the first planetary robot to be launched (1967). From the 90s onwards, Mars has become the main exploratory target for surface robots. The \textit{Sojourner} rover, the twin Spirit and Opportunity \acrshort{mer} and the \acrshort{msl} have provided valuable scientific information and have enabled ground teams to design rovers which reach higher velocities and larger lifetimes. Recently, in 2021, the Perseverance rover landed on Mars taking on its belly a small robotic helicopter which accomplished the first powered, controlled flight on the thin atmosphere of Mars\footnote{https://www.space.com/mars-helicopter-ingenuity-first-flight-success (accessed on 23 of March 2026)}.
 
 Robots which operate without human intervention have a limited lifetime, which places a limit on the returned scientifical profit. This thesis will focus on providing a navigation method which aims at delivering a safe path, while going through it in a timely fashion at a known location.
 
@@ -33,27 +33,33 @@ A conventional planetary, autonomous rover typically assumes a 6-wheeled articul
 As it is stated in Table \ref{tab:roverAchievements}, launched planetary, autonomous rovers have achieved higher lifetimes as well as higher traverse speeds and travelled greater distances each mission goes by. Below, only rovers deployed in Mars are shown, but the CNSA has also deployed two rovers on the Moon, - \textit{Yutu and Yutu-2} - of which little information is known.
 
 \begin{table}[!htb]
-  \footnotesize
-  \setlength{\tabcolsep}{5pt}
-  \renewcommand{\arraystretch}{1.2} % more space between rows
-  \centering
-  \makebox[\linewidth]{
-      \begin{tabular}{lccccc}
-        \toprule
-        \textbf{Rover} & \textbf{Mass (kg)} & \textbf{Lifetime (sol)} & \multicolumn{1}{p{2.5cm}}{\centering \textbf{Distance}\\\textbf{travelled (km)}} & \multicolumn{1}{p{2.5cm}}{\centering \textbf{Max. traverse}\\\textbf{speed (cm/s)}} & \multicolumn{1}{p{2.5cm}}{\centering \textbf{Ref.}}\\
-        \midrule
-        \textit{Sojourner} & 10 & 83 & 0.106 & 0.6 & \cite{Gao2017, Heverly2013} \\
-        Spirit & 185 & 2623 & 7.73 & 1.0 & \cite{Gao2017, Heverly2013} \\
-        Opportunity & 185 & 5352 & 45.16 & 1.0 & \cite{Gao2017, Heverly2013} \\
-        Curiosity $\ast$ & 899 & 4068 & 31.15 & 2.5 & \cite{Gao2017, Heverly2013} \\
-        Perseverance $\ast$ & 1025 & 1021 & 23.776 & 4.2 & \cite{nasa:Perseverance} \\
-        \textit{Zhurong} $\ast \ast$ & 240 & 347 & 1.921 & n.a. & \cite{cnsa:zhurong}  \\
-        \bottomrule
-        $\ast$ {\tiny Still in operation (as of 16 January 2024)}\\ $\ast \ast$ {\tiny Inactive (as of 20 May 2022)}
-      \end{tabular}
-  }
-  \caption[Planetary, autonomous, wheeled rovers achievements.]{Planetary, autonomous, wheeled rovers achievements.}
-  \label{tab:roverAchievements}
+	\caption{Planetary, autonomous, wheeled rovers achievements.}
+ 	\label{tab:roverAchievements}
+  	\footnotesize
+  	\setlength{\tabcolsep}{5pt}
+  	\renewcommand{\arraystretch}{1.2} % more space between rows
+  	\centering
+  	\begin{threeparttable}
+  		\begin{tabular}{lcccc}
+			\toprule
+        	\textbf{Rover} & \textbf{Mass (kg)} & \textbf{Lifetime (sol)} & \textbf{Distance travelled (km)} & \textbf{Max. traverse speed (cm/s)}\\
+        	\midrule
+        	\textit{Sojourner} \cite{Gao2017, Heverly2013} & 10 & 83 & 0.106 & 0.6 \\
+        	Spirit \cite{Gao2017, Heverly2013} & 185 & 2623 & 7.73 & 1.0\\
+        	Opportunity \cite{Gao2017, Heverly2013} & 185 & 5352 & 45.16 & 1.0\\
+        	Curiosity \cite{Gao2017, Heverly2013} & 899 & 4068 & 31.15 & 2.5\\
+        	Perseverance \tnote{1, 2} & 1025 & 1021 & 23.776 & 4.2\\
+        	\textit{Zhurong} \tnote{3, 4} & 240 & 347 & 1.921 & n.a.\\
+        	\bottomrule
+      	\end{tabular}
+ 		\begin{tablenotes}
+			\footnotesize
+			\item[1] \url{https://science.nasa.gov/mission/mars-2020-perseverance/} (accessed on 23 March of 2026)
+			\item[2] Still in operation (as of March 2026)
+			\item[3] Inactive
+			\item[4] \url{https://en.wikipedia.org/wiki/Zhurong_(rover)} (accessed on 23 March of 2026)
+		\end{tablenotes}
+	\end{threeparttable}
 \end{table}
 
 Although deployed rovers have achieved greater coverages, these have also faced slippage-hazardous situations \cite{Gonzalez2017} and are subject to get around uncrossable obstacles or stay away from wind devils. These may damage the rover systems, cause progress delay or determine the end of the mission.
@@ -61,11 +67,12 @@ Although deployed rovers have achieved greater coverages, these have also faced 
 Slippage-related hazards play an important role on preventing a rover to achieve its proposed goals. Even though some slip is desirable to generate traction, excessive slip will result in loss of traction \cite{Wong2001} and possibly entrap the rover. These events are directly linked to the type of wheel-soil interaction taking place \cite{Genta2012}. The nature of this interaction takes into account both the type of wheel (rigid or compliable) and its features as well as the type of soil (firm or deformable) and its properties. Apart from it, other variables weighing into slip are the vertical load acting on the soil by the wheel and sinkage, which will cause a decrease on effective thrust and decrease drawbar pull \cite{wong:terramechanics, wong:performance}. In this thesis, \textbf{only rigid wheels are used}. These face higher slips on deformable ground, due to high sinkage and shear displacement, while slip is tremendously reduced in the case of compact soils \cite{Green1971}. Due to the impossibility of mimicing deformable ground dynamics on real-time simulation test-bed, only rigid terrains are considered. In Table \ref{tab:roverHazards}, one can find slippage events faced by wheeled, autonomous rovers in planetary environment as well as the teleoperating actions put in place to attempt a reversal from the state the rover was at.
 
 \begin{table}[!htb]
-  \footnotesize
-  \setlength{\tabcolsep}{0.5pt}
-  \renewcommand{\arraystretch}{1.5} % more space between rows
-  %\centering
-  \makebox[\linewidth]{
+	\caption[Slippage-related hazards faced by rovers at planetary environments.]{Slippage-related hazards faced by rovers at planetary environments \cite{Gonzalez2017}.}
+  	\label{tab:roverHazards}
+  	\footnotesize
+  	\setlength{\tabcolsep}{0.5pt}
+  	\renewcommand{\arraystretch}{1.5} % more space between rows
+  	%\centering
       \begin{tabular}{lcccc}
         \toprule
         \textbf{Rover} & \textbf{Date of Event} & \textbf{Terrain, Place} & \textbf{Hazard} & \textbf{Action} \\
@@ -84,9 +91,6 @@ significant slippage (up to 40\%)}} & \multicolumn{1}{p{4cm}}{\centering {\fonts
         Sojourner & Aug 1997 & \multicolumn{1}{p{4.2cm}}{\centering {\fontsize{7}{6}\selectfont Deformable terrain (Mars,\\Ares Vallis)}} & \multicolumn{1}{p{4.2cm}}{\centering {\fontsize{7}{6}\selectfont The right front wheel was parked\\on a small rock, perching the left\\front wheel above the surface}} & \multicolumn{1}{p{4cm}}{\centering {\fontsize{7}{6}\selectfont Engineers teleoperated the\\rover to a safer place}} \\
         \bottomrule
       \end{tabular}
-  }
-  \caption[Slippage-related hazards faced by rovers at planetary environments.]{Slippage-related hazards faced by rovers at planetary environments \cite{Gonzalez2017}.}
-  \label{tab:roverHazards}
 \end{table}
 
 Very small velocities have been achieved by planetary rovers until this point. Apart from lunar teleoperated/driving vehicles, wheeled, autonomous robots have not experienced a dynamic terramechanics regime. In \cite{rodriguezHighSpeedRoversReview}, a technical review on strategies to increase the operational velocity is presented. In this thesis, a wheeled, autonomous robot is considered to be on high-speed, if it approaches or surpasses 1 m/s, which is roughly one hundred times larger than the maximum traverse rover velocities presented in Table \ref{tab:roverAchievements}.

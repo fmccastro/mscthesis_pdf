@@ -8,7 +8,7 @@
 %                                                                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Mathematical snippet}
+\chapter{Mathematical review}
 \label{chapter:mathSnippet}
 
 \section{Euler angles}
@@ -142,7 +142,7 @@ k_4 &= f\left( \mathbf{x}(t_0) + h k_3,\,\mathbf{z}_1(t_0),\,\ldots,\mathbf{z}_n
 
 , where $\mathbf{x}(\cdot) \in \mathbb{R}^{n_x}$ is the general state and $\mathbf{z}_1(\cdot) \in \mathbb{R}^{n_{z_1}},\,\ldots,\mathbf{z}_n(\cdot) \in \mathbb{R}^{n_{z_n}}$ are secondary variables and $f:\mathbb{R}^{n_x + n_{z_1} + \ldots+n_{z_n}} \to \mathbb{R}^{n_x}$ is the \acrshort{ode} dynamics.
 
-\subsection{Sensitivities propagation}
+\subsection*{Sensitivities propagation}
 \label{subsection:sensitivitiespropagation}
 
 A sensitivity is defined as the rate of change of some variable $x_1$ with respect to another variable $x_2$, $\pdv{x_1}{x_2} \in \mathbb{R}^{n_{x_1}\, \times\, n_{x_2}}$. In this thesis, one is interested in evaluating the sensitivities of $\mathbf{x}$ with respect to another variable of the dynamics model $\processModel{\cdot}$ and on propagating these sensitivities \cite{quirynen2015autogenerating}. 
