@@ -31,11 +31,10 @@
 \contentsline {section}{\numberline {3.4}Mobile robot dynamics}{25}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Wheel actuation}{26}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Wheel-terrain contact model}{27}{subsection.3.4.2}%
-\contentsline {section}{\numberline {3.5}State-space model}{29}{section.3.5}%
+\contentsline {section}{\numberline {3.5}NMPC formulation}{29}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Model simplification}{29}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Comparison among \acrshort {nmpc} formulations}{30}{subsection.3.5.2}%
-\contentsline {section}{\numberline {3.6}Model validation}{31}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Maximum inclination}{32}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.5.2}Dynamics model validation}{30}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Maximum inclination}{31}{subsection.3.5.3}%
 \contentsline {chapter}{\numberline {4}Global path planner}{33}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Traversability map computation}{33}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Height minimization}{33}{subsection.4.1.1}%
@@ -63,7 +62,7 @@
 \contentsline {subsection}{\numberline {6.2.1}Simultaneous path tracking and obstacle avoidance on rough terrain}{73}{subsection.6.2.1}%
 \contentsline {chapter}{\numberline {7}Conclusions}{78}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Future Work}{78}{section.7.1}%
-\contentsline {chapter}{Bibliography}{80}{section*.93}%
+\contentsline {chapter}{Bibliography}{80}{section*.92}%
 \contentsline {chapter}{\numberline {A}Mathematical review}{85}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Euler angles}{85}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Inertia tensor}{86}{section.A.2}%
