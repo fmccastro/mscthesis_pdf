@@ -12,7 +12,7 @@
 \chapter{Proposed Approach}
 \label{chapter:proposedApproach}
 
-This chapter presents some guidelines to approach the solution of the problem formulated in section \ref{section:problemFormulation}. Section \ref{section:approachOptimalPathPlanning} denotes the kind of maps used to generate an optimal path planning method. Sections \ref{section:robotkinematics} and \ref{section:robotDynamics} describe the kinematics and dynamics models used to describe the mobile robot, as well as its derivation. \ref{section:fullStateSpace} describes the selection of \acrshort{nmpc} formulation and steering mechanism, but also presents a standard model-based formulation of the problem. Finally, section \ref{section:modelValidation} validates the model's integrator.
+This chapter presents some guidelines to approach the solution of the problem formulated in section \ref{section:problemFormulation}. Section \ref{section:approachOptimalPathPlanning} denotes the kind of maps used to feed the optimal path planning method. Sections \ref{section:robotkinematics} and \ref{section:robotDynamics} describe the kinematics and dynamics models used to describe the mobile robot, as well as its derivation. In section \ref{section:fullStateSpace} a simplification of the dynamics model from section \ref{section:robotDynamics} is derived as well its validation. At the end, a map of admissable inclinations is presented (valid when the robot is at rest).
 
 \section{Problem formulation}
 \label{section:problemFormulation}
@@ -48,16 +48,17 @@ A wheeled mobile robot $\Robot$ is moving on a map $\Map$, which is centered at 
 \end{assumption}
 
 The mobile robot position and orientation with respect to frame $\WorldFrame$ is described as $\mathbf{\Position}_3 = [x\;  y\; z]^T$ and $\bm{\Orientation} = [\roll \; \pitch \; \yaw]^T$, respectively. On the other hand, the mobile robot linear and angular velocities with respect to frame $\BodyFrame$ stands as $\mathbf{\LinVelocity} = [ \LinVelocity_x\;\LinVelocity_y\;\LinVelocity_z ]^T$ and $\bm{\AngVelocity} = [\AngVelocity_x\;\AngVelocity_y\;\AngVelocity_z]^T$, respectively. Then, it is possible to map the mobile robot $\Robot$ linear velocity between frames $\BodyFrame$ and $\WorldFrame$ by taking advantage of rotation matrix \eqref{eq:rotationMatrixW2B}, but also to map euler angle rates in $\WorldFrame$ to angular velocities in $\BodyFrame$ with rotation matrix \eqref{eq:rotationMatrixW2BRotationalInverse}.
-
-\begin{align}
-	\DerMathBold{\Position}_3 = \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \mathbf{\LinVelocity} \label{eq:translationFreeBody}\\
-	\DerMathBold{\Orientation} = \mathbf{\bar{\RotMatrix}}_{\BodyFrame}^{\WorldFrame} \bm{\AngVelocity} \label{eq:rotationFreeBody}
-\end{align}
+\begin{equation}
+	\begin{matrix}
+		\DerMathBold{\Position}_3 = \mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} \mathbf{\LinVelocity} & & & & & & & & \DerMathBold{\Orientation} = \mathbf{\bar{\RotMatrix}}_{\BodyFrame}^{\WorldFrame} \bm{\AngVelocity}
+	\end{matrix}
+	\label{eq:kinematicsFreeBody}
+\end{equation}
 
 \subsection*{Wheel kinematics}
 \label{subsection:wheelKinematics}
 
-A kinematics model is not only described by its free-body motion equations \eqref{eq:translationFreeBody} and \eqref{eq:rotationFreeBody}, but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\Torque_i$, which induces on it a spin rate, $\AngVelocity_i,\, i = 1,\,...,\,N_w$, where $N_w = 4$ for the cases presented in this thesis.
+A kinematics model is not only described by its free-body motion equations \eqref{eq:kinematicsFreeBody}, but also by geometrical constraints \cite{Kozlowski2004}. Each wheel is actuated by a torque $\Torque_i$, which induces on it a spin rate, $\AngVelocity_i,\, i = 1,\,...,\,N_w$, where $N_w = 4$ for the cases presented in this thesis.
 
 \begin{assumption}
 	The thickness and deformation of each wheel are neglected so that the wheel is assumed to be rigid and to contact the terrain at a single contact point $\contactPoint_i$, in case rigid terrain is the working environment \cite{Iagnemma2004}.
@@ -234,21 +235,19 @@ The presented wheeled mobile robot model contains four controllable joints at ea
     \label{fig:wheelForcesMoments}
 \end{figure}
 
-Each wheel joint can only be actuated around the wheel horizontal axis, which is parallel to $\WheelFrame_y^i$. Then, it also holds a contact frame $\WheelFrame^i$ which follows up the terrain slope. Apart from it, each wheel is subject to forces and moments coming from its interaction with the terrain or due to gravity (figure \ref{fig:wheelForcesMoments}). Finally, these forces and moments shall be expressed with respect to frame $\BodyFrame$ and summed up in order to feed the dynamics relationship of the mobile robot, which yields \refeq{eq:dynamics}.
+Each wheel joint can only be actuated around the wheel horizontal axis, which is parallel to $\WheelFrame_y^i$. Then, it also holds a contact frame $\WheelFrame^i$ which follows up the terrain slope. Apart from it, each wheel is subject to forces and moments coming from its interaction with the terrain or due to gravity (figure \ref{fig:wheelForcesMoments}). Finally, these forces and moments shall be expressed with respect to frame $\BodyFrame$ and summed up in order to feed the dynamics relationship of the mobile robot, which yields \refeq{eq:dynamicsFreeBody}.
 
 The weight distribution on the mobile robot wheels is influenced by its roll and pitch. A dynamics model is derived based on Newton's second law. The angular momentum rate of change of the whole mobile robot around its COM is also considered.
-
 \begin{equation}
-	\begin{aligned}
-		\Mass \mathbf{\dot{\LinVelocity}} + \Mass \; \bm{\AngVelocity} \times \mathbf{\LinVelocity} &= \mathbf{\Force} \\
-		\mathbf{\InertiaTensor} \bm{ \dot{\AngVelocity} } + \bm{\AngVelocity} \times (\mathbf{\InertiaTensor} \bm{\AngVelocity}) &= \mathbf{\Moment}
-	\end{aligned}	
-	\label{eq:dynamics}
+	\begin{matrix}
+		\Mass \mathbf{\dot{\LinVelocity}} + \Mass \; \bm{\AngVelocity} \times \mathbf{\LinVelocity} = \mathbf{\Force} & & & & & & & & \mathbf{\InertiaTensor} \bm{ \dot{\AngVelocity} } + \bm{\AngVelocity} \times (\mathbf{\InertiaTensor} \bm{\AngVelocity}) &= \mathbf{\Moment}
+	\end{matrix}
+	\label{eq:dynamicsFreeBody}
 \end{equation}
 
 \noindent , where $\Mass$ stands for the mobile robot mass. Moreover, $\mathbf{\InertiaTensor}$ denotes the inertia tensor of the mobile robot with respect to frame $\BodyFrame$. Furthermore, $\mathbf{\Force} = [\Force_x\;\Force_y\;\Force_z]^T$ stands for the sum of forces acting on the system and $\mathbf{\Moment} = [\Moment_x \; \Moment_y \; \Moment_z]^T$ denotes the sum of moments. $\mathbf{\Force}$ and $\mathbf{\Moment}$ are expressed with respect to frame $\BodyFrame$. 
 
-Equation \eqref{eq:dynamics} may be obtained by applying the second newton law for translational and rotational dynamics. It is of interest to find out a dynamics formulation which is expressed with respect to $\BodyFrame$, because $\mathbf{\InertiaTensor}$ is time invariant there, but also because it is more intuitive to think of velocities, forces and moments with respect to $\BodyFrame$. In case the linear and angular moments are defined by $\mathbf{\linearMoment} = \Mass \mathbf{\LinVelocity}$ and $\mathbf{\angularMoment} = \mathbf{\InertiaTensor} \bm{\AngVelocity}$ respectively, it is possible to derive a dynamics formulation by applying \refeq{eq:vectorDiff2} with respect to inertial frame $\WorldFrame$ and non-inertial frame $\BodyFrame$.
+Equation \eqref{eq:dynamicsFreeBody} may be obtained by applying the second newton law for translational and rotational dynamics. It is of interest to find out a dynamics formulation which is expressed with respect to $\BodyFrame$, because $\mathbf{\InertiaTensor}$ is time invariant there, but also because it is more intuitive to think of velocities, forces and moments with respect to $\BodyFrame$. In case the linear and angular moments are defined by $\mathbf{\linearMoment} = \Mass \mathbf{\LinVelocity}$ and $\mathbf{\angularMoment} = \mathbf{\InertiaTensor} \bm{\AngVelocity}$ respectively, it is possible to derive a dynamics formulation by applying \refeq{eq:vectorDiff2} with respect to inertial frame $\WorldFrame$ and non-inertial frame $\BodyFrame$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Wheel actuation}
@@ -261,13 +260,13 @@ In this thesis, it is considered that every wheel lies on the same plane at a gi
 \label{assumption:contactbodyframes}
 \end{assumption}
 
-The consequence of assumption \ref{assumption:contactbodyframes} is that every traction force $\mathbf{\Traction}_i$ is already expressed with respect to $\BodyFrame$. Then, the sum of traction forces, $\mathbf{\Traction}$, with respect to $\BodyFrame$ is simply expressed by,
-
-\begin{align}
-	\mathbf{\Traction} &= \sum_{i} \mathbf{\Traction}_i \label{eq:totalActuatedForce}\\
-	\mathbf{\Moment}_{\mathbf{\Traction}} &= \sum_{i} \mathbf{\contactPoint}_i \times \mathbf{\Traction}_i
-		\label{eq:totalActuatedMoment}	
-\end{align}
+The consequence of assumption \ref{assumption:contactbodyframes} is that every traction force $\mathbf{\Traction}_i$ is already expressed with respect to $\BodyFrame$. Then, the sum of traction forces, $\mathbf{\Traction}$, and respective moments, $\mathbf{\Moment}_{\mathbf{\Traction}}$, with respect to $\BodyFrame$ is simply expressed by,
+\begin{equation}
+	\begin{matrix}
+		\mathbf{\Traction} = \sum_{i} \mathbf{\Traction}_i & & & & & & & & \mathbf{\Moment}_{\mathbf{\Traction}} &= \sum_{i} \mathbf{\contactPoint}_i \times \mathbf{\Traction}_i
+	\end{matrix}
+	\label{eq:tractionForcesMoments}
+\end{equation}
 
 \noindent, where $\mathbf{\contactPoint}_i$ is a vector connecting the mobile robot \acrshort{com} to the contact point $\contactPoint_i$, with respect to $\BodyFrame$, and $i = \{lf,\,rf,\,lb,\,rb\}$ denote the set of wheels of the mobile robot. The traction forces generated by wheel torque actuation may also output a moment around \acrshort{com} with respect to $\BodyFrame$, denoted by $\mathbf{\Moment}_{\mathbf{\Traction}}$.
 
@@ -312,7 +311,6 @@ For the sake of simplicity, deformable terrain contact physics are discarded as 
 \label{subsubsection:coulombFrictionModel}
 
 This model provides a traction force, $\mathbf{\Traction}$, acting at each wheel, as a result of the action of the soil on the wheel. $\mathbf{\Traction}$ breaks into a longitudinal ($\Traction_x$) and lateral ($\Traction_y$) component, in case $\mathbf{\Traction}$ is expressed with respect to $\WheelFrame^i$. Apart from this, a terrain reaction force $\mathbf{n}$, acts at $\contactPoint_i$, with a direction parallel to the contact normal at $\contactPoint_i$. Due to assumption \ref{assumption:contactbodyframes}, $\mathbf{n}$ only holds a single vertical component within $\WheelFrame^i$. The Coulomb friction model \cite{chapter24handbookrobotics} states the following,
-
 \begin{equation}
 	\begin{cases}
 		\left(\frac{\Traction_x}{\FrictionCoefficient_x \NormalForce_z} \right)_i^2 + \left( \frac{\Traction_y}{\FrictionCoefficient_y \NormalForce_z} \right)_i^2 \leq 1\\
@@ -329,13 +327,12 @@ $\FrictionCoefficient_x = \FrictionCoefficient_y$.
 \end{assumption}
 
 From assumption \ref{eq:sameFrictionCoefficients} and if one states that $\Traction_i^2 = \left( \Traction_x \right)_i^2 + \left( \Traction_y \right)_i^2$, it comes that,
-
 \begin{equation}
 \Traction_i^2 \leq \left( \FrictionCoefficient \left( \NormalForce _z\right)_i \right)^2
 \label{eq:simpleFriction}
 \end{equation}
 
-If a wheel $i$ sticks to the terrain, it means \refeq{eq:simpleFriction} is generally inactive, unless the contact force touches the cone lateral surface. On the other hand, if a wheel is sliding, inequality \eqref{eq:simpleFriction} is not respected. Figure \ref{fig:coulombfrictionconeillustration} depicts this principle.
+If wheel $i$ sticks to the terrain, it means \refeq{eq:simpleFriction} is generally inactive, unless the contact force touches the cone lateral surface. On the other hand, if a wheel is sliding, inequality \eqref{eq:simpleFriction} is not respected. Figure \ref{fig:coulombfrictionconeillustration} depicts this principle.
 
 \begin{figure}[!htb]
   \centering
@@ -343,27 +340,23 @@ If a wheel $i$ sticks to the terrain, it means \refeq{eq:simpleFriction} is gene
   \caption[Coulomb friction cone depiction example.]{Coulomb friction cone depiction. If the wheel contact force ($\mathbf{n} + \mathbf{t}$) is \textcolor{tabred}{outside} the cone, the wheel is slipping. On the other hand, if the wheel contact force is \textcolor{tabgreen}{inside} the cone (including its surface), the wheel sticks to the terrain. The right picture presents a top view of the left picture.}
   \label{fig:coulombfrictionconeillustration}
 \end{figure}
-
 \subsubsection*{Terrain reaction forces}
 \label{subsubsection:coulombFrictionModel}
 
-Every time a contact between a wheel and terrain takes place, a reaction force $\NormalForce_z$ shows up. The magnitude of this reaction force determines the amount of admissable traction force, before soil failure occurs. These reaction forces and respective moments shall be summed up and described with respect to $\BodyFrame$, as it is oulined in equations \eqref{eq:totalReactionForce} and \eqref{eq:totalReactionMoments},
-
-\begin{align}
-	\mathbf{\NormalForce} = \sum_{i} \left( \mathbf{\NormalForce} \right)_i
-	\label{eq:totalReactionForce}\\
-	\mathbf{\Moment}_{\mathbf{\NormalForce}} = \sum_{i} \mathbf{\contactPoint}_i \times \mathbf{\NormalForce}_i
-	\label{eq:totalReactionMoments}	
-\end{align}
+Every time a contact between a wheel and terrain takes place, a reaction force $\NormalForce_z$ shows up. The magnitude of this reaction force determines the amount of admissable traction force, before soil failure occurs. These reaction forces and respective moments shall be summed up and described with respect to $\BodyFrame$, as it is oulined in \refeq{eq:reactions},
+\begin{equation}
+	\begin{matrix}
+		\mathbf{\NormalForce} = \sum_{i} \left( \mathbf{\NormalForce} \right)_i & & & & & & & & \mathbf{\Moment}_{\mathbf{\NormalForce}} = \sum_{i} \mathbf{\contactPoint}_i \times \mathbf{\NormalForce}_i
+	\end{matrix}
+	\label{eq:reactions}
+\end{equation}
 
 \noindent , where $\left( \mathbf{\NormalForce} \right)_i = \left[0 \;\; 0 \;\; \frac{-\Mass\,\gravity\,\cos(\pitch) \cos(\roll)}{4} \right]^T_i$.
 
-\hfill
 \begin{assumption}
 Assumption \ref{assumption:contactbodyframes} determines that the direction of each wheel reaction force is parallel to $\BodyFrame_z$ and cancels the weight vertical component at each wheel. For the sake of simplicity, it is also considered that the magnitude of each wheel reaction force is equal to $\frac{\Mass\,\gravity\,\cos(\pitch) \cos(\roll)}{4}$, therefore $\mathbf{\Moment}_{\mathbf{\NormalForce}} = 0$.
 \label{eq:reactionforcessimplification}
 \end{assumption}
-
 \section{NMPC formulation}
 \label{section:fullStateSpace}
 
@@ -386,8 +379,8 @@ In order to sum up the previous sections, it is possible to deliver a full state
 	\label{eq:sumMomentsForces}
 \end{equation}
 
-Equation \eqref{eq:fullStateSpace} combines equations \eqref{eq:translationFreeBody}, \eqref{eq:rotationFreeBody} and \eqref{eq:dynamics}. Equation \eqref{eq:sumMomentsForces} is based on equations \eqref{eq:totalActuatedForce}, \eqref{eq:totalActuatedMoment},
-\eqref{eq:totalReactionForce} and \eqref{eq:totalReactionMoments}. $m$ stands for the vehicle mass and $g=-9.81 m/s^2$.
+Equation \eqref{eq:fullStateSpace} combines equations \eqref{eq:kinematicsFreeBody} and \eqref{eq:dynamicsFreeBody}. The set of equations \eqref{eq:sumMomentsForces} is based on equations \eqref{eq:tractionForcesMoments} and
+\eqref{eq:reactions}. Moreover, $m$ stands for the vehicle mass and $g=-9.81 m/s^2$.
 
 \begin{equation}
 	\ineqCon{t, \,\mathbf{x}(t),\, \mathbf{u}(t)} = \begin{cases}
@@ -507,40 +500,44 @@ In \refeq{eq:skidsteeringStateSpace}, $\Force_x$ and $\Moment_z$ are derived fro
 \subsection{Dynamics model validation}
 \label{subsection:modelValidation}
 
-The integrator that propagates the state of \ref{eq:skidsteeringStateSpace} shall be validated against a more precise integrator. In order to meet that end, a \textsc{cvodes} integrator from the \acrshort{casadi} package is compared against a less accurante \acrshort{rk4} integrator (see \ref{section:rk4}). Both integrators propagate the state generated by \ref{eq:skidsteeringStateSpace}, with respect to the same control series and integration time. Roll and pitch are also randomly generated by means of a normal distribution in order to simulate the measurement of these euler angles, such that $\roll \sim \mathcal{N}\left(0,\,\sigma_{\roll}^2\right)$ and $\pitch \sim \mathcal{N}\left(0,\,\sigma_{\pitch}^2\right)$.
-
-\begin{figure}[!htb]
-  \centering
-  \begin{subfigmatrix}{9}
-  	\subfigure[$\x$]{\includegraphics[width=0.3\linewidth]{Figures/Model validation/states_comparison_3d_sim_x.pdf}}
-    \subfigure[$\y$]{\includegraphics[width=0.3\linewidth]{Figures/Model validation/states_comparison_3d_sim_y.pdf}}
-    \subfigure[$\roll$]{\includegraphics[width=0.3\linewidth]{Figures/Model validation/states_comparison_3d_sim_roll.pdf}}
-    \subfigure[$\pitch$]{\includegraphics[width=0.3\linewidth]{Figures/Model validation/states_comparison_3d_sim_pitch.pdf}}
-    \subfigure[$\yaw$]{\includegraphics[width=0.3\linewidth]{Figures/Model validation/states_comparison_3d_sim_yaw.pdf}}
-    \subfigure[$v_x$]{\includegraphics[width=0.3\linewidth]{Figures/Model validation/states_comparison_3d_sim_vx.pdf}}
-    \subfigure[$\omega_z$]{\includegraphics[width=0.3\linewidth]{Figures/Model validation/states_comparison_3d_sim_wz.pdf}}
-    \subfigure[$\Traction_l$]{\includegraphics[width=0.3\linewidth]{Figures/Model validation/states_comparison_3d_sim_tl.pdf}}
-    \subfigure[$\Traction_r$]{\includegraphics[width=0.3\linewidth]{Figures/Model validation/states_comparison_3d_sim_tr.pdf}}
-  \end{subfigmatrix}
-  \caption{Model verification results}
-  \label{fig:modelVerification}
-\end{figure}
-
-Figure \ref{fig:modelVerification} presents the results of the above described comparison. The \acrshort{rk4} propagated states $v_x$ and $\omega_z$ follow up the trend of \textsc{cvodes}. However, as errors pile up, the deviation increases as time goes forward. The same is observed with states $\x$ and $\y$. At the beginning of the simulations, both integrators present similar results, but as time increases and the error piles up, the deviation increases as well. Table \ref{tab:intspecs} presents the parameters used in the simulations.
+The integrator that propagates the dynamics model \eqref{eq:skidsteeringStateSpace} within the NMPC horizon shall be validated against a more precise integrator. In order to meet that end, the propagation generated by an \texttt{ode78}\footnote{\texttt{ode78}: \url{https://www.mathworks.com/help/matlab/ref/ode78.html} (accessed on 20 of April 2026)} integrator from Matlab is compared against the one of a less accurate RK-4 integrator (see \ref{section:rk4}), implemented within the \texttt{AcadosSimSolver} class framework. Table \ref{tab:intspecs} presents the parameters used in the simulations. The relative and absolute tolerances were set to be as small as possible, so that the propagation obtained by \texttt{ode78} may be seen as the \textit{ground truth}, as no analytical solution exists for model \eqref{eq:skidsteeringStateSpace}.
 
 \begin{table}[!htb]
   \caption[Integration simulation parameters.]{Integration simulation parameters.}
   \label{tab:intspecs}
   \renewcommand{\arraystretch}{1.2} % more space between rows
   \centering
-  \begin{tabular}{ccccccc}
+  \begin{tabular}{cccccccccc}
     \toprule
-    $l\,[m]$ & $m\,[kg]$ & $g\,[m/s^2]$ & $I_{zz}\,[kg \cdot m^2]$ & $\sigma_{\roll}$ & $\sigma_{\pitch}$ & $T_s\,[s]$ \\
+    $l\,[m]$ & $m\,[kg]$ & $g\,[m/s^2]$ & $I_{zz}\,[kg \cdot m^2]$ & $\sigma_{\roll}$ & $\sigma_{\pitch}$ & $T_s\,[s]$ & \multicolumn{3}{c}{\texttt{ode78} tolerances}   \\
+    \cmidrule(lr){8-10}
+     &  &  &  &  &  &  & Rel. & Abs. & Max. step \\
     \midrule
-    $0.448$ & $5.5$ & $-9.81$ & $0.192$ & $0.07$ & $0.07$ & $0.01$  \\
+    $0.448$ & $5.5$ & $-9.81$ & $0.192$ & $0.07$ & $0.07$ & $0.01$ & $1\mathrm{e}{-12}$ & $1\mathrm{e}{-14}$ & $1\mathrm{e}{-3}$\\
     \bottomrule
   \end{tabular}
 \end{table}
+
+Both integrators propagate the state generated by model \eqref{eq:skidsteeringStateSpace}, with respect to the same control series and integration time. Roll and pitch initial conditions are also randomly generated by means of a normal distribution in order to simulate the measurement of these euler angles, such that $\roll \sim \mathcal{N}\left(0,\,\sigma_{\roll}^2\right)$ and $\pitch \sim \mathcal{N}\left(0,\,\sigma_{\pitch}^2\right)$. Moreover, $u_l = 0.25 \sin(2 * \Progress)$, $u_r = 0.25 \sin(2.01 * \Progress)$ and $\dot{\Progress} = 0.1$. 
+
+\begin{figure}[!htb]
+  \centering
+  \begin{subfigmatrix}{5}
+  	\subfigure[$\x$]{\includegraphics[width=0.48\linewidth]{Figures/Model validation/states_comparison_3d_sim_x.pdf}}
+    \subfigure[$\y$]{\includegraphics[width=0.48\linewidth]{Figures/Model validation/states_comparison_3d_sim_y.pdf}}
+    \subfigure[$\yaw$]{\includegraphics[width=0.31\linewidth]{Figures/Model validation/states_comparison_3d_sim_yaw.pdf}}
+    \subfigure[$v_x$]{\includegraphics[width=0.31\linewidth]{Figures/Model validation/states_comparison_3d_sim_vx.pdf}}
+    \subfigure[$\omega_z$]{\includegraphics[width=0.31\linewidth]{Figures/Model validation/states_comparison_3d_sim_wz.pdf}}
+  \end{subfigmatrix}
+  \caption{Model verification results}
+  \label{fig:modelVerification}
+\end{figure}
+
+The propagation of states $\yaw$, $v_x$ and $\omega_z$ by RK-4 follow up the respective propagation of \texttt{ode78}. A close follow-up is also observed on states $\x$ and $\y$, although moderate deviations slowly start becoming noticeable around $t = 60\,s$, due to the accumulation of error. After more than two minutes of integration, the global mean absolute error of the propagation of $\x$ and $\y$ are $22.27$ and $26.85$ meters, respectively. Figure \ref{fig:modelVerification} depicts this comparison, where it is clear that RK-4 is accurate enough.
+
+\begin{remark}
+$\roll$ and $\pitch$ are not propagated. Instead of it, the initial condition of these angles is generated by white gaussian noise in order to simulate the terrain uneveness on each integrator propagation.
+\end{remark}
 
 \subsection{Maximum inclination}
 \label{subsection:maxinclination}
@@ -552,11 +549,11 @@ As it was outlined in subsection \ref{subsection:wheelTerrainContactModel}, the 
 \label{eq:ForcesRest}
 \end{equation}
 
-Due to that, the traversal of high slopes pose a great risk to the mobile robot's safety. If the set $\left(\roll,\, \pitch,\,\FrictionCoefficient\right)$ is close to or at the activation of \refeq{eq:ForcesRest} when the mobile robot is at steady-state, slippage will likely come up, regardless of the controller's attempt to avoid it, so these situations shall be avoided (see chapter \ref{chapter:globalpathplanner}). Equation \eqref{eq:ForcesRest} is obtained by replacing $\Traction_{l,\,r}$ on \refeq{eq:skidsteeringcoulomb} by $\sin\left(\pitch\right)\,\frac{\Mass\,\gravity}{4}$.
+Due to that, the traversal of high slopes pose a great risk to the mobile robot's safety. If the set $\left(\roll,\, \pitch,\,\FrictionCoefficient\right)$ is close to or at the activation of \refeq{eq:ForcesRest} when the mobile robot is at steady-state, slippage will likely come up, regardless of the controller's attempt to avoid it, so these situations shall be avoided (see chapter \ref{chapter:globalpathplanner}). Equation \eqref{eq:ForcesRest} is obtained by replacing $\Traction_{l,\,r}$ on the first equation of \eqref{eq:skidsteeringcoulomb} by $\sin\left(\pitch\right)\,\frac{\Mass\,\gravity}{4}$.
 
 \begin{figure}[!htb]
   \centering
   \includegraphics[width=0.9\textwidth]{Figures/Model validation/max_inclination.pdf}
-  \caption[.]{Depiction of $f_1\left(\pitch\right)$ against $f_2\left(\mu,\;\roll\right)$. If $f_1\left(\pitch\right) \leq f_2\left(\mu,\;\roll\right)$, there is no slippage for the respective set $\left(\roll,\, \pitch,\,\FrictionCoefficient\right)$. The smaller $\mu$ is, the smaller is the set of euler angles for which there is no slippage.}
+  \caption[Depiction of $f_1\left(\pitch\right)$ against $f_2\left(\mu,\;\roll\right)$.]{Depiction of $f_1\left(\pitch\right)$ against $f_2\left(\mu,\;\roll\right)$. If $f_1\left(\pitch\right) \leq f_2\left(\mu,\;\roll\right)$, there is no slippage for the respective set $\left(\roll,\, \pitch,\,\FrictionCoefficient\right)$. The smaller $\mu$ is, the smaller is the set of euler angles for which there is no slippage.}
   \label{fig:coulombfrictionconeillustration}
 \end{figure}

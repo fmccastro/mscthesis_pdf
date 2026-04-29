@@ -57,6 +57,7 @@
 \nomenclatureentry{R$d_0$@[{$d_0$}]\begingroup Influence distance of repulsive object.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{R$d_s$@[{$d_s$}]\begingroup Projection distance to safe space.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{R$lb,\;rb,\;lf,\;rf$@[{$lb,\;rb,\;lf,\;rf$}]\begingroup Left back, right back, left front and right front wheels, respectively.\nomeqref {0}|nompageref}{xv}
+\nomenclatureentry{R$\mathcal{Y}$@[{$\mathcal{Y}$}]\begingroup Set of heading angles.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{G$\phi,\;\theta,\;\psi$@[{$\phi,\;\theta,\;\psi$}]\begingroup Roll, pitch, and yaw angles, respectively.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{G$\Gamma$@[{$\Gamma$}]\begingroup Wave front at the source.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{G$\mathbf{\Omega}$@[{$\mathbf{\Omega}$}]\begingroup Feasible set.\nomeqref {0}|nompageref}{xv}
@@ -68,6 +69,8 @@
 \nomenclatureentry{G$\rho$@[{$\rho$}]\begingroup Progress.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{G$\kappa$@[{$\kappa$}]\begingroup Path curvature.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{G$\eta$@[{$\eta$}]\begingroup Step.\nomeqref {0}|nompageref}{xv}
+\nomenclatureentry{G$\tau$@[{$\tau$}]\begingroup Wheel torque.\nomeqref {0}|nompageref}{xv}
+\nomenclatureentry{G$\gamma$@[{$\gamma$}]\begingroup Barrier parameter.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{S$2$@[{$2$}]\begingroup Two-dimensional\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{S$3$@[{$3$}]\begingroup Three-dimensional\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{S$xx,\,yy,\,zz$@[{$xx,\,yy,\,zz$}]\begingroup Inertia tensor subscripts.\nomeqref {0}|nompageref}{xv}

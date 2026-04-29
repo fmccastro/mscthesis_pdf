@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                      %
-%     File: Thesis_Implementation.tex                                  %
+%     File: Thesis_Path_Planning.tex                                   %
 %     Tex Master: Thesis.tex                                           %
 %                                                                      %
 %     Author: Andre C. Marta                                           %
@@ -8,26 +8,37 @@
 %                                                                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%	Daqui para a frente, apresenta-se a implementação de cada um dos módulos, com os respectivos resultados.
-
 \chapter{Global path planner}
 \label{chapter:globalpathplanner}
-
-In order to delivers optimal reference paths, an offline survey of the target environment is described in section \ref{section:costMap}, in order to generate a \tb{traversability cost map}, which performs an analysis of the terrain uneveness with respect to the robot kinematics and geometric features. In section \ref{section:optimalPathPlanning}, the same \tb{cost map} is fed to the Eikonal equation in order to yield a gradient potential map, where an optimal path to some goal position $G$ is retrieved.
+e
+In order to deliver optimal reference paths, an offline survey of the target environment is performed at first. In section \ref{section:costMap}, an analysis of the terrain uneveness is carried on by taking into account the vehicle geometric features. After retrieving a \tb{traversability cost map} from the previous section, a modified version of it is fed to the Eikonal equation in section \ref{section:optimalPathPlanning}, in order to yield a gradient potential map, from where an optimal path to some goal position $G$ is generated.
 
 \section{Traversability map computation}
 \label{section:costMap}
 
-As mentioned in subsection \ref{subsection:worldModelling}, there is no explicit guideline on how to generate a traversability map. In this thesis, several approaches are compared. First, the state-of-the art algorithm from \cite{Amorim2014} is reviewed and evaluated. Then, this algorithm is reformulated to account for other metrics such as terrain inclination and roughness \cite{Ishigami2007PathPlanning}.
+As it is mentioned in subsection \ref{subsection:worldModelling}, there is no explicit guideline on how to generate a traversability map. In this thesis, several approaches are compared. First, the state-of-the art algorithm from \citet{Amorim2014} is reviewed and evaluated. Then, this algorithm is reformulated to take into account other metrics such as terrain inclination and roughness \cite{Ishigami2007PathPlanning}. Finally, these two maps are merged to yield a conservative, worst-case version of them, followed by its refinement, as it is shown in figure \ref{fig:travmapsgenerationflowchart}.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[sibling distance=40mm, level distance=12mm]
+  \node {\hyperref[subsubsec:costMapRefinement]{Refined map}} [grow'=up]
+    child[<-] {node {\hyperref[subsection:worstCaseScenario]{Worst-case map}}
+      child[<-] {node {\hyperref[subsection:maxTerrainRoughness]{Maximum terrain roughness}}}
+      child[<-] {node {\hyperref[subsection:heightMinimization]{Height minimization}}}
+      };
+\end{tikzpicture}
+\caption[Traversability maps generation flowchart.]{Traversability maps generation flowchart with respective dependencies.}
+\label{fig:travmapsgenerationflowchart}
+\end{figure}
 
 \subsection{Height minimization}
 \label{subsection:heightMinimization}
 
-A constrained optimization problem which minimizes the height of the robot at each cell is described. It is very similar to the solution provided in \cite{Amorim2014}. In this case, a wheeled vehicle is used instead of a tracked one. The yaw angle is set as a fixed variable and the initial guess $\boldsymbol{\upsilon}_0$ of the problem at every cell is set by an approximation to the optimal solution.
+A similar constrained optimization problem to the one from \cite{Amorim2014}, which minimizes the height of the robot at each cell is described here. In this case, a wheeled vehicle is used instead of a tracked one. The yaw angle is set as a fixed variable and the initial guess $\boldsymbol{w}_0$ of the problem at every cell is set by computing an \ti{a-priori} approximation to the optimal solution.
 
 \subsubsection*{Initial guess}
 
-Provided that the yaw angle $\yaw$ and the $\x$ and $\y$ position coordinates are known, each wheel point is projected to $\Map$. Then, from the group of retrieved contact points, the lowest height one is discarded, and an unit, normal vector to a plane which contains these points, is computed. Finally, the roll and pitch of this plane are given by equation \ref{eq:rollPitchInitialGuess}, where $\mathbf{\hat{n}}$ denotes that normalized normal vector to the above mentioned plane. In case any of these angles are higher than $\roll_{max}$ or $\pitch_{max}$, the respective angle is set to the highest admissable value, so that the initial guess is feasible. The height initial guess $\z_0$ is set as the sum of the projection of the robot center of mass point to $\Map$ plus the robot \acrshort{com} geometric height, to avoid any possible intrusion of the vehicle hull into the ground.
+Provided that the yaw angle $\yaw$ and the $\x$ and $\y$ position coordinates are known, each wheel point is projected to $\Map$. Then, from the group of retrieved contact points, the lowest height one is discarded, and a normalized, ortogonal vector to a plane which contains these points, is computed. Finally, the roll and pitch of this plane are given by \refeq{eq:rollPitchInitialGuess}, where $\mathbf{\hat{n}}$ denotes the normalized ortogonal vector to the above mentioned plane. In case any of these angles are higher than $\roll_{max}$ or $\pitch_{max}$, the respective angle is set to the highest admissable value, so that the initial guess is feasible. The elevation initial guess $\z_0$ is set as the sum of the projection of the robot center of mass point to $\Map$ plus the robot COM geometric height, to avoid any possible intrusion of the vehicle hull into the ground.
 
 \begin{equation}
 	\begin{aligned}
@@ -37,9 +48,9 @@ Provided that the yaw angle $\yaw$ and the $\x$ and $\y$ position coordinates ar
 	\label{eq:rollPitchInitialGuess}
 \end{equation}
 
-\subsubsection*{\acrlong{nlp}}
+\subsubsection*{Nonlinear programming}
 
-The minimization of the vehicle's \acrlong{com} is expressed as a non-linear optimization problem (\acrshort{nlp}) in equation \ref{eq:minHeight}, where $\boldsymbol{\Orientation}_{max}$ stands as the limits for each euler angle. $\mathbf{p}_k$ stands as the $k$ hull point position, which is defined with respect to $\WorldFrame$, by taking into account the robot geometry. $[\x, \y, \yaw]^T$ are fixed variables whereas $\left[ {\z},\, {\roll},\, {\pitch}\right]^T$ are set as optimization variables. Each point included in \ref{eq:minHeight} adds an additional constraint by stating each hull point must be above or at contact with the terrain. In case less than three hull points (each one from a different wheel) are at contact with the terrain, the terrain inclination returned by algoritm \ref{alg:slopeMinHeight} is $\frac{\pi}{2}$. This expresses the fact that the robot will stand at an unstable position, so this position is regarded as an undesirable traversable position.  On the other hand, the terrain inclination is given by equation \ref{eq:inclination}, which returns the angle between a normalized vector with direction $\BodyFrame_z$ and the normalized vector $\WorldFrame_z$ \cite{Amorim2014}. Although algorithm \ref{alg:slopeMinHeight} can be extended to any kind of wheeled-mobile robot configuration, only four wheel mobile robots are considered in this thesis, as mentioned in section \ref{section:problemFormulation}.
+The minimization of the vehicle's center of mass is expressed as a nonlinear optimization problem (NLP) in \refeq{eq:minHeight}, where $\boldsymbol{\Orientation}_{max}$ stands as the limits for each euler angle. $\mathbf{p}_{3,\,k}$ stands as the $k^{th}$ hull point position, which is defined with respect to $\WorldFrame$, by taking into account the robot geometry. $[\x, \y, \yaw]^T$ are fixed variables whereas $\left[ {\z},\, {\roll},\, {\pitch}\right]^T$ are set as optimization variables. Each hull point included in \refeq{eq:minHeight} adds an additional constraint by stating each hull point must be above or at contact with the terrain. In case less than three hull points (each one from a different wheel) are at contact with the terrain, the terrain inclination returned by algorithm \nameref{alg:slopeMinHeight} is $\frac{\pi}{2}$. This expresses the fact that the robot will stand at an unstable position, so this position is regarded as an undesirable traversable position.  On the other hand, the terrain inclination is given by \refeq{eq:inclination}, which returns the angle between a normalized vector with direction $\hat{\BodyFrame}_z$ and the normalized vector $\hat{\WorldFrame}_z$ \cite{Amorim2014}. Although algorithm \nameref{alg:slopeMinHeight} can be extended to any kind of wheeled-mobile robot configuration, only four wheel mobile robots are considered in this thesis, as it is mentioned in section \ref{section:problemFormulation}.
 
 \raisebox{2ex}
 {
@@ -60,16 +71,16 @@ The minimization of the vehicle's \acrlong{com} is expressed as a non-linear opt
 \hfill
 \raisebox{2ex}
 {
-	\begin{minipage}[c]{0.5\linewidth}
+	\begin{minipage}[c]{0.50\linewidth}
     \begin{algorithm}[H]
-	\caption{\footnotesize Terrain inclination with \textsc{heightmin}}\label{alg:slopeMinHeight}
+	\caption{\footnotesize \textsc{CELLSLOPEFIXYAW}}\label{alg:slopeMinHeight}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
 	\Function{terrainslope}{$\boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot),\, \boldsymbol{w}_0,\, x,\, y, \, \yaw$}
-	\State $\boldsymbol{w}^* \gets \textsc{heightmin}(\boldsymbol{w}_0, \, \boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot), \,x, \,y, \, \yaw)$ \Comment{solve \ref{eq:minHeight}}
+	\State $\boldsymbol{w}^* \gets \textsc{heightmin}(\boldsymbol{w}_0, \, \boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot), \,x, \,y, \, \yaw)$ \Comment{\eqref{eq:minHeight}}
 	\If{$\textmd{Contacts} \geq 3$}
-	\State $\TraversabilityCost \gets \textsc{inclination}(\roll^*,\, \pitch^*)$ \Comment{\ref{eq:inclination}}
+	\State $\TraversabilityCost \gets \textsc{inclination}(\roll^*,\, \pitch^*)$ \Comment{\eqref{eq:inclination}}
 	\Else
 	\State $\TraversabilityCost \gets \frac{\pi}{2}$
 	\EndIf
@@ -81,7 +92,7 @@ The minimization of the vehicle's \acrlong{com} is expressed as a non-linear opt
 }
 
 \begin{algorithm}[H]
-	\caption{\footnotesize Terrain inclination map with \textsc{terrainslope}}\label{alg:slopeMinHeightMap}
+	\caption{\footnotesize \textsc{MAPSLOPEFIXYAW}}\label{alg:slopeMinHeightMap}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
@@ -89,7 +100,7 @@ The minimization of the vehicle's \acrlong{com} is expressed as a non-linear opt
 	\ForEach{$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ldots, \, n_y - 1\}$}
 	\State $\boldsymbol{w}_0 \gets \textsc{initialguess}(x_i,\, y_j, \, \yaw)$ \Comment{feasible initialization}
 	\If{$\Robot_{\mathbf{p}_2} \subset \Map_2$}
-	\State $\TraversabilityCost,\,\boldsymbol{w}^* \gets \textsc{terrainslope}(\boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot), \, \boldsymbol{w}_0, \, x_i, \, y_j, \, \yaw)$ \Comment{algorithm \ref{alg:slopeMinHeight}}
+	\State $\TraversabilityCost,\,\boldsymbol{w}^* \gets \textsc{terrainslope}(\boldsymbol{\Orientation}_{max},\, \FunctionElevation(\cdot), \, \boldsymbol{w}_0, \, x_i, \, y_j, \, \yaw)$ \Comment{algorithm \nameref{alg:slopeMinHeight}}
 	\Else
 	\State $c \gets \frac{\pi}{2}$
 	\EndIf
@@ -100,7 +111,7 @@ The minimization of the vehicle's \acrlong{com} is expressed as a non-linear opt
 	\end{algorithmic}
 \end{algorithm}
 
-Then, algorithm \ref{alg:slopeMinHeightMap} extends the application of algorithm \ref{alg:slopeMinHeight} to each cell of the elevation grid. It should be noted that the discrete elevation map $\FunctionElevation_d(\cdot)$ shall have such dimensions that the cell divison length is smaller than the magnitude order of the wheel diameter in meters. Moreover, a convex area $\Robot_{\mathbf{p}_2}$ (equation \ref{eq:robotHullArea}) centered at $\mathbf{p}_2$ (typically the robot's \acrshort{com}), must capture the robot's geometric hull $\mathcal{H}_2$ projection on $\Map$ and lie inside the map domain. If this condition is not met, the terrain inclination angle assigned to $\FunctionTraversability_d(\cdot)$ is $\frac{\pi}{2}$. Therefore, positions at which the assigned terrain inclination is $\frac{\pi}{2}$ are considered to be untraversable. To sum up, the higher the inclination, the less desirable it is to pass through the respective position.
+Then, algorithm \nameref{alg:slopeMinHeightMap} extends the application of algorithm \nameref{alg:slopeMinHeight} to every cell of the elevation grid. Moreover, a convex area $\Robot_{\mathbf{p}_2}$ (\refeq{eq:robotHullArea}) centered at $\mathbf{p}_2$ (typically the robot's COM), must capture the robot's geometric hull $\mathcal{H}_2$ projection on $\Map$ and lie inside the map domain. If this condition is not met, the terrain inclination angle assigned to $\FunctionTraversability_d(\cdot)$ is $\frac{\pi}{2}$. Therefore, positions at which the assigned terrain inclination is $\frac{\pi}{2}$ are considered to be untraversable. To sum up, the higher the inclination, the less desirable it is to pass through the respective position.
 
 \begin{figure}[!htb]
   \begin{minipage}[c]{0.35\linewidth}
@@ -130,34 +141,38 @@ Then, algorithm \ref{alg:slopeMinHeightMap} extends the application of algorithm
 \label{fig:robotHull}
 \end{figure}
 
+\begin{remark}
+The discrete elevation map $\FunctionElevation_d(\cdot)$ shall have such dimensions that the cell divison length is smaller than the order of magnitude of the wheel diameter.
+\end{remark}
+
 \subsubsection*{Variable yaw}
 
-The terrain traversability may also be assessed by finding the maximum inclination at each position by saving the maximum retrieved inclination among several yaws. Algorithm \ref{alg:slopeMinHeightMap} lacks a thorough evaluation of the terrain irregularity, as it changes depending on the mobile robot heading. In order to tackle this absence of completeness, algorithm \ref{alg:slopeMinHeightMap} is reformulated to address this issue. 
+The terrain traversability may also be assessed by finding the maximum inclination at each position by saving the maximum retrieved inclination among several yaws. Algorithm \nameref{alg:slopeMinHeightMap} lacks a thorough evaluation of the terrain irregularity, as this feature changes depending on the mobile robot heading. In order to tackle this absence of completeness, algorithm \nameref{alg:slopeMinHeightMap} is reformulated into algorithm \nameref{alg:slopeMinHeightMapVarYaw} to address this issue.
 
 \begin{algorithm}[H]
-	\caption{\footnotesize Terrain inclination map with \textsc{terrainslope} and variable yaw}\label{alg:slopeMinHeightMapVarYaw}
+	\caption{\footnotesize \textsc{MAPSLOPE}}\label{alg:slopeMinHeightMapVarYaw}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
 	\Function{inclinationvaryaw}{$\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \,n_x,\, n_y$}
 	\ForEach{$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ldots, \, n_y - 1\}$}
-	\ForEach{$\yaw_k$} \Comment{variable yaw}
+	\ForEach{$\yaw_k \in \mathcal{Y}$} \Comment{change heading}
 	\State $\boldsymbol{w}_0 \gets \textsc{initialguess}(x_i, \, y_j, \, \yaw_k)$ \Comment{feasible initialization}
 	\If{$\Robot_{\mathbf{p}_2} \subset \Map_2$}
-	\State $\TraversabilityCost_k,\, \left( \boldsymbol{w}^* \right)_k \gets \textsc{terrainslope}(\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \, \boldsymbol{w}_0, \, x_i, \, y_j, \, \yaw_k)$ \Comment{algorithm \ref{alg:slopeMinHeight}}
+	\State $\TraversabilityCost_k,\, \left( \boldsymbol{w}^* \right)_k \gets \textsc{terrainslope}(\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \, \boldsymbol{w}_0, \, x_i, \, y_j, \, \yaw_k)$ \Comment{algorithm \nameref{alg:slopeMinHeight}}
 	\Else
 	\State $\TraversabilityCost_k \gets \frac{\pi}{2}$
 	\EndIf
 	\EndFor
 	\State $\TraversabilityCost \gets \text{max}\left( \TraversabilityCost_k \right)$ \Comment{save maximum inclination}
-	\State $\FunctionTraversability_d(i,\, j) \gets \TraversabilityCost$
+	\State $\FunctionTraversability_d(i,\, j) \gets \TraversabilityCost$ \Comment{assign $c$ to respective cell in discrete traversability map}
 	\EndFor
 	\State \Return $\FunctionTraversability_d(\cdot)$
 	\EndFunction
 	\end{algorithmic}
 \end{algorithm}
 
-In algorithm \ref{alg:slopeMinHeightMapVarYaw}, $\yaw_k = \lbrace -\pi,\, \ldots,\, -\pi + k \alpha, \, \ldots, \, \pi - \alpha \rbrace$, where $\alpha$ stands as the step angle of the set $\yaw_k$.
+In algorithm \nameref{alg:slopeMinHeightMapVarYaw}, $\mathcal{Y} = \lbrace -\pi,\, \ldots,\, -\pi + k \alpha, \, \ldots, \, \pi - \alpha \rbrace$, where $\alpha$ stands as the step angle between consecutive elements of $\mathcal{Y}$.
 
 \subsection{Maximum terrain roughness}
 \label{subsection:maxTerrainRoughness}
@@ -169,25 +184,25 @@ Terrain traversability may also be evaluated by inspecting terrain roughness aro
 	\label{eq:averageHeight}
 \end{equation}
 
-, where $\underline{\RobotHullArea}_2$ denotes a finite set of points from $\FunctionElevation_d(\cdot)$ inside $\RobotHullArea_2$ and $\bar{\FunctionElevation}_d(i, j)$ stands as the average of elevations of points inside $\RobotHullArea_2$. Then, terrain roughness is defined as,
+\noindent, where $\underline{\RobotHullArea}_2$ denotes a finite set of points from $\FunctionElevation_d(\cdot)$ inside $\RobotHullArea_2$ and $\bar{\FunctionElevation}_d(i, j)$ stands as the average of elevations of points inside $\RobotHullArea_2$. Then, terrain roughness is defined as,
 
 \begin{equation}
 	\FunctionTraversability_d(i,\,j) = \sqrt{\frac{\sum_{\x_i,\,\y_j \in \RobotHullArea_2} \left( \FunctionElevation_d(i,\,j) - \bar{\FunctionElevation}_d(i,\,j) \right)^2 }{n(\underline{\RobotHullArea}_2)}}
 	\label{eq:terrainRoughness}
 \end{equation}
 
-The set of points inside $\underline{\RobotHullArea}_2$ depends on the yaw angle of the mobile robot, so $\FunctionTraversability_d(i,\,j)$ is computed for each yaw angle. Similarly to what was done in algorithm \ref{alg:slopeMinHeightMapVarYaw}, the terrain roughness assigned to the respective cell is the maximum roughness among the set of yaws $\yaw_k$. Finally, a maximum terrain roughness may be computed by coding algorithm \ref{alg:maxRoughnessMap}.
+The set of points inside $\underline{\RobotHullArea}_2$ depends on the yaw angle of the mobile robot, so $\FunctionTraversability_d(i,\,j)$ is computed with respect to a given heading. Similarly to what was done in algorithm \nameref{alg:slopeMinHeightMapVarYaw}, the terrain roughness assigned to the respective cell is the maximum roughness among the set of yaws $\mathcal{Y}$. Finally, a maximum terrain roughness may be computed by implementing algorithm \nameref{alg:maxRoughnessMap}.
 
 \begin{algorithm}[H]
-	\caption{\footnotesize Maximum terrain roughness map}\label{alg:maxRoughnessMap}
+	\caption{\footnotesize \textsc{MAPROUGHNESS}}\label{alg:maxRoughnessMap}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
 	\Function{roughness}{$\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \,n_x,\, n_y$}
 	\ForEach{$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ldots, \, n_y - 1\}$}
 	\If{$\Robot_{\mathbf{p}_2} \subset \Map_2$}
-	\ForEach{$\yaw_k$} \Comment{variable yaw}
-	\State $\TraversabilityCost_k \gets \text{equation} \left( \ref{eq:terrainRoughness} \right)$ \Comment{equation (\ref{eq:terrainRoughness})}
+	\ForEach{$\yaw_k \in \mathcal{Y}$} \Comment{change heading}
+	\State $\TraversabilityCost_k \gets \text{equation \eqref{eq:terrainRoughness}}$
 	\EndFor
 	\Else
 	\State $\TraversabilityCost_k \gets \texttt{None}$
@@ -201,17 +216,19 @@ The set of points inside $\underline{\RobotHullArea}_2$ depends on the yaw angle
 	\end{algorithmic}
 \end{algorithm}
 
+\begin{remark}
 In case $\RobotCircleHullArea_2 \not\subset \Map_2$, the respective cell is assigned with $\texttt{None}$. At the end, these assignments are replaced by the maximum roughness among all cells, in order to enhance the fact that these cells are meant to be among the most untraversable ones.
+\end{remark}
 
 \subsection{Worst-case scenario}
 \label{subsection:worstCaseScenario}
 
-A more conservative traversability map can be created by assigning to every cell, the highest value among the traversability maps computed by algorithms \ref{alg:slopeMinHeightMapVarYaw} and \ref{alg:maxRoughnessMap} at the respective cell. This approach provides a joint awareness of terrain inclination and roughness on a single traversability map. In order to accomplish that, the traversability maps that come into play are normalized in order to enable a fair comparison among maps.
+A more conservative traversability map can be created by assigning to every cell, the highest value among the traversability maps computed by algorithms \nameref{alg:slopeMinHeightMapVarYaw} and \nameref{alg:maxRoughnessMap} at the respective cell. This approach provides a \tb{joint awareness} of terrain inclination and roughness on a single traversability map. In order to accomplish that, the traversability maps that come into play are normalized in order to enable a fair comparison among maps.
 
 \subsubsection*{Traversability map refinement}
-\label{eq:costMapRefinement}
+\label{subsubsec:costMapRefinement}
 
-In order to classify high cost borderline areas as undesirable, a refinement of the worst-case scenario map is made, so that a mobile robot avoids a close traverse to undesirable positions. Algorithm \ref{alg:refinedMap} presents a way to code this refinement method, by increasing the cost of areas around positions with a cost higher than a defined threshold, $c_{max}$. At each point with cost higher than $c_{max}$, a decreasing, isometrical source radiates up to a distance $r_s$ from the respective point. To every point that is inside the source, the existing cost is replaced by the source cost $\TraversabilityCost_s \left(\cdot \right)$ in case this one is higher.
+In order to classify high cost borderline areas as undesirable, a refinement of the worst-case scenario map is made, so that a mobile robot avoids a close traverse to undesirable positions. Algorithm \nameref{alg:refinedMap} presents a way to code this refinement method, by increasing the cost of areas around positions with a cost higher than a defined threshold, $c_{max}$. At each point with cost higher than $c_{max}$, a \tb{decreasing, isometrical source} radiates up to a distance $r_s$ from the respective point. To every point that is inside the source, the existing cost is replaced by the source cost $\TraversabilityCost_s \left(\cdot \right)$ in case this one is higher.
 
 \begin{equation}
 \TraversabilityCost_s \left(x \right) = \begin{cases} -\left( \frac{x}{r_s} \right)^2 + 1 \, , \hspace{5mm} 0 \leq x \leq r_s\\
@@ -220,33 +237,33 @@ In order to classify high cost borderline areas as undesirable, a refinement of 
 \end{equation}
 
 \begin{algorithm}[H]
-	\caption{\footnotesize Refinement of worst-case map}
+	\caption{\footnotesize \textsc{REFINEWORSTCASE}}
 	\label{alg:refinedMap}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
 	\Require $\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \,n_x,\, n_y, \, r_s, \, C$
-	\State $\FunctionTraversability_{d, \, inc}(\cdot) \gets \textsc{inclinationvaryaw}(\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \,n_x,\, n_y)$ \Comment{run algorithm \ref{alg:slopeMinHeightMapVarYaw}} 
-	\State $\FunctionTraversability_{d,\,r}(\cdot) \gets \textsc{roughness}(\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \,n_x,\, n_y)$ \Comment{run algorithm \ref{alg:maxRoughnessMap}}
-	\State $\FunctionTraversability_{d, \, inc}(\cdot),\, \FunctionTraversability_{d,\,r}(\cdot) \gets \frac{\FunctionTraversability_{d, \, inc}(\cdot)}{\text{max}\left( \FunctionTraversability_{d, \, inc}(\cdot) \right)}, \, \frac{\FunctionTraversability_{d,\,r}(\cdot)}{\text{max} \left( \FunctionTraversability_{d,\,r}(\cdot) \right)}$ \Comment{Normalize maps between 0 and 1}
+	\State $\FunctionTraversability_{d, \, inc}(\cdot) \gets \textsc{inclinationvaryaw}(\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \,n_x,\, n_y)$ \Comment{run algorithm \nameref{alg:slopeMinHeightMapVarYaw}} 
+	\State $\FunctionTraversability_{d,\,r}(\cdot) \gets \textsc{roughness}(\boldsymbol{\Orientation}_{max}, \, \FunctionElevation(\cdot), \,n_x,\, n_y)$ \Comment{run algorithm \nameref{alg:maxRoughnessMap}}
+	\State $\FunctionTraversability_{d, \, inc}(\cdot),\, \FunctionTraversability_{d,\,r}(\cdot) \gets \frac{\FunctionTraversability_{d, \, inc}(\cdot)}{\text{max}\left( \FunctionTraversability_{d, \, inc}(\cdot) \right)}, \, \frac{\FunctionTraversability_{d,\,r}(\cdot)}{\text{max} \left( \FunctionTraversability_{d,\,r}(\cdot) \right)}$ \Comment{normalize maps}
 	\ForEach{$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ldots, \, n_y - 1\}$}
 	\State $\FunctionTraversability_d(i,\, j) \gets \text{max} \left(\FunctionTraversability_{d, \, inc}(i,\,j), \hspace{1mm} \FunctionTraversability_{d,\,r}(i,\,j) \right)$ \Comment{generate worst-case map}
 	\EndFor
 	\ForEach{$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ldots, \, n_y - 1\}$}
 	\If{$\FunctionTraversability_d(i,\, j) \geq C$}
-	\State \text{Add $\left( i, \, j \right)$ to $p$} \Comment{Add point with cost above or equal to $C$ to list}
+	\State \text{Add $\left( i, \, j \right)$ to $p$} \Comment{add point with cost above or equal to $C$ to list}
 	\EndIf
 	\EndFor
 	\ForEach{$\{i,\,j\} \in p$}
 	\ForEach{$\{x_{i_2},\, y_{j_2}\} \in \{x_i - r_s,\,\ldots,x_i + r_s\} \times \{y_j - r_s,\,\ldots, y_j + r_s\}$}
 	\If{$\{x_{i_2},\,y_{j_2}\} \in \Map_2$}
 	\State $d \gets \sqrt{\left( x_{i_2} - x_i \right)^2 + \left( y_{j_2} - y_j \right)^2}$ \Comment{compute distance between $\left(i,\,j\right)$ and $\left(i_2,\,j_2\right)$}
-	\State $T_d\left(i_2,\, j_2 \right) \gets c_s(d)$ \Comment{add equation \ref{eq:sourceCost} result to list of source costs which concern $\left(i_2,\, j_2 \right)$}
+	\State $T_d\left(i_2,\, j_2 \right) \gets c_s(d)$ \Comment{add \refeq{eq:sourceCost} result to list of source costs which concern $\left(i_2,\, j_2 \right)$}
 	\EndIf
 	\EndFor
 	\EndFor
 	\ForEach{$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ldots, \, n_y - 1\}$}
-	\State $\FunctionTraversability_d\left(i,\, j\right) \gets \text{max}\left( \FunctionTraversability_d(i,\, j),\,T_d\left(i,\, j\right) \right)$ \Comment{Assign highest cost among source costs and existing cost}
+	\State $\FunctionTraversability_d\left(i,\, j\right) \gets \text{max}\left( \FunctionTraversability_d(i,\, j),\,T_d\left(i,\, j\right) \right)$ \Comment{assign highest cost among source costs and existing cost}
 	\EndFor
 	\end{algorithmic}
 \end{algorithm}
@@ -254,7 +271,7 @@ In order to classify high cost borderline areas as undesirable, a refinement of 
 \subsection{Implementation}
 \label{subsection:costMapImplementation}
 
-In this subsection, the implementation of the algorithms presented above is described, alongside the presentation of results. The elevation map used in this implementation contain regions with a variety of terrain, that range from irregular to smooth areas, but also from hilly to planar locations. In figure \ref{fig:elevationmapdimensions}, the elevation map is rendered. The wheeled mobile robot Pioneer 3AT was chosen as the test vehicle. The mobile robot dimensions are presented in table \ref{tab:robotDimensions}, whereas the elevation maps features are presented in the table of figure \ref{fig:elevationmapdimensions}.
+In this subsection, the implementation of the algorithms presented above is described, alongside the presentation of results. The elevation map used in this implementation contains regions with a variety of terrain, that range from irregular to smooth areas, but also from hilly to planar locations. In figure \ref{fig:elevationmapdimensions}, the elevation map is rendered. The wheeled mobile robot Pioneer 3AT was chosen as the test vehicle. The mobile robot dimensions are presented in table \ref{tab:robotDimensions}, whereas the elevation map features are presented in the table of figure \ref{fig:elevationmapdimensions}.
 
 \begin{table}[!htb]
   \caption[Table caption shown in TOC.]{Pioneer 3-AT dimensions.}
@@ -293,13 +310,40 @@ In this subsection, the implementation of the algorithms presented above is desc
 \label{fig:elevationmapdimensions}
 \end{figure}
 
-The origin of each elevation map is considered to be an inertial world frame $\WorldFrame$, which is placed at the center of each elevation map, as it is depicted in the picture of figure \ref{fig:elevationmapdimensions}. Typically, the original files of elevation maps come as \texttt{.tif} format or \texttt{.png} with grayscale encoding. Then, a suitable rescaling shall be made in order to yield a large enough map, with a meters per pixel discretization such that the wheel diameter is of the same magnitude order. Moreover, the maximum height shall be chosen in such a way that non-negligible crossable slopes are on the map.
+The origin of each elevation map is considered to be an inertial world frame $\WorldFrame$, which is placed at the center of each elevation map, as it is depicted in the picture of figure \ref{fig:elevationmapdimensions}. Typically, the original files of elevation maps come as \texttt{.tif} or \texttt{.png} with grayscale encoding. Then, a suitable rescaling shall be made in order to yield a large enough map, with a meters per pixel discretization such that the wheel diameter is of the same magnitude order. Moreover, the maximum height shall be chosen in such a way that non-negligible crossable slopes are on the map.
 
-Each algorithm is coded in Python, whereas the \acrshort{nlp} presented in \ref{eq:minHeight} is implemented with the \acrshort{casadi} numerical optimization tool \cite{Andersson2018}, where \acrshort{ipopt} \cite{wachter2006implementation} is selected as solver. Two different sets of simulations are performed for each map: the first only considers a single contact point at each wheel, whereas the second one takes a set of five hull points at each wheel (figure \ref{fig:hullPoints}).
+Each algorithm is coded in \texttt{Python}, whereas the NLP presented in \refeq{eq:minHeight} is implemented with the casADi numerical optimization tool \cite{Andersson2018}, where IPOPT \cite{wachter2006implementation} is selected as solver. Two different sets of simulations are performed for each map: the first only considers a single contact point at each wheel, whereas the second one takes a set of five hull points at each wheel (figure \ref{fig:hullPoints}).
 
 \begin{figure}[!htb]
 	\centering
 	\begin{subfigmatrix}{2}
+	\subfigure[Single hull point \textit{per} wheel (case 1)] {
+		\begin{tikzpicture}
+			\draw (0, -2.0) -- (1.5, -2.0);% bottom line
+  			\draw (0, 1) -- (1.5, 1);% top line
+  			\draw[dashed] (0,-2.0) arc (-90:90:0.35 and 1.5); % left half of the left ellipse		
+  			\draw (0, -2.0) arc (270:90:0.35 and 1.5);	% left half of the left ellipse		
+  			\draw (1.5, -0.5) ellipse (0.35 and 1.5);	% right ellipse
+  			
+  			%	Center of right ellipse
+  			\fill[black] (1.5, -0.5) circle (0.03cm);
+					
+			%	Contact point of 3D wheel
+    		\fill[red] (0.75, -2.0) circle (0.06cm);
+			
+			%	Arrow
+			\draw[->,thick] (2.5, -0.5) -- (3.0, -0.5);
+			
+			%	Right circle			
+			\draw[thick, color = black] (5.0, -0.5) circle [radius = 1.5];
+			
+			%	Center of right circle
+			\fill[black] (5.0, -0.5) circle (0.03cm);
+			
+			%	Contact point
+			\fill[red] (5.0, -2.0) circle (0.06cm);
+		\end{tikzpicture}
+	}
 	\subfigure[Several hull points \textit{per} wheel (case 2)] {
 		\begin{tikzpicture}
   			\draw (0, -2.0) -- (1.5, -2.0);% bottom line
@@ -333,39 +377,12 @@ Each algorithm is coded in Python, whereas the \acrshort{nlp} presented in \ref{
 			}
 		\end{tikzpicture}
 	}
-	\subfigure[Single hull point \textit{per} wheel (case 1)] {
-		\begin{tikzpicture}
-			\draw (0, -2.0) -- (1.5, -2.0);% bottom line
-  			\draw (0, 1) -- (1.5, 1);% top line
-  			\draw[dashed] (0,-2.0) arc (-90:90:0.35 and 1.5); % left half of the left ellipse		
-  			\draw (0, -2.0) arc (270:90:0.35 and 1.5);	% left half of the left ellipse		
-  			\draw (1.5, -0.5) ellipse (0.35 and 1.5);	% right ellipse
-  			
-  			%	Center of right ellipse
-  			\fill[black] (1.5, -0.5) circle (0.03cm);
-					
-			%	Contact point of 3D wheel
-    		\fill[red] (0.75, -2.0) circle (0.06cm);
-			
-			%	Arrow
-			\draw[->,thick] (2.5, -0.5) -- (3.0, -0.5);
-			
-			%	Right circle			
-			\draw[thick, color = black] (5.0, -0.5) circle [radius = 1.5];
-			
-			%	Center of right circle
-			\fill[black] (5.0, -0.5) circle (0.03cm);
-			
-			%	Contact point
-			\fill[red] (5.0, -2.0) circle (0.06cm);
-		\end{tikzpicture}
-	}
 	\end{subfigmatrix}
 	\caption{Hull points on each wheel}
     \label{fig:hullPoints}
 \end{figure}
 
-Apart from the restriction that every hull point must be above or at contact with the elevation map surface, the euler angle restrictions are linear and symmetrical. That means the lower and upper bound for each euler angle restriction is symmetrical (table \ref{tab:eulerAnglesRestrictions}).
+Apart from the restriction that every hull point must be above or at contact with the elevation map surface, linear, symmetric euler angle restrictions are added (see table \ref{tab:eulerAnglesRestrictions}).
 
 \begin{wraptable}{r}{0.4\textwidth}
   \caption[Table caption shown in TOC.]{Euler angles restrictions.}
@@ -381,28 +398,25 @@ Apart from the restriction that every hull point must be above or at contact wit
   \end{tabular}
 \end{wraptable}
 
-Below, the computed traversability maps are presented for case 1, under the conditions presented in this subsection. Traversability maps that match the results ranging from algorithm \ref{alg:slopeMinHeightMap} to \ref{alg:refinedMap} are presented, in order to enhance the differences among all maps. All the results presented below were obtained on an Intel® Xeon® E5-1620 v2 × 8 processor.
+Below, the computed traversability maps are presented for case 1, under the conditions presented in this subsection. Traversability maps that match the results ranging from algorithm \ref{alg:slopeMinHeightMapVarYaw} to \ref{alg:refinedMap} are presented, in order to enhance the differences among all maps. All the results presented below were obtained on an Intel® Xeon® E5-1620 v2 × 8 processor.
 
 \begin{figure}[!ht]
     \centering
-	\begin{subfigmatrix}{5}
-	\subfigure[Algorithm \ref{alg:slopeMinHeightMap}, where $\yaw = 0$] {
-    	\includegraphics[width=0.31\linewidth]{Figures/HeightMin+Points+1.png}  
+	\begin{subfigmatrix}{4}
+	\subfigure[Algorithm \nameref{alg:slopeMinHeightMapVarYaw}] {
+    	\includegraphics[width=0.48\linewidth]{Figures/HeightMin_maxInclination+Points+1.png}  
 	}
-	\subfigure[Algorithm \ref{alg:slopeMinHeightMapVarYaw}] {
-    	\includegraphics[width=0.31\linewidth]{Figures/HeightMin_maxInclination+Points+1.png}  
-	}
-	\subfigure[Algorithm \ref{alg:maxRoughnessMap}] {
-    	\includegraphics[width=0.31\linewidth]{Figures/maxTerrainRoughness+1.png}
+	\subfigure[Algorithm \nameref{alg:maxRoughnessMap}] {
+    	\includegraphics[width=0.48\linewidth]{Figures/maxTerrainRoughness+1.png}
 	}
 	\subfigure[Worst-case map] {
     	\includegraphics[width=0.48\linewidth]{Figures/worstCase+Points+1.png}  
 	}
-	\subfigure[Algorithm \ref{alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.9] {
+	\subfigure[Algorithm \nameref{alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.9] {
     	\includegraphics[width=0.48\linewidth]{Figures/mapRefinement+Points+0.9+1.0+1.png}  
 	}
 	\end{subfigmatrix}
-    \caption{Traversability maps (case 1; map 1)}
+    \caption{Traversability maps generated with different algorithms (case 1).}
     \label{fig:costMapsCase1Map1}
 \end{figure} 
 
@@ -411,53 +425,72 @@ The traversability maps which were obtained for case 1 are rendered in figure \r
 \subsection{Discussion}
 \label{subsection:costMapsDiscussion}
 
-Algorithms \ref{alg:slopeMinHeightMap} to \ref{alg:refinedMap} were built in such a way that the output map assigns higher costs to hilly or irregular terrain. On the other hand, it was required that the output map captures the terrain height gradient, although it is also advisable to assign higher costs to positions which are close to untraversable areas. Then, a balance between a traversability map that leads to the computation of a safe path and the capture of the terrain morphology comes into play.
+Algorithms \ref{alg:slopeMinHeightMap} to \ref{alg:refinedMap} were built in such a way that the output map assigns higher costs to hilly or irregular terrain. On the other hand, it was required that the output map captures the terrain height gradient, although it is also advisable to assign higher costs to positions which are close to untraversable areas. Then, a balance between a traversability map that leads to the computation of a safe path and an accurate capture of the terrain morphology comes into play.
 
-The analysis of figure and \ref{fig:costMapsCase1Map1} as well as the results of tables \ref{tab:resultsMap_1_Case1_2_Alg2_3} and \ref{tab:results_Map1_Case1_2_Alg_4_5} express the fact the maps computed with algorithm \ref{alg:slopeMinHeightMap} to \ref{alg:maxRoughnessMap} capture well the terrain morphology as the correlation between the height gradient and the cost is very high on all cases. However, that correlation decreases a lot when algorithm \ref{alg:refinedMap} is applied, due to the fact that the map refinement assigns higher costs to positions which are close to untraversable positions. This is price to pay in case one wants the robot to avoid hazardous positions. The correlation $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot)$ will depend on on the parameters $r_s$ and $C$. In case $r_s$ is high and $C$ is low, the source that radiates from each point with cost higher or equal to $C$ is larger and applied to a larger set of points, which causes the correlation $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot)$ to be smaller.
+The analysis of figure \ref{fig:costMapsCase1Map1} and tables \ref{tab:resultsMap_1_Case1_2_Alg2_3} and \ref{tab:results_Map1_Case1_2_Alg_4_5} express the fact that the generated maps capture well the terrain morphology as the correlation between the height gradient and the cost is very high on all cases. However, that correlation decreases a lot when algorithm \nameref{alg:refinedMap} is applied, due to the fact that the map refinement assigns higher costs to positions which are close to untraversable positions. This is the price to pay in case one wants to ensure the avoidance of hazardous positions. The correlation $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot)$ will depend on on the parameters $r_s$ and $C$. In case $r_s$ is high and $C$ is low, the source that radiates from each point with cost higher or equal to $C$ is larger and applied to a larger set of points, which causes the correlation $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot)$ to be smaller.
 
 \begin{table}[!htb]
-  \caption{Comparison between algorithms \ref{alg:slopeMinHeightMap} and \ref{alg:slopeMinHeightMapVarYaw} (Map 1)}
+  \caption{Comparison between algorithms \nameref{alg:slopeMinHeightMap} and \nameref{alg:slopeMinHeightMapVarYaw}}
   \label{tab:resultsMap_1_Case1_2_Alg2_3}
   \centering
   \renewcommand{\arraystretch}{1.2}
   \begin{tabular}{@{}rrrcrr@{}}
     \toprule
-      & \multicolumn{2}{c}{Case 1} & \phantom{abc} & \multicolumn{2}{c}{Case 2} \\
+      & \multicolumn{2}{c}{Case 1} & \phantom{a} & \multicolumn{2}{c}{Case 2} \\
     \cmidrule{2-3}
     \cmidrule{5-6}
-    $\text{Algorithm}$ & $\text{4}$ & $\text{5}$ && $\text{4}$ & $\text{5}$ \\
+    $\text{Algorithm}$ & \nameref{alg:slopeMinHeightMap} & \nameref{alg:slopeMinHeightMapVarYaw} && \nameref{alg:slopeMinHeightMap} & \nameref{alg:slopeMinHeightMapVarYaw}\\
     \midrule
-    $\text{[ms] / cell}$ & 5.82 $\pm$ 1.58 & 71.11 $\pm$ 9.96 && 10.10 $\pm$ 3.00 & 110.33 $\pm$ 13.68\\
-    $\text{iterations / cell}$ & 8.99 $\pm$ 2.13 & 118.17 $\pm$ 12.36 && 11.71 $\pm$ 2.79 & 151.36 $\pm$ 14.45\\
-    $\text{optimality} [\times 10^{-3}]$ & 8.63 $\pm$ 43.82 & 16.31 $\pm$ 47.84 && 5.51 $\pm$ 39.37 & 7.10 $\pm$ 40.04 \\
-    $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot) \text{ [R]}$ & 0.89 & 0.83 && 0.90 & 0.93\\
+    $\text{[ms] / cell}$ & $(5.82)\pm(1.58)$ & $(71.11)\pm(9.96)$ && $(10.10)\pm(3.00)$ & $(110.33)\pm(13.68)$\\
+    $\text{iterations / cell}$ & $(8.99)\pm(2.13)$ & $(118.17)\pm(12.36)$ && $(11.71)\pm(2.79)$ & $(151.36)\pm(14.45)$\\
+    $\Barrier\,[\times10\mathrm{e}{-9}]$ & $(2.46)\pm(2.67\mathrm{e}{-1})$ & $(2.46)\pm(2.70\mathrm{e}{-1})$ && $(2.50)\pm(7.86\mathrm{e}{-2})$ & $(2.50)\pm(7.72\mathrm{e}{-2})$ \\
+    $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot) \text{ [R]}$ & $0.89$ & $0.83$ && $0.90$ & $0.93$\\
     \bottomrule
     \multicolumn{6}{c}{}
   \end{tabular}
 \end{table}
 
+%\begin{table}[!htb]
+%  \caption{Comparison between algorithms \nameref{alg:maxRoughnessMap} and \nameref{alg:refinedMap}}
+%  \label{tab:results_Map1_Case1_2_Alg_4_5}
+%  \centering
+%  \renewcommand{\arraystretch}{1.2}
+%  \begin{tabular}{@{}rrrrcrr@{}}
+%    \toprule
+%     & & \multicolumn{2}{c}{Case 1} & \phantom{abc} & \multicolumn{2}{c}{Case 2}\\
+%    \cmidrule{3-4}
+%    \cmidrule{6-7}
+%    $\text{Algorithm}$ & \nameref{alg:maxRoughnessMap} & Worst-case & \nameref{alg:refinedMap} && Worst-case & \nameref{alg:refinedMap} \\
+%    \midrule
+%    $\bar{t} \text{ / cell [ms]}$ & 8.51 $\pm$ 1.56 & 3.12e-6 $\pm$ 8.10e-4 & $\text{1.40}^*$ && 3.12e-6 $\pm$ 7.63e-4 & $\text{1.49}^*$ \\
+%    $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot) \text{ [R]}$ & 0.96 & 0.78 & 0.61 && 0.50 & 0.13 \\
+%    \bottomrule
+%    \multicolumn{6}{c}{$\dagger$ {\footnotesize \text{Worst-case map}}  $\ast$ {\tiny $\frac{ \text{Total computation time} }{ \text{Number of cells} }$}  $\ast\ast$ {\footnotesize $r_s = 1$ m}, $C  = 0.9$ ; {\tiny (mean) $\pm$ (standard deviation), with confidence interval of 68.27 \%, when applicable}}
+%  \end{tabular}
+%\end{table}
+
 \begin{table}[!htb]
-  \caption{Comparison between algorithms \ref{alg:maxRoughnessMap} and \ref{alg:refinedMap} (Map 1)}
+  \caption{Performance of algorithms \nameref{alg:maxRoughnessMap} and \nameref{alg:refinedMap}}
   \label{tab:results_Map1_Case1_2_Alg_4_5}
   \centering
   \renewcommand{\arraystretch}{1.2}
-  \begin{tabular}{@{}rrrrcrr@{}}
+  \begin{tabular}{@{}rrrcr@{}}
     \toprule
-     & & \multicolumn{2}{c}{Case 1} & \phantom{abc} & \multicolumn{2}{c}{Case 2}\\
-    \cmidrule{3-4}
-    \cmidrule{6-7}
-    $\text{Algorithm}$ & $\text{6}$ & $\text{7}^{\dagger}$ & $\text{7}^{**}$ && $\text{7}^{\dagger}$ & $\text{7}^{**}$ \\
+     & & \multicolumn{1}{c}{Case 1} & \phantom{abc} & \multicolumn{1}{c}{Case 2}\\
+    \cmidrule{3-3}
+    \cmidrule{5-5}
+    $\text{Algorithm}$ & \nameref{alg:maxRoughnessMap} & $\text{\nameref{alg:refinedMap}}^{**}$ && $\text{\nameref{alg:refinedMap}}^{**}$ \\
     \midrule
-    $\bar{t} \text{ / cell [ms]}$ & 8.51 $\pm$ 1.56 & 3.12e-6 $\pm$ 8.10e-4 & $\text{1.40}^*$ && 3.12e-6 $\pm$ 7.63e-4 & $\text{1.49}^*$ \\
-    $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot) \text{ [R]}$ & 0.96 & 0.78 & 0.61 && 0.50 & 0.13 \\
+    $\bar{t} \text{ / cell [ms]}$ & $(8.51)\,\pm\,(1.56)$ & $1.40^*$ && $1.49^*$ \\
+    $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot) \text{ [R]}$ & $0.96$ & $0.61$ && $0.13$\\
     \bottomrule
-    \multicolumn{6}{c}{$\dagger$ {\footnotesize \text{Worst-case map}}  $\ast$ {\tiny $\frac{ \text{Total computation time} }{ \text{Number of cells} }$}  $\ast\ast$ {\footnotesize $r_s = 1$ m}, $C  = 0.9$ ; {\tiny (mean) $\pm$ (standard deviation), with confidence interval of 68.27 \%, when applicable}}
+    \multicolumn{5}{c}{$\ast$ {\tiny $\frac{ \text{Total computation time} }{ \text{Number of cells} }$}  $\ast\ast$ {\footnotesize $r_s = 1$ m}, $C  = 0.9$ ; {\tiny (mean) $\pm$ (standard deviation), with confidence interval of 68.27 \%, when applicable}}
   \end{tabular}
 \end{table}
 
-As it is expected, the computational burden increases a lot, when algorithms \ref{alg:slopeMinHeightMap} and \ref{alg:slopeMinHeightMapVarYaw} are run for case 2, because the \acrshort{nlp} needs to account for more constraints. However, the computation time is not a relevant result because these algorithms are intented to be run offline, prior to any simulation. 
+As it is expected, the computational burden increases a lot, when algorithms \nameref{alg:slopeMinHeightMap} and \nameref{alg:slopeMinHeightMapVarYaw} are run for case 2, because the NLP needs to account for more constraints. However, the computation time is not a relevant result because these algorithms are intented to be run offline, prior to any simulation. 
 
-Optimality was defined as the KKT Lagrangian gradient norm \cite{andersson2018sensitivity}  with respect to the optimization states of the \acrshort{nlp} \ref{eq:minHeight}. Then, optimality evaluation is only useful when an algorithm employs a \acrshort{nlp}. Generally, optimalities are close to zero, which expresses the fact that the computed costs relate to optimal solutions of algorithm \ref{alg:slopeMinHeight}. On both cases, the optimality decreases from algorithm \ref{alg:slopeMinHeightMap} to \ref{alg:slopeMinHeightMapVarYaw} and the standard deviation is higher than the mean optimality, due to the fact that the optimality rises above zero as the inclination approaches one. Less optimal solutions were obtained for algorithm \ref{alg:slopeMinHeightMapVarYaw} because the optimal solution is selected as the maximum inclination, from a set of solutions of \ref{eq:minHeight} for every yaw $\yaw_k$, as it is detailed on algorithm \ref{alg:slopeMinHeightMapVarYaw}.
+Optimality is assessed by evaluating the barrier parameter $\Barrier$ throughout the simulations. was defined as the KKT Lagrangian gradient norm \cite{andersson2018sensitivity}  with respect to the optimization states of the NLP \ref{eq:minHeight}. Then, optimality evaluation is only useful when an algorithm employs a NLP. Generally, optimalities are close to zero, which expresses the fact that the computed costs relate to optimal solutions of algorithm \ref{alg:slopeMinHeight}. On both cases, the optimality decreases from algorithm \ref{alg:slopeMinHeightMap} to \ref{alg:slopeMinHeightMapVarYaw} and the standard deviation is higher than the mean optimality, due to the fact that the optimality rises above zero as the inclination approaches one. Less optimal solutions were obtained for algorithm \ref{alg:slopeMinHeightMapVarYaw} because the optimal solution is selected as the maximum inclination, from a set of solutions of \ref{eq:minHeight} for every yaw $\yaw_k$, as it is detailed on algorithm \ref{alg:slopeMinHeightMapVarYaw}.
 
 Finally, it is worth to note that the traversability map computed by algorithm \ref{alg:slopeMinHeightMapVarYaw} for case 2 (figure \ref{fig:costMapsCase2Alg2_4}) finds more untraversable positions in comparison to case 1 (figure \ref{fig:costMapsCase1Map1}), because it is more difficult to accomodate more hull points on the terrain, which makes the distance from the hull points to the ground higher.
 

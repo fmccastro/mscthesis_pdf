@@ -167,7 +167,7 @@
 \newlabel{section:nonlinearopt}{{2.3}{12}{Nonlinear programming}{section.2.3}{}}
 \newlabel{section:nonlinearopt@cref}{{[section][3][2]2.3}{[1][12][]12}{}{}{}}
 \newlabel{eq:gennlp}{{2.4}{12}{Nonlinear programming}{equation.2.4}{}}
-\newlabel{eq:gennlp@cref}{{[equation][4][2]2.4}{[1][12][]12}{}{}{}}
+\newlabel{eq:gennlp@cref}{{[subequation][0][2,4]2.4}{[1][12][]12}{}{}{}}
 \newlabel{theorem:kkt}{{2.1}{12}{KKT conditions}{theorem.2.1}{}}
 \newlabel{theorem:kkt@cref}{{[theorem][1][2]2.1}{[1][12][]12}{}{}{}}
 \newlabel{eq:kkt}{{2.5}{12}{KKT conditions}{equation.2.5}{}}
@@ -200,8 +200,12 @@
 \newlabel{subsubsection:sqp}{{2.3}{14}{}{figure.caption.19}{}}
 \newlabel{subsubsection:sqp@cref}{{[section][3][2]2.3}{[1][13][]14}{}{}{}}
 \newlabel{eq:sqp}{{2.7}{14}{}{equation.2.7}{}}
-\newlabel{eq:sqp@cref}{{[equation][7][2]2.7}{[1][14][]14}{}{}{}}
-\newlabel{subsubsection:ipopt}{{2.3}{14}{}{equation.2.7}{}}
+\newlabel{eq:sqp@cref}{{[subequation][0][2,7]2.7}{[1][13][]14}{}{}{}}
+\newlabel{subeq:sqpg}{{2.7b}{14}{}{equation.2.7b}{}}
+\newlabel{subeq:sqpg@cref}{{[subequation][2][2,7]2.7b}{[1][13][]14}{}{}{}}
+\newlabel{subeq:sqph}{{2.7c}{14}{}{equation.2.7c}{}}
+\newlabel{subeq:sqph@cref}{{[subequation][3][2,7]2.7c}{[1][13][]14}{}{}{}}
+\newlabel{subsubsection:ipopt}{{2.3}{14}{}{equation.2.7c}{}}
 \newlabel{subsubsection:ipopt@cref}{{[section][3][2]2.3}{[1][14][]14}{}{}{}}
 \newlabel{eq:ipopt}{{2.8}{14}{}{equation.2.8}{}}
 \newlabel{eq:ipopt@cref}{{[subequation][0][2,8]2.8}{[1][14][]14}{}{}{}}
@@ -259,8 +263,8 @@
 \newlabel{fig:integratormethods@cref}{{[figure][8][2]2.8}{[1][17][]17}{}{}{}}
 \citation{verschueren2022acados}
 \citation{verschueren2022acados}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \textsc  {RK4fAD}}}{18}{algorithm.1}\protected@file@percent }
-\newlabel{alg:rk4ad}{{1}{18}{\textsc {RK4fAD}}{algorithm.1}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \textsc  {RK4-FAD}}}{18}{algorithm.1}\protected@file@percent }
+\newlabel{alg:rk4ad}{{1}{18}{\textsc {RK4-FAD}}{algorithm.1}{}}
 \newlabel{alg:rk4ad@cref}{{[algorithm][1][]1}{[1][17][]18}{}{}{}}
 \citation{ferreau2014qpoases}
 \citation{frison2020hpipm}
@@ -351,16 +355,14 @@
 \newlabel{section:robotkinematics@cref}{{[section][3][3]3.3}{[1][24][]24}{}{}{}}
 \newlabel{assumption:frames}{{3.2}{24}{}{assumption.3.2}{}}
 \newlabel{assumption:frames@cref}{{[assumption][2][3]3.2}{[1][24][]24}{}{}{}}
-\newlabel{eq:translationFreeBody}{{3.1}{24}{Mobile robot kinematics}{equation.3.1}{}}
-\newlabel{eq:translationFreeBody@cref}{{[equation][1][3]3.1}{[1][24][]24}{}{}{}}
-\newlabel{eq:rotationFreeBody}{{3.2}{24}{Mobile robot kinematics}{equation.3.2}{}}
-\newlabel{eq:rotationFreeBody@cref}{{[equation][2][3]3.2}{[1][24][]24}{}{}{}}
-\newlabel{subsection:wheelKinematics}{{3.3}{24}{}{equation.3.2}{}}
+\newlabel{eq:kinematicsFreeBody}{{3.1}{24}{Mobile robot kinematics}{equation.3.1}{}}
+\newlabel{eq:kinematicsFreeBody@cref}{{[equation][1][3]3.1}{[1][24][]24}{}{}{}}
+\newlabel{subsection:wheelKinematics}{{3.3}{24}{}{equation.3.1}{}}
 \newlabel{subsection:wheelKinematics@cref}{{[section][3][3]3.3}{[1][24][]24}{}{}{}}
+\newlabel{assumption:singlePointContact}{{3.3}{24}{}{assumption.3.3}{}}
+\newlabel{assumption:singlePointContact@cref}{{[assumption][3][3]3.3}{[1][24][]24}{}{}{}}
 \citation{Kozlowski2004}
 \citation{Kozlowski2004}
-\newlabel{assumption:singlePointContact}{{3.3}{25}{}{assumption.3.3}{}}
-\newlabel{assumption:singlePointContact@cref}{{[assumption][3][3]3.3}{[1][24][]25}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Mobile robot dynamics}{25}{section.3.4}\protected@file@percent }
 \newlabel{section:robotDynamics}{{3.4}{25}{Mobile robot dynamics}{section.3.4}{}}
 \newlabel{section:robotDynamics@cref}{{[section][4][3]3.4}{[1][25][]25}{}{}{}}
@@ -373,27 +375,25 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Wheel subject to forces and moments.}}}{25}{figure.caption.26}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Weight distribution during pitch.}}}{25}{figure.caption.26}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Weight distribution during roll.}}}{25}{figure.caption.26}\protected@file@percent }
-\newlabel{eq:dynamics}{{3.3}{26}{Mobile robot dynamics}{equation.3.3}{}}
-\newlabel{eq:dynamics@cref}{{[equation][3][3]3.3}{[1][26][]26}{}{}{}}
+\newlabel{eq:dynamicsFreeBody}{{3.2}{26}{Mobile robot dynamics}{equation.3.2}{}}
+\newlabel{eq:dynamicsFreeBody@cref}{{[equation][2][3]3.2}{[1][26][]26}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Wheel actuation}{26}{subsection.3.4.1}\protected@file@percent }
 \newlabel{subsection:wheelActuation}{{3.4.1}{26}{Wheel actuation}{subsection.3.4.1}{}}
 \newlabel{subsection:wheelActuation@cref}{{[subsection][1][3,4]3.4.1}{[1][26][]26}{}{}{}}
 \newlabel{assumption:contactbodyframes}{{3.4}{26}{}{assumption.3.4}{}}
 \newlabel{assumption:contactbodyframes@cref}{{[assumption][4][3]3.4}{[1][26][]26}{}{}{}}
-\newlabel{eq:totalActuatedForce}{{3.4}{26}{Wheel actuation}{equation.3.4}{}}
-\newlabel{eq:totalActuatedForce@cref}{{[equation][4][3]3.4}{[1][26][]26}{}{}{}}
-\newlabel{eq:totalActuatedMoment}{{3.5}{26}{Wheel actuation}{equation.3.5}{}}
-\newlabel{eq:totalActuatedMoment@cref}{{[equation][5][3]3.5}{[1][26][]26}{}{}{}}
+\newlabel{eq:tractionForcesMoments}{{3.3}{26}{Wheel actuation}{equation.3.3}{}}
+\newlabel{eq:tractionForcesMoments@cref}{{[equation][3][3]3.3}{[1][26][]26}{}{}{}}
+\newlabel{assumption:wheellateraltraction}{{3.5}{26}{}{assumption.3.5}{}}
+\newlabel{assumption:wheellateraltraction@cref}{{[assumption][5][3]3.5}{[1][26][]26}{}{}{}}
 \citation{Genta2012,chapter24handbookrobotics}
 \citation{chapter24handbookrobotics}
 \citation{chapter24handbookrobotics}
 \citation{chapter24handbookrobotics}
 \citation{chapter24handbookrobotics}
-\newlabel{assumption:wheellateraltraction}{{3.5}{27}{}{assumption.3.5}{}}
-\newlabel{assumption:wheellateraltraction@cref}{{[assumption][5][3]3.5}{[1][27][]27}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Wheel-terrain contact model}{27}{subsection.3.4.2}\protected@file@percent }
 \newlabel{subsection:wheelTerrainContactModel}{{3.4.2}{27}{Wheel-terrain contact model}{subsection.3.4.2}{}}
-\newlabel{subsection:wheelTerrainContactModel@cref}{{[subsection][2][3,4]3.4.2}{[1][27][]27}{}{}{}}
+\newlabel{subsection:wheelTerrainContactModel@cref}{{[subsection][2][3,4]3.4.2}{[1][26][]27}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Wheel-terrain contact models \cite  {chapter24handbookrobotics}}}{27}{figure.caption.27}\protected@file@percent }
 \newlabel{fig:contactModels}{{3.3}{27}{Wheel-terrain contact models \cite {chapter24handbookrobotics}}{figure.caption.27}{}}
 \newlabel{fig:contactModels@cref}{{[figure][3][3]3.3}{[1][27][]27}{}{}{}}
@@ -401,70 +401,64 @@
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Contact between rigid wheel and deformable terrain.}}}{27}{figure.caption.27}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Contact between deformable wheel and rigid terrain.}}}{27}{figure.caption.27}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Contact between deformable wheel and deformable terrain.}}}{27}{figure.caption.27}\protected@file@percent }
-\newlabel{subsubsection:coulombFrictionModel}{{3.4.2}{28}{}{figure.caption.27}{}}
-\newlabel{subsubsection:coulombFrictionModel@cref}{{[subsection][2][3,4]3.4.2}{[1][27][]28}{}{}{}}
-\newlabel{eq:coulombFrictionModel}{{3.6}{28}{}{equation.3.6}{}}
-\newlabel{eq:coulombFrictionModel@cref}{{[equation][6][3]3.6}{[1][28][]28}{}{}{}}
+\newlabel{subsubsection:coulombFrictionModel}{{3.4.2}{27}{}{figure.caption.27}{}}
+\newlabel{subsubsection:coulombFrictionModel@cref}{{[subsection][2][3,4]3.4.2}{[1][27][]27}{}{}{}}
+\newlabel{eq:coulombFrictionModel}{{3.4}{28}{}{equation.3.4}{}}
+\newlabel{eq:coulombFrictionModel@cref}{{[equation][4][3]3.4}{[1][27][]28}{}{}{}}
 \newlabel{eq:sameFrictionCoefficients}{{3.6}{28}{}{assumption.3.6}{}}
 \newlabel{eq:sameFrictionCoefficients@cref}{{[assumption][6][3]3.6}{[1][28][]28}{}{}{}}
-\newlabel{eq:simpleFriction}{{3.7}{28}{}{equation.3.7}{}}
-\newlabel{eq:simpleFriction@cref}{{[equation][7][3]3.7}{[1][28][]28}{}{}{}}
+\newlabel{eq:simpleFriction}{{3.5}{28}{}{equation.3.5}{}}
+\newlabel{eq:simpleFriction@cref}{{[equation][5][3]3.5}{[1][28][]28}{}{}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Coulomb friction cone depiction example.}}{28}{figure.caption.28}\protected@file@percent }
 \newlabel{fig:coulombfrictionconeillustration}{{3.4}{28}{Coulomb friction cone depiction example}{figure.caption.28}{}}
 \newlabel{fig:coulombfrictionconeillustration@cref}{{[figure][4][3]3.4}{[1][28][]28}{}{}{}}
 \newlabel{subsubsection:coulombFrictionModel}{{3.4.2}{28}{}{figure.caption.28}{}}
 \newlabel{subsubsection:coulombFrictionModel@cref}{{[subsection][2][3,4]3.4.2}{[1][28][]28}{}{}{}}
-\newlabel{eq:totalReactionForce}{{3.8}{29}{}{equation.3.8}{}}
-\newlabel{eq:totalReactionForce@cref}{{[equation][8][3]3.8}{[1][28][]29}{}{}{}}
-\newlabel{eq:totalReactionMoments}{{3.9}{29}{}{equation.3.9}{}}
-\newlabel{eq:totalReactionMoments@cref}{{[equation][9][3]3.9}{[1][28][]29}{}{}{}}
+\newlabel{eq:reactions}{{3.6}{28}{}{equation.3.6}{}}
+\newlabel{eq:reactions@cref}{{[equation][6][3]3.6}{[1][28][]28}{}{}{}}
 \newlabel{eq:reactionforcessimplification}{{3.7}{29}{}{assumption.3.7}{}}
-\newlabel{eq:reactionforcessimplification@cref}{{[assumption][7][3]3.7}{[1][29][]29}{}{}{}}
+\newlabel{eq:reactionforcessimplification@cref}{{[assumption][7][3]3.7}{[1][28][]29}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}NMPC formulation}{29}{section.3.5}\protected@file@percent }
 \newlabel{section:fullStateSpace}{{3.5}{29}{NMPC formulation}{section.3.5}{}}
 \newlabel{section:fullStateSpace@cref}{{[section][5][3]3.5}{[1][29][]29}{}{}{}}
-\newlabel{eq:fullStateSpace}{{3.10}{29}{NMPC formulation}{equation.3.10}{}}
-\newlabel{eq:fullStateSpace@cref}{{[equation][10][3]3.10}{[1][29][]29}{}{}{}}
-\newlabel{eq:sumMomentsForces}{{3.11}{29}{NMPC formulation}{equation.3.11}{}}
-\newlabel{eq:sumMomentsForces@cref}{{[equation][11][3]3.11}{[1][29][]29}{}{}{}}
-\newlabel{eq:inequalityConstraintsModel}{{3.12}{29}{NMPC formulation}{equation.3.12}{}}
-\newlabel{eq:inequalityConstraintsModel@cref}{{[equation][12][3]3.12}{[1][29][]29}{}{}{}}
+\newlabel{eq:fullStateSpace}{{3.7}{29}{NMPC formulation}{equation.3.7}{}}
+\newlabel{eq:fullStateSpace@cref}{{[equation][7][3]3.7}{[1][29][]29}{}{}{}}
+\newlabel{eq:sumMomentsForces}{{3.8}{29}{NMPC formulation}{equation.3.8}{}}
+\newlabel{eq:sumMomentsForces@cref}{{[equation][8][3]3.8}{[1][29][]29}{}{}{}}
+\newlabel{eq:inequalityConstraintsModel}{{3.9}{29}{NMPC formulation}{equation.3.9}{}}
+\newlabel{eq:inequalityConstraintsModel@cref}{{[equation][9][3]3.9}{[1][29][]29}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Model simplification}{29}{subsection.3.5.1}\protected@file@percent }
-\newlabel{eq:sumForces}{{3.13}{29}{Model simplification}{equation.3.13}{}}
-\newlabel{eq:sumForces@cref}{{[equation][13][3]3.13}{[1][29][]29}{}{}{}}
-\newlabel{eq:lateralskid}{{3.8}{30}{}{assumption.3.8}{}}
-\newlabel{eq:lateralskid@cref}{{[assumption][8][3]3.8}{[1][30][]30}{}{}{}}
-\newlabel{eq:planarmotion}{{3.9}{30}{}{assumption.3.9}{}}
-\newlabel{eq:planarmotion@cref}{{[assumption][9][3]3.9}{[1][30][]30}{}{}{}}
-\newlabel{eq:skidsteeringStateSpace}{{3.14}{30}{Model simplification}{equation.3.14}{}}
-\newlabel{eq:skidsteeringStateSpace@cref}{{[equation][14][3]3.14}{[1][30][]30}{}{}{}}
-\newlabel{eq:skidsteeringcoulomb}{{3.15}{30}{Model simplification}{equation.3.15}{}}
-\newlabel{eq:skidsteeringcoulomb@cref}{{[equation][15][3]3.15}{[1][30][]30}{}{}{}}
+\newlabel{eq:sumForces}{{3.10}{29}{Model simplification}{equation.3.10}{}}
+\newlabel{eq:sumForces@cref}{{[equation][10][3]3.10}{[1][29][]29}{}{}{}}
+\newlabel{eq:lateralskid}{{3.8}{29}{}{assumption.3.8}{}}
+\newlabel{eq:lateralskid@cref}{{[assumption][8][3]3.8}{[1][29][]29}{}{}{}}
+\newlabel{eq:planarmotion}{{3.9}{29}{}{assumption.3.9}{}}
+\newlabel{eq:planarmotion@cref}{{[assumption][9][3]3.9}{[1][29][]29}{}{}{}}
+\newlabel{eq:skidsteeringStateSpace}{{3.11}{30}{Model simplification}{equation.3.11}{}}
+\newlabel{eq:skidsteeringStateSpace@cref}{{[equation][11][3]3.11}{[1][30][]30}{}{}{}}
+\newlabel{eq:skidsteeringcoulomb}{{3.12}{30}{Model simplification}{equation.3.12}{}}
+\newlabel{eq:skidsteeringcoulomb@cref}{{[equation][12][3]3.12}{[1][30][]30}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Dynamics model validation}{30}{subsection.3.5.2}\protected@file@percent }
 \newlabel{subsection:modelValidation}{{3.5.2}{30}{Dynamics model validation}{subsection.3.5.2}{}}
 \newlabel{subsection:modelValidation@cref}{{[subsection][2][3,5]3.5.2}{[1][30][]30}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Model verification results}}{31}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:modelVerification}{{3.5}{31}{Model verification results}{figure.caption.29}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Integration simulation parameters.}}{30}{table.caption.29}\protected@file@percent }
+\newlabel{tab:intspecs}{{3.1}{30}{Integration simulation parameters}{table.caption.29}{}}
+\newlabel{tab:intspecs@cref}{{[table][1][3]3.1}{[1][30][]30}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Model verification results}}{31}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:modelVerification}{{3.5}{31}{Model verification results}{figure.caption.30}{}}
 \newlabel{fig:modelVerification@cref}{{[figure][5][3]3.5}{[1][30][]31}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$x$}}}{31}{figure.caption.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$y$}}}{31}{figure.caption.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$\phi $}}}{31}{figure.caption.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$\theta $}}}{31}{figure.caption.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$\psi $}}}{31}{figure.caption.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$v_x$}}}{31}{figure.caption.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$\omega _z$}}}{31}{figure.caption.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$t_l$}}}{31}{figure.caption.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {$t_r$}}}{31}{figure.caption.29}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Integration simulation parameters.}}{31}{table.caption.30}\protected@file@percent }
-\newlabel{tab:intspecs}{{3.1}{31}{Integration simulation parameters}{table.caption.30}{}}
-\newlabel{tab:intspecs@cref}{{[table][1][3]3.1}{[1][30][]31}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$x$}}}{31}{figure.caption.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$y$}}}{31}{figure.caption.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$\psi $}}}{31}{figure.caption.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$v_x$}}}{31}{figure.caption.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$\omega _z$}}}{31}{figure.caption.30}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.3}Maximum inclination}{31}{subsection.3.5.3}\protected@file@percent }
 \newlabel{subsection:maxinclination}{{3.5.3}{31}{Maximum inclination}{subsection.3.5.3}{}}
 \newlabel{subsection:maxinclination@cref}{{[subsection][3][3,5]3.5.3}{[1][31][]31}{}{}{}}
-\newlabel{eq:ForcesRest}{{3.16}{31}{Maximum inclination}{equation.3.16}{}}
-\newlabel{eq:ForcesRest@cref}{{[equation][16][3]3.16}{[1][31][]31}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces .}}{32}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:coulombfrictionconeillustration}{{3.6}{32}{}{figure.caption.31}{}}
+\newlabel{eq:ForcesRest}{{3.13}{31}{Maximum inclination}{equation.3.13}{}}
+\newlabel{eq:ForcesRest@cref}{{[equation][13][3]3.13}{[1][31][]31}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Depiction of $f_1\left (\theta \right )$ against $f_2\left (\mu ,\tmspace  +\thickmuskip {.2777em}\phi \right )$.}}{32}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:coulombfrictionconeillustration}{{3.6}{32}{Depiction of $f_1\left (\pitch \right )$ against $f_2\left (\mu ,\;\roll \right )$}{figure.caption.31}{}}
 \newlabel{fig:coulombfrictionconeillustration@cref}{{[figure][6][3]3.6}{[1][31][]32}{}{}{}}
 \citation{Amorim2014}
 \citation{Ishigami2007PathPlanning}
@@ -477,6 +471,9 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Traversability map computation}{33}{section.4.1}\protected@file@percent }
 \newlabel{section:costMap}{{4.1}{33}{Traversability map computation}{section.4.1}{}}
 \newlabel{section:costMap@cref}{{[section][1][4]4.1}{[1][33][]33}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Traversability maps generation flowchart.}}{33}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:travmapsgenerationflowchart}{{4.1}{33}{Traversability maps generation flowchart}{figure.caption.32}{}}
+\newlabel{fig:travmapsgenerationflowchart@cref}{{[figure][1][4]4.1}{[1][33][]33}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Height minimization}{33}{subsection.4.1.1}\protected@file@percent }
 \newlabel{subsection:heightMinimization}{{4.1.1}{33}{Height minimization}{subsection.4.1.1}{}}
 \newlabel{subsection:heightMinimization@cref}{{[subsection][1][4,1]4.1.1}{[1][33][]33}{}{}{}}
@@ -487,537 +484,536 @@
 \newlabel{eq:minHeight@cref}{{[equation][2][4]4.2}{[1][34][]34}{}{}{}}
 \newlabel{eq:inclination}{{4.3}{34}{}{equation.4.3}{}}
 \newlabel{eq:inclination@cref}{{[equation][3][4]4.3}{[1][34][]34}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces \footnotesize  Terrain inclination with \textsc  {heightmin}}}{34}{algorithm.3}\protected@file@percent }
-\newlabel{alg:slopeMinHeight}{{3}{34}{\footnotesize Terrain inclination with \textsc {heightmin}}{algorithm.3}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces \footnotesize  \textsc  {CELLSLOPEFIXYAW}}}{34}{algorithm.3}\protected@file@percent }
+\newlabel{alg:slopeMinHeight}{{3}{34}{\footnotesize \textsc {CELLSLOPEFIXYAW}}{algorithm.3}{}}
 \newlabel{alg:slopeMinHeight@cref}{{[algorithm][3][]3}{[1][34][]34}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces \footnotesize  Terrain inclination map with \textsc  {terrainslope}}}{34}{algorithm.4}\protected@file@percent }
-\newlabel{alg:slopeMinHeightMap}{{4}{34}{\footnotesize Terrain inclination map with \textsc {terrainslope}}{algorithm.4}{}}
-\newlabel{alg:slopeMinHeightMap@cref}{{[algorithm][4][]4}{[1][34][]34}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {4}{\ignorespaces \footnotesize  \textsc  {MAPSLOPEFIXYAW}}}{35}{algorithm.4}\protected@file@percent }
+\newlabel{alg:slopeMinHeightMap}{{4}{35}{\footnotesize \textsc {MAPSLOPEFIXYAW}}{algorithm.4}{}}
+\newlabel{alg:slopeMinHeightMap@cref}{{[algorithm][4][]4}{[1][34][]35}{}{}{}}
 \newlabel{eq:robotHullArea}{{4.4}{35}{}{equation.4.4}{}}
 \newlabel{eq:robotHullArea@cref}{{[equation][4][4]4.4}{[1][35][]35}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Robot hull area.}}{35}{figure.caption.32}\protected@file@percent }
-\newlabel{fig:robotHull}{{4.1}{35}{Robot hull area}{figure.caption.32}{}}
-\newlabel{fig:robotHull@cref}{{[figure][1][4]4.1}{[1][35][]35}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces \footnotesize  Terrain inclination map with \textsc  {terrainslope} and variable yaw}}{35}{algorithm.5}\protected@file@percent }
-\newlabel{alg:slopeMinHeightMapVarYaw}{{5}{35}{\footnotesize Terrain inclination map with \textsc {terrainslope} and variable yaw}{algorithm.5}{}}
-\newlabel{alg:slopeMinHeightMapVarYaw@cref}{{[algorithm][5][]5}{[1][35][]35}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Robot hull area.}}{35}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:robotHull}{{4.2}{35}{Robot hull area}{figure.caption.33}{}}
+\newlabel{fig:robotHull@cref}{{[figure][2][4]4.2}{[1][35][]35}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {5}{\ignorespaces \footnotesize  \textsc  {MAPSLOPE}}}{36}{algorithm.5}\protected@file@percent }
+\newlabel{alg:slopeMinHeightMapVarYaw}{{5}{36}{\footnotesize \textsc {MAPSLOPE}}{algorithm.5}{}}
+\newlabel{alg:slopeMinHeightMapVarYaw@cref}{{[algorithm][5][]5}{[1][35][]36}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Maximum terrain roughness}{36}{subsection.4.1.2}\protected@file@percent }
 \newlabel{subsection:maxTerrainRoughness}{{4.1.2}{36}{Maximum terrain roughness}{subsection.4.1.2}{}}
-\newlabel{subsection:maxTerrainRoughness@cref}{{[subsection][2][4,1]4.1.2}{[1][35][]36}{}{}{}}
+\newlabel{subsection:maxTerrainRoughness@cref}{{[subsection][2][4,1]4.1.2}{[1][36][]36}{}{}{}}
 \newlabel{eq:averageHeight}{{4.5}{36}{Maximum terrain roughness}{equation.4.5}{}}
 \newlabel{eq:averageHeight@cref}{{[equation][5][4]4.5}{[1][36][]36}{}{}{}}
 \newlabel{eq:terrainRoughness}{{4.6}{36}{Maximum terrain roughness}{equation.4.6}{}}
 \newlabel{eq:terrainRoughness@cref}{{[equation][6][4]4.6}{[1][36][]36}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {6}{\ignorespaces \footnotesize  Maximum terrain roughness map}}{36}{algorithm.6}\protected@file@percent }
-\newlabel{alg:maxRoughnessMap}{{6}{36}{\footnotesize Maximum terrain roughness map}{algorithm.6}{}}
-\newlabel{alg:maxRoughnessMap@cref}{{[algorithm][6][]6}{[1][36][]36}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Worst-case scenario}{36}{subsection.4.1.3}\protected@file@percent }
-\newlabel{subsection:worstCaseScenario}{{4.1.3}{36}{Worst-case scenario}{subsection.4.1.3}{}}
-\newlabel{subsection:worstCaseScenario@cref}{{[subsection][3][4,1]4.1.3}{[1][36][]36}{}{}{}}
-\newlabel{eq:costMapRefinement}{{4.1.3}{37}{}{subsection.4.1.3}{}}
-\newlabel{eq:costMapRefinement@cref}{{[subsection][3][4,1]4.1.3}{[1][37][]37}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {6}{\ignorespaces \footnotesize  \textsc  {MAPROUGHNESS}}}{37}{algorithm.6}\protected@file@percent }
+\newlabel{alg:maxRoughnessMap}{{6}{37}{\footnotesize \textsc {MAPROUGHNESS}}{algorithm.6}{}}
+\newlabel{alg:maxRoughnessMap@cref}{{[algorithm][6][]6}{[1][36][]37}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Worst-case scenario}{37}{subsection.4.1.3}\protected@file@percent }
+\newlabel{subsection:worstCaseScenario}{{4.1.3}{37}{Worst-case scenario}{subsection.4.1.3}{}}
+\newlabel{subsection:worstCaseScenario@cref}{{[subsection][3][4,1]4.1.3}{[1][37][]37}{}{}{}}
+\newlabel{subsubsec:costMapRefinement}{{4.1.3}{37}{}{subsection.4.1.3}{}}
+\newlabel{subsubsec:costMapRefinement@cref}{{[subsection][3][4,1]4.1.3}{[1][37][]37}{}{}{}}
 \newlabel{eq:sourceCost}{{4.7}{37}{}{equation.4.7}{}}
 \newlabel{eq:sourceCost@cref}{{[equation][7][4]4.7}{[1][37][]37}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {7}{\ignorespaces \footnotesize  Refinement of worst-case map}}{37}{algorithm.7}\protected@file@percent }
-\newlabel{alg:refinedMap}{{7}{37}{\footnotesize Refinement of worst-case map}{algorithm.7}{}}
-\newlabel{alg:refinedMap@cref}{{[algorithm][7][]7}{[1][37][]37}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Implementation}{37}{subsection.4.1.4}\protected@file@percent }
-\newlabel{subsection:costMapImplementation}{{4.1.4}{37}{Implementation}{subsection.4.1.4}{}}
-\newlabel{subsection:costMapImplementation@cref}{{[subsection][4][4,1]4.1.4}{[1][37][]37}{}{}{}}
 \citation{Andersson2018}
 \citation{wachter2006implementation}
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Table caption shown in TOC.}}{38}{table.caption.33}\protected@file@percent }
-\newlabel{tab:robotDimensions}{{4.1}{38}{Table caption shown in TOC}{table.caption.33}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {7}{\ignorespaces \footnotesize  \textsc  {REFINEWORSTCASE}}}{38}{algorithm.7}\protected@file@percent }
+\newlabel{alg:refinedMap}{{7}{38}{\footnotesize \textsc {REFINEWORSTCASE}}{algorithm.7}{}}
+\newlabel{alg:refinedMap@cref}{{[algorithm][7][]7}{[1][37][]38}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Implementation}{38}{subsection.4.1.4}\protected@file@percent }
+\newlabel{subsection:costMapImplementation}{{4.1.4}{38}{Implementation}{subsection.4.1.4}{}}
+\newlabel{subsection:costMapImplementation@cref}{{[subsection][4][4,1]4.1.4}{[1][38][]38}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Table caption shown in TOC.}}{38}{table.caption.34}\protected@file@percent }
+\newlabel{tab:robotDimensions}{{4.1}{38}{Table caption shown in TOC}{table.caption.34}{}}
 \newlabel{tab:robotDimensions@cref}{{[table][1][4]4.1}{[1][38][]38}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Elevation map \acrshort {dem} and dimensions.}}{38}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:elevationmapdimensions}{{4.2}{38}{Elevation map \acrshort {dem} and dimensions}{figure.caption.34}{}}
-\newlabel{fig:elevationmapdimensions@cref}{{[figure][2][4]4.2}{[1][38][]38}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Table caption shown in TOC.}}{38}{table.4.2}\protected@file@percent }
-\newlabel{tab:eulerAnglesRestrictions}{{4.2}{38}{Table caption shown in TOC}{table.4.2}{}}
-\newlabel{tab:eulerAnglesRestrictions@cref}{{[table][2][4]4.2}{[1][38][]38}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Hull points on each wheel}}{39}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:hullPoints}{{4.3}{39}{Hull points on each wheel}{figure.caption.35}{}}
-\newlabel{fig:hullPoints@cref}{{[figure][3][4]4.3}{[1][38][]39}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Several hull points \textit {per} wheel (case 2)}}}{39}{figure.caption.35}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Single hull point \textit {per} wheel (case 1)}}}{39}{figure.caption.35}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Traversability maps (case 1; map 1)}}{39}{figure.caption.36}\protected@file@percent }
-\newlabel{fig:costMapsCase1Map1}{{4.4}{39}{Traversability maps (case 1; map 1)}{figure.caption.36}{}}
-\newlabel{fig:costMapsCase1Map1@cref}{{[figure][4][4]4.4}{[1][39][]39}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{39}{figure.caption.36}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{39}{figure.caption.36}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{39}{figure.caption.36}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Worst-case map}}}{39}{figure.caption.36}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.9}}}{39}{figure.caption.36}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}Discussion}{39}{subsection.4.1.5}\protected@file@percent }
-\newlabel{subsection:costMapsDiscussion}{{4.1.5}{39}{Discussion}{subsection.4.1.5}{}}
-\newlabel{subsection:costMapsDiscussion@cref}{{[subsection][5][4,1]4.1.5}{[1][39][]39}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Elevation map \acrshort {dem} and dimensions.}}{39}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:elevationmapdimensions}{{4.3}{39}{Elevation map \acrshort {dem} and dimensions}{figure.caption.35}{}}
+\newlabel{fig:elevationmapdimensions@cref}{{[figure][3][4]4.3}{[1][38][]39}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Hull points on each wheel}}{39}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:hullPoints}{{4.4}{39}{Hull points on each wheel}{figure.caption.36}{}}
+\newlabel{fig:hullPoints@cref}{{[figure][4][4]4.4}{[1][39][]39}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Single hull point \textit {per} wheel (case 1)}}}{39}{figure.caption.36}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Several hull points \textit {per} wheel (case 2)}}}{39}{figure.caption.36}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Table caption shown in TOC.}}{39}{table.4.2}\protected@file@percent }
+\newlabel{tab:eulerAnglesRestrictions}{{4.2}{39}{Table caption shown in TOC}{table.4.2}{}}
+\newlabel{tab:eulerAnglesRestrictions@cref}{{[table][2][4]4.2}{[1][39][]39}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Traversability maps generated with different algorithms (case 1).}}{40}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:costMapsCase1Map1}{{4.5}{40}{Traversability maps generated with different algorithms (case 1)}{figure.caption.37}{}}
+\newlabel{fig:costMapsCase1Map1@cref}{{[figure][5][4]4.5}{[1][39][]40}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Algorithm \nameref {alg:slopeMinHeightMapVarYaw}}}}{40}{figure.caption.37}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Algorithm \nameref {alg:maxRoughnessMap}}}}{40}{figure.caption.37}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Worst-case map}}}{40}{figure.caption.37}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Algorithm \nameref {alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.9}}}{40}{figure.caption.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}Discussion}{40}{subsection.4.1.5}\protected@file@percent }
+\newlabel{subsection:costMapsDiscussion}{{4.1.5}{40}{Discussion}{subsection.4.1.5}{}}
+\newlabel{subsection:costMapsDiscussion@cref}{{[subsection][5][4,1]4.1.5}{[1][39][]40}{}{}{}}
 \citation{andersson2018sensitivity}
-\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Comparison between algorithms \ref {alg:slopeMinHeightMap} and \ref {alg:slopeMinHeightMapVarYaw} (Map 1)}}{40}{table.caption.37}\protected@file@percent }
-\newlabel{tab:resultsMap_1_Case1_2_Alg2_3}{{4.3}{40}{Comparison between algorithms \ref {alg:slopeMinHeightMap} and \ref {alg:slopeMinHeightMapVarYaw} (Map 1)}{table.caption.37}{}}
-\newlabel{tab:resultsMap_1_Case1_2_Alg2_3@cref}{{[table][3][4]4.3}{[1][40][]40}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Comparison between algorithms \ref {alg:maxRoughnessMap} and \ref {alg:refinedMap} (Map 1)}}{40}{table.caption.38}\protected@file@percent }
-\newlabel{tab:results_Map1_Case1_2_Alg_4_5}{{4.4}{40}{Comparison between algorithms \ref {alg:maxRoughnessMap} and \ref {alg:refinedMap} (Map 1)}{table.caption.38}{}}
-\newlabel{tab:results_Map1_Case1_2_Alg_4_5@cref}{{[table][4][4]4.4}{[1][40][]40}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Cost to speed conversion (equation \ref {eq:cost2SpeedConversion})}}{41}{figure.caption.39}\protected@file@percent }
-\newlabel{fig:cost2SpeedFunction}{{4.5}{41}{Cost to speed conversion (equation \ref {eq:cost2SpeedConversion})}{figure.caption.39}{}}
-\newlabel{fig:cost2SpeedFunction@cref}{{[figure][5][4]4.5}{[1][41][]41}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces Comparison between algorithms \nameref {alg:slopeMinHeightMap} and \nameref {alg:slopeMinHeightMapVarYaw}}}{41}{table.caption.38}\protected@file@percent }
+\newlabel{tab:resultsMap_1_Case1_2_Alg2_3}{{4.3}{41}{Comparison between algorithms \nameref {alg:slopeMinHeightMap} and \nameref {alg:slopeMinHeightMapVarYaw}}{table.caption.38}{}}
+\newlabel{tab:resultsMap_1_Case1_2_Alg2_3@cref}{{[table][3][4]4.3}{[1][40][]41}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces Performance of algorithms \nameref {alg:maxRoughnessMap} and \nameref {alg:refinedMap}}}{41}{table.caption.39}\protected@file@percent }
+\newlabel{tab:results_Map1_Case1_2_Alg_4_5}{{4.4}{41}{Performance of algorithms \nameref {alg:maxRoughnessMap} and \nameref {alg:refinedMap}}{table.caption.39}{}}
+\newlabel{tab:results_Map1_Case1_2_Alg_4_5@cref}{{[table][4][4]4.4}{[1][40][]41}{}{}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Optimal path planning}{41}{section.4.2}\protected@file@percent }
 \newlabel{section:optimalPathPlanning}{{4.2}{41}{Optimal path planning}{section.4.2}{}}
 \newlabel{section:optimalPathPlanning@cref}{{[section][2][4]4.2}{[1][41][]41}{}{}{}}
-\newlabel{eq:cost2SpeedConversion}{{4.8}{41}{Optimal path planning}{equation.4.8}{}}
-\newlabel{eq:cost2SpeedConversion@cref}{{[equation][8][4]4.8}{[1][41][]41}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Implementation}{41}{subsection.4.2.1}\protected@file@percent }
-\newlabel{subsection:implementationfm}{{4.2.1}{41}{Implementation}{subsection.4.2.1}{}}
-\newlabel{subsection:implementationfm@cref}{{[subsection][1][4,2]4.2.1}{[1][41][]41}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Algorithm \ref {alg:speedMapGeneration} parameters.}}{42}{table.caption.40}\protected@file@percent }
-\newlabel{tab:optPathparams}{{4.5}{42}{Algorithm \ref {alg:speedMapGeneration} parameters}{table.caption.40}{}}
-\newlabel{tab:optPathparams@cref}{{[table][5][4]4.5}{[1][42][]42}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {8}{\ignorespaces \footnotesize  Potential flow generation}}{42}{algorithm.8}\protected@file@percent }
-\newlabel{alg:speedMapGeneration}{{8}{42}{\footnotesize Potential flow generation}{algorithm.8}{}}
-\newlabel{alg:speedMapGeneration@cref}{{[algorithm][8][]8}{[1][42][]42}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {9}{\ignorespaces \footnotesize  Optimal path generation}}{42}{algorithm.9}\protected@file@percent }
-\newlabel{alg:optimalPathGeneration}{{9}{42}{\footnotesize Optimal path generation}{algorithm.9}{}}
-\newlabel{alg:optimalPathGeneration@cref}{{[algorithm][9][]9}{[1][42][]42}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Cost to speed conversion (equation \ref {eq:cost2SpeedConversion})}}{42}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:cost2SpeedFunction}{{4.6}{42}{Cost to speed conversion (equation \ref {eq:cost2SpeedConversion})}{figure.caption.40}{}}
+\newlabel{fig:cost2SpeedFunction@cref}{{[figure][6][4]4.6}{[1][42][]42}{}{}{}}
+\newlabel{eq:cost2SpeedConversion}{{4.8}{42}{Optimal path planning}{equation.4.8}{}}
+\newlabel{eq:cost2SpeedConversion@cref}{{[equation][8][4]4.8}{[1][42][]42}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Implementation}{42}{subsection.4.2.1}\protected@file@percent }
+\newlabel{subsection:implementationfm}{{4.2.1}{42}{Implementation}{subsection.4.2.1}{}}
+\newlabel{subsection:implementationfm@cref}{{[subsection][1][4,2]4.2.1}{[1][42][]42}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.5}{\ignorespaces Algorithm \ref {alg:speedMapGeneration} parameters.}}{43}{table.caption.41}\protected@file@percent }
+\newlabel{tab:optPathparams}{{4.5}{43}{Algorithm \ref {alg:speedMapGeneration} parameters}{table.caption.41}{}}
+\newlabel{tab:optPathparams@cref}{{[table][5][4]4.5}{[1][42][]43}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {8}{\ignorespaces \footnotesize  Potential flow generation}}{43}{algorithm.8}\protected@file@percent }
+\newlabel{alg:speedMapGeneration}{{8}{43}{\footnotesize Potential flow generation}{algorithm.8}{}}
+\newlabel{alg:speedMapGeneration@cref}{{[algorithm][8][]8}{[1][42][]43}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {9}{\ignorespaces \footnotesize  Optimal path generation}}{43}{algorithm.9}\protected@file@percent }
+\newlabel{alg:optimalPathGeneration}{{9}{43}{\footnotesize Optimal path generation}{algorithm.9}{}}
+\newlabel{alg:optimalPathGeneration@cref}{{[algorithm][9][]9}{[1][43][]43}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Discussion}{43}{subsection.4.2.2}\protected@file@percent }
 \newlabel{subsection:discussionfm}{{4.2.2}{43}{Discussion}{subsection.4.2.2}{}}
-\newlabel{subsection:discussionfm@cref}{{[subsection][2][4,2]4.2.2}{[1][42][]43}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Potential flow and speed map for worst-case traversability map (case 1; map 1)}}{43}{figure.caption.41}\protected@file@percent }
-\newlabel{fig:speedMapPotentialWorstCasePointsMap1}{{4.6}{43}{Potential flow and speed map for worst-case traversability map (case 1; map 1)}{figure.caption.41}{}}
-\newlabel{fig:speedMapPotentialWorstCasePointsMap1@cref}{{[figure][6][4]4.6}{[1][43][]43}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Speed map $F(\cdot )$}}}{43}{figure.caption.41}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Potential flow $u(\cdot )$ and $\nabla u(\cdot )$ (blue arrows)}}}{43}{figure.caption.41}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Optimal paths (case 1; map 1)}}{44}{figure.caption.42}\protected@file@percent }
-\newlabel{fig:potentialFlowWithPathsPointsMap1}{{4.7}{44}{Optimal paths (case 1; map 1)}{figure.caption.42}{}}
-\newlabel{fig:potentialFlowWithPathsPointsMap1@cref}{{[figure][7][4]4.7}{[1][43][]44}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Worst-case map}}}{44}{figure.caption.42}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Refined map ($r_s = 1.0$ m, $\, C = 0.9$)}}}{44}{figure.caption.42}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Paths comparison and \textsc  {getoptimalpath($\cdot $)} method runtimes.}}{44}{figure.caption.43}\protected@file@percent }
-\newlabel{fig:pathsComparison+_getPat2FollowTimes}{{4.8}{44}{Paths comparison and \textsc {getoptimalpath($\cdot $)} method runtimes}{figure.caption.43}{}}
-\newlabel{fig:pathsComparison+_getPat2FollowTimes@cref}{{[figure][8][4]4.8}{[1][43][]44}{}{}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}\acrlong {nmpc}}{45}{chapter.5}\protected@file@percent }
+\newlabel{subsection:discussionfm@cref}{{[subsection][2][4,2]4.2.2}{[1][43][]43}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Potential flow and speed map for worst-case traversability map (case 1; map 1)}}{44}{figure.caption.42}\protected@file@percent }
+\newlabel{fig:speedMapPotentialWorstCasePointsMap1}{{4.7}{44}{Potential flow and speed map for worst-case traversability map (case 1; map 1)}{figure.caption.42}{}}
+\newlabel{fig:speedMapPotentialWorstCasePointsMap1@cref}{{[figure][7][4]4.7}{[1][44][]44}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Speed map $F(\cdot )$}}}{44}{figure.caption.42}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Potential flow $u(\cdot )$ and $\nabla u(\cdot )$ (blue arrows)}}}{44}{figure.caption.42}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Optimal paths (case 1; map 1)}}{44}{figure.caption.43}\protected@file@percent }
+\newlabel{fig:potentialFlowWithPathsPointsMap1}{{4.8}{44}{Optimal paths (case 1; map 1)}{figure.caption.43}{}}
+\newlabel{fig:potentialFlowWithPathsPointsMap1@cref}{{[figure][8][4]4.8}{[1][44][]44}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Worst-case map}}}{44}{figure.caption.43}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Refined map ($r_s = 1.0$ m, $\, C = 0.9$)}}}{44}{figure.caption.43}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Paths comparison and \textsc  {getoptimalpath($\cdot $)} method runtimes.}}{45}{figure.caption.44}\protected@file@percent }
+\newlabel{fig:pathsComparison+_getPat2FollowTimes}{{4.9}{45}{Paths comparison and \textsc {getoptimalpath($\cdot $)} method runtimes}{figure.caption.44}{}}
+\newlabel{fig:pathsComparison+_getPat2FollowTimes@cref}{{[figure][9][4]4.9}{[1][44][]45}{}{}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}\acrlong {nmpc}}{46}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:nmpc}{{5}{45}{\acrlong {nmpc}}{chapter.5}{}}
-\newlabel{chapter:nmpc@cref}{{[chapter][5][]5}{[1][45][]45}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Control algorithm architectures}{45}{section.5.1}\protected@file@percent }
-\newlabel{section:controlarchitecture}{{5.1}{45}{Control algorithm architectures}{section.5.1}{}}
-\newlabel{section:controlarchitecture@cref}{{[section][1][5]5.1}{[1][45][]45}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces NMPC architectures}}{45}{figure.caption.44}\protected@file@percent }
-\newlabel{fig:architecturecomp}{{5.1}{45}{NMPC architectures}{figure.caption.44}{}}
-\newlabel{fig:architecturecomp@cref}{{[figure][1][5]5.1}{[1][45][]45}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {One-stage \acrshort {nmpc}}}}{45}{figure.caption.44}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Two-stage \acrshort {nmpc}}}}{45}{figure.caption.44}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces One-stage \textit  {vs} two-stage reference tracking.}}{46}{figure.caption.45}\protected@file@percent }
-\newlabel{fig:architecturecomp}{{5.2}{46}{One-stage \textit {vs} two-stage reference tracking}{figure.caption.45}{}}
-\newlabel{fig:architecturecomp@cref}{{[figure][2][5]5.2}{[1][46][]46}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {With virtual speed control.}}}{46}{figure.caption.45}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Constant virtual speed of $0.5$.}}}{46}{figure.caption.45}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Computational cost comparison between different architectures.}}{46}{table.caption.46}\protected@file@percent }
-\newlabel{tab:compCostarchitecture}{{5.1}{46}{Computational cost comparison between different architectures}{table.caption.46}{}}
-\newlabel{tab:compCostarchitecture@cref}{{[table][1][5]5.1}{[1][46][]46}{}{}{}}
+\newlabel{chapter:nmpc}{{5}{46}{\acrlong {nmpc}}{chapter.5}{}}
+\newlabel{chapter:nmpc@cref}{{[chapter][5][]5}{[1][46][]46}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Control algorithm architectures}{46}{section.5.1}\protected@file@percent }
+\newlabel{section:controlarchitecture}{{5.1}{46}{Control algorithm architectures}{section.5.1}{}}
+\newlabel{section:controlarchitecture@cref}{{[section][1][5]5.1}{[1][46][]46}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces NMPC architectures}}{46}{figure.caption.45}\protected@file@percent }
+\newlabel{fig:architecturecomp}{{5.1}{46}{NMPC architectures}{figure.caption.45}{}}
+\newlabel{fig:architecturecomp@cref}{{[figure][1][5]5.1}{[1][46][]46}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {One-stage \acrshort {nmpc}}}}{46}{figure.caption.45}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Two-stage \acrshort {nmpc}}}}{46}{figure.caption.45}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces One-stage \textit  {vs} two-stage reference tracking.}}{47}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:architecturecomp}{{5.2}{47}{One-stage \textit {vs} two-stage reference tracking}{figure.caption.46}{}}
+\newlabel{fig:architecturecomp@cref}{{[figure][2][5]5.2}{[1][47][]47}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {With virtual speed control.}}}{47}{figure.caption.46}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Constant virtual speed of $0.5$.}}}{47}{figure.caption.46}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Computational cost comparison between different architectures.}}{47}{table.caption.47}\protected@file@percent }
+\newlabel{tab:compCostarchitecture}{{5.1}{47}{Computational cost comparison between different architectures}{table.caption.47}{}}
+\newlabel{tab:compCostarchitecture@cref}{{[table][1][5]5.1}{[1][47][]47}{}{}{}}
 \citation{schoels2020nmpc}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}One-stage planar \acrshort {ocp}}{47}{section.5.2}\protected@file@percent }
-\newlabel{section:onestageplanarocp}{{5.2}{47}{One-stage planar \acrshort {ocp}}{section.5.2}{}}
-\newlabel{section:onestageplanarocp@cref}{{[section][2][5]5.2}{[1][46][]47}{}{}{}}
-\newlabel{subeq:onestagelagrange}{{5.1a}{47}{One-stage planar \acrshort {ocp}}{equation.5.1a}{}}
-\newlabel{subeq:onestagelagrange@cref}{{[subequation][1][5,1]5.1a}{[1][47][]47}{}{}{}}
-\newlabel{subeq:onestagemayer}{{5.1b}{47}{One-stage planar \acrshort {ocp}}{equation.5.1b}{}}
-\newlabel{subeq:onestagemayer@cref}{{[subequation][2][5,1]5.1b}{[1][47][]47}{}{}{}}
-\newlabel{subeq:rotationInvtrick}{{5.1c}{47}{One-stage planar \acrshort {ocp}}{equation.5.1c}{}}
-\newlabel{subeq:rotationInvtrick@cref}{{[subequation][3][5,1]5.1c}{[1][47][]47}{}{}{}}
-\newlabel{subeq:costonestage}{{5.2a}{47}{One-stage planar \acrshort {ocp}}{equation.5.2a}{}}
-\newlabel{subeq:costonestage@cref}{{[subequation][1][5,2]5.2a}{[1][47][]47}{}{}{}}
-\newlabel{eq:onestageocp}{{5.2}{47}{One-stage planar \acrshort {ocp}}{equation.5.2b}{}}
-\newlabel{eq:onestageocp@cref}{{[subequation][2][5,2]5.2b}{[1][47][]47}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}One-stage \acrshort {ocp} architectures}{48}{subsection.5.2.1}\protected@file@percent }
-\newlabel{subsection:onestageocparch}{{5.2.1}{48}{One-stage \acrshort {ocp} architectures}{subsection.5.2.1}{}}
-\newlabel{subsection:onestageocparch@cref}{{[subsection][1][5,2]5.2.1}{[1][47][]48}{}{}{}}
-\newlabel{subfig:archvspeedinsideocp}{{5.3(a)}{48}{Subfigure 5 5.3(a)}{subfigure.5.3.1}{}}
-\newlabel{subfig:archvspeedinsideocp@cref}{{[subfigure][1][5,3]5.3(a)}{[1][48][]48}{}{}{}}
-\newlabel{sub@subfig:archvspeedinsideocp}{{(a)}{48}{Subfigure 5 5.3(a)\relax }{subfigure.5.3.1}{}}
-\newlabel{subfig:archvspeedoutsideocp}{{5.3(b)}{48}{Subfigure 5 5.3(b)}{subfigure.5.3.2}{}}
-\newlabel{subfig:archvspeedoutsideocp@cref}{{[subfigure][2][5,3]5.3(b)}{[1][48][]48}{}{}{}}
-\newlabel{sub@subfig:archvspeedoutsideocp}{{(b)}{48}{Subfigure 5 5.3(b)\relax }{subfigure.5.3.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces One-stage \acrshort {ocp} architectures}}{48}{figure.caption.47}\protected@file@percent }
-\newlabel{fig:onestagearchitecturecomp}{{5.3}{48}{One-stage \acrshort {ocp} architectures}{figure.caption.47}{}}
-\newlabel{fig:onestagearchitecturecomp@cref}{{[figure][3][5]5.3}{[1][48][]48}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Virtual speed control inside \acrshort {ocp}}}}{48}{figure.caption.47}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Virtual speed control outside \acrshort {ocp}}}}{48}{figure.caption.47}\protected@file@percent }
-\newlabel{eq:closestPoint}{{5.3}{48}{}{equation.5.3}{}}
-\newlabel{eq:closestPoint@cref}{{[equation][3][5]5.3}{[1][48][]48}{}{}{}}
-\newlabel{fig:closestPoint_comp}{{5.4(a)}{49}{Subfigure 5 5.4(a)}{subfigure.5.4.1}{}}
-\newlabel{fig:closestPoint_comp@cref}{{[subfigure][1][5,4]5.4(a)}{[1][48][]49}{}{}{}}
-\newlabel{sub@fig:closestPoint_comp}{{(a)}{49}{Subfigure 5 5.4(a)\relax }{subfigure.5.4.1}{}}
-\newlabel{fig:closestPoint_comp_initial_points}{{5.4(b)}{49}{Subfigure 5 5.4(b)}{subfigure.5.4.2}{}}
-\newlabel{fig:closestPoint_comp_initial_points@cref}{{[subfigure][2][5,4]5.4(b)}{[1][48][]49}{}{}{}}
-\newlabel{sub@fig:closestPoint_comp_initial_points}{{(b)}{49}{Subfigure 5 5.4(b)\relax }{subfigure.5.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Path tracking improvements due to solver initialization with closest point progress.}}{49}{figure.caption.48}\protected@file@percent }
-\newlabel{fig:PathTrackImprovementsClosestPoint}{{5.4}{49}{Path tracking improvements due to solver initialization with closest point progress}{figure.caption.48}{}}
-\newlabel{fig:PathTrackImprovementsClosestPoint@cref}{{[figure][4][5]5.4}{[1][48][]49}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Advantage of closest point optimization.}}}{49}{figure.caption.48}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Path tracking from different initial positions.}}}{49}{figure.caption.48}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Solver parameters survey}{49}{subsection.5.2.2}\protected@file@percent }
-\newlabel{subsection:solverspecssurvey}{{5.2.2}{49}{Solver parameters survey}{subsection.5.2.2}{}}
-\newlabel{subsection:solverspecssurvey@cref}{{[subsection][2][5,2]5.2.2}{[1][49][]49}{}{}{}}
-\newlabel{eq:reflagrange}{{5.4}{49}{Solver parameters survey}{equation.5.4}{}}
-\newlabel{eq:reflagrange@cref}{{[equation][4][5]5.4}{[1][49][]49}{}{}{}}
-\newlabel{eq:vspeed_computation_architecture_b}{{5.5}{49}{Solver parameters survey}{equation.5.5}{}}
-\newlabel{eq:vspeed_computation_architecture_b@cref}{{[equation][5][5]5.5}{[1][49][]49}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Constant solver parameters when control horizon changes.}}{50}{table.caption.49}\protected@file@percent }
-\newlabel{tab:controlHorizonSpecs}{{5.2}{50}{Constant solver parameters when control horizon changes}{table.caption.49}{}}
-\newlabel{tab:controlHorizonSpecs@cref}{{[table][2][5]5.2}{[1][50][]50}{}{}{}}
-\newlabel{subfig:PathTrackCompHorizonVarInsideVspeed}{{5.5(a)}{50}{Subfigure 5 5.5(a)}{subfigure.5.5.1}{}}
-\newlabel{subfig:PathTrackCompHorizonVarInsideVspeed@cref}{{[subfigure][1][5,5]5.5(a)}{[1][50][]50}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompHorizonVarInsideVspeed}{{(a)}{50}{Subfigure 5 5.5(a)\relax }{subfigure.5.5.1}{}}
-\newlabel{subfig:PathTrackCompHorizonVarOutsideVspeed}{{5.5(b)}{50}{Subfigure 5 5.5(b)}{subfigure.5.5.2}{}}
-\newlabel{subfig:PathTrackCompHorizonVarOutsideVspeed@cref}{{[subfigure][2][5,5]5.5(b)}{[1][50][]50}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompHorizonVarOutsideVspeed}{{(b)}{50}{Subfigure 5 5.5(b)\relax }{subfigure.5.5.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Path tracking comparison with control horizon variation.}}{50}{figure.caption.50}\protected@file@percent }
-\newlabel{fig:PathTrackCompHorizonVar}{{5.5}{50}{Path tracking comparison with control horizon variation}{figure.caption.50}{}}
-\newlabel{fig:PathTrackCompHorizonVar@cref}{{[figure][5][5]5.5}{[1][50][]50}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{50}{figure.caption.50}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{50}{figure.caption.50}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Constant solver parameters when sampling time changes.}}{51}{table.caption.51}\protected@file@percent }
-\newlabel{tab:samplingTimeSpecs}{{5.3}{51}{Constant solver parameters when sampling time changes}{table.caption.51}{}}
-\newlabel{tab:samplingTimeSpecs@cref}{{[table][3][5]5.3}{[1][50][]51}{}{}{}}
-\newlabel{subfig:PathTrackCompSamplingTimeVarInsideVspeed}{{5.6(a)}{51}{Subfigure 5 5.6(a)}{subfigure.5.6.1}{}}
-\newlabel{subfig:PathTrackCompSamplingTimeVarInsideVspeed@cref}{{[subfigure][1][5,6]5.6(a)}{[1][50][]51}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompSamplingTimeVarInsideVspeed}{{(a)}{51}{Subfigure 5 5.6(a)\relax }{subfigure.5.6.1}{}}
-\newlabel{subfig:PathTrackCompSamplingTimeVarOutsideVspeed}{{5.6(b)}{51}{Subfigure 5 5.6(b)}{subfigure.5.6.2}{}}
-\newlabel{subfig:PathTrackCompSamplingTimeVarOutsideVspeed@cref}{{[subfigure][2][5,6]5.6(b)}{[1][50][]51}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompSamplingTimeVarOutsideVspeed}{{(b)}{51}{Subfigure 5 5.6(b)\relax }{subfigure.5.6.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Path tracking comparison with sampling time variation.}}{51}{figure.caption.52}\protected@file@percent }
-\newlabel{fig:PathTrackCompSamplingTimeVar}{{5.6}{51}{Path tracking comparison with sampling time variation}{figure.caption.52}{}}
-\newlabel{fig:PathTrackCompSamplingTimeVar@cref}{{[figure][6][5]5.6}{[1][50][]51}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{51}{figure.caption.52}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{51}{figure.caption.52}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Constant solver parameters when sampling time changes.}}{52}{table.caption.53}\protected@file@percent }
-\newlabel{tab:setsWeights}{{5.4}{52}{Constant solver parameters when sampling time changes}{table.caption.53}{}}
-\newlabel{tab:setsWeights@cref}{{[table][4][5]5.4}{[1][51][]52}{}{}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed}{{5.7(a)}{52}{Subfigure 5 5.7(a)}{subfigure.5.7.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed@cref}{{[subfigure][1][5,7]5.7(a)}{[1][51][]52}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed}{{(a)}{52}{Subfigure 5 5.7(a)\relax }{subfigure.5.7.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed}{{5.7(b)}{52}{Subfigure 5 5.7(b)}{subfigure.5.7.2}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed@cref}{{[subfigure][2][5,7]5.7(b)}{[1][51][]52}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed}{{(b)}{52}{Subfigure 5 5.7(b)\relax }{subfigure.5.7.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Path tracking comparison among types of controllers.}}{52}{figure.caption.54}\protected@file@percent }
-\newlabel{fig:PathTrackCompWeightsVar}{{5.7}{52}{Path tracking comparison among types of controllers}{figure.caption.54}{}}
-\newlabel{fig:PathTrackCompWeightsVar@cref}{{[figure][7][5]5.7}{[1][51][]52}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{52}{figure.caption.54}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{52}{figure.caption.54}\protected@file@percent }
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{5.8(a)}{52}{Subfigure 5 5.8(a)}{subfigure.5.8.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl@cref}{{[subfigure][1][5,8]5.8(a)}{[1][51][]52}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{(a)}{52}{Subfigure 5 5.8(a)\relax }{subfigure.5.8.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{5.8(b)}{52}{Subfigure 5 5.8(b)}{subfigure.5.8.2}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl@cref}{{[subfigure][2][5,8]5.8(b)}{[1][51][]52}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{(b)}{52}{Subfigure 5 5.8(b)\relax }{subfigure.5.8.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces $t_l$ curve comparison between controllers (4) and (5).}}{52}{figure.caption.55}\protected@file@percent }
-\newlabel{fig:PathTrackCompWeightsVar_tl_limited}{{5.8}{52}{$\Traction _l$ curve comparison between controllers (4) and (5)}{figure.caption.55}{}}
-\newlabel{fig:PathTrackCompWeightsVar_tl_limited@cref}{{[figure][8][5]5.8}{[1][51][]52}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{52}{figure.caption.55}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{52}{figure.caption.55}\protected@file@percent }
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{5.9(a)}{53}{Subfigure 5 5.9(a)}{subfigure.5.9.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr@cref}{{[subfigure][1][5,9]5.9(a)}{[1][51][]53}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{(a)}{53}{Subfigure 5 5.9(a)\relax }{subfigure.5.9.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{5.9(b)}{53}{Subfigure 5 5.9(b)}{subfigure.5.9.2}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr@cref}{{[subfigure][2][5,9]5.9(b)}{[1][51][]53}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{(b)}{53}{Subfigure 5 5.9(b)\relax }{subfigure.5.9.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces $t_r$ curve comparison between controllers (4) and (5).}}{53}{figure.caption.56}\protected@file@percent }
-\newlabel{fig:PathTrackCompWeightsVar_tr_limited}{{5.9}{53}{$\Traction _r$ curve comparison between controllers (4) and (5)}{figure.caption.56}{}}
-\newlabel{fig:PathTrackCompWeightsVar_tr_limited@cref}{{[figure][9][5]5.9}{[1][51][]53}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}One-stage planar \acrshort {ocp}}{48}{section.5.2}\protected@file@percent }
+\newlabel{section:onestageplanarocp}{{5.2}{48}{One-stage planar \acrshort {ocp}}{section.5.2}{}}
+\newlabel{section:onestageplanarocp@cref}{{[section][2][5]5.2}{[1][47][]48}{}{}{}}
+\newlabel{subeq:onestagelagrange}{{5.1a}{48}{One-stage planar \acrshort {ocp}}{equation.5.1a}{}}
+\newlabel{subeq:onestagelagrange@cref}{{[subequation][1][5,1]5.1a}{[1][48][]48}{}{}{}}
+\newlabel{subeq:onestagemayer}{{5.1b}{48}{One-stage planar \acrshort {ocp}}{equation.5.1b}{}}
+\newlabel{subeq:onestagemayer@cref}{{[subequation][2][5,1]5.1b}{[1][48][]48}{}{}{}}
+\newlabel{subeq:rotationInvtrick}{{5.1c}{48}{One-stage planar \acrshort {ocp}}{equation.5.1c}{}}
+\newlabel{subeq:rotationInvtrick@cref}{{[subequation][3][5,1]5.1c}{[1][48][]48}{}{}{}}
+\newlabel{subeq:costonestage}{{5.2a}{48}{One-stage planar \acrshort {ocp}}{equation.5.2a}{}}
+\newlabel{subeq:costonestage@cref}{{[subequation][1][5,2]5.2a}{[1][48][]48}{}{}{}}
+\newlabel{eq:onestageocp}{{5.2}{48}{One-stage planar \acrshort {ocp}}{equation.5.2b}{}}
+\newlabel{eq:onestageocp@cref}{{[subequation][2][5,2]5.2b}{[1][48][]48}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}One-stage \acrshort {ocp} architectures}{49}{subsection.5.2.1}\protected@file@percent }
+\newlabel{subsection:onestageocparch}{{5.2.1}{49}{One-stage \acrshort {ocp} architectures}{subsection.5.2.1}{}}
+\newlabel{subsection:onestageocparch@cref}{{[subsection][1][5,2]5.2.1}{[1][48][]49}{}{}{}}
+\newlabel{subfig:archvspeedinsideocp}{{5.3(a)}{49}{Subfigure 5 5.3(a)}{subfigure.5.3.1}{}}
+\newlabel{subfig:archvspeedinsideocp@cref}{{[subfigure][1][5,3]5.3(a)}{[1][49][]49}{}{}{}}
+\newlabel{sub@subfig:archvspeedinsideocp}{{(a)}{49}{Subfigure 5 5.3(a)\relax }{subfigure.5.3.1}{}}
+\newlabel{subfig:archvspeedoutsideocp}{{5.3(b)}{49}{Subfigure 5 5.3(b)}{subfigure.5.3.2}{}}
+\newlabel{subfig:archvspeedoutsideocp@cref}{{[subfigure][2][5,3]5.3(b)}{[1][49][]49}{}{}{}}
+\newlabel{sub@subfig:archvspeedoutsideocp}{{(b)}{49}{Subfigure 5 5.3(b)\relax }{subfigure.5.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces One-stage \acrshort {ocp} architectures}}{49}{figure.caption.48}\protected@file@percent }
+\newlabel{fig:onestagearchitecturecomp}{{5.3}{49}{One-stage \acrshort {ocp} architectures}{figure.caption.48}{}}
+\newlabel{fig:onestagearchitecturecomp@cref}{{[figure][3][5]5.3}{[1][49][]49}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Virtual speed control inside \acrshort {ocp}}}}{49}{figure.caption.48}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Virtual speed control outside \acrshort {ocp}}}}{49}{figure.caption.48}\protected@file@percent }
+\newlabel{eq:closestPoint}{{5.3}{49}{}{equation.5.3}{}}
+\newlabel{eq:closestPoint@cref}{{[equation][3][5]5.3}{[1][49][]49}{}{}{}}
+\newlabel{fig:closestPoint_comp}{{5.4(a)}{50}{Subfigure 5 5.4(a)}{subfigure.5.4.1}{}}
+\newlabel{fig:closestPoint_comp@cref}{{[subfigure][1][5,4]5.4(a)}{[1][49][]50}{}{}{}}
+\newlabel{sub@fig:closestPoint_comp}{{(a)}{50}{Subfigure 5 5.4(a)\relax }{subfigure.5.4.1}{}}
+\newlabel{fig:closestPoint_comp_initial_points}{{5.4(b)}{50}{Subfigure 5 5.4(b)}{subfigure.5.4.2}{}}
+\newlabel{fig:closestPoint_comp_initial_points@cref}{{[subfigure][2][5,4]5.4(b)}{[1][49][]50}{}{}{}}
+\newlabel{sub@fig:closestPoint_comp_initial_points}{{(b)}{50}{Subfigure 5 5.4(b)\relax }{subfigure.5.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Path tracking improvements due to solver initialization with closest point progress.}}{50}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:PathTrackImprovementsClosestPoint}{{5.4}{50}{Path tracking improvements due to solver initialization with closest point progress}{figure.caption.49}{}}
+\newlabel{fig:PathTrackImprovementsClosestPoint@cref}{{[figure][4][5]5.4}{[1][49][]50}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Advantage of closest point optimization.}}}{50}{figure.caption.49}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Path tracking from different initial positions.}}}{50}{figure.caption.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Solver parameters survey}{50}{subsection.5.2.2}\protected@file@percent }
+\newlabel{subsection:solverspecssurvey}{{5.2.2}{50}{Solver parameters survey}{subsection.5.2.2}{}}
+\newlabel{subsection:solverspecssurvey@cref}{{[subsection][2][5,2]5.2.2}{[1][50][]50}{}{}{}}
+\newlabel{eq:reflagrange}{{5.4}{50}{Solver parameters survey}{equation.5.4}{}}
+\newlabel{eq:reflagrange@cref}{{[equation][4][5]5.4}{[1][50][]50}{}{}{}}
+\newlabel{eq:vspeed_computation_architecture_b}{{5.5}{50}{Solver parameters survey}{equation.5.5}{}}
+\newlabel{eq:vspeed_computation_architecture_b@cref}{{[equation][5][5]5.5}{[1][50][]50}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Constant solver parameters when control horizon changes.}}{51}{table.caption.50}\protected@file@percent }
+\newlabel{tab:controlHorizonSpecs}{{5.2}{51}{Constant solver parameters when control horizon changes}{table.caption.50}{}}
+\newlabel{tab:controlHorizonSpecs@cref}{{[table][2][5]5.2}{[1][51][]51}{}{}{}}
+\newlabel{subfig:PathTrackCompHorizonVarInsideVspeed}{{5.5(a)}{51}{Subfigure 5 5.5(a)}{subfigure.5.5.1}{}}
+\newlabel{subfig:PathTrackCompHorizonVarInsideVspeed@cref}{{[subfigure][1][5,5]5.5(a)}{[1][51][]51}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompHorizonVarInsideVspeed}{{(a)}{51}{Subfigure 5 5.5(a)\relax }{subfigure.5.5.1}{}}
+\newlabel{subfig:PathTrackCompHorizonVarOutsideVspeed}{{5.5(b)}{51}{Subfigure 5 5.5(b)}{subfigure.5.5.2}{}}
+\newlabel{subfig:PathTrackCompHorizonVarOutsideVspeed@cref}{{[subfigure][2][5,5]5.5(b)}{[1][51][]51}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompHorizonVarOutsideVspeed}{{(b)}{51}{Subfigure 5 5.5(b)\relax }{subfigure.5.5.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Path tracking comparison with control horizon variation.}}{51}{figure.caption.51}\protected@file@percent }
+\newlabel{fig:PathTrackCompHorizonVar}{{5.5}{51}{Path tracking comparison with control horizon variation}{figure.caption.51}{}}
+\newlabel{fig:PathTrackCompHorizonVar@cref}{{[figure][5][5]5.5}{[1][51][]51}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{51}{figure.caption.51}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{51}{figure.caption.51}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Constant solver parameters when sampling time changes.}}{52}{table.caption.52}\protected@file@percent }
+\newlabel{tab:samplingTimeSpecs}{{5.3}{52}{Constant solver parameters when sampling time changes}{table.caption.52}{}}
+\newlabel{tab:samplingTimeSpecs@cref}{{[table][3][5]5.3}{[1][51][]52}{}{}{}}
+\newlabel{subfig:PathTrackCompSamplingTimeVarInsideVspeed}{{5.6(a)}{52}{Subfigure 5 5.6(a)}{subfigure.5.6.1}{}}
+\newlabel{subfig:PathTrackCompSamplingTimeVarInsideVspeed@cref}{{[subfigure][1][5,6]5.6(a)}{[1][51][]52}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompSamplingTimeVarInsideVspeed}{{(a)}{52}{Subfigure 5 5.6(a)\relax }{subfigure.5.6.1}{}}
+\newlabel{subfig:PathTrackCompSamplingTimeVarOutsideVspeed}{{5.6(b)}{52}{Subfigure 5 5.6(b)}{subfigure.5.6.2}{}}
+\newlabel{subfig:PathTrackCompSamplingTimeVarOutsideVspeed@cref}{{[subfigure][2][5,6]5.6(b)}{[1][51][]52}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompSamplingTimeVarOutsideVspeed}{{(b)}{52}{Subfigure 5 5.6(b)\relax }{subfigure.5.6.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Path tracking comparison with sampling time variation.}}{52}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:PathTrackCompSamplingTimeVar}{{5.6}{52}{Path tracking comparison with sampling time variation}{figure.caption.53}{}}
+\newlabel{fig:PathTrackCompSamplingTimeVar@cref}{{[figure][6][5]5.6}{[1][51][]52}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{52}{figure.caption.53}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{52}{figure.caption.53}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Constant solver parameters when sampling time changes.}}{53}{table.caption.54}\protected@file@percent }
+\newlabel{tab:setsWeights}{{5.4}{53}{Constant solver parameters when sampling time changes}{table.caption.54}{}}
+\newlabel{tab:setsWeights@cref}{{[table][4][5]5.4}{[1][52][]53}{}{}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed}{{5.7(a)}{53}{Subfigure 5 5.7(a)}{subfigure.5.7.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed@cref}{{[subfigure][1][5,7]5.7(a)}{[1][52][]53}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed}{{(a)}{53}{Subfigure 5 5.7(a)\relax }{subfigure.5.7.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed}{{5.7(b)}{53}{Subfigure 5 5.7(b)}{subfigure.5.7.2}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed@cref}{{[subfigure][2][5,7]5.7(b)}{[1][52][]53}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed}{{(b)}{53}{Subfigure 5 5.7(b)\relax }{subfigure.5.7.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Path tracking comparison among types of controllers.}}{53}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:PathTrackCompWeightsVar}{{5.7}{53}{Path tracking comparison among types of controllers}{figure.caption.55}{}}
+\newlabel{fig:PathTrackCompWeightsVar@cref}{{[figure][7][5]5.7}{[1][52][]53}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{53}{figure.caption.55}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{53}{figure.caption.55}\protected@file@percent }
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{5.8(a)}{53}{Subfigure 5 5.8(a)}{subfigure.5.8.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl@cref}{{[subfigure][1][5,8]5.8(a)}{[1][52][]53}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{(a)}{53}{Subfigure 5 5.8(a)\relax }{subfigure.5.8.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{5.8(b)}{53}{Subfigure 5 5.8(b)}{subfigure.5.8.2}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl@cref}{{[subfigure][2][5,8]5.8(b)}{[1][52][]53}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{(b)}{53}{Subfigure 5 5.8(b)\relax }{subfigure.5.8.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces $t_l$ curve comparison between controllers (4) and (5).}}{53}{figure.caption.56}\protected@file@percent }
+\newlabel{fig:PathTrackCompWeightsVar_tl_limited}{{5.8}{53}{$\Traction _l$ curve comparison between controllers (4) and (5)}{figure.caption.56}{}}
+\newlabel{fig:PathTrackCompWeightsVar_tl_limited@cref}{{[figure][8][5]5.8}{[1][52][]53}{}{}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{53}{figure.caption.56}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{53}{figure.caption.56}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Real-time one-stage planar \acrshort {ocp}}{53}{subsection.5.2.3}\protected@file@percent }
-\newlabel{subsection:realTimeOneStagePlanarOCP}{{5.2.3}{53}{Real-time one-stage planar \acrshort {ocp}}{subsection.5.2.3}{}}
-\newlabel{subsection:realTimeOneStagePlanarOCP@cref}{{[subsection][3][5,2]5.2.3}{[1][53][]53}{}{}{}}
-\newlabel{subeq:realtimeonestagelagrange}{{5.6a}{53}{Real-time one-stage planar \acrshort {ocp}}{equation.5.6a}{}}
-\newlabel{subeq:realtimeonestagelagrange@cref}{{[subequation][1][5,6]5.6a}{[1][53][]53}{}{}{}}
-\newlabel{subeq:realtimeonestagemayer}{{5.6b}{53}{Real-time one-stage planar \acrshort {ocp}}{equation.5.6b}{}}
-\newlabel{subeq:realtimeonestagemayer@cref}{{[subequation][2][5,6]5.6b}{[1][53][]53}{}{}{}}
-\newlabel{eq:realtimeplanarocpcost}{{5.6}{53}{Real-time one-stage planar \acrshort {ocp}}{equation.5.6b}{}}
-\newlabel{eq:realtimeplanarocpcost@cref}{{[subequation][2][5,6]5.6b}{[1][53][]53}{}{}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{5.9(a)}{54}{Subfigure 5 5.9(a)}{subfigure.5.9.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr@cref}{{[subfigure][1][5,9]5.9(a)}{[1][52][]54}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{(a)}{54}{Subfigure 5 5.9(a)\relax }{subfigure.5.9.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{5.9(b)}{54}{Subfigure 5 5.9(b)}{subfigure.5.9.2}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr@cref}{{[subfigure][2][5,9]5.9(b)}{[1][52][]54}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{(b)}{54}{Subfigure 5 5.9(b)\relax }{subfigure.5.9.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces $t_r$ curve comparison between controllers (4) and (5).}}{54}{figure.caption.57}\protected@file@percent }
+\newlabel{fig:PathTrackCompWeightsVar_tr_limited}{{5.9}{54}{$\Traction _r$ curve comparison between controllers (4) and (5)}{figure.caption.57}{}}
+\newlabel{fig:PathTrackCompWeightsVar_tr_limited@cref}{{[figure][9][5]5.9}{[1][52][]54}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{54}{figure.caption.57}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{54}{figure.caption.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Real-time one-stage planar \acrshort {ocp}}{54}{subsection.5.2.3}\protected@file@percent }
+\newlabel{subsection:realTimeOneStagePlanarOCP}{{5.2.3}{54}{Real-time one-stage planar \acrshort {ocp}}{subsection.5.2.3}{}}
+\newlabel{subsection:realTimeOneStagePlanarOCP@cref}{{[subsection][3][5,2]5.2.3}{[1][54][]54}{}{}{}}
+\newlabel{subeq:realtimeonestagelagrange}{{5.6a}{54}{Real-time one-stage planar \acrshort {ocp}}{equation.5.6a}{}}
+\newlabel{subeq:realtimeonestagelagrange@cref}{{[subequation][1][5,6]5.6a}{[1][54][]54}{}{}{}}
+\newlabel{subeq:realtimeonestagemayer}{{5.6b}{54}{Real-time one-stage planar \acrshort {ocp}}{equation.5.6b}{}}
+\newlabel{subeq:realtimeonestagemayer@cref}{{[subequation][2][5,6]5.6b}{[1][54][]54}{}{}{}}
+\newlabel{eq:realtimeplanarocpcost}{{5.6}{54}{Real-time one-stage planar \acrshort {ocp}}{equation.5.6b}{}}
+\newlabel{eq:realtimeplanarocpcost@cref}{{[subequation][2][5,6]5.6b}{[1][54][]54}{}{}{}}
 \citation{gros2020linear}
-\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Regulator solver parameters}}{54}{table.caption.57}\protected@file@percent }
-\newlabel{tab:regulatorWeights}{{5.5}{54}{Regulator solver parameters}{table.caption.57}{}}
-\newlabel{tab:regulatorWeights@cref}{{[table][5][5]5.5}{[1][54][]54}{}{}{}}
-\newlabel{subfig:PositionRegulationCompHorizonRealTimeOCP}{{5.10(a)}{54}{Subfigure 5 5.10(a)}{subfigure.5.10.1}{}}
-\newlabel{subfig:PositionRegulationCompHorizonRealTimeOCP@cref}{{[subfigure][1][5,10]5.10(a)}{[1][54][]54}{}{}{}}
-\newlabel{sub@subfig:PositionRegulationCompHorizonRealTimeOCP}{{(a)}{54}{Subfigure 5 5.10(a)\relax }{subfigure.5.10.1}{}}
-\newlabel{subfig:PositionRegulationCompTimeRealTimeOCP}{{5.10(b)}{54}{Subfigure 5 5.10(b)}{subfigure.5.10.2}{}}
-\newlabel{subfig:PositionRegulationCompTimeRealTimeOCP@cref}{{[subfigure][2][5,10]5.10(b)}{[1][54][]54}{}{}{}}
-\newlabel{sub@subfig:PositionRegulationCompTimeRealTimeOCP}{{(b)}{54}{Subfigure 5 5.10(b)\relax }{subfigure.5.10.2}{}}
-\newlabel{subfig:PositionRegulationCompWeightsRealTimeOCP}{{5.10(c)}{54}{Subfigure 5 5.10(c)}{subfigure.5.10.3}{}}
-\newlabel{subfig:PositionRegulationCompWeightsRealTimeOCP@cref}{{[subfigure][3][5,10]5.10(c)}{[1][54][]54}{}{}{}}
-\newlabel{sub@subfig:PositionRegulationCompWeightsRealTimeOCP}{{(c)}{54}{Subfigure 5 5.10(c)\relax }{subfigure.5.10.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Comparison among position regulations.}}{54}{figure.caption.58}\protected@file@percent }
-\newlabel{fig:PositionRegulationCompRealTimeOCP}{{5.10}{54}{Comparison among position regulations}{figure.caption.58}{}}
-\newlabel{fig:PositionRegulationCompRealTimeOCP@cref}{{[figure][10][5]5.10}{[1][54][]54}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$T_s = 10\,ms\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}(1)$}}}{54}{figure.caption.58}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$N = 100\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}(1)$}}}{54}{figure.caption.58}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$T_s = 30\,ms\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}N=100$}}}{54}{figure.caption.58}\protected@file@percent }
-\citation{schoels2020nmpc}
-\newlabel{subfig:HeadingRegulationCompHorizonRealTimeOCP}{{5.11(a)}{55}{Subfigure 5 5.11(a)}{subfigure.5.11.1}{}}
-\newlabel{subfig:HeadingRegulationCompHorizonRealTimeOCP@cref}{{[subfigure][1][5,11]5.11(a)}{[1][54][]55}{}{}{}}
-\newlabel{sub@subfig:HeadingRegulationCompHorizonRealTimeOCP}{{(a)}{55}{Subfigure 5 5.11(a)\relax }{subfigure.5.11.1}{}}
-\newlabel{subfig:HeadingRegulationCompTimeRealTimeOCP}{{5.11(b)}{55}{Subfigure 5 5.11(b)}{subfigure.5.11.2}{}}
-\newlabel{subfig:HeadingRegulationCompTimeRealTimeOCP@cref}{{[subfigure][2][5,11]5.11(b)}{[1][54][]55}{}{}{}}
-\newlabel{sub@subfig:HeadingRegulationCompTimeRealTimeOCP}{{(b)}{55}{Subfigure 5 5.11(b)\relax }{subfigure.5.11.2}{}}
-\newlabel{subfig:HeadingRegulationCompWeightsRealTimeOCP}{{5.11(c)}{55}{Subfigure 5 5.11(c)}{subfigure.5.11.3}{}}
-\newlabel{subfig:HeadingRegulationCompWeightsRealTimeOCP@cref}{{[subfigure][3][5,11]5.11(c)}{[1][54][]55}{}{}{}}
-\newlabel{sub@subfig:HeadingRegulationCompWeightsRealTimeOCP}{{(c)}{55}{Subfigure 5 5.11(c)\relax }{subfigure.5.11.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Comparison among heading regulations.}}{55}{figure.caption.59}\protected@file@percent }
-\newlabel{fig:HeadingRegulationCompRealTimeOCP}{{5.11}{55}{Comparison among heading regulations}{figure.caption.59}{}}
-\newlabel{fig:HeadingRegulationCompRealTimeOCP@cref}{{[figure][11][5]5.11}{[1][54][]55}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Regulator solver parameters}}{55}{table.caption.58}\protected@file@percent }
+\newlabel{tab:regulatorWeights}{{5.5}{55}{Regulator solver parameters}{table.caption.58}{}}
+\newlabel{tab:regulatorWeights@cref}{{[table][5][5]5.5}{[1][55][]55}{}{}{}}
+\newlabel{subfig:PositionRegulationCompHorizonRealTimeOCP}{{5.10(a)}{55}{Subfigure 5 5.10(a)}{subfigure.5.10.1}{}}
+\newlabel{subfig:PositionRegulationCompHorizonRealTimeOCP@cref}{{[subfigure][1][5,10]5.10(a)}{[1][55][]55}{}{}{}}
+\newlabel{sub@subfig:PositionRegulationCompHorizonRealTimeOCP}{{(a)}{55}{Subfigure 5 5.10(a)\relax }{subfigure.5.10.1}{}}
+\newlabel{subfig:PositionRegulationCompTimeRealTimeOCP}{{5.10(b)}{55}{Subfigure 5 5.10(b)}{subfigure.5.10.2}{}}
+\newlabel{subfig:PositionRegulationCompTimeRealTimeOCP@cref}{{[subfigure][2][5,10]5.10(b)}{[1][55][]55}{}{}{}}
+\newlabel{sub@subfig:PositionRegulationCompTimeRealTimeOCP}{{(b)}{55}{Subfigure 5 5.10(b)\relax }{subfigure.5.10.2}{}}
+\newlabel{subfig:PositionRegulationCompWeightsRealTimeOCP}{{5.10(c)}{55}{Subfigure 5 5.10(c)}{subfigure.5.10.3}{}}
+\newlabel{subfig:PositionRegulationCompWeightsRealTimeOCP@cref}{{[subfigure][3][5,10]5.10(c)}{[1][55][]55}{}{}{}}
+\newlabel{sub@subfig:PositionRegulationCompWeightsRealTimeOCP}{{(c)}{55}{Subfigure 5 5.10(c)\relax }{subfigure.5.10.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Comparison among position regulations.}}{55}{figure.caption.59}\protected@file@percent }
+\newlabel{fig:PositionRegulationCompRealTimeOCP}{{5.10}{55}{Comparison among position regulations}{figure.caption.59}{}}
+\newlabel{fig:PositionRegulationCompRealTimeOCP@cref}{{[figure][10][5]5.10}{[1][55][]55}{}{}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$T_s = 10\,ms\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}(1)$}}}{55}{figure.caption.59}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$N = 100\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}(1)$}}}{55}{figure.caption.59}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$T_s = 30\,ms\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}N=100$}}}{55}{figure.caption.59}\protected@file@percent }
-\newlabel{eq:virtualspeedqp}{{5.7}{55}{}{equation.5.7}{}}
-\newlabel{eq:virtualspeedqp@cref}{{[equation][7][5]5.7}{[1][55][]55}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Planar path tracking solver parameters.}}{56}{table.caption.60}\protected@file@percent }
-\newlabel{tab:pathTrackingSpecs}{{5.6}{56}{Planar path tracking solver parameters}{table.caption.60}{}}
-\newlabel{tab:pathTrackingSpecs@cref}{{[table][6][5]5.6}{[1][55][]56}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Path tracking performance metrics.}}{56}{figure.caption.61}\protected@file@percent }
-\newlabel{fig:pathtrackingperformance}{{5.12}{56}{Path tracking performance metrics}{figure.caption.61}{}}
-\newlabel{fig:pathtrackingperformance@cref}{{[figure][12][5]5.12}{[1][55][]56}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Simulation loop times.}}}{56}{figure.caption.61}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Optimization cost.}}}{56}{figure.caption.61}\protected@file@percent }
-\newlabel{subfig:realtimepathtrackingplanarocp}{{5.13(a)}{56}{Subfigure 5 5.13(a)}{subfigure.5.13.1}{}}
-\newlabel{subfig:realtimepathtrackingplanarocp@cref}{{[subfigure][1][5,13]5.13(a)}{[1][55][]56}{}{}{}}
-\newlabel{sub@subfig:realtimepathtrackingplanarocp}{{(a)}{56}{Subfigure 5 5.13(a)\relax }{subfigure.5.13.1}{}}
-\newlabel{subfig:energyrealtimepathtrackingplanarocp}{{5.13(b)}{56}{Subfigure 5 5.13(b)}{subfigure.5.13.2}{}}
-\newlabel{subfig:energyrealtimepathtrackingplanarocp@cref}{{[subfigure][2][5,13]5.13(b)}{[1][55][]56}{}{}{}}
-\newlabel{sub@subfig:energyrealtimepathtrackingplanarocp}{{(b)}{56}{Subfigure 5 5.13(b)\relax }{subfigure.5.13.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Path tracking simulation data.}}{56}{figure.caption.62}\protected@file@percent }
-\newlabel{fig:pathtrackingsimdata}{{5.13}{56}{Path tracking simulation data}{figure.caption.62}{}}
-\newlabel{fig:pathtrackingsimdata@cref}{{[figure][13][5]5.13}{[1][55][]56}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Path tracking comparison.}}}{56}{figure.caption.62}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Cumulative sum of traction forces.}}}{56}{figure.caption.62}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Sets of white gaussian noise.}}{57}{table.caption.63}\protected@file@percent }
-\newlabel{tab:whiteGaussianNoise}{{5.7}{57}{Sets of white gaussian noise}{table.caption.63}{}}
-\newlabel{tab:whiteGaussianNoise@cref}{{[table][7][5]5.7}{[1][57][]57}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Path tracking simulation subject to noise.}}{57}{figure.caption.64}\protected@file@percent }
-\newlabel{fig:pathtrackingsimdatanoise}{{5.14}{57}{Path tracking simulation subject to noise}{figure.caption.64}{}}
-\newlabel{fig:pathtrackingsimdatanoise@cref}{{[figure][14][5]5.14}{[1][57][]57}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {(1)}}}{57}{figure.caption.64}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {(2)}}}{57}{figure.caption.64}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Map of forces.}}{58}{figure.caption.65}\protected@file@percent }
-\newlabel{fig:pathtrackingsimdatanoise}{{5.15}{58}{Map of forces}{figure.caption.65}{}}
-\newlabel{fig:pathtrackingsimdatanoise@cref}{{[figure][15][5]5.15}{[1][57][]58}{}{}{}}
+\citation{schoels2020nmpc}
+\newlabel{subfig:HeadingRegulationCompHorizonRealTimeOCP}{{5.11(a)}{56}{Subfigure 5 5.11(a)}{subfigure.5.11.1}{}}
+\newlabel{subfig:HeadingRegulationCompHorizonRealTimeOCP@cref}{{[subfigure][1][5,11]5.11(a)}{[1][55][]56}{}{}{}}
+\newlabel{sub@subfig:HeadingRegulationCompHorizonRealTimeOCP}{{(a)}{56}{Subfigure 5 5.11(a)\relax }{subfigure.5.11.1}{}}
+\newlabel{subfig:HeadingRegulationCompTimeRealTimeOCP}{{5.11(b)}{56}{Subfigure 5 5.11(b)}{subfigure.5.11.2}{}}
+\newlabel{subfig:HeadingRegulationCompTimeRealTimeOCP@cref}{{[subfigure][2][5,11]5.11(b)}{[1][55][]56}{}{}{}}
+\newlabel{sub@subfig:HeadingRegulationCompTimeRealTimeOCP}{{(b)}{56}{Subfigure 5 5.11(b)\relax }{subfigure.5.11.2}{}}
+\newlabel{subfig:HeadingRegulationCompWeightsRealTimeOCP}{{5.11(c)}{56}{Subfigure 5 5.11(c)}{subfigure.5.11.3}{}}
+\newlabel{subfig:HeadingRegulationCompWeightsRealTimeOCP@cref}{{[subfigure][3][5,11]5.11(c)}{[1][55][]56}{}{}{}}
+\newlabel{sub@subfig:HeadingRegulationCompWeightsRealTimeOCP}{{(c)}{56}{Subfigure 5 5.11(c)\relax }{subfigure.5.11.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Comparison among heading regulations.}}{56}{figure.caption.60}\protected@file@percent }
+\newlabel{fig:HeadingRegulationCompRealTimeOCP}{{5.11}{56}{Comparison among heading regulations}{figure.caption.60}{}}
+\newlabel{fig:HeadingRegulationCompRealTimeOCP@cref}{{[figure][11][5]5.11}{[1][55][]56}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$T_s = 10\,ms\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}(1)$}}}{56}{figure.caption.60}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$N = 100\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}(1)$}}}{56}{figure.caption.60}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$T_s = 30\,ms\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}N=100$}}}{56}{figure.caption.60}\protected@file@percent }
+\newlabel{eq:virtualspeedqp}{{5.7}{56}{}{equation.5.7}{}}
+\newlabel{eq:virtualspeedqp@cref}{{[equation][7][5]5.7}{[1][56][]56}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Planar path tracking solver parameters.}}{57}{table.caption.61}\protected@file@percent }
+\newlabel{tab:pathTrackingSpecs}{{5.6}{57}{Planar path tracking solver parameters}{table.caption.61}{}}
+\newlabel{tab:pathTrackingSpecs@cref}{{[table][6][5]5.6}{[1][56][]57}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Path tracking performance metrics.}}{57}{figure.caption.62}\protected@file@percent }
+\newlabel{fig:pathtrackingperformance}{{5.12}{57}{Path tracking performance metrics}{figure.caption.62}{}}
+\newlabel{fig:pathtrackingperformance@cref}{{[figure][12][5]5.12}{[1][56][]57}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Simulation loop times.}}}{57}{figure.caption.62}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Optimization cost.}}}{57}{figure.caption.62}\protected@file@percent }
+\newlabel{subfig:realtimepathtrackingplanarocp}{{5.13(a)}{57}{Subfigure 5 5.13(a)}{subfigure.5.13.1}{}}
+\newlabel{subfig:realtimepathtrackingplanarocp@cref}{{[subfigure][1][5,13]5.13(a)}{[1][56][]57}{}{}{}}
+\newlabel{sub@subfig:realtimepathtrackingplanarocp}{{(a)}{57}{Subfigure 5 5.13(a)\relax }{subfigure.5.13.1}{}}
+\newlabel{subfig:energyrealtimepathtrackingplanarocp}{{5.13(b)}{57}{Subfigure 5 5.13(b)}{subfigure.5.13.2}{}}
+\newlabel{subfig:energyrealtimepathtrackingplanarocp@cref}{{[subfigure][2][5,13]5.13(b)}{[1][56][]57}{}{}{}}
+\newlabel{sub@subfig:energyrealtimepathtrackingplanarocp}{{(b)}{57}{Subfigure 5 5.13(b)\relax }{subfigure.5.13.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Path tracking simulation data.}}{57}{figure.caption.63}\protected@file@percent }
+\newlabel{fig:pathtrackingsimdata}{{5.13}{57}{Path tracking simulation data}{figure.caption.63}{}}
+\newlabel{fig:pathtrackingsimdata@cref}{{[figure][13][5]5.13}{[1][56][]57}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Path tracking comparison.}}}{57}{figure.caption.63}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Cumulative sum of traction forces.}}}{57}{figure.caption.63}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Sets of white gaussian noise.}}{58}{table.caption.64}\protected@file@percent }
+\newlabel{tab:whiteGaussianNoise}{{5.7}{58}{Sets of white gaussian noise}{table.caption.64}{}}
+\newlabel{tab:whiteGaussianNoise@cref}{{[table][7][5]5.7}{[1][58][]58}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces Path tracking simulation subject to noise.}}{58}{figure.caption.65}\protected@file@percent }
+\newlabel{fig:pathtrackingsimdatanoise}{{5.14}{58}{Path tracking simulation subject to noise}{figure.caption.65}{}}
+\newlabel{fig:pathtrackingsimdatanoise@cref}{{[figure][14][5]5.14}{[1][58][]58}{}{}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {(1)}}}{58}{figure.caption.65}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {(2)}}}{58}{figure.caption.65}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Real-time one-stage \acrshort {ocp} on rough terrain}{58}{section.5.3}\protected@file@percent }
-\newlabel{section:realtimeonestageocproughterrain}{{5.3}{58}{Real-time one-stage \acrshort {ocp} on rough terrain}{section.5.3}{}}
-\newlabel{section:realtimeonestageocproughterrain@cref}{{[section][3][5]5.3}{[1][58][]58}{}{}{}}
-\newlabel{eq:reformSumForces}{{5.8}{59}{Real-time one-stage \acrshort {ocp} on rough terrain}{equation.5.8}{}}
-\newlabel{eq:reformSumForces@cref}{{[equation][8][5]5.8}{[1][58][]59}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces One-stage \acrshort {ocp} adapted to a rough terrain environment.}}{59}{figure.caption.66}\protected@file@percent }
-\newlabel{fig:reformarchvspeedoutsideocp}{{5.16}{59}{One-stage \acrshort {ocp} adapted to a rough terrain environment}{figure.caption.66}{}}
-\newlabel{fig:reformarchvspeedoutsideocp@cref}{{[figure][16][5]5.16}{[1][58][]59}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Moving on hill}{59}{subsection.5.3.1}\protected@file@percent }
-\newlabel{subsection:hill}{{5.3.1}{59}{Moving on hill}{subsection.5.3.1}{}}
-\newlabel{subsection:hill@cref}{{[subsection][1][5,3]5.3.1}{[1][59][]59}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Solver parameters on hill.}}{59}{table.caption.67}\protected@file@percent }
-\newlabel{tab:hillPathTrackingSpecs}{{5.8}{59}{Solver parameters on hill}{table.caption.67}{}}
-\newlabel{tab:hillPathTrackingSpecs@cref}{{[table][8][5]5.8}{[1][59][]59}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Path tracking on hill with rough, uneven terrain.}}{59}{figure.caption.68}\protected@file@percent }
-\newlabel{fig:pathCompHills}{{5.17}{59}{Path tracking on hill with rough, uneven terrain}{figure.caption.68}{}}
-\newlabel{fig:pathCompHills@cref}{{[figure][17][5]5.17}{[1][59][]59}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Path tracking on hill with different conditions.}}}{59}{figure.caption.68}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Pitch \textcolor {orange}{(orange)} and roll \textcolor {blue}{(blue)}. $a=0.3$ (top) and $a=0.55$ (bottom).}}}{59}{figure.caption.68}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Coulomb traction forces cone. No slippage area is on \textcolor {tabgreen}{light green} and the slippage area is on \textcolor {tabred}{light red}.}}{60}{figure.caption.69}\protected@file@percent }
-\newlabel{fig:ForcesConeHill}{{5.18}{60}{Coulomb traction forces cone. No slippage area is on \textcolor {tabgreen}{light green} and the slippage area is on \textcolor {tabred}{light red}}{figure.caption.69}{}}
-\newlabel{fig:ForcesConeHill@cref}{{[figure][18][5]5.18}{[1][60][]60}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$a=0.33,\tmspace +\thickmuskip {.2777em}(1)$}}}{60}{figure.caption.69}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$a=0.55,\tmspace +\thickmuskip {.2777em}(1)$}}}{60}{figure.caption.69}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$a=0.55,\tmspace +\thickmuskip {.2777em}(2)$}}}{60}{figure.caption.69}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Traversal of rough, uneven terrain}{60}{subsection.5.3.2}\protected@file@percent }
-\newlabel{subsection:traversalRoughTerrain}{{5.3.2}{60}{Traversal of rough, uneven terrain}{subsection.5.3.2}{}}
-\newlabel{subsection:traversalRoughTerrain@cref}{{[subsection][2][5,3]5.3.2}{[1][60][]60}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Solver performance on hilly terrain.}}{61}{table.caption.70}\protected@file@percent }
-\newlabel{tab:hillSolverPerformance}{{5.9}{61}{Solver performance on hilly terrain}{table.caption.70}{}}
-\newlabel{tab:hillSolverPerformance@cref}{{[table][9][5]5.9}{[1][60][]61}{}{}{}}
-\newlabel{eq:vspeed_computation_architecture_b_2}{{5.10}{61}{Traversal of rough, uneven terrain}{equation.5.10}{}}
-\newlabel{eq:vspeed_computation_architecture_b_2@cref}{{[equation][10][5]5.10}{[1][61][]61}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces Solver parameters on hill.}}{61}{table.caption.71}\protected@file@percent }
-\newlabel{tab:RoughPathTrackingSpecs}{{5.10}{61}{Solver parameters on hill}{table.caption.71}{}}
-\newlabel{tab:RoughPathTrackingSpecs@cref}{{[table][10][5]5.10}{[1][61][]61}{}{}{}}
-\newlabel{subfig:rollpitchref2}{{5.19(b)}{62}{Subfigure 5 5.19(b)}{subfigure.5.19.2}{}}
-\newlabel{subfig:rollpitchref2@cref}{{[subfigure][2][5,19]5.19(b)}{[1][61][]62}{}{}{}}
-\newlabel{sub@subfig:rollpitchref2}{{(b)}{62}{Subfigure 5 5.19(b)\relax }{subfigure.5.19.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Initial path tracking on rough, uneven terrain, where $a=1.0,\,b=1.0,\,c=0.3$.}}{62}{figure.caption.72}\protected@file@percent }
-\newlabel{fig:pathCompRoughTerrain}{{5.19}{62}{Initial path tracking on rough, uneven terrain, where $a=1.0,\,b=1.0,\,c=0.3$}{figure.caption.72}{}}
-\newlabel{fig:pathCompRoughTerrain@cref}{{[figure][19][5]5.19}{[1][61][]62}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Path tracking on rough, uneven terrain.}}}{62}{figure.caption.72}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Example of pitch \textcolor {orange}{(orange)} and roll \textcolor {blue}{(blue)} fluctuation.}}}{62}{figure.caption.72}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces Coulomb traction forces cone.}}{62}{figure.caption.73}\protected@file@percent }
-\newlabel{fig:RoughUnevenTerrainForcesConeHill}{{5.20}{62}{Coulomb traction forces cone}{figure.caption.73}{}}
-\newlabel{fig:RoughUnevenTerrainForcesConeHill@cref}{{[figure][20][5]5.20}{[1][61][]62}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$(1)$}}}{62}{figure.caption.73}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$(2)$}}}{62}{figure.caption.73}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$(3)$}}}{62}{figure.caption.73}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$(4)$}}}{62}{figure.caption.73}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$(5)$}}}{62}{figure.caption.73}\protected@file@percent }
-\newlabel{subfig:traction_rates_solvers_2_4}{{5.21(c)}{62}{Subfigure 5 5.21(c)}{subfigure.5.21.3}{}}
-\newlabel{subfig:traction_rates_solvers_2_4@cref}{{[subfigure][3][5,21]5.21(c)}{[1][61][]62}{}{}{}}
-\newlabel{sub@subfig:traction_rates_solvers_2_4}{{(c)}{62}{Subfigure 5 5.21(c)\relax }{subfigure.5.21.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Traction forces and traction rates.}}{62}{figure.caption.74}\protected@file@percent }
-\newlabel{fig:Forces_ForcesRates_Curves}{{5.21}{62}{Traction forces and traction rates}{figure.caption.74}{}}
-\newlabel{fig:Forces_ForcesRates_Curves@cref}{{[figure][21][5]5.21}{[1][61][]62}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Traction forces with solver $(2)$.}}}{62}{figure.caption.74}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Traction forces with solver $(4)$.}}}{62}{figure.caption.74}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Traction rates with solvers $(2)$ and $(4)$.}}}{62}{figure.caption.74}\protected@file@percent }
-\newlabel{eq:forcesLimits}{{5.11}{63}{Traversal of rough, uneven terrain}{equation.5.11}{}}
-\newlabel{eq:forcesLimits@cref}{{[equation][11][5]5.11}{[1][62][]63}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces Solver performance on hilly terrain.}}{63}{table.caption.75}\protected@file@percent }
-\newlabel{tab:RoughTerrainSolverPerformanceShortTrack}{{5.11}{63}{Solver performance on hilly terrain}{table.caption.75}{}}
-\newlabel{tab:RoughTerrainSolverPerformanceShortTrack@cref}{{[table][11][5]5.11}{[1][63][]63}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces Performance of solver (3) on rough, uneven terrain.}}{63}{table.caption.77}\protected@file@percent }
-\newlabel{tab:RoughTerrainSolverPerformance}{{5.12}{63}{Performance of solver (3) on rough, uneven terrain}{table.caption.77}{}}
-\newlabel{tab:RoughTerrainSolverPerformance@cref}{{[table][12][5]5.12}{[1][63][]63}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Path tracking with initial position away from reference on rough terrain.}}{64}{figure.caption.76}\protected@file@percent }
-\newlabel{fig:startAwayPathTrackingRough}{{5.22}{64}{Path tracking with initial position away from reference on rough terrain}{figure.caption.76}{}}
-\newlabel{fig:startAwayPathTrackingRough@cref}{{[figure][22][5]5.22}{[1][63][]64}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Coulomb traction forces cone.}}{65}{figure.caption.78}\protected@file@percent }
-\newlabel{fig:RoughUnevenTerrainForcesConeStartAway}{{5.23}{65}{Coulomb traction forces cone}{figure.caption.78}{}}
-\newlabel{fig:RoughUnevenTerrainForcesConeStartAway@cref}{{[figure][23][5]5.23}{[1][64][]65}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textcolor {tabblue}{Blue}}}}{65}{figure.caption.78}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textcolor {taborange}{Orange}}}}{65}{figure.caption.78}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textcolor {tabgreen}{Green}}}}{65}{figure.caption.78}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textcolor {tabred}{Red}}}}{65}{figure.caption.78}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\textcolor {tabpurple}{Purple}}}}{65}{figure.caption.78}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\textcolor {tabbrown}{Brown}}}}{65}{figure.caption.78}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\textcolor {tabpink}{Pink}}}}{65}{figure.caption.78}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\textcolor {tabgray}{Gray}}}}{65}{figure.caption.78}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\textcolor {tabolive}{Olive}}}}{65}{figure.caption.78}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Robustness test results of solver $(3)$, where $a=1.0,\,b=1.0,\,c=0.4$.}}{66}{figure.caption.79}\protected@file@percent }
-\newlabel{fig:robustnessResultsSolver3}{{5.24}{66}{Robustness test results of solver $(3)$, where $a=1.0,\,b=1.0,\,c=0.4$}{figure.caption.79}{}}
-\newlabel{fig:robustnessResultsSolver3@cref}{{[figure][24][5]5.24}{[1][64][]66}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Optimal cost along path tracking.}}}{66}{figure.caption.79}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Optimal time along path tracking.}}}{66}{figure.caption.79}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Yaw curve.}}}{66}{figure.caption.79}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Traction forces on friction cone.}}}{66}{figure.caption.79}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Linear and angular velocity curves.}}}{66}{figure.caption.79}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Traction rates.}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces Map of forces.}}{59}{figure.caption.66}\protected@file@percent }
+\newlabel{fig:pathtrackingsimdatanoise}{{5.15}{59}{Map of forces}{figure.caption.66}{}}
+\newlabel{fig:pathtrackingsimdatanoise@cref}{{[figure][15][5]5.15}{[1][58][]59}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {(1)}}}{59}{figure.caption.66}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {(2)}}}{59}{figure.caption.66}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Real-time one-stage \acrshort {ocp} on rough terrain}{59}{section.5.3}\protected@file@percent }
+\newlabel{section:realtimeonestageocproughterrain}{{5.3}{59}{Real-time one-stage \acrshort {ocp} on rough terrain}{section.5.3}{}}
+\newlabel{section:realtimeonestageocproughterrain@cref}{{[section][3][5]5.3}{[1][59][]59}{}{}{}}
+\newlabel{eq:reformSumForces}{{5.8}{60}{Real-time one-stage \acrshort {ocp} on rough terrain}{equation.5.8}{}}
+\newlabel{eq:reformSumForces@cref}{{[equation][8][5]5.8}{[1][59][]60}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.16}{\ignorespaces One-stage \acrshort {ocp} adapted to a rough terrain environment.}}{60}{figure.caption.67}\protected@file@percent }
+\newlabel{fig:reformarchvspeedoutsideocp}{{5.16}{60}{One-stage \acrshort {ocp} adapted to a rough terrain environment}{figure.caption.67}{}}
+\newlabel{fig:reformarchvspeedoutsideocp@cref}{{[figure][16][5]5.16}{[1][59][]60}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Moving on hill}{60}{subsection.5.3.1}\protected@file@percent }
+\newlabel{subsection:hill}{{5.3.1}{60}{Moving on hill}{subsection.5.3.1}{}}
+\newlabel{subsection:hill@cref}{{[subsection][1][5,3]5.3.1}{[1][60][]60}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.8}{\ignorespaces Solver parameters on hill.}}{60}{table.caption.68}\protected@file@percent }
+\newlabel{tab:hillPathTrackingSpecs}{{5.8}{60}{Solver parameters on hill}{table.caption.68}{}}
+\newlabel{tab:hillPathTrackingSpecs@cref}{{[table][8][5]5.8}{[1][60][]60}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.17}{\ignorespaces Path tracking on hill with rough, uneven terrain.}}{60}{figure.caption.69}\protected@file@percent }
+\newlabel{fig:pathCompHills}{{5.17}{60}{Path tracking on hill with rough, uneven terrain}{figure.caption.69}{}}
+\newlabel{fig:pathCompHills@cref}{{[figure][17][5]5.17}{[1][60][]60}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Path tracking on hill with different conditions.}}}{60}{figure.caption.69}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Pitch \textcolor {orange}{(orange)} and roll \textcolor {blue}{(blue)}. $a=0.3$ (top) and $a=0.55$ (bottom).}}}{60}{figure.caption.69}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.18}{\ignorespaces Coulomb traction forces cone. No slippage area is on \textcolor {tabgreen}{light green} and the slippage area is on \textcolor {tabred}{light red}.}}{61}{figure.caption.70}\protected@file@percent }
+\newlabel{fig:ForcesConeHill}{{5.18}{61}{Coulomb traction forces cone. No slippage area is on \textcolor {tabgreen}{light green} and the slippage area is on \textcolor {tabred}{light red}}{figure.caption.70}{}}
+\newlabel{fig:ForcesConeHill@cref}{{[figure][18][5]5.18}{[1][61][]61}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$a=0.33,\tmspace +\thickmuskip {.2777em}(1)$}}}{61}{figure.caption.70}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$a=0.55,\tmspace +\thickmuskip {.2777em}(1)$}}}{61}{figure.caption.70}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$a=0.55,\tmspace +\thickmuskip {.2777em}(2)$}}}{61}{figure.caption.70}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Traversal of rough, uneven terrain}{61}{subsection.5.3.2}\protected@file@percent }
+\newlabel{subsection:traversalRoughTerrain}{{5.3.2}{61}{Traversal of rough, uneven terrain}{subsection.5.3.2}{}}
+\newlabel{subsection:traversalRoughTerrain@cref}{{[subsection][2][5,3]5.3.2}{[1][61][]61}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.9}{\ignorespaces Solver performance on hilly terrain.}}{62}{table.caption.71}\protected@file@percent }
+\newlabel{tab:hillSolverPerformance}{{5.9}{62}{Solver performance on hilly terrain}{table.caption.71}{}}
+\newlabel{tab:hillSolverPerformance@cref}{{[table][9][5]5.9}{[1][61][]62}{}{}{}}
+\newlabel{eq:vspeed_computation_architecture_b_2}{{5.10}{62}{Traversal of rough, uneven terrain}{equation.5.10}{}}
+\newlabel{eq:vspeed_computation_architecture_b_2@cref}{{[equation][10][5]5.10}{[1][62][]62}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.10}{\ignorespaces Solver parameters on hill.}}{62}{table.caption.72}\protected@file@percent }
+\newlabel{tab:RoughPathTrackingSpecs}{{5.10}{62}{Solver parameters on hill}{table.caption.72}{}}
+\newlabel{tab:RoughPathTrackingSpecs@cref}{{[table][10][5]5.10}{[1][62][]62}{}{}{}}
+\newlabel{subfig:rollpitchref2}{{5.19(b)}{63}{Subfigure 5 5.19(b)}{subfigure.5.19.2}{}}
+\newlabel{subfig:rollpitchref2@cref}{{[subfigure][2][5,19]5.19(b)}{[1][62][]63}{}{}{}}
+\newlabel{sub@subfig:rollpitchref2}{{(b)}{63}{Subfigure 5 5.19(b)\relax }{subfigure.5.19.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.19}{\ignorespaces Initial path tracking on rough, uneven terrain, where $a=1.0,\,b=1.0,\,c=0.3$.}}{63}{figure.caption.73}\protected@file@percent }
+\newlabel{fig:pathCompRoughTerrain}{{5.19}{63}{Initial path tracking on rough, uneven terrain, where $a=1.0,\,b=1.0,\,c=0.3$}{figure.caption.73}{}}
+\newlabel{fig:pathCompRoughTerrain@cref}{{[figure][19][5]5.19}{[1][62][]63}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Path tracking on rough, uneven terrain.}}}{63}{figure.caption.73}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Example of pitch \textcolor {orange}{(orange)} and roll \textcolor {blue}{(blue)} fluctuation.}}}{63}{figure.caption.73}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.20}{\ignorespaces Coulomb traction forces cone.}}{63}{figure.caption.74}\protected@file@percent }
+\newlabel{fig:RoughUnevenTerrainForcesConeHill}{{5.20}{63}{Coulomb traction forces cone}{figure.caption.74}{}}
+\newlabel{fig:RoughUnevenTerrainForcesConeHill@cref}{{[figure][20][5]5.20}{[1][62][]63}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$(1)$}}}{63}{figure.caption.74}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$(2)$}}}{63}{figure.caption.74}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$(3)$}}}{63}{figure.caption.74}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$(4)$}}}{63}{figure.caption.74}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$(5)$}}}{63}{figure.caption.74}\protected@file@percent }
+\newlabel{subfig:traction_rates_solvers_2_4}{{5.21(c)}{63}{Subfigure 5 5.21(c)}{subfigure.5.21.3}{}}
+\newlabel{subfig:traction_rates_solvers_2_4@cref}{{[subfigure][3][5,21]5.21(c)}{[1][62][]63}{}{}{}}
+\newlabel{sub@subfig:traction_rates_solvers_2_4}{{(c)}{63}{Subfigure 5 5.21(c)\relax }{subfigure.5.21.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.21}{\ignorespaces Traction forces and traction rates.}}{63}{figure.caption.75}\protected@file@percent }
+\newlabel{fig:Forces_ForcesRates_Curves}{{5.21}{63}{Traction forces and traction rates}{figure.caption.75}{}}
+\newlabel{fig:Forces_ForcesRates_Curves@cref}{{[figure][21][5]5.21}{[1][62][]63}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Traction forces with solver $(2)$.}}}{63}{figure.caption.75}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Traction forces with solver $(4)$.}}}{63}{figure.caption.75}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Traction rates with solvers $(2)$ and $(4)$.}}}{63}{figure.caption.75}\protected@file@percent }
+\newlabel{eq:forcesLimits}{{5.11}{64}{Traversal of rough, uneven terrain}{equation.5.11}{}}
+\newlabel{eq:forcesLimits@cref}{{[equation][11][5]5.11}{[1][63][]64}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.11}{\ignorespaces Solver performance on hilly terrain.}}{64}{table.caption.76}\protected@file@percent }
+\newlabel{tab:RoughTerrainSolverPerformanceShortTrack}{{5.11}{64}{Solver performance on hilly terrain}{table.caption.76}{}}
+\newlabel{tab:RoughTerrainSolverPerformanceShortTrack@cref}{{[table][11][5]5.11}{[1][64][]64}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.12}{\ignorespaces Performance of solver (3) on rough, uneven terrain.}}{64}{table.caption.78}\protected@file@percent }
+\newlabel{tab:RoughTerrainSolverPerformance}{{5.12}{64}{Performance of solver (3) on rough, uneven terrain}{table.caption.78}{}}
+\newlabel{tab:RoughTerrainSolverPerformance@cref}{{[table][12][5]5.12}{[1][64][]64}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.22}{\ignorespaces Path tracking with initial position away from reference on rough terrain.}}{65}{figure.caption.77}\protected@file@percent }
+\newlabel{fig:startAwayPathTrackingRough}{{5.22}{65}{Path tracking with initial position away from reference on rough terrain}{figure.caption.77}{}}
+\newlabel{fig:startAwayPathTrackingRough@cref}{{[figure][22][5]5.22}{[1][64][]65}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.23}{\ignorespaces Coulomb traction forces cone.}}{66}{figure.caption.79}\protected@file@percent }
+\newlabel{fig:RoughUnevenTerrainForcesConeStartAway}{{5.23}{66}{Coulomb traction forces cone}{figure.caption.79}{}}
+\newlabel{fig:RoughUnevenTerrainForcesConeStartAway@cref}{{[figure][23][5]5.23}{[1][65][]66}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textcolor {tabblue}{Blue}}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textcolor {taborange}{Orange}}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textcolor {tabgreen}{Green}}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textcolor {tabred}{Red}}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\textcolor {tabpurple}{Purple}}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\textcolor {tabbrown}{Brown}}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\textcolor {tabpink}{Pink}}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\textcolor {tabgray}{Gray}}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\textcolor {tabolive}{Olive}}}}{66}{figure.caption.79}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.24}{\ignorespaces Robustness test results of solver $(3)$, where $a=1.0,\,b=1.0,\,c=0.4$.}}{67}{figure.caption.80}\protected@file@percent }
+\newlabel{fig:robustnessResultsSolver3}{{5.24}{67}{Robustness test results of solver $(3)$, where $a=1.0,\,b=1.0,\,c=0.4$}{figure.caption.80}{}}
+\newlabel{fig:robustnessResultsSolver3@cref}{{[figure][24][5]5.24}{[1][65][]67}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Optimal cost along path tracking.}}}{67}{figure.caption.80}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Optimal time along path tracking.}}}{67}{figure.caption.80}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Yaw curve.}}}{67}{figure.caption.80}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Traction forces on friction cone.}}}{67}{figure.caption.80}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Linear and angular velocity curves.}}}{67}{figure.caption.80}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Traction rates.}}}{67}{figure.caption.80}\protected@file@percent }
 \citation{schoels2020ciao,schoels2020nmpc}
 \citation{mpc_frenetserret}
 \citation{schoels2020ciao}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Obstacle avoidance}{67}{chapter.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Obstacle avoidance}{68}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:obstacleAvoidance}{{6}{67}{Obstacle avoidance}{chapter.6}{}}
-\newlabel{chapter:obstacleAvoidance@cref}{{[chapter][6][]6}{[1][67][]67}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Safe reference generation}{67}{section.6.1}\protected@file@percent }
-\newlabel{section:saferefgen}{{6.1}{67}{Safe reference generation}{section.6.1}{}}
-\newlabel{section:saferefgen@cref}{{[section][1][6]6.1}{[1][67][]67}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}\acrlong {ciao} (\acrshort {ciao}) algorithm}{67}{subsection.6.1.1}\protected@file@percent }
+\newlabel{chapter:obstacleAvoidance}{{6}{68}{Obstacle avoidance}{chapter.6}{}}
+\newlabel{chapter:obstacleAvoidance@cref}{{[chapter][6][]6}{[1][68][]68}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Safe reference generation}{68}{section.6.1}\protected@file@percent }
+\newlabel{section:saferefgen}{{6.1}{68}{Safe reference generation}{section.6.1}{}}
+\newlabel{section:saferefgen@cref}{{[section][1][6]6.1}{[1][68][]68}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}\acrlong {ciao} (\acrshort {ciao}) algorithm}{68}{subsection.6.1.1}\protected@file@percent }
 \citation{schoels2020ciao}
 \citation{schoels2020ciao}
 \citation{schoels2020ciao,schoels2020nmpc}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Type of free balls and distance function normalized gradient.}}{68}{figure.caption.80}\protected@file@percent }
-\newlabel{fig:freeballs}{{6.1}{68}{Type of free balls and distance function normalized gradient}{figure.caption.80}{}}
-\newlabel{fig:freeballs@cref}{{[figure][1][6]6.1}{[1][68][]68}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$ \|\mathbf {p} - \mathbf {o}\|_2^2 \leq \left (d_\mathcal {O}\left (\mathbf {p}\right ) - \underline {d}\right )^2$}}}{68}{figure.caption.80}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$\mathcal {S}_\mathbf {c}$}}}{68}{figure.caption.80}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$\mathbf {g}$ (\textcolor {blue}{blue arrows}); Filled black circles are obstacles.}}}{68}{figure.caption.80}\protected@file@percent }
-\newlabel{eq:ciaomax}{{6.4}{68}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4}{}}
-\newlabel{eq:ciaomax@cref}{{[subequation][0][6,4]6.4}{[1][68][]68}{}{}{}}
-\newlabel{subeq:ciaoproblem}{{6.4a}{68}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4a}{}}
-\newlabel{subeq:ciaoproblem@cref}{{[subequation][1][6,4]6.4a}{[1][68][]68}{}{}{}}
-\newlabel{subeq:etaconstraints}{{6.4b}{68}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4b}{}}
-\newlabel{subeq:etaconstraints@cref}{{[subequation][2][6,4]6.4b}{[1][68][]68}{}{}{}}
-\newlabel{subeq:ciaoconstraint}{{6.4c}{68}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4c}{}}
-\newlabel{subeq:ciaoconstraint@cref}{{[subequation][3][6,4]6.4c}{[1][68][]68}{}{}{}}
-\newlabel{subeq:searchdirection}{{6.4d}{68}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4d}{}}
-\newlabel{subeq:searchdirection@cref}{{[subequation][4][6,4]6.4d}{[1][68][]68}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {10}{\ignorespaces \footnotesize  Compute $\mathcal  {S}_\mathbf  {c}$}}{69}{algorithm.10}\protected@file@percent }
-\newlabel{alg:computefreespace}{{10}{69}{\footnotesize Compute $\SafeSpace _\mathbf {c}$}{algorithm.10}{}}
-\newlabel{alg:computefreespace@cref}{{[algorithm][10][]10}{[1][69][]69}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Application of algorithm \ref {alg:computefreespace} to a set of obstacles, where $\underline  {\eta } = 0.02,\,\overline  {\eta } = 2.0,\,\delta _{\eta } = 2.0$ and $\underline  {d} = 0.3$.}}{69}{figure.caption.81}\protected@file@percent }
-\newlabel{fig:ciaoiterationresults}{{6.2}{69}{Application of algorithm \ref {alg:computefreespace} to a set of obstacles, where $\underline {\eta } = 0.02,\,\overline {\eta } = 2.0,\,\delta _{\eta } = 2.0$ and $\underline {d} = 0.3$}{figure.caption.81}{}}
-\newlabel{fig:ciaoiterationresults@cref}{{[figure][2][6]6.2}{[1][69][]69}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$d_\mathcal {O}\left (\cdot \right )$ and $\mathbf {g}$ (black arrows)}}}{69}{figure.caption.81}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Examples of safe balls, where $\mathbf {c}$ and $\mathbf {p}$ are denoted by $\bullet $ and $\mathbf {\times }$, respectively.}}}{69}{figure.caption.81}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Type of free balls and distance function normalized gradient.}}{69}{figure.caption.81}\protected@file@percent }
+\newlabel{fig:freeballs}{{6.1}{69}{Type of free balls and distance function normalized gradient}{figure.caption.81}{}}
+\newlabel{fig:freeballs@cref}{{[figure][1][6]6.1}{[1][69][]69}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$ \|\mathbf {p} - \mathbf {o}\|_2^2 \leq \left (d_\mathcal {O}\left (\mathbf {p}\right ) - \underline {d}\right )^2$}}}{69}{figure.caption.81}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {$\mathcal {S}_\mathbf {c}$}}}{69}{figure.caption.81}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$\mathbf {g}$ (\textcolor {blue}{blue arrows}); Filled black circles are obstacles.}}}{69}{figure.caption.81}\protected@file@percent }
+\newlabel{eq:ciaomax}{{6.4}{69}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4}{}}
+\newlabel{eq:ciaomax@cref}{{[subequation][0][6,4]6.4}{[1][69][]69}{}{}{}}
+\newlabel{subeq:ciaoproblem}{{6.4a}{69}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4a}{}}
+\newlabel{subeq:ciaoproblem@cref}{{[subequation][1][6,4]6.4a}{[1][69][]69}{}{}{}}
+\newlabel{subeq:etaconstraints}{{6.4b}{69}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4b}{}}
+\newlabel{subeq:etaconstraints@cref}{{[subequation][2][6,4]6.4b}{[1][69][]69}{}{}{}}
+\newlabel{subeq:ciaoconstraint}{{6.4c}{69}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4c}{}}
+\newlabel{subeq:ciaoconstraint@cref}{{[subequation][3][6,4]6.4c}{[1][69][]69}{}{}{}}
+\newlabel{subeq:searchdirection}{{6.4d}{69}{\acrlong {ciao} (\acrshort {ciao}) algorithm}{equation.6.4d}{}}
+\newlabel{subeq:searchdirection@cref}{{[subequation][4][6,4]6.4d}{[1][69][]69}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {10}{\ignorespaces \footnotesize  Compute $\mathcal  {S}_\mathbf  {c}$}}{70}{algorithm.10}\protected@file@percent }
+\newlabel{alg:computefreespace}{{10}{70}{\footnotesize Compute $\SafeSpace _\mathbf {c}$}{algorithm.10}{}}
+\newlabel{alg:computefreespace@cref}{{[algorithm][10][]10}{[1][70][]70}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Application of algorithm \ref {alg:computefreespace} to a set of obstacles, where $\underline  {\eta } = 0.02,\,\overline  {\eta } = 2.0,\,\delta _{\eta } = 2.0$ and $\underline  {d} = 0.3$.}}{70}{figure.caption.82}\protected@file@percent }
+\newlabel{fig:ciaoiterationresults}{{6.2}{70}{Application of algorithm \ref {alg:computefreespace} to a set of obstacles, where $\underline {\eta } = 0.02,\,\overline {\eta } = 2.0,\,\delta _{\eta } = 2.0$ and $\underline {d} = 0.3$}{figure.caption.82}{}}
+\newlabel{fig:ciaoiterationresults@cref}{{[figure][2][6]6.2}{[1][70][]70}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$d_\mathcal {O}\left (\cdot \right )$ and $\mathbf {g}$ (black arrows)}}}{70}{figure.caption.82}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Examples of safe balls, where $\mathbf {c}$ and $\mathbf {p}$ are denoted by $\bullet $ and $\mathbf {\times }$, respectively.}}}{70}{figure.caption.82}\protected@file@percent }
 \citation{chapter47handbookrobotics}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Baseline reference deformation}{70}{subsection.6.1.2}\protected@file@percent }
-\newlabel{eq:potentialfield}{{6.5}{70}{Baseline reference deformation}{equation.6.5}{}}
-\newlabel{eq:potentialfield@cref}{{[subequation][0][6,5]6.5}{[1][70][]70}{}{}{}}
-\newlabel{subeq:atractivefield}{{6.5a}{70}{Baseline reference deformation}{equation.6.5a}{}}
-\newlabel{subeq:atractivefield@cref}{{[subequation][1][6,5]6.5a}{[1][70][]70}{}{}{}}
-\newlabel{subeq:repulsivefield}{{6.5b}{70}{Baseline reference deformation}{equation.6.5b}{}}
-\newlabel{subeq:repulsivefield@cref}{{[subequation][2][6,5]6.5b}{[1][70][]70}{}{}{}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {11}{\ignorespaces \footnotesize  Generate deformed reference}}{71}{algorithm.11}\protected@file@percent }
-\newlabel{alg:gendeformedref}{{11}{71}{\footnotesize Generate deformed reference}{algorithm.11}{}}
-\newlabel{alg:gendeformedref@cref}{{[algorithm][11][]11}{[1][71][]71}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Real-time safe \acrshort {nmpc} on irregular terrain}{71}{section.6.2}\protected@file@percent }
-\newlabel{section:realtimesafenmpcroughterrain}{{6.2}{71}{Real-time safe \acrshort {nmpc} on irregular terrain}{section.6.2}{}}
-\newlabel{section:realtimesafenmpcroughterrain@cref}{{[section][2][6]6.2}{[1][71][]71}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Baseline reference deformation}{71}{subsection.6.1.2}\protected@file@percent }
+\newlabel{eq:potentialfield}{{6.5}{71}{Baseline reference deformation}{equation.6.5}{}}
+\newlabel{eq:potentialfield@cref}{{[subequation][0][6,5]6.5}{[1][71][]71}{}{}{}}
+\newlabel{subeq:atractivefield}{{6.5a}{71}{Baseline reference deformation}{equation.6.5a}{}}
+\newlabel{subeq:atractivefield@cref}{{[subequation][1][6,5]6.5a}{[1][71][]71}{}{}{}}
+\newlabel{subeq:repulsivefield}{{6.5b}{71}{Baseline reference deformation}{equation.6.5b}{}}
+\newlabel{subeq:repulsivefield@cref}{{[subequation][2][6,5]6.5b}{[1][71][]71}{}{}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {11}{\ignorespaces \footnotesize  Generate deformed reference}}{72}{algorithm.11}\protected@file@percent }
+\newlabel{alg:gendeformedref}{{11}{72}{\footnotesize Generate deformed reference}{algorithm.11}{}}
+\newlabel{alg:gendeformedref@cref}{{[algorithm][11][]11}{[1][72][]72}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Real-time safe \acrshort {nmpc} on irregular terrain}{72}{section.6.2}\protected@file@percent }
+\newlabel{section:realtimesafenmpcroughterrain}{{6.2}{72}{Real-time safe \acrshort {nmpc} on irregular terrain}{section.6.2}{}}
+\newlabel{section:realtimesafenmpcroughterrain@cref}{{[section][2][6]6.2}{[1][72][]72}{}{}{}}
 \citation{schoels2020nmpc}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Application of algorithm \ref {alg:gendeformedref} to a set of obstacles. The parameters that generated the results of \ref {fig:ciaoiterationresults} were used to generate these figures as well. The potential field parameters from the left picture were used to generate the right picture.}}{72}{figure.caption.82}\protected@file@percent }
-\newlabel{fig:potentialfieldresults}{{6.3}{72}{Application of algorithm \ref {alg:gendeformedref} to a set of obstacles. The parameters that generated the results of \ref {fig:ciaoiterationresults} were used to generate these figures as well. The potential field parameters from the left picture were used to generate the right picture}{figure.caption.82}{}}
-\newlabel{fig:potentialfieldresults@cref}{{[figure][3][6]6.3}{[1][71][]72}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$\mathbf {f}_{tot}(\cdot )$, where $k_{rep}=0.2,\,k_{att}=3.0$ and $d_0=0.35$. The target is the \textcolor {tabred}{red} point and the obstacles are coloured in \textcolor {tabgray}{gray}. \textcolor {tabgreen}{Green} points denote local minimum spots, where $\mathbf {f}_{tot}(\cdot )=0$.}}}{72}{figure.caption.82}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Examples of deformed references, where $N=50,\,v=0.02$, $\alpha _+=0.3$, $\underline {d} = 0.3$ and $d_s = 1.2 \times \underline {d}$. The target and respective reference have the same color. The target and projected target are marked with $\times $ and $\bullet $ respectively. Dashed \textcolor {tabgray}{gray} lines depict the border of $\overline {\mathcal {S}}$.}}}{72}{figure.caption.82}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Architecture of the one-stage \acrshort {ocp} within a safe real-time \acrshort {nmpc} setting on rough terrain.}}{72}{figure.caption.83}\protected@file@percent }
-\newlabel{fig:architecturesafenmpc}{{6.4}{72}{Architecture of the one-stage \acrshort {ocp} within a safe real-time \acrshort {nmpc} setting on rough terrain}{figure.caption.83}{}}
-\newlabel{fig:architecturesafenmpc@cref}{{[figure][4][6]6.4}{[1][72][]72}{}{}{}}
-\newlabel{subeq:onestagelagrangesafeocp}{{6.6a}{73}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.6a}{}}
-\newlabel{subeq:onestagelagrangesafeocp@cref}{{[subequation][1][6,6]6.6a}{[1][73][]73}{}{}{}}
-\newlabel{subeq:onestagemayersafeocp}{{6.6b}{73}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.6b}{}}
-\newlabel{subeq:onestagemayersafeocp@cref}{{[subequation][2][6,6]6.6b}{[1][73][]73}{}{}{}}
-\newlabel{eq:lagrangemayersafeocp}{{6.6}{73}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.6b}{}}
-\newlabel{eq:lagrangemayersafeocp@cref}{{[subequation][2][6,6]6.6b}{[1][73][]73}{}{}{}}
-\newlabel{subeq:costonestagesafeocp}{{6.7a}{73}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7a}{}}
-\newlabel{subeq:costonestagesafeocp@cref}{{[subequation][1][6,7]6.7a}{[1][73][]73}{}{}{}}
-\newlabel{subeq:frictionconetlsafeocp}{{6.7c}{73}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7c}{}}
-\newlabel{subeq:frictionconetlsafeocp@cref}{{[subequation][3][6,7]6.7c}{[1][73][]73}{}{}{}}
-\newlabel{subeq:frictionconetrsafeocp}{{6.7d}{73}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7d}{}}
-\newlabel{subeq:frictionconetrsafeocp@cref}{{[subequation][4][6,7]6.7d}{[1][73][]73}{}{}{}}
-\newlabel{subeq:ciaocirclesarea}{{6.7e}{73}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7e}{}}
-\newlabel{subeq:ciaocirclesarea@cref}{{[subequation][5][6,7]6.7e}{[1][73][]73}{}{}{}}
-\newlabel{subeq:slackbounds}{{6.7f}{73}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7f}{}}
-\newlabel{subeq:slackbounds@cref}{{[subequation][6][6,7]6.7f}{[1][73][]73}{}{}{}}
-\newlabel{eq:safeonestageocp}{{6.7}{73}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7g}{}}
-\newlabel{eq:safeonestageocp@cref}{{[subequation][7][6,7]6.7g}{[1][73][]73}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Simultaneous path tracking and obstacle avoidance on rough terrain}{73}{subsection.6.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Safe \acrshort {ocp} cost terms and parameters.}}{74}{table.caption.86}\protected@file@percent }
-\newlabel{tab:SafeRoughPathTrackingSpecs}{{6.1}{74}{Safe \acrshort {ocp} cost terms and parameters}{table.caption.86}{}}
-\newlabel{tab:SafeRoughPathTrackingSpecs@cref}{{[table][1][6]6.1}{[1][73][]74}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Path tracking with safe one-stage real-time \acrshort {ocp} with solver $(1)$.}}{74}{figure.caption.87}\protected@file@percent }
-\newlabel{fig:pathtrackingsafeocp}{{6.5}{74}{Path tracking with safe one-stage real-time \acrshort {ocp} with solver $(1)$}{figure.caption.87}{}}
-\newlabel{fig:pathtrackingsafeocp@cref}{{[figure][5][6]6.5}{[1][74][]74}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Reference tour with solver $(1)$.}}}{74}{figure.caption.87}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Path tracking from different initial poses with solver $(1)$.}}}{74}{figure.caption.87}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Traction forces within coulomb friction cone (solver $(1)$).}}{75}{figure.caption.88}\protected@file@percent }
-\newlabel{fig:frictionconesolver1}{{6.6}{75}{Traction forces within coulomb friction cone (solver $(1)$)}{figure.caption.88}{}}
-\newlabel{fig:frictionconesolver1@cref}{{[figure][6][6]6.6}{[1][74][]75}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Reference tour with solver $(2)$.}}{75}{figure.caption.88}\protected@file@percent }
-\newlabel{fig:reftoursolver2}{{6.7}{75}{Reference tour with solver $(2)$}{figure.caption.88}{}}
-\newlabel{fig:reftoursolver2@cref}{{[figure][7][6]6.7}{[1][74][]75}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Maximum slack among slacks horizon at each simulation iteration.}}{75}{figure.caption.89}\protected@file@percent }
-\newlabel{fig:maxslackpathref}{{6.8}{75}{Maximum slack among slacks horizon at each simulation iteration}{figure.caption.89}{}}
-\newlabel{fig:maxslackpathref@cref}{{[figure][8][6]6.8}{[1][75][]75}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Reference tour performance plus velocities and force rates curves with solver $(1)$.}}{76}{figure.caption.90}\protected@file@percent }
-\newlabel{fig:reftourperformancesolver1safeocp}{{6.9}{76}{Reference tour performance plus velocities and force rates curves with solver $(1)$}{figure.caption.90}{}}
-\newlabel{fig:reftourperformancesolver1safeocp@cref}{{[figure][9][6]6.9}{[1][75][]76}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Maximum slack vs clearance (top). Optimal cost (middle). Loop time (bottom).}}}{76}{figure.caption.90}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Linear and angular velocities (top). Force rates (bottom).}}}{76}{figure.caption.90}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Size of safe balls (\textcolor {blue}{blue}) along optimal position horizon for solver $(1)$ on some situations. Reference position is marked in blacks dots, whereas the position horizon is marked by \textcolor {red}{red dots}. }}{77}{figure.caption.91}\protected@file@percent }
-\newlabel{fig:safeballsexamplessolver1}{{6.10}{77}{Size of safe balls (\textcolor {blue}{blue}) along optimal position horizon for solver $(1)$ on some situations. Reference position is marked in blacks dots, whereas the position horizon is marked by \textcolor {red}{red dots}}{figure.caption.91}{}}
-\newlabel{fig:safeballsexamplessolver1@cref}{{[figure][10][6]6.10}{[1][76][]77}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Far away from closest obstacle.}}}{77}{figure.caption.91}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Stuck while projected target does not move.}}}{77}{figure.caption.91}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Very narrow traversal between obstacles.}}}{77}{figure.caption.91}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Turn around.}}}{77}{figure.caption.91}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {High cost event.}}}{77}{figure.caption.91}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Wider traversal between obstacles.}}}{77}{figure.caption.91}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{78}{chapter.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Application of algorithm \ref {alg:gendeformedref} to a set of obstacles. The parameters that generated the results of \ref {fig:ciaoiterationresults} were used to generate these figures as well. The potential field parameters from the left picture were used to generate the right picture.}}{73}{figure.caption.83}\protected@file@percent }
+\newlabel{fig:potentialfieldresults}{{6.3}{73}{Application of algorithm \ref {alg:gendeformedref} to a set of obstacles. The parameters that generated the results of \ref {fig:ciaoiterationresults} were used to generate these figures as well. The potential field parameters from the left picture were used to generate the right picture}{figure.caption.83}{}}
+\newlabel{fig:potentialfieldresults@cref}{{[figure][3][6]6.3}{[1][72][]73}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {$\mathbf {f}_{tot}(\cdot )$, where $k_{rep}=0.2,\,k_{att}=3.0$ and $d_0=0.35$. The target is the \textcolor {tabred}{red} point and the obstacles are coloured in \textcolor {tabgray}{gray}. \textcolor {tabgreen}{Green} points denote local minimum spots, where $\mathbf {f}_{tot}(\cdot )=0$.}}}{73}{figure.caption.83}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Examples of deformed references, where $N=50,\,v=0.02$, $\alpha _+=0.3$, $\underline {d} = 0.3$ and $d_s = 1.2 \times \underline {d}$. The target and respective reference have the same color. The target and projected target are marked with $\times $ and $\bullet $ respectively. Dashed \textcolor {tabgray}{gray} lines depict the border of $\overline {\mathcal {S}}$.}}}{73}{figure.caption.83}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Architecture of the one-stage \acrshort {ocp} within a safe real-time \acrshort {nmpc} setting on rough terrain.}}{73}{figure.caption.84}\protected@file@percent }
+\newlabel{fig:architecturesafenmpc}{{6.4}{73}{Architecture of the one-stage \acrshort {ocp} within a safe real-time \acrshort {nmpc} setting on rough terrain}{figure.caption.84}{}}
+\newlabel{fig:architecturesafenmpc@cref}{{[figure][4][6]6.4}{[1][73][]73}{}{}{}}
+\newlabel{subeq:onestagelagrangesafeocp}{{6.6a}{74}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.6a}{}}
+\newlabel{subeq:onestagelagrangesafeocp@cref}{{[subequation][1][6,6]6.6a}{[1][74][]74}{}{}{}}
+\newlabel{subeq:onestagemayersafeocp}{{6.6b}{74}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.6b}{}}
+\newlabel{subeq:onestagemayersafeocp@cref}{{[subequation][2][6,6]6.6b}{[1][74][]74}{}{}{}}
+\newlabel{eq:lagrangemayersafeocp}{{6.6}{74}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.6b}{}}
+\newlabel{eq:lagrangemayersafeocp@cref}{{[subequation][2][6,6]6.6b}{[1][74][]74}{}{}{}}
+\newlabel{subeq:costonestagesafeocp}{{6.7a}{74}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7a}{}}
+\newlabel{subeq:costonestagesafeocp@cref}{{[subequation][1][6,7]6.7a}{[1][74][]74}{}{}{}}
+\newlabel{subeq:frictionconetlsafeocp}{{6.7c}{74}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7c}{}}
+\newlabel{subeq:frictionconetlsafeocp@cref}{{[subequation][3][6,7]6.7c}{[1][74][]74}{}{}{}}
+\newlabel{subeq:frictionconetrsafeocp}{{6.7d}{74}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7d}{}}
+\newlabel{subeq:frictionconetrsafeocp@cref}{{[subequation][4][6,7]6.7d}{[1][74][]74}{}{}{}}
+\newlabel{subeq:ciaocirclesarea}{{6.7e}{74}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7e}{}}
+\newlabel{subeq:ciaocirclesarea@cref}{{[subequation][5][6,7]6.7e}{[1][74][]74}{}{}{}}
+\newlabel{subeq:slackbounds}{{6.7f}{74}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7f}{}}
+\newlabel{subeq:slackbounds@cref}{{[subequation][6][6,7]6.7f}{[1][74][]74}{}{}{}}
+\newlabel{eq:safeonestageocp}{{6.7}{74}{Real-time safe \acrshort {nmpc} on irregular terrain}{equation.6.7g}{}}
+\newlabel{eq:safeonestageocp@cref}{{[subequation][7][6,7]6.7g}{[1][74][]74}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Simultaneous path tracking and obstacle avoidance on rough terrain}{74}{subsection.6.2.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Safe \acrshort {ocp} cost terms and parameters.}}{75}{table.caption.87}\protected@file@percent }
+\newlabel{tab:SafeRoughPathTrackingSpecs}{{6.1}{75}{Safe \acrshort {ocp} cost terms and parameters}{table.caption.87}{}}
+\newlabel{tab:SafeRoughPathTrackingSpecs@cref}{{[table][1][6]6.1}{[1][74][]75}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Path tracking with safe one-stage real-time \acrshort {ocp} with solver $(1)$.}}{75}{figure.caption.88}\protected@file@percent }
+\newlabel{fig:pathtrackingsafeocp}{{6.5}{75}{Path tracking with safe one-stage real-time \acrshort {ocp} with solver $(1)$}{figure.caption.88}{}}
+\newlabel{fig:pathtrackingsafeocp@cref}{{[figure][5][6]6.5}{[1][75][]75}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Reference tour with solver $(1)$.}}}{75}{figure.caption.88}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Path tracking from different initial poses with solver $(1)$.}}}{75}{figure.caption.88}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Traction forces within coulomb friction cone (solver $(1)$).}}{76}{figure.caption.89}\protected@file@percent }
+\newlabel{fig:frictionconesolver1}{{6.6}{76}{Traction forces within coulomb friction cone (solver $(1)$)}{figure.caption.89}{}}
+\newlabel{fig:frictionconesolver1@cref}{{[figure][6][6]6.6}{[1][75][]76}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Reference tour with solver $(2)$.}}{76}{figure.caption.89}\protected@file@percent }
+\newlabel{fig:reftoursolver2}{{6.7}{76}{Reference tour with solver $(2)$}{figure.caption.89}{}}
+\newlabel{fig:reftoursolver2@cref}{{[figure][7][6]6.7}{[1][75][]76}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Maximum slack among slacks horizon at each simulation iteration.}}{76}{figure.caption.90}\protected@file@percent }
+\newlabel{fig:maxslackpathref}{{6.8}{76}{Maximum slack among slacks horizon at each simulation iteration}{figure.caption.90}{}}
+\newlabel{fig:maxslackpathref@cref}{{[figure][8][6]6.8}{[1][76][]76}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Reference tour performance plus velocities and force rates curves with solver $(1)$.}}{77}{figure.caption.91}\protected@file@percent }
+\newlabel{fig:reftourperformancesolver1safeocp}{{6.9}{77}{Reference tour performance plus velocities and force rates curves with solver $(1)$}{figure.caption.91}{}}
+\newlabel{fig:reftourperformancesolver1safeocp@cref}{{[figure][9][6]6.9}{[1][76][]77}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Maximum slack vs clearance (top). Optimal cost (middle). Loop time (bottom).}}}{77}{figure.caption.91}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Linear and angular velocities (top). Force rates (bottom).}}}{77}{figure.caption.91}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Size of safe balls (\textcolor {blue}{blue}) along optimal position horizon for solver $(1)$ on some situations. Reference position is marked in blacks dots, whereas the position horizon is marked by \textcolor {red}{red dots}. }}{78}{figure.caption.92}\protected@file@percent }
+\newlabel{fig:safeballsexamplessolver1}{{6.10}{78}{Size of safe balls (\textcolor {blue}{blue}) along optimal position horizon for solver $(1)$ on some situations. Reference position is marked in blacks dots, whereas the position horizon is marked by \textcolor {red}{red dots}}{figure.caption.92}{}}
+\newlabel{fig:safeballsexamplessolver1@cref}{{[figure][10][6]6.10}{[1][77][]78}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Far away from closest obstacle.}}}{78}{figure.caption.92}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Stuck while projected target does not move.}}}{78}{figure.caption.92}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Very narrow traversal between obstacles.}}}{78}{figure.caption.92}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Turn around.}}}{78}{figure.caption.92}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {High cost event.}}}{78}{figure.caption.92}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Wider traversal between obstacles.}}}{78}{figure.caption.92}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{79}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:conclusions}{{7}{78}{Conclusions}{chapter.7}{}}
-\newlabel{chapter:conclusions@cref}{{[chapter][7][]7}{[1][78][]78}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Future Work}{78}{section.7.1}\protected@file@percent }
-\newlabel{section:future}{{7.1}{78}{Future Work}{section.7.1}{}}
-\newlabel{section:future@cref}{{[section][1][7]7.1}{[1][78][]78}{}{}{}}
+\newlabel{chapter:conclusions}{{7}{79}{Conclusions}{chapter.7}{}}
+\newlabel{chapter:conclusions@cref}{{[chapter][7][]7}{[1][79][]79}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Future Work}{79}{section.7.1}\protected@file@percent }
+\newlabel{section:future}{{7.1}{79}{Future Work}{section.7.1}{}}
+\newlabel{section:future@cref}{{[section][1][7]7.1}{[1][79][]79}{}{}{}}
 \citation{diehlnumericalocp}
 \bibstyle{abbrvunsrtnat}
 \bibdata{Thesis_Bibliography}
@@ -1036,7 +1032,7 @@
 \bibcite{Gonzalez2019}{{13}{2019}{{Gonzalez et~al.}}{{Gonzalez, Apostolopoulos, and Iagnemma}}}
 \bibcite{Coombs2000}{{14}{2000}{{Coombs et~al.}}{{Coombs, Murphy, et~al.}}}
 \bibcite{Urmson2004}{{15}{2004}{{Urmson et~al.}}{{Urmson, Anhalt, et~al.}}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{80}{section*.92}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{81}{section*.93}\protected@file@percent }
 \bibcite{Amorim2014}{{16}{2014}{{Amorim and Ventura}}{{}}}
 \bibcite{yu2022nmpc}{{17}{2021}{{Yu et~al.}}{{Yu, Shen, and Ersal}}}
 \bibcite{IagnemmaDubowsy2004}{{18}{2004}{{Iagnemma and Dubowsky}}{{}}}
@@ -1090,215 +1086,215 @@
 \bibcite{quirynen2015autogenerating}{{66}{2015}{{Quirynen et~al.}}{{Quirynen, Vukov, Zanon, and Diehl}}}
 \bibcite{lawrence1972catalog}{{67}{1972}{{Lawrence}}{{}}}
 \citation{Roithmayr2015}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Mathematical review}{85}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Mathematical review}{86}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:mathSnippet}{{A}{85}{Mathematical review}{appendix.A}{}}
-\newlabel{chapter:mathSnippet@cref}{{[chapter][1][]A}{[1][85][]85}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Euler angles}{85}{section.A.1}\protected@file@percent }
-\newlabel{section:eulerAngles}{{A.1}{85}{Euler angles}{section.A.1}{}}
-\newlabel{section:eulerAngles@cref}{{[section][1][1]A.1}{[1][85][]85}{}{}{}}
-\newlabel{eq:rotationMatrixW2B}{{A.2}{85}{Euler angles}{equation.A.2}{}}
-\newlabel{eq:rotationMatrixW2B@cref}{{[equation][2][1]A.2}{[1][85][]85}{}{}{}}
-\newlabel{eq:rotationMatrixW2BRotational}{{A.3}{85}{Euler angles}{equation.A.3}{}}
-\newlabel{eq:rotationMatrixW2BRotational@cref}{{[equation][3][1]A.3}{[1][85][]85}{}{}{}}
+\newlabel{chapter:mathSnippet}{{A}{86}{Mathematical review}{appendix.A}{}}
+\newlabel{chapter:mathSnippet@cref}{{[chapter][1][]A}{[1][86][]86}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Euler angles}{86}{section.A.1}\protected@file@percent }
+\newlabel{section:eulerAngles}{{A.1}{86}{Euler angles}{section.A.1}{}}
+\newlabel{section:eulerAngles@cref}{{[section][1][1]A.1}{[1][86][]86}{}{}{}}
+\newlabel{eq:rotationMatrixW2B}{{A.2}{86}{Euler angles}{equation.A.2}{}}
+\newlabel{eq:rotationMatrixW2B@cref}{{[equation][2][1]A.2}{[1][86][]86}{}{}{}}
+\newlabel{eq:rotationMatrixW2BRotational}{{A.3}{86}{Euler angles}{equation.A.3}{}}
+\newlabel{eq:rotationMatrixW2BRotational@cref}{{[equation][3][1]A.3}{[1][86][]86}{}{}{}}
 \citation{Beer2015}
-\newlabel{eq:rotationMatrixW2BRotationalInverse}{{A.4}{86}{Euler angles}{equation.A.4}{}}
-\newlabel{eq:rotationMatrixW2BRotationalInverse@cref}{{[equation][4][1]A.4}{[1][85][]86}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}Inertia tensor}{86}{section.A.2}\protected@file@percent }
-\newlabel{section:inertiaTensor}{{A.2}{86}{Inertia tensor}{section.A.2}{}}
-\newlabel{section:inertiaTensor@cref}{{[section][2][1]A.2}{[1][86][]86}{}{}{}}
-\newlabel{eq:annexInertiaTensor}{{A.5}{86}{Inertia tensor}{equation.A.5}{}}
-\newlabel{eq:annexInertiaTensor@cref}{{[equation][5][1]A.5}{[1][86][]86}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}Differentiation of a vector}{86}{section.A.3}\protected@file@percent }
-\newlabel{section:vectorDiff}{{A.3}{86}{Differentiation of a vector}{section.A.3}{}}
-\newlabel{section:vectorDiff@cref}{{[section][3][1]A.3}{[1][86][]86}{}{}{}}
-\newlabel{eq:vectorDiff}{{A.6}{86}{Differentiation of a vector}{equation.A.6}{}}
-\newlabel{eq:vectorDiff@cref}{{[equation][6][1]A.6}{[1][86][]86}{}{}{}}
-\newlabel{eq:vectorDiff2}{{A.7}{86}{Differentiation of a vector}{equation.A.7}{}}
-\newlabel{eq:vectorDiff2@cref}{{[equation][7][1]A.7}{[1][86][]86}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.4}Runge-Kutta 4 numerical integrator}{86}{section.A.4}\protected@file@percent }
-\newlabel{section:rk4}{{A.4}{86}{Runge-Kutta 4 numerical integrator}{section.A.4}{}}
-\newlabel{section:rk4@cref}{{[section][4][1]A.4}{[1][86][]86}{}{}{}}
-\newlabel{eq:ode_ivp}{{A.8}{86}{Runge-Kutta 4 numerical integrator}{equation.A.8}{}}
-\newlabel{eq:ode_ivp@cref}{{[subequation][0][1,8]A.8}{[1][86][]86}{}{}{}}
-\newlabel{subeq:ode_dynamics}{{A.8a}{86}{Runge-Kutta 4 numerical integrator}{equation.A.8a}{}}
-\newlabel{subeq:ode_dynamics@cref}{{[subequation][1][1,8]A.8a}{[1][86][]86}{}{}{}}
-\newlabel{subeq:ode_initialcond}{{A.8b}{86}{Runge-Kutta 4 numerical integrator}{equation.A.8b}{}}
-\newlabel{subeq:ode_initialcond@cref}{{[subequation][2][1,8]A.8b}{[1][86][]86}{}{}{}}
+\newlabel{eq:rotationMatrixW2BRotationalInverse}{{A.4}{87}{Euler angles}{equation.A.4}{}}
+\newlabel{eq:rotationMatrixW2BRotationalInverse@cref}{{[equation][4][1]A.4}{[1][86][]87}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}Inertia tensor}{87}{section.A.2}\protected@file@percent }
+\newlabel{section:inertiaTensor}{{A.2}{87}{Inertia tensor}{section.A.2}{}}
+\newlabel{section:inertiaTensor@cref}{{[section][2][1]A.2}{[1][87][]87}{}{}{}}
+\newlabel{eq:annexInertiaTensor}{{A.5}{87}{Inertia tensor}{equation.A.5}{}}
+\newlabel{eq:annexInertiaTensor@cref}{{[equation][5][1]A.5}{[1][87][]87}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}Differentiation of a vector}{87}{section.A.3}\protected@file@percent }
+\newlabel{section:vectorDiff}{{A.3}{87}{Differentiation of a vector}{section.A.3}{}}
+\newlabel{section:vectorDiff@cref}{{[section][3][1]A.3}{[1][87][]87}{}{}{}}
+\newlabel{eq:vectorDiff}{{A.6}{87}{Differentiation of a vector}{equation.A.6}{}}
+\newlabel{eq:vectorDiff@cref}{{[equation][6][1]A.6}{[1][87][]87}{}{}{}}
+\newlabel{eq:vectorDiff2}{{A.7}{87}{Differentiation of a vector}{equation.A.7}{}}
+\newlabel{eq:vectorDiff2@cref}{{[equation][7][1]A.7}{[1][87][]87}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.4}Runge-Kutta 4 numerical integrator}{87}{section.A.4}\protected@file@percent }
+\newlabel{section:rk4}{{A.4}{87}{Runge-Kutta 4 numerical integrator}{section.A.4}{}}
+\newlabel{section:rk4@cref}{{[section][4][1]A.4}{[1][87][]87}{}{}{}}
+\newlabel{eq:ode_ivp}{{A.8}{87}{Runge-Kutta 4 numerical integrator}{equation.A.8}{}}
+\newlabel{eq:ode_ivp@cref}{{[subequation][0][1,8]A.8}{[1][87][]87}{}{}{}}
+\newlabel{subeq:ode_dynamics}{{A.8a}{87}{Runge-Kutta 4 numerical integrator}{equation.A.8a}{}}
+\newlabel{subeq:ode_dynamics@cref}{{[subequation][1][1,8]A.8a}{[1][87][]87}{}{}{}}
+\newlabel{subeq:ode_initialcond}{{A.8b}{87}{Runge-Kutta 4 numerical integrator}{equation.A.8b}{}}
+\newlabel{subeq:ode_initialcond@cref}{{[subequation][2][1,8]A.8b}{[1][87][]87}{}{}{}}
 \citation{quirynen2015autogenerating}
 \citation{Beer2015}
-\newlabel{eq:rk4}{{A.9}{87}{Runge-Kutta 4 numerical integrator}{equation.A.9}{}}
-\newlabel{eq:rk4@cref}{{[equation][9][1]A.9}{[1][86][]87}{}{}{}}
-\newlabel{subsection:sensitivitiespropagation}{{A.4}{87}{}{equation.A.9}{}}
-\newlabel{subsection:sensitivitiespropagation@cref}{{[section][4][1]A.4}{[1][87][]87}{}{}{}}
-\newlabel{eq:sensitivitiespropagation}{{A.10}{87}{}{equation.A.10}{}}
-\newlabel{eq:sensitivitiespropagation@cref}{{[equation][10][1]A.10}{[1][87][]87}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.5}Parallel-axis theorem}{87}{section.A.5}\protected@file@percent }
-\newlabel{section:parallelAxisTheorem}{{A.5}{87}{Parallel-axis theorem}{section.A.5}{}}
-\newlabel{section:parallelAxisTheorem@cref}{{[section][5][1]A.5}{[1][87][]87}{}{}{}}
-\newlabel{eq:parallelaxis}{{A.11}{87}{Parallel-axis theorem}{equation.A.11}{}}
-\newlabel{eq:parallelaxis@cref}{{[equation][11][1]A.11}{[1][87][]87}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.6}Linear algebra}{88}{section.A.6}\protected@file@percent }
-\newlabel{section:linalgebra}{{A.6}{88}{Linear algebra}{section.A.6}{}}
-\newlabel{section:linalgebra@cref}{{[section][6][1]A.6}{[1][87][]88}{}{}{}}
-\newlabel{def:matrixeigenvalues}{{A.2}{88}{Matrix eigenvalues}{definition.A.2}{}}
-\newlabel{def:matrixeigenvalues@cref}{{[definition][2][1]A.2}{[1][88][]88}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.7}Euler angles determination}{88}{section.A.7}\protected@file@percent }
-\newlabel{section:eulerAnglesDetermination}{{A.7}{88}{Euler angles determination}{section.A.7}{}}
-\newlabel{section:eulerAnglesDetermination@cref}{{[section][7][1]A.7}{[1][88][]88}{}{}{}}
-\newlabel{eq:rotMatrixVectors}{{A.12}{88}{Euler angles determination}{equation.A.12}{}}
-\newlabel{eq:rotMatrixVectors@cref}{{[equation][12][1]A.12}{[1][88][]88}{}{}{}}
+\newlabel{eq:rk4}{{A.9}{88}{Runge-Kutta 4 numerical integrator}{equation.A.9}{}}
+\newlabel{eq:rk4@cref}{{[equation][9][1]A.9}{[1][87][]88}{}{}{}}
+\newlabel{subsection:sensitivitiespropagation}{{A.4}{88}{}{equation.A.9}{}}
+\newlabel{subsection:sensitivitiespropagation@cref}{{[section][4][1]A.4}{[1][88][]88}{}{}{}}
+\newlabel{eq:sensitivitiespropagation}{{A.10}{88}{}{equation.A.10}{}}
+\newlabel{eq:sensitivitiespropagation@cref}{{[equation][10][1]A.10}{[1][88][]88}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.5}Parallel-axis theorem}{88}{section.A.5}\protected@file@percent }
+\newlabel{section:parallelAxisTheorem}{{A.5}{88}{Parallel-axis theorem}{section.A.5}{}}
+\newlabel{section:parallelAxisTheorem@cref}{{[section][5][1]A.5}{[1][88][]88}{}{}{}}
+\newlabel{eq:parallelaxis}{{A.11}{88}{Parallel-axis theorem}{equation.A.11}{}}
+\newlabel{eq:parallelaxis@cref}{{[equation][11][1]A.11}{[1][88][]88}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.6}Linear algebra}{89}{section.A.6}\protected@file@percent }
+\newlabel{section:linalgebra}{{A.6}{89}{Linear algebra}{section.A.6}{}}
+\newlabel{section:linalgebra@cref}{{[section][6][1]A.6}{[1][88][]89}{}{}{}}
+\newlabel{def:matrixeigenvalues}{{A.2}{89}{Matrix eigenvalues}{definition.A.2}{}}
+\newlabel{def:matrixeigenvalues@cref}{{[definition][2][1]A.2}{[1][89][]89}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.7}Euler angles determination}{89}{section.A.7}\protected@file@percent }
+\newlabel{section:eulerAnglesDetermination}{{A.7}{89}{Euler angles determination}{section.A.7}{}}
+\newlabel{section:eulerAnglesDetermination@cref}{{[section][7][1]A.7}{[1][89][]89}{}{}{}}
+\newlabel{eq:rotMatrixVectors}{{A.12}{89}{Euler angles determination}{equation.A.12}{}}
+\newlabel{eq:rotMatrixVectors@cref}{{[equation][12][1]A.12}{[1][89][]89}{}{}{}}
 \citation{lawrence1972catalog}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {12}{\ignorespaces \footnotesize  Determine Euler angles}}{89}{algorithm.12}\protected@file@percent }
-\newlabel{alg:determineeulerangles}{{12}{89}{\footnotesize Determine Euler angles}{algorithm.12}{}}
-\newlabel{alg:determineeulerangles@cref}{{[algorithm][12][]12}{[1][89][]89}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.8}Lissajous curves}{89}{section.A.8}\protected@file@percent }
-\newlabel{section:lissajouscurves}{{A.8}{89}{Lissajous curves}{section.A.8}{}}
-\newlabel{section:lissajouscurves@cref}{{[section][8][1]A.8}{[1][89][]89}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Lissajous curves used in this thesis.}}{89}{table.A.1}\protected@file@percent }
-\newlabel{tab:LissajousCurves}{{A.1}{89}{Lissajous curves used in this thesis}{table.A.1}{}}
-\newlabel{tab:LissajousCurves@cref}{{[table][1][1]A.1}{[1][89][]89}{}{}{}}
-\newlabel{eq:lissajouscurve}{{A.15}{89}{Lissajous curves}{equation.A.15}{}}
-\newlabel{eq:lissajouscurve@cref}{{[equation][15][1]A.15}{[1][89][]89}{}{}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Nonlinear optimization review}{90}{appendix.B}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {12}{\ignorespaces \footnotesize  Determine Euler angles}}{90}{algorithm.12}\protected@file@percent }
+\newlabel{alg:determineeulerangles}{{12}{90}{\footnotesize Determine Euler angles}{algorithm.12}{}}
+\newlabel{alg:determineeulerangles@cref}{{[algorithm][12][]12}{[1][90][]90}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.8}Lissajous curves}{90}{section.A.8}\protected@file@percent }
+\newlabel{section:lissajouscurves}{{A.8}{90}{Lissajous curves}{section.A.8}{}}
+\newlabel{section:lissajouscurves@cref}{{[section][8][1]A.8}{[1][90][]90}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Lissajous curves used in this thesis.}}{90}{table.A.1}\protected@file@percent }
+\newlabel{tab:LissajousCurves}{{A.1}{90}{Lissajous curves used in this thesis}{table.A.1}{}}
+\newlabel{tab:LissajousCurves@cref}{{[table][1][1]A.1}{[1][90][]90}{}{}{}}
+\newlabel{eq:lissajouscurve}{{A.15}{90}{Lissajous curves}{equation.A.15}{}}
+\newlabel{eq:lissajouscurve@cref}{{[equation][15][1]A.15}{[1][90][]90}{}{}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Nonlinear optimization review}{91}{appendix.B}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:nlpsnippet}{{B}{90}{Nonlinear optimization review}{appendix.B}{}}
-\newlabel{chapter:nlpsnippet@cref}{{[chapter][2][]B}{[1][90][]90}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.1}General definitions}{90}{section.B.1}\protected@file@percent }
-\newlabel{section:gendefinitions}{{B.1}{90}{General definitions}{section.B.1}{}}
-\newlabel{section:gendefinitions@cref}{{[section][1][2]B.1}{[1][90][]90}{}{}{}}
-\newlabel{def:globalmin}{{B.2}{90}{Global minimum}{definition.B.2}{}}
-\newlabel{def:globalmin@cref}{{[definition][2][2]B.2}{[1][90][]90}{}{}{}}
-\newlabel{eq:neighborhood}{{B.2}{90}{Neigborhood of $\mathbf {p}$}{equation.B.2}{}}
-\newlabel{eq:neighborhood@cref}{{[equation][2][2]B.2}{[1][90][]90}{}{}{}}
-\newlabel{def:localmin}{{B.4}{90}{Local minimum}{definition.B.4}{}}
-\newlabel{def:localmin@cref}{{[definition][4][2]B.4}{[1][90][]90}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.2}Convex optimization}{91}{section.B.2}\protected@file@percent }
-\newlabel{section:convexopt}{{B.2}{91}{Convex optimization}{section.B.2}{}}
-\newlabel{section:convexopt@cref}{{[section][2][2]B.2}{[1][90][]91}{}{}{}}
-\newlabel{eq:convexSet}{{B.3}{91}{Convex set}{equation.B.3}{}}
-\newlabel{eq:convexSet@cref}{{[equation][3][2]B.3}{[1][90][]91}{}{}{}}
-\newlabel{def:convexoptproble}{{B.8}{91}{Convex optimization problem}{definition.B.8}{}}
-\newlabel{def:convexoptproble@cref}{{[definition][8][2]B.8}{[1][91][]91}{}{}{}}
-\newlabel{theorem:localimplesglobalconvex}{{B.2}{91}{Local implies global optimality for convex problems}{theorem.B.2}{}}
-\newlabel{theorem:localimplesglobalconvex@cref}{{[theorem][2][2]B.2}{[1][91][]91}{}{}{}}
-\newlabel{def:licq}{{B.9}{91}{\acrshort {licq}}{definition.B.9}{}}
-\newlabel{def:licq@cref}{{[definition][9][2]B.9}{[1][91][]91}{}{}{}}
-\newlabel{eq:licqmatrix}{{B.5}{91}{Convex optimization}{equation.B.5}{}}
-\newlabel{eq:licqmatrix@cref}{{[equation][5][2]B.5}{[1][91][]91}{}{}{}}
-\newlabel{def:strictcomplementarity}{{B.11}{91}{Strict complementarity}{definition.B.11}{}}
-\newlabel{def:strictcomplementarity@cref}{{[definition][11][2]B.11}{[1][91][]91}{}{}{}}
-\newlabel{eq:genqp}{{B.6}{92}{\acrlong {qp}}{equation.B.6}{}}
-\newlabel{eq:genqp@cref}{{[equation][6][2]B.6}{[1][91][]92}{}{}{}}
-\newlabel{theorem:sooc}{{B.3}{92}{Second Order Optimality Conditions}{Item.27}{}}
-\newlabel{theorem:sooc@cref}{{[theorem][3][2]B.3}{[1][92][]92}{}{}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {C}Miscellaneous}{93}{appendix.C}\protected@file@percent }
+\newlabel{chapter:nlpsnippet}{{B}{91}{Nonlinear optimization review}{appendix.B}{}}
+\newlabel{chapter:nlpsnippet@cref}{{[chapter][2][]B}{[1][91][]91}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.1}General definitions}{91}{section.B.1}\protected@file@percent }
+\newlabel{section:gendefinitions}{{B.1}{91}{General definitions}{section.B.1}{}}
+\newlabel{section:gendefinitions@cref}{{[section][1][2]B.1}{[1][91][]91}{}{}{}}
+\newlabel{def:globalmin}{{B.2}{91}{Global minimum}{definition.B.2}{}}
+\newlabel{def:globalmin@cref}{{[definition][2][2]B.2}{[1][91][]91}{}{}{}}
+\newlabel{eq:neighborhood}{{B.2}{91}{Neigborhood of $\mathbf {p}$}{equation.B.2}{}}
+\newlabel{eq:neighborhood@cref}{{[equation][2][2]B.2}{[1][91][]91}{}{}{}}
+\newlabel{def:localmin}{{B.4}{91}{Local minimum}{definition.B.4}{}}
+\newlabel{def:localmin@cref}{{[definition][4][2]B.4}{[1][91][]91}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.2}Convex optimization}{92}{section.B.2}\protected@file@percent }
+\newlabel{section:convexopt}{{B.2}{92}{Convex optimization}{section.B.2}{}}
+\newlabel{section:convexopt@cref}{{[section][2][2]B.2}{[1][91][]92}{}{}{}}
+\newlabel{eq:convexSet}{{B.3}{92}{Convex set}{equation.B.3}{}}
+\newlabel{eq:convexSet@cref}{{[equation][3][2]B.3}{[1][91][]92}{}{}{}}
+\newlabel{def:convexoptproble}{{B.8}{92}{Convex optimization problem}{definition.B.8}{}}
+\newlabel{def:convexoptproble@cref}{{[definition][8][2]B.8}{[1][92][]92}{}{}{}}
+\newlabel{theorem:localimplesglobalconvex}{{B.2}{92}{Local implies global optimality for convex problems}{theorem.B.2}{}}
+\newlabel{theorem:localimplesglobalconvex@cref}{{[theorem][2][2]B.2}{[1][92][]92}{}{}{}}
+\newlabel{def:licq}{{B.9}{92}{\acrshort {licq}}{definition.B.9}{}}
+\newlabel{def:licq@cref}{{[definition][9][2]B.9}{[1][92][]92}{}{}{}}
+\newlabel{eq:licqmatrix}{{B.5}{92}{Convex optimization}{equation.B.5}{}}
+\newlabel{eq:licqmatrix@cref}{{[equation][5][2]B.5}{[1][92][]92}{}{}{}}
+\newlabel{def:strictcomplementarity}{{B.11}{92}{Strict complementarity}{definition.B.11}{}}
+\newlabel{def:strictcomplementarity@cref}{{[definition][11][2]B.11}{[1][92][]92}{}{}{}}
+\newlabel{eq:genqp}{{B.6}{93}{\acrlong {qp}}{equation.B.6}{}}
+\newlabel{eq:genqp@cref}{{[equation][6][2]B.6}{[1][92][]93}{}{}{}}
+\newlabel{theorem:sooc}{{B.3}{93}{Second Order Optimality Conditions}{Item.27}{}}
+\newlabel{theorem:sooc@cref}{{[theorem][3][2]B.3}{[1][93][]93}{}{}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Miscellaneous}{94}{appendix.C}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:annexData}{{C}{93}{Miscellaneous}{appendix.C}{}}
-\newlabel{chapter:annexData@cref}{{[chapter][3][]C}{[1][93][]93}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C.1}Traversability maps}{93}{section.C.1}\protected@file@percent }
-\newlabel{section:traversabilityMaps}{{C.1}{93}{Traversability maps}{section.C.1}{}}
-\newlabel{section:traversabilityMaps@cref}{{[section][1][3]C.1}{[1][93][]93}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {C.1}{\ignorespaces Traversability maps (case 2; map 1)}}{93}{figure.caption.94}\protected@file@percent }
-\newlabel{fig:costMapsCase2Alg2_4}{{C.1}{93}{Traversability maps (case 2; map 1)}{figure.caption.94}{}}
-\newlabel{fig:costMapsCase2Alg2_4@cref}{{[figure][1][3]C.1}{[1][93][]93}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{93}{figure.caption.94}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{93}{figure.caption.94}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{93}{figure.caption.94}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {C.2}{\ignorespaces Traversability maps (case 2; map 1)}}{93}{figure.caption.95}\protected@file@percent }
-\newlabel{fig:costMapsCase2Alg5}{{C.2}{93}{Traversability maps (case 2; map 1)}{figure.caption.95}{}}
-\newlabel{fig:costMapsCase2Alg5@cref}{{[figure][2][3]C.2}{[1][93][]93}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Worst-case map}}}{93}{figure.caption.95}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9}}}{93}{figure.caption.95}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {C.2}Performance metrics of controllers}{94}{section.C.2}\protected@file@percent }
-\newlabel{section:performanceMetrics}{{C.2}{94}{Performance metrics of controllers}{section.C.2}{}}
-\newlabel{section:performanceMetrics@cref}{{[section][2][3]C.2}{[1][93][]94}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.2.1}One-stage planar \acrshort {ocp}}{94}{subsection.C.2.1}\protected@file@percent }
-\newlabel{subsection:onestageplanarocp}{{C.2.1}{94}{One-stage planar \acrshort {ocp}}{subsection.C.2.1}{}}
-\newlabel{subsection:onestageplanarocp@cref}{{[subsection][1][3,2]C.2.1}{[1][94][]94}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.1}{\ignorespaces Cumulative control effort of controllers when control horizon changes.}}{94}{table.caption.96}\protected@file@percent }
-\newlabel{tab:cumulativeControlEffortControlHorizon}{{C.1}{94}{Cumulative control effort of controllers when control horizon changes}{table.caption.96}{}}
-\newlabel{tab:cumulativeControlEffortControlHorizon@cref}{{[table][1][3]C.1}{[1][94][]94}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.2}{\ignorespaces Cumulative positional error of controllers when control horizon changes.}}{94}{table.caption.97}\protected@file@percent }
-\newlabel{tab:cumulativePositionalErrorControlHorizon}{{C.2}{94}{Cumulative positional error of controllers when control horizon changes}{table.caption.97}{}}
-\newlabel{tab:cumulativePositionalErrorControlHorizon@cref}{{[table][2][3]C.2}{[1][94][]94}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.3}{\ignorespaces Cumulative heading error of controllers when control horizon changes.}}{94}{table.caption.98}\protected@file@percent }
-\newlabel{tab:cumulativeHeadingErrorControlHorizon}{{C.3}{94}{Cumulative heading error of controllers when control horizon changes}{table.caption.98}{}}
-\newlabel{tab:cumulativeHeadingErrorControlHorizon@cref}{{[table][3][3]C.3}{[1][94][]94}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.4}{\ignorespaces Cumulative control effort of controllers when sampling time changes.}}{94}{table.caption.99}\protected@file@percent }
-\newlabel{tab:cumulativeControlEffortSamplingTime}{{C.4}{94}{Cumulative control effort of controllers when sampling time changes}{table.caption.99}{}}
-\newlabel{tab:cumulativeControlEffortSamplingTime@cref}{{[table][4][3]C.4}{[1][94][]94}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.5}{\ignorespaces Cumulative positional error of controllers when sampling time changes.}}{95}{table.caption.100}\protected@file@percent }
-\newlabel{tab:cumulativePositionalErrorSamplingTime}{{C.5}{95}{Cumulative positional error of controllers when sampling time changes}{table.caption.100}{}}
-\newlabel{tab:cumulativePositionalErrorSamplingTime@cref}{{[table][5][3]C.5}{[1][94][]95}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.6}{\ignorespaces Cumulative heading error of controllers when sampling time changes.}}{95}{table.caption.101}\protected@file@percent }
-\newlabel{tab:cumulativeHeadingErrorSamplingTime}{{C.6}{95}{Cumulative heading error of controllers when sampling time changes}{table.caption.101}{}}
-\newlabel{tab:cumulativeHeadingErrorSamplingTime@cref}{{[table][6][3]C.6}{[1][94][]95}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.7}{\ignorespaces Cumulative control effort of controllers when cost function weights changes.}}{95}{table.caption.102}\protected@file@percent }
-\newlabel{tab:cumulativeControlEffortWeights}{{C.7}{95}{Cumulative control effort of controllers when cost function weights changes}{table.caption.102}{}}
-\newlabel{tab:cumulativeControlEffortWeights@cref}{{[table][7][3]C.7}{[1][94][]95}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.8}{\ignorespaces Cumulative positional error of controllers when cost function weights changes.}}{95}{table.caption.103}\protected@file@percent }
-\newlabel{tab:cumulativePositionalErrorWeights}{{C.8}{95}{Cumulative positional error of controllers when cost function weights changes}{table.caption.103}{}}
-\newlabel{tab:cumulativePositionalErrorWeights@cref}{{[table][8][3]C.8}{[1][94][]95}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.9}{\ignorespaces Cumulative heading error of controllers when cost function weights changes.}}{95}{table.caption.104}\protected@file@percent }
-\newlabel{tab:cumulativeHeadingErrorWeights}{{C.9}{95}{Cumulative heading error of controllers when cost function weights changes}{table.caption.104}{}}
-\newlabel{tab:cumulativeHeadingErrorWeights@cref}{{[table][9][3]C.9}{[1][94][]95}{}{}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{C.3(a)}{95}{Subfigure C C.3(a)}{subfigure.C.3.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl@cref}{{[subfigure][1][3,3]C.3(a)}{[1][94][]95}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{(a)}{95}{Subfigure C C.3(a)\relax }{subfigure.C.3.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{C.3(b)}{95}{Subfigure C C.3(b)}{subfigure.C.3.2}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl@cref}{{[subfigure][2][3,3]C.3(b)}{[1][94][]95}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{(b)}{95}{Subfigure C C.3(b)\relax }{subfigure.C.3.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {C.3}{\ignorespaces $v_x$ curve comparison among controllers.}}{95}{figure.caption.105}\protected@file@percent }
-\newlabel{fig:PathTrackCompWeightsVar_vx}{{C.3}{95}{$v_x$ curve comparison among controllers}{figure.caption.105}{}}
-\newlabel{fig:PathTrackCompWeightsVar_vx@cref}{{[figure][3][3]C.3}{[1][94][]95}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{95}{figure.caption.105}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{95}{figure.caption.105}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.2.2}Real-time one-stage \acrshort {ocp} on rough, uneven terrain}{95}{subsection.C.2.2}\protected@file@percent }
-\newlabel{subsection:realtimeonestageocpRoughUnevenTerrain}{{C.2.2}{95}{Real-time one-stage \acrshort {ocp} on rough, uneven terrain}{subsection.C.2.2}{}}
-\newlabel{subsection:realtimeonestageocpRoughUnevenTerrain@cref}{{[subsection][2][3,2]C.2.2}{[1][94][]95}{}{}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{C.4(a)}{96}{Subfigure C C.4(a)}{subfigure.C.4.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr@cref}{{[subfigure][1][3,4]C.4(a)}{[1][94][]96}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{(a)}{96}{Subfigure C C.4(a)\relax }{subfigure.C.4.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{C.4(b)}{96}{Subfigure C C.4(b)}{subfigure.C.4.2}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr@cref}{{[subfigure][2][3,4]C.4(b)}{[1][94][]96}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{(b)}{96}{Subfigure C C.4(b)\relax }{subfigure.C.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {C.4}{\ignorespaces $\omega _z$ curve comparison among controllers.}}{96}{figure.caption.106}\protected@file@percent }
-\newlabel{fig:PathTrackCompWeightsVar_wz}{{C.4}{96}{$\omega _z$ curve comparison among controllers}{figure.caption.106}{}}
-\newlabel{fig:PathTrackCompWeightsVar_wz@cref}{{[figure][4][3]C.4}{[1][94][]96}{}{}{}}
+\newlabel{chapter:annexData}{{C}{94}{Miscellaneous}{appendix.C}{}}
+\newlabel{chapter:annexData@cref}{{[chapter][3][]C}{[1][94][]94}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C.1}Traversability maps}{94}{section.C.1}\protected@file@percent }
+\newlabel{section:traversabilityMaps}{{C.1}{94}{Traversability maps}{section.C.1}{}}
+\newlabel{section:traversabilityMaps@cref}{{[section][1][3]C.1}{[1][94][]94}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.1}{\ignorespaces Traversability maps (case 2; map 1)}}{94}{figure.caption.95}\protected@file@percent }
+\newlabel{fig:costMapsCase2Alg2_4}{{C.1}{94}{Traversability maps (case 2; map 1)}{figure.caption.95}{}}
+\newlabel{fig:costMapsCase2Alg2_4@cref}{{[figure][1][3]C.1}{[1][94][]94}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{94}{figure.caption.95}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{94}{figure.caption.95}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{94}{figure.caption.95}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {C.2}{\ignorespaces Traversability maps (case 2; map 1)}}{94}{figure.caption.96}\protected@file@percent }
+\newlabel{fig:costMapsCase2Alg5}{{C.2}{94}{Traversability maps (case 2; map 1)}{figure.caption.96}{}}
+\newlabel{fig:costMapsCase2Alg5@cref}{{[figure][2][3]C.2}{[1][94][]94}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Worst-case map}}}{94}{figure.caption.96}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9}}}{94}{figure.caption.96}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {C.2}Performance metrics of controllers}{95}{section.C.2}\protected@file@percent }
+\newlabel{section:performanceMetrics}{{C.2}{95}{Performance metrics of controllers}{section.C.2}{}}
+\newlabel{section:performanceMetrics@cref}{{[section][2][3]C.2}{[1][94][]95}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2.1}One-stage planar \acrshort {ocp}}{95}{subsection.C.2.1}\protected@file@percent }
+\newlabel{subsection:onestageplanarocp}{{C.2.1}{95}{One-stage planar \acrshort {ocp}}{subsection.C.2.1}{}}
+\newlabel{subsection:onestageplanarocp@cref}{{[subsection][1][3,2]C.2.1}{[1][95][]95}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.1}{\ignorespaces Cumulative control effort of controllers when control horizon changes.}}{95}{table.caption.97}\protected@file@percent }
+\newlabel{tab:cumulativeControlEffortControlHorizon}{{C.1}{95}{Cumulative control effort of controllers when control horizon changes}{table.caption.97}{}}
+\newlabel{tab:cumulativeControlEffortControlHorizon@cref}{{[table][1][3]C.1}{[1][95][]95}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.2}{\ignorespaces Cumulative positional error of controllers when control horizon changes.}}{95}{table.caption.98}\protected@file@percent }
+\newlabel{tab:cumulativePositionalErrorControlHorizon}{{C.2}{95}{Cumulative positional error of controllers when control horizon changes}{table.caption.98}{}}
+\newlabel{tab:cumulativePositionalErrorControlHorizon@cref}{{[table][2][3]C.2}{[1][95][]95}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.3}{\ignorespaces Cumulative heading error of controllers when control horizon changes.}}{95}{table.caption.99}\protected@file@percent }
+\newlabel{tab:cumulativeHeadingErrorControlHorizon}{{C.3}{95}{Cumulative heading error of controllers when control horizon changes}{table.caption.99}{}}
+\newlabel{tab:cumulativeHeadingErrorControlHorizon@cref}{{[table][3][3]C.3}{[1][95][]95}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.4}{\ignorespaces Cumulative control effort of controllers when sampling time changes.}}{95}{table.caption.100}\protected@file@percent }
+\newlabel{tab:cumulativeControlEffortSamplingTime}{{C.4}{95}{Cumulative control effort of controllers when sampling time changes}{table.caption.100}{}}
+\newlabel{tab:cumulativeControlEffortSamplingTime@cref}{{[table][4][3]C.4}{[1][95][]95}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.5}{\ignorespaces Cumulative positional error of controllers when sampling time changes.}}{96}{table.caption.101}\protected@file@percent }
+\newlabel{tab:cumulativePositionalErrorSamplingTime}{{C.5}{96}{Cumulative positional error of controllers when sampling time changes}{table.caption.101}{}}
+\newlabel{tab:cumulativePositionalErrorSamplingTime@cref}{{[table][5][3]C.5}{[1][95][]96}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.6}{\ignorespaces Cumulative heading error of controllers when sampling time changes.}}{96}{table.caption.102}\protected@file@percent }
+\newlabel{tab:cumulativeHeadingErrorSamplingTime}{{C.6}{96}{Cumulative heading error of controllers when sampling time changes}{table.caption.102}{}}
+\newlabel{tab:cumulativeHeadingErrorSamplingTime@cref}{{[table][6][3]C.6}{[1][95][]96}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.7}{\ignorespaces Cumulative control effort of controllers when cost function weights changes.}}{96}{table.caption.103}\protected@file@percent }
+\newlabel{tab:cumulativeControlEffortWeights}{{C.7}{96}{Cumulative control effort of controllers when cost function weights changes}{table.caption.103}{}}
+\newlabel{tab:cumulativeControlEffortWeights@cref}{{[table][7][3]C.7}{[1][95][]96}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.8}{\ignorespaces Cumulative positional error of controllers when cost function weights changes.}}{96}{table.caption.104}\protected@file@percent }
+\newlabel{tab:cumulativePositionalErrorWeights}{{C.8}{96}{Cumulative positional error of controllers when cost function weights changes}{table.caption.104}{}}
+\newlabel{tab:cumulativePositionalErrorWeights@cref}{{[table][8][3]C.8}{[1][95][]96}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.9}{\ignorespaces Cumulative heading error of controllers when cost function weights changes.}}{96}{table.caption.105}\protected@file@percent }
+\newlabel{tab:cumulativeHeadingErrorWeights}{{C.9}{96}{Cumulative heading error of controllers when cost function weights changes}{table.caption.105}{}}
+\newlabel{tab:cumulativeHeadingErrorWeights@cref}{{[table][9][3]C.9}{[1][95][]96}{}{}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{C.3(a)}{96}{Subfigure C C.3(a)}{subfigure.C.3.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl@cref}{{[subfigure][1][3,3]C.3(a)}{[1][95][]96}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{(a)}{96}{Subfigure C C.3(a)\relax }{subfigure.C.3.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{C.3(b)}{96}{Subfigure C C.3(b)}{subfigure.C.3.2}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl@cref}{{[subfigure][2][3,3]C.3(b)}{[1][95][]96}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{(b)}{96}{Subfigure C C.3(b)\relax }{subfigure.C.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.3}{\ignorespaces $v_x$ curve comparison among controllers.}}{96}{figure.caption.106}\protected@file@percent }
+\newlabel{fig:PathTrackCompWeightsVar_vx}{{C.3}{96}{$v_x$ curve comparison among controllers}{figure.caption.106}{}}
+\newlabel{fig:PathTrackCompWeightsVar_vx@cref}{{[figure][3][3]C.3}{[1][95][]96}{}{}{}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{96}{figure.caption.106}\protected@file@percent }
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{96}{figure.caption.106}\protected@file@percent }
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{C.5(a)}{96}{Subfigure C C.5(a)}{subfigure.C.5.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl@cref}{{[subfigure][1][3,5]C.5(a)}{[1][94][]96}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{(a)}{96}{Subfigure C C.5(a)\relax }{subfigure.C.5.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{C.5(b)}{96}{Subfigure C C.5(b)}{subfigure.C.5.2}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl@cref}{{[subfigure][2][3,5]C.5(b)}{[1][94][]96}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{(b)}{96}{Subfigure C C.5(b)\relax }{subfigure.C.5.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {C.5}{\ignorespaces $t_l$ curve comparison among controllers.}}{96}{figure.caption.107}\protected@file@percent }
-\newlabel{fig:PathTrackCompWeightsVar_tl}{{C.5}{96}{$\Traction _l$ curve comparison among controllers}{figure.caption.107}{}}
-\newlabel{fig:PathTrackCompWeightsVar_tl@cref}{{[figure][5][3]C.5}{[1][94][]96}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{96}{figure.caption.107}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{96}{figure.caption.107}\protected@file@percent }
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{C.6(a)}{96}{Subfigure C C.6(a)}{subfigure.C.6.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr@cref}{{[subfigure][1][3,6]C.6(a)}{[1][94][]96}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{(a)}{96}{Subfigure C C.6(a)\relax }{subfigure.C.6.1}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{C.6(b)}{96}{Subfigure C C.6(b)}{subfigure.C.6.2}{}}
-\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr@cref}{{[subfigure][2][3,6]C.6(b)}{[1][94][]96}{}{}{}}
-\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{(b)}{96}{Subfigure C C.6(b)\relax }{subfigure.C.6.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {C.6}{\ignorespaces $t_r$ curve comparison among controllers .}}{96}{figure.caption.108}\protected@file@percent }
-\newlabel{fig:PathTrackCompWeightsVar_tr}{{C.6}{96}{$\Traction _r$ curve comparison among controllers }{figure.caption.108}{}}
-\newlabel{fig:PathTrackCompWeightsVar_tr@cref}{{[figure][6][3]C.6}{[1][94][]96}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{96}{figure.caption.108}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{96}{figure.caption.108}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {C.7}{\ignorespaces Reference tour.}}{97}{figure.caption.109}\protected@file@percent }
-\newlabel{fig:referenceTourStats}{{C.7}{97}{Reference tour}{figure.caption.109}{}}
-\newlabel{fig:referenceTourStats@cref}{{[figure][7][3]C.7}{[1][96][]97}{}{}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Loop time along reference.}}}{97}{figure.caption.109}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Optimal cost along reference.}}}{97}{figure.caption.109}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Traction forces on friction cone.}}}{97}{figure.caption.109}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Traction rates along simulation.}}}{97}{figure.caption.109}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2.2}Real-time one-stage \acrshort {ocp} on rough, uneven terrain}{96}{subsection.C.2.2}\protected@file@percent }
+\newlabel{subsection:realtimeonestageocpRoughUnevenTerrain}{{C.2.2}{96}{Real-time one-stage \acrshort {ocp} on rough, uneven terrain}{subsection.C.2.2}{}}
+\newlabel{subsection:realtimeonestageocpRoughUnevenTerrain@cref}{{[subsection][2][3,2]C.2.2}{[1][95][]96}{}{}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{C.4(a)}{97}{Subfigure C C.4(a)}{subfigure.C.4.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr@cref}{{[subfigure][1][3,4]C.4(a)}{[1][95][]97}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{(a)}{97}{Subfigure C C.4(a)\relax }{subfigure.C.4.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{C.4(b)}{97}{Subfigure C C.4(b)}{subfigure.C.4.2}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr@cref}{{[subfigure][2][3,4]C.4(b)}{[1][95][]97}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{(b)}{97}{Subfigure C C.4(b)\relax }{subfigure.C.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.4}{\ignorespaces $\omega _z$ curve comparison among controllers.}}{97}{figure.caption.107}\protected@file@percent }
+\newlabel{fig:PathTrackCompWeightsVar_wz}{{C.4}{97}{$\omega _z$ curve comparison among controllers}{figure.caption.107}{}}
+\newlabel{fig:PathTrackCompWeightsVar_wz@cref}{{[figure][4][3]C.4}{[1][95][]97}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{97}{figure.caption.107}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{97}{figure.caption.107}\protected@file@percent }
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{C.5(a)}{97}{Subfigure C C.5(a)}{subfigure.C.5.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tl@cref}{{[subfigure][1][3,5]C.5(a)}{[1][95][]97}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tl}{{(a)}{97}{Subfigure C C.5(a)\relax }{subfigure.C.5.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{C.5(b)}{97}{Subfigure C C.5(b)}{subfigure.C.5.2}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tl@cref}{{[subfigure][2][3,5]C.5(b)}{[1][95][]97}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tl}{{(b)}{97}{Subfigure C C.5(b)\relax }{subfigure.C.5.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.5}{\ignorespaces $t_l$ curve comparison among controllers.}}{97}{figure.caption.108}\protected@file@percent }
+\newlabel{fig:PathTrackCompWeightsVar_tl}{{C.5}{97}{$\Traction _l$ curve comparison among controllers}{figure.caption.108}{}}
+\newlabel{fig:PathTrackCompWeightsVar_tl@cref}{{[figure][5][3]C.5}{[1][95][]97}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{97}{figure.caption.108}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{97}{figure.caption.108}\protected@file@percent }
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{C.6(a)}{97}{Subfigure C C.6(a)}{subfigure.C.6.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarInsideVspeed_tr@cref}{{[subfigure][1][3,6]C.6(a)}{[1][95][]97}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarInsideVspeed_tr}{{(a)}{97}{Subfigure C C.6(a)\relax }{subfigure.C.6.1}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{C.6(b)}{97}{Subfigure C C.6(b)}{subfigure.C.6.2}{}}
+\newlabel{subfig:PathTrackCompWeightsVarOutsideVspeed_tr@cref}{{[subfigure][2][3,6]C.6(b)}{[1][95][]97}{}{}{}}
+\newlabel{sub@subfig:PathTrackCompWeightsVarOutsideVspeed_tr}{{(b)}{97}{Subfigure C C.6(b)\relax }{subfigure.C.6.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.6}{\ignorespaces $t_r$ curve comparison among controllers .}}{97}{figure.caption.109}\protected@file@percent }
+\newlabel{fig:PathTrackCompWeightsVar_tr}{{C.6}{97}{$\Traction _r$ curve comparison among controllers }{figure.caption.109}{}}
+\newlabel{fig:PathTrackCompWeightsVar_tr@cref}{{[figure][6][3]C.6}{[1][95][]97}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{97}{figure.caption.109}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{97}{figure.caption.109}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {C.7}{\ignorespaces Reference tour.}}{98}{figure.caption.110}\protected@file@percent }
+\newlabel{fig:referenceTourStats}{{C.7}{98}{Reference tour}{figure.caption.110}{}}
+\newlabel{fig:referenceTourStats@cref}{{[figure][7][3]C.7}{[1][97][]98}{}{}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Loop time along reference.}}}{98}{figure.caption.110}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Optimal cost along reference.}}}{98}{figure.caption.110}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Traction forces on friction cone.}}}{98}{figure.caption.110}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Traction rates along simulation.}}}{98}{figure.caption.110}\protected@file@percent }
 \gdef\svg@ink@ver@settings{{1}{inkscape}{1}}
-\gdef \@abspage@last{117}
+\gdef \@abspage@last{118}

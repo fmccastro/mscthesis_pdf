@@ -140,17 +140,13 @@ Although \cite{rathod2021model} presents a NMPC application to a legged robot, i
 \label{section:nonlinearopt}
 
 A general NLP \cite{diehlnumericalocp} is stated as follows,
-\begin{equation}
-\begin{aligned}
-	\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} &f\left(\mathbf{w}\right)\\
-	\text{subject to} &
-	\begin{cases}
-		\eqCon{\mathbf{w}} = \mathbf{0}\\
-		\ineqCon{\mathbf{w}} \leq \mathbf{0}
-	\end{cases}
-\end{aligned}
-\label{eq:gennlp}
-\end{equation}
+\begin{subequations} \label{eq:gennlp}
+	\begin{align}
+		\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} &f\left(\mathbf{w}\right)  \\
+		\text{subject to} \hspace{5mm} \eqCon{\mathbf{w}} &= \mathbf{0}\\
+			\ineqCon{\mathbf{w}} &\leq \mathbf{0}
+	\end{align}
+\end{subequations}
 
 \noindent , where $\mathbf{w} \in \mathbb{R}^n$ are the optimization variables and $f:\mathbb{R}^n \to \mathbb{R}$ is the objetive function. $\mathbf{g}:\mathbb{R}^n \to \mathbb{R}^{n_g}$ and $\mathbf{h}:\mathbb{R}^n \to \mathbb{R}^{n_h}$ denote the equality and inequality constraint functions, respectively. These functions are assumed to be twice continuously differentiable.
 
@@ -172,7 +168,7 @@ If $\mathbf{w}^*$ is a local minimizer of \ref{eq:gennlp} and \acrshort{licq} ho
 
 \acrshort{kkt} conditions are the first-order optimality conditions for constrained \acrshort{nlp}s. These conditions are necessary for a local minimizer, but are enough in case \ref{eq:gennlp} is a convex \acrshort{nlp}.
 
-Equation \eqref{subeq:lagrangegrad} is equivalent to $\nabla_\mathbf{w} \lagrangian{\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*}$ , where $\lagrangian{\cdot}$ is  the so-called \textit{Lagrangian Function}.
+Equation \eqref{subeq:lagrangegrad} is equivalent to $\nabla_\mathbf{w}^* \lagrangian{\mathbf{w}^*,\,\bm{\gmultiplier}^*,\,\bm{\hmultiplier}^*}$ , where $\lagrangian{\cdot}$ is  the so-called \textit{Lagrangian Function}.
 
 \begin{definition}[Lagrangian function.]
 The Lagrangian function $\mathcal{L}: \mathbb{R}^{n + n_g + n_h} \to \mathbb{R}$ is assumed to be a twice continuously differentiable function, and it is defined by,
@@ -227,34 +223,29 @@ A Newton method aims to solve the nonlinear equation $\mathbf{f}(\mathbf{w})=0$,
 \label{subsubsection:sqp}
 
 Sequential quadratic programming is based on linearizing all nonlinear functions from problem \eqref{eq:gennlp}. At the end, one gets a quadratic programming (QP) problem as follows,
-
-\begin{equation}
-\begin{aligned}
-	\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} &\nabla f\left(\mathbf{w}_k\right)^T (\mathbf{w} - \mathbf{w}_k) + \frac{1}{2} (\mathbf{w} - \mathbf{w}_k)^T \mathbf{B}_k (\mathbf{w} - \mathbf{w}_k)\\
-	\text{subject to} &
-	\begin{cases}
-		\eqCon{\mathbf{w}_k} + \nabla \eqCon{\mathbf{w}_k}^T (\mathbf{w}_k - \mathbf{w}) = 0\\
-		\ineqCon{\mathbf{w}_k} + \nabla \ineqCon{\mathbf{w}_k}^T (\mathbf{w}_k - \mathbf{w}) \leq 0
-	\end{cases}
-\end{aligned}
-\label{eq:sqp}
-\end{equation}
+\begin{subequations}\label{eq:sqp}
+	\begin{align}
+	\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} \nabla f\left(\mathbf{w}_k\right)^T (\mathbf{w} - \mathbf{w}_k) + \frac{1}{2} (\mathbf{w} - \mathbf{w}_k)^T \, \mathbf{B}_k \, &(\mathbf{w} - \mathbf{w}_k)\\
+	\text{subject to} \hspace{5mm} \eqCon{\mathbf{w}_k} + \nabla \eqCon{\mathbf{w}_k}^T (\mathbf{w}_k - \mathbf{w}) = 0 \label{subeq:sqpg} \\
+			\ineqCon{\mathbf{w}_k} + \nabla \ineqCon{\mathbf{w}_k}^T (\mathbf{w}_k - \mathbf{w}) \leq 0 \label{subeq:sqph}
+	\end{align}
+\end{subequations}
 
 \noindent , where $\mathbf{B}_k$ may take the exact hessian $\nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}_k,\,\bm{\gmultiplier}_k,\,\bm{\hmultiplier}_k}$ or inexact hessians and jacobians. More information on variants of SQP that take approximate Hessians and Jacobians, as well as respective convergence rates and code implementations can be found in \cite{diehl2009efficient, diehlnumericalocp}.
 
 \begin{remark}
-In case $\mathbf{B}_k = \nabla_\mathbf{w}^2 \lagrangian{\mathbf{w}_k,\,\bm{\gmultiplier}_k,\,\bm{\hmultiplier}_k}$ and this hessian is positive semi-definite, the QP is convex and a feasible point $\mathbf{w}^*$ is  global minimum of problem \eqref{eq:sqp}.
+In case $\mathbf{B}_k = \nabla_{\mathbf{w}_k^2} \lagrangian{\mathbf{w}_k,\,\bm{\gmultiplier}_k,\,\bm{\hmultiplier}_k}$ and this hessian is positive semi-definite, the QP is convex and a feasible point $\mathbf{w}^*$ is  global minimum of problem \eqref{eq:sqp}.
 \end{remark}
 
-\subsubsection*{\acrlong{ipopt}}
+\subsubsection*{Interior-point optimizer}
 \label{subsubsection:ipopt}
 
-On the other hand, interior-point methods aim to replace the complementarity conditions by a smooth nonlinear approximation $\hmultiplier_i^* \, h_i\left( \mathbf{w}^*\right) = \tau$, where $\tau > 0,\, i = 1,\,\ldots,n_h$. Then, the solution obtained from the Newton method concerns to the following problem,
+On the other hand, interior-point methods aim to replace the complementarity conditions by a smooth nonlinear approximation $\hmultiplier_i^* \, h_i\left( \mathbf{w}^*\right) = \Barrier$, where $\Barrier > 0,\, i = 1,\,\ldots,n_h$. Then, the solution obtained from the Newton method concerns to the following problem,
 \begin{subequations}\label{eq:ipopt}
 	\begin{align}
-		\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} &f\left(\mathbf{w}\right) - \tau \sum_{i=1}^{n_h} \log\left(-h_i\left( \mathbf{w}\right) \right) \label{subeq:ipoptobj}\\
+		\underset{\mathbf{w}}{\text{minimize}} \hspace{1mm} f\left(\mathbf{w}\right) - \Barrier \sum_{i=1}^{n_h} &\log\left(-h_i\left( \mathbf{w}\right) \right) \label{subeq:ipoptobj}\\
 		\text{subject to} \hspace{5mm} \eqCon{\mathbf{w}} &= 0\label{subeq:ipoptg}\\
-		\hmultiplier_i^* \, h_i\left( \mathbf{w}^*\right) &= \tau \, | \,\tau > 0,\;i = 1,\,\ldots,n_h \label{subeq:ipoptprimaldual}
+		\hmultiplier_i^* \, h_i\left( \mathbf{w}^*\right) &= \Barrier \, | \,\Barrier > 0,\;i = 1,\,\ldots,n_h \label{subeq:ipoptprimaldual}
 	\end{align}
 \end{subequations}
 
@@ -380,7 +371,7 @@ When it comes to linearisation, subequation \eqref{subeq:continuity} is linearis
 The respective sensitivities are also differentiated. Here, the linearisation algorithm \nameref{alg:rk4ad} is presented, where $\mathbf{x}(t_k) = \mathbf{x}_k$ for the sake of simplicity. More details can be found in \cite{gros2020linear}. The propagation of $\odv{\mathbf{k}_j}{\mathbf{s}_i},\; \text{where} \, j = \{1,\,\ldots,4\},\; \mathbf{s}=\left[\mathbf{x}^T,\,\mathbf{u}^T\right]$ is derived by applying the chain rule to the propagation of $\mathbf{k}_j$. This algorithm is applied to every shooting node of problem \eqref{eq:ocptranscription2dms}. On every node, $N_s = \frac{\delta t_i}{h_i}$ integration steps are applied, with step $h_i$ \cite{gros2020linear}.
 
 \begin{algorithm}[H]
-	\caption{\textsc{RK4fAD}}\label{alg:rk4ad}
+	\caption{\textsc{RK4-FAD}}\label{alg:rk4ad}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
@@ -472,8 +463,10 @@ A \acrshort{nmpc} problem \cite{Rawlings2013, grunenmpc} lies in optimizing a co
 Typically, this problem is formulated on closed loop form, and computes a control law $\pi(\cdot)$, that delivers an optimized control $\mathbf{u}_0^*$ to be applied to a plant, such that $\mathbf{u}_0^* = \pi\left(\mathbf{\hat{x}}_0\right)$. In this thesis, only SQP methods are considered to solve a NMPC problem. Typically, such problems iteratively solve QPs like the one in \eqref{eq:qpocp} by providing Newton directions $\Delta \mathbf{w}_k$ to update the solution $\mathbf{w}_{k+1}$, apart from the Lagrange multipliers $\bm{\hmultiplier}_k$ and $\bm{\gmultiplier}_k$ (\ref{eq:updatesol}), until some convergence criteria is met (see algorithms 1 and 2 of \cite{gros2020linear}).
 
 \begin{equation}
-\mathbf{w}_k = \mathbf{w}_k^{guess} + \Delta \mathbf{w}_k ,\hspace{0.5cm} \bm{\hmultiplier}_k = \bm{\hmultiplier}_{QP}, \hspace{0.5cm} \bm{\gmultiplier}_k = \bm{\gmultiplier}_{QP}
-\label{eq:updatesol}
+	\begin{matrix}
+		\mathbf{w}_k = \mathbf{w}_k^{guess} + \Delta \mathbf{w}_k & \hspace{0.5cm} \bm{\hmultiplier}_k = \bm{\hmultiplier}_{QP} & \hspace{0.5cm} \bm{\gmultiplier}_k = \bm{\gmultiplier}_{QP}
+	\end{matrix}
+	\label{eq:updatesol}
 \end{equation}
 
 A survey on online NMPC optimization algorithms is presented in the final chapter of \cite{diehl2009efficient}. This thesis focuses on the application of the real-time iteration scheme. The work of \citet{bock2007numerical} presents variants of this scheme. Below, one describes the RTI algorithm as it is implemented in \texttt{acados}.
@@ -548,7 +541,8 @@ Assumption \ref{assumption:rti1} entails the fact that the initial guess must be
 
 \subsubsection*{Initial guess shifting}
 
-In order to meet assumption \ref{assumption:rti1}, a good shifting of $\mathbf{w}_{k-1}$ is needed to place $\mathbf{w}_k^{guess}$, sufficiently close to the global optimum solution. This process shifts each element  of $\mathbf{w}_{k-1}$ to the previous node, as follows.
+In order to meet assumption \ref{assumption:rti1}, a good shifting of $\mathbf{w}_{k-1}$ is needed to place $\mathbf{w}_k^{guess}$, sufficiently close to the global optimum solution. This process shifts each element  of $\mathbf{w}_{k-1}$ to the previous node, as it is denoted in \refeq{eq:shifting}.
+
 \begin{equation}
 \begin{aligned}
 \mathbf{x}_{i,\,k}^{guess} &= \mathbf{x}_{i+1,\,k-1}, \hspace{0.3cm} i = 0,\,\ldots,\,N-1\\

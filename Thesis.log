@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.11)  30 MAR 2026 16:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.8.11)  29 APR 2026 01:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1902,14 +1902,14 @@ co/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc} <./IST_A_CMYK_POS.pdf> <
 
 
 [11] (Thesis.lof
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 66.
-
 
 [12
 
 
 ]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 62.
+
 
 [13])
 \tf@lof=\write11
@@ -1983,7 +1983,7 @@ Chapter 2.
 [8]
 
 [9]
-<Figures/fm_example.png, id=947, 422.57875pt x 387.4475pt>
+<Figures/fm_example.png, id=949, 422.57875pt x 387.4475pt>
 File: Figures/fm_example.png Graphic file (type png)
 <use Figures/fm_example.png>
 Package pdftex.def Info: Figures/fm_example.png  used on input line 96.
@@ -2004,25 +2004,25 @@ Package pdftex.def Info: Figures/fm_example.png  used on input line 96.
 
 [16]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 383.
+put line 374.
 
 
 [17]
-Overfull \hbox (14.30247pt too wide) in paragraph at lines 406--407
-[]\OT1/phv/m/n/10 In al-go-rithm [][]\OT1/phv/m/sc/10 RK4fAD[][]\OT1/phv/m/n/10
- , $\OT1/cmr/bx/n/10 A[] \OT1/cmr/m/n/10 = []$ \OT1/phv/m/n/10 and $\OT1/cmr/bx
-/n/10 B[] \OT1/cmr/m/n/10 = []$\OT1/phv/m/n/10 , where $\OT1/cmr/bx/n/10 f\OT1/
-cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 )[]$ \OT1/phv/m/n/10 de-notes $
-\OT1/cmr/bx/n/10 f\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x\OT1/cmr/m/n/10 (\OML/cmm/
-m/it/10 t[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;  \OT1/cmr/bx/n/10 u\OT1/cmr/m/n/
-10 (\OML/cmm/m/it/10 t[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;  \OT1/cmr/bx/n/10 p
-\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[]\OT1/cmr/m/n/10 ))[]$\OT1/phv/m/n/10 ,
+Overfull \hbox (19.28258pt too wide) in paragraph at lines 397--398
+[]\OT1/phv/m/n/10 In al-go-rithm [][]\OT1/phv/m/sc/10 RK4-FAD[][]\OT1/phv/m/n/1
+0 , $\OT1/cmr/bx/n/10 A[] \OT1/cmr/m/n/10 = []$ \OT1/phv/m/n/10 and $\OT1/cmr/b
+x/n/10 B[] \OT1/cmr/m/n/10 = []$\OT1/phv/m/n/10 , where $\OT1/cmr/bx/n/10 f\OT1
+/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 )[]$ \OT1/phv/m/n/10 de-notes 
+$\OT1/cmr/bx/n/10 f\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 t[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;  \OT1/cmr/bx/n/10 u\OT1/cmr/m/n
+/10 (\OML/cmm/m/it/10 t[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;  \OT1/cmr/bx/n/10 
+p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t[]\OT1/cmr/m/n/10 ))[]$\OT1/phv/m/n/10 ,
  []
 
 
 
 [18]
-Overfull \hbox (31.34929pt too wide) in paragraph at lines 456--457
+Overfull \hbox (31.34929pt too wide) in paragraph at lines 447--448
 \OT1/phv/m/n/10 , where the Ja-co-bian ma-tri-ces of $\OT1/cmr/bx/n/10 h\OT1/cm
 r/m/n/10 (\OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 )$ \OT1/phv/m/n/10 and $\OT1/cmr/
 bx/n/10 g\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 )$ \OT1/phv/m/n/1
@@ -2030,23 +2030,23 @@ bx/n/10 g\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^A\OT1/cmr/m/n/10 )$ \OT1/phv/m/n/1
 $\OT1/cmr/bx/n/10 D[] \OT1/cmr/m/n/10 = []$\OT1/phv/m/n/10 ,
  []
 
-<Figures/MPC_scheme_basic.pdf, id=1170, 326.99791pt x 181.17564pt>
+<Figures/MPC_scheme_basic.pdf, id=1178, 326.99791pt x 181.17564pt>
 File: Figures/MPC_scheme_basic.pdf Graphic file (type pdf)
 <use Figures/MPC_scheme_basic.pdf>
-Package pdftex.def Info: Figures/MPC_scheme_basic.pdf  used on input line 467.
+Package pdftex.def Info: Figures/MPC_scheme_basic.pdf  used on input line 458.
 (pdftex.def)             Requested size: 295.90588pt x 163.96056pt.
 
 
 [19]
-<Figures/sqp_time.pdf, id=1195, 396.48125pt x 268.00125pt>
+<Figures/sqp_time.pdf, id=1203, 396.48125pt x 268.00125pt>
 File: Figures/sqp_time.pdf Graphic file (type pdf)
 <use Figures/sqp_time.pdf>
-Package pdftex.def Info: Figures/sqp_time.pdf  used on input line 488.
+Package pdftex.def Info: Figures/sqp_time.pdf  used on input line 481.
 (pdftex.def)             Requested size: 218.51521pt x 147.70782pt.
-<Figures/rti.pdf, id=1196, 396.48125pt x 268.00125pt>
+<Figures/rti.pdf, id=1204, 396.48125pt x 268.00125pt>
 File: Figures/rti.pdf Graphic file (type pdf)
 <use Figures/rti.pdf>
-Package pdftex.def Info: Figures/rti.pdf  used on input line 489.
+Package pdftex.def Info: Figures/rti.pdf  used on input line 482.
 (pdftex.def)             Requested size: 218.51521pt x 147.70782pt.
 
 
@@ -2055,46 +2055,46 @@ pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.536 	\State
+l.529 	\State
               Shift $\mathbf{w}_{k-1}$ to construct $\mathbf{w}_k^{guess}$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.537 	\State
+l.530 	\State
               Evaluate $\processModel{\cdot},\, \eqCon{\cdot},\,\ineqCon{\cd...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.538 	\State
+l.531 	\State
               Build QP \eqref{eq:qpocp} without the knowledge of $\mathbf{\h...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.539 	\State
+l.532 	\State
               \Return \eqref{eq:qpocp}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.542 	\State
+l.535 	\State
               Compute Newton direction update $\Delta \mathbf{w}_k$ by intro...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.543 	\State
+l.536 	\State
               Apply the full Newton step
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.545 	\State
+l.538 	\State
               \Return $\mathbf{w}_k$
 
 [21 <./Figures/sqp_time.pdf> <./Figures/rti.pdf
@@ -2106,10 +2106,6 @@ pdfTeX warning: pdflatex (file ./Figures/rti.pdf): PDF inclusion: multiple pdfs
 [22] (Thesis_Proposed_Approach.tex
 Chapter 3.
 
-LaTeX Warning: Reference `section:modelValidation' on page 23 undefined on inpu
-t line 15.
-
-
 
 [23
 
@@ -2117,59 +2113,59 @@ t line 15.
 ]
 
 [24]
-<Figures/wheel_dynamics.pdf, id=1388, 245.91875pt x 229.85875pt>
+<Figures/wheel_dynamics.pdf, id=1397, 245.91875pt x 229.85875pt>
 File: Figures/wheel_dynamics.pdf Graphic file (type pdf)
 <use Figures/wheel_dynamics.pdf>
-Package pdftex.def Info: Figures/wheel_dynamics.pdf  used on input line 150.
+Package pdftex.def Info: Figures/wheel_dynamics.pdf  used on input line 151.
 (pdftex.def)             Requested size: 100.15425pt x 93.61487pt.
 
 
 [25 <./Figures/wheel_dynamics.pdf>]
 
 [26]
-<Figures/rigid_rigid.png, id=1440, 342.27875pt x 363.3575pt>
+<Figures/rigid_rigid.png, id=1448, 342.27875pt x 363.3575pt>
 File: Figures/rigid_rigid.png Graphic file (type png)
 <use Figures/rigid_rigid.png>
-Package pdftex.def Info: Figures/rigid_rigid.png  used on input line 294.
+Package pdftex.def Info: Figures/rigid_rigid.png  used on input line 293.
 (pdftex.def)             Requested size: 100.15425pt x 106.31906pt.
 
-Underfull \hbox (badness 2384) in paragraph at lines 294--294
+Underfull \hbox (badness 2384) in paragraph at lines 293--293
 []\OT1/phv/m/n/8 (a) Con-tact be-tween rigid
  []
 
-<Figures/rigid_deformable.png, id=1441, 342.27875pt x 359.3425pt>
+<Figures/rigid_deformable.png, id=1449, 342.27875pt x 359.3425pt>
 File: Figures/rigid_deformable.png Graphic file (type png)
 <use Figures/rigid_deformable.png>
-Package pdftex.def Info: Figures/rigid_deformable.png  used on input line 295.
+Package pdftex.def Info: Figures/rigid_deformable.png  used on input line 294.
 (pdftex.def)             Requested size: 100.15425pt x 105.14426pt.
 
-Underfull \hbox (badness 2384) in paragraph at lines 295--295
+Underfull \hbox (badness 2384) in paragraph at lines 294--294
 []\OT1/phv/m/n/8 (b) Con-tact be-tween rigid
  []
 
-<Figures/deformable_rigid.png, id=1442, 345.29pt x 322.20375pt>
+<Figures/deformable_rigid.png, id=1450, 345.29pt x 322.20375pt>
 File: Figures/deformable_rigid.png Graphic file (type png)
 <use Figures/deformable_rigid.png>
-Package pdftex.def Info: Figures/deformable_rigid.png  used on input line 296.
+Package pdftex.def Info: Figures/deformable_rigid.png  used on input line 295.
 (pdftex.def)             Requested size: 100.15425pt x 93.45636pt.
 
-Underfull \hbox (badness 6927) in paragraph at lines 296--296
+Underfull \hbox (badness 6927) in paragraph at lines 295--295
 []\OT1/phv/m/n/8 (c) Con-tact be-tween de-
  []
 
-<Figures/deformable_deformable.png, id=1443, 345.29pt x 321.2pt>
+<Figures/deformable_deformable.png, id=1451, 345.29pt x 321.2pt>
 File: Figures/deformable_deformable.png Graphic file (type png)
 <use Figures/deformable_deformable.png>
 Package pdftex.def Info: Figures/deformable_deformable.png  used on input line 
-297.
+296.
 (pdftex.def)             Requested size: 100.15425pt x 93.1652pt.
 
-Underfull \hbox (badness 6268) in paragraph at lines 297--297
+Underfull \hbox (badness 6268) in paragraph at lines 296--296
 []\OT1/phv/m/n/8 (d) Con-tact be-tween de-
  []
 
 
-Underfull \hbox (badness 7433) in paragraph at lines 297--297
+Underfull \hbox (badness 7433) in paragraph at lines 296--296
 \OT1/phv/m/n/8 formable wheel and de-
  []
 
@@ -2177,109 +2173,73 @@ Underfull \hbox (badness 7433) in paragraph at lines 297--297
 
 [27 <./Figures/rigid_rigid.png> <./Figures/rigid_deformable.png> <./Figures/def
 ormable_rigid.png> <./Figures/deformable_deformable.png>]
-<Figures/coulomb_friction_cone.pdf, id=1467, 684.5575pt x 281.05pt>
+<Figures/coulomb_friction_cone.pdf, id=1474, 684.5575pt x 281.05pt>
 File: Figures/coulomb_friction_cone.pdf Graphic file (type pdf)
 <use Figures/coulomb_friction_cone.pdf>
 Package pdftex.def Info: Figures/coulomb_friction_cone.pdf  used on input line 
-342.
+339.
 (pdftex.def)             Requested size: 364.19667pt x 149.52614pt.
 
 
 [28 <./Figures/coulomb_friction_cone.pdf>]
 
 [29]
-<Figures/Model validation/states_comparison_3d_sim_x.pdf, id=1542, 1335.54965pt
+<Figures/Model validation/states_comparison_3d_sim_x.pdf, id=1550, 1335.54965pt
  x 706.0779pt>
 File: Figures/Model validation/states_comparison_3d_sim_x.pdf Graphic file (typ
 e pdf)
 <use Figures/Model validation/states_comparison_3d_sim_x.pdf>
 Package pdftex.def Info: Figures/Model validation/states_comparison_3d_sim_x.pd
-f  used on input line 515.
-(pdftex.def)             Requested size: 136.57462pt x 72.19568pt.
-<Figures/Model validation/states_comparison_3d_sim_y.pdf, id=1543, 1335.54965pt
+f  used on input line 526.
+(pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
+<Figures/Model validation/states_comparison_3d_sim_y.pdf, id=1551, 1335.54965pt
  x 706.0779pt>
 File: Figures/Model validation/states_comparison_3d_sim_y.pdf Graphic file (typ
 e pdf)
 <use Figures/Model validation/states_comparison_3d_sim_y.pdf>
 Package pdftex.def Info: Figures/Model validation/states_comparison_3d_sim_y.pd
-f  used on input line 516.
-(pdftex.def)             Requested size: 136.57462pt x 72.19568pt.
-<Figures/Model validation/states_comparison_3d_sim_roll.pdf, id=1544, 1335.5496
-5pt x 706.0779pt>
-File: Figures/Model validation/states_comparison_3d_sim_roll.pdf Graphic file (
-type pdf)
-<use Figures/Model validation/states_comparison_3d_sim_roll.pdf>
-Package pdftex.def Info: Figures/Model validation/states_comparison_3d_sim_roll
-.pdf  used on input line 517.
-(pdftex.def)             Requested size: 136.57462pt x 72.19568pt.
-<Figures/Model validation/states_comparison_3d_sim_pitch.pdf, id=1545, 1335.549
-65pt x 706.0779pt>
-File: Figures/Model validation/states_comparison_3d_sim_pitch.pdf Graphic file 
-(type pdf)
-<use Figures/Model validation/states_comparison_3d_sim_pitch.pdf>
-Package pdftex.def Info: Figures/Model validation/states_comparison_3d_sim_pitc
-h.pdf  used on input line 518.
-(pdftex.def)             Requested size: 136.57462pt x 72.19568pt.
-<Figures/Model validation/states_comparison_3d_sim_yaw.pdf, id=1546, 1335.54965
+f  used on input line 527.
+(pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
+<Figures/Model validation/states_comparison_3d_sim_yaw.pdf, id=1552, 1335.54965
 pt x 706.0779pt>
 File: Figures/Model validation/states_comparison_3d_sim_yaw.pdf Graphic file (t
 ype pdf)
 <use Figures/Model validation/states_comparison_3d_sim_yaw.pdf>
 Package pdftex.def Info: Figures/Model validation/states_comparison_3d_sim_yaw.
-pdf  used on input line 519.
-(pdftex.def)             Requested size: 136.57462pt x 72.19568pt.
-<Figures/Model validation/states_comparison_3d_sim_vx.pdf, id=1547, 1335.54965p
+pdf  used on input line 528.
+(pdftex.def)             Requested size: 141.12456pt x 74.60902pt.
+<Figures/Model validation/states_comparison_3d_sim_vx.pdf, id=1553, 1335.54965p
 t x 706.0779pt>
 File: Figures/Model validation/states_comparison_3d_sim_vx.pdf Graphic file (ty
 pe pdf)
 <use Figures/Model validation/states_comparison_3d_sim_vx.pdf>
 Package pdftex.def Info: Figures/Model validation/states_comparison_3d_sim_vx.p
-df  used on input line 520.
-(pdftex.def)             Requested size: 136.57462pt x 72.19568pt.
-<Figures/Model validation/states_comparison_3d_sim_wz.pdf, id=1548, 1335.54965p
+df  used on input line 529.
+(pdftex.def)             Requested size: 141.12456pt x 74.60902pt.
+<Figures/Model validation/states_comparison_3d_sim_wz.pdf, id=1554, 1335.54965p
 t x 706.0779pt>
 File: Figures/Model validation/states_comparison_3d_sim_wz.pdf Graphic file (ty
 pe pdf)
 <use Figures/Model validation/states_comparison_3d_sim_wz.pdf>
 Package pdftex.def Info: Figures/Model validation/states_comparison_3d_sim_wz.p
-df  used on input line 521.
-(pdftex.def)             Requested size: 136.57462pt x 72.19568pt.
-<Figures/Model validation/states_comparison_3d_sim_tl.pdf, id=1549, 1335.54965p
-t x 706.0779pt>
-File: Figures/Model validation/states_comparison_3d_sim_tl.pdf Graphic file (ty
-pe pdf)
-<use Figures/Model validation/states_comparison_3d_sim_tl.pdf>
-Package pdftex.def Info: Figures/Model validation/states_comparison_3d_sim_tl.p
-df  used on input line 522.
-(pdftex.def)             Requested size: 136.57462pt x 72.19568pt.
-<Figures/Model validation/states_comparison_3d_sim_tr.pdf, id=1550, 1335.54965p
-t x 706.0779pt>
-File: Figures/Model validation/states_comparison_3d_sim_tr.pdf Graphic file (ty
-pe pdf)
-<use Figures/Model validation/states_comparison_3d_sim_tr.pdf>
-Package pdftex.def Info: Figures/Model validation/states_comparison_3d_sim_tr.p
-df  used on input line 523.
-(pdftex.def)             Requested size: 136.57462pt x 72.19568pt.
+df  used on input line 530.
+(pdftex.def)             Requested size: 141.12456pt x 74.60902pt.
 
 
 [30]
-<Figures/Model validation/max_inclination.pdf, id=1566, 1335.54965pt x 706.0779
+<Figures/Model validation/max_inclination.pdf, id=1568, 1335.54965pt x 706.0779
 pt>
 File: Figures/Model validation/max_inclination.pdf Graphic file (type pdf)
 <use Figures/Model validation/max_inclination.pdf>
 Package pdftex.def Info: Figures/Model validation/max_inclination.pdf  used on 
-input line 559.
+input line 556.
 (pdftex.def)             Requested size: 409.71692pt x 216.6086pt.
 )
 
 [31 <./Figures/Model validation/states_comparison_3d_sim_x.pdf> <./Figures/Mode
 l validation/states_comparison_3d_sim_y.pdf> <./Figures/Model validation/states
-_comparison_3d_sim_roll.pdf> <./Figures/Model validation/states_comparison_3d_s
-im_pitch.pdf> <./Figures/Model validation/states_comparison_3d_sim_yaw.pdf> <./
-Figures/Model validation/states_comparison_3d_sim_vx.pdf> <./Figures/Model vali
-dation/states_comparison_3d_sim_wz.pdf> <./Figures/Model validation/states_comp
-arison_3d_sim_tl.pdf> <./Figures/Model validation/states_comparison_3d_sim_tr.p
-df>]
+_comparison_3d_sim_yaw.pdf> <./Figures/Model validation/states_comparison_3d_si
+m_vx.pdf> <./Figures/Model validation/states_comparison_3d_sim_wz.pdf>]
 
 [32 <./Figures/Model validation/max_inclination.pdf>] (Thesis_Path_Planning.tex
 Chapter 4.
@@ -2289,7 +2249,7 @@ Chapter 4.
 
 
 ]
-Overfull \hbox (29.60503pt too wide) in alignment at lines 59--59
+Overfull \hbox (29.60503pt too wide) in alignment at lines 70--70
  [][][] []
  []
 
@@ -2298,228 +2258,229 @@ pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 }
+l.92 }
       
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 }
+l.92 }
       
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 }
+l.92 }
       
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 }
+l.92 }
       
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 }
+l.92 }
       
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 }
+l.92 }
       
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 }
+l.92 }
       
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 }
+l.92 }
       
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 }
+l.92 }
       
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.88 	\Function
+l.99 	\Function
                {inclinationfixyaw}{$\boldsymbol{\Orientation}_{max}, \, \yaw...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.89 	\ForEach
-              {$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ldo...
-
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.90 	\State
-             $\boldsymbol{w}_0 \gets \textsc{initialguess}(x_i,\, y_j, \, \y...
-
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.91 	\If
-         {$\Robot_{\mathbf{p}_2} \subset \Map_2$}
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.92 	\State
-             $\TraversabilityCost,\,\boldsymbol{w}^* \gets \textsc{terrainsl...
-
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.93 	\Else
-           
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.94 	\State
-             $c \gets \frac{\pi}{2}$
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.95 	\EndIf
-            
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.96 	\State
-             $\FunctionTraversability_d(i,\, j) \gets c$
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.97 	\EndFor
-             
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.98 	\State
-             \Return $\FunctionTraversability_d(\cdot)$
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.12})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.99 	\EndFunction
-                  
-
-[34]
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.142 	\Function
-                {inclinationvaryaw}{$\boldsymbol{\Orientation}_{max}, \, \Fu...
-
-pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
-has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.143 	\ForEach
+l.100 	\ForEach
                {$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ld...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.144 	\ForEach
-               {$\yaw_k$} \Comment{variable yaw}
+l.101 	\State
+              $\boldsymbol{w}_0 \gets \textsc{initialguess}(x_i,\, y_j, \, \...
+
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.145 	\State
+l.102 	\If
+          {$\Robot_{\mathbf{p}_2} \subset \Map_2$}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.103 	\State
+              $\TraversabilityCost,\,\boldsymbol{w}^* \gets \textsc{terrains...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.104 	\Else
+            
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.105 	\State
+              $c \gets \frac{\pi}{2}$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.106 	\EndIf
+             
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107 	\State
+              $\FunctionTraversability_d(i,\, j) \gets c$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.108 	\EndFor
+              
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.109 	\State
+              \Return $\FunctionTraversability_d(\cdot)$
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.12})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.110 	\EndFunction
+                   
+
+[34]
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.157 	\Function
+                {inclinationvaryaw}{$\boldsymbol{\Orientation}_{max}, \, \Fu...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158 	\ForEach
+               {$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ld...
+
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.159 	\ForEach
+               {$\yaw_k \in \mathcal{Y}$} \Comment{change heading}
+pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.160 	\State
               $\boldsymbol{w}_0 \gets \textsc{initialguess}(x_i, \, y_j, \, ...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.146 	\If
+l.161 	\If
           {$\Robot_{\mathbf{p}_2} \subset \Map_2$}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.147 	\State
+l.162 	\State
               $\TraversabilityCost_k,\, \left( \boldsymbol{w}^* \right)_k \g...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.148 	\Else
+l.163 	\Else
             
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.149 	\State
+l.164 	\State
               $\TraversabilityCost_k \gets \frac{\pi}{2}$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.150 	\EndIf
+l.165 	\EndIf
              
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.151 	\EndFor
+l.166 	\EndFor
               
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.152 	\State
+l.167 	\State
               $\TraversabilityCost \gets \text{max}\left( \TraversabilityCos...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.12})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.153 	\State
-              $\FunctionTraversability_d(i,\, j) \gets \TraversabilityCost$
+l.168 	\State
+              $\FunctionTraversability_d(i,\, j) \gets \TraversabilityCost$ ...
+
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.13})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.154 	\EndFor
+l.169 	\EndFor
               
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.14})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.155 	\State
+l.170 	\State
               \Return $\FunctionTraversability_d(\cdot)$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.15})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.156 	\EndFunction
+l.171 	\EndFunction
                    
 
 [35]
@@ -2527,96 +2488,96 @@ pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.186 	\Function
+l.201 	\Function
                 {roughness}{$\boldsymbol{\Orientation}_{max}, \, \FunctionEl...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.187 	\ForEach
+l.202 	\ForEach
                {$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ld...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.188 	\If
+l.203 	\If
           {$\Robot_{\mathbf{p}_2} \subset \Map_2$}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.189 	\ForEach
-               {$\yaw_k$} \Comment{variable yaw}
+l.204 	\ForEach
+               {$\yaw_k \in \mathcal{Y}$} \Comment{change heading}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.190 	\State
-              $\TraversabilityCost_k \gets \text{equation} \left( \ref{eq:te...
+l.205 	\State
+              $\TraversabilityCost_k \gets \text{equation \eqref{eq:terrainR...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.191 	\EndFor
+l.206 	\EndFor
               
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.192 	\Else
+l.207 	\Else
             
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.193 	\State
+l.208 	\State
               $\TraversabilityCost_k \gets \texttt{None}$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.194 	\EndIf
+l.209 	\EndIf
              
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.195 	\State
+l.210 	\State
               $\TraversabilityCost \gets \text{max}\left( \TraversabilityCos...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.196 	\State
+l.211 	\State
               $\FunctionTraversability_d(i,\, j) \gets \TraversabilityCost$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.12})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.197 	\EndFor
+l.212 	\EndFor
               
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.13})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.198 	\State
+l.213 	\State
               \text{Replace cells assigned with $\texttt{None}$ by max} $\le...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.14})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.199 	\State
+l.214 	\State
               \Return $\FunctionTraversability_d(\cdot)$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.15})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.200 	\EndFunction
+l.215 	\EndFunction
                    
 
 [36]
@@ -2624,399 +2585,399 @@ pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1})
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.229 	\State
+l.246 	\State
               $\FunctionTraversability_{d, \, inc}(\cdot) \gets \textsc{incl...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.230 	\State
+l.247 	\State
               $\FunctionTraversability_{d,\,r}(\cdot) \gets \textsc{roughnes...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.231 	\State
+l.248 	\State
               $\FunctionTraversability_{d, \, inc}(\cdot),\, \FunctionTraver...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.232 	\ForEach
+l.249 	\ForEach
                {$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ld...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.233 	\State
+l.250 	\State
               $\FunctionTraversability_d(i,\, j) \gets \text{max} \left(\Fun...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.234 	\EndFor
+l.251 	\EndFor
               
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.235 	\ForEach
+l.252 	\ForEach
                {$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ld...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.236 	\If
+l.253 	\If
           {$\FunctionTraversability_d(i,\, j) \geq C$}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.237 	\State
-              \text{Add $\left( i, \, j \right)$ to $p$} \Comment{Add point ...
+l.254 	\State
+              \text{Add $\left( i, \, j \right)$ to $p$} \Comment{add point ...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.238 	\EndIf
+l.255 	\EndIf
              
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.239 	\EndFor
+l.256 	\EndFor
               
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.12})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.240 	\ForEach
+l.257 	\ForEach
                {$\{i,\,j\} \in p$}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.13})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.241 	\ForEach
+l.258 	\ForEach
                {$\{x_{i_2},\, y_{j_2}\} \in \{x_i - r_s,\,\ldots,x_i + r_s\}...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.14})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.242 	\If
+l.259 	\If
           {$\{x_{i_2},\,y_{j_2}\} \in \Map_2$}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.15})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.243 	\State
+l.260 	\State
               $d \gets \sqrt{\left( x_{i_2} - x_i \right)^2 + \left( y_{j_2}...
 
 
 [37]
-<Figures/elevationMap1.png, id=1978, 469.755pt x 354.8457pt>
+<Figures/elevationMap1.png, id=1837, 469.755pt x 354.8457pt>
 File: Figures/elevationMap1.png Graphic file (type png)
 <use Figures/elevationMap1.png>
-Package pdftex.def Info: Figures/elevationMap1.png  used on input line 276.
+Package pdftex.def Info: Figures/elevationMap1.png  used on input line 293.
 (pdftex.def)             Requested size: 282.24911pt x 213.20685pt.
 
-Overfull \hbox (23.72621pt too wide) in paragraph at lines 281--291
+Overfull \hbox (23.72621pt too wide) in paragraph at lines 298--308
  [][] 
  []
 
 
 
-[38 <./Figures/elevationMap1.png>]
-<Figures/HeightMin+Points+1.png, id=1993, 469.755pt x 354.8457pt>
-File: Figures/HeightMin+Points+1.png Graphic file (type png)
-<use Figures/HeightMin+Points+1.png>
-Package pdftex.def Info: Figures/HeightMin+Points+1.png  used on input line 391
-.
-(pdftex.def)             Requested size: 141.12456pt x 106.60071pt.
-<Figures/HeightMin_maxInclination+Points+1.png, id=1995, 469.755pt x 354.8457pt
+[38]
+<Figures/HeightMin_maxInclination+Points+1.png, id=1857, 469.755pt x 354.8457pt
 >
 File: Figures/HeightMin_maxInclination+Points+1.png Graphic file (type png)
 <use Figures/HeightMin_maxInclination+Points+1.png>
 Package pdftex.def Info: Figures/HeightMin_maxInclination+Points+1.png  used on
- input line 394.
-(pdftex.def)             Requested size: 141.12456pt x 106.60071pt.
-<Figures/maxTerrainRoughness+1.png, id=1997, 469.755pt x 354.8457pt>
+ input line 408.
+(pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
+<Figures/maxTerrainRoughness+1.png, id=1859, 469.755pt x 354.8457pt>
 File: Figures/maxTerrainRoughness+1.png Graphic file (type png)
 <use Figures/maxTerrainRoughness+1.png>
 Package pdftex.def Info: Figures/maxTerrainRoughness+1.png  used on input line 
-397.
-(pdftex.def)             Requested size: 141.12456pt x 106.60071pt.
-<Figures/worstCase+Points+1.png, id=1999, 469.755pt x 354.8457pt>
+411.
+(pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
+<Figures/worstCase+Points+1.png, id=1861, 469.755pt x 354.8457pt>
 File: Figures/worstCase+Points+1.png Graphic file (type png)
 <use Figures/worstCase+Points+1.png>
-Package pdftex.def Info: Figures/worstCase+Points+1.png  used on input line 400
+Package pdftex.def Info: Figures/worstCase+Points+1.png  used on input line 414
 .
 (pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
-<Figures/mapRefinement+Points+0.9+1.0+1.png, id=2000, 469.755pt x 354.8457pt>
+<Figures/mapRefinement+Points+0.9+1.0+1.png, id=1862, 469.755pt x 354.8457pt>
 File: Figures/mapRefinement+Points+0.9+1.0+1.png Graphic file (type png)
 <use Figures/mapRefinement+Points+0.9+1.0+1.png>
 Package pdftex.def Info: Figures/mapRefinement+Points+0.9+1.0+1.png  used on in
-put line 403.
+put line 417.
 (pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
 
 
-[39 <./Figures/HeightMin+Points+1.png> <./Figures/HeightMin_maxInclination+Poin
-ts+1.png> <./Figures/maxTerrainRoughness+1.png> <./Figures/worstCase+Points+1.p
-ng> <./Figures/mapRefinement+Points+0.9+1.0+1.png>]
+[39 <./Figures/elevationMap1.png>]
+Overfull \hbox (2.47522pt too wide) in paragraph at lines 437--451
+ [][] 
+ []
 
-[40]
+
+
+[40 <./Figures/HeightMin_maxInclination+Points+1.png> <./Figures/maxTerrainRoug
+hness+1.png> <./Figures/worstCase+Points+1.png> <./Figures/mapRefinement+Points
++0.9+1.0+1.png>]
 
 [41]
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.529 	\Function
+l.562 	\Function
                 {getpotentialflow}{$\FunctionTraversability_d \left( \cdot \...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.530 	\ForEach
+l.563 	\ForEach
                {$\{i,\,j\} \in \{0,\, \ldots, \, n_x - 1\} \times \{0,\, \ld...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.531 		\If
+l.564 		\If
            {$\FunctionTraversability_d \left( x_i,\,y_j \right) \geq c_{max}$}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.532 			\State
+l.565 			\State
                 $\text{Mask} \; \speedFunction{x_i,\,y_j}$ \Comment{Label th...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.533 		\Else
+l.566 		\Else
              
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.534 			\State
+l.567 			\State
                 $\speedFunction{x_i,\,y_j} \gets \text{equation \ref{eq:cost...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.535 		\EndIf
+l.568 		\EndIf
               
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.536 	\EndFor
+l.569 	\EndFor
               
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.537 	\State
+l.570 	\State
               $\timeFunction{\cdot} \gets \text{equation \ref{eq:eikonalEqua...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.538 	\State
+l.571 	\State
               \Return $\timeFunction{\cdot}$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.539 	\EndFunction
+l.572 	\EndFunction
                    
+
+[42]
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.549 	\Function
+l.582 	\Function
                 {getoptimalpath}{$\timeFunction{\cdot}, \,S, \,G, \,N$}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.550 	\If
+l.583 	\If
           {$S \in \ObstacleSpace \; \text{or} \; G \in \ObstacleSpace$}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.3}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.551 		\State
+l.584 		\State
                \Return $\text{empty path}$ \Comment{Reject path generation i...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.4}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.552 	\EndIf
+l.585 	\EndIf
              
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.5}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.553 	\State
+l.586 	\State
               $\left( x_i,\,y_j \right) \gets S,\, \text{index} \gets 0$ \Co...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.6}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.554 	\While
+l.587 	\While
              {$\left( x_i,\,y_j \right) \notin \neighborhood(G) \text{ and i...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.7}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.555 		\State
+l.588 		\State
                $\left( x_i,\,y_j \right) \gets \textsc{getposition} \left( \...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.8}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.556 		\State
+l.589 		\State
                $\text{path.append}\left( x_i,\,y_j \right)$ \Comment{Append ...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.9}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.557 		\State
+l.590 		\State
                $\text{index} \gets \text{index + 1}$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.10})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.558 	\EndWhile
+l.591 	\EndWhile
                 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.11})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.559 	\While
+l.592 	\While
              {$\text{index} \leq N$}
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.12})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.560 		\State
+l.593 		\State
                $\text{path.append}\left( x_i,\,y_j \right)$ \Comment{Fill pa...
 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.13})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.561 		\State
+l.594 		\State
                $\text{index} \gets \text{index + 1}$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.14})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.562 	\EndWhile
+l.595 	\EndWhile
                 
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.15})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.563 	\State
+l.596 	\State
               \Return $\text{path}$
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.16})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.564 	\EndFunction
+l.597 	\EndFunction
                    
 
-[42]
-<Figures/speedMap+worstCase+Points.png, id=2101, 469.755pt x 354.8457pt>
+[43]
+<Figures/speedMap+worstCase+Points.png, id=1979, 469.755pt x 354.8457pt>
 File: Figures/speedMap+worstCase+Points.png Graphic file (type png)
 <use Figures/speedMap+worstCase+Points.png>
 Package pdftex.def Info: Figures/speedMap+worstCase+Points.png  used on input l
-ine 582.
+ine 615.
 (pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
-<Figures/potentialFlow+worstCase+Points.pdf, id=2102, 469.97736pt x 355.32701pt
+<Figures/potentialFlow+worstCase+Points.pdf, id=1980, 469.97736pt x 355.32701pt
 >
 File: Figures/potentialFlow+worstCase+Points.pdf Graphic file (type pdf)
 <use Figures/potentialFlow+worstCase+Points.pdf>
 Package pdftex.def Info: Figures/potentialFlow+worstCase+Points.pdf  used on in
-put line 585.
+put line 618.
 (pdftex.def)             Requested size: 218.51521pt x 165.20908pt.
-<Figures/potentialFlow+paths+worstCase+Points.pdf, id=2103, 469.97736pt x 355.3
+<Figures/potentialFlow+paths+worstCase+Points.pdf, id=1981, 469.97736pt x 355.3
 2701pt>
 File: Figures/potentialFlow+paths+worstCase+Points.pdf Graphic file (type pdf)
 <use Figures/potentialFlow+paths+worstCase+Points.pdf>
 Package pdftex.def Info: Figures/potentialFlow+paths+worstCase+Points.pdf  used
- on input line 596.
+ on input line 629.
 (pdftex.def)             Requested size: 218.51521pt x 165.20908pt.
-<Figures/potentialFlow+paths+mapRefinement+Points.pdf, id=2104, 469.97736pt x 3
+<Figures/potentialFlow+paths+mapRefinement+Points.pdf, id=1982, 469.97736pt x 3
 55.32701pt>
 File: Figures/potentialFlow+paths+mapRefinement+Points.pdf Graphic file (type p
 df)
 <use Figures/potentialFlow+paths+mapRefinement+Points.pdf>
 Package pdftex.def Info: Figures/potentialFlow+paths+mapRefinement+Points.pdf  
-used on input line 599.
+used on input line 632.
 (pdftex.def)             Requested size: 218.51521pt x 165.20908pt.
-<Figures/comparisonOfPaths.pdf, id=2109, 469.94543pt x 355.32701pt>
+<Figures/comparisonOfPaths.pdf, id=1987, 469.94543pt x 355.32701pt>
 File: Figures/comparisonOfPaths.pdf Graphic file (type pdf)
 <use Figures/comparisonOfPaths.pdf>
-Package pdftex.def Info: Figures/comparisonOfPaths.pdf  used on input line 613.
+Package pdftex.def Info: Figures/comparisonOfPaths.pdf  used on input line 646.
 
 (pdftex.def)             Requested size: 282.24911pt x 213.40929pt.
 
 
-[43 <./Figures/speedMap+worstCase+Points.png> <./Figures/potentialFlow+worstCas
-e+Points.pdf>])
+[44 <./Figures/speedMap+worstCase+Points.png> <./Figures/potentialFlow+worstCas
+e+Points.pdf> <./Figures/potentialFlow+paths+worstCase+Points.pdf> <./Figures/p
+otentialFlow+paths+mapRefinement+Points.pdf>])
 
-[44 <./Figures/potentialFlow+paths+worstCase+Points.pdf> <./Figures/potentialFl
-ow+paths+mapRefinement+Points.pdf> <./Figures/comparisonOfPaths.pdf>]
-(Thesis_NMPC.tex
+[45 <./Figures/comparisonOfPaths.pdf>] (Thesis_NMPC.tex
 Chapter 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrlong' on input line 11.
 
 
-LaTeX Warning: Reference `subsection:comparisonnmpc' on page 45 undefined on in
+LaTeX Warning: Reference `subsection:comparisonnmpc' on page 46 undefined on in
 put line 23.
 
 
-LaTeX Warning: Reference `subsection:comparisonnmpc' on page 45 undefined on in
+LaTeX Warning: Reference `subsection:comparisonnmpc' on page 46 undefined on in
 put line 58.
 
 
 
-[45
+[46
 
 
 ]
-<Figures/one_vs_two_stage_vspeed.pdf, id=2276, 1335.54965pt x 706.0779pt>
+<Figures/one_vs_two_stage_vspeed.pdf, id=2154, 1335.54965pt x 706.0779pt>
 File: Figures/one_vs_two_stage_vspeed.pdf Graphic file (type pdf)
 <use Figures/one_vs_two_stage_vspeed.pdf>
 Package pdftex.def Info: Figures/one_vs_two_stage_vspeed.pdf  used on input lin
 e 68.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
-<Figures/one_vs_two_stage_no_vspeed.pdf, id=2277, 1335.54965pt x 706.0779pt>
+<Figures/one_vs_two_stage_no_vspeed.pdf, id=2155, 1335.54965pt x 706.0779pt>
 File: Figures/one_vs_two_stage_no_vspeed.pdf Graphic file (type pdf)
 <use Figures/one_vs_two_stage_no_vspeed.pdf>
 Package pdftex.def Info: Figures/one_vs_two_stage_no_vspeed.pdf  used on input 
@@ -3029,7 +2990,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[46 <./Figures/one_vs_two_stage_vspeed.pdf> <./Figures/one_vs_two_stage_no_vspe
+[47 <./Figures/one_vs_two_stage_vspeed.pdf> <./Figures/one_vs_two_stage_no_vspe
 ed.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -3037,8 +2998,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[47]
-<Figures/One stage OCP/Closest point analysis/closest_point_comp.pdf, id=2400, 
+[48]
+<Figures/One stage OCP/Closest point analysis/closest_point_comp.pdf, id=2278, 
 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Closest point analysis/closest_point_comp.pdf Graph
 ic file (type pdf)
@@ -3047,7 +3008,7 @@ Package pdftex.def Info: Figures/One stage OCP/Closest point analysis/closest_p
 oint_comp.pdf  used on input line 207.
 (pdftex.def)             Requested size: 225.3436pt x 119.12665pt.
 <Figures/One stage OCP/Closest point analysis/closest_point_comp_initialpoints.
-pdf, id=2401, 1335.54965pt x 706.0779pt>
+pdf, id=2279, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Closest point analysis/closest_point_comp_initialpo
 ints.pdf Graphic file (type pdf)
 <use Figures/One stage OCP/Closest point analysis/closest_point_comp_initialpoi
@@ -3057,13 +3018,13 @@ oint_comp_initialpoints.pdf  used on input line 213.
 (pdftex.def)             Requested size: 225.3436pt x 119.12665pt.
 
 
-[48]
+[49]
 
-[49 <./Figures/One stage OCP/Closest point analysis/closest_point_comp.pdf> <./
+[50 <./Figures/One stage OCP/Closest point analysis/closest_point_comp.pdf> <./
 Figures/One stage OCP/Closest point analysis/closest_point_comp_initialpoints.p
 df>]
 <Figures/One stage OCP/Solver specs comparison/horizon/Virtual speed controlled
- inside OCP/Planar_onestage_ocp_control_vspeed_comp_horizon.pdf, id=2489, 1335.
+ inside OCP/Planar_onestage_ocp_control_vspeed_comp_horizon.pdf, id=2367, 1335.
 54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/horizon/Virtual speed contr
 olled inside OCP/Planar_onestage_ocp_control_vspeed_comp_horizon.pdf Graphic fi
@@ -3075,8 +3036,8 @@ Virtual speed controlled inside OCP/Planar_onestage_ocp_control_vspeed_comp_hor
 izon.pdf  used on input line 275.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/horizon/Virtual speed controlled
- outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_horizon.pdf, id=24
-90, 1335.54965pt x 706.0779pt>
+ outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_horizon.pdf, id=23
+68, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/horizon/Virtual speed contr
 olled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_horizon.pdf G
 raphic file (type pdf)
@@ -3088,7 +3049,7 @@ _comp_horizon.pdf  used on input line 281.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Sampling time/Virtual speed cont
 rolled inside OCP/Planar_onestage_ocp_control_vspeed_comp_samplingtime.pdf, id=
-2497, 1335.54965pt x 706.0779pt>
+2375, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Sampling time/Virtual speed
  controlled inside OCP/Planar_onestage_ocp_control_vspeed_comp_samplingtime.pdf
  Graphic file (type pdf)
@@ -3101,7 +3062,7 @@ mp_samplingtime.pdf  used on input line 319.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Sampling time/Virtual speed cont
 rolled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_samplingtime
-.pdf, id=2498, 1335.54965pt x 706.0779pt>
+.pdf, id=2376, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Sampling time/Virtual speed
  controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_samplin
 gtime.pdf Graphic file (type pdf)
@@ -3114,12 +3075,12 @@ vspeed_comp_samplingtime.pdf  used on input line 325.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 
 
-[50 <./Figures/One stage OCP/Solver specs comparison/horizon/Virtual speed cont
+[51 <./Figures/One stage OCP/Solver specs comparison/horizon/Virtual speed cont
 rolled inside OCP/Planar_onestage_ocp_control_vspeed_comp_horizon.pdf> <./Figur
 es/One stage OCP/Solver specs comparison/horizon/Virtual speed controlled outsi
 de OCP/Planar_onestage_ocp_control_outside_vspeed_comp_horizon.pdf>]
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
- inside OCP/Planar_onestage_ocp_control_vspeed_comp_weights.pdf, id=2557, 1335.
+ inside OCP/Planar_onestage_ocp_control_vspeed_comp_weights.pdf, id=2435, 1335.
 54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled inside OCP/Planar_onestage_ocp_control_vspeed_comp_weights.pdf Graphic fi
@@ -3131,8 +3092,8 @@ Virtual speed controlled inside OCP/Planar_onestage_ocp_control_vspeed_comp_wei
 ghts.pdf  used on input line 381.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
- outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_weights.pdf, id=25
-58, 1335.54965pt x 706.0779pt>
+ outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_weights.pdf, id=24
+36, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_weights.pdf G
 raphic file (type pdf)
@@ -3144,7 +3105,7 @@ _comp_weights.pdf  used on input line 387.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
  inside OCP/Planar_onestage_ocp_control_vspeed_comp_tl_limited_weights.pdf, id=
-2565, 1335.54965pt x 706.0779pt>
+2443, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled inside OCP/Planar_onestage_ocp_control_vspeed_comp_tl_limited_weights.pdf
  Graphic file (type pdf)
@@ -3157,7 +3118,7 @@ limited_weights.pdf  used on input line 400.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
  outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tl_limited_weights
-.pdf, id=2566, 1335.54965pt x 706.0779pt>
+.pdf, id=2444, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tl_limited_we
 ights.pdf Graphic file (type pdf)
@@ -3170,7 +3131,7 @@ _comp_tl_limited_weights.pdf  used on input line 406.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
  inside OCP/Planar_onestage_ocp_control_vspeed_comp_tr_limited_weights.pdf, id=
-2567, 1335.54965pt x 706.0779pt>
+2445, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled inside OCP/Planar_onestage_ocp_control_vspeed_comp_tr_limited_weights.pdf
  Graphic file (type pdf)
@@ -3183,7 +3144,7 @@ limited_weights.pdf  used on input line 417.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
  outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tr_limited_weights
-.pdf, id=2568, 1335.54965pt x 706.0779pt>
+.pdf, id=2446, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tr_limited_we
 ights.pdf Graphic file (type pdf)
@@ -3196,13 +3157,13 @@ _comp_tr_limited_weights.pdf  used on input line 423.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 
 
-[51 <./Figures/One stage OCP/Solver specs comparison/Sampling time/Virtual spee
+[52 <./Figures/One stage OCP/Solver specs comparison/Sampling time/Virtual spee
 d controlled inside OCP/Planar_onestage_ocp_control_vspeed_comp_samplingtime.pd
 f> <./Figures/One stage OCP/Solver specs comparison/Sampling time/Virtual speed
  controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_samplin
 gtime.pdf>]
 
-[52 <./Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed cont
+[53 <./Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed cont
 rolled inside OCP/Planar_onestage_ocp_control_vspeed_comp_weights.pdf> <./Figur
 es/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled outsi
 de OCP/Planar_onestage_ocp_control_outside_vspeed_comp_weights.pdf> <./Figures/
@@ -3216,13 +3177,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[53 <./Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed cont
+[54 <./Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed cont
 rolled inside OCP/Planar_onestage_ocp_control_vspeed_comp_tr_limited_weights.pd
 f> <./Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tr_limited_we
 ights.pdf>]
 <Figures/Real time one stage planar OCP/Regulation/Position_regulation_horizon.
-pdf, id=2827, 686.565pt x 686.565pt>
+pdf, id=2705, 686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Regulation/Position_regulation_hor
 izon.pdf Graphic file (type pdf)
 <use Figures/Real time one stage planar OCP/Regulation/Position_regulation_hori
@@ -3231,7 +3192,7 @@ Package pdftex.def Info: Figures/Real time one stage planar OCP/Regulation/Posi
 tion_regulation_horizon.pdf  used on input line 496.
 (pdftex.def)             Requested size: 143.403pt x 143.39719pt.
 <Figures/Real time one stage planar OCP/Regulation/Position_regulation_sampling
-_time.pdf, id=2828, 686.565pt x 686.565pt>
+_time.pdf, id=2706, 686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Regulation/Position_regulation_sam
 pling_time.pdf Graphic file (type pdf)
 <use Figures/Real time one stage planar OCP/Regulation/Position_regulation_samp
@@ -3240,7 +3201,7 @@ Package pdftex.def Info: Figures/Real time one stage planar OCP/Regulation/Posi
 tion_regulation_sampling_time.pdf  used on input line 502.
 (pdftex.def)             Requested size: 143.403pt x 143.39719pt.
 <Figures/Real time one stage planar OCP/Regulation/Position_regulation_weights.
-pdf, id=2829, 686.565pt x 686.565pt>
+pdf, id=2707, 686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Regulation/Position_regulation_wei
 ghts.pdf Graphic file (type pdf)
 <use Figures/Real time one stage planar OCP/Regulation/Position_regulation_weig
@@ -3249,7 +3210,7 @@ Package pdftex.def Info: Figures/Real time one stage planar OCP/Regulation/Posi
 tion_regulation_weights.pdf  used on input line 507.
 (pdftex.def)             Requested size: 143.403pt x 143.39719pt.
 <Figures/Real time one stage planar OCP/Regulation/Heading_regulation_horizon.p
-df, id=2830, 686.565pt x 686.565pt>
+df, id=2708, 686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Regulation/Heading_regulation_hori
 zon.pdf Graphic file (type pdf)
 <use Figures/Real time one stage planar OCP/Regulation/Heading_regulation_horiz
@@ -3258,7 +3219,7 @@ Package pdftex.def Info: Figures/Real time one stage planar OCP/Regulation/Head
 ing_regulation_horizon.pdf  used on input line 518.
 (pdftex.def)             Requested size: 143.403pt x 143.39719pt.
 <Figures/Real time one stage planar OCP/Regulation/Heading_regulation_sampling_
-time.pdf, id=2831, 686.565pt x 686.565pt>
+time.pdf, id=2709, 686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Regulation/Heading_regulation_samp
 ling_time.pdf Graphic file (type pdf)
 <use Figures/Real time one stage planar OCP/Regulation/Heading_regulation_sampl
@@ -3267,7 +3228,7 @@ Package pdftex.def Info: Figures/Real time one stage planar OCP/Regulation/Head
 ing_regulation_sampling_time.pdf  used on input line 524.
 (pdftex.def)             Requested size: 143.403pt x 143.39719pt.
 <Figures/Real time one stage planar OCP/Regulation/Heading_regulation_weights.p
-df, id=2832, 686.565pt x 686.565pt>
+df, id=2710, 686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Regulation/Heading_regulation_weig
 hts.pdf Graphic file (type pdf)
 <use Figures/Real time one stage planar OCP/Regulation/Heading_regulation_weigh
@@ -3277,11 +3238,11 @@ ing_regulation_weights.pdf  used on input line 529.
 (pdftex.def)             Requested size: 143.403pt x 143.39719pt.
 
 
-[54 <./Figures/Real time one stage planar OCP/Regulation/Position_regulation_ho
+[55 <./Figures/Real time one stage planar OCP/Regulation/Position_regulation_ho
 rizon.pdf> <./Figures/Real time one stage planar OCP/Regulation/Position_regula
 tion_sampling_time.pdf> <./Figures/Real time one stage planar OCP/Regulation/Po
 sition_regulation_weights.pdf>]
-<Figures/Real time one stage planar OCP/Path tracking/cycle times.pdf, id=2932,
+<Figures/Real time one stage planar OCP/Path tracking/cycle times.pdf, id=2810,
  686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Path tracking/cycle times.pdf Grap
 hic file (type pdf)
@@ -3289,8 +3250,8 @@ hic file (type pdf)
 Package pdftex.def Info: Figures/Real time one stage planar OCP/Path tracking/c
 ycle times.pdf  used on input line 579.
 (pdftex.def)             Requested size: 223.07211pt x 223.06812pt.
-<Figures/Real time one stage planar OCP/Path tracking/optimal_costs.pdf, id=293
-3, 686.565pt x 686.565pt>
+<Figures/Real time one stage planar OCP/Path tracking/optimal_costs.pdf, id=281
+1, 686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Path tracking/optimal_costs.pdf Gr
 aphic file (type pdf)
 <use Figures/Real time one stage planar OCP/Path tracking/optimal_costs.pdf>
@@ -3298,7 +3259,7 @@ Package pdftex.def Info: Figures/Real time one stage planar OCP/Path tracking/o
 ptimal_costs.pdf  used on input line 580.
 (pdftex.def)             Requested size: 223.07211pt x 223.06812pt.
 <Figures/Real time one stage planar OCP/Path tracking/path_tracking_comparison.
-pdf, id=2937, 1335.54965pt x 706.0779pt>
+pdf, id=2815, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage planar OCP/Path tracking/path_tracking_compar
 ison.pdf Graphic file (type pdf)
 <use Figures/Real time one stage planar OCP/Path tracking/path_tracking_compari
@@ -3307,7 +3268,7 @@ Package pdftex.def Info: Figures/Real time one stage planar OCP/Path tracking/p
 ath_tracking_comparison.pdf  used on input line 591.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage planar OCP/Path tracking/forces_cum_sum_comp.pdf, 
-id=2938, 1335.54965pt x 706.0779pt>
+id=2816, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage planar OCP/Path tracking/forces_cum_sum_comp.
 pdf Graphic file (type pdf)
 <use Figures/Real time one stage planar OCP/Path tracking/forces_cum_sum_comp.p
@@ -3317,18 +3278,18 @@ orces_cum_sum_comp.pdf  used on input line 593.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 
 
-[55 <./Figures/Real time one stage planar OCP/Regulation/Heading_regulation_hor
+[56 <./Figures/Real time one stage planar OCP/Regulation/Heading_regulation_hor
 izon.pdf> <./Figures/Real time one stage planar OCP/Regulation/Heading_regulati
 on_sampling_time.pdf> <./Figures/Real time one stage planar OCP/Regulation/Head
 ing_regulation_weights.pdf>]
 
-[56 <./Figures/Real time one stage planar OCP/Path tracking/cycle times.pdf> <.
+[57 <./Figures/Real time one stage planar OCP/Path tracking/cycle times.pdf> <.
 /Figures/Real time one stage planar OCP/Path tracking/optimal_costs.pdf> <./Fig
 ures/Real time one stage planar OCP/Path tracking/path_tracking_comparison.pdf>
  <./Figures/Real time one stage planar OCP/Path tracking/forces_cum_sum_comp.pd
 f>]
 <Figures/Real time one stage planar OCP/Robustness_tests/path_std_noise_positio
-n_0.01_std_noise_heading_0.001.png, id=3155, 1335.5496pt x 706.0779pt>
+n_0.01_std_noise_heading_0.001.png, id=3033, 1335.5496pt x 706.0779pt>
 File: Figures/Real time one stage planar OCP/Robustness_tests/path_std_noise_po
 sition_0.01_std_noise_heading_0.001.png Graphic file (type png)
 <use Figures/Real time one stage planar OCP/Robustness_tests/path_std_noise_pos
@@ -3338,7 +3299,7 @@ s/path_std_noise_position_0.01_std_noise_heading_0.001.png  used on input line
 622.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage planar OCP/Robustness_tests/path_std_noise_positio
-n_0.03_std_noise_heading_0.005.png, id=3156, 1335.5496pt x 706.0779pt>
+n_0.03_std_noise_heading_0.005.png, id=3034, 1335.5496pt x 706.0779pt>
 File: Figures/Real time one stage planar OCP/Robustness_tests/path_std_noise_po
 sition_0.03_std_noise_heading_0.005.png Graphic file (type png)
 <use Figures/Real time one stage planar OCP/Robustness_tests/path_std_noise_pos
@@ -3348,7 +3309,7 @@ s/path_std_noise_position_0.03_std_noise_heading_0.005.png  used on input line
 623.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage planar OCP/Robustness_tests/map_forces_std_noise_p
-osition_0.01_std_noise_heading_0.001.png, id=3157, 686.565pt x 686.565pt>
+osition_0.01_std_noise_heading_0.001.png, id=3035, 686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Robustness_tests/map_forces_std_no
 ise_position_0.01_std_noise_heading_0.001.png Graphic file (type png)
 <use Figures/Real time one stage planar OCP/Robustness_tests/map_forces_std_noi
@@ -3358,7 +3319,7 @@ s/map_forces_std_noise_position_0.01_std_noise_heading_0.001.png  used on input
  line 631.
 (pdftex.def)             Requested size: 223.07211pt x 223.06812pt.
 <Figures/Real time one stage planar OCP/Robustness_tests/map_forces_std_noise_p
-osition_0.03_std_noise_heading_0.005.png, id=3158, 686.565pt x 686.565pt>
+osition_0.03_std_noise_heading_0.005.png, id=3036, 686.565pt x 686.565pt>
 File: Figures/Real time one stage planar OCP/Robustness_tests/map_forces_std_no
 ise_position_0.03_std_noise_heading_0.005.png Graphic file (type png)
 <use Figures/Real time one stage planar OCP/Robustness_tests/map_forces_std_noi
@@ -3369,7 +3330,7 @@ s/map_forces_std_noise_position_0.03_std_noise_heading_0.005.png  used on input
 (pdftex.def)             Requested size: 223.07211pt x 223.06812pt.
 
 
-[57 <./Figures/Real time one stage planar OCP/Robustness_tests/path_std_noise_p
+[58 <./Figures/Real time one stage planar OCP/Robustness_tests/path_std_noise_p
 osition_0.01_std_noise_heading_0.001.png> <./Figures/Real time one stage planar
  OCP/Robustness_tests/path_std_noise_position_0.03_std_noise_heading_0.005.png>
 ]
@@ -3379,7 +3340,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[58 <./Figures/Real time one stage planar OCP/Robustness_tests/map_forces_std_n
+[59 <./Figures/Real time one stage planar OCP/Robustness_tests/map_forces_std_n
 oise_position_0.01_std_noise_heading_0.001.png> <./Figures/Real time one stage 
 planar OCP/Robustness_tests/map_forces_std_noise_position_0.03_std_noise_headin
 g_0.005.png>]
@@ -3388,7 +3349,7 @@ Overfull \hbox (4.05115pt too wide) in paragraph at lines 721--736
  []
 
 <Figures/Real time one stage OCP on rough terrain/Hill/Path tracking comparison
- among hills.pdf, id=3184, 1335.54965pt x 706.0779pt>
+ among hills.pdf, id=3063, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Hill/Path tracking compa
 rison among hills.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Hill/Path tracking compar
@@ -3397,7 +3358,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Hill/
 Path tracking comparison among hills.pdf  used on input line 740.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage OCP on rough terrain/Hill/roll_pitch_hill.pdf, id=
-3185, 1335.54965pt x 706.0779pt>
+3064, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Hill/roll_pitch_hill.pdf
  Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Hill/roll_pitch_hill.pdf>
@@ -3407,11 +3368,11 @@ roll_pitch_hill.pdf  used on input line 741.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 
 
-[59 <./Figures/Real time one stage OCP on rough terrain/Hill/Path tracking comp
+[60 <./Figures/Real time one stage OCP on rough terrain/Hill/Path tracking comp
 arison among hills.pdf> <./Figures/Real time one stage OCP on rough terrain/Hil
 l/roll_pitch_hill.pdf>]
 <Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_33_1.pdf, 
-id=3259, 1335.54965pt x 706.0779pt>
+id=3137, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_33_1.
 pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_33_1.p
@@ -3420,7 +3381,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Hill/
 forces_cone_a_33_1.pdf  used on input line 751.
 (pdftex.def)             Requested size: 141.12456pt x 74.60902pt.
 <Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_55_1.pdf, 
-id=3260, 1335.54965pt x 706.0779pt>
+id=3138, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_55_1.
 pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_55_1.p
@@ -3429,7 +3390,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Hill/
 forces_cone_a_55_1.pdf  used on input line 752.
 (pdftex.def)             Requested size: 141.12456pt x 74.60902pt.
 <Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_55_2.pdf, 
-id=3261, 1335.54965pt x 706.0779pt>
+id=3139, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_55_2.
 pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_55_2.p
@@ -3439,7 +3400,7 @@ forces_cone_a_55_2.pdf  used on input line 753.
 (pdftex.def)             Requested size: 141.12456pt x 74.60902pt.
 
 
-[60 <./Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_33_1
+[61 <./Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_33_1
 .pdf> <./Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_55
 _1.pdf> <./Figures/Real time one stage OCP on rough terrain/Hill/forces_cone_a_
 55_2.pdf>]
@@ -3448,7 +3409,7 @@ Overfull \hbox (4.05115pt too wide) in paragraph at lines 800--818
  []
 
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-Path_comparison.pdf, id=3390, 1335.54965pt x 706.0779pt>
+Path_comparison.pdf, id=3268, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/Path_comparison.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3457,7 +3418,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/Path_comparison.pdf  used on input line 826.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-roll_and_pitch.pdf, id=3391, 1335.54965pt x 706.0779pt>
+roll_and_pitch.pdf, id=3269, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/roll_and_pitch.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3466,7 +3427,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/roll_and_pitch.pdf  used on input line 828.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_1.pdf, id=3392, 1335.54965pt x 706.0779pt>
+forces_cone_1.pdf, id=3270, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_1.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3475,7 +3436,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_1.pdf  used on input line 836.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_2.pdf, id=3393, 1335.54965pt x 706.0779pt>
+forces_cone_2.pdf, id=3271, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_2.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3484,7 +3445,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_2.pdf  used on input line 837.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_3.pdf, id=3394, 1335.54965pt x 706.0779pt>
+forces_cone_3.pdf, id=3272, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_3.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3493,7 +3454,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_3.pdf  used on input line 838.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_4.pdf, id=3395, 1335.54965pt x 706.0779pt>
+forces_cone_4.pdf, id=3273, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_4.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3502,7 +3463,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_4.pdf  used on input line 839.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_5.pdf, id=3396, 1335.54965pt x 706.0779pt>
+forces_cone_5.pdf, id=3274, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_5.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3511,7 +3472,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_5.pdf  used on input line 840.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_curve_solver_2.pdf, id=3397, 1335.54965pt x 706.0779pt>
+forces_curve_solver_2.pdf, id=3275, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_curve_solver_2.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3520,7 +3481,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_curve_solver_2.pdf  used on input line 848.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_curve_solver_4.pdf, id=3398, 1335.54965pt x 706.0779pt>
+forces_curve_solver_4.pdf, id=3276, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_curve_solver_4.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3529,7 +3490,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_curve_solver_4.pdf  used on input line 849.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-rate_forces_curve_solvers_2_4.pdf, id=3399, 1335.54965pt x 706.0779pt>
+rate_forces_curve_solvers_2_4.pdf, id=3277, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/rate_forces_curve_solvers_2_4.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3540,9 +3501,9 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 
 
-[61]
+[62]
 
-[62 <./Figures/Real time one stage OCP on rough terrain/Rough and uneven terrai
+[63 <./Figures/Real time one stage OCP on rough terrain/Rough and uneven terrai
 n map/Path_comparison.pdf> <./Figures/Real time one stage OCP on rough terrain/
 Rough and uneven terrain map/roll_and_pitch.pdf> <./Figures/Real time one stage
  OCP on rough terrain/Rough and uneven terrain map/forces_cone_1.pdf> <./Figure
@@ -3557,7 +3518,7 @@ ugh and uneven terrain map/forces_curve_solver_4.pdf> <./Figures/Real time one
 stage OCP on rough terrain/Rough and uneven terrain map/rate_forces_curve_solve
 rs_2_4.pdf>]
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-Start_away_from_ref.pdf, id=3738, 1015.39348pt x 706.0779pt>
+Start_away_from_ref.pdf, id=3616, 1015.39348pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/Start_away_from_ref.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3567,9 +3528,9 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
 (pdftex.def)             Requested size: 450.69417pt x 313.40102pt.
 
 
-[63]
+[64]
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_tabblue.pdf, id=3745, 1335.54965pt x 706.0779pt>
+forces_cone_tabblue.pdf, id=3623, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_tabblue.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3578,7 +3539,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_tabblue.pdf  used on input line 930.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_taborange.pdf, id=3746, 1335.54965pt x 706.0779pt>
+forces_cone_taborange.pdf, id=3624, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_taborange.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3587,7 +3548,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_taborange.pdf  used on input line 931.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_tabgreen.pdf, id=3747, 1335.54965pt x 706.0779pt>
+forces_cone_tabgreen.pdf, id=3625, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_tabgreen.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3596,7 +3557,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_tabgreen.pdf  used on input line 932.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_tabred.pdf, id=3748, 1335.54965pt x 706.0779pt>
+forces_cone_tabred.pdf, id=3626, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_tabred.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3605,7 +3566,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_tabred.pdf  used on input line 933.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_tabpurple.pdf, id=3749, 1335.54965pt x 706.0779pt>
+forces_cone_tabpurple.pdf, id=3627, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_tabpurple.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3614,7 +3575,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_tabpurple.pdf  used on input line 934.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_tabbrown.pdf, id=3750, 1335.54965pt x 706.0779pt>
+forces_cone_tabbrown.pdf, id=3628, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_tabbrown.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3623,7 +3584,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_tabbrown.pdf  used on input line 935.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_tabpink.pdf, id=3751, 1335.54965pt x 706.0779pt>
+forces_cone_tabpink.pdf, id=3629, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_tabpink.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3632,7 +3593,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_tabpink.pdf  used on input line 936.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-forces_cone_tabgray.pdf, id=3752, 1335.54965pt x 706.0779pt>
+forces_cone_tabgray.pdf, id=3630, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/forces_cone_tabgray.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -3648,7 +3609,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/forces_cone_tabgray.pdf  used on input line 938.
 (pdftex.def)             Requested size: 147.95294pt x 78.21826pt.
 <Figures/Real time one stage OCP on rough terrain/Robustness tests/path_trackin
-g_optimal_cost.png, id=3756, 950.3505pt x 706.0779pt>
+g_optimal_cost.png, id=3634, 950.3505pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Robustness tests/path_tr
 acking_optimal_cost.png Graphic file (type png)
 <use Figures/Real time one stage OCP on rough terrain/Robustness tests/path_tra
@@ -3657,7 +3618,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Robus
 tness tests/path_tracking_optimal_cost.png  used on input line 954.
 (pdftex.def)             Requested size: 223.07211pt x 165.73439pt.
 <Figures/Real time one stage OCP on rough terrain/Robustness tests/path_trackin
-g_optimal_time.png, id=3757, 940.2327pt x 706.0779pt>
+g_optimal_time.png, id=3635, 940.2327pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Robustness tests/path_tr
 acking_optimal_time.png Graphic file (type png)
 <use Figures/Real time one stage OCP on rough terrain/Robustness tests/path_tra
@@ -3666,7 +3627,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Robus
 tness tests/path_tracking_optimal_time.png  used on input line 955.
 (pdftex.def)             Requested size: 223.07211pt x 167.51208pt.
 <Figures/Real time one stage OCP on rough terrain/Robustness tests/yaw_curve.pd
-f, id=3758, 1335.54965pt x 706.0779pt>
+f, id=3636, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Robustness tests/yaw_cur
 ve.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Robustness tests/yaw_curv
@@ -3675,7 +3636,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Robus
 tness tests/yaw_curve.pdf  used on input line 956.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage OCP on rough terrain/Robustness tests/forces_cone.
-png, id=3759, 1335.5496pt x 706.0779pt>
+png, id=3637, 1335.5496pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Robustness tests/forces_
 cone.png Graphic file (type png)
 <use Figures/Real time one stage OCP on rough terrain/Robustness tests/forces_c
@@ -3684,7 +3645,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Robus
 tness tests/forces_cone.png  used on input line 957.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage OCP on rough terrain/Robustness tests/velocities_c
-urves.pdf, id=3760, 1335.54965pt x 706.0779pt>
+urves.pdf, id=3638, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Robustness tests/velocit
 ies_curves.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Robustness tests/velociti
@@ -3693,7 +3654,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Robus
 tness tests/velocities_curves.pdf  used on input line 958.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage OCP on rough terrain/Robustness tests/forces_rate_
-curve.pdf, id=3761, 1335.54965pt x 706.0779pt>
+curve.pdf, id=3639, 1335.54965pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Robustness tests/forces_
 rate_curve.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Robustness tests/forces_r
@@ -3703,10 +3664,10 @@ tness tests/forces_rate_curve.pdf  used on input line 959.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 )
 
-[64 <./Figures/Real time one stage OCP on rough terrain/Rough and uneven terrai
+[65 <./Figures/Real time one stage OCP on rough terrain/Rough and uneven terrai
 n map/Start_away_from_ref.pdf>]
 
-[65 <./Figures/Real time one stage OCP on rough terrain/Rough and uneven terrai
+[66 <./Figures/Real time one stage OCP on rough terrain/Rough and uneven terrai
 n map/forces_cone_tabblue.pdf> <./Figures/Real time one stage OCP on rough terr
 ain/Rough and uneven terrain map/forces_cone_taborange.pdf> <./Figures/Real tim
 e one stage OCP on rough terrain/Rough and uneven terrain map/forces_cone_tabgr
@@ -3718,7 +3679,7 @@ abbrown.pdf> <./Figures/Real time one stage OCP on rough terrain/Rough and unev
 en terrain map/forces_cone_tabpink.pdf> <./Figures/Real time one stage OCP on r
 ough terrain/Rough and uneven terrain map/forces_cone_tabgray.pdf>]
 
-[66 <./Figures/Real time one stage OCP on rough terrain/Robustness tests/path_t
+[67 <./Figures/Real time one stage OCP on rough terrain/Robustness tests/path_t
 racking_optimal_cost.png> <./Figures/Real time one stage OCP on rough terrain/R
 obustness tests/path_tracking_optimal_time.png> <./Figures/Real time one stage 
 OCP on rough terrain/Robustness tests/yaw_curve.pdf> <./Figures/Real time one s
@@ -3737,7 +3698,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[67
+[68
 
 
 ]
@@ -3753,7 +3714,7 @@ ng it (it is [0.0:0.0]) on input line 126.
  [warning /pgfplots/warning/approx empty range enlarged]
 
 
-[68]
+[69]
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
 has been already used, duplicate ignored
 <to be read again> 
@@ -3832,7 +3793,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.12})
                    \relax 
 l.172 	\EndFunction
                    
-<Figures/Obstacle avoidance/CIAO/d2o_gradient_d2o.png, id=4222, 950.3505pt x 70
+<Figures/Obstacle avoidance/CIAO/d2o_gradient_d2o.png, id=4100, 950.3505pt x 70
 5.3552pt>
 File: Figures/Obstacle avoidance/CIAO/d2o_gradient_d2o.png Graphic file (type p
 ng)
@@ -3840,7 +3801,7 @@ ng)
 Package pdftex.def Info: Figures/Obstacle avoidance/CIAO/d2o_gradient_d2o.png  
 used on input line 182.
 (pdftex.def)             Requested size: 223.07211pt x 165.56476pt.
-<Figures/Obstacle avoidance/CIAO/ciao_iteration_test.png, id=4223, 938.0646pt x
+<Figures/Obstacle avoidance/CIAO/ciao_iteration_test.png, id=4101, 938.0646pt x
  701.7417pt>
 File: Figures/Obstacle avoidance/CIAO/ciao_iteration_test.png Graphic file (typ
 e png)
@@ -3850,10 +3811,10 @@ g  used on input line 183.
 (pdftex.def)             Requested size: 223.07211pt x 166.86884pt.
 
 
-[69 <./Figures/Obstacle avoidance/CIAO/d2o_gradient_d2o.png> <./Figures/Obstacl
+[70 <./Figures/Obstacle avoidance/CIAO/d2o_gradient_d2o.png> <./Figures/Obstacl
 e avoidance/CIAO/ciao_iteration_test.png>]
 
-[70]
+[71]
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
 has been already used, duplicate ignored
 <to be read again> 
@@ -3974,7 +3935,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.19})
                    \relax 
 l.241 	\EndFunction
                    
-<Figures/Obstacle avoidance/Potential field/potential_field.pdf, id=4260, 724.1
+<Figures/Obstacle avoidance/Potential field/potential_field.pdf, id=4139, 724.1
 454pt x 703.90984pt>
 File: Figures/Obstacle avoidance/Potential field/potential_field.pdf Graphic fi
 le (type pdf)
@@ -3982,7 +3943,7 @@ le (type pdf)
 Package pdftex.def Info: Figures/Obstacle avoidance/Potential field/potential_f
 ield.pdf  used on input line 255.
 (pdftex.def)             Requested size: 223.07211pt x 216.83498pt.
-<Figures/Obstacle avoidance/Potential field/deformed_ref_examples.pdf, id=4261,
+<Figures/Obstacle avoidance/Potential field/deformed_ref_examples.pdf, id=4140,
  865.07193pt x 704.6325pt>
 File: Figures/Obstacle avoidance/Potential field/deformed_ref_examples.pdf Grap
 hic file (type pdf)
@@ -3997,9 +3958,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[71]
+[72]
 
-[72 <./Figures/Obstacle avoidance/Potential field/potential_field.pdf> <./Figur
+[73 <./Figures/Obstacle avoidance/Potential field/potential_field.pdf> <./Figur
 es/Obstacle avoidance/Potential field/deformed_ref_examples.pdf>]
 Overfull \hbox (4.05115pt too wide) in paragraph at lines 353--372
  [] 
@@ -4007,8 +3968,8 @@ Overfull \hbox (4.05115pt too wide) in paragraph at lines 353--372
 
 
 
-[73]
-<Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_1.pdf, id=4368, 779.793
+[74]
+<Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_1.pdf, id=4246, 779.793
 3pt x 703.1871pt>
 File: Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_1.pdf Graphic file
  (type pdf)
@@ -4016,7 +3977,7 @@ File: Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_1.pdf Graphic file
 Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver
 _1.pdf  used on input line 380.
 (pdftex.def)             Requested size: 223.07211pt x 201.15076pt.
-<Figures/Obstacle avoidance/Safe NMPC/Several_paths.pdf, id=4369, 744.38098pt x
+<Figures/Obstacle avoidance/Safe NMPC/Several_paths.pdf, id=4247, 744.38098pt x
  705.35516pt>
 File: Figures/Obstacle avoidance/Safe NMPC/Several_paths.pdf Graphic file (type
  pdf)
@@ -4024,7 +3985,7 @@ File: Figures/Obstacle avoidance/Safe NMPC/Several_paths.pdf Graphic file (type
 Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/Several_paths.pdf
   used on input line 381.
 (pdftex.def)             Requested size: 223.07211pt x 211.3714pt.
-<Figures/Obstacle avoidance/Safe NMPC/forces_coulomb_cone.png, id=4370, 1335.54
+<Figures/Obstacle avoidance/Safe NMPC/forces_coulomb_cone.png, id=4248, 1335.54
 96pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/forces_coulomb_cone.png Graphic file
  (type png)
@@ -4032,7 +3993,7 @@ File: Figures/Obstacle avoidance/Safe NMPC/forces_coulomb_cone.png Graphic file
 Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/forces_coulomb_co
 ne.png  used on input line 391.
 (pdftex.def)             Requested size: 211.91782pt x 112.03743pt.
-<Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_2.pdf, id=4371, 781.961
+<Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_2.pdf, id=4249, 781.961
 38pt x 705.35516pt>
 File: Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_2.pdf Graphic file
  (type pdf)
@@ -4042,10 +4003,10 @@ _2.pdf  used on input line 397.
 (pdftex.def)             Requested size: 211.91782pt x 191.14803pt.
 
 
-[74 <./Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_1.pdf> <./Figures
+[75 <./Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_1.pdf> <./Figures
 /Obstacle avoidance/Safe NMPC/Several_paths.pdf>]
 <Figures/Obstacle avoidance/Safe NMPC/slacks_path_tracking_solver_1_tour_1.pdf,
- id=4429, 1335.54965pt x 706.0779pt>
+ id=4307, 1335.54965pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/slacks_path_tracking_solver_1_tour_1
 .pdf Graphic file (type pdf)
 <use Figures/Obstacle avoidance/Safe NMPC/slacks_path_tracking_solver_1_tour_1.
@@ -4053,7 +4014,7 @@ pdf>
 Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/slacks_path_track
 ing_solver_1_tour_1.pdf  used on input line 413.
 (pdftex.def)             Requested size: 446.13727pt x 235.8615pt.
-<Figures/Obstacle avoidance/Safe NMPC/solver_1_tour_1_specs.pdf, id=4430, 1335.
+<Figures/Obstacle avoidance/Safe NMPC/solver_1_tour_1_specs.pdf, id=4308, 1335.
 54965pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/solver_1_tour_1_specs.pdf Graphic fi
 le (type pdf)
@@ -4062,7 +4023,7 @@ Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/solver_1_tour_1_s
 pecs.pdf  used on input line 421.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Obstacle avoidance/Safe NMPC/vel_forces_rate_solver_1_tour_1.pdf, id=4
-431, 1335.54965pt x 706.0779pt>
+309, 1335.54965pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/vel_forces_rate_solver_1_tour_1.pdf 
 Graphic file (type pdf)
 <use Figures/Obstacle avoidance/Safe NMPC/vel_forces_rate_solver_1_tour_1.pdf>
@@ -4071,10 +4032,10 @@ olver_1_tour_1.pdf  used on input line 423.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 
 
-[75 <./Figures/Obstacle avoidance/Safe NMPC/forces_coulomb_cone.png> <./Figures
+[76 <./Figures/Obstacle avoidance/Safe NMPC/forces_coulomb_cone.png> <./Figures
 /Obstacle avoidance/Safe NMPC/tour_part1_solver_2.pdf> <./Figures/Obstacle avoi
 dance/Safe NMPC/slacks_path_tracking_solver_1_tour_1.pdf>]
-<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_1.pdf, id=4495, 712.
+<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_1.pdf, id=4373, 712.
 58218pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_1.pdf Graphic f
 ile (type pdf)
@@ -4082,7 +4043,7 @@ ile (type pdf)
 Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circ
 les_1.pdf  used on input line 437.
 (pdftex.def)             Requested size: 145.68144pt x 144.34827pt.
-<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_2.pdf, id=4496, 712.
+<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_2.pdf, id=4374, 712.
 58218pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_2.pdf Graphic f
 ile (type pdf)
@@ -4090,7 +4051,7 @@ ile (type pdf)
 Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circ
 les_2.pdf  used on input line 438.
 (pdftex.def)             Requested size: 145.68144pt x 144.34827pt.
-<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_4.pdf, id=4497, 764.
+<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_4.pdf, id=4375, 764.
 61661pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_4.pdf Graphic f
 ile (type pdf)
@@ -4098,7 +4059,7 @@ ile (type pdf)
 Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circ
 les_4.pdf  used on input line 439.
 (pdftex.def)             Requested size: 145.68144pt x 134.52249pt.
-<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_9.pdf, id=4498, 768.
+<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_9.pdf, id=4376, 768.
 95282pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_9.pdf Graphic f
 ile (type pdf)
@@ -4106,7 +4067,7 @@ ile (type pdf)
 Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circ
 les_9.pdf  used on input line 440.
 (pdftex.def)             Requested size: 145.68144pt x 133.76833pt.
-<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_7.pdf, id=4499, 785.
+<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_7.pdf, id=4377, 785.
 57492pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_7.pdf Graphic f
 ile (type pdf)
@@ -4114,7 +4075,7 @@ ile (type pdf)
 Package pdftex.def Info: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circ
 les_7.pdf  used on input line 441.
 (pdftex.def)             Requested size: 145.68144pt x 130.9348pt.
-<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_6.pdf, id=4500, 785.
+<Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_6.pdf, id=4378, 785.
 57492pt x 706.0779pt>
 File: Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_6.pdf Graphic f
 ile (type pdf)
@@ -4124,10 +4085,10 @@ les_6.pdf  used on input line 442.
 (pdftex.def)             Requested size: 145.68144pt x 130.9348pt.
 )
 
-[76 <./Figures/Obstacle avoidance/Safe NMPC/solver_1_tour_1_specs.pdf> <./Figur
+[77 <./Figures/Obstacle avoidance/Safe NMPC/solver_1_tour_1_specs.pdf> <./Figur
 es/Obstacle avoidance/Safe NMPC/vel_forces_rate_solver_1_tour_1.pdf>]
 
-[77 <./Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_1.pdf> <./Figu
+[78 <./Figures/Obstacle avoidance/Safe NMPC/example_ciao_circles_1.pdf> <./Figu
 res/Obstacle avoidance/Safe NMPC/example_ciao_circles_2.pdf> <./Figures/Obstacl
 e avoidance/Safe NMPC/example_ciao_circles_4.pdf> <./Figures/Obstacle avoidance
 /Safe NMPC/example_ciao_circles_9.pdf> <./Figures/Obstacle avoidance/Safe NMPC/
@@ -4136,25 +4097,25 @@ o_circles_6.pdf>] (Thesis_Conclusions.tex
 Chapter 7.
 
 
-[78
+[79
 
 
 ])
 
-[79] (Thesis.bbl
+[80] (Thesis.bbl
 
-[80
+[81
 
 
 ]
 
-[81]
-
 [82]
 
-[83])
+[83]
 
-[84] (Thesis_Appendix_A.tex
+[84])
+
+[85] (Thesis_Appendix_A.tex
 Appendix A.
 
 Overfull \hbox (0.10709pt too wide) detected at line 50
@@ -4163,14 +4124,14 @@ Overfull \hbox (0.10709pt too wide) detected at line 50
 
 
 
-[85
+[86
 
 
 ]
 
-[86]
-
 [87]
+
+[88]
 Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
@@ -4192,7 +4153,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--197
 
 
 
-[88]
+[89]
 pdfTeX warning (ext4): destination with the same identifier (name{ALG@line.1}) 
 has been already used, duplicate ignored
 <to be read again> 
@@ -4252,31 +4213,31 @@ has been already used, duplicate ignored
 l.244 	\EndFunction
                    )
 
-[89] (Thesis_Appendix_B.tex
+[90] (Thesis_Appendix_B.tex
 Appendix B.
 
 
-[90
+[91
 
 
 ]
 
-[91]
+[92]
 Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
 )
 
-[92] (Thesis_Appendix_C.tex
+[93] (Thesis_Appendix_C.tex
 Appendix C.
-<Figures/HeightMin+Surface+1.png, id=4881, 469.755pt x 354.8457pt>
+<Figures/HeightMin+Surface+1.png, id=4759, 469.755pt x 354.8457pt>
 File: Figures/HeightMin+Surface+1.png Graphic file (type png)
 <use Figures/HeightMin+Surface+1.png>
 Package pdftex.def Info: Figures/HeightMin+Surface+1.png  used on input line 22
 .
 (pdftex.def)             Requested size: 141.12456pt x 106.60071pt.
-<Figures/HeightMin_maxInclination+Surface+1.png, id=4883, 469.755pt x 354.8457p
+<Figures/HeightMin_maxInclination+Surface+1.png, id=4761, 469.755pt x 354.8457p
 t>
 File: Figures/HeightMin_maxInclination+Surface+1.png Graphic file (type png)
 <use Figures/HeightMin_maxInclination+Surface+1.png>
@@ -4288,13 +4249,13 @@ File: Figures/maxTerrainRoughness+1.png Graphic file (type png)
 Package pdftex.def Info: Figures/maxTerrainRoughness+1.png  used on input line 
 28.
 (pdftex.def)             Requested size: 141.12456pt x 106.60071pt.
-<Figures/worstCase+Surface+1.png, id=4886, 469.755pt x 354.8457pt>
+<Figures/worstCase+Surface+1.png, id=4764, 469.755pt x 354.8457pt>
 File: Figures/worstCase+Surface+1.png Graphic file (type png)
 <use Figures/worstCase+Surface+1.png>
 Package pdftex.def Info: Figures/worstCase+Surface+1.png  used on input line 39
 .
 (pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
-<Figures/mapRefinement+Surface+0.9+0.2+1.png, id=4887, 469.755pt x 354.8457pt>
+<Figures/mapRefinement+Surface+0.9+0.2+1.png, id=4765, 469.755pt x 354.8457pt>
 File: Figures/mapRefinement+Surface+0.9+0.2+1.png Graphic file (type png)
 <use Figures/mapRefinement+Surface+0.9+0.2+1.png>
 Package pdftex.def Info: Figures/mapRefinement+Surface+0.9+0.2+1.png  used on i
@@ -4302,7 +4263,7 @@ nput line 42.
 (pdftex.def)             Requested size: 218.51521pt x 165.0611pt.
 
 
-[93
+[94
 
 
  <./Figures/HeightMin+Surface+1.png> <./Figures/HeightMin_maxInclination+Surfac
@@ -4313,7 +4274,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\acrshort' on input line 53.
 
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
- inside OCP/Planar_onestage_ocp_control_vspeed_comp_vx_weights.pdf, id=4903, 13
+ inside OCP/Planar_onestage_ocp_control_vspeed_comp_vx_weights.pdf, id=4781, 13
 35.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled inside OCP/Planar_onestage_ocp_control_vspeed_comp_vx_weights.pdf Graphic
@@ -4326,7 +4287,7 @@ weights.pdf  used on input line 205.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
  outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_vx_weights.pdf, id
-=4904, 1335.54965pt x 706.0779pt>
+=4782, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_vx_weights.pd
 f Graphic file (type pdf)
@@ -4338,7 +4299,7 @@ Virtual speed controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed
 _comp_vx_weights.pdf  used on input line 211.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
- inside OCP/Planar_onestage_ocp_control_vspeed_comp_wz_weights.pdf, id=4905, 13
+ inside OCP/Planar_onestage_ocp_control_vspeed_comp_wz_weights.pdf, id=4783, 13
 35.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled inside OCP/Planar_onestage_ocp_control_vspeed_comp_wz_weights.pdf Graphic
@@ -4351,7 +4312,7 @@ weights.pdf  used on input line 222.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
  outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_wz_weights.pdf, id
-=4906, 1335.54965pt x 706.0779pt>
+=4784, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_wz_weights.pd
 f Graphic file (type pdf)
@@ -4363,7 +4324,7 @@ Virtual speed controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed
 _comp_wz_weights.pdf  used on input line 228.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
- inside OCP/Planar_onestage_ocp_control_vspeed_comp_tl_weights.pdf, id=4907, 13
+ inside OCP/Planar_onestage_ocp_control_vspeed_comp_tl_weights.pdf, id=4785, 13
 35.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled inside OCP/Planar_onestage_ocp_control_vspeed_comp_tl_weights.pdf Graphic
@@ -4376,7 +4337,7 @@ weights.pdf  used on input line 239.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
  outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tl_weights.pdf, id
-=4908, 1335.54965pt x 706.0779pt>
+=4786, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tl_weights.pd
 f Graphic file (type pdf)
@@ -4388,7 +4349,7 @@ Virtual speed controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed
 _comp_tl_weights.pdf  used on input line 245.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
- inside OCP/Planar_onestage_ocp_control_vspeed_comp_tr_weights.pdf, id=4909, 13
+ inside OCP/Planar_onestage_ocp_control_vspeed_comp_tr_weights.pdf, id=4787, 13
 35.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled inside OCP/Planar_onestage_ocp_control_vspeed_comp_tr_weights.pdf Graphic
@@ -4401,7 +4362,7 @@ weights.pdf  used on input line 256.
 (pdftex.def)             Requested size: 218.51521pt x 115.5174pt.
 <Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled
  outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tr_weights.pdf, id
-=4910, 1335.54965pt x 706.0779pt>
+=4788, 1335.54965pt x 706.0779pt>
 File: Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed contr
 olled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tr_weights.pd
 f Graphic file (type pdf)
@@ -4418,17 +4379,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[94]
+[95]
 Overfull \vbox (14.98425pt too high) has occurred while \output is active []
 
 
 
-[95 <./Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed cont
+[96 <./Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed cont
 rolled inside OCP/Planar_onestage_ocp_control_vspeed_comp_vx_weights.pdf> <./Fi
 gures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled ou
 tside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_vx_weights.pdf>]
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-reference_tour_opt_time.pdf, id=4986, 954.68669pt x 706.0779pt>
+reference_tour_opt_time.pdf, id=4864, 954.68669pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/reference_tour_opt_time.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -4437,7 +4398,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/reference_tour_opt_time.pdf  used on input line 278.
 (pdftex.def)             Requested size: 223.07211pt x 164.98022pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-reference_tour_opt_cost.pdf, id=4987, 904.8204pt x 706.0779pt>
+reference_tour_opt_cost.pdf, id=4865, 904.8204pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/reference_tour_opt_cost.pdf Graphic file (type pdf)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -4446,7 +4407,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
  and uneven terrain map/reference_tour_opt_cost.pdf  used on input line 279.
 (pdftex.def)             Requested size: 223.07211pt x 174.07336pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-reference_tour_forces_cone.png, id=4988, 1335.5496pt x 706.0779pt>
+reference_tour_forces_cone.png, id=4866, 1335.5496pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/reference_tour_forces_cone.png Graphic file (type png)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -4456,7 +4417,7 @@ Package pdftex.def Info: Figures/Real time one stage OCP on rough terrain/Rough
 
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 <Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain map/
-reference_tour_forces_rate_curve.png, id=4989, 1335.5496pt x 706.0779pt>
+reference_tour_forces_rate_curve.png, id=4867, 1335.5496pt x 706.0779pt>
 File: Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain
  map/reference_tour_forces_rate_curve.png Graphic file (type png)
 <use Figures/Real time one stage OCP on rough terrain/Rough and uneven terrain 
@@ -4467,7 +4428,7 @@ e 281.
 (pdftex.def)             Requested size: 223.07211pt x 117.93074pt.
 )
 
-[96 <./Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed cont
+[97 <./Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed cont
 rolled inside OCP/Planar_onestage_ocp_control_vspeed_comp_wz_weights.pdf> <./Fi
 gures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled ou
 tside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_wz_weights.pdf> <./Fi
@@ -4480,7 +4441,7 @@ Planar_onestage_ocp_control_vspeed_comp_tr_weights.pdf> <./Figures/One stage OC
 P/Solver specs comparison/Weights/Virtual speed controlled outside OCP/Planar_o
 nestage_ocp_control_outside_vspeed_comp_tr_weights.pdf>]
 
-[97 <./Figures/Real time one stage OCP on rough terrain/Rough and uneven terrai
+[98 <./Figures/Real time one stage OCP on rough terrain/Rough and uneven terrai
 n map/reference_tour_opt_time.pdf> <./Figures/Real time one stage OCP on rough 
 terrain/Rough and uneven terrain map/reference_tour_opt_cost.pdf> <./Figures/Re
 al time one stage OCP on rough terrain/Rough and uneven terrain map/reference_t
@@ -4498,17 +4459,17 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E11B49B7F0A9CAA5F6EF73C167B3E8E7;15207.
+(rerunfilecheck)             Checksum: 6FD12636D4A162816B5B17EBE35BB012;15207.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 11 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 58985 strings out of 470046
- 1445712 string characters out of 5481956
- 2081483 words of memory out of 5000000
- 85682 multiletter control sequences out of 15000+600000
+ 58981 strings out of 470046
+ 1444169 string characters out of 5481956
+ 2081676 words of memory out of 5000000
+ 85677 multiletter control sequences out of 15000+600000
  685258 words of font info for 143 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  115i,17n,120p,2544b,2446s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -4551,9 +4512,9 @@ ts/type1/public/amsfonts/symbols/msbm10.pfb></home/francisco/.miktex/texmfs/ins
 tall/fonts/type1/urw/helvetic/uhvb8a.pfb></home/francisco/.miktex/texmfs/instal
 l/fonts/type1/urw/helvetic/uhvr8a.pfb></home/francisco/.miktex/texmfs/install/f
 onts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Thesis.pdf (117 pages, 23236079 bytes).
+Output written on Thesis.pdf (118 pages, 22682725 bytes).
 PDF statistics:
- 5565 PDF objects out of 6186 (max. 8388607)
- 730 named destinations out of 1000 (max. 500000)
- 1285 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5443 PDF objects out of 6186 (max. 8388607)
+ 731 named destinations out of 1000 (max. 500000)
+ 1260 words of extra memory for PDF output out of 10000 (max. 10000000)
 
