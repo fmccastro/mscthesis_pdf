@@ -1034,3 +1034,59 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{shpw}%
+{%
+name={\acronymfont {\glsentryshort {shpw}}},%
+sort={SHPW},%
+type={acronym},%
+first={SHPW},%
+firstplural={SHPWs},%
+text={SHPW},%
+plural={SHPWs},%
+description={Single hull point per wheel},%
+descriptionplural={Single hull point per wheel},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Single hull point per wheel},%
+longplural={Single hull point per wheels},%
+short={SHPW},%
+shortplural={SHPWs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mhpw}%
+{%
+name={\acronymfont {\glsentryshort {mhpw}}},%
+sort={MHPW},%
+type={acronym},%
+first={MHPW},%
+firstplural={MHPWs},%
+text={MHPW},%
+plural={MHPWs},%
+description={Multiple hull point per wheel},%
+descriptionplural={Multiple hull point per wheel},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Multiple hull point per wheel},%
+longplural={Multiple hull point per wheels},%
+short={MHPW},%
+shortplural={MHPWs},%
+counter={page},%
+parent={},%
+%
+}%
+

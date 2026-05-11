@@ -1,4 +1,4 @@
-\begin{thebibliography}{67}
+\begin{thebibliography}{66}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -306,10 +306,10 @@ D.~Kloeser, T.~Schoels, T.~Sartor, A.~Zanelli, G.~Prison, and M.~Diehl.
   \url{https://www.sciencedirect.com/science/article/pii/S2405896320317845}.
 \newblock 21st IFAC World Congress.
 
-\bibitem[Diehl(2011)]{diehlnumericalocp}
+\bibitem[Diehl(2022)]{diehlnumericalocp}
 M.~Diehl.
 \newblock Numerical optimal control.
-\newblock July 2011.
+\newblock April 2022.
 
 \bibitem[Diehl et~al.(2009)Diehl, Ferreau, and Haverbeke]{diehl2009efficient}
 M.~Diehl, H.~J. Ferreau, and N.~Haverbeke.
@@ -399,11 +399,6 @@ J.~A.~E. Andersson, J.~Gillis, G.~Horn, J.~B. Rawlings, and M.~Diehl.
 \newblock Casadi -- {A} software framework for nonlinear optimization and
   optimal control.
 \newblock \emph{Mathematical Programming Computation}, 2018.
-
-\bibitem[Andersson and Rawlings(2018)]{andersson2018sensitivity}
-J.~A. Andersson and J.~B. Rawlings.
-\newblock Sensitivity analysis for nonlinear programming in casadi.
-\newblock 2018.
 
 \bibitem[Schoels et~al.(2020{\natexlab{a}})Schoels, Palmieri, Arras, and
   Diehl]{schoels2020nmpc}

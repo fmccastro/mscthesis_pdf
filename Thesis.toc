@@ -77,6 +77,6 @@
 \contentsline {section}{\numberline {B.2}Convex optimization}{92}{section.B.2}%
 \contentsline {chapter}{\numberline {C}Miscellaneous}{94}{appendix.C}%
 \contentsline {section}{\numberline {C.1}Traversability maps}{94}{section.C.1}%
-\contentsline {section}{\numberline {C.2}Performance metrics of controllers}{95}{section.C.2}%
-\contentsline {subsection}{\numberline {C.2.1}One-stage planar \acrshort {ocp}}{95}{subsection.C.2.1}%
-\contentsline {subsection}{\numberline {C.2.2}Real-time one-stage \acrshort {ocp} on rough, uneven terrain}{96}{subsection.C.2.2}%
+\contentsline {section}{\numberline {C.2}Performance metrics of controllers}{94}{section.C.2}%
+\contentsline {subsection}{\numberline {C.2.1}One-stage planar \acrshort {ocp}}{94}{subsection.C.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}Real-time one-stage \acrshort {ocp} on rough, uneven terrain}{95}{subsection.C.2.2}%

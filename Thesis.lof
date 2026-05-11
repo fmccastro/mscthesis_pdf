@@ -38,23 +38,24 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Traversability maps generation flowchart.}}{33}{figure.caption.32}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Robot hull area.}}{35}{figure.caption.33}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Elevation map \acrshort {dem} and dimensions.}}{39}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Digital elevation map and respective dimensions.}}{39}{figure.caption.35}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Hull points on each wheel}}{39}{figure.caption.36}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Single hull point \textit {per} wheel (case 1)}}}{39}{figure.caption.36}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Several hull points \textit {per} wheel (case 2)}}}{39}{figure.caption.36}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Single hull point \textit {per} wheel (SHPW)}}}{39}{figure.caption.36}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Several hull points \textit {per} wheel (MHPW)}}}{39}{figure.caption.36}%
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Traversability maps generated with different algorithms (case 1).}}{40}{figure.caption.37}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \nameref {alg:slopeMinHeightMapVarYaw}}}}{40}{figure.caption.37}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \nameref {alg:maxRoughnessMap}}}}{40}{figure.caption.37}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Worst-case map}}}{40}{figure.caption.37}%
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Algorithm \nameref {alg:refinedMap}, where $r_s$ = 1 m and $C$ = 0.9}}}{40}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Cost to speed conversion (equation \ref {eq:cost2SpeedConversion})}}{42}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Potential flow and speed map for worst-case traversability map (case 1; map 1)}}{44}{figure.caption.42}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Speed map $F(\cdot )$}}}{44}{figure.caption.42}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Potential flow $u(\cdot )$ and $\nabla u(\cdot )$ (blue arrows)}}}{44}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Optimal paths (case 1; map 1)}}{44}{figure.caption.43}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{44}{figure.caption.43}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Refined map ($r_s = 1.0$ m, $\, C = 0.9$)}}}{44}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Paths comparison and \textsc {getoptimalpath($\cdot $)} method runtimes.}}{45}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Cost to speed transformation, $t_d(\cdot ) \DOTSB \mapstochar \DOTSB \relbar \joinrel \rightarrow F(\cdot )$, with equation \eqref {eq:cost2SpeedConversion}.}}{42}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces \nameref {alg:optimalPathGeneration} development concept: the next cell is the minimum time cell among the cells surrounding the previous one.}}{42}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Results of algorithm \nameref {alg:speedMapGeneration} with respect to worst-case traversability map (SHPW).}}{44}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Unmasked speed map $F(\cdot )$, where $k_1 = 0.2,\tmspace +\thickmuskip {.2777em} k_2 = 0.4$.}}}{44}{figure.caption.41}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Masked potential flow $u(\cdot )$ and $-\nabla u(\cdot )$ (\textcolor {blue}{blue arrows}), where $c_{max}=0.6$. Masked area is on white.}}}{44}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Results of algorithm \nameref {alg:optimalPathGeneration} (SHPW). Masked area is on white.}}{44}{figure.caption.42}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map $\left (c_{max} = 0.6\right )$.}}}{44}{figure.caption.42}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Refined map $\left (r_s = 1.0\,\mathrm {m},\, C = 0.9,\,c_{max} = 0.6\right )$.}}}{44}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Paths comparison and \textsc {getoptimalpath($\cdot $)} method runtimes.}}{45}{figure.caption.43}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces NMPC architectures}}{46}{figure.caption.45}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {One-stage \acrshort {nmpc}}}}{46}{figure.caption.45}%
@@ -174,13 +175,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Traversability maps (case 2; map 1)}}{94}{figure.caption.95}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMap}, where $\psi = 0$}}}{94}{figure.caption.95}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:slopeMinHeightMapVarYaw}}}}{94}{figure.caption.95}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Algorithm \ref {alg:maxRoughnessMap}}}}{94}{figure.caption.95}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Traversability maps (case 2; map 1)}}{94}{figure.caption.96}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{94}{figure.caption.96}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \ref {alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9}}}{94}{figure.caption.96}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Traversability maps (MHPW)}}{94}{figure.caption.95}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Algorithm \nameref {alg:slopeMinHeightMapVarYaw}}}}{94}{figure.caption.95}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \nameref {alg:maxRoughnessMap}}}}{94}{figure.caption.95}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Traversability maps (MHPW)}}{95}{figure.caption.96}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Worst-case map}}}{95}{figure.caption.96}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Algorithm \nameref {alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9}}}{95}{figure.caption.96}%
 \contentsline {figure}{\numberline {C.3}{\ignorespaces $v_x$ curve comparison among controllers.}}{96}{figure.caption.106}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{96}{figure.caption.106}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{96}{figure.caption.106}%

@@ -10,7 +10,7 @@
 \contentsline {table}{\numberline {4.2}{\ignorespaces Table caption shown in TOC.}}{39}{table.4.2}%
 \contentsline {table}{\numberline {4.3}{\ignorespaces Comparison between algorithms \nameref {alg:slopeMinHeightMap} and \nameref {alg:slopeMinHeightMapVarYaw}}}{41}{table.caption.38}%
 \contentsline {table}{\numberline {4.4}{\ignorespaces Performance of algorithms \nameref {alg:maxRoughnessMap} and \nameref {alg:refinedMap}}}{41}{table.caption.39}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Algorithm \ref {alg:speedMapGeneration} parameters.}}{43}{table.caption.41}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Performance metrics of the optimal paths presented in Figure \ref {fig:pathsComparison+_getPat2FollowTimes}.}}{45}{table.caption.44}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces Computational cost comparison between different architectures.}}{47}{table.caption.47}%
 \contentsline {table}{\numberline {5.2}{\ignorespaces Constant solver parameters when control horizon changes.}}{51}{table.caption.50}%
@@ -35,7 +35,7 @@
 \contentsline {table}{\numberline {C.2}{\ignorespaces Cumulative positional error of controllers when control horizon changes.}}{95}{table.caption.98}%
 \contentsline {table}{\numberline {C.3}{\ignorespaces Cumulative heading error of controllers when control horizon changes.}}{95}{table.caption.99}%
 \contentsline {table}{\numberline {C.4}{\ignorespaces Cumulative control effort of controllers when sampling time changes.}}{95}{table.caption.100}%
-\contentsline {table}{\numberline {C.5}{\ignorespaces Cumulative positional error of controllers when sampling time changes.}}{96}{table.caption.101}%
+\contentsline {table}{\numberline {C.5}{\ignorespaces Cumulative positional error of controllers when sampling time changes.}}{95}{table.caption.101}%
 \contentsline {table}{\numberline {C.6}{\ignorespaces Cumulative heading error of controllers when sampling time changes.}}{96}{table.caption.102}%
 \contentsline {table}{\numberline {C.7}{\ignorespaces Cumulative control effort of controllers when cost function weights changes.}}{96}{table.caption.103}%
 \contentsline {table}{\numberline {C.8}{\ignorespaces Cumulative positional error of controllers when cost function weights changes.}}{96}{table.caption.104}%

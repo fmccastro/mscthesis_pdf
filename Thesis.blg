@@ -27,49 +27,48 @@ Warning--empty school in Silva2022msc
 Warning--empty school in diehl2001real
 Warning--empty booktitle in Iagnemma2004
 Warning--empty publisher in chapter24handbookrobotics
-Warning--empty journal in andersson2018sensitivity
 Warning--empty chapter and pages in chapter47handbookrobotics
 Warning--empty publisher in chapter47handbookrobotics
 Warning--empty publisher in Beer2015
-You've used 67 entries,
+You've used 66 entries,
             2481 wiz_defined-function locations,
-            952 strings with 17530 characters,
-and the built_in function-call counts, 26528 in all, are:
-= -- 2179
-> -- 1424
-< -- 46
-+ -- 547
-- -- 412
-* -- 2008
-:= -- 4204
-add.period$ -- 227
-call.type$ -- 67
-change.case$ -- 126
-chr.to.int$ -- 66
-cite$ -- 91
-duplicate$ -- 1391
-empty$ -- 2437
-format.name$ -- 524
-if$ -- 5703
+            950 strings with 17415 characters,
+and the built_in function-call counts, 26230 in all, are:
+= -- 2155
+> -- 1409
+< -- 45
++ -- 541
+- -- 408
+* -- 1991
+:= -- 4156
+add.period$ -- 224
+call.type$ -- 66
+change.case$ -- 124
+chr.to.int$ -- 65
+cite$ -- 89
+duplicate$ -- 1373
+empty$ -- 2409
+format.name$ -- 517
+if$ -- 5640
 int.to.chr$ -- 2
-int.to.str$ -- 68
-missing$ -- 72
-newline$ -- 361
-num.names$ -- 209
-pop$ -- 647
+int.to.str$ -- 67
+missing$ -- 71
+newline$ -- 356
+num.names$ -- 206
+pop$ -- 636
 preamble$ -- 1
-purify$ -- 67
+purify$ -- 66
 quote$ -- 0
-skip$ -- 808
+skip$ -- 796
 stack$ -- 0
-substring$ -- 1028
-swap$ -- 249
+substring$ -- 1026
+swap$ -- 248
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 439
-warning$ -- 24
-while$ -- 201
+type$ -- 432
+warning$ -- 23
+while$ -- 199
 width$ -- 0
-write$ -- 887
-(There were 25 warnings)
+write$ -- 876
+(There were 24 warnings)
