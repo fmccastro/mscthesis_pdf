@@ -8,10 +8,10 @@
 %                                                                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Global path planner}
+\chapter{Global, optimal, terrain aware path planner}
 \label{chapter:globalpathplanner}
-e
-In order to deliver optimal reference paths, an offline survey of the target environment is performed at first. In section \ref{section:costMap}, an analysis of the terrain uneveness is carried on by taking into account the vehicle geometric features. After retrieving a \tb{traversability cost map} from the previous section, a modified version of it is fed to the Eikonal equation in section \ref{section:optimalPathPlanning}, in order to yield a gradient potential map, from where an optimal path to some goal position $G$ is generated.
+
+In order to deliver optimal reference paths, an offline survey of the target environment is performed at first. In section \ref{section:costMap}, an analysis of the terrain uneveness is carried out by taking into account the vehicle geometric features. After retrieving a \tb{traversability cost map} from the previous section, a modified version of it is fed to the Eikonal equation in section \ref{section:optimalPathPlanning}, in order to yield a gradient potential map, from where an optimal path to some goal position $G$ is generated. All the results presented in this chapter were obtained on an Intel® Xeon® E5-1620 v2 × 8 processor.
 
 \section{Traversability map computation}
 \label{section:costMap}
@@ -38,7 +38,7 @@ A similar constrained optimization problem to the one from \cite{Amorim2014}, wh
 
 \subsubsection*{Initial guess}
 
-Provided that the yaw angle $\yaw$ and the $\x$ and $\y$ position coordinates are known, each wheel point is projected to $\Map$. Then, from the group of retrieved contact points, the lowest height one is discarded, and a normalized, ortogonal vector to a plane which contains these points, is computed. Finally, the roll and pitch of this plane are given by \refeq{eq:rollPitchInitialGuess}, where $\mathbf{\hat{n}}$ denotes the normalized ortogonal vector to the above mentioned plane. In case any of these angles are higher than $\roll_{max}$ or $\pitch_{max}$, the respective angle is set to the highest admissable value, so that the initial guess is feasible. The elevation initial guess $\z_0$ is set as the sum of the projection of the robot center of mass point to $\Map$ plus the robot COM geometric height, to avoid any possible intrusion of the vehicle hull into the ground.
+Provided that the yaw angle $\yaw$ and the $\x$ and $\y$ position coordinates are known, each wheel point is projected to $\Map$. Then, from the group of retrieved contact points, the lowest height one is discarded, and a normalized, ortogonal vector to a plane which contains these points, is computed. Finally, the roll and pitch of this plane are given by \refeq{eq:rollPitchInitialGuess}, where $\mathbf{\hat{n}}$ denotes the normalized ortogonal vector to the above mentioned plane. In case any of these angles are higher than $\roll_{max}$ or $\pitch_{max}$, the respective angle is set to the highest admissable value, so that the initial guess is feasible. The elevation initial guess $\z_0$ is set as the sum of the projection of the robot center of mass point to $\Map$ plus the robot \acrshort{com} geometric height, to avoid any possible intrusion of the vehicle hull into the ground.
 
 \begin{equation}
 	\begin{aligned}
@@ -111,7 +111,7 @@ The minimization of the vehicle's center of mass is expressed as a nonlinear opt
 	\end{algorithmic}
 \end{algorithm}
 
-Then, algorithm \nameref{alg:slopeMinHeightMap} extends the application of algorithm \nameref{alg:slopeMinHeight} to every cell of the elevation grid. Moreover, a convex area $\Robot_{\mathbf{p}_2}$ (\refeq{eq:robotHullArea}) centered at $\mathbf{p}_2$ (typically the robot's COM), must capture the robot's geometric hull $\mathcal{H}_2$ projection on $\Map$ and lie inside the map domain. If this condition is not met, the terrain inclination angle assigned to $\FunctionTraversability_d(\cdot)$ is $\frac{\pi}{2}$. Therefore, positions at which the assigned terrain inclination is $\frac{\pi}{2}$ are considered to be untraversable. To sum up, the higher the inclination, the less desirable it is to pass through the respective position.
+Then, algorithm \nameref{alg:slopeMinHeightMap} extends the application of algorithm \nameref{alg:slopeMinHeight} to every cell of the elevation grid. Moreover, a convex area $\Robot_{\mathbf{p}_2}$ (\refeq{eq:robotHullArea}) centered at $\mathbf{p}_2$ (typically the robot's \acrshort{com}), must capture the robot's geometric hull $\mathcal{H}_2$ projection on $\Map$ and lie inside the map domain. If this condition is not met, the terrain inclination angle assigned to $\FunctionTraversability_d(\cdot)$ is $\frac{\pi}{2}$. Therefore, positions at which the assigned terrain inclination is $\frac{\pi}{2}$ are considered to be untraversable. To sum up, the higher the inclination, the less desirable it is to pass through the respective position.
 
 \begin{figure}[!htb]
   \begin{minipage}[c]{0.35\linewidth}
@@ -398,7 +398,7 @@ Apart from the restriction that every hull point must be above or at contact wit
   \end{tabular}
 \end{wraptable}
 
-Below, the computed traversability maps are presented for case 1, under the conditions presented in this subsection. Traversability maps that match the results ranging from algorithm \ref{alg:slopeMinHeightMapVarYaw} to \ref{alg:refinedMap} are presented, in order to enhance the differences among all maps. All the results presented below were obtained on an Intel® Xeon® E5-1620 v2 × 8 processor.
+Below, the computed traversability maps are presented for \shpw, under the conditions presented in this subsection. Traversability maps that match the results ranging from algorithm \ref{alg:slopeMinHeightMapVarYaw} to \ref{alg:refinedMap} are presented, in order to enhance the differences among all maps.
 
 \begin{figure}[!ht]
     \centering
@@ -416,11 +416,11 @@ Below, the computed traversability maps are presented for case 1, under the cond
     	\includegraphics[width=0.48\linewidth]{Figures/mapRefinement+Points+0.9+1.0+1.png}  
 	}
 	\end{subfigmatrix}
-    \caption{Traversability maps generated with different algorithms (case 1).}
+    \caption{Traversability maps generated with different algorithms (\acrshort{shpw}).}
     \label{fig:costMapsCase1Map1}
 \end{figure} 
 
-The traversability maps which were obtained for case 1 are rendered in figure \ref{fig:costMapsCase1Map1}. For the sake of brevity, the maps computed for case 2 are presented in annex \ref{section:traversabilityMaps}, as they are graphically similar to the maps presented in figure \ref{fig:costMapsCase1Map1}. The maximum terrain roughness map is the same both in case 1 and 2.
+The traversability maps which were obtained for the \shpwgap variant are rendered in figure \ref{fig:costMapsCase1Map1}. For the sake of brevity, the maps computed for \mhpwgap are presented in annex \ref{section:traversabilityMaps}, as they are graphically similar to the maps presented in figure \ref{fig:costMapsCase1Map1}. The maximum terrain roughness map is the same both for \shpwgap and \mhpw.
 
 \begin{remark}
 A suitable rescaling of the elevation map shall be made with the intention of yielding a large enough map, such that its discretization is of the same magnitude order of the wheel diameter.
@@ -492,11 +492,11 @@ The analysis of figure \ref{fig:costMapsCase1Map1} and tables \ref{tab:resultsMa
   \end{tabular}
 \end{table}
 
-As it is expected, the computational burden increases a lot, when algorithms \nameref{alg:slopeMinHeightMap} and \nameref{alg:slopeMinHeightMapVarYaw} are run for case 2, because the NLP needs to account for more constraints. However, the computation time is not the most relevant result because these algorithms are intented to be run offline, prior to any traversal. 
+As it is expected, the computational burden increases a lot, when algorithms \nameref{alg:slopeMinHeightMap} and \nameref{alg:slopeMinHeightMapVarYaw} are run for \mhpw, because the NLP needs to account for more constraints. However, the computation time is not the most relevant result because these algorithms are intented to be run offline, prior to any traversal. 
 
 Optimality is assessed by evaluating the optimal barrier parameter $\Barrier^*$ \cite{diehlnumericalocp}. As $\Barrier^*$ is reported to be very small on all cases, the computed costs relate to solutions of a very close version of the NLP presented in \refeq{eq:minHeight}. The IPOPT solver consecutively decreases $\Barrier$ along its iterations by consecutively solving closer NLPs to the original one. In the case of algorithm \nameref{alg:slopeMinHeightMapVarYaw}, the number of iterations per cell were considered to be the total number of iterations performed across all optimizations at every yaw in $\mathcal{Y}$.
 
-Finally, it is worth to note that the traversability map computed by algorithm \nameref{alg:slopeMinHeightMapVarYaw} for case 2 (figure \ref{fig:costMapsCase2Alg2_4}) finds more untraversable positions in comparison to case 1 (figure \ref{fig:costMapsCase1Map1}), because it is more difficult to accomodate more hull points on the terrain, thus placing the vehicle on intricate poses.
+Finally, it is worth to note that the traversability map computed by algorithm \nameref{alg:slopeMinHeightMapVarYaw} for \mhpwgap (figure \ref{fig:costMapsCase2Alg2_4}) finds more untraversable positions in comparison to variant \shpwgap (figure \ref{fig:costMapsCase1Map1}), because it is more difficult to accomodate more hull points on the terrain, thus placing the vehicle on intricate poses.
 
 \section{Optimal path planning}
 \label{section:optimalPathPlanning}
@@ -603,9 +603,9 @@ The computation of a discrete solution $\speedFunction\cdot$ for the Eikonal equ
 
 In this subsection, the results generated by algorithms \nameref{alg:optimalPathGeneration} and \nameref{alg:speedMapGeneration} are presented and discussed.
 
-Figure \ref{fig:speedMapPotentialWorstCasePointsMap1} renders a speed map that was generated with respect to a worst-case traversability map for case 1 and the elevation map of figure \ref{fig:elevationmapdimensions}, by applying transformation \eqref{eq:cost2SpeedConversion}. Then, a potential flow is generated by executing algorithm \nameref{alg:speedMapGeneration}, which yields a solution $\timeFunction{\cdot}$ of the Eikonal \refeq{eq:eikonalEquation}. There, $-\nabla \timeFunction{\cdot}$ is rendered all over the map on blue arrows, and it is perpendicular to every isochrone line (black lines), as expected. Instead of applying algorithm \nameref{alg:optimalPathGeneration}, optimal paths may also be generated by following $-\nabla \timeFunction{\cdot}$ until the goal point (or its neighborhood) is reached \cite{fmAdvancedGomez}.
+Figure \ref{fig:speedMapPotentialWorstCasePointsMap1} renders a speed map that was generated with respect to a worst-case traversability map for case \shpwgap and the elevation map of figure \ref{fig:elevationmapdimensions}, by applying transformation \eqref{eq:cost2SpeedConversion}. Then, a potential flow is generated by executing algorithm \nameref{alg:speedMapGeneration}, which yields a solution $\timeFunction{\cdot}$ of the Eikonal \refeq{eq:eikonalEquation}. There, $-\nabla \timeFunction{\cdot}$ is rendered all over the map on blue arrows, and it is perpendicular to every isochrone line (black lines), as expected. Instead of applying algorithm \nameref{alg:optimalPathGeneration}, optimal paths may also be generated by following $-\nabla \timeFunction{\cdot}$ until the goal point (or its neighborhood) is reached \cite{fmAdvancedGomez}.
 
-Figure \ref{fig:potentialFlowWithPathsPointsMap1} presents several optimal paths generated with algorithm \nameref{alg:optimalPathGeneration}. All these paths meet at the goal point, and follow a gradient descent direction as expected. It is also verified that the computed paths successfully avoid the masked area (white area). The refinement of the worst-case map does not considerably change the respective potential flow, even if the masked area is greater. This is why the optimal paths presented in figure \ref{fig:potentialFlowWithPathsPointsMap1} are similar, provided that the starting and goal points are the same. However, this similarity is not a trend. In fact, provided that the parameters $r_s$ and $C$ yield a great change of the masked area and speed maps, the potential flow of a refined map may output a very different optimal path.
+Figure \ref{fig:potentialFlowWithPathsPointsMap1} presents several optimal paths generated with algorithm \nameref{alg:optimalPathGeneration}. All these paths meet at the goal point, and follow a gradient descent direction as expected. It is also verified that the computed paths successfully avoid the masked area (white area). The refinement of the worst-case map does not considerably change the respective potential flow, even if the masked area is greater. This is why the optimal paths presented in figure \ref{fig:potentialFlowWithPathsPointsMap1} are similar, provided that the starting and goal points are the same. However, this similarity is not a trend. In fact, provided that parameters $r_s$ and $C$ yield a great change from the worst-case to the refined traversability maps, the optimal paths generated with respect to both maps turns out to be very different.
 
 \begin{figure}[!ht]
     \centering
@@ -639,10 +639,7 @@ Figure \ref{fig:potentialFlowWithPathsPointsMap1} presents several optimal paths
 If the \nameref{alg:speedMapGeneration} algorithm is fed by a worst-case map, it is advisable to select $c_{max}$ in such a way that $c_{max}$ is below the true admissable cost, in order to establish a safety margin. In case \nameref{alg:speedMapGeneration} is fed by a refined map, the safety margin is already taken into account on the refined map generation, so $c_{max}$ may be equal to the true admissable cost.
 \end{remark}
 
-Once more, figure \ref{fig:pathsComparison+_getPat2FollowTimes} underlines the fact that,  different cost maps yields different speed maps, which in turn yield different potential flows. In the end, different optimal paths are obtained. Due to what was mentioned previously, the optimal paths for the worst-case and respective refinement (\shpw) almost match. Although it may happen, this is not a typical case (\mhpwgap is an example of that). A comparison among these results was not presented due to the fact the cost maps generated for \mhpwgap were considered not to be reliable. Figures \ref{fig:costMapsCase2Alg2_4} and \ref{fig:costMapsCase2Alg5} render the cost maps generated for \mhpwgap and it is clear
-
-The table next to figure \ref{fig:pathsComparison+_getPat2FollowTimes} presents data related to the runtimes of the implementation of function \textsc{getoptimalpath($\cdot$)} from algorithm \nameref{alg:optimalPathGeneration} in \texttt{C}. This function was 
- run 27083 times for different maps and starting positions. The map refinement parameters, equation \eqref{eq:cost2SpeedConversion} parameters and goal point remained fixed. 800 points are appended to each path. In case  $S \in \ObstacleSpace$, that runtime was discarded.
+Once more, figure \ref{fig:pathsComparison+_getPat2FollowTimes} underlines the fact that  different cost maps typically yield different speed maps, which in turn yield different potential flows. In the end, different optimal paths are obtained. The table next to figure \ref{fig:pathsComparison+_getPat2FollowTimes} presents data related to the runtimes of the implementation of function \textsc{getoptimalpath($\cdot$)} from algorithm \nameref{alg:optimalPathGeneration} in \texttt{C}. This function was run 27083 times for different maps and starting positions. The map refinement parameters, equation \eqref{eq:cost2SpeedConversion} parameters and goal point remained fixed. In case  $S \in \ObstacleSpace$, that runtime was discarded.
 
 \begin{figure}[!htb]
   \begin{minipage}[b]{0.62\linewidth}
@@ -668,20 +665,24 @@ The table next to figure \ref{fig:pathsComparison+_getPat2FollowTimes} presents 
 \end{figure}
 
 \begin{table}[!htb]
-  \caption{Performance metrics of the optimal paths presented in Figure \ref{fig:pathsComparison+_getPat2FollowTimes}.}
-  \label{tab:whiteGaussianNoise}
+  \caption{Performance metrics of the optimal paths presented in Figure \ref{fig:pathsComparison+_getPat2FollowTimes}. The refinement maps taken for this computation are presented in figure \ref{fig:costMapsCase2Alg5}.}
+  \label{tab:performanceMetricOptPathsDiffMaps}
   \renewcommand{\arraystretch}{1.2}
   \centering
   \begin{tabular}[]{lcccc}
 	\toprule
 	& \shortstack{WorstCase+\\\shpw} & \shortstack{WorstCase+\\\mhpw} & \shortstack{MapRefinement+\\\shpw} & \shortstack{MapRefinement+\\\mhpw}\\
 	\midrule
-	Total cost & 48.80 & 53.05 & \textbf{48.60} & 73.76\\
-	Distance traversed [m] & \textbf{51.89} & 54.06 & \textbf{51.89} & 67.79\\
+	Total cost & 48.80 & 53.05 & 48.60 & 73.76\\
+	Distance traversed [m] & 51.89 & 54.06 & 51.89 & 67.79\\
   	\bottomrule
   \end{tabular}
 \end{table}
 
-The results show that function \textsc{getoptimalpath($\cdot$)} is feasible for implementation within a system control loop, where time windows are typically around 100 ms. In case more than 800 points are appended for the optimal path generation, the runtimes likely increase. Within a real-time guidance system, the starting position $S$ is the current position of the vehicle, whereas the returned path is the reference path to be followed. All the results presented in this subsection were obtained on an Intel® Xeon® E5-1620 v2 × 8 processor.
+The results show that function \textsc{getoptimalpath($\cdot$)} is feasible for implementation within a system control loop, where time windows are typically around 100 ms.
 
-Due to the fact that \textsc{getoptimalpath($\cdot$)} returns \texttt{None} in case $S \in \ObstacleSpace$, one should be aware that $\ObstacleSpace$ is not scattered along the map, but rather is restricted to \ti{blocks} of obstacles, in order to prevent frequent rejections of an optimal path computation. 
+Apart from that, table \ref{tab:performanceMetricOptPathsDiffMaps} presents the sum of the costs of every cell of the optimal path, so this value expresses how much unevenness a vehicle may find in case it tracks this path. Then, the length of each path is also presented. At the end, one realises that the optimal path generated with respect to the MapRefinement+\shpwgap variant yielded the shorter and the least uneven traversal. It was expected that the refined map could output better results, as this map promotes the avoidance from hilly terrain, even though results generated with respect to the \mhpwgap variant should have been better, as it models with higher precision the hull of the robot. Although there is room for the improvement of NLP \ref{eq:minHeight} in case of variant \mhpw, the fact that more hull points are attached to the robot hull, gives less freedom to the NLP to find lower inclinations. Therefore, one may also look to the \mhpwgap variant as a more conservative solution, because the unevenness of the terrain that was captured is more in line with the true vehicle hull capability to adapt to that terrain.
+
+\begin{remark}
+Due to the fact that \textsc{getoptimalpath($\cdot$)} returns \texttt{None} in case $S \in \ObstacleSpace$, one should be aware that $\ObstacleSpace$ is not scattered along the map, but rather is restricted to \ti{blocks} of obstacles, in order to prevent frequent rejections of an optimal path computation.
+\end{remark}

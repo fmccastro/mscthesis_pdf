@@ -79,4 +79,6 @@
 \nomenclatureentry{S$rep$@[{$rep$}]\begingroup Related to repulsive component of potential field.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{S$proj$@[{$proj$}]\begingroup Projected variable.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{S$def$@[{$def$}]\begingroup Deformed vector.\nomeqref {0}|nompageref}{xv}
+\nomenclatureentry{S$i,\,j$@[{$i,\,j$}]\begingroup Node $i$ of iteration $j$.\nomeqref {0}|nompageref}{xv}
+\nomenclatureentry{S$\mathbf{1}_k$@[{$\mathbf{1}_k$}]\begingroup Identity matrix of dimension $k \times k$.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{T$\ast$@[{$\ast$}]\begingroup Optimized variable.\nomeqref {0}|nompageref}{xv}
