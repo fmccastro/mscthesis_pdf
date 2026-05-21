@@ -8,21 +8,25 @@
 %                                                                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\chapter{Obstacle avoidance}
+\chapter{Collision-aware real-time \acrshort{nmpc} over irregular terrain}
 \label{chapter:obstacleAvoidance}
 
 This chapter takes on the \acrshort{nmpc} algorithm developed in the previous chapter, and reformulates it in order to prevent collisions and safeguard the vehicle safety. Firstly, the generation of a new and free of collisions reference is outlined in section \ref{section:saferefgen}. Then, this reference is fed to an one-stage \acrshort{ocp} that safeguards a minimum clearance of the position horizon to the nearest obstacle (section \ref{section:realtimesafenmpcroughterrain}). This chapter is mostly based on the work of \citet{schoels2020ciao, schoels2020nmpc}.
 
+\begin{remark}
+In this chapter, $\mathbf{p}_2$ is expressed by $\mathbf{p}$. 
+\end{remark}
+
 \section{Safe reference generation}
 \label{section:saferefgen}
 
-Some \acrshort{nmpc} applications rely on a nonconvex condition to keep the mobile away from collisions \cite{mpc_frenetserret}, like $d_\mathcal{O}\left(\mathbf{p}\right) \geq \underline{d}$. Although some interesting results are reported, this inequality constraint is not suitable for real-time applications \cite{schoels2020ciao}. On the other hand, the introduction of a map of minimum distances into the \acrshort{ocp} also introduces excessive nonlinearities that prevent real-time feasibility.
+Some \acrshort{nmpc} applications rely on a nonconvex condition to keep the mobile away from collisions \cite{mpc_frenetserret}, like $d_\mathcal{O}\left(\mathbf{p}\right) \geq \underline{d}$. Although some interesting results are reported, this inequality constraint is not suitable for real-time applications \cite{schoels2020ciao}. On the other hand, the introduction of a map of minimum distances into the \acrshort{nmpc} also introduces excessive nonlinearities that prevent real-time feasibility.
 
-Therefore, this chapter aims to simplify the problem by placing some operations outside the \acrshort{ocp} and to convexify the clearance condition.
+Therefore, this chapter aims to simplify the problem by placing some operations outside the \acrshort{nmpc} and to convexify the clearance condition.
 
 \subsection{\acrlong{ciao} (\acrshort{ciao}) algorithm}
 
-On the road to generate a safe reference, one needs compute the distance to the closest obstacle but also the direction that points to positions of the safe space away from the closest obstacle. In order to accomplish that, some definitions are laid out below, as well as the method that aims to find the biggest ball that contains $\mathbf{p}$ and is on safe space.
+On the road to generate a safe reference, one needs to compute the distance to the closest obstacle but also the direction that points to safe space positions away from the closest obstacle. In order to accomplish that, some definitions are laid out below, as well as the method that aims to find the biggest ball that contains $\mathbf{p}$ and is on safe space.
 
 \begin{definition}[Distance function]
 The distance function is defined as the euclidean distance at position $\mathbf{p}$ to the closest obstacle, such that $d_\ObstacleSpace:\Map_2 \rightarrow \mathbb{R}$.
@@ -36,7 +40,7 @@ d_\mathcal{\ObstacleSpace}\left(\mathbf{p}\right) = \underset{\mathbf{o} \in \ma
 Let $\ObstacleSpace$ be the occupied space and $\underline{d} > 0$ the safety margin. Then, the safe space $\mathcal{\SafeSpace}$ is defined as,
 
 \begin{equation}
-\mathcal{\SafeSpace} = \{\mathbf{p} \in \Map_2: d_\ObstacleSpace\left(\mathbf{p}\right) \geq \underline{d} \}
+\mathcal{\SafeSpace} = \{\mathbf{p}_2 \in \Map_2: d_\ObstacleSpace\left(\mathbf{p}\right) \geq \underline{d} \}
 \end{equation}
 \end{definition}
 
@@ -135,7 +139,7 @@ Then, a safe ball around $\mathbf{c} \in \SafeSpace$ is defined that includes $\
 \end{equation}
 \end{definition}
 
-Equation \ref{eq:ciaomax} sums up the optimization problem (7) of \cite{schoels2020ciao}. The search direction is also defined to be the normalized gradient of the distance function with respect to the updated circle center $\mathbf{c}$ at every iteration. The step $\eta$ is upper bounded in order to avoid high computation times. The reader is advised to read \cite{schoels2020ciao, schoels2020nmpc} for an in-depth explanation of the theoretical framework the \acrshort{ciao} algorithm is based on.
+\acrlong{nlp} \eqref{eq:ciaomax} sums up the optimization problem (7) of \cite{schoels2020ciao}. The search direction is also defined to be the normalized gradient of the distance function with respect to the updated circle center $\mathbf{c}$ at every iteration. The step $\eta$ is upper bounded in order to avoid high computation times. The reader is advised to read \cite{schoels2020ciao, schoels2020nmpc} for an in-depth explanation of the theoretical framework the \acrshort{ciao} algorithm is based on.
 \begin{subequations}\label{eq:ciaomax}
 \begin{gather}
 	\underset{\eta}{\text{max}} \hspace{1mm} \eta \label{subeq:ciaoproblem}\\
@@ -147,14 +151,14 @@ Equation \ref{eq:ciaomax} sums up the optimization problem (7) of \cite{schoels2
 \end{subequations}
 \subsubsection*{Implementation}
 
-Optimization problem \ref{eq:ciaomax} is solved by employing a line search problem. Let $\ObstacleSpace_i \subset \Map_2$ be a subset of obstacles that make $\ObstacleSpace$, such that $\ObstacleSpace = \bigcup\limits_{i} \ObstacleSpace_i$. For the sake of simplicity, only static, circled obstacles are considered.
+\acrshort{nlp} \eqref{eq:ciaomax} is solved by employing a line search problem. Let $\ObstacleSpace_i \subset \Map_2$ be a subset of obstacles that make $\ObstacleSpace$, such that $\ObstacleSpace = \bigcup\limits_{i} \ObstacleSpace_i$. For the sake of simplicity, only static, circled obstacles are considered.
 
 To some position $\mathbf{p}$, the distance to $\ObstacleSpace_i$ is computed. Then, the distance function is equal to the distance to the closest obstacle, such that $d_\ObstacleSpace\left(\mathbf{p}\right) = \text{min} \left(d_{\ObstacleSpace_i}\left(\mathbf{p}\right)\right)$. Then, $\nabla d_\ObstacleSpace\left(\mathbf{p}\right)$ is determined by computing the normalized vector that connects $\mathbf{p}$ to the closest obstacle. In case there is more than one obstacle with a distance to $\mathbf{p}$ that equals $d_\ObstacleSpace\left(\mathbf{p}\right)$, $\mathbf{g}$ becomes the normalized vector of the sum of the vectors that connect $\mathbf{p}$ to the respective obstacle, such that $\mathbf{g} = \frac{\sum_{\mathbf{o} \in \underline{\ObstacleSpace}} \mathbf{p} - \mathbf{o}}{\|\sum_{\mathbf{o} \in \underline{\ObstacleSpace} } \mathbf{p} - \mathbf{o}\|}$, where $\underline{\ObstacleSpace} \subset \ObstacleSpace$ denotes the set of closest obstacles to $\mathbf{p}$. The right side picture of figure \ref{fig:freeballs} depicts this explanation. At the middle line between both obstacles, one can see that the direction of $\mathbf{g}$ changes dramatically, because the gradient becomes the normalized sum of the arrows that connect $\mathbf{p}$ to each obstacle along this line.
 
-Finally, the step $\eta$ is consecutively increased by multiplying it by some factor $\delta_{\eta} > 1$ until the constraints \ref{subeq:etaconstraints} and \ref{subeq:ciaoconstraint} are not respected.
+Finally, the step $\eta$ is consecutively increased by multiplying it by some factor $\delta_{\eta} > 1$ until the constraints \eqref{subeq:etaconstraints} and \eqref{subeq:ciaoconstraint} are not respected.
 
 \begin{algorithm}[H]
-	\caption{\footnotesize Compute $\SafeSpace_\mathbf{c}$}\label{alg:computefreespace}
+	\caption{\footnotesize \textsc{GETSAFEBALL}}\label{alg:computefreespace}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
@@ -163,7 +167,7 @@ Finally, the step $\eta$ is consecutively increased by multiplying it by some fa
 	\State $\mathbf{c} \gets \mathbf{p}$ \Comment{initial ball center}
 	\State $d_\ObstacleSpace\left(\mathbf{c}\right) \gets \text{min} \left(d_{\ObstacleSpace_i}\left(\mathbf{c}\right)\right)$
 	\State $\mathbf{g} \gets \frac{\sum_{\mathbf{o} \in \underline{\ObstacleSpace}} \mathbf{c} - \mathbf{o}}{\|\sum_{\mathbf{o} \in \underline{\ObstacleSpace} } \mathbf{c} - \mathbf{o}\|}$
-	\While{$\eta \leq \overline{\eta}$ and \ref{subeq:ciaoconstraint} stand}
+	\While{$\eta \leq \overline{\eta}$ and \eqref{subeq:ciaoconstraint} stand}
 	\State $\mathbf{c} \gets \eta \cdot \mathbf{g} + \mathbf{c}$ \Comment{update ball center}
 	\State $d_\ObstacleSpace\left(\mathbf{c}\right) \gets \text{min} \left(d_{\ObstacleSpace_i}\left(\mathbf{c}\right)\right)$
 	\State $\eta \gets \eta \times \delta_{\eta}$
@@ -175,22 +179,22 @@ Finally, the step $\eta$ is consecutively increased by multiplying it by some fa
 	
 \subsubsection*{Results}
 
-The results of the application of algorithm \ref{alg:computefreespace} are presented in figure \ref{fig:ciaoiterationresults}, where the occupied area is the one where $\ObstacleSpace = \{\mathbf{p} \in \Map_2:d_\ObstacleSpace\left(\mathbf{p}\right)\leq0\}$.
+The results of the application of algorithm \nameref{alg:computefreespace} are presented in figure \ref{fig:ciaoiterationresults}, where the occupied area is the one where $\ObstacleSpace = \{\mathbf{p} \in \Map_2:d_\ObstacleSpace\left(\mathbf{p}\right)\leq0\}$.
 
 \begin{figure}[!htb]
   \begin{subfigmatrix}{2}
     \subfigure[$d_\ObstacleSpace\left(\cdot\right)$ and $\mathbf{g}$ (black arrows)]{\includegraphics[width=0.49\linewidth]{Figures/Obstacle avoidance/CIAO/d2o_gradient_d2o.png}}
     \subfigure[Examples of safe balls, where $\mathbf{c}$ and $\mathbf{p}$ are denoted by $\bullet$ and $\mathbf{\times}$, respectively.]{\includegraphics[width=0.49\linewidth]{Figures/Obstacle avoidance/CIAO/ciao_iteration_test.png}}
   \end{subfigmatrix}
-  \caption{Application of algorithm \ref{alg:computefreespace} to a set of obstacles, where $\underline{\eta} = 0.02,\,\overline{\eta} = 2.0,\,\delta_{\eta} = 2.0$ and $\underline{d} = 0.3$.}
+  \caption{Application of algorithm \nameref{alg:computefreespace} to a set of obstacles, where $\underline{\eta} = 0.02,\,\overline{\eta} = 2.0,\,\delta_{\eta} = 2.0$ and $\underline{d} = 0.3$.}
   \label{fig:ciaoiterationresults}
 \end{figure}
 
-In case $\mathbf{p}$ is such that $d_\ObstacleSpace\left(\mathbf{p}\right)\geq \underline{d}$, algorithm \ref{alg:computefreespace} ensures $\mathbf{p} \in \SafeSpace_{\mathbf{c}}$. The right picture of figure \ref{fig:ciaoiterationresults} shows proof that $\SafeSpace_{\mathbf{c}}$ stops expanding either when $\eta$ reaches its maximum or when equation \ref{subeq:ciaoconstraint} fails. Finally, algorithm \ref{alg:computefreespace} was run for 629 different positions $\mathbf{p}$ with the same conditions as the ones that generated the right picture of \ref{fig:ciaoiterationresults}. The maximum recorded computation time was $0.1\,ms$.
+In case $\mathbf{p}$ is such that $d_\ObstacleSpace\left(\mathbf{p}\right)\geq \underline{d}$, algorithm \nameref{alg:computefreespace} ensures $\mathbf{p} \in \SafeSpace_{\mathbf{c}}$. The right picture of figure \ref{fig:ciaoiterationresults} shows proof that $\SafeSpace_{\mathbf{c}}$ stops expanding either when $\eta$ reaches its maximum or when \refeq{subeq:ciaoconstraint} fails. Finally, algorithm \nameref{alg:computefreespace} was run for 629 different positions $\mathbf{p}$ with the same conditions as the ones that generated the right picture of \ref{fig:ciaoiterationresults}. The maximum recorded computation time was $0.1\,ms$.
 
 \subsection{Baseline reference deformation}
 
-Algorithm \ref{alg:computefreespace} can be used to project points of the baseline reference $\mathbf{r}$ that belong to $\overline{\SafeSpace}$ into the nearest safe space position. Then a look-ahead target position, $\mathbf{t} \in \SafeSpace$, in the projected reference is defined. The deformed reference is computed with respect to this point.
+Algorithm \nameref{alg:computefreespace} can be used to project points of the baseline reference $\mathbf{r}$ that belong to $\overline{\SafeSpace}$ into the nearest safe space position. Then a look-ahead target position, $\mathbf{t} \in \SafeSpace$, in the projected reference is defined. The deformed reference is generated with respect to this point.
 
 In order to meet that end, an artificial potential field is generated with respect to each obstacle and the target. The target radiates an attractive field whereas the obstacles radiate a repulsive field \cite{chapter47handbookrobotics}.
 \begin{subequations}\label{eq:potentialfield}
@@ -203,20 +207,20 @@ In order to meet that end, an artificial potential field is generated with respe
 \end{gather}
 \end{subequations}
 
-Equation \ref{eq:potentialfield} presents the set of atractive and repulsive fields, where $k_{att}$ and $k_{rep}$ are parameters that regulate the importance of each potential. Then, the total potential at $\mathbf{p}$ is expressed by the sum of all potentials, such that $\mathbf{f}_{tot} = \mathbf{f}_{att} + \mathbf{f}_{rep}$. Every potential exerts a radial field. Each repulsive field \ref{subeq:repulsivefield} only exerts a force up to $d_0$ from the border of each obstacle. This repulsive field decreases dramatically as $\|\mathbf{p} - \mathbf{o}\|_2-r_\mathbf{o}$ approaches $d_0$.
+Equation \eqref{eq:potentialfield} presents the set of atractive and repulsive fields, where $k_{att}$ and $k_{rep}$ are parameters that regulate the importance of each potential. Then, the total potential at $\mathbf{p}$ is expressed by the sum of all potentials, such that $\mathbf{f}_{tot} = \mathbf{f}_{att} + \mathbf{f}_{rep}$. Every potential exerts a radial field. Each repulsive field \eqref{subeq:repulsivefield} only exerts a force up to $d_0$ from the border of each obstacle. This repulsive field decreases dramatically as $\|\mathbf{p} - \mathbf{o}\|_2-r_\mathbf{o}$ approaches $d_0$.
 
-Then, one may generate a deformed reference by selecting a target $\mathbf{t} \in \SafeSpace$ that is \textbf{always} at a minimum distance of $d_s$ to the closest obstacle when its projection is required. Then, from a position $\mathbf{p} \in \SafeSpace$ one may generate a deformed reference that aims to reach $\mathbf{t}$, where $\mathbf{r}_{def} \subset \Map_2$ denotes the vectors of poses of the deformed reference along the \acrshort{nmpc} horizon.
+Then, one may generate a deformed reference by selecting a target $\mathbf{t} \in \SafeSpace$ that is \textbf{always} at a minimum distance of $d_s$ to the closest obstacle when its projection is required. Then, from a position $\mathbf{p} \in \SafeSpace$ one may generate a deformed reference that aims to reach $\mathbf{t}$, where $\mathbf{r}_{def} \subset \SafeSpace$ denotes the vectors of poses of the deformed reference along the \acrshort{nmpc} horizon.
 
 \subsubsection*{Implementation}
 
-Based on the current position $\mathbf{p}$ of the mobile robot, a look-ahead target is defined, so that there is considerable distance between both positions. After projecting the look-ahead target to safe space, a deformed reference is generated with its position to be equal to $\mathbf{p}$. From the first reference position, the next positions are consecutively defined based on the potential field direction at the respective position. The euclidean distance between consecutive positions is also defined so that velocity bounds are respected.
+Based on the current position $\mathbf{p}$ of the mobile robot, a look-ahead target is defined, so that there is considerable distance between both positions. From the first reference position, the next positions are consecutively defined based on the potential field direction at the respective position. The euclidean distance between consecutive positions is also defined so that velocity bounds are respected.
 
 Unfortunately, artificial potential fields have local minimums. In case the reference generation falls into one of these spots, the reference gets trapped there. Fast marching methods solve this issue but these methods are not suitable for real-time use, because the computation of the Eikonal equation solution is a big computational overhead.
 
-Apart from the target, local minimums are close to obstacles, where repulsive and attractive fields cancel each other. From trial and error, these positions may be avoided by selecting look-ahead targets that are not close to the vehicle configuration. On the other hand, if the look-ahead target is too far away, the same issue may come up. Algorithm \ref{alg:gendeformedref} sums up the explanation laid out in the last three paragraphs. 
+Apart from the target, local minimums are close to obstacles, where repulsive and attractive fields cancel each other. From trial and error, these positions may be avoided by selecting look-ahead targets that are not close to the vehicle configuration. On the other hand, if the look-ahead target is too far away, the same issue may come up. Algorithm \nameref{alg:gendeformedref} sums up the explanation laid out in the last three paragraphs. 
 
 \begin{algorithm}[H]
-	\caption{\footnotesize Generate deformed reference}\label{alg:gendeformedref}
+	\caption{\footnotesize \textsc{GETDEFORMEDREF}}\label{alg:gendeformedref}
 	\centering
 	\footnotesize
 	\begin{algorithmic}[1]
@@ -242,36 +246,36 @@ Apart from the target, local minimums are close to obstacles, where repulsive an
 	\end{algorithmic}
 \end{algorithm}
 
-In algorithm \ref{alg:gendeformedref}, $\alpha$ denotes the closest reference position locator, whereas $\alpha_+$ expresses the locator difference to the look-ahead target. $v$ stands as the virtual speed between reference nodes. When the deformed reference reaches the projected target neighbourhood $\neighborhood(\mathbf{t}_{proj})$, the empty reference nodes are filled with the last updated deformed reference pose.
+In algorithm \nameref{alg:gendeformedref}, $\alpha$ denotes the closest baseline reference position locator, whereas $\alpha_+$ expresses the locator difference from $\alpha$ to the look-ahead target in the baseline reference. When the deformed reference reaches the projected target neighbourhood $\neighborhood(\mathbf{t}_{proj})$, the empty reference nodes are filled with the last updated deformed reference pose.
 
 \subsubsection*{Results}
 
-Figure \ref{fig:potentialfieldresults} presents the visual results of the application of algorithm \ref{alg:gendeformedref} to the same set of obstacles from figure \ref{fig:ciaoiterationresults}. Although the deformed reference successfully deviates from $\ObstacleSpace$, it still crosses $\overline{\SafeSpace}$. This is not necessarily an issue as the most important safety metric is to make sure that the mobile robot position and its horizon is always in $\SafeSpace$.
+Figure \ref{fig:potentialfieldresults} presents the visual results of the application of algorithm \nameref{alg:gendeformedref} to the same set of obstacles from figure \ref{fig:ciaoiterationresults}. Although the deformed reference successfully deviates from $\ObstacleSpace$, it still crosses $\overline{\SafeSpace}$. This is not necessarily an issue as the most important safety metric is to make sure that the mobile robot position and its horizon is always in $\SafeSpace$.
 
-Algorithm \ref{alg:gendeformedref} was also run 3029 times and the recorded average and maximum times were $0.36\;ms$ and $0.76\;ms$, respectively. On each of these simulations, it is mandatory that $\mathbf{p}\in\SafeSpace$, because it doesn't make sense to apply algorithm \ref{alg:gendeformedref} to cases where $\mathbf{p}\in\overline{\SafeSpace}$, as the mobile robot hull touches $\ObstacleSpace$. The algorithm is suitable for real-time use.
+Algorithm \nameref{alg:gendeformedref} was also run 3029 times and the recorded average and maximum run times were $0.36\;ms$ and $0.76\;ms$, respectively. In each of these simulations, it is mandatory that $\mathbf{p}\in\SafeSpace$, because it doesn't make sense to apply algorithm \nameref{alg:gendeformedref} to cases where $\mathbf{p}\in\overline{\SafeSpace}$, as the mobile robot hull touches $\ObstacleSpace$. The algorithm is suitable for real-time use.
 
 \begin{figure}[!htb]
   \begin{subfigmatrix}{2}
     \subfigure[$\mathbf{f}_{tot}(\cdot)$, where $k_{rep}=0.2,\,k_{att}=3.0$ and $d_0=0.35$. The target is the \textcolor{tabred}{red} point and the obstacles are coloured in \textcolor{tabgray}{gray}. \textcolor{tabgreen}{Green} points denote local minimum spots, where $\mathbf{f}_{tot}(\cdot)=0$.]{\includegraphics[width=0.49\linewidth]{Figures/Obstacle avoidance/Potential field/potential_field.pdf}}
     \subfigure[Examples of deformed references, where $N=50,\,v=0.02$, $\alpha_+=0.3$, $\underline{d} = 0.3$ and $d_s = 1.2 \times \underline{d}$. The target and respective reference have the same color. The target and projected target are marked with $\times$ and $\bullet$ respectively. Dashed \textcolor{tabgray}{gray} lines depict the border of $\overline{\SafeSpace}$.]{\includegraphics[width=0.49\linewidth]{Figures/Obstacle avoidance/Potential field/deformed_ref_examples.pdf}}
   \end{subfigmatrix}
-  \caption{Application of algorithm \ref{alg:gendeformedref} to a set of obstacles. The parameters that generated the results of \ref{fig:ciaoiterationresults} were used to generate these figures as well. The potential field parameters from the left picture were used to generate the right picture.}
+  \caption{Application of algorithm \nameref{alg:gendeformedref} to a set of obstacles. The parameters that generated the results of figure \ref{fig:ciaoiterationresults} were used to generate these figures as well. The potential field parameters from the left picture were used to generate the right picture.}
   \label{fig:potentialfieldresults}
 \end{figure}
 
-\section{Real-time safe \acrshort{nmpc} on irregular terrain}
+\section{Real-time safe \acrshort{nmpc} over irregular terrain}
 \label{section:realtimesafenmpcroughterrain}
 
-Finally, it is possible to integrate algorithms \ref{alg:computefreespace} and \ref{alg:gendeformedref} into a real-time optimal control simulation, in order to safely guide the mobile robot away from $\overline{\SafeSpace}$. Once again, the one-stage \acrshort{ocp} is restructured to accomodate new constraints. Moreover, the \acrshort{nmpc} algorithm is also reformulated to include the algorithms described above. Figure \ref{fig:architecturesafenmpc} presents the new structure where the \acrshort{ocp} is fed by a deformed reference and the safe balls $\SafeSpace_{\mathbf{c}^*}$ around each position of the problem's initial guess. Each of these safe balls define the area of admissable positions for each node, so that the next optimal position horizon doesn't enter $\overline{\SafeSpace}$.
+Finally, it is possible to integrate algorithms \nameref{alg:computefreespace} and \nameref{alg:gendeformedref} into a real-time optimal control simulation, in order to safely guide the mobile robot away from $\overline{\SafeSpace}$. Once again, the \acrshort{nmpc} architecture is restructured to accomodate new constraints. Moreover, the \acrshort{nmpc} algorithm is also reformulated to include the algorithms described above. Figure \ref{fig:architecturesafenmpc} presents the new structure where the \acrshort{nmpc} is fed by a deformed reference and the safe balls $\SafeSpace_{\mathbf{c}^*}$ around each position of the problem's initial guess. Each of these safe balls define the area of admissable positions for each node, so that the next optimal position horizon doesn't enter $\overline{\SafeSpace}$.
 
 \begin{figure}[!htb]
 \centering
 \tikzstyle{block} = [draw, text centered, minimum height = 2.0em, minimum width = 3.0em, rounded corners, line width = 0.5 mm]
 	\begin{tikzpicture}
-		\node [block, align = center] at (2.0, -1.3) (1) {Algorithm \ref{alg:determineeulerangles}};
-		\node [block, align = center] at (-2.0, 0) (2) {Virtual speed\\control};
-		\node [block, align = center] at (2.0, 0.0)	(5) {Algorithm \ref{alg:gendeformedref}};
-		\node [block, align = center] at (2.0, 1.0)	(6) {Algorithm \ref{alg:computefreespace}};
+		\node [block, align = center] at (2.0, -1.3) (1) {\shortstack{Algorithm\\ \nameref{alg:determineeulerangles}}};
+		\node [block, align = center, draw={rgb,255:red,30;green,145;blue,30}] at (-2.0, 0) (2) {\textcolor{rgb,255:red,30;green,145;blue,30}{Virtual speed control}};
+		\node [block, align = center] at (2.0, 0.0)	(5) {\shortstack{Algorithm\\ \nameref{alg:gendeformedref}}};
+		\node [block, align = center] at (2.0, 1.0)	(6) {\shortstack{Algorithm\\ \nameref{alg:computefreespace}}};
 		\node [block, align = center] at (6.0, 0) (3) {NMPC\\Dynamics};
 		\node [block, align = center] at (9.5, 0) (4) {Plant};
   		\draw [-latex, thick, align = center] (4)
@@ -301,11 +305,11 @@ Finally, it is possible to integrate algorithms \ref{alg:computefreespace} and \
   		\draw [-latex, thick] (fork) -- ++ (0.0, 1.0) -- node [above] {$\mathbf{p}_2^*$} ++(-4.0, 0.0) -- (6);
   		\draw [-latex, thick] (6) -- ++ (2.0, 0.0) -- node [above] {$\SafeSpace_{\mathbf{c}^*}$} (3);
 	\end{tikzpicture}
-	\caption{Architecture of the one-stage \acrshort{ocp} within a safe real-time \acrshort{nmpc} setting on rough terrain.}
+	\caption{Safe real-time \acrshort{nmpc} architecture.}
 	\label{fig:architecturesafenmpc}
 \end{figure}
 
-The set of equations \ref{eq:lagrangemayersafeocp} and \ref{eq:safeonestageocp} define the cost terms and the linear and non-linear constraints of the new one-stage safe \acrshort{ocp}, respectively. Equation \ref{subeq:ciaocirclesarea} is the new appended non-linear constraint. This constraint sets the admissable area for each position of the optimal horizon. $\mathbf{c}_k^*,\,d_\ObstacleSpace(\mathbf{c}_k^*)$ and $d_s$ are parameters of the problem that come from the results of algorithm \ref{alg:computefreespace}.
+The set of equations \eqref{eq:lagrangemayersafeocp} and \eqref{eq:safeonestageocp} define the cost terms and the linear and non-linear constraints of the new one-stage safe \acrshort{ocp}, respectively. Equation \eqref{subeq:ciaocirclesarea} is the new appended non-linear constraint. This constraint sets the admissable area for each position of the optimal horizon. $\mathbf{c}_k^*,\,d_\ObstacleSpace(\mathbf{c}_k^*)$ and $d_s$ are parameters of the problem that come from the results of algorithm \ref{alg:computefreespace}.
 
 Secondly, another major novelty is the introduction of slacks. The need to relax constraint \ref{subeq:ciaocirclesarea} comes from the observation that the \acrshort{ocp} sometimes becomes infeasible if $\mathbf{p}_2^*$ is pushed to the border of $\SafeSpace_{\mathbf{c}^*}$. Slacks are non-negative (\ref{subeq:slackbounds}) and are also weighted on the cost function terms \ref{subeq:onestagelagrangesafeocp} and \ref{subeq:onestagemayersafeocp}. $Z_k \gg 1$ so that $s_k$ is only active when it is of the utmost importance to prevent infeasibility \cite{schoels2020nmpc}. $z_k$ penalizes very fast rates of change of $s_k$.
 \begin{subequations}

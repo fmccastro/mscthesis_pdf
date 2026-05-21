@@ -57,27 +57,27 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Refined map $\left (r_s = 1.0\,\mathrm {m},\, C = 0.9,\,c_{max} = 0.6\right )$.}}}{44}{figure.caption.42}%
 \contentsline {figure}{\numberline {4.10}{\ignorespaces Paths comparison and \textsc {getoptimalpath($\cdot $)} method runtimes.}}{45}{figure.caption.43}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Planar OCP architectures}}{48}{figure.caption.45}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Virtual speed control inside OCP}}}{48}{figure.caption.45}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Virtual speed control outside OCP}}}{48}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Planar \acrshort {nmpc} architectures}}{48}{figure.caption.45}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Virtual speed control inside \acrshort {nmpc}}}}{48}{figure.caption.45}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Virtual speed control outside \acrshort {nmpc}}}}{48}{figure.caption.45}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Path tracking improvements due to solver initialization with closest point progress.}}{48}{figure.caption.46}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Advantage of closest point optimization.}}}{48}{figure.caption.46}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Path tracking from different initial positions.}}}{48}{figure.caption.46}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Path tracking comparison with control horizon variation.}}{50}{figure.caption.48}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{50}{figure.caption.48}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{50}{figure.caption.48}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {nmpc}}}}{50}{figure.caption.48}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {nmpc}}}}{50}{figure.caption.48}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Path tracking comparison with sampling time variation.}}{50}{figure.caption.50}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{50}{figure.caption.50}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{50}{figure.caption.50}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {nmpc}}}}{50}{figure.caption.50}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {nmpc}}}}{50}{figure.caption.50}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Path tracking comparison among types of controllers.}}{51}{figure.caption.52}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{51}{figure.caption.52}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{51}{figure.caption.52}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {nmpc}}}}{51}{figure.caption.52}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {nmpc}}}}{51}{figure.caption.52}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces $t_l$ curve comparison between controllers \textit {Low control effort} and \textit {Smooth control}.}}{52}{figure.caption.53}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{52}{figure.caption.53}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{52}{figure.caption.53}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {nmpc}}}}{52}{figure.caption.53}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {nmpc}}}}{52}{figure.caption.53}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces $t_r$ curve comparison between controllers \textit {Low control effort} and \textit {Smooth control}.}}{52}{figure.caption.54}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {ocp}}}}{52}{figure.caption.54}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {ocp}}}}{52}{figure.caption.54}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Controlled virtual speed inside \acrshort {nmpc}}}}{52}{figure.caption.54}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Controlled virtual speed outside \acrshort {nmpc}}}}{52}{figure.caption.54}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Comparison among position regulations.}}{54}{figure.caption.56}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$T_s = 10\,ms\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}$Baseline}}}{54}{figure.caption.56}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$N = 100\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}$Baseline}}}{54}{figure.caption.56}%
@@ -86,7 +86,7 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$T_s = 10\,ms\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}$Baseline}}}{54}{figure.caption.57}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$N = 100\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}$Baseline}}}{54}{figure.caption.57}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$T_s = 30\,ms\tmspace +\thickmuskip {.2777em}\&\tmspace +\thickmuskip {.2777em}N=100$}}}{54}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Reference shift between consecutive iterations. In every iteration, a full reference is computed as in the standard case. However, the reference that is fed into the \acrshort {ocp} is shifted by removing the first node and appending the last node of the standard reference to it. This variant of the reference generation was tested because it offers a greater compliance with assumption \ref {assumption:rti3}.}}{55}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Reference shift between consecutive iterations. In every iteration, a full reference is computed as in the standard case. However, the reference that is fed into the \acrshort {nmpc} is shifted by removing the first node and appending the last node of the standard reference to it. This variant of the reference generation was tested because it offers a greater compliance with assumption \ref {assumption:rti3}.}}{55}{figure.caption.58}%
 \contentsline {figure}{\numberline {5.11}{\ignorespaces Detail view of virtual speed control module and weighted average equation.}}{55}{figure.caption.59}%
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Path tracking performance metrics.}}{56}{figure.caption.61}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Simulation loop times.}}}{56}{figure.caption.61}%
@@ -100,9 +100,9 @@
 \contentsline {figure}{\numberline {5.15}{\ignorespaces Map of forces.}}{57}{figure.caption.64}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$x,\,y\sim \mathcal {N}\left (0.0,\,0.01\right ),\tmspace +\thickmuskip {.2777em} \psi \sim \mathcal {N}\left (0.0,\,0.001\right )$}}}{57}{figure.caption.64}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$x,\,y\sim \mathcal {N}\left (0.0,\,0.03\right ),\tmspace +\thickmuskip {.2777em} \psi \sim \mathcal {N}\left (0.0,\,0.005\right )$}}}{57}{figure.caption.64}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces \acrshort {ocp} adapted to a rough terrain environment. The \textcolor {tabvs}{virtual speed control module} is detailed in figure \ref {fig:virtual_speed_module_qp}.}}{58}{figure.caption.65}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Path tracking on hill with rough, uneven terrain.}}{59}{figure.caption.67}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Path tracking on hill with different conditions.}}}{59}{figure.caption.67}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces \acrshort {nmpc} adapted to a rough terrain environment. The \textcolor {tabvs}{virtual speed control module} is detailed in figure \ref {fig:virtual_speed_module_qp}.}}{58}{figure.caption.65}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Path tracking over hill with rough, uneven terrain.}}{59}{figure.caption.67}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Path tracking over hill with different conditions.}}}{59}{figure.caption.67}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Pitch \textcolor {orange}{(orange)} and roll \textcolor {blue}{(blue)}. $a=0.3$ (top) and $a=0.55$ (bottom).}}}{59}{figure.caption.67}%
 \contentsline {figure}{\numberline {5.18}{\ignorespaces Coulomb traction forces cone. No slippage area is on \textcolor {tabgreen}{light green} and the slippage area is on \textcolor {tabred}{light red}.}}{59}{figure.caption.68}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$a=0.33$, Pose tracker.}}}{59}{figure.caption.68}%
@@ -144,19 +144,19 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$ \|\mathbf {p} - \mathbf {o}\|_2^2 \leq \left (d_\mathcal {O}\left (\mathbf {p}\right ) - \underline {d}\right )^2$}}}{67}{figure.caption.79}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\mathcal {S}_\mathbf {c}$}}}{67}{figure.caption.79}%
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$\mathbf {g}$ (\textcolor {blue}{blue arrows}); Filled black circles are obstacles.}}}{67}{figure.caption.79}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Application of algorithm \ref {alg:computefreespace} to a set of obstacles, where $\underline {\eta } = 0.02,\,\overline {\eta } = 2.0,\,\delta _{\eta } = 2.0$ and $\underline {d} = 0.3$.}}{68}{figure.caption.80}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$d_\mathcal {O}\left (\cdot \right )$ and $\mathbf {g}$ (black arrows)}}}{68}{figure.caption.80}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Examples of safe balls, where $\mathbf {c}$ and $\mathbf {p}$ are denoted by $\bullet $ and $\mathbf {\times }$, respectively.}}}{68}{figure.caption.80}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Application of algorithm \ref {alg:gendeformedref} to a set of obstacles. The parameters that generated the results of \ref {fig:ciaoiterationresults} were used to generate these figures as well. The potential field parameters from the left picture were used to generate the right picture.}}{71}{figure.caption.81}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Application of algorithm \nameref {alg:computefreespace} to a set of obstacles, where $\underline {\eta } = 0.02,\,\overline {\eta } = 2.0,\,\delta _{\eta } = 2.0$ and $\underline {d} = 0.3$.}}{69}{figure.caption.80}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$d_\mathcal {O}\left (\cdot \right )$ and $\mathbf {g}$ (black arrows)}}}{69}{figure.caption.80}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Examples of safe balls, where $\mathbf {c}$ and $\mathbf {p}$ are denoted by $\bullet $ and $\mathbf {\times }$, respectively.}}}{69}{figure.caption.80}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Application of algorithm \nameref {alg:gendeformedref} to a set of obstacles. The parameters that generated the results of figure \ref {fig:ciaoiterationresults} were used to generate these figures as well. The potential field parameters from the left picture were used to generate the right picture.}}{71}{figure.caption.81}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\mathbf {f}_{tot}(\cdot )$, where $k_{rep}=0.2,\,k_{att}=3.0$ and $d_0=0.35$. The target is the \textcolor {tabred}{red} point and the obstacles are coloured in \textcolor {tabgray}{gray}. \textcolor {tabgreen}{Green} points denote local minimum spots, where $\mathbf {f}_{tot}(\cdot )=0$.}}}{71}{figure.caption.81}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Examples of deformed references, where $N=50,\,v=0.02$, $\alpha _+=0.3$, $\underline {d} = 0.3$ and $d_s = 1.2 \times \underline {d}$. The target and respective reference have the same color. The target and projected target are marked with $\times $ and $\bullet $ respectively. Dashed \textcolor {tabgray}{gray} lines depict the border of $\overline {\mathcal {S}}$.}}}{71}{figure.caption.81}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Architecture of the one-stage \acrshort {ocp} within a safe real-time \acrshort {nmpc} setting on rough terrain.}}{71}{figure.caption.82}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Safe real-time \acrshort {nmpc} architecture.}}{71}{figure.caption.82}%
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Path tracking with safe one-stage real-time \acrshort {ocp} with solver $(1)$.}}{73}{figure.caption.86}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Reference tour with solver $(1)$.}}}{73}{figure.caption.86}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Path tracking from different initial poses with solver $(1)$.}}}{73}{figure.caption.86}%
 \contentsline {figure}{\numberline {6.6}{\ignorespaces Traction forces within coulomb friction cone (solver $(1)$).}}{74}{figure.caption.87}%
 \contentsline {figure}{\numberline {6.7}{\ignorespaces Reference tour with solver $(2)$.}}{74}{figure.caption.87}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Maximum slack among slacks horizon at each simulation iteration.}}{74}{figure.caption.88}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Maximum slack among slacks horizon at each simulation iteration.}}{75}{figure.caption.88}%
 \contentsline {figure}{\numberline {6.9}{\ignorespaces Reference tour performance plus velocities and force rates curves with solver $(1)$.}}{75}{figure.caption.89}%
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Maximum slack vs clearance (top). Optimal cost (middle). Loop time (bottom).}}}{75}{figure.caption.89}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Linear and angular velocities (top). Force rates (bottom).}}}{75}{figure.caption.89}%

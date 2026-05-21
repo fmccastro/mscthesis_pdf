@@ -71,6 +71,7 @@
 \nomenclatureentry{G$\eta$@[{$\eta$}]\begingroup Step.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{G$\tau$@[{$\tau$}]\begingroup Wheel torque.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{G$\gamma$@[{$\gamma$}]\begingroup Barrier parameter.\nomeqref {0}|nompageref}{xv}
+\nomenclatureentry{G$\\delta_gamma$@[{$\\delta_gamma$}]\begingroup Step multiplifaction factor.\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{S$2$@[{$2$}]\begingroup Two-dimensional\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{S$3$@[{$3$}]\begingroup Three-dimensional\nomeqref {0}|nompageref}{xv}
 \nomenclatureentry{S$xx,\,yy,\,zz$@[{$xx,\,yy,\,zz$}]\begingroup Inertia tensor subscripts.\nomeqref {0}|nompageref}{xv}

@@ -45,19 +45,19 @@
 \contentsline {section}{\numberline {4.2}Optimal path planning}{41}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Implementation}{42}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Discussion}{43}{subsection.4.2.2}%
-\contentsline {chapter}{\numberline {5}Real-time \acrshort {nmpc} on uneven, rigid terrain}{46}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Planar \acrshort {ocp}}{46}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Planar \acrshort {ocp} architectures}{47}{subsection.5.1.1}%
+\contentsline {chapter}{\numberline {5}Real-time \acrshort {nmpc} over uneven, rigid terrain}{46}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Planar \acrshort {nmpc}}{46}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Planar \acrshort {nmpc} architectures}{47}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Solver parameters survey}{48}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Real-time planar \acrshort {ocp}}{53}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Real-time \acrshort {ocp} on rough terrain}{58}{section.5.2}%
+\contentsline {subsection}{\numberline {5.1.3}Real-time planar \acrshort {nmpc}}{53}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Real-time \acrshort {nmpc} over rough terrain}{58}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Moving on hill}{59}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}Traversal of rough, uneven terrain}{60}{subsection.5.2.2}%
-\contentsline {chapter}{\numberline {6}Obstacle avoidance}{66}{chapter.6}%
+\contentsline {chapter}{\numberline {6}Collision-aware real-time \acrshort {nmpc} over irregular terrain}{66}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Safe reference generation}{66}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}\acrlong {ciao} (\acrshort {ciao}) algorithm}{66}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Baseline reference deformation}{69}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}Real-time safe \acrshort {nmpc} on irregular terrain}{70}{section.6.2}%
+\contentsline {subsection}{\numberline {6.1.2}Baseline reference deformation}{68}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Real-time safe \acrshort {nmpc} over irregular terrain}{71}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Simultaneous path tracking and obstacle avoidance on rough terrain}{72}{subsection.6.2.1}%
 \contentsline {chapter}{\numberline {7}Conclusions}{77}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Future Work}{77}{section.7.1}%

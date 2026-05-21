@@ -8,12 +8,14 @@
 %                                                                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Real-time \acrshort{nmpc} on uneven, rigid terrain}
+\chapter{Real-time \acrshort{nmpc} over uneven, rigid terrain}
 \label{chapter:nmpc}
 
-This chapter provides a detailed, step-by-step development of a real-time path tracking \acrshort{nmpc} algorithm. Section \ref{section:onestageplanarocp} provides a detailed assessment of path-tracking on planar terrain, from a non real-time approach up to a noisy path tracking simulation in real-time. Finally, section \ref{section:realtimeonestageocproughterrain} reformulates the algorithm for the rough, uneven terrain case. 
+This chapter provides a detailed, step-by-step development of a real-time path tracking \acrshort{nmpc} algorithm in rough, rigid terrain. Section \ref{section:onestageplanarocp} provides a detailed assessment of path-tracking over planar terrain, from a non real-time approach up to a noisy path tracking simulation in real-time. Finally, section \ref{section:realtimeonestageocproughterrain} reformulates the algorithm for the rough, uneven terrain case. The dynamical and computational performance of the tested solvers is presented.
 
+\begin{remark}
 The first four parameters of table \ref{tab:intspecs} denote the dimensions and inertial features of the mobile robot that was used to get the results laid out in this chapter. Curve $(1)$ of table \ref{tab:LissajousCurves} was adopted as reference up to subsection \ref{subsection:onestageocparch}. From there until the end of section \ref{section:onestageplanarocp}, curve $(2)$ was taken as reference. Then, curve $(3)$ is the baseline reference, up to the end of the chapter.
+\end{remark}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -95,10 +97,10 @@ The first four parameters of table \ref{tab:intspecs} denote the dimensions and 
 %In this thesis, one of the main goals is to provide suitable real-time control algorithms, so the optimization time is of utmost importance, so the one-stage approach will be refined and tuned from now on. However, the optimization problem may be reformulated into a two-stage approach in case of need.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Planar \acrshort{ocp}}
+\section{Planar \acrshort{nmpc}}
 \label{section:onestageplanarocp}
 
-A general model-based \acrshort{ocp} is presented in \ref{eq:onestageocp}. In this section, only planar motion is considered ($\roll = \pitch = 0$). The dynamics model is the same as the one in \refeq{eq:skidsteeringStateSpace}. The Lagrange and Mayer terms of the cost function focus on achieving path tracking of the reference but also on keeping the controls rate change not too high, to resemble the fact that on a real system, actuation delays are present.
+A general model-based \acrshort{nmpc} is presented in \ref{eq:onestageocp}. In this section, only planar motion is considered ($\roll = \pitch = 0$). The dynamics model is the same as the one in \refeq{eq:skidsteeringStateSpace}. The Lagrange and Mayer terms of the cost function focus on achieving path tracking of the reference but also on keeping the controls rate change not too high, to resemble the fact that on a real system, actuation delays are present.
 \begin{subequations}
 	\begin{align}
 		\begin{split}
@@ -126,19 +128,19 @@ Equation \eqref{subeq:rotationInvtrick} denotes the rotational invariance trick 
 	\label{eq:onestageocp}
 \end{subequations}
 
-Apart from the dynamics model that is presented in continuous time, the cost function and inequality constraints are presented in discrete time. \acrshort{ocp} \eqref{eq:onestageocp} is presented this way to closely match the implementation within the Opti-stack. The Opti-stack takes care of the dynamics discretization.
+Apart from the dynamics model that is presented in continuous time, the cost function and inequality constraints are presented in discrete time. \acrshort{nmpc} \eqref{eq:onestageocp} is presented this way to closely match the implementation within the Opti-stack. The Opti-stack takes care of the dynamics discretization.
 
-In case the virtual speed is controlled within the \acrshort{ocp}, the reference is also defined in the solver, which depends on the progress variable $\Progress_k$. Moreover, $\Progress$ is also a state and $\vspeed$ a control. In case the reference path is provided to the solver, that dependence vanishes, and $\Progress$ and $\vspeed$ are removed from \acrshort{ocp} \eqref{eq:onestageocp}. The virtual speed is an unitless variable and not necessarily a parameterized velocity. Its goal is to speed up or delay the traversal of some reference. Finally, the parameters $\mathbf{p}$ are kept constant throughout the control horizon.
+In case the virtual speed is controlled within the \acrshort{nmpc}, the reference is also defined in the solver, which depends on the progress variable $\Progress_k$. Moreover, $\Progress$ is also a state and $\vspeed$ a control. In case the reference path is provided to the solver, that dependence vanishes, and $\Progress$ and $\vspeed$ are removed from \acrshort{nmpc} \eqref{eq:onestageocp}. The virtual speed is an unitless variable and not necessarily a parameterized velocity. Its goal is to speed up or delay the traversal of some reference. Finally, the parameters $\mathbf{p}$ are kept constant throughout the control horizon.
 
-\subsection{Planar \acrshort{ocp} architectures}
+\subsection{Planar \acrshort{nmpc} architectures}
 \label{subsection:onestageocparch}
 
-When it comes to the inclusion of the virtual speed control into the optimization model, this choice depends on the kind of reference the mobile robot follows up. The solver may be fed with points from a path that the robot needs to catch up with, where the reference virtual speed is controlled outside the solver by changing the gap between consecutive points. Conversely, the virtual speed may be controlled inside the \acrshort{ocp} if the reference analytical equations are provided to the solver. The latter may add non-negligible overhead to the solver, but the virtual speed control may be removed in case real-time requirements are not met.
+When it comes to the inclusion of the virtual speed control into the optimization model, this choice depends on the kind of reference the mobile robot follows up. The solver may be fed with points from a path that the robot needs to catch up with, where the reference virtual speed is controlled outside the solver by changing the gap between consecutive points. Conversely, the virtual speed may be controlled inside the \acrshort{nmpc} if the reference analytical equations are provided to the solver. The latter may add non-negligible overhead to the solver, but the virtual speed control may be removed in case real-time requirements are not met.
 
-Figure \ref{fig:onestagearchitecturecomp} presents the architecture of both variations. Each \acrshort{ocp} is always fed with the optimal solution of the previous iteration. Then, every optimal solution is shifted and the optimization problem initial guess is filled as it is described in \refeq{eq:shifting}.
+Figure \ref{fig:onestagearchitecturecomp} presents the architecture of both variations. Each \acrshort{nmpc} is always fed with the optimal solution of the previous iteration. Then, every optimal solution is shifted and the optimization problem initial guess is filled as it is described in \refeq{eq:shifting}.
 
 \begin{figure}[!htb]
-    \subfigure[Virtual speed control inside OCP] {
+    \subfigure[Virtual speed control inside \acrshort{nmpc}] {
 	    \tikzstyle{block} = [draw, text centered, minimum height = 2.0em,minimum width = 3.0em, rounded corners, line width = 0.5 mm]
 	\begin{tikzpicture}
 		\node [block, align= center] at (0, 0) (2) {NMPC\\Dynamics};
@@ -158,7 +160,7 @@ Figure \ref{fig:onestagearchitecturecomp} presents the architecture of both vari
 	\end{tikzpicture}
 	\label{subfig:archvspeedinsideocp}
     }
-    \subfigure[Virtual speed control outside OCP]{
+    \subfigure[Virtual speed control outside \acrshort{nmpc}]{
 		\tikzstyle{block} = [draw, text centered, minimum height = 2.0em, minimum width = 3.0em, rounded corners, line width = 0.5 mm]
 	\begin{tikzpicture}
 		\node [block, align= center, draw={rgb,255:red,30;green,145;blue,30}] at (0.8, 0) (2) {\textcolor{rgb,255:red,30;green,145;blue,30}{Virtual speed control}};
@@ -184,7 +186,7 @@ Figure \ref{fig:onestagearchitecturecomp} presents the architecture of both vari
 	\end{tikzpicture}
 	\label{subfig:archvspeedoutsideocp}
     }
-  \caption{Planar OCP architectures}
+  \caption{Planar \acrshort{nmpc} architectures}
   \label{fig:onestagearchitecturecomp}
 \end{figure}
 
@@ -220,7 +222,7 @@ Figure \ref{fig:closestPoint_comp} presents a comparison of the path traversed b
 \subsection{Solver parameters survey}
 \label{subsection:solverspecssurvey}
 
-After the baseline \acrshort{nmpc} architectures are set, it is time to refine the \acrshort{ocp} by playing with the control horizon, sampling time and weights of the cost function.
+After the baseline \acrshort{nmpc} architectures are set, it is time to refine the \acrshort{nmpc} by playing with the control horizon, sampling time and weights of the cost function.
 
 Firstly, the problem is reformulated by adding a term on the cost function that aims to account for the control effort, so that the battery of the vehicle is saved as much as possible. Then, \refeq{subeq:onestagelagrange} becomes,
 \begin{equation}
@@ -232,7 +234,7 @@ Firstly, the problem is reformulated by adding a term on the cost function that 
 
 The rest of the solver's structure remains unchanged. Both controllers architectures are evaluated separately. Some performance metrics are selected, that take into account the cumulatives control effort, position and heading errors, as well as the progress made by the vehicle. The cumulative position and heading errors are given by $\varepsilon_i = \sum_i \sqrt{ (\x_i - r_{\x,\,i})^2 + (\y_i - r_{\y,\,i})^2 }$ and $\sum_i e_{\yaw,\,i}$, respectively. The cumulative control effort is designed to get an idea of the electric energy spent by the vehicle, that is $\sum_i \left(\Traction_{l,\,i} + \Traction_{r,\,i}\right)\,T_{c,\,i}$.
 
-In case the virtual speed is controlled inside the \acrshort{ocp}, $\vspeed_{ref,\,k} = 0.5,\;\forall\,k$. For the opposite case, the reference path is generated by determining a virtual speed, which is generated as follows,
+In case the virtual speed is controlled inside the \acrshort{nmpc}, $\vspeed_{ref,\,k} = 0.5,\;\forall\,k$. For the opposite case, the reference path is generated by determining a virtual speed, which is generated as follows,
 
 \begin{equation}
 v_i\left(\kappa,\,\varepsilon\right) = min\left( \frac{0.5}{ 1 + \exp\left( 5.0\times( \varepsilon - 2.0 ) \right) },\, \frac{0.5}{ 1 + \exp\left( 0.1 \times ( \kappa - 10.0 ) \right) } \right)
@@ -241,11 +243,11 @@ v_i\left(\kappa,\,\varepsilon\right) = min\left( \frac{0.5}{ 1 + \exp\left( 5.0\
 
 \noindent, where $\varepsilon$ and $\kappa$ denote the positional error and curvature at the current progress, respectively.
 
-The results presented below were generated on an Intel® Core™ i7-10750H CPU @ 2.60GHz × 12 processor. The \acrshort{ocp}s were formulated in the Opti stack and \acrshort{ipopt} was used as solver. Real-time specs were neglected at this point.
+The results presented below were generated on an Intel® Core™ i7-10750H CPU @ 2.60GHz × 12 processor. The \acrshort{nmpc}s were formulated in the Opti stack and \acrshort{ipopt} was used as solver. Real-time specs were neglected at this point.
 
 \subsubsection*{Control horizon}
 
-The simulation results of the planar \acrshort{ocp} with respect to the control horizon are presented in figure \ref{fig:PathTrackCompHorizonVar} and tables \ref{tab:cumulativeControlEffortControlHorizon}, \ref{tab:cumulativePositionalErrorControlHorizon} and \ref{tab:cumulativeHeadingErrorControlHorizon}. The parameters of the solver that are kept constant on every simulation are stated in table \ref{tab:controlHorizonSpecs}. The order of $Q$ and $R$ diagonal elements is aligned with the order of the cost terms presented in equations \eqref{eq:reflagrange} and \eqref{subeq:onestagemayer}.
+The simulation results of the planar \acrshort{nmpc} with respect to the control horizon are presented in figure \ref{fig:PathTrackCompHorizonVar} and tables \ref{tab:cumulativeControlEffortControlHorizon}, \ref{tab:cumulativePositionalErrorControlHorizon} and \ref{tab:cumulativeHeadingErrorControlHorizon}. The parameters of the solver that are kept constant on every simulation are stated in table \ref{tab:controlHorizonSpecs}. The order of $Q$ and $R$ diagonal elements is aligned with the order of the cost terms presented in equations \eqref{eq:reflagrange} and \eqref{subeq:onestagemayer}.
 
 \begin{table}[!htb]
   \caption[Constant solver parameters when control horizon changes.]{Constant solver parameters.}
@@ -268,13 +270,13 @@ The simulation results of the planar \acrshort{ocp} with respect to the control 
 
 \begin{figure}[!htb]
 	\centering
-	\subfigure[Controlled virtual speed inside \acrshort{ocp}]{
+	\subfigure[Controlled virtual speed inside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/horizon/Virtual speed controlled inside OCP/Planar_onestage_ocp_control_vspeed_comp_horizon.pdf}
         \label{subfig:PathTrackCompHorizonVarInsideVspeed}
 	}
 	\hspace{-1.0em}
-    \subfigure[Controlled virtual speed outside \acrshort{ocp}]{
+    \subfigure[Controlled virtual speed outside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/horizon/Virtual speed controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_horizon.pdf}
         \label{subfig:PathTrackCompHorizonVarOutsideVspeed}
@@ -285,7 +287,7 @@ The simulation results of the planar \acrshort{ocp} with respect to the control 
 
 In all cases, the controllers meet the reference and track it successfully. In the zoomed sections of figure \ref{fig:PathTrackCompHorizonVar}, one can also see that the vehicle turns around from an initial yaw of $-\pi$ to the reference heading and does not move backwards.
 
-The major differences are seen when performance metrics are evaluated. Regarding the cumulative control effort, a clear trend is not identified. However, the cumulative positional error decreases on both architectures as the control horizon increases. The opposite trend is observed with respect to the cumulative heading error. The most significant portions of these two latter cumulative errors come from the first iterations of the simulation. As the control horizon increases, the vehicle catches the reference earlier. That makes the positional error to be smaller, although the heading error is higher. When it comes to progress, it is somewhat the same in all cases, although a smaller progress was recorded when $N=100$ in case the virtual speed is controlled within the \acrshort{ocp}.
+The major differences are seen when performance metrics are evaluated. Regarding the cumulative control effort, a clear trend is not identified. However, the cumulative positional error decreases on both architectures as the control horizon increases. The opposite trend is observed with respect to the cumulative heading error. The most significant portions of these two latter cumulative errors come from the first iterations of the simulation. As the control horizon increases, the vehicle catches the reference earlier. That makes the positional error to be smaller, although the heading error is higher. When it comes to progress, it is somewhat the same in all cases, although a smaller progress was recorded when $N=100$ in case the virtual speed is controlled within the \acrshort{nmpc}.
 
 \subsubsection*{Sampling time}
 
@@ -312,13 +314,13 @@ Likewise, the constant parameters are presented in table \ref{tab:samplingTimeSp
 
 \begin{figure}[!htb]
 	\centering
-	\subfigure[Controlled virtual speed inside \acrshort{ocp}]{
+	\subfigure[Controlled virtual speed inside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/Sampling time/Virtual speed controlled inside OCP/Planar_onestage_ocp_control_vspeed_comp_samplingtime.pdf}
         \label{subfig:PathTrackCompSamplingTimeVarInsideVspeed}
 	}
 	\hspace{-1.0em}
-    \subfigure[Controlled virtual speed outside \acrshort{ocp}]{
+    \subfigure[Controlled virtual speed outside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/Sampling time/Virtual speed controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_samplingtime.pdf}
         \label{subfig:PathTrackCompSamplingTimeVarOutsideVspeed}
@@ -335,7 +337,7 @@ Although it seems better performance metrics can be achieved by increasing the s
 In this segment, the controller is tested against different sets of weights. The control horizon and sampling time remain constant.
 
 \begin{remark}
-The cost function of an \acrshort{ocp} shall pursue the minimization of a single and clearly stated goal. From trial and error experiments, it is not a good practice to seek more than one goal at the same time.
+The cost function of an \acrshort{nmpc} shall pursue the minimization of a single and clearly stated goal. From trial and error experiments, it is not a good practice to seek more than one goal at the same time.
 \end{remark}
 
 Based on the previous remark, several types of controllers are set up in table \ref{tab:setsWeights}. Although tracking the reference stands as the main goal, some attention is paid to secondary performance objectives in controllers \textit{Low control effort} and \textit{Smooth controls}. The traversal performed by the vehicle is presented in figure \ref{fig:PathTrackCompWeightsVar}.
@@ -360,7 +362,7 @@ Based on the previous remark, several types of controllers are set up in table \
 	Focus on smooth controls & $diag\left(1.0,\,1.0,\,1.0\right)$ & $diag\left(1\mathrm{e}{-3}
 ,\, 1\mathrm{e}{-3},\,1\mathrm{e}{-3},\,1\mathrm{e}{-3},\,1\mathrm{e}{-9},\,1\mathrm{e}{-9}\right)$\\
 	\bottomrule
-  	\multicolumn{3}{l}{\footnotesize $\dagger$ When it comes to virtual speed control outside the OCP, the respective weights are removed from $R$.}
+  	\multicolumn{3}{l}{\footnotesize $\dagger$ When it comes to virtual speed control outside the \acrshort{nmpc}, the respective weights are removed from $R$.}
   \end{tabular}
   \begin{tabular}[]{cccc}
 	\toprule
@@ -373,13 +375,13 @@ Based on the previous remark, several types of controllers are set up in table \
 
 \begin{figure}[!htb]
 	\centering
-	\subfigure[Controlled virtual speed inside \acrshort{ocp}]{
+	\subfigure[Controlled virtual speed inside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled inside OCP/Planar_onestage_ocp_control_vspeed_comp_weights.pdf}
         \label{subfig:PathTrackCompWeightsVarInsideVspeed}
 	}
 	\hspace{-1.0em}
-    \subfigure[Controlled virtual speed outside \acrshort{ocp}]{
+    \subfigure[Controlled virtual speed outside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_weights.pdf}
         \label{subfig:PathTrackCompWeightsVarOutsideVspeed}
@@ -392,13 +394,13 @@ For the sake of brevity and simplicity, only the output of $\Traction_l$ and $\T
 
 \begin{figure}[!htb]
 	\centering
-	\subfigure[Controlled virtual speed inside \acrshort{ocp}]{
+	\subfigure[Controlled virtual speed inside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled inside OCP/Planar_onestage_ocp_control_vspeed_comp_tl_limited_weights.pdf}
         \label{subfig:PathTrackCompWeightsVarInsideVspeed_tl}
 	}
 	\hspace{-1.0em}
-    \subfigure[Controlled virtual speed outside \acrshort{ocp}]{
+    \subfigure[Controlled virtual speed outside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tl_limited_weights.pdf}
         \label{subfig:PathTrackCompWeightsVarOutsideVspeed_tl}
@@ -409,13 +411,13 @@ For the sake of brevity and simplicity, only the output of $\Traction_l$ and $\T
 
 \begin{figure}[!htb]
 	\centering
-	\subfigure[Controlled virtual speed inside \acrshort{ocp}]{
+	\subfigure[Controlled virtual speed inside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled inside OCP/Planar_onestage_ocp_control_vspeed_comp_tr_limited_weights.pdf}
         \label{subfig:PathTrackCompWeightsVarInsideVspeed_tr}
 	}
 	\hspace{-1.0em}
-    \subfigure[Controlled virtual speed outside \acrshort{ocp}]{
+    \subfigure[Controlled virtual speed outside \acrshort{nmpc}]{
         \centering
         \includegraphics[width=0.48\textwidth]{Figures/One stage OCP/Solver specs comparison/Weights/Virtual speed controlled outside OCP/Planar_onestage_ocp_control_outside_vspeed_comp_tr_limited_weights.pdf}
         \label{subfig:PathTrackCompWeightsVarOutsideVspeed_tr}
@@ -434,14 +436,12 @@ Energy saving may also be achieved with optimal path planning (chapter \ref{chap
 
 The analysis performed in this subsection has provided a good rule of thumbs to bear in mind. First, a good balance on the control horizon shall be found so that a good trade-off with respect to positional and heading errors is found. Then, the sampling time shall be increased whenever possible, although the solver computation time sets the sampling time's reference.
 
-Finally, each set of cost function weights has achieved its purpose. However, the controller must be set up so that a single and specific control objective is solely pursued.
+Finally, each set of cost function weights has achieved its purpose. However, the controller must be set up so that a single and specific control objective is solely pursued. Both architectures follow the same trends, although the virtual speed control inside the \acrshort{nmpc} delivers a better performance.
 
-Both architectures follow the same trends, although the virtual speed control inside the \acrshort{ocp} delivers a better performance.
-
-\subsection{Real-time planar \acrshort{ocp}}
+\subsection{Real-time planar \acrshort{nmpc}}
 \label{subsection:realTimeOneStagePlanarOCP}
 
-In this subsection, a similar analysis to the one performed previously is carried on for an \acrshort{ocp} implemented in \texttt{acados}. This time, virtual speed will only be controlled outside the \acrshort{ocp}. A real-time \acrshort{ocp} must meet stringent time requirements, which may make it unfeasible to handle considerable non-convexities and non-linearities. So, as the problem of path planning may be solved outside the solver, the virtual speed control is managed outside the \acrshort{ocp}. The closest point computation is always performed, when applicable. Once again, a small reformulation of the cost function is performed in \refeq{eq:realtimeplanarocpcost}.
+In this subsection, a similar analysis to the one performed previously is carried on for an \acrshort{nmpc} implemented in \texttt{acados}. This time, virtual speed will only be controlled outside the \acrshort{nmpc}. A real-time \acrshort{nmpc} must meet stringent time requirements, which may make it unfeasible to handle considerable non-convexities and non-linearities. So, as the problem of path planning may be solved outside the solver, the virtual speed control is managed outside the \acrshort{nmpc}. The closest point computation is always performed, when applicable. Once again, a small reformulation of the cost function is performed in \refeq{eq:realtimeplanarocpcost}.
 \begin{subequations}
 	\begin{align}
 		\lagrangeTerm{\mathbf{\x},\,\mathbf{u},\,\mathbf{p}}_k = \Vert\x - r_{\x},\,&\y - r_{\y},\,e_{\yaw},\,v_{x},\,\omega_{z},\,\Traction_{l},\,\Traction_{r}\Vert_{Q,\,k}^2 + \Vert u_{l},\,u_{r} \Vert_{R,\,k}^2 \label{subeq:realtimeonestagelagrange}\\
@@ -454,7 +454,7 @@ In this analysis, the optimization time is also considered. \acrshort{sqprti} is
 
 \subsubsection*{Regulation problem}
 
-The \acrshort{ocp} is tested in a position and heading regulation scenarios. The results are presented in figures \ref{fig:PositionRegulationCompRealTimeOCP} and \ref{fig:HeadingRegulationCompRealTimeOCP}, respectively. Table \ref{tab:regulatorWeights} denotes the set of weights and parameters for each type of controller. The Coulomb friction constraint is enforced as well.
+The \acrshort{nmpc} is tested in a position and heading regulation scenarios. The results are presented in figures \ref{fig:PositionRegulationCompRealTimeOCP} and \ref{fig:HeadingRegulationCompRealTimeOCP}, respectively. Table \ref{tab:regulatorWeights} denotes the set of weights and parameters for each type of controller. The Coulomb friction constraint is enforced as well.
 
 \begin{table}[!htb]
   \caption{Regulator solver parameters. Controllers $^p$ and $^h$ are used for position and heading regulation, respectively.}
@@ -535,11 +535,11 @@ Up to now, it is possible to address the path tracking problem, as the results o
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{Figures/reference_switch.pdf}
-    \caption{Reference shift between consecutive iterations. In every iteration, a full reference is computed as in the standard case. However, the reference that is fed into the \acrshort{ocp} is shifted by removing the first node and appending the last node of the standard reference to it. This variant of the reference generation was tested because it offers a greater compliance with assumption \ref{assumption:rti3}.}
+    \caption{Reference shift between consecutive iterations. In every iteration, a full reference is computed as in the standard case. However, the reference that is fed into the \acrshort{nmpc} is shifted by removing the first node and appending the last node of the standard reference to it. This variant of the reference generation was tested because it offers a greater compliance with assumption \ref{assumption:rti3}.}
     \label{fig:refswitch}
 \end{figure}
 
-The solver is tested under several conditions, which are outlined in table \ref{tab:pathTrackingSpecs}. In figure \ref{fig:pathtrackingperformance}, the performance metrics of the solvers are presented. The reference provided to the OCP is updated on every node, by taking the nearest point to the trajectory as the first reference node. When $\dagger$ is appended to the controller number, that means the reference provided to the solver is updated incrementally (figure \ref{fig:refswitch}), where the reference horizon is shifted forward and a new reference pose is added to the last node \cite{gros2020linear}. Moreover, the optimization cost (time) is determined as the sum of the preparation and feedback phase costs (times) (see algorithm \nameref{alg:rti}).
+The solver is tested under several conditions, which are outlined in table \ref{tab:pathTrackingSpecs}. In figure \ref{fig:pathtrackingperformance}, the performance metrics of the solvers are presented. The reference provided to the \acrshort{nmpc} is updated on every node, by taking the nearest point to the trajectory as the first reference node. When $\dagger$ is appended to the controller number, that means the reference provided to the solver is updated incrementally (figure \ref{fig:refswitch}), where the reference horizon is shifted forward and a new reference pose is added to the last node \cite{gros2020linear}. Moreover, the optimization cost (time) is determined as the sum of the preparation and feedback phase costs (times) (see algorithm \nameref{alg:rti}).
 
 Up to now, the virtual speed control module was just made of \refeq{eq:vspeed_computation_architecture_b}. From now on, a weighted average of \refeq{eq:virtualspeedqp} follows it, in order to promote smooth reference changes. A scheme of the virtual speed control module reformulation is presented in figure \ref{fig:virtual_speed_module_qp}.
 
@@ -559,7 +559,7 @@ Up to now, the virtual speed control module was just made of \refeq{eq:vspeed_co
 \label{fig:virtual_speed_module_qp}
 \end{figure}
 
-On every controller, the loop time is below the sampling time. The loop times of controllers $(i^{\dagger})$ are lower because the \acrshort{ocp} changes minimally from iteration to iteration. However, controllers $i$ present a lower optimization cost, due to the fact that these controllers don't match the pose horizon with the reference. The cost of controllers $(i^{\dagger})$ is higher because the reference does not take into account the change of pose between consecutive iterations. Then, controllers $(i)$ are a better choice because their cost is very low, even though the computational time is higher, but still well below the sampling time.
+On every controller, the loop time is below the sampling time. The loop times of controllers $(i^{\dagger})$ are lower because the \acrshort{nmpc} changes minimally from iteration to iteration. However, controllers $i$ present a lower optimization cost, due to the fact that these controllers don't match the pose horizon with the reference. The cost of controllers $(i^{\dagger})$ is higher because the reference does not take into account the change of pose between consecutive iterations. Then, controllers $(i)$ are a better choice because their cost is very low, even though the computational time is higher, but still well below the sampling time.
 
 Moreover, lower loop times are recorded when variable weights are used, as the states horizon is more stable \cite{schoels2020nmpc}. In the case of constant weights, an oscillatory behaviour of the solution between iterations is recorded.
 
@@ -632,27 +632,27 @@ Finally, these solvers are subject to robustness tests to evaluate the flexiblit
 
 As expected, when noise amplitude is increased, the tube of positions enlarges and the map of forces shows a more often approximation of forces to its limits, because a greater effort is required from the controller to return the vehicle to the reference.
 
-These simulations aim to take the controller to its limits, so that the \acrshort{ocp} feasibility is tested under harsh conditions. In every iteration, the solver successfully outputs an optimal solution to the respective \acrshort{ocp}. However, one shall be careful in case the forces yielded by the controller touch its limits several times, because this may delay the vehicle when it comes to following the reference or introduce wheel slippage in case the vehicle is traversing slopes.
+These simulations aim to take the controller to its limits, so that the \acrshort{nmpc} feasibility is tested under harsh conditions. In every iteration, the solver successfully outputs an optimal solution to the respective \acrshort{nmpc}. However, one shall be careful in case the forces yielded by the controller touch its limits several times, because this may delay the vehicle when it comes to following the reference or introduce wheel slippage in case the vehicle is traversing slopes.
 
-The average loop time among all simulations is always below $5.1$ ms and only a single timeout is recorded (a timeout is considered to happen when the loop time is higher than $T_s$). The computational cost becomes much higher than in the deterministic case, mainly due to significant jumps between consecutive \acrshort{ocp}s (assumption \ref{assumption:rti3} is not respected).
+The average loop time among all simulations is always below $5.1$ ms and only a single timeout is recorded (a timeout is considered to happen when the loop time is higher than $T_s$). The computational cost becomes much higher than in the deterministic case, mainly due to significant jumps between consecutive \acrshort{nmpc}s (assumption \ref{assumption:rti3} is not respected).
 
 \begin{remark}
 When the mobile robot considerably deviates from the reference, it is advisable to introduce an auxiliary reference to smoothly guide the vehicle back to the main reference. If the vehicle is too far away from the baseline reference, the controller will likely guide the vehicle with high velocities or it may output unstable solutions as the velocities and forces constraints prevent the vehicle from reaching the reference right away. This problem is not directly addressed in this thesis, but it is considered to be solved in case these two references are concatenated into a single continuous reference.
 \end{remark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Real-time \acrshort{ocp} on rough terrain}
+\section{Real-time \acrshort{nmpc} over rough terrain}
 \label{section:realtimeonestageocproughterrain}
 
-According to the results obtained in the previous section, the \acrshort{ocp} architecture combined with increasing weight solvers and the virtual speed control module, is tested on a rough terrain scenario, where $\roll \neq 0$ and $\pitch \neq 0$. Firstly, the solvers reaction is tested on a scenario where the mobile robot starts moving on a hill. Secondly, the same solvers are tested against path tracking when $\roll$ and $\pitch$ change abruptly.
+According to the results obtained in the previous section, the \acrshort{nmpc} architecture combined with increasing weight solvers and the virtual speed control module, is tested on a rough terrain scenario, where $\roll \neq 0$ and $\pitch \neq 0$. Firstly, the solvers reaction is tested on a scenario where the mobile robot starts moving on a hill. Secondly, the same solvers are tested against path tracking when $\roll$ and $\pitch$ change abruptly.
 
-This scenario calls for an adaptation of the one-stage \acrshort{ocp} architecture that was used in the planar case. Firstly, the \acrshort{ocp} must be aware of the vehicle orientation that is imposed by the terrain, namely $\roll$ and $\pitch$. These are continuously measured and provided in advance to the \acrshort{ocp} (figure \ref{fig:reformarchvspeedoutsideocp}). Moreover, \textbf{one may look to the rough terrain scenario as an extended version of the planar case}. In every situation, the mobile robot needs to take into account the gravity that acts on it. Due to that, the total wheel force is always equal to the gravity component plus or minus the traction force that is required to follow the respective reference (\refeq{eq:reformSumForces}). Therefore, the solver only needs to find the optimal deviation from the gravity component that enables an optimal reference tracking. Due to that, the state vector becomes $\mathbf{x} = \begin{bmatrix}\x,\,\y,\,\yaw,\,v_x,\,\omega_z,\,\delta\Traction_l,\,\delta\Traction_r\end{bmatrix}^T$. Moreover, $\dot{\delta\Traction}_l = u_l$ and $\dot{\delta\Traction}_r = u_r$. In this section, a Gauss-Newton approximation is used for the hessian. \acrshort{sqprti} is used as solver and partial condensing \texttt{\acrshort{hpipm}} is the \acrshort{qp} solver.
+This scenario calls for an adaptation of the \acrshort{nmpc} architecture that was used in the planar case. Firstly, the \acrshort{nmpc} must be aware of the vehicle orientation that is imposed by the terrain, namely $\roll$ and $\pitch$. These are continuously measured and provided in advance to the \acrshort{nmpc} (figure \ref{fig:reformarchvspeedoutsideocp}). Moreover, \textbf{one may look to the rough terrain scenario as an extended version of the planar case}. In every situation, the mobile robot needs to take into account the gravity that acts on it. Due to that, the longitudinal wheel force is always equal to the gravity component plus or minus the traction force that is required to follow the respective reference (\refeq{eq:reformSumForces}). Therefore, the solver only needs to find the optimal deviation from the gravity component that enables an optimal reference tracking. Due to that, the state vector becomes $\mathbf{x} = \begin{bmatrix}\x,\,\y,\,\yaw,\,v_x,\,\omega_z,\,\delta\Traction_l,\,\delta\Traction_r\end{bmatrix}^T$. Moreover, $\dot{\delta\Traction}_l = u_l$ and $\dot{\delta\Traction}_r = u_r$. In this section, a Gauss-Newton approximation is used for the hessian. \acrshort{sqprti} is used as solver and partial condensing \texttt{\acrshort{hpipm}} is the \acrshort{qp} solver.
 
 \begin{figure}[!htb]
   \begin{minipage}[c]{0.64\linewidth}
 		\tikzstyle{block} = [draw, text centered, minimum height = 2.0em, minimum width = 3.0em, rounded corners, line width = 0.5 mm]
 	\begin{tikzpicture}
-		\node [block, align= center] at (0.5, 1.3) (1) {\nameref{alg:determineeulerangles}};
+		\node [block, align= center] at (0.5, 1.3) (1) {\shortstack{Algorithm\\\nameref{alg:determineeulerangles}}};
 		\node [block, align= center, draw={rgb,255:red,30;green,145;blue,30}] at (0.7, 0) (2) {\textcolor{rgb,255:red,30;green,145;blue,30}{Virtual speed control}};
 		\node [block, align = center] at (4.0, 0) (3) {NMPC\\Dynamics};
 		\node [block, align = center] at (7.0, 0) (4) {Plant};
@@ -694,7 +694,7 @@ This scenario calls for an adaptation of the one-stage \acrshort{ocp} architectu
 		\label{eq:reformSumForces}
 	\end{equation}
   \end{minipage}
-\caption{\acrshort{ocp} adapted to a rough terrain environment. The \textcolor{tabvs}{virtual speed control module} is detailed in figure \ref{fig:virtual_speed_module_qp}.}
+\caption{\acrshort{nmpc} adapted to a rough terrain environment. The \textcolor{tabvs}{virtual speed control module} is detailed in figure \ref{fig:virtual_speed_module_qp}.}
 \label{fig:reformarchvspeedoutsideocp}
 \end{figure}
 
@@ -733,10 +733,10 @@ The mobile robot is placed on a hill of type $h\left(\x,\,\y\right) = a\,x$, whe
 
 \begin{figure}[!htb]
   \begin{subfigmatrix}{2}
-    \subfigure[Path tracking on hill with different conditions.]{\includegraphics[width=0.49\linewidth]{Figures/Real time one stage OCP on rough terrain/Hill/Path tracking comparison among hills.pdf}}
+    \subfigure[Path tracking over hill with different conditions.]{\includegraphics[width=0.49\linewidth]{Figures/Real time one stage OCP on rough terrain/Hill/Path tracking comparison among hills.pdf}}
     \subfigure[Pitch \textcolor{orange}{(orange)} and roll \textcolor{blue}{(blue)}. $a=0.3$ (top) and $a=0.55$ (bottom).]{\includegraphics[width=0.49\linewidth]{Figures/Real time one stage OCP on rough terrain/Hill/roll_pitch_hill.pdf}}
   \end{subfigmatrix}
-  \caption{Path tracking on hill with rough, uneven terrain.}
+  \caption{Path tracking over hill with rough, uneven terrain.}
   \label{fig:pathCompHills}
 \end{figure}
 
@@ -754,7 +754,7 @@ The adapted \acrshort{nmpc} architecture has proven to work well under the new s
 
 In case the mobile robot is at some configuration (see subsection \ref{subsection:maxinclination}) where the steady-state traction force is close to the Coulomb friction cone border (red line), there is little room to increase the longitudinal traction force if necessary, which may lead to slippage (and unsafety) as well as solver failure, because the solver tries to look for an optimal solution outside the Coulomb friction cone. The left picture of figure \ref{fig:ForcesConeHill} denotes the recorded optimal wheel traction forces on a scenario of lower steepness, whereas the remaining pictures concern a scenario of higher steepness. As expected, no slippage is recorded when $a=0.33$, although that is not the case when $a=0.55$. 
 
-If one takes the simulation specs of this subsection and sets $\roll = 0$ (therefore $\pitch$ takes the maximum value), \refeq{eq:ForcesRest} yields $0.55^2 \leq 0.7^2$ and $0.33^2 \leq 0.7^2$, when $a=0.55$ and $a=0.33$, respectively, which explains why the mobile robot is more exposed to slippage when $a=0.55$.
+If one takes the simulation specs of this subsection and sets $\roll = 0,\,\mu = 1$ (therefore $\pitch$ takes the maximum value), \refeq{eq:ForcesRest} yields $0.55^2 \leq 0.7^2$ and $0.33^2 \leq 0.7^2$, when $a=0.55$ and $a=0.33$, respectively, which explains why the mobile robot is more exposed to slippage when $a=0.55$.
 
 Finally, table \ref{tab:hillSolverPerformance} presents the performance results of the solver for the simulations presented in this subsection. As stepness increases, solver times increase a bit. However, timeouts are very rare in all simulations, so the solver is computationally feasible for real-time use. Unsurprisingly, the solver fails the most when the optimal forces are located at the slippage area of the Coulomb friction cone. Solver \ti{Energy saver} attemped to decrease slippage events by keeping the wheel traction force away from the Coulomb friction cone border, but this has not succedded, because the need to track the reference and to provide the respective forces to achieve this goal, govern the entire control simulation.
 
@@ -800,11 +800,11 @@ v_i\left(\kappa,\,\varepsilon\right) = min\left( \frac{0.1}{ 1 + \exp\left( 5.0\
 	\toprule
 	& $Q_i$ & $R$\\
 	\midrule
-	Fast rate of change & $diag\left(3.0\times 1.1^i,\,3.0\times 1.1^i,\,3.0\times 1.1^i,\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-9}\right)$ & $1\mathrm{e}{-3} \cdot \mathbf{1}_2$\\
-	Moderate rate of change & $diag\left(3.0\times 1.1^i,\,3.0\times 1.1^i,\,3.0\times 1.1^i,\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-9}\right)$ & $1\mathrm{e}{-1} \cdot \mathbf{1}_2$\\
-	Low rate of change & $diag\left(3.0\times 1.1^i,\,3.0\times 1.1^i,\,3.0\times 1.1^i,\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-9}\right)$ & $\mathbf{1}_2$\\
-	Energy saver & $diag\left(3.0\times 1.1^i,\,3.0\times 1.1^i,\,3.0\times 1.1^i,\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-4},\,1\mathrm{e}{-4}\right)$ & $\mathbf{1}_2$\\
-	Very low rate of change & $diag\left(3.0\times 1.1^i,\,3.0\times 1.1^i,\,3.0\times 1.1^i,\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-4},\,1\mathrm{e}{-4}\right)$ & $2.0 \cdot \mathbf{1}_2$\\
+	Fast rate of change & $diag\left(3.0\times 1.1^i \cdot \mathbf{1}_3,\,1\mathrm{e}{-9} \cdot \mathbf{1}_4\right)$ & $1\mathrm{e}{-3} \cdot \mathbf{1}_2$\\
+	Moderate rate of change & $diag\left(3.0\times 1.1^i \cdot \mathbf{1}_3,\,1\mathrm{e}{-9} \cdot \mathbf{1}_4\right)$ & $1\mathrm{e}{-1} \cdot \mathbf{1}_2$\\
+	Low rate of change & $diag\left(3.0\times 1.1^i \cdot \mathbf{1}_3,\,1\mathrm{e}{-9} \cdot \mathbf{1}_4\right)$ & $\mathbf{1}_2$\\
+	Energy saver & $diag\left(3.0\times 1.1^i \cdot \mathbf{1}_3,\,1\mathrm{e}{-9} \cdot \mathbf{1}_2,\,1\mathrm{e}{-4} \cdot \mathbf{1}_2\right)$ & $\mathbf{1}_2$\\
+	Very low rate of change & $diag\left(3.0\times 1.1^i \cdot \mathbf{1}_3,\,1\mathrm{e}{-9} \cdot \mathbf{1}_2,\,1\mathrm{e}{-4} \cdot \mathbf{1}_2\right)$ & $2.0 \cdot \mathbf{1}_2$\\
 	\end{tabular}
 	\begin{tabular}[]{cccccc}
   	\toprule
@@ -817,7 +817,7 @@ v_i\left(\kappa,\,\varepsilon\right) = min\left( \frac{0.1}{ 1 + \exp\left( 5.0\
 
 Figure \ref{fig:pathCompRoughTerrain} presents the first 1500 iterations of path tracking control with the solvers of table \ref{tab:RoughPathTrackingSpecs}, in order to survey the controller reaction to a situation where the initial yaw is $\pi\,[rad]$ deviated from the reference yaw. Apart from solver \ti{Fast rate of change}, the controllers successfully guide the mobile robot along the reference with the correct heading. Picture \ref{subfig:rollpitchref2} denotes an example of the roll and pitch fluctuation for the chosen heightmap.
 
-Figure \ref{fig:RoughUnevenTerrainForcesConeHill} depicts the set of optimal wheel traction forces generated by the solvers of table \ref{tab:RoughPathTrackingSpecs}. Slippage is not avoided by placing higher weights on $\delta \Traction_i$, but rather on $u_i$. Higher forces were achieved in the beginning of the simulation when the solver is asked to address a greater heading error. Although it is normal for the solver to generate higher wheel traction forces in these situations, greater forces are recorded if big spikes on the forces are allowed. Then, the solver response to pose errors needs to be restrained so that the wheel traction forces rate of change decreases. Figure \ref{fig:Forces_ForcesRates_Curves} shows evidence of what is described in this paragraph. Equation \eqref{eq:forcesLimits} outlines the limits of the traction deviations. These results are determined by replacing \refeq{eq:reformSumForces} into \eqref{eq:skidsteeringcoulomb} and by solving the respective equation with respect to $\delta\Traction_i$. Picture \ref{subfig:traction_rates_solvers_2_4} shows the effect of placing higher weights in the traction rates.
+Figure \ref{fig:RoughUnevenTerrainForcesConeHill} depicts the set of optimal wheel traction forces generated by the solvers of table \ref{tab:RoughPathTrackingSpecs}. Slippage is not avoided by placing higher weights on $\delta \Traction_i$, but rather on $u_i$. Higher forces were achieved in the beginning of the simulation when the solver is asked to address a greater heading error. Although it is normal for the solver to generate higher wheel traction forces in these situations, greater forces are recorded if big spikes on the forces are allowed. Then, the solver response to pose errors needs to be restrained so that the wheel traction forces rate of change decreases. Figure \ref{fig:Forces_ForcesRates_Curves} shows evidence of what is described in this paragraph. Equation \eqref{eq:forcesLimits} outlines the limits of the traction deviations. These limits are determined by replacing \refeq{eq:reformSumForces} into \eqref{eq:skidsteeringcoulomb} and by solving the respective equation with respect to $\delta\Traction_i$. Picture \ref{subfig:traction_rates_solvers_2_4} shows the effect of placing higher weights in the traction rates.
 
 \begin{figure}[!htb]
   \begin{subfigmatrix}{2}
@@ -944,7 +944,7 @@ To end this chapter, solver \ti{Low rate of change} is subject to the same robus
 
 Figure \ref{fig:robustnessResultsSolver3} assembles all the relevant results of this test. Once more, solver \ti{Low rate of change} has proven to be computationally feasible. The recorded optimal time and costs were $(5.31) \pm (1.01)\,[ms]$ and $(20.81) \pm (31.19)$, respectively. Slippage occurs $0.09 \%$ and the solver fails on $0.03 \%$ of the iterations.
 
-Even in the face of disturbances, the solver is able to keep the mobile robot on track, in spite of the significant deviations that noise inflicts. Slippage is rare and the traction rates are roughly kept in the interval $[-5,\,5]\,[N \cdot s]$, which shows that the solver maintains a moderate behaviour and does engage on sudden change of forces.  The velocities are also kept within an interval, so that the mobile robot does not reach fast (and unsafe) velocities, mainly due to the low virtual reference speed.
+Even in the face of disturbances, the solver is able to keep the mobile robot on track, in spite of the significant deviations that noise inflicts. Slippage is rare and the traction rates are roughly kept in the interval $[-5,\,5]\,[N \cdot s]$, which shows that the solver engages on a moderate change of forces.  The velocities are also kept within a safe interval, so that the mobile robot does not reach fast (and unsafe) velocities, mainly due to the low virtual reference speed.
 
 \begin{figure}[!htb]
   \begin{subfigmatrix}{4}
