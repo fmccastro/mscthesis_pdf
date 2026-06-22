@@ -20,7 +20,7 @@ Euler rotation angles defining an extrinsic $x-y-z$ (roll-pitch-yaw) rotation, w
 	\mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} = \bm{\RotMatrix}_z (\yaw) \bm{\RotMatrix}_y (\pitch) \bm{\RotMatrix}_x (\roll)
 \end{equation}
 
-, with the previous multiplication to yield a mapping from frame $\BodyFrame$ to $\WorldFrame$, which stands as,
+\noindent, with the previous multiplication to yield a mapping from frame $\BodyFrame$ to $\WorldFrame$, which stands as,
 \begin{equation}
 	\begin{aligned}
 	\mathbf{\RotMatrix}_{\BodyFrame}^{\WorldFrame} (\roll, \pitch, \yaw) &=
@@ -96,7 +96,7 @@ The inertia tensor of a rigid body is given by,
 	\label{eq:annexInertiaTensor}
 \end{equation}
 
-, where the products of inertia are equal between each other ($I_{xy} = I_{yx}$, $I_{xz} = I_{zx}$, $I_{yz} = I_{zy}$).
+\noindent, where the products of inertia are equal between each other ($I_{xy} = I_{yx}$, $I_{xz} = I_{zx}$, $I_{yz} = I_{zy}$).
 
 \section{Differentiation of a vector}
 \label{section:vectorDiff}
@@ -109,14 +109,14 @@ Let $\mathbf{p} = p_1 \; \mathbf{i} + p_2 \; \mathbf{j} + p_3 \; \mathbf{k}$, wi
 	\label{eq:vectorDiff}
 \end{equation}
  
-, where $\derivative{\mathbf{p}}\Bigr|_{\mathcal{P}} = \dot{p}_1 \; \mathbf{i} + \dot{p}_2 \; \mathbf{j} + \dot{p}_3 \; \mathbf{k}$ because the canonical vectors $\mathbf{i}, \; \mathbf{j}, \; \mathbf{k}$ do not change with respect to time if the observer is located at the origin of $\mathcal{P}$. According to the general expression $\derivative{\mathbf{r}} = \bm{\Omega} \times \mathbf{r}$, it comes that $\derivative{\mathbf{i}} = \bm{\Omega} \times \mathbf{i}, \; \derivative{\mathbf{j}} = \bm{\Omega} \times \mathbf{j}, \; \derivative{\mathbf{k}} = \bm{\Omega} \times \mathbf{k}$. Then, equation \ref{eq:vectorDiff} may be rewritten as,
+\noindent, where $\derivative{\mathbf{p}}\Bigr|_{\mathcal{P}} = \dot{p}_1 \; \mathbf{i} + \dot{p}_2 \; \mathbf{j} + \dot{p}_3 \; \mathbf{k}$ because the canonical vectors $\mathbf{i}, \; \mathbf{j}, \; \mathbf{k}$ do not change with respect to time if the observer is located at the origin of $\mathcal{P}$. According to the general expression $\derivative{\mathbf{r}} = \bm{\Omega} \times \mathbf{r}$, it comes that $\derivative{\mathbf{i}} = \bm{\Omega} \times \mathbf{i}, \; \derivative{\mathbf{j}} = \bm{\Omega} \times \mathbf{j}, \; \derivative{\mathbf{k}} = \bm{\Omega} \times \mathbf{k}$. Then, equation \ref{eq:vectorDiff} may be rewritten as,
 
 \begin{equation}
 	\derivative{\mathbf{p}}\Bigr|_{\mathcal{Q}} = \derivative{\mathbf{p}}\Bigr|_{\mathcal{P}} + \mathbf{\Omega} \times \mathbf{p} 
 	\label{eq:vectorDiff2}
 \end{equation} 
 
-, where $\bm{\Omega}$ denotes the angular velocity of frame $\mathcal{P}$ with respect to frame $\mathcal{Q}$.
+\noindent, where $\bm{\Omega}$ denotes the angular velocity of frame $\mathcal{P}$ with respect to frame $\mathcal{Q}$.
 
 \section{Runge-Kutta 4 numerical integrator}
 \label{section:rk4}
@@ -140,7 +140,7 @@ k_4 &= f\left( \mathbf{x}(t_0) + h k_3,\,\mathbf{z}_1(t_0),\,\ldots,\mathbf{z}_n
 \label{eq:rk4}
 \end{equation}
 
-, where $\mathbf{x}(\cdot) \in \mathbb{R}^{n_x}$ is the general state and $\mathbf{z}_1(\cdot) \in \mathbb{R}^{n_{z_1}},\,\ldots,\mathbf{z}_n(\cdot) \in \mathbb{R}^{n_{z_n}}$ are secondary variables and $f:\mathbb{R}^{n_x + n_{z_1} + \ldots+n_{z_n}} \to \mathbb{R}^{n_x}$ is the \acrshort{ode} dynamics.
+\noindent, where $\mathbf{x}(\cdot) \in \mathbb{R}^{n_x}$ is the general state and $\mathbf{z}_1(\cdot) \in \mathbb{R}^{n_{z_1}},\,\ldots,\mathbf{z}_n(\cdot) \in \mathbb{R}^{n_{z_n}}$ are secondary variables and $f:\mathbb{R}^{n_x + n_{z_1} + \ldots+n_{z_n}} \to \mathbb{R}^{n_x}$ is the \acrshort{ode} dynamics.
 
 \subsection*{Sensitivities propagation}
 \label{subsection:sensitivitiespropagation}
@@ -158,7 +158,7 @@ Then, let's define $S_{\mathbf{x}}(t) = \pdv{\mathbf{x}(t)}{\mathbf{x}_0}$ and $
 \label{eq:sensitivitiespropagation}
 \end{equation}
 
-, where $\processModel{\cdot}$ denotes $\processModel{\mathbf{x}(t),\,\mathbf{z}_1(t),\,\ldots,\mathbf{z}_n(t),\,t}$ for the sake of simplicity.
+\noindent, where $\processModel{\cdot}$ denotes $\processModel{\mathbf{x}(t),\,\mathbf{z}_1(t),\,\ldots,\mathbf{z}_n(t),\,t}$ for the sake of simplicity.
 
 \section{Parallel-axis theorem}
 \label{section:parallelAxisTheorem}
@@ -197,7 +197,7 @@ For some symmetric matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$, we define $\
 \item $\mathbf{B}$ is indefinite in case $\text{min}\left( \text{eig}(\mathbf{B}) \right) < 0$ and $\text{max}\left( \text{eig}(\mathbf{B}) \right) > 0$.
 \end{itemize}
 
-, where $\text{min}\left( \text{eig}(\mathbf{B}) \right)$ and $\text{max}\left( \text{eig}(\mathbf{B}) \right)$ denote the minimum and maximum eigenvalues of $\mathbf{B}$, respectively.
+\noindent, where $\text{min}\left( \text{eig}(\mathbf{B}) \right)$ and $\text{max}\left( \text{eig}(\mathbf{B}) \right)$ denote the minimum and maximum eigenvalues of $\mathbf{B}$, respectively.
 \label{def:matrixeigenvalues}
 \end{definition}
 

@@ -271,10 +271,10 @@ In order to classify high cost borderline areas as undesirable, a refinement of 
 \subsection{Implementation}
 \label{subsection:costMapImplementation}
 
-In this subsection, the implementation of the algorithms presented above is described, alongside the presentation of results. The elevation map used in this implementation contains regions with a variety of terrain, that range from irregular to smooth areas, but also from hilly to planar locations. In figure \ref{fig:elevationmapdimensions}, the elevation map is rendered. The wheeled mobile robot Pioneer 3AT was chosen as the test vehicle. The mobile robot dimensions are presented in table \ref{tab:robotDimensions}, whereas the elevation map features are presented in the table of figure \ref{fig:elevationmapdimensions}.
+In this subsection, the implementation of the algorithms presented above is described, alongside the presentation of results. The elevation map used in this implementation contains regions with a variety of terrain, that range from irregular to smooth areas, but also from hilly to planar locations. In figure \ref{fig:elevationmapdimensions}, the elevation map is rendered. The wheeled mobile robot Pioneer 3AT\footnote{Pioneer-3AT features: \url{https://www.generationrobots.com/media/Pioneer3AT-P3AT-RevA-datasheet.pdf?srsltid=AfmBOoojFqixaC8g0ut7yqNn4BvS549K96SDA1b-QHlvHVoccPZkU5oy} (accessed on the 26th of May 2026)} was chosen as the test vehicle. The mobile robot dimensions are presented in table \ref{tab:robotDimensions}, whereas the elevation map features are presented in the table of figure \ref{fig:elevationmapdimensions}.
 
 \begin{table}[!htb]
-  \caption[Table caption shown in TOC.]{Pioneer 3-AT dimensions.}
+  \caption[Pioneer 3-AT dimensions.]{Pioneer 3-AT dimensions.}
   \label{tab:robotDimensions}
   \renewcommand{\arraystretch}{1.2} % more space between rows
   \centering
@@ -344,7 +344,7 @@ Each algorithm is coded in \texttt{Python}, whereas the NLP presented in \refeq{
 			\fill[red] (5.0, -2.0) circle (0.06cm);
 		\end{tikzpicture}
 	}
-	\subfigure[Several hull points \textit{per} wheel (\mhpw)] {
+	\subfigure[Several hull points \textit{per} wheel (\acrshort{mhpw})] {
 		\begin{tikzpicture}
   			\draw (0, -2.0) -- (1.5, -2.0);% bottom line
   			\draw (0, 1) -- (1.5, 1);% top line
@@ -385,7 +385,7 @@ Each algorithm is coded in \texttt{Python}, whereas the NLP presented in \refeq{
 Apart from the restriction that every hull point must be above or at contact with the elevation map surface, linear, symmetric euler angle restrictions are added (see table \ref{tab:eulerAnglesRestrictions}).
 
 \begin{wraptable}{r}{0.4\textwidth}
-  \caption[Table caption shown in TOC.]{Euler angles restrictions.}
+  \caption[Euler angles restrictions.]{Euler angles restrictions.}
   \label{tab:eulerAnglesRestrictions}
   \renewcommand{\arraystretch}{0.8} % more space between rows
   \centering
@@ -431,7 +431,7 @@ A suitable rescaling of the elevation map shall be made with the intention of yi
 
 Algorithms \ref{alg:slopeMinHeightMap} to \ref{alg:refinedMap} were built in such a way that the output map assigns higher costs to hilly or irregular terrain. On the other hand, it was required that the output map captures the terrain height gradient, although it is also advisable to assign higher costs to positions which are close to untraversable areas, to discourage traversals there. Therefore, a balance between a traversability map that leads to the computation of a safe path and an accurate capture of the terrain morphology is sought.
 
-The analysis of figure \ref{fig:costMapsCase1Map1} and tables \ref{tab:resultsMap_1_Case1_2_Alg2_3} and \ref{tab:results_Map1_Case1_2_Alg_4_5} express the fact that the generated maps capture well the terrain morphology, as the correlation between the height gradient and the cost is very high on all cases. However, that correlation decreases a lot when algorithm \nameref{alg:refinedMap} is applied, due to the fact that the map refinement assigns higher costs to positions which are close to untraversable positions, irrespectively of the terrain inclination there. This is the price to pay in case one wants to increase the likelihood of avoiding hazardous positions. The correlation between $\nabla \FunctionElevation(\cdot)$ and $\FunctionTraversability(\cdot)$ also depends on parameters $r_s$ and $C$. The higher $r_s$ and the lower $C$ are, the source that radiates from each point with cost higher or equal to $C$ is applied to a larger set of points, which causes this correlation to be weaker.
+The analysis of figure \ref{fig:costMapsCase1Map1} and tables \ref{tab:resultsMap_1_Case1_2_Alg2_3} and \ref{tab:results_Map1_Case1_2_Alg_4_5} express the fact that the generated maps capture well the terrain morphology, as the correlation between the height gradient and the cost is very high on all cases. However, that correlation decreases a lot when algorithm \nameref{alg:refinedMap} is applied, due to the fact that the map refinement assigns higher costs to positions which are close to untraversable positions, irrespectively of the terrain inclination there. This is the price to pay in case one wants to increase the likelihood of avoiding hazardous positions. The correlation $r_{\nabla h(\cdot),\,t(\cdot)}$ between $\nabla \FunctionElevation(\cdot)$ and $\FunctionTraversability(\cdot)$ also depends on parameters $r_s$ and $C$. The higher $r_s$ and the lower $C$ are, the source that radiates from each point with cost higher or equal to $C$ is applied to a larger set of points, which causes this correlation to be weaker.
 
 \begin{table}[!htb]
   \caption{Comparison between algorithms \nameref{alg:slopeMinHeightMap} and \nameref{alg:slopeMinHeightMapVarYaw}}
@@ -448,7 +448,7 @@ The analysis of figure \ref{fig:costMapsCase1Map1} and tables \ref{tab:resultsMa
     $\text{[ms] / cell}$ & $(5.82)\pm(1.58)$ & $(71.11)\pm(9.96)$ && $(10.10)\pm(3.00)$ & $(110.33)\pm(13.68)$\\
     $\text{iterations / cell}$ & $(8.99)\pm(2.13)$ & $(118.17)\pm(12.36)$ && $(11.71)\pm(2.79)$ & $(151.36)\pm(14.45)$\\
     $\Barrier^*\,[\times10\mathrm{e}{-9}]$ & $(2.46)\pm(2.67\mathrm{e}{-1})$ & $(2.46)\pm(2.70\mathrm{e}{-1})$ && $(2.50)\pm(7.86\mathrm{e}{-2})$ & $(2.50)\pm(7.72\mathrm{e}{-2})$ \\
-    $\nabla \FunctionElevation(\cdot) \text{ vs }\FunctionTraversability(\cdot) \text{ [R]}$ & $0.89$ & $0.83$ && $0.90$ & $0.93$\\
+    $r_{\nabla h(\cdot),\,t(\cdot)}$ & $0.89$ & $0.83$ && $0.90$ & $0.93$\\
     \bottomrule
     \multicolumn{6}{c}{}
   \end{tabular}
@@ -603,7 +603,7 @@ The computation of a discrete solution $\speedFunction\cdot$ for the Eikonal equ
 
 In this subsection, the results generated by algorithms \nameref{alg:optimalPathGeneration} and \nameref{alg:speedMapGeneration} are presented and discussed.
 
-Figure \ref{fig:speedMapPotentialWorstCasePointsMap1} renders a speed map that was generated with respect to a worst-case traversability map for case \shpwgap and the elevation map of figure \ref{fig:elevationmapdimensions}, by applying transformation \eqref{eq:cost2SpeedConversion}. Then, a potential flow is generated by executing algorithm \nameref{alg:speedMapGeneration}, which yields a solution $\timeFunction{\cdot}$ of the Eikonal \refeq{eq:eikonalEquation}. There, $-\nabla \timeFunction{\cdot}$ is rendered all over the map on blue arrows, and it is perpendicular to every isochrone line (black lines), as expected. Instead of applying algorithm \nameref{alg:optimalPathGeneration}, optimal paths may also be generated by following $-\nabla \timeFunction{\cdot}$ until the goal point (or its neighborhood) is reached \cite{fmAdvancedGomez}.
+Picture \ref{pic:unmaskedspeedmap} renders a speed map that was generated with respect to a worst-case traversability map for case \shpwgap and the elevation map of figure \ref{fig:elevationmapdimensions}, by applying transformation \eqref{eq:cost2SpeedConversion}. Then, a potential flow is generated by executing algorithm \nameref{alg:speedMapGeneration}, which yields a solution $\timeFunction{\cdot}$ of the Eikonal \refeq{eq:eikonalEquation}. There, $-\nabla \timeFunction{\cdot}$ is rendered all over the map on blue arrows, and it is perpendicular to every isochrone line (black lines), as expected. Instead of applying algorithm \nameref{alg:optimalPathGeneration}, optimal paths may also be generated by following $-\nabla \timeFunction{\cdot}$ until the goal point (or its neighborhood) is reached \cite{fmAdvancedGomez}.
 
 Figure \ref{fig:potentialFlowWithPathsPointsMap1} presents several optimal paths generated with algorithm \nameref{alg:optimalPathGeneration}. All these paths meet at the goal point, and follow a gradient descent direction as expected. It is also verified that the computed paths successfully avoid the masked area (white area). The refinement of the worst-case map does not considerably change the respective potential flow, even if the masked area is greater. This is why the optimal paths presented in figure \ref{fig:potentialFlowWithPathsPointsMap1} are similar, provided that the starting and goal points are the same. However, this similarity is not a trend. In fact, provided that parameters $r_s$ and $C$ yield a great change from the worst-case to the refined traversability maps, the optimal paths generated with respect to both maps turns out to be very different.
 
@@ -611,7 +611,7 @@ Figure \ref{fig:potentialFlowWithPathsPointsMap1} presents several optimal paths
     \centering
 	\begin{subfigmatrix}{2}
 	\subfigure[Unmasked speed map $\speedFunction{\cdot}$, where $k_1 = 0.2,\; k_2 = 0.4$.] {
-    	\includegraphics[width=0.48\linewidth]{Figures/speedMap+worstCase+Points.png}  
+    	\includegraphics[width=0.48\linewidth]{Figures/speedMap+worstCase+Points.png}   \label{pic:unmaskedspeedmap}
 	}
 	\subfigure[Masked potential flow $\timeFunction{\cdot}$ and $-\nabla \timeFunction{\cdot}$ (\textcolor{blue}{blue arrows}), where $c_{max}=0.6$. Masked area is on white.] {
     	\includegraphics[width=0.48\linewidth]{Figures/potentialFlow+worstCase+Points.pdf}  
@@ -665,7 +665,7 @@ Once more, figure \ref{fig:pathsComparison+_getPat2FollowTimes} underlines the f
 \end{figure}
 
 \begin{table}[!htb]
-  \caption{Performance metrics of the optimal paths presented in Figure \ref{fig:pathsComparison+_getPat2FollowTimes}. The refinement maps taken for this computation are presented in figure \ref{fig:costMapsCase2Alg5}.}
+  \caption{Performance metrics of the optimal paths presented in Figure \ref{fig:pathsComparison+_getPat2FollowTimes}. The refinement maps taken for this computation are presented in figure \ref{fig:costMapsCase2Alg2_4}.}
   \label{tab:performanceMetricOptPathsDiffMaps}
   \renewcommand{\arraystretch}{1.2}
   \centering

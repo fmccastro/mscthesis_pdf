@@ -6,7 +6,7 @@ The style file: abbrvunsrtnat.bst
 Reallocating 'name_of_file' (item size: 1) to 20 items.
 Database file #1: Thesis_Bibliography.bib
 Warning--string name "november" is undefined
---line 828 of file Thesis_Bibliography.bib
+--line 852 of file Thesis_Bibliography.bib
 Warning--empty chapter and pages in roboticsHandbook_chap55
 Warning--empty publisher in roboticsHandbook_chap55
 Warning--empty chapter and pages in Genta2012
@@ -32,43 +32,43 @@ Warning--empty publisher in chapter47handbookrobotics
 Warning--empty publisher in Beer2015
 You've used 66 entries,
             2481 wiz_defined-function locations,
-            950 strings with 17415 characters,
-and the built_in function-call counts, 26230 in all, are:
-= -- 2155
-> -- 1409
-< -- 45
-+ -- 541
-- -- 408
-* -- 1991
-:= -- 4156
-add.period$ -- 224
+            989 strings with 16135 characters,
+and the built_in function-call counts, 24779 in all, are:
+= -- 2293
+> -- 930
+< -- 80
++ -- 383
+- -- 249
+* -- 1542
+:= -- 3798
+add.period$ -- 263
 call.type$ -- 66
 change.case$ -- 124
-chr.to.int$ -- 65
+chr.to.int$ -- 64
 cite$ -- 89
-duplicate$ -- 1373
-empty$ -- 2409
-format.name$ -- 517
-if$ -- 5640
-int.to.chr$ -- 2
+duplicate$ -- 1381
+empty$ -- 2427
+format.name$ -- 371
+if$ -- 5556
+int.to.chr$ -- 3
 int.to.str$ -- 67
 missing$ -- 71
-newline$ -- 356
-num.names$ -- 206
-pop$ -- 636
+newline$ -- 395
+num.names$ -- 204
+pop$ -- 597
 preamble$ -- 1
 purify$ -- 66
 quote$ -- 0
-skip$ -- 796
+skip$ -- 866
 stack$ -- 0
-substring$ -- 1026
-swap$ -- 248
-text.length$ -- 13
+substring$ -- 1020
+swap$ -- 260
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 432
 warning$ -- 23
-while$ -- 199
+while$ -- 190
 width$ -- 0
-write$ -- 876
+write$ -- 954
 (There were 24 warnings)

@@ -1,40 +1,38 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {1.1}{\ignorespaces Planetary, autonomous, wheeled rovers achievements.}}{2}{table.caption.11}%
-\contentsline {table}{\numberline {1.2}{\ignorespaces Slippage-related hazards faced by rovers at planetary environments.}}{3}{table.caption.12}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Slippage-related hazards faced by rovers at planetary environments.}}{3}{table.caption.13}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Integration simulation parameters.}}{30}{table.caption.29}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Integration simulation parameters.}}{31}{table.caption.30}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Table caption shown in TOC.}}{38}{table.caption.34}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Table caption shown in TOC.}}{39}{table.4.2}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Comparison between algorithms \nameref {alg:slopeMinHeightMap} and \nameref {alg:slopeMinHeightMapVarYaw}}}{41}{table.caption.38}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Performance of algorithms \nameref {alg:maxRoughnessMap} and \nameref {alg:refinedMap}}}{41}{table.caption.39}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Performance metrics of the optimal paths presented in Figure \ref {fig:pathsComparison+_getPat2FollowTimes}. The refinement maps taken for this computation are presented in figure \ref {fig:costMapsCase2Alg5}.}}{45}{table.caption.44}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Pioneer 3-AT dimensions.}}{38}{table.caption.35}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Euler angles restrictions.}}{39}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Comparison between algorithms \nameref {alg:slopeMinHeightMap} and \nameref {alg:slopeMinHeightMapVarYaw}}}{41}{table.caption.39}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Performance of algorithms \nameref {alg:maxRoughnessMap} and \nameref {alg:refinedMap}}}{41}{table.caption.40}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Performance metrics of the optimal paths presented in Figure \ref {fig:pathsComparison+_getPat2FollowTimes}. The refinement maps taken for this computation are presented in figure \ref {fig:costMapsCase2Alg2_4}.}}{45}{table.caption.45}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Constant solver parameters when control horizon changes.}}{49}{table.caption.47}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Constant solver parameters when sampling time changes.}}{50}{table.caption.49}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Constant solver parameters when sampling time changes.}}{51}{table.caption.51}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Regulator solver parameters. Controllers $^p$ and $^h$ are used for position and heading regulation, respectively.}}{53}{table.caption.55}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Planar path tracking solver parameters ($N = 50,\tmspace +\thickmuskip {.2777em} T_s = 20\,ms$). Controllers $^i$ have cost terms with \textit {increasing} weights.}}{55}{table.caption.60}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Solver parameters on hill.}}{59}{table.caption.66}%
-\contentsline {table}{\numberline {5.7}{\ignorespaces Solver performance on hilly terrain.}}{60}{table.caption.69}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Solver parameters on hill.}}{61}{table.caption.70}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Solver performance on hilly terrain.}}{63}{table.caption.74}%
-\contentsline {table}{\numberline {5.10}{\ignorespaces Solver {\ensuremath {\textit {low rate of change}}} performance on rough, uneven terrain. One timeout was recorded.}}{64}{table.caption.76}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Constant solver parameters when control horizon changes.}}{49}{table.caption.48}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Constant solver parameters when sampling time changes.}}{50}{table.caption.50}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Constant solver parameters when cost function weights change.}}{51}{table.caption.52}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Regulator solver parameters. Controllers $^p$ and $^h$ are used for position and heading regulation, respectively.}}{53}{table.caption.56}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Planar path tracking solver parameters ($N = 50,\tmspace +\thickmuskip {.2777em} T_s = 20\,ms$). Controllers $^i$ have cost terms with \textit {increasing} weights.}}{55}{table.caption.61}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Solver parameters on hill.}}{59}{table.caption.67}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Solver performance on hilly terrain.}}{60}{table.caption.70}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Solver parameters for simulation over irregular terrain.}}{61}{table.caption.71}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Solver performance over irregular, rigid terrain.}}{63}{table.caption.75}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Solver {\ensuremath {\textit {low rate of change}}} performance on rough, uneven terrain. One timeout was recorded.}}{64}{table.caption.77}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Safe \acrshort {ocp} cost terms and parameters.}}{73}{table.caption.85}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Safe, convex \acrshort {nmpc} cost terms and parameters.}}{73}{table.caption.86}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {A.1}{\ignorespaces Lissajous curves used in this thesis.}}{88}{table.A.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {C.1}{\ignorespaces Cumulative control effort of controllers when control horizon changes.}}{93}{table.caption.95}%
-\contentsline {table}{\numberline {C.2}{\ignorespaces Cumulative positional error of controllers when control horizon changes.}}{93}{table.caption.96}%
-\contentsline {table}{\numberline {C.3}{\ignorespaces Cumulative heading error of controllers when control horizon changes.}}{93}{table.caption.97}%
-\contentsline {table}{\numberline {C.4}{\ignorespaces Cumulative control effort of controllers when sampling time changes.}}{93}{table.caption.98}%
-\contentsline {table}{\numberline {C.5}{\ignorespaces Cumulative positional error of controllers when sampling time changes.}}{93}{table.caption.99}%
-\contentsline {table}{\numberline {C.6}{\ignorespaces Cumulative heading error of controllers when sampling time changes.}}{94}{table.caption.100}%
-\contentsline {table}{\numberline {C.7}{\ignorespaces Cumulative control effort of controllers when cost function weights changes.}}{94}{table.caption.101}%
-\contentsline {table}{\numberline {C.8}{\ignorespaces Cumulative positional error of controllers when cost function weights changes.}}{94}{table.caption.102}%
-\contentsline {table}{\numberline {C.9}{\ignorespaces Cumulative heading error of controllers when cost function weights changes.}}{94}{table.caption.103}%
+\contentsline {table}{\numberline {C.1}{\ignorespaces Performance of controllers when control horizon changes.}}{93}{table.caption.95}%
+\contentsline {subtable}{\numberline {(a)}{\ignorespaces {Algorithm \nameref {alg:slopeMinHeightMapVarYaw}}}}{93}{table.caption.95}%
+\contentsline {subtable}{\numberline {(b)}{\ignorespaces {Algorithm \nameref {alg:maxRoughnessMap}}}}{93}{table.caption.95}%
+\contentsline {subtable}{\numberline {(c)}{\ignorespaces {Worst-case map}}}{93}{table.caption.95}%
+\contentsline {subtable}{\numberline {(d)}{\ignorespaces {Algorithm \nameref {alg:refinedMap}, where $r_s$ = 0.2 m and $C$ = 0.9}}}{93}{table.caption.95}%
+\contentsline {table}{\numberline {C.2}{\ignorespaces Cumulative control effort of controllers when sampling time changes.}}{93}{table.caption.96}%
+\contentsline {table}{\numberline {C.3}{\ignorespaces Cumulative control effort of controllers when cost function weights changes.}}{94}{table.caption.97}%

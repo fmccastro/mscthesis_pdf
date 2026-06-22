@@ -11,7 +11,7 @@
 \chapter{Collision-aware real-time \acrshort{nmpc} over irregular terrain}
 \label{chapter:obstacleAvoidance}
 
-This chapter takes on the \acrshort{nmpc} algorithm developed in the previous chapter, and reformulates it in order to prevent collisions and safeguard the vehicle safety. Firstly, the generation of a new and free of collisions reference is outlined in section \ref{section:saferefgen}. Then, this reference is fed to an one-stage \acrshort{ocp} that safeguards a minimum clearance of the position horizon to the nearest obstacle (section \ref{section:realtimesafenmpcroughterrain}). This chapter is mostly based on the work of \citet{schoels2020ciao, schoels2020nmpc}.
+This chapter takes on the \acrshort{nmpc} algorithm developed in the previous chapter, and reformulates it in order to prevent collisions and safeguard the vehicle safety. Firstly, the generation of a new and free of collisions reference is outlined in section \ref{section:saferefgen}. Then, this reference is fed to a \acrshort{nmpc} solver that safeguards a minimum clearance of each position horizon node to the nearest obstacle (section \ref{section:realtimesafenmpcroughterrain}). This chapter is mostly based on the work of \citet{schoels2020ciao, schoels2020nmpc}.
 
 \begin{remark}
 In this chapter, $\mathbf{p}_2$ is expressed by $\mathbf{p}$. 
@@ -263,10 +263,10 @@ Algorithm \nameref{alg:gendeformedref} was also run 3029 times and the recorded 
   \label{fig:potentialfieldresults}
 \end{figure}
 
-\section{Real-time safe \acrshort{nmpc} over irregular terrain}
+\section{Real-time convex, safe \acrshort{nmpc} over irregular terrain}
 \label{section:realtimesafenmpcroughterrain}
 
-Finally, it is possible to integrate algorithms \nameref{alg:computefreespace} and \nameref{alg:gendeformedref} into a real-time optimal control simulation, in order to safely guide the mobile robot away from $\overline{\SafeSpace}$. Once again, the \acrshort{nmpc} architecture is restructured to accomodate new constraints. Moreover, the \acrshort{nmpc} algorithm is also reformulated to include the algorithms described above. Figure \ref{fig:architecturesafenmpc} presents the new structure where the \acrshort{nmpc} is fed by a deformed reference and the safe balls $\SafeSpace_{\mathbf{c}^*}$ around each position of the problem's initial guess. Each of these safe balls define the area of admissable positions for each node, so that the next optimal position horizon doesn't enter $\overline{\SafeSpace}$.
+Finally, it is possible to integrate algorithms \nameref{alg:computefreespace} and \nameref{alg:gendeformedref} into a real-time optimal control simulation, in order to safely guide the mobile robot away from $\overline{\SafeSpace}$. Once again, the \acrshort{nmpc} architecture is restructured to accomodate new constraints. As such, the \acrshort{nmpc} algorithm is also reformulated to include the algorithms mentioned above. Figure \ref{fig:architecturesafenmpc} presents the new structure where the \acrshort{nmpc} is fed by a deformed reference and the safe balls $\SafeSpace_{\mathbf{c}^*}$ with respect to each position of the problem's initial guess. Each of these safe balls define the area of admissable positions for each node, so that the next optimal position horizon doesn't enter $\overline{\SafeSpace}$.
 
 \begin{figure}[!htb]
 \centering
@@ -302,20 +302,20 @@ Finally, it is possible to integrate algorithms \nameref{alg:computefreespace} a
   		\draw [-latex,thick] (3) -- node [above] {$\mathbf{u}_0^*$} (4);
   		\draw [-latex, thick] (pointBelow3) -- (3);
   		\draw [-latex, thick] (pointBelow2) -- ++ (0.0, 1.2) -- (1);
-  		\draw [-latex, thick] (fork) -- ++ (0.0, 1.0) -- node [above] {$\mathbf{p}_2^*$} ++(-4.0, 0.0) -- (6);
+  		\draw [-latex, thick] (fork) -- ++ (0.0, 1.0) -- node [above] {$\mathbf{p}^*$} ++(-4.0, 0.0) -- (6);
   		\draw [-latex, thick] (6) -- ++ (2.0, 0.0) -- node [above] {$\SafeSpace_{\mathbf{c}^*}$} (3);
 	\end{tikzpicture}
 	\caption{Safe real-time \acrshort{nmpc} architecture.}
 	\label{fig:architecturesafenmpc}
 \end{figure}
 
-The set of equations \eqref{eq:lagrangemayersafeocp} and \eqref{eq:safeonestageocp} define the cost terms and the linear and non-linear constraints of the new one-stage safe \acrshort{ocp}, respectively. Equation \eqref{subeq:ciaocirclesarea} is the new appended non-linear constraint. This constraint sets the admissable area for each position of the optimal horizon. $\mathbf{c}_k^*,\,d_\ObstacleSpace(\mathbf{c}_k^*)$ and $d_s$ are parameters of the problem that come from the results of algorithm \ref{alg:computefreespace}.
+The set of equations \eqref{eq:lagrangemayersafeocp} and \eqref{eq:safeonestageocp} define the cost terms and the linear and non-linear constraints of this new safe, convex \acrshort{nmpc}, respectively. Equation \eqref{subeq:ciaocirclesarea} is the new appended non-linear constraint. This constraint sets the admissable area for each position of the optimal horizon. $\mathbf{c}_k^*,\,d_\ObstacleSpace(\mathbf{c}_k^*)$ and $d_s$ are parameters of the problem that come from the results of algorithm \nameref{alg:computefreespace}.
 
-Secondly, another major novelty is the introduction of slacks. The need to relax constraint \ref{subeq:ciaocirclesarea} comes from the observation that the \acrshort{ocp} sometimes becomes infeasible if $\mathbf{p}_2^*$ is pushed to the border of $\SafeSpace_{\mathbf{c}^*}$. Slacks are non-negative (\ref{subeq:slackbounds}) and are also weighted on the cost function terms \ref{subeq:onestagelagrangesafeocp} and \ref{subeq:onestagemayersafeocp}. $Z_k \gg 1$ so that $s_k$ is only active when it is of the utmost importance to prevent infeasibility \cite{schoels2020nmpc}. $z_k$ penalizes very fast rates of change of $s_k$.
+Secondly, another major novelty is the introduction of slacks. The need to relax constraint \eqref{subeq:ciaocirclesarea} comes from the observation that the \acrshort{nmpc} sometimes becomes infeasible if $\mathbf{p}^*$ is pushed to the border of $\SafeSpace_{\mathbf{c}^*}$. Slacks are non-negative (\ref{subeq:slackbounds}) and are also weighted in the cost function terms \eqref{subeq:onestagelagrangesafeocp} and \eqref{subeq:onestagemayersafeocp}. $Z_k \gg 1$ so that $s_k$ is only active when it is of the utmost importance to prevent infeasibility \cite{schoels2020nmpc}.
 \begin{subequations}
 \begin{gather}
-\lagrangeTerm{\mathbf{\x},\,\mathbf{u},\,\mathbf{r}_{def},\,s}_k = \Vert\x - r_{\x,\,def},\,\y - r_{\y,\,def},\,e_{\yaw},\,\vx,\,\wz,\,\delta \Traction_l,\,\delta \Traction_r\Vert_{Q,\,k}^2 \; + \Vert u_l,\,u_r \Vert_{R,\,k}^2 + \frac{1}{2}\,s_k^2\,Z_k+ s_k\,z_k\label{subeq:onestagelagrangesafeocp}\\
-\mayerTerm{\mathbf{\x},\,\mathbf{r}_{def},\,s}_k = \Vert\x - r_{\x,\,def},\,\y - r_{\y,\,def},\,e_{\yaw},\,\vx,\,\wz,\,\delta \Traction_l,\,\delta \Traction_r\Vert_{Q,\,k}^2 + \frac{1}{2}\,s_k^2\,Z_k+ s_k\,z_k\label{subeq:onestagemayersafeocp}
+\lagrangeTerm{\mathbf{\x},\,\mathbf{u},\,\mathbf{r}_{def},\,s}_k = \Vert\x - r_{\x,\,def},\,\y - r_{\y,\,def},\,e_{\yaw},\,v_x,\,\omega_z,\,\delta \Traction_l,\,\delta \Traction_r\Vert_{Q,\,k}^2 \; + \Vert u_l,\,u_r \Vert_{R,\,k}^2 + \frac{1}{2}\,s_k^2\,Z_k+ s_k\,z_k\label{subeq:onestagelagrangesafeocp}\\
+\mayerTerm{\mathbf{\x},\,\mathbf{r}_{def},\,s}_k = \Vert\x - r_{\x,\,def},\,\y - r_{\y,\,def},\,e_{\yaw},\,v_x,\,\omega_z,\,\delta \Traction_l,\,\delta \Traction_r\Vert_{Q,\,k}^2 + \frac{1}{2}\,s_k^2\,Z_k+ s_k\,z_k\label{subeq:onestagemayersafeocp}
 \end{gather}
 \label{eq:lagrangemayersafeocp}
 \end{subequations}
@@ -343,20 +343,20 @@ Secondly, another major novelty is the introduction of slacks. The need to relax
 	\label{eq:safeonestageocp}
 \end{subequations}
 
-The list of states and controls remains unchanged. The slacks horizon, $\mathbf{s} = \left[s_0,\,s_1,\ldots,s_N\right]$, also becomes an optimization variable of the problem. Moreover, the set of parameters becomes $\mathbf{p} = \left[\FrictionCoefficient,\,m,\,g,\,\InertiaTensor_{zz},\,d_s,\,\mathbf{c}^*,\,d_\ObstacleSpace(\mathbf{c}^*),\,\mathbf{r}_{def}\right]$, where $\mathbf{c}^* = \left[\mathbf{c}_0^*,\,\mathbf{c}_1^*,\,\ldots,\,\mathbf{c}_N^*\right]$ encapsulates the list of the safe balls centers. Finally, $\mathbf{r}_{def} = \left[\x_0,\,\y_0,\,\yaw_0,\,\x_1,\,\y_1,\,\yaw_1,\,\ldots,\,\x_N,\,\y_N,\,\yaw_N\right]_{def}$. This one-stage safe \acrshort{ocp} preserves convexity as cost terms are all positive semi-definite and constraints are circles or linear intervals.
+The list of states and controls remains unchanged. The slacks horizon, $\mathbf{s} = \left[s_0,\,s_1,\ldots,s_N\right]$, also becomes an optimization variable of the problem. Moreover, the set of parameters becomes $\mathbf{p} = \left[\FrictionCoefficient,\,m,\,g,\,\InertiaTensor_{zz},\,d_s,\,\mathbf{c}^*,\,d_\ObstacleSpace(\mathbf{c}^*),\,\mathbf{r}_{def}\right]$, where $\mathbf{c}^* = \left[\mathbf{c}_0^*,\,\mathbf{c}_1^*,\,\ldots,\,\mathbf{c}_N^*\right]$ encapsulates the list of the safe balls centers. Finally, $\mathbf{r}_{def} = \left[\x_0,\,\y_0,\,\yaw_0,\,\x_1,\,\y_1,\,\yaw_1,\,\ldots,\,\x_N,\,\y_N,\,\yaw_N\right]_{def}$. This \acrshort{nmpc} preserves convexity as cost terms are all positive semi-definite and constraints are circles or linear intervals.
 
-\subsection{Simultaneous path tracking and obstacle avoidance on rough terrain}
+\subsection{Slacks behaviour}
 
-From now on, the results of the application of the safe \acrshort{ocp} are presented and discussed. Table \ref{tab:SafeRoughPathTrackingSpecs} denote the cost terms of the solvers that are tested in this subsection. Solver $(1)$ gives much less room for the slacks to increase than solver $(2)$. From this subsection to the end of the chapter, $d_s = \underline{d}$. The rest of the parameters are equal to the ones mentioned in figure \ref{fig:potentialfieldresults}. The heightmap and virtual speed control module are the same of subsection \ref{subsection:traversalRoughTerrain}.
+From now on, the results of the application of this safe, convex \acrshort{nmpc} are presented and discussed. Table \ref{tab:SafeRoughPathTrackingSpecs} denote the cost terms of the solvers that are tested in this subsection. Solver \ti{Low slacks} gives much less room for the slacks to increase than solver \ti{High slacks}. From this subsection to the end of the chapter, $d_s = \underline{d}$. The rest of the parameters are equal to the ones mentioned in figure \ref{fig:potentialfieldresults}. The heightmap and virtual speed control module are the same of subsection \ref{subsection:traversalRoughTerrain}.
 
 \begin{table}[!htb]
-  \caption[Safe \acrshort{ocp} cost terms and parameters.]{Safe \acrshort{ocp} cost terms and parameters($N = 40,\; T_s = 40\,ms$).}
+  \caption[Safe, convex \acrshort{nmpc} cost terms and parameters.]{Safe, convex \acrshort{nmpc} cost terms and parameters ($N = 40,\; T_s = 40\,ms$).}
   \label{tab:SafeRoughPathTrackingSpecs}
   \renewcommand{\arraystretch}{1.2}
   \centering
   \begin{tabular}[]{lcc}
 	\toprule
-	Solver & $(1)$ & $(2)$ \\
+	Solver & $(1)$ Low slacks & $(2)$ High slacks \\
 	\midrule
 	$Q_i$ & $diag\left(3.0\times1.1^i,\,3.0\times1.1^i,\,3.0\times1.1^i,\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-9},\,1\mathrm{e}{-9}\right)$ & Same as $(1)$\\
 	$R$ & $diag\left(1.0,\,1.0\right)$ & Same as $(1)$\\
@@ -364,9 +364,8 @@ From now on, the results of the application of the safe \acrshort{ocp} are prese
 	$Z_N$ & $1\mathrm{e}{6}$ & $1\mathrm{e}{3}$ \\
 	$z_i$ & $1.0$ & Same as $(1)$ \\
 	$z_N$ & $1.0$ & Same as $(1)$ \\
-  	\bottomrule
-  \end{tabular}
-  \begin{tabular}[]{cccccc}
+  	\end{tabular}
+  	\begin{tabular}[]{cccccc}
   	\toprule
   		$\left[(v_x)_{min},\; (v_x)_{max}\right]\,[m/s]$ & $\left[(\omega_z)_{min},\; (\omega_z)_{max}\right]\,[rad/s]$ & $\left[(u_i)_{min},\,(u_i)_{max}\right]\,[N \cdot s]$ & $\FrictionCoefficient$ & $\sigma_{\roll}$ & $\sigma_{\pitch}$\\
   	\midrule
@@ -375,16 +374,16 @@ From now on, the results of the application of the safe \acrshort{ocp} are prese
   \end{tabular}
 \end{table}
 
-Figure \ref{fig:pathtrackingsafeocp} assembles the path tracking results of solver $(1)$ at different initial conditions. Reference tracking and obstacle avoidance is successfully achieved. The mobile robot also does not enter $\overline{\SafeSpace}$, but moves alongside the border at most. On top of the bottom left obstacle, the mobile robot turns around because the target is so far ahead that the potential field guides the deformed reference to the right, instead of circling the obstacle.
+Figure \ref{fig:pathtrackingsafeocp} assembles the path tracking results of solver \ti{Low slacks} at different initial conditions. Reference tracking and obstacle avoidance is successfully achieved. The mobile robot also does not enter $\overline{\SafeSpace}$, but moves alongside the border at most. On top of the bottom left obstacle, the mobile robot turns around because the target is so far ahead that the potential field guides the deformed reference to the right, instead of circling the obstacle.
 
-On the other hand, figure \ref{fig:reftoursolver2} presents path tracking results with solver $(2)$. In this case, the mobile robot enters $\overline{\SafeSpace}$. This happens because the weight that penalize the slacks is much smaller, which allows the slacks to be greater. Due to that, the solver expands the admissable area in such a way that there is a big intersection between \ref{subeq:ciaocirclesarea} and $\overline{\SafeSpace}$. It is clear that this solver configuration is undesirable as the mobile robot is placed on risky situations. Then, the purpose of slacks is to provide flexbility to the \acrshort{ocp}, in order to allow the mobile robot to briefly enter $\overline{\SafeSpace}$ so that infeasibility does not occur. The same problem was run without slacks and infeasibility typically happened when the circles are very small and the vehicle is at the border of the \acrshort{ciao} circles. 
+On the other hand, figure \ref{fig:reftoursolver2} presents path tracking results with solver \ti{High slacks}. In this case, the mobile robot enters $\overline{\SafeSpace}$. This happens because the weight that penalize the slacks is much smaller, which allows the slacks to be greater. Due to that, the solver expands the admissable area in such a way that there is a big intersection between constraint \eqref{subeq:ciaocirclesarea} and $\overline{\SafeSpace}$. It is clear that this solver configuration is undesirable as the mobile robot is placed in risky situations. Then, the purpose of slacks is to provide flexbility to the \acrshort{nmpc} solver, in order to allow the mobile robot to briefly enter $\overline{\SafeSpace}$, but also to avoid the solver failure. The same problem was run without slacks and infeasibility typically happened when the circles are very small and the vehicle is at the border of the \acrshort{ciao} circles. 
 
 \begin{figure}[!htb]
   \begin{subfigmatrix}{2}
-    \subfigure[Reference tour with solver $(1)$.]{\includegraphics[width=0.49\linewidth]{Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_1.pdf}}
-    \subfigure[Path tracking from different initial poses with solver $(1)$.]{\includegraphics[width=0.49\linewidth]{Figures/Obstacle avoidance/Safe NMPC/Several_paths.pdf}}
+    \subfigure[Reference tour.]{\includegraphics[width=0.49\linewidth]{Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_1.pdf}}
+    \subfigure[Path tracking from different initial poses.]{\includegraphics[width=0.49\linewidth]{Figures/Obstacle avoidance/Safe NMPC/Several_paths.pdf}}
   \end{subfigmatrix}
-  \caption{Path tracking with safe one-stage real-time \acrshort{ocp} with solver $(1)$.}
+  \caption{Path tracking with safe one-stage real-time \acrshort{nmpc} with solver \ti{Low slacks}.}
   \label{fig:pathtrackingsafeocp}
 \end{figure}
 
@@ -393,22 +392,20 @@ On the other hand, figure \ref{fig:reftoursolver2} presents path tracking result
 \begin{minipage}{.49\textwidth}
 	\centering
   	\includegraphics[width=0.95\linewidth]{Figures/Obstacle avoidance/Safe NMPC/forces_coulomb_cone.png}
-  	\captionof{figure}{Traction forces within coulomb friction cone (solver $(1)$).}
+  	\captionof{figure}{Traction forces within coulomb friction cone (solver \ti{Low slacks}).}
   	\label{fig:frictionconesolver1}
 \end{minipage}
 \begin{minipage}{.49\textwidth}
 	\centering  
   	\includegraphics[width=0.95\linewidth]{Figures/Obstacle avoidance/Safe NMPC/tour_part1_solver_2.pdf}
-  	\captionof{figure}{Reference tour with solver $(2)$.}
+  	\captionof{figure}{Reference tour with solver \ti{High slacks}.}
   	\label{fig:reftoursolver2}
 \end{minipage}
 \end{figure}
 
-\subsubsection*{Slacks behaviour}
-
 Slacks are activated  when the mobile robot enters $\overline{\SafeSpace}$. Figure \ref{fig:reftourperformancesolver1safeocp} clearly shows that. The zoomed in squares focus on points of the path where the maximum slack among the horizon of slacks is very high. The fact that the mobile robot moves into $\overline{\SafeSpace}$ forces the solver to activate the slacks, in order to avoid solver failure. This is once again reassured by the top picture of the left figure of \ref{fig:reftourperformancesolver1safeocp}, where the clearance of the mobile robot is plotted against the maximum slack. It is seen that slacks are activated when the clearance is minimal. Figure \ref{fig:maxslackpathref} only shows one tour of the reference, whereas the data of figure \ref{fig:reftourperformancesolver1safeocp} depicts data of three tours.
 
-Along the whole reference tour, the minimum recorded clearance was $0.287\,m$ (solver $(1)$). In the case of solver $(2)$, the minimum recorded clearance was $0.12\,m$. This shows that solver $(1)$ safeguards the mobile robot's safety, whereas solver $(2)$ compromises it.
+Along the whole reference tour, the minimum recorded clearance was $0.287\,m$ (solver \ti{Low slacks}). In the case of solver \ti{High slacks}, the minimum recorded clearance was $0.12\,m$. This shows that solver \ti{Low slacks} safeguards the mobile robot's safety, whereas solver \ti{High slacks} compromises it.
 
 The solver optimal cost is rarely small as the the pose horizon cannot eliminate the pose error due to the spatial restrictions introduced by the presence of obstacles. The loop time is often below the sampling time. $10$ timeouts were recorded in more than $20000$ simulation iterations.
 
@@ -426,15 +423,15 @@ The solver optimal cost is rarely small as the the pose horizon cannot eliminate
     \subfigure[Linear and angular velocities (top). Force rates (bottom).]{
     	\includegraphics[width=0.49\linewidth]{Figures/Obstacle avoidance/Safe NMPC/vel_forces_rate_solver_1_tour_1.pdf}}
   \end{subfigmatrix}
-  \caption{Reference tour performance plus velocities and force rates curves with solver $(1)$.}
+  \caption{Reference tour performance plus velocities and force rates curves with solver \ti{Low slacks}.}
   \label{fig:reftourperformancesolver1safeocp}
 \end{figure}
 
-The linear velocity reaches a maximum of $0.5\,m/s$ which is within a reasonably safe linear velocity range. The rate of forces curve presents an up and down around 0 with non-negligible rates that reach higher values sometimes. As the weight of the controls is $1.0$, the rate of forces horizon is an important contributor to the optimal cost value. 
+The linear velocity reaches a maximum of $0.5\,m/s$ which is within a reasonably safe linear velocity range. The rate of forces curve presents an up and down around 0 with non-negligible rates that reach higher values sometimes. As the weight of the controls is $1.0$, the rate of forces horizon is an important contributor to the optimal cost value.
 
-\subsubsection*{Safe balls evolution}
+\subsection{Safe balls evolution}
 
-Before the chapter's end, it is relevant to show the safe balls evolution along the horizon on critical points of the simulation. Figure \ref{fig:safeballsexamplessolver1} presents the reference position horizon, the optimal position horizon and the safe balls that were computed with respect to the previous optimal position horizon. As the next optimal position horizon is meant to be close to the previous one, the current set of safe balls very closely express the positional constraint of the next solution.
+Before the chapter's end, it is relevant to show the safe balls evolution along the horizon in critical points of the simulation. Figure \ref{fig:safeballsexamplessolver1} presents the reference position horizon, the optimal position horizon and the safe balls that were computed with respect to the previous optimal position horizon. As the next optimal position horizon is meant to be close to the previous one, the current set of safe balls very closely express the positional constraint of the next solution.
 
 \begin{figure}[!htb]
   \begin{subfigmatrix}{6}
@@ -451,11 +448,11 @@ Before the chapter's end, it is relevant to show the safe balls evolution along 
 
 The top left picture shows that when the mobile robot is far from the closest obstacle, its safe balls are big. The picture on its right depicts a situation where the last horizon node gets stucks because the reference end tip matches a quasi-static projected target on free space, that will begin to move when the original target moves deeper into the obstacle. The top right picture presents a situation where the safe balls size decrease as the mobile robot is moving between obstacles, where the safe area is small. As expected, the safe balls decrease as the horizon progressily enters this \textit{tunnel}.
 
-The bottom left picture denotes an event where the mobile robot turns around, instead of circling the obstacle. As the target is too far ahead, the potential field redirects the reference. As a result of that, the optimal position horizon abruptly changes its course. The bottom middle picture depicts an high cost event. The fact that the horizon can't match the reference already introduces significant cost due to the safety constraints. However, a considerable higher cost comes to light as the reference contains back and forth segments because it crosses a local minimum position of the potential field. This \textit{bug} introduces significant heading differences between reference nodes, which breaks the assumption that the reference should be smooth. As a consequence of that, the solver is confused by the sudden yaw changes and the optimal solution degrades. Lastly, a wider traversal between obstacles is shown.
+The bottom left picture denotes an event where the mobile robot turns around, instead of circling the obstacle. As the target is too far ahead, the potential field redirects the reference. As a result of that, the optimal position horizon abruptly changes its course. The bottom middle picture depicts an high cost event. The fact that the horizon cannot match the reference already introduces significant cost due to the safety constraints. However, a considerable higher cost comes to light as the reference contains back and forth segments because it crosses a local minimum position of the potential field. This \textit{bug} introduces significant heading differences between reference nodes, which breaks the assumption that the reference should be smooth. As a consequence of that, the solver is confused by the sudden yaw changes and the optimal solution degrades. Lastly, a wider traversal between obstacles is shown.
 
 Similarly to the recorded position along the reference tracking tour in figure \ref{fig:pathtrackingsafeocp}, the position horizon is also at the safe space border whenever needed, so that it is closer to the reference path.
 
-A video\footnote{Results of the safe one-stage \acrshort{ocp} real-time with solver $(1)$: \texttt{\url{https://youtu.be/xHckwLaS_dQ}} (accessed on 14 of February 2026)} was prepared to showcase the results of this chapter. The results rendered on that video were generated with solver $(1)$, under the same parameters that generated the results of this subsection.
+A video\footnote{Results of the safe one-stage \acrshort{nmpc} real-time with solver $(1)$: \texttt{\url{https://youtu.be/xHckwLaS_dQ}} (accessed on 14 of February 2026)} was prepared to showcase the results of this chapter. The results rendered in that video were generated with solver \ti{Low slacks}, under the same parameters that generated the results of this subsection.
 
 % ----------------------------------------------------------------------
 %\subsection{Figures}

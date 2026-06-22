@@ -306,6 +306,34 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{rrt}%
+{%
+name={\acronymfont {\glsentryshort {rrt}}},%
+sort={RRT},%
+type={acronym},%
+first={RRT},%
+firstplural={RRTs},%
+text={RRT},%
+plural={RRTs},%
+description={Rapidly-exploring Random Tree},%
+descriptionplural={Rapidly-exploring Random Tree},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Rapidly-exploring Random Tree},%
+longplural={Rapidly-exploring Random Trees},%
+short={RRT},%
+shortplural={RRTs},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{ode}%
 {%
 name={\acronymfont {\glsentryshort {ode}}},%
@@ -427,8 +455,8 @@ first={DEM},%
 firstplural={DEMs},%
 text={DEM},%
 plural={DEMs},%
-description={Digital Elevation Models},%
-descriptionplural={Digital Elevation Models},%
+description={Digital Elevation Maps},%
+descriptionplural={Digital Elevation Maps},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -437,8 +465,8 @@ user3={},%
 user4={},%
 user5={},%
 user6={},%
-long={Digital Elevation Models},%
-longplural={Digital Elevation Modelss},%
+long={Digital Elevation Maps},%
+longplural={Digital Elevation Mapss},%
 short={DEM},%
 shortplural={DEMs},%
 counter={page},%
@@ -1085,6 +1113,34 @@ long={Multiple hull point per wheel},%
 longplural={Multiple hull point per wheels},%
 short={MHPW},%
 shortplural={MHPWs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{cnsa}%
+{%
+name={\acronymfont {\glsentryshort {cnsa}}},%
+sort={CNSA},%
+type={acronym},%
+first={CNSA},%
+firstplural={CNSAs},%
+text={CNSA},%
+plural={CNSAs},%
+description={China National Space Administration},%
+descriptionplural={China National Space Administration},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={China National Space Administration},%
+longplural={China National Space Administrations},%
+short={CNSA},%
+shortplural={CNSAs},%
 counter={page},%
 parent={},%
 %

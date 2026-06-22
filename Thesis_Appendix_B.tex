@@ -24,7 +24,7 @@ The neighborhood of $\mathbf{p}$ is defined as an open ball around $\mathbf{p}$,
 \neighborhood\left( \mathbf{p} \right) := \{\mathbf{x} \in \StateSpace \mid d(\mathbf{x},\, \mathbf{p}) < \epsilon \}
 \label{eq:neighborhood}
 \end{equation}
-, where $d:\StateSpace \times \StateSpace \to \mathbb{R}$ is a distance function, $\epsilon$ is a small positive value and $\mathcal{X}$ is the metric space of $d(\cdot)$.
+\noindent, where $d:\StateSpace \times \StateSpace \to \mathbb{R}$ is a distance function, $\epsilon$ is a small positive value and $\mathcal{X}$ is the metric space of $d(\cdot)$.
 \end{definition}
 
 \begin{definition}[Local minimum]
@@ -110,7 +110,7 @@ In case constraints of problem \ref{eq:gennlp} are affine and the objetive is a 
 \label{eq:genqp}
 \end{equation}
 
-, where the problem data are $\mathbf{c} \in \mathbb{R}^n$, $\mathbf{A} \in \mathbb{R}^{n_g \times n}$, $\mathbf{b} \in \mathbb{R}^{n_g}$, $\mathbf{C} \in \mathbb{R}^{n_h \times n}$, $\mathbf{C} \in \mathbb{R}^{n_h}$, $\mathbf{d} \in \mathbb{R}^{n_h}$ and $\mathbf{B} \in \mathbb{R}^{n \times n}$. $\mathbf{B}$ is the Hessian of the objective function of \ref{eq:genqp}. The eigenvalues of $\mathbf{B}$ decide the convexity of problem \ref{eq:genqp}. In case $\mathbf{B} \succeq 0$, problem \ref{eq:genqp} is convex and strictly convex if $\mathbf{B} \succ 0$.
+\noindent, where the problem data are $\mathbf{c} \in \mathbb{R}^n$, $\mathbf{A} \in \mathbb{R}^{n_g \times n}$, $\mathbf{b} \in \mathbb{R}^{n_g}$, $\mathbf{C} \in \mathbb{R}^{n_h \times n}$, $\mathbf{C} \in \mathbb{R}^{n_h}$, $\mathbf{d} \in \mathbb{R}^{n_h}$ and $\mathbf{B} \in \mathbb{R}^{n \times n}$. $\mathbf{B}$ is the Hessian of the objective function of \ref{eq:genqp}. The eigenvalues of $\mathbf{B}$ decide the convexity of problem \ref{eq:genqp}. In case $\mathbf{B} \succeq 0$, problem \ref{eq:genqp} is convex and strictly convex if $\mathbf{B} \succ 0$.
 \end{definition}
 
 \begin{theorem}[Second Order Optimality Conditions]

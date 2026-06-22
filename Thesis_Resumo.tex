@@ -13,13 +13,9 @@
 % Add entry in the table of contents as section
 \addcontentsline{toc}{section}{Resumo}
 
-\noindent O desenvolvimento de algoritmos de controlo para veículos autónomos em ambientes extremos tem sido alvo de intenso investimento nas últimas décadas, muito por força de missões robóticas planetárias ou pela necessidade de locomoção por terrenos de irregularidade extrema.
-
-\noindent Em primeiro lugar, este trabalho apresenta um algoritmo de geração de um caminho seguro, que evita locais indesejáveis pela sua dificuldade de atravesamento. Para isso, um mapa de traversabilidade do terreno em causa é igualmente gerado através de um algoritmo de optimização, que tem em conta as características do veículo e a elevação do mapa.
-
-\noindent Por último, o controlo em tempo-real é assegurado pela biblioteca \texttt{acados}, usando conhecidos métodos de controlo preditivo, óptimo e não-linear para guiar o veículo de forma segura pelo terreno irregular que atravessa. Além de seguir uma dada referência, o controlador também assegura um afastamento mínimo do veículo em relação ao obstáculo mais próximo. A derrapagem do veículo é minorada ao máximo. Um algoritmo inovador é apresentado na parte final do trabalho.
+\noindent O desenvolvimento de algoritmos de controlo para veículos autónomos em ambientes extremos tem atraído a atenção de investigadores nas últimas décadas, quer pela necessidade de melhorar a eficiência da tração aplicada no solo pelas rodas, como para aumentar o tempo de vida útil destes sistemas. Este trabalho apresenta várias variantes de um algoritmo de geração de um caminho seguro, que evita locais de difícil atraversamento. Deste modo, vários mapas de traversabilidade são gerados através de um algoritmo de optimização não-linear, que tem em conta a geometria do veículo e a sua adaptabilidade ao terreno, assim como a elevação e a rugosidade do terreno. De seguida, o método de \ti{fast marching} é utilizado para produzir um campo de potencial com um mínimo único e global que contém direções para o objetivo pretendido, que evitam locais com um custo de traversabilidade alto. Por último, a biblioteca \texttt{acados} oferece métodos de controlo não linear predictivo em tempo-real, que são implementados de modo a guiar o veículo de forma segura por terreno irregular. Além de seguir uma determinada referência, o controlador também restringe a tração aplicada pelas rodas em terreno rígido, de modo a diminuir a possibilidade de derrapagem, através da introdução do modelo de fricção de Coulomb. Além disso, o afastamento do veículo em relação a possíveis colisões é garantido através da determinação de uma referência que não cruza obstáculos, mas também pelo cálculo de áreas convexas, livres de obstáculos em torno de cada nodo do horizonte de controlo.
 
 \vfill
 
-\textbf{\Large Palavras-chave:} Terreno irregular, Controlo em tempo-real, Controlo preditivo e óptimo, Controlo não-linear, Desvio de obstáculos.
+\textbf{\Large Palavras-chave:} Terrenos irregulares, Mapa de traversabilidade, Caminho óptimo, Controlo em tempo-real, Controlo preditivo, óptimo e não-linear, Aderência ao terreno e prevenção de colisões.
 

@@ -3,16 +3,16 @@
 \contentsline {section}{Resumo}{v}{Doc-Start}%
 \contentsline {section}{Abstract}{vi}{Doc-Start}%
 \contentsline {section}{List of Tables}{x}{section*.2}%
-\contentsline {section}{List of Figures}{xii}{section*.4}%
-\contentsline {section}{Nomenclature}{xv}{section*.6}%
-\contentsline {section}{Acronyms}{xix}{section*.8}%
+\contentsline {section}{List of Figures}{xi}{section*.4}%
+\contentsline {section}{Nomenclature}{xiv}{section*.6}%
+\contentsline {section}{Acronyms}{xviii}{section*.8}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Problem Statement}{3}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Project outline}{4}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Objectives}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.4}Objectives}{5}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Contributions}{5}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Thesis Outline}{5}{section.1.6}%
+\contentsline {section}{\numberline {1.6}Thesis Outline}{6}{section.1.6}%
 \contentsline {chapter}{\numberline {2}Background}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Path planning algorithms}{7}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}World modelling}{7}{subsection.2.1.1}%
@@ -57,11 +57,12 @@
 \contentsline {section}{\numberline {6.1}Safe reference generation}{66}{section.6.1}%
 \contentsline {subsection}{\numberline {6.1.1}\acrlong {ciao} (\acrshort {ciao}) algorithm}{66}{subsection.6.1.1}%
 \contentsline {subsection}{\numberline {6.1.2}Baseline reference deformation}{68}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}Real-time safe \acrshort {nmpc} over irregular terrain}{71}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Simultaneous path tracking and obstacle avoidance on rough terrain}{72}{subsection.6.2.1}%
+\contentsline {section}{\numberline {6.2}Real-time convex, safe \acrshort {nmpc} over irregular terrain}{71}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Slacks behaviour}{72}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Safe balls evolution}{75}{subsection.6.2.2}%
 \contentsline {chapter}{\numberline {7}Conclusions}{77}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Future Work}{77}{section.7.1}%
-\contentsline {chapter}{Bibliography}{79}{section*.91}%
+\contentsline {section}{\numberline {7.1}Future Work}{78}{section.7.1}%
+\contentsline {chapter}{Bibliography}{79}{section*.92}%
 \contentsline {chapter}{\numberline {A}Mathematical review}{84}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Euler angles}{84}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Inertia tensor}{85}{section.A.2}%
@@ -74,8 +75,8 @@
 \contentsline {chapter}{\numberline {B}Nonlinear optimization review}{89}{appendix.B}%
 \contentsline {section}{\numberline {B.1}General definitions}{89}{section.B.1}%
 \contentsline {section}{\numberline {B.2}Convex optimization}{90}{section.B.2}%
-\contentsline {chapter}{\numberline {C}Miscellaneous}{92}{appendix.C}%
+\contentsline {chapter}{\numberline {C}Additional traversability maps and performance results of controllers}{92}{appendix.C}%
 \contentsline {section}{\numberline {C.1}Traversability maps}{92}{section.C.1}%
-\contentsline {section}{\numberline {C.2}Performance metrics of controllers}{92}{section.C.2}%
-\contentsline {subsection}{\numberline {C.2.1}One-stage planar \acrshort {ocp}}{92}{subsection.C.2.1}%
-\contentsline {subsection}{\numberline {C.2.2}Real-time one-stage \acrshort {ocp} on rough, uneven terrain}{93}{subsection.C.2.2}%
+\contentsline {section}{\numberline {C.2}Performance metrics of controllers}{93}{section.C.2}%
+\contentsline {subsection}{\numberline {C.2.1}Planar \acrshort {nmpc}}{93}{subsection.C.2.1}%
+\contentsline {subsection}{\numberline {C.2.2}Reference tour with a real-time \acrshort {nmpc} over uneven, rigid terrain}{95}{subsection.C.2.2}%

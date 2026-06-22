@@ -247,7 +247,7 @@ The results presented below were generated on an Intel® Core™ i7-10750H CPU @
 
 \subsubsection*{Control horizon}
 
-The simulation results of the planar \acrshort{nmpc} with respect to the control horizon are presented in figure \ref{fig:PathTrackCompHorizonVar} and tables \ref{tab:cumulativeControlEffortControlHorizon}, \ref{tab:cumulativePositionalErrorControlHorizon} and \ref{tab:cumulativeHeadingErrorControlHorizon}. The parameters of the solver that are kept constant on every simulation are stated in table \ref{tab:controlHorizonSpecs}. The order of $Q$ and $R$ diagonal elements is aligned with the order of the cost terms presented in equations \eqref{eq:reflagrange} and \eqref{subeq:onestagemayer}.
+The simulation results of the planar \acrshort{nmpc} with respect to the control horizon are presented in figure \ref{fig:PathTrackCompHorizonVar} and table \ref{tab:cumulativeControlEffortControlHorizon}. The parameters of the solver that are kept constant on every simulation are stated in table \ref{tab:controlHorizonSpecs}. The order of $Q$ and $R$ diagonal elements is aligned with the order of the cost terms presented in equations \eqref{eq:reflagrange} and \eqref{subeq:onestagemayer}.
 
 \begin{table}[!htb]
   \caption[Constant solver parameters when control horizon changes.]{Constant solver parameters.}
@@ -291,7 +291,7 @@ The major differences are seen when performance metrics are evaluated. Regarding
 
 \subsubsection*{Sampling time}
 
-Likewise, the constant parameters are presented in table \ref{tab:samplingTimeSpecs}. The respective results are presented in figure \ref{fig:PathTrackCompSamplingTimeVar} and tables \ref{tab:cumulativeControlEffortSamplingTime}, \ref{tab:cumulativePositionalErrorSamplingTime} and \ref{tab:cumulativeHeadingErrorSamplingTime}.
+Likewise, the constant parameters are presented in table \ref{tab:samplingTimeSpecs}. The respective results are presented in figure \ref{fig:PathTrackCompSamplingTimeVar} and table \ref{tab:cumulativeControlEffortSamplingTime}.
 
 \begin{table}[!htb]
   \caption[Constant solver parameters when sampling time changes.]{Constant solver parameters.}
@@ -331,7 +331,7 @@ Likewise, the constant parameters are presented in table \ref{tab:samplingTimeSp
 
 All performance metrics are inversely proportional to sampling time. This is due to the fact that higher sampling times increase the time horizon, so the controller may reach the reference sooner and adapt its controls to achieve improved metrics. This is not necessarily the case when the control horizon increases because the number of terms on the cost function increase as well.
 
-Although it seems better performance metrics can be achieved by increasing the sampling time, one should be aware that there is a sampling time floor on a real-time simulation. On one hand, the \textbf{sampling time can't be smaller than the loop time} ($T_c < T_s$). If this rule is violated, there is a great mismatch between the controller's next initial guess and the initial state at the first node of the following iteration. On the other hand, if the sampling time is too big, that mismatch will also happen. In both cases, $\mathbf{x}_{1,\,i-1}^* \nsim \mathbf{\hat{x}}_{0,\,i}$.
+Although it seems better performance metrics can be achieved by increasing the sampling time, one should be aware that there is a sampling time floor on a real-time simulation. On one hand, the \textbf{sampling time cannot be smaller than the loop time} ($T_c < T_s$). If this rule is violated, there is a great mismatch between the controller's next initial guess and the initial state at the first node of the following iteration. On the other hand, if the sampling time is too big, that mismatch will also happen. In both cases, $\mathbf{x}_{1,\,i-1}^* \nsim \mathbf{\hat{x}}_{0,\,i}$.
 
 \subsubsection*{Cost function weights}
 In this segment, the controller is tested against different sets of weights. The control horizon and sampling time remain constant.
@@ -343,7 +343,7 @@ The cost function of an \acrshort{nmpc} shall pursue the minimization of a singl
 Based on the previous remark, several types of controllers are set up in table \ref{tab:setsWeights}. Although tracking the reference stands as the main goal, some attention is paid to secondary performance objectives in controllers \textit{Low control effort} and \textit{Smooth controls}. The traversal performed by the vehicle is presented in figure \ref{fig:PathTrackCompWeightsVar}.
 
 \begin{table}[!htb]
-  \caption[Constant solver parameters when sampling time changes.]{Solver parameters ($N = 50,\, T_s = 0.01 \, ms$).}
+  \caption[Constant solver parameters when cost function weights change.]{Solver parameters ($N = 50,\, T_s = 0.01 \, ms$).}
   \label{tab:setsWeights}
   \renewcommand{\arraystretch}{1.2}
   \centering
@@ -426,7 +426,7 @@ For the sake of brevity and simplicity, only the output of $\Traction_l$ and $\T
 	\label{fig:PathTrackCompWeightsVar_tr_limited}
 \end{figure}
 
-For the most part, the analysis of tables \ref{tab:cumulativeControlEffortWeights}, \ref{tab:cumulativePositionalErrorWeights} and \ref{tab:cumulativeHeadingErrorWeights} show us that each controller excels on its purpose with respect to other controllers on both architectures. Moreover, a look to figures \ref{fig:PathTrackCompWeightsVar_tl_limited} and \ref{fig:PathTrackCompWeightsVar_tr_limited} shows that $\Traction_l$ and $\Traction_r$ stay closer to zero with respect to other controllers, whereas the same variables present a smoother behaviour under the rule of controller \textit{Smooth control}, although it may reach higher values than controller \textit{Low control effort}. Even though the latter achieves its energy saving goal, it compromises a lot on reference tracking, so some care shall be taken from now on to carefully promote energy saving whenever possible, without compromising on reference tracking.
+For the most part, the analysis of table \ref{tab:cumulativeControlEffortWeights} show us that each controller excels on its purpose with respect to other controllers on both architectures. Moreover, a look to figures \ref{fig:PathTrackCompWeightsVar_tl_limited} and \ref{fig:PathTrackCompWeightsVar_tr_limited} shows that $\Traction_l$ and $\Traction_r$ stay closer to zero with respect to other controllers, whereas the same variables present a smoother behaviour under the rule of controller \textit{Smooth control}, although it may reach higher values than controller \textit{Low control effort}. Even though the latter achieves its energy saving goal, it compromises a lot on reference tracking, so some care shall be taken from now on to carefully promote energy saving whenever possible, without compromising on reference tracking.
 
 \begin{remark}
 Energy saving may also be achieved with optimal path planning (chapter \ref{chapter:globalpathplanner}) or by reaching a goal state faster. However, limits to its velocities must be set, for the sake of safety.
@@ -792,7 +792,7 @@ v_i\left(\kappa,\,\varepsilon\right) = min\left( \frac{0.1}{ 1 + \exp\left( 5.0\
 \end{equation}
 
 \begin{table}[!htb]
-  \caption[Solver parameters on hill.]{Path tracking solver parameters ($N = 50,\; T_s = 20\,ms$).}
+  \caption[Solver parameters for simulation over irregular terrain.]{Path tracking solver parameters ($N = 50,\; T_s = 20\,ms$).}
   \label{tab:RoughPathTrackingSpecs}
   \renewcommand{\arraystretch}{1.2}
   \centering
@@ -865,7 +865,7 @@ k = \frac{m\,g\,\sin(\pitch)}{2}  & p = \frac{(m\,g)^2}{16} \, \left[ \left(\cos
 \end{equation}
 
 \begin{table}[!htb]
-  \caption[Solver performance on hilly terrain.]{Solvers performance on rough, uneven terrain. On every solver, one timeout was recorded.}
+  \caption[Solver performance over irregular, rigid terrain.]{Solvers performance on rough, uneven terrain. On every solver, one timeout was recorded.}
   \label{tab:RoughTerrainSolverPerformanceShortTrack}
   \renewcommand{\arraystretch}{1.2}
   \centering
